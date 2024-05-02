@@ -215,14 +215,16 @@ if (isset($_POST['register'])) {
 
     //########## Initiating session #####################
     $_SESSION['email'] = $email;                    //###
-    $_SESSION['postion'] = $position;               //###
+    $_SESSION['position'] = $position;               //###
     $_SESSION['userRefCode'] = $userRefCode;        //###
     //########## Initiating session #####################
 
     if ($position == 'Player') {
       header("Location:referenceNumber.php");
+      exit();
     } else {
       header('Location:executive_registration.php');
+      exit();
     }
 
   }
