@@ -497,6 +497,7 @@ if (isset($_POST["complete_register"])) {
                           </div>
                         </div>
                       </div>
+                      <br><br>
 
                       <div class="row">
                         <div class="col-lg-6">
