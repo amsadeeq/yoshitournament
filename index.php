@@ -36,14 +36,232 @@ if (session_status() === PHP_SESSION_ACTIVE) {
 
 //####### Importing database connections and EngineFile
 
-require 'classes/dbconnection.php';
-require_once 'classes/yoshiDatabaseConn.php';//creating coonection to the database ubifcs_database
-require_once 'classes/yoshiEngine.php';//calling the engine classes to excutes all the mySql(inserting, selecting, updating and deleting)
-$yoshiengine = new yoshiEngine();//creating object of class ubifcsEngine which Extends ubifcsDatabaseCon
+require 'connection.php';
+
+// require 'classes/dbconnection.php';
+// require_once 'classes/yoshiDatabaseConn.php';//creating coonection to the database ubifcs_database
+// require_once 'classes/yoshiEngine.php';//calling the engine classes to excutes all the mySql(inserting, selecting, updating and deleting)
+// $yoshiengine = new yoshiEngine();//creating object of class ubifcsEngine which Extends ubifcsDatabaseCon
 
 
 
 
+
+
+// Initialize login_error variable
+$login_error = '';
+
+// Check if login form is submitted
+if (isset($_POST['login'])) {
+  // Fetch user credentials from POST request
+
+  //function checking for malicious inputs using trim(),stripslahes(),htmlspecialchars(),htmlentities()
+  function check_input($data)
+  {
+    $data = trim($data);
+    $data = stripcslashes($data);
+    $data = htmlspecialchars($data);
+    $data = htmlentities($data);
+    return $data;
+  }
+
+  // Get user's device and browser
+  $user_agent = $_SERVER['HTTP_USER_AGENT'];
+  $browser = get_browser(null, true);
+  $device = $browser['platform'];
+
+  // Get user's IP address
+  $ip_address = $_SERVER['REMOTE_ADDR'];
+
+
+  $email = check_input($_POST['login_email']);
+  $password = md5(check_input($_POST['login_password'])); // Assuming password is stored as MD5 hash in the database
+
+  // Fetching records from the database
+  // Insert data into the database
+
+  // Prepare SQL statement to fetch user from yoshi_signup_tbl
+  // Perform authentication against yoshi_signup_tbl
+  $stmt = $pdo->prepare("SELECT * FROM yoshi_signup_tbl WHERE user_email = :email AND user_password = :password");
+  $stmt->bindParam(':email', $email);
+  $stmt->bindParam(':password', $password);
+  $stmt->execute();
+  $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if ($user) {
+
+    // User is authenticated
+
+    // User found, verify password
+    if ($user['user_password'] == $password) {
+
+
+      $welcome_message = "Welcome  " . $user['user_position'];
+      //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
+      // Define the notification message
+
+
+      // Generate the JavaScript code to trigger the notification
+      $welcome_notify = "
+        <script>
+            new Noty({
+                theme: 'metroui',
+                text: '$welcome_message',
+                type: 'success',
+                timeout: 1000
+                
+            }).show();
+        </script>
+        ";
+
+
+      // Password matches
+      // Set session variables based on user's role
+      $_SESSION['userRefNo'] = $user['userRefNo'];
+      $_SESSION['user_email'] = $user['user_email'];
+      $_SESSION['user_position'] = $user['user_position'];
+      $_SESSION['welcome'] = $welcome_notify;
+      // Set login status to 'passed'
+      $login_status = 'passed';
+
+
+      if ($user['user_position'] == 'Manager/Coach') {
+        // Fetch user information from yoshi_executive_tbl based on userRefNo
+        $stmt = $pdo->prepare("SELECT * FROM yoshi_executive_tbl WHERE userRefNo = :userRefNo");
+        $stmt->bindParam(':userRefNo', $user['userRefNo']);
+        $stmt->execute();
+        $executive = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+        // User is a Manager or Coach
+        $_SESSION['teamRefNumber'] = $executive['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
+        // Insert login log
+        $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+        VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+        $stmt->execute([
+          ':userRefNo' => $user['userRefNo'],
+          ':user_email' => $user['user_email'],
+          ':user_position' => $user['user_position'],
+          ':TeamRefNumber' => $executive['TeamRefNumber'],
+          ':device_used' => $device,
+          ':browser_used' => $user_agent,
+          ':ip_address' => $ip_address,
+          ':login_status' => $login_status,
+          ':password_used' => $password
+        ]);
+
+        header("Location: dashboard.php");
+
+      } else {
+        // User is a Player
+        $_SESSION['userRefNo'] = $user['userRefNo'];
+        $_SESSION['user_email'] = $user['user_email'];
+        $_SESSION['user_position'] = $user['user_position'];
+        //$_SESSION['teamRefNumber'] = $user['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
+        // Insert login log
+        $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+        VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+        $stmt->execute([
+          ':userRefNo' => $user['userRefNo'],
+          ':user_email' => $user['user_email'],
+          ':user_position' => $user['user_position'],
+          ':TeamRefNumber' => $user['TeamRefNumber'], // Adjust accordingly if TeamRefNumber is not directly available
+          ':device_used' => $device,
+          ':browser_used' => $user_agent,
+          ':ip_address' => $ip_address,
+          ':login_status' => $login_status,
+          ':password_used' => $password
+        ]);
+        header("Location: player_dashboard.php");
+
+      }
+    } else {
+      // Password does not match
+      $login_error_message = "Invalid email or password.";
+      //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
+      // Define the notification message
+
+
+      // Generate the JavaScript code to trigger the notification
+      $login_error_notify = "
+        <script>
+            new Noty({
+                theme: 'metroui',
+                text: '$login_error_message',
+                type: 'error',
+                timeout: 1000,
+                callbacks: {
+                  onClose: function() {
+                      $('#loginModal').modal('show'); // Show login modal when notification is closed
+                  }
+              } // 3 seconds
+            }).show();
+        </script>
+        ";
+
+      // Echo the JavaScript code
+      echo $login_error_notify;
+      // Insert login log
+      $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+      $stmt->execute([
+        ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
+        ':user_email' => $email,
+        ':user_position' => $user ? $user['user_position'] : 'Not a user',
+        ':TeamRefNumber' => $user && $user['user_position'] == 'Manager/Coach' ? $executive['TeamRefNumber'] : 'Not a user', // Adjust accordingly if TeamRefNumber is not directly available
+        ':device_used' => $device,
+        ':browser_used' => $user_agent,
+        ':ip_address' => $ip_address,
+        ':login_status' => $login_status,
+        ':password_used' => $password
+      ]);
+    }
+  } else {
+    // Define the notification message
+    // Password does not match
+    $login_error_message = "Invalid email or password.";
+    $error_message = "Invalid email or password.";
+    // Set login status to 'failed'
+    $login_status = 'failed';
+
+    // Generate the JavaScript code to trigger the notification
+    $error_notify = "
+        <script>
+            new Noty({
+                theme: 'metroui',
+                text: '$error_message',
+                type: 'error',
+                timeout: 1000,
+                callbacks: {
+                  onClose: function() {
+                      $('#loginModal').modal('show'); // Show login modal when notification is closed
+                  }
+              } // 3 seconds
+            }).show();
+        </script>
+        ";
+
+    // Echo the JavaScript code
+    echo $error_notify;
+    // Insert login log
+    $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+    $stmt->execute([
+      ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
+      ':user_email' => $email,
+      ':user_position' => $user ? $user['user_position'] : 'Not a user',
+      ':TeamRefNumber' => $user && $user['user_position'] == 'Manager/Coach' ? $executive['TeamRefNumber'] : 'Not a user', // Adjust accordingly if TeamRefNumber is not directly available
+      ':device_used' => $device,
+      ':browser_used' => $user_agent,
+      ':ip_address' => $ip_address,
+      ':login_status' => $login_status,
+      ':password_used' => $password
+    ]);
+
+
+  }
+}
 
 
 
@@ -201,7 +419,7 @@ if (isset($_POST['register'])) {
 
 
     // Insert data into the database
-    $pdo = new PDO('mysql:host=localhost;dbname=yoshi_tournament_db', 'root', '');
+
     $stmt = $pdo->prepare("INSERT INTO `yoshi_signup_tbl` (`id`, `userRefNo`, `user_email`, `user_position`, `user_password`, `termsCondition`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :email, :position, :password, :termsCondition, :time_create, :date_create, :ip_address)");
     $stmt->bindParam(':userRefNo', $userRefCode);
     $stmt->bindParam(':email', $email);
@@ -223,7 +441,26 @@ if (isset($_POST['register'])) {
       header("Location:referenceNumber.php");
       exit();
     } else {
+      $register_message = "Welcome  to Yoshi Tournament platform " . $position;
+      //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
+      // Define the notification message
+
+
+      // Generate the JavaScript code to trigger the notification
+      $welcome_notify = "
+        <script>
+            new Noty({
+                theme: 'metroui',
+                text: '$register_message',
+                type: 'success',
+                timeout: 1000
+                
+            }).show();
+        </script>
+        ";
+      $_SESSION['reg_notify'] = $welcome_notify;
       header('Location:executive_registration.php');
+
       exit();
     }
 
@@ -1342,220 +1579,11 @@ if (isset($_POST['register'])) {
 
   <?php
 
-  // Initialize login_error variable
-  $login_error = '';
+  // Echo the JavaScript code
+  echo @$login_error_notify;
 
-  // Check if login form is submitted
-  if (isset($_POST['login'])) {
-    // Fetch user credentials from POST request
-  
-    //function checking for malicious inputs using trim(),stripslahes(),htmlspecialchars(),htmlentities()
-    function check_input($data)
-    {
-      $data = trim($data);
-      $data = stripcslashes($data);
-      $data = htmlspecialchars($data);
-      $data = htmlentities($data);
-      return $data;
-    }
-
-    // Get user's device and browser
-    $user_agent = $_SERVER['HTTP_USER_AGENT'];
-    $browser = get_browser(null, true);
-    $device = $browser['platform'];
-
-    // Get user's IP address
-    $ip_address = $_SERVER['REMOTE_ADDR'];
-
-
-    $email = check_input($_POST['login_email']);
-    $password = md5(check_input($_POST['login_password'])); // Assuming password is stored as MD5 hash in the database
-  
-    // Fetching records from the database
-// Insert data into the database
-    $pdo = new PDO('mysql:host=localhost;dbname=yoshi_tournament_db', 'root', '');
-    // Prepare SQL statement to fetch user from yoshi_signup_tbl
-    // Perform authentication against yoshi_signup_tbl
-    $stmt = $pdo->prepare("SELECT * FROM yoshi_signup_tbl WHERE user_email = :email AND user_password = :password");
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $password);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user) {
-
-      // User is authenticated
-  
-      // User found, verify password
-      if ($user['user_password'] == $password) {
-
-
-        $welcome_message = "Welcome  " . $user['user_position'];
-        //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
-        // Define the notification message
-  
-
-        // Generate the JavaScript code to trigger the notification
-        $welcome_notify = "
-          <script>
-              new Noty({
-                  theme: 'metroui',
-                  text: '$welcome_message',
-                  type: 'success',
-                  timeout: 1000
-                  
-              }).show();
-          </script>
-          ";
-
-
-        // Password matches
-        // Set session variables based on user's role
-        $_SESSION['userRefNo'] = $user['userRefNo'];
-        $_SESSION['user_email'] = $user['user_email'];
-        $_SESSION['user_position'] = $user['user_position'];
-        $_SESSION['welcome'] = $welcome_notify;
-        // Set login status to 'passed'
-        $login_status = 'passed';
-
-
-        if ($user['user_position'] == 'Manager/Coach') {
-          // Fetch user information from yoshi_executive_tbl based on userRefNo
-          $stmt = $pdo->prepare("SELECT * FROM yoshi_executive_tbl WHERE userRefNo = :userRefNo");
-          $stmt->bindParam(':userRefNo', $user['userRefNo']);
-          $stmt->execute();
-          $executive = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
-
-          // User is a Manager or Coach
-          $_SESSION['teamRefNumber'] = $executive['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
-          // Insert login log
-          $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
-          VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
-          $stmt->execute([
-            ':userRefNo' => $user['userRefNo'],
-            ':user_email' => $user['user_email'],
-            ':user_position' => $user['user_position'],
-            ':TeamRefNumber' => $executive['TeamRefNumber'],
-            ':device_used' => $device,
-            ':browser_used' => $user_agent,
-            ':ip_address' => $ip_address,
-            ':login_status' => $login_status,
-            ':password_used' => $password
-          ]);
-
-          header("Location: dashboard.php");
-
-        } else {
-          // User is a Player
-          $_SESSION['userRefNo'] = $user['userRefNo'];
-          $_SESSION['user_email'] = $user['user_email'];
-          $_SESSION['user_position'] = $user['user_position'];
-          //$_SESSION['teamRefNumber'] = $user['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
-          // Insert login log
-          $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
-          VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
-          $stmt->execute([
-            ':userRefNo' => $user['userRefNo'],
-            ':user_email' => $user['user_email'],
-            ':user_position' => $user['user_position'],
-            ':TeamRefNumber' => $user['TeamRefNumber'], // Adjust accordingly if TeamRefNumber is not directly available
-            ':device_used' => $device,
-            ':browser_used' => $user_agent,
-            ':ip_address' => $ip_address,
-            ':login_status' => $login_status,
-            ':password_used' => $password
-          ]);
-          header("Location: player_dashboard.php");
-
-        }
-      } else {
-        // Password does not match
-        $login_error_message = "Invalid email or password.";
-        //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
-        // Define the notification message
-  
-
-        // Generate the JavaScript code to trigger the notification
-        $login_error_notify = "
-          <script>
-              new Noty({
-                  theme: 'metroui',
-                  text: '$login_error_message',
-                  type: 'error',
-                  timeout: 1000,
-                  callbacks: {
-                    onClose: function() {
-                        $('#loginModal').modal('show'); // Show login modal when notification is closed
-                    }
-                } // 3 seconds
-              }).show();
-          </script>
-          ";
-
-        // Echo the JavaScript code
-        echo $login_error_notify;
-        // Insert login log
-        $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
-VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
-        $stmt->execute([
-          ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
-          ':user_email' => $email,
-          ':user_position' => $user ? $user['user_position'] : 'Not a user',
-          ':TeamRefNumber' => $user && $user['user_position'] == 'Manager/Coach' ? $executive['TeamRefNumber'] : 'Not a user', // Adjust accordingly if TeamRefNumber is not directly available
-          ':device_used' => $device,
-          ':browser_used' => $user_agent,
-          ':ip_address' => $ip_address,
-          ':login_status' => $login_status,
-          ':password_used' => $password
-        ]);
-      }
-    } else {
-      // Define the notification message
-      // Password does not match
-      $login_error_message = "Invalid email or password.";
-      $error_message = "Invalid email or password.";
-      // Set login status to 'failed'
-      $login_status = 'failed';
-
-      // Generate the JavaScript code to trigger the notification
-      $error_notify = "
-          <script>
-              new Noty({
-                  theme: 'metroui',
-                  text: '$error_message',
-                  type: 'error',
-                  timeout: 1000,
-                  callbacks: {
-                    onClose: function() {
-                        $('#loginModal').modal('show'); // Show login modal when notification is closed
-                    }
-                } // 3 seconds
-              }).show();
-          </script>
-          ";
-
-      // Echo the JavaScript code
-      echo $error_notify;
-      // Insert login log
-      $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
-VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
-      $stmt->execute([
-        ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
-        ':user_email' => $email,
-        ':user_position' => $user ? $user['user_position'] : 'Not a user',
-        ':TeamRefNumber' => $user && $user['user_position'] == 'Manager/Coach' ? $executive['TeamRefNumber'] : 'Not a user', // Adjust accordingly if TeamRefNumber is not directly available
-        ':device_used' => $device,
-        ':browser_used' => $user_agent,
-        ':ip_address' => $ip_address,
-        ':login_status' => $login_status,
-        ':password_used' => $password
-      ]);
-
-
-    }
-  }
+  // Echo the JavaScript code
+  echo @$error_notify;
 
   ?>
 

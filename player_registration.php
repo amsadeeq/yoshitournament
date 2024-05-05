@@ -3,10 +3,13 @@
 session_start();
 ob_start();
 
+// Connect to the database
+require 'connection.php';
+
 $TeamRefNumber = $_SESSION['$teamRefNumber']; //need to remove $ sign
 
-// Connect to the database
-$pdo = new PDO('mysql:host=localhost;dbname=yoshi_tournament_db', 'root', '');
+
+
 
 
 // Prepare and execute query to check if the reference number exists
@@ -260,7 +263,7 @@ if (isset($_POST['complete_registration'])) {
 
     <nav class="navbar navbar-expand-lg navbar-light ">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <img src="images/logo.png" alt="logo" class="yoshi_logo" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightmobile">
@@ -270,35 +273,35 @@ if (isset($_POST['complete_registration'])) {
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
             <!-- <li class="nav-item">
-              <a class="nav-link" href="matches.html">Matches</a>
+              <a class="nav-link" href="matches.php">Matches</a>
             </li> -->
 
             <!-- <li class="nav-item">
-              <a class="nav-link " href="about.html">The Tournament</a>
+              <a class="nav-link " href="about.php">The Tournament</a>
             </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link " href="schedule.html">Schedule</a>
+               <a class="nav-link " href="schedule.php">Schedule</a>
              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link " href="news.html">News</a>
+               <a class="nav-link " href="news.php">News</a>
              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link " href="players.html">Players</a>
+               <a class="nav-link " href="players.php">Players</a>
              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link" href="media.html">Media</a>
+               <a class="nav-link" href="media.php">Media</a>
              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link " href="shop.html">Shop</a>
+               <a class="nav-link " href="shop.php">Shop</a>
              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link " href="contact.html">Contact</a>
+               <a class="nav-link " href="contact.php">Contact</a>
              </li> -->
 
             <!-- <li class="nav-item">
@@ -328,7 +331,7 @@ if (isset($_POST['complete_registration'])) {
         <h1 class="text-center"> Player Registration </h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page"> Registration </li>
           </ol>
         </nav>
@@ -340,13 +343,13 @@ if (isset($_POST['complete_registration'])) {
     <!-- <div class="cart-sec-ban">
               <ul class="list-unstyled">
                  <li>
-                   <a href="cart.html" class="btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                   <a href="cart.php" class="btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                       <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                     </svg>
                    </a>
                  </li>
                  <li>
-                   <a href="wishlist.html" class="btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                   <a href="wishlist.php" class="btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                     </svg>
                    </a>
@@ -1070,7 +1073,7 @@ if (isset($_POST['complete_registration'])) {
     </div>
     <div class="offcanvas-body">
       <div class="head-contact d-none d-lg-block">
-        <a href="index.html" class="logo-side">
+        <a href="index.php" class="logo-side">
           <img src="images/logo.png" alt="logo">
         </a>
         <p class="mt-4"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
@@ -1094,36 +1097,36 @@ if (isset($_POST['complete_registration'])) {
       </div>
 
       <div class="head-contact d-block d-lg-none">
-        <a href="index.html" class="logo-side">
+        <a href="index.php" class="logo-side">
           <img src="images/logo.png" alt="logo">
         </a>
 
         <div class="mobile-menu-sec mt-3">
           <ul>
             <li class="active-m">
-              <a href="matches.html"> Matches </a>
+              <a href="matches.php"> Matches </a>
             </li>
             <li>
-              <a href="about.html"> The Club </a>
+              <a href="about.php"> The Club </a>
             </li>
 
             <li class="active-m">
-              <a href="schedule.html"> Schedule </a>
+              <a href="schedule.php"> Schedule </a>
             </li>
             <li>
-              <a href="news.html"> News </a>
+              <a href="news.php"> News </a>
             </li>
             <li>
-              <a href="players.html"> Players </a>
+              <a href="players.php"> Players </a>
             </li>
             <li>
-              <a href="media.html"> Media </a>
+              <a href="media.php"> Media </a>
             </li>
             <li>
-              <a href="shop.html"> Shop </a>
+              <a href="shop.php"> Shop </a>
             </li>
             <li>
-              <a href="contact.html"> Contact </a>
+              <a href="contact.php"> Contact </a>
             </li>
           </ul>
         </div>

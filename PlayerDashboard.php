@@ -2,17 +2,19 @@
 session_start();
 ob_start();
 
+require 'connection.php';
+
 
 $TeamRefNumber = $_SESSION['$teamRefNumber'];
 $userRefCode = $_SESSION['userRefCode'];
 if ($TeamRefNumber) {
     // Password does not match
-    $login_success = "Welcome to Yoshi Tournament.";
-    echo "<script>swal('Success!', 'Welcome to Yoshi Tournament.', 'success');</script>";
+    $login_success = "<script>swal('Success!', 'Welcome to Yoshi Tournament.', 'success');</script>";
+
 }
 // Fetching records from the database
 // Insert data into the database
-$pdo = new PDO('mysql:host=localhost;dbname=yoshi_tournament_db', 'root', '');
+
 $stmt = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `userRefNo` = :userRefCode");
 $stmt->execute(['userRefCode' => $userRefCode]);
 $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -110,7 +112,7 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </a>
                         <ul id="ddmenu_1" class="collapse show dropdown-nav">
                             <li>
-                                <a href="index.html" class="active"> main </a>
+                                <a href="index.php" class="active"> main </a>
                             </li>
                         </ul>
                     </li>
@@ -130,10 +132,10 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </a>
                         <ul id="ddmenu_2" class="collapse dropdown-nav">
                             <li>
-                                <a href="settings.html"> Settings </a>
+                                <a href="settings.php"> Settings </a>
                             </li>
                             <li>
-                                <a href="blank-page.html"> Blank Page </a>
+                                <a href="blank-page.php"> Blank Page </a>
                             </li>
                         </ul>
                     </li>
@@ -162,16 +164,16 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </a>
                         <ul id="ddmenu_4" class="collapse dropdown-nav">
                             <li>
-                                <a href="alerts.html"> Alerts </a>
+                                <a href="alerts.php"> Alerts </a>
                             </li>
                             <li>
-                                <a href="buttons.html"> Buttons </a>
+                                <a href="buttons.php"> Buttons </a>
                             </li>
                             <li>
-                                <a href="cards.html"> Cards </a>
+                                <a href="cards.php"> Cards </a>
                             </li>
                             <li>
-                                <a href="typography.html"> Typography </a>
+                                <a href="typography.php"> Typography </a>
                             </li>
                         </ul>
                     </li>
@@ -197,10 +199,10 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </a>
                         <ul id="ddmenu_55" class="collapse dropdown-nav">
                             <li>
-                                <a href="icons.html"> LineIcons </a>
+                                <a href="icons.php"> LineIcons </a>
                             </li>
                             <li>
-                                <a href="mdi-icons.html"> MDI Icons </a>
+                                <a href="mdi-icons.php"> MDI Icons </a>
                             </li>
                         </ul>
                     </li>
@@ -218,12 +220,12 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </a>
                         <ul id="ddmenu_5" class="collapse dropdown-nav">
                             <li>
-                                <a href="form-elements.html"> From Elements </a>
+                                <a href="form-elements.php"> From Elements </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="tables.html">
+                        <a href="tables.php">
                             <span class="icon">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -243,7 +245,7 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </span>
 
                     <li class="nav-item">
-                        <a href="notification.html">
+                        <a href="notification.php">
                             <span class="icon">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -1323,7 +1325,8 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <?php
 
-    echo $_SESSION['welcome'];
+    echo @$_SESSION['welcome'];
+    echo @$login_success;
 
     ?>
 
