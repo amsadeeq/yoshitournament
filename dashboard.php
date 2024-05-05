@@ -61,7 +61,7 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <!-- ======== sidebar-nav start =========== -->
   <aside class="sidebar-nav-wrapper">
     <div class="navbar-logo">
-      <a href="index.php" class="d-flex justify-content-center align-items-center">
+      <a href="dashboard.php" class="d-flex justify-content-center align-items-center">
         <img src="images/logo.png" alt="logo" class="yoshi_logo" />
 
       </a>
@@ -111,7 +111,7 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </a>
             <ul id="ddmenu_1" class="collapse show dropdown-nav">
               <li>
-                <a href="index.php" class="active"> main </a>
+                <a href="dashboard.php" class="active"> main </a>
               </li>
             </ul>
           </li>
