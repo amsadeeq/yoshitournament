@@ -118,7 +118,7 @@ if (isset($_POST['complete_registration'])) {
         $userRefNo = $_SESSION['userRefCode'];
 
         // Insert data into the database
-        $pdo = new PDO('mysql:host=localhost;dbname=yoshi_tournament_db', 'root', '');
+
         $stmt = $pdo->prepare("INSERT INTO `yoshi_players_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `address`, `team_name`, `player_position`, `jersy_number`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email, :address, :team_name, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo, :time_create, :date_create, :ip_address)");
 
         $stmt->bindParam(':userRefNo', $userRefCode);
