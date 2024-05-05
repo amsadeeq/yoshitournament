@@ -202,13 +202,13 @@ if (isset($_POST["complete_register"])) {
         $header .= 'Reply-To: no-reply@yoshitournament.com\r\n';
         $header .= 'CC: admin@yoshitournament.com\r\n';
         $subject = " Team Successfully Registered ";
-        $body = "Dear " . $firtname . "<br><br><br> Thank you for registering <b>" . $team_name . "</b> with Yoshi Tournament " . date("Y") . " Your Team Reference Number is : " . $TeamRefNumber . " Share it with your team players for registeration. Failure to do so will automatically disqualify your team from participation";
-        $body .= '<hr>';
-        $body .= '<h6>Your players are to used the reference link for registration</h6>';
-        $body .= '<p>Using <a href = "www.youshitournaments.com" style="color:blue;">Click Here</a> or visit www.yoshitournaments.com</p>';
-        $body .= '<br><h5><b>Sign: </b><br>Mr. Sadeeq <br>Admin  - yoshitournaments.com <br>Thank You</h5>';
-        $body .= '<br><br><br>';
-        $body .= '<p style="text-align:center;">ubifcs.com | Allright Reserved &copy; ' . date('Y') . ' - Yoshi Football Academy</p></div>';
+        $body = "Dear " . $firtname . "Thank you for registering" . $team_name . " with Yoshi Tournament " . date("Y") . " Your Team Reference Number is : " . $TeamRefNumber . " Share it with your team players for registeration. Failure to do so will automatically disqualify your team from participation";
+        $body .= '';
+        $body .= 'Your players are to used the reference link for registration';
+        $body .= 'visit www.yoshitournaments.com</p>';
+        $body .= 'Sign: Mr. Sadeeq Admin  - yoshitournaments.com Thank You';
+        $body .= '';
+        $body .= 'yoshifa.com | Allright Reserved' . date('Y') . ' - Yoshi Football Academy';
         //mail fuction
         mail($to, $subject, $body, $header);
 
