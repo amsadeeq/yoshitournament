@@ -620,7 +620,7 @@ if (isset($_POST['register'])) {
           <div class="slider slide-1">
 
             <div class="slider-content">
-              <h3> We are making changes </h3>
+              <h3> Welcome To Yoshi Football Academy </h3>
               <h2>WE ARE PROFESSIONAL
                 <span class="d-block"> FOOTBALL ACADEMY </span>
               </h2>
