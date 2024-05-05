@@ -768,7 +768,7 @@ if (isset($_POST["complete_register"])) {
                             <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Team logo
                               must be white background ] </p>
                             <!-- <legend>Team Logo</legend> -->
-                            <img style="height:20%;width: 50%;" class="my-select" id="teamImage">
+                            <img style="height:10%;width: 50%;" class="my-select" id="teamImage">
                             <input type="file" name="team_logo" onchange="onFileSelectedLogo(event);"
                               class="form-control wizard-required" style="border-radius: 10px 10px;"
                               accept="image/jpeg, image/png" required>
