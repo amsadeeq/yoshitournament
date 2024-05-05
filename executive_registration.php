@@ -488,16 +488,16 @@ if (isset($_POST["complete_register"])) {
                               <label>Passport<sup style="color: red !important;">*</sup></label>
                               <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Image size:
                                 300KB, jpg, jpeg, png ] </p>
-                              <img style="height:50%;width: 50%;" class="my-select" id="image">
+                              <img style="height:50%; width: 50%;" class="my-select" id="image">
                               <input type="file" name="passport" onchange="onFileSelected(event);"
                                 class="form-control wizard-required" style="border-radius: 10px 10px;"
                                 accept="image/jpeg, image/png" required>
-                              <div class="wizard-form-error"></div>
-                              <progress id="progressBar" value="0" max="100" style="display: none;"></progress>
+
                             </fieldset>
                           </div>
                         </div>
                       </div>
+
                       <div class="row">
                         <div class="col-lg-6">
                           <div class="form-group">
