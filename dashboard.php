@@ -20,6 +20,11 @@ $stmt->execute(['teamRefNumber' => $TeamRefNumber]);
 $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
+$stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
+$stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
+$players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -529,45 +534,80 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <?php
+                    // Displaying fetched records
+                    foreach ($players_record as $player_record) {
+                      // Assign values to variables
+                      $image_passport = $player_record['passport'];
+                      $image_logo = $player_record['team_logo'];
+                      $firstname = $player_record['firstname'];
+                      $surname = $player_record['surname'];
+                      $position = $player_record['user_position'];
+                      $dob = $player_record['dob'];
+                      $gender = $player_record['gender']; // Added missing column
+                      $height = $player_record['hieght']; // Corrected typo in column name
+                      $weight = $player_record['weight']; // Added missing column
+                      $country = $player_record['country'];
+                      $state = $player_record['state'];
+                      $city = $player_record['city'];
+                      $zipcode = $player_record['zipcode'];
+                      $phone = $player_record['phone'];
+                      $email = $player_record['email'];
+                      $address = $player_record['address'];
+                      $team_name = $player_record['team_name'];
+                      $player_position = $player_record['player_position']; // Added missing column
+                      $jersey_number = $player_record['jersy_number']; // Corrected typo in column name
+                      $team_country = $player_record['team_country'];
+                      $team_state = $player_record['team_state'];
+                      $team_city = $player_record['team_city'];
+                      $number_of_players = $player_record['number_of_players'];
+                      $team_address = $player_record['team_address'];
+                      $time_created = $player_record['time_created'];
+                      $date_created = $player_record['date_created'];
+                      $ip_address = $player_record['ip_address'];
+                      ?>
+                      <tr>
 
-                      <td>
-                        <div class="product">
-                          <div class="image">
-                            <img src="images/Yoshi Logo.png" alt="" />
+                        <td>
+                          <div class="product">
+                            <div class="image">
+                              <img src="images/Yoshi Logo.png" alt="" />
+                            </div>
+                            <na class="text-sm"><?php echo $firstname . " " . $surname; ?></na>
                           </div>
-                          <p class="text-sm">Abubakar Sadiq</p>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-sm">Defender</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">+2348167913802</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">abmusadeeq@gmail.com</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">29</p>
-                      </td>
-                      <td>
-                        <div class="action justify-content-end">
-                          <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="lni lni-more-alt"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
-                            <li class="dropdown-item">
-                              <a href="#0" class="text-gray">Remove</a>
-                            </li>
-                            <li class="dropdown-item">
-                              <a href="#0" class="text-gray">Edit</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
+                        </td>
+                        <td>
+                          <p class="text-sm"><?php echo $player_position; ?></p>
+                        </td>
+                        <td>
+                          <p class="text-sm"><?php echo $phone; ?></p>
+                        </td>
+                        <td>
+                          <p class="text-sm"><?php echo $email; ?></p>
+                        </td>
+                        <td>
+                          <p class="text-sm"><?php echo $dob; ?></p>
+                        </td>
+                        <td>
+                          <div class="action justify-content-end">
+                            <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              <i class="lni lni-more-alt"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                              <li class="dropdown-item">
+                                <a href="#0" class="text-gray">Remove</a>
+                              </li>
+                              <li class="dropdown-item">
+                                <a href="#0" class="text-gray">Edit</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <?php
+                    }
+                    ?>
 
                   </tbody>
                 </table>
