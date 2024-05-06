@@ -163,10 +163,10 @@ if (isset($_POST['complete_registration'])) {
         $message .= "Your Team Reference Number is: $TeamRefNumber \n\n";
         $message .= "Player Reference Number is: $userRefCode \n\n";
         $message .= "Your position: $position \n\n";
-        $message .= "Schedules for the matches will be send to you soon.\n";
+        $message .= "Schedules for the matches will be send to you soon.\n\n";
         $message .= "Visit www.yoshitournaments.com\n\n";
         $message .= "Sign: Mr. Sadeeq \n Admin - yoshitournaments.com\n\n";
-        $message .= "Yoshi Football Academy \n All Rights Reserved " . date('Y');
+        $message .= "Yoshi Football Academy www.yoshifa.com \n All Rights Reserved " . date('Y');
 
         // Set additional headers
         $headers = "From: no-reply@yoshitournament.com\r\n";
