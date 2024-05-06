@@ -180,12 +180,49 @@ if (isset($_POST['complete_registration'])) {
         header("Location: player_confirmation.php");
 
       } else {
+
         $image_size_error = "Please try uploading image less than 500kb";
-        echo $image_size_error;
+
+        // Define the notification message
+
+
+        // Generate the JavaScript code to trigger the notification
+        $size_error_notify = "
+        <script>
+            new Noty({
+                theme: 'metroui',
+                text: '$image_size_error',
+                type: 'error',
+                timeout: 1000
+                
+            }).show();
+        </script>
+        ";
+
+
+
       }
     } else {
+
       $image_error = "Image supported only .jpg, .jpeg, or .png";
-      echo $image_error;
+
+      // Define the notification message
+
+
+      // Generate the JavaScript code to trigger the notification
+      $extension_error_notify = "
+        <script>
+            new Noty({
+                theme: 'metroui',
+                text: '$image_error',
+                type: 'error',
+                timeout: 1000
+                
+            }).show();
+        </script>
+        ";
+
+
     }
 
 
@@ -1263,6 +1300,8 @@ if (isset($_POST['complete_registration'])) {
 
   <?php
   echo $_SESSION['welcome_message'];
+  echo $size_error_notify;
+  echo $extension_error_notify;
 
   ?>
 
