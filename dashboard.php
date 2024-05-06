@@ -609,7 +609,13 @@ $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
                     }
                     ?>
                     <?php if (empty($players_record)) {
-                      echo "<tr><td colspan='6'><center>No Records Found</center></td></tr>";
+                      echo "<tr><td colspan='6'><center>
+                      <lord-icon
+                      src='https://cdn.lordicon.com/vihyezfv.json'
+                      trigger='loop'
+                      delay='1000'
+                      style='width:200px;height:200px'>
+                  </lord-icon> No Records Found</center></td></tr>";
                     } ?>
 
                   </tbody>
@@ -810,6 +816,7 @@ $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
   <script src="assets/js/world-merc.js"></script>
   <script src="assets/js/polyfill.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
 
 
