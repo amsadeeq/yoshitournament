@@ -608,6 +608,9 @@ $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
                       <?php
                     }
                     ?>
+                    <?php if (empty($players_record)) {
+                      echo "<tr><td colspan='6'><center>No Records Found</center></td></tr>";
+                    } ?>
 
                   </tbody>
                 </table>
