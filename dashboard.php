@@ -888,23 +888,14 @@ foreach ($players_record as $player_record) {
     // Include the connection file
     require_once 'connection.php';
 
-    // SQL query to select player records
-    $sql = "SELECT `id`, `firstname`, `surname`, `player_position`, `phone`, `email`, `dob` FROM `yoshi_players_tbl`";
-
-    // Prepare the SQL statement
-    $stmt = $pdo->prepare($sql);
-
-    // Execute the query
-    $stmt->execute();
-
-    // Fetch all rows as an associative array
-    $playerRecords = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    $stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
+    $stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
+    $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
     // Return JSON response
     header('Content-Type: application/json');
 
     // Convert to JSON format and output
-    echo json_encode($playerRecords);
+    echo json_encode($players_record);
   }
   ?>
 
