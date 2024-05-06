@@ -541,6 +541,12 @@ foreach ($players_record as $player_record) {
                       <th></th>
                     </tr>
                   </thead>
+
+                  <tbody id="player-records-container">
+                    <!-- Player records will be inserted here dynamically -->
+                  </tbody>
+
+
                   <tbody>
                     <?php
                     // Displaying fetched records
@@ -825,6 +831,77 @@ foreach ($players_record as $player_record) {
   <script src="assets/js/polyfill.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+
+  <script>
+    // Function to fetch player records using AJAX
+    function fetchPlayerRecords() {
+      $.ajax({
+        url: 'executive_registration.php', // Use the same file for PHP processing
+        type: 'POST', // Send a POST request to execute PHP code
+        data: { action: 'fetch_players' }, // Send a parameter to indicate fetching players
+        success: function (data) {
+          // Parse the JSON response
+          var playerRecords = JSON.parse(data);
+
+          // Clear previous content
+          $('#player-records-container').empty();
+
+          // Loop through each player record
+          playerRecords.forEach(function (record) {
+            // Append player record HTML to the container
+            $('#player-records-container').append(`
+          <tr>
+            <td>${record.firstname} ${record.surname}</td>
+            <td>${record.player_position}</td>
+            <td>${record.phone}</td>
+            <td>${record.email}</td>
+            <td>${record.dob}</td>
+            <td>
+              <button class="remove-btn" data-id="${record.id}">Remove</button>
+              <button class="edit-btn" data-id="${record.id}">Edit</button>
+            </td>
+          </tr>
+        `);
+          });
+        },
+        error: function (xhr, status, error) {
+          console.error('Error fetching player records:', error);
+        }
+      });
+    }
+
+    // Call the function when the page loads
+    $(document).ready(function () {
+      fetchPlayerRecords();
+
+      // Fetch player records every 5 seconds
+      setInterval(fetchPlayerRecords, 5000);
+    });
+  </script>
+
+  <?php
+  // Check if action is set and equal to 'fetch_players'
+  if (isset($_POST['action']) && $_POST['action'] === 'fetch_players') {
+    // Include the connection file
+    require_once 'connection.php';
+
+    // SQL query to select player records
+    $sql = "SELECT `id`, `firstname`, `surname`, `player_position`, `phone`, `email`, `dob` FROM `yoshi_players_tbl`";
+
+    // Prepare the SQL statement
+    $stmt = $pdo->prepare($sql);
+
+    // Execute the query
+    $stmt->execute();
+
+    // Fetch all rows as an associative array
+    $playerRecords = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Convert to JSON format and output
+    echo json_encode($playerRecords);
+  }
+  ?>
 
 
 
