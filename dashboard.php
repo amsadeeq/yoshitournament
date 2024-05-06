@@ -614,7 +614,7 @@ $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
                       src='https://cdn.lordicon.com/vihyezfv.json'
                       trigger='loop'
                       delay='1000'
-                      style='width:200px;height:200px'>
+                      style='width:50px;height:50px'>
                   </lord-icon> No Records Found</center></td></tr>";
                     } ?>
 
