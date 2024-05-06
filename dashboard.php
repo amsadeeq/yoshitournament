@@ -571,7 +571,7 @@ $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
                         <td>
                           <div class="product">
                             <div class="image">
-                              <img src="images/Yoshi Logo.png" alt="" />
+                              <img src="<?php echo "players_Images/" . $image_passport; ?>" alt="" />
                             </div>
                             <na class="text-sm"><?php echo $firstname . " " . $surname; ?></na>
                           </div>
