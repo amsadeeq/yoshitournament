@@ -833,6 +833,8 @@ foreach ($players_record as $player_record) {
   <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <script>
     // Function to fetch player records using AJAX
     function fetchPlayerRecords() {
