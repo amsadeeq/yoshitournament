@@ -152,6 +152,30 @@ if (isset($_POST['complete_registration'])) {
         $stmt->bindParam(':ip_address', $ipaddress);
         $stmt->execute();
 
+        ################################################
+        // Set the email subject
+        $subject = "Registration Successful";
+
+        // Set the email message
+        $message = "Dear $firstname,\n\n";
+        $message .= "Thank you for registering with Yoshi Tournament " . date("Y") . ".\n\n";
+        $message .= "Your Team Reference Number is: $TeamRefNumber \n\n";
+        $message .= "Player Reference Number is: $userRefCode \n\n";
+        $message .= "Your position: $position \n\n";
+        $message .= "Schedules for the matches will be send to you soon.\n";
+        $message .= "Visit www.yoshitournaments.com\n\n";
+        $message .= "Sign: Mr. Sadeeq \n Admin - yoshitournaments.com\n\n";
+        $message .= "Yoshi Football Academy \n All Rights Reserved " . date('Y');
+
+        // Set additional headers
+        $headers = "From: no-reply@yoshitournament.com\r\n";
+        $headers .= "Reply-To: support@yoshitournament.com\r\n";
+        $headers .= "CC: yoshitournaments@gmail.com\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
+
+        // Send the email
+        $mail_sent = mail($to, $subject, $message, $headers);
+
         // Redirect user to the dashboard
         header("Location: player_confirmation.php");
 
@@ -592,10 +616,10 @@ if (isset($_POST['complete_registration'])) {
 
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label> Positon<sup style="color: red !important;">*</sup> </label> </label>
+                              <label> Position<sup style="color: red !important;">*</sup> </label> </label>
                               <select class="form-select" name="position">
                                 <option selected> Select Position </option>
-                                <option value="Goalkipper">Goalkipper</option>
+                                <option value="Goalkeeper">Goalkeeper</option>
                                 <option value="Sweeper keeper">Sweeper keeper</option>
                                 <option value="Defender"> Defender</option>
                                 <option value="Defender (Centre-back)">Defender (Centre-back)</option>
@@ -605,13 +629,14 @@ if (isset($_POST['complete_registration'])) {
                                 <option value="Defender (Wing-back)"> Defender (Wing-back)</option>
                                 <option value="Defender (Right Wing-back)"> Defender (Right Wing-back)</option>
                                 <option value="Wing Back">Wing Back</option>
-                                <option value="Midfinder"> Midfinder</option>
-                                <option value="Midfinder (Central Midfielder)"> Midfinder (Central Midfielder)</option>
-                                <option value="Midfinder (Defensive Midfielder)"> Midfinder (Defensive Midfielder)
+                                <option value="Midfielder"> Midfielder</option>
+                                <option value="Midfielder (Central Midfielder)"> Midfielder (Central Midfielder)
                                 </option>
-                                <option value="Midfinder (Attacking Midfielder)"> Midfinder (Attacking Midfielder)
+                                <option value="Midfielder (Defensive Midfielder)"> Midfielder (Defensive Midfielder)
                                 </option>
-                                <option value="Midfinder (Wide Midfielder)"> Midfinder (Wide Midfielder)</option>
+                                <option value="Midfielder (Attacking Midfielder)"> Midfielder (Attacking Midfielder)
+                                </option>
+                                <option value="Midfielder (Wide Midfielder)"> Midfielder (Wide Midfielder)</option>
                                 <option value="Forward"> Forward</option>
                                 <option value="Forward (Second striker)"> Forward (Second striker)</option>
                                 <option value="Forward (Centre forward)"> Forward (Centre forward)</option>
