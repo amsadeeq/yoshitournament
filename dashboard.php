@@ -1373,7 +1373,7 @@ $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
     function copyToClipboard() {
       var text = document.getElementById("textToCopy").innerText;
       var message = "Please use this as our team reference number to create an account with https://yoshitournaments.com:\n\n*Team Reference Number:*\n" + text;
-      navigator.clipboard.writeText(message)
+      navigator.clipboard.writeText(text)
         .then(() => {
           new Noty({
             theme: 'metroui',
