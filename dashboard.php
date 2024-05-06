@@ -774,11 +774,13 @@ foreach ($players_record as $player_record) {
     $stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
     $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
     // Return JSON response
-    echo $players_record;
+  
     header('Content-Type: application/json');
 
     // Convert to JSON format and output
     echo json_encode($players_record);
+  } else {
+    echo "Error";
   }
   ?>
 
