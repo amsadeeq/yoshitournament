@@ -153,6 +153,7 @@ if (isset($_POST['complete_registration'])) {
         $stmt->execute();
 
         ################################################
+        $to = $email;
         // Set the email subject
         $subject = "Registration Successful";
 
