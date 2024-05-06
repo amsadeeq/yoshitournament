@@ -837,7 +837,7 @@ foreach ($players_record as $player_record) {
     // Function to fetch player records using AJAX
     function fetchPlayerRecords() {
       $.ajax({
-        url: 'executive_registration.php', // Use the same file for PHP processing
+        url: 'dashboard.php', // Use the same file for PHP processing
         type: 'POST', // Send a POST request to execute PHP code
         data: { action: 'fetch_players' }, // Send a parameter to indicate fetching players
         success: function (data) {
