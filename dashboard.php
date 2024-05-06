@@ -24,6 +24,14 @@ $stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `TeamRefNu
 $stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
 $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
 
+$no_of_players = 0;
+
+// Assuming $players_record is an array containing player records
+foreach ($players_record as $player_record) {
+    // Increment the counter for each player record
+    $no_of_players++;
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -444,7 +452,7 @@ $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="content">
                   <h6 class="mb-10">Registered Players</h6>
-                  <h3 class="text-bold mb-10">0</h3>
+                  <h3 class="text-bold mb-10"><?php echo $no_of_players; ?></h3>
 
                 </div>
               </div>
