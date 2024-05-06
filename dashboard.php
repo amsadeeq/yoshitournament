@@ -615,7 +615,7 @@ $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
                       trigger='loop'
                       delay='1000'
                       style='width:30px;height:30px'>
-                  </lord-icon> &nbsp;No Records Found</center></td></tr>";
+                  </lord-icon> &nbsp;No record found</center></td></tr>";
                     } ?>
 
                   </tbody>
