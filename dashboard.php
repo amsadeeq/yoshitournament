@@ -28,8 +28,8 @@ $no_of_players = 0;
 
 // Assuming $players_record is an array containing player records
 foreach ($players_record as $player_record) {
-    // Increment the counter for each player record
-    $no_of_players++;
+  // Increment the counter for each player record
+  $no_of_players++;
 }
 
 

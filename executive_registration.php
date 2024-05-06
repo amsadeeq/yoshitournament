@@ -199,21 +199,46 @@ if (isset($_POST["complete_register"])) {
 
         ################################################
         //sending email including user details "email", "phone", "account" and access "PIN"
-        $to = $email;
+        // $to = $email;
         //header with html version
-        $header = 'from: yoshitournament.com <no-reply@yoshitournament.com>\r\n';
-        $header .= 'Reply-To: no-reply@yoshitournament.com\r\n';
-        $header .= 'CC: admin@yoshitournament.com\r\n';
-        $subject = " Team Successfully Registered ";
-        $body = "Dear " . $firstname . "Thank you for registering" . $team_name . " with Yoshi Tournament " . date("Y") . " Your Team Reference Number is : " . $TeamRefNumber . " Share it with your team players for registeration. Failure to do so will automatically disqualify your team from participation";
-        $body .= '';
-        $body .= 'Your players are to used the reference link for registration';
-        $body .= 'visit www.yoshitournaments.com</p>';
-        $body .= 'Sign: Mr. Sadeeq Admin  - yoshitournaments.com Thank You';
-        $body .= '';
-        $body .= 'yoshifa.com | Allright Reserved' . date('Y') . ' - Yoshi Football Academy';
+        // $header = 'from: yoshitournament.com <no-reply@yoshitournament.com>\r\n';
+        // $header .= 'Reply-To: no-reply@yoshitournament.com\r\n';
+        // $header .= 'CC: admin@yoshitournament.com\r\n';
+        // $subject = " Team Successfully Registered ";
+        // $body = "Dear " . $firstname . "Thank you for registering" . $team_name . " with Yoshi Tournament " . date("Y") . " Your Team Reference Number is : " . $TeamRefNumber . " Share it with your team players for registration. Failure to do so will automatically disqualify your team from participation";
+        // $body .= '';
+        // $body .= 'Your players are to used the reference link for registration';
+        // $body .= 'visit www.yoshitournaments.com</p>';
+        // $body .= 'Sign: Mr. Sadeeq Admin  - yoshitournaments.com Thank You';
+        // $body .= '';
+        // $body .= 'yoshifa.com | Allright Reserved' . date('Y') . ' - Yoshi Football Academy';
         //mail fuction
-        mail($to, $subject, $body, $header);
+        // mail($to, $subject, $body, $header);
+
+        ################################################
+        $to = $email;
+        // Set the email subject
+        $subject = "Team Successfully Registered";
+
+        // Set the email message
+        $message = "Dear $firstname,\n\n";
+        $message .= "Thank you for registering" . $team_name . " with Yoshi Tournament " . date("Y") . ".\n\n";
+        $message .= "Your Team Reference Number is: $TeamRefNumber \n\n";
+        $message .= "Your position: $position \n\n";
+        $message .= "Share it with your team players for registration. Failure to do so will automatically disqualify your team from participation \n\n";
+        $message .= "Schedules for the matches will be send to you soon.\n\n";
+        $message .= "Visit www.yoshitournaments.com\n\n";
+        $message .= "Sign: Mr. Sadeeq \n Admin - yoshitournaments.com\n\n";
+        $message .= "Yoshi Football Academy www.yoshifa.com \n All Rights Reserved " . date('Y');
+
+        // Set additional headers
+        $headers = "From: no-reply@yoshitournament.com\r\n";
+        $headers .= "Reply-To: support@yoshitournament.com\r\n";
+        $headers .= "CC: yoshitournaments@gmail.com\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
+
+        // Send the email
+        $mail_sent = mail($to, $subject, $message, $headers);
 
         // Redirect user to the dashboard
         header("Location: confirmation.php");
