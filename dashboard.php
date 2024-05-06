@@ -900,6 +900,9 @@ foreach ($players_record as $player_record) {
     // Fetch all rows as an associative array
     $playerRecords = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // Return JSON response
+    header('Content-Type: application/json');
+
     // Convert to JSON format and output
     echo json_encode($playerRecords);
   }
