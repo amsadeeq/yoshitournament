@@ -542,9 +542,7 @@ foreach ($players_record as $player_record) {
                     </tr>
                   </thead>
 
-                  <tbody id="player-records-container">
-                    <!-- Player records will be inserted here dynamically -->
-                  </tbody>
+
 
 
                   <tbody>
