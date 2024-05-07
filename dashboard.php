@@ -833,7 +833,7 @@ foreach ($players_record as $player_record) {
   <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
 
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
     // Function to fetch player records using AJAX
@@ -880,23 +880,25 @@ foreach ($players_record as $player_record) {
       // Fetch player records every 5 seconds
       setInterval(fetchPlayerRecords, 5000);
     });
-  </script> -->
+  </script>
 
   <?php
   // Check if action is set and equal to 'fetch_players'
-  // if (isset($_POST['action']) && $_POST['action'] === 'fetch_players') {
-  //   // Include the connection file
-  //   require_once 'connection.php';
-  
-  //   $stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
-  //   $stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
-  //   $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
-  //   // Return JSON response
-  //   header('Content-Type: application/json');
-  
-  //   // Convert to JSON format and output
-  //   echo json_encode($players_record);
-  // }
+  if (isset($_POST['action']) && $_POST['action'] === 'fetch_players') {
+    // Include the connection file
+    require_once 'connection.php';
+
+    $stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
+    $stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
+    $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
+    // Return JSON response
+    header('Content-Type: application/json');
+
+    // Convert to JSON format and output
+    echo json_encode($players_record);
+  } else {
+    echo "Error part";
+  }
   ?>
 
 
