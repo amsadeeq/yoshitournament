@@ -93,7 +93,7 @@ if (isset($_POST['complete_registration'])) {
     // Set session variables based on user's role
     //$_SESSION['userRefNo'] = $user['userRefNo'];
 
-    $_SESSION['$teamRefNumber'] = $refNumber; //need to remove $ sign
+    $_SESSION['teamRefNumber'] = $refNumber; //need to remove $ sign
     $_SESSION['welcome_message'] = $welcome_notify;
 
     // Redirect to player_registration.php

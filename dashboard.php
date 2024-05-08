@@ -128,7 +128,7 @@ foreach ($players_record as $player_record) {
               </li>
             </ul>
           </li>
-          <li class="nav-item nav-item-has-children">
+          <!-- <li class="nav-item nav-item-has-children">
             <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_2" aria-controls="ddmenu_2"
               aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon">
@@ -154,8 +154,8 @@ foreach ($players_record as $player_record) {
 
           <span class="divider">
             <hr />
-          </span>
-          <li class="nav-item nav-item-has-children">
+          </span> -->
+          <!-- <li class="nav-item nav-item-has-children">
             <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_4" aria-controls="ddmenu_4"
               aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon">
@@ -246,7 +246,7 @@ foreach ($players_record as $player_record) {
               </span>
               <span class="text">Tables</span>
             </a>
-          </li>
+          </li> -->
           <span class="divider">
             <hr />
           </span>
@@ -550,6 +550,8 @@ foreach ($players_record as $player_record) {
                     // Displaying fetched records
                     foreach ($players_record as $player_record) {
                       // Assign values to variables
+                      $user_id = $player_record['id'];
+                      $userRefNo = $player_record['userRefNo'];
                       $image_passport = $player_record['passport'];
                       $image_logo = $player_record['team_logo'];
                       $firstname = $player_record['firstname'];
@@ -606,12 +608,19 @@ foreach ($players_record as $player_record) {
                               aria-expanded="false">
                               <i class="lni lni-more-alt"></i>
                             </button>
+                            <!-- HTML Dropdown Menu -->
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
                               <li class="dropdown-item">
-                                <a href="#0" class="text-gray">Remove</a>
+                                <a href="#" class="text-gray view-record"
+                                  data-user-id="<?php echo $userRefNo; ?>">View</a>
                               </li>
                               <li class="dropdown-item">
-                                <a href="#0" class="text-gray">Edit</a>
+                                <a href="#" class="text-gray edit-record"
+                                  data-user-id="<?php echo $userRefNo; ?>">Edit</a>
+                              </li>
+                              <li class="dropdown-item">
+                                <a href="#" class="text-gray delete-record"
+                                  data-user-id="<?php echo $userRefNo; ?>">Remove</a>
                               </li>
                             </ul>
                           </div>
@@ -639,6 +648,11 @@ foreach ($players_record as $player_record) {
           <!-- End Col -->
         </div>
         <!-- End Row -->
+
+        <!-- View/Edit Record Modal -->
+        <div class="modal" id="recordModal">
+          <!-- Modal content goes here -->
+        </div>
 
         <div class="row">
 
@@ -832,6 +846,54 @@ foreach ($players_record as $player_record) {
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // View Record
+      $('.view-record').click(function (e) {
+        e.preventDefault();
+        var userId = $(this).data('user-id');
+        $.ajax({
+          url: 'view_player_record.php',
+          type: 'POST',
+          data: { userId: userId },
+          success: function (response) {
+            $('#recordModal').html(response).modal('show');
+          }
+        });
+      });
+
+      // Edit Record
+      $('.edit-record').click(function (e) {
+        e.preventDefault();
+        var userId = $(this).data('user-id');
+        $.ajax({
+          url: 'edit_record.php',
+          type: 'POST',
+          data: { userId: userId },
+          success: function (response) {
+            $('#recordModal').html(response).modal('show');
+          }
+        });
+      });
+
+      // Delete Record
+      $('.delete-record').click(function (e) {
+        e.preventDefault();
+        var userId = $(this).data('user-id');
+        if (confirm('Are you sure you want to delete this record?')) {
+          $.ajax({
+            url: 'delete_record.php',
+            type: 'POST',
+            data: { userId: userId },
+            success: function (response) {
+              // Handle success response, e.g., refresh page
+            }
+          });
+        }
+      });
+    });
+  </script>
 
 
 

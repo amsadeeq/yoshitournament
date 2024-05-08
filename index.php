@@ -154,11 +154,16 @@ if (isset($_POST['login'])) {
         header("Location: dashboard.php");
 
       } else {
+        // Fetch user information from yoshi_executive_tbl based on userRefNo
+        $stmt = $pdo->prepare("SELECT * FROM yoshi_players_tbl WHERE userRefNo = :userRefNo");
+        $stmt->bindParam(':userRefNo', $user['userRefNo']);
+        $stmt->execute();
+        $player_details = $stmt->fetch(PDO::FETCH_ASSOC);
         // User is a Player
         $_SESSION['userRefNo'] = $user['userRefNo'];
         $_SESSION['user_email'] = $user['user_email'];
         $_SESSION['user_position'] = $user['user_position'];
-        //$_SESSION['teamRefNumber'] = $user['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
+        $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
         // Insert login log
         $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
         VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
@@ -166,14 +171,14 @@ if (isset($_POST['login'])) {
           ':userRefNo' => $user['userRefNo'],
           ':user_email' => $user['user_email'],
           ':user_position' => $user['user_position'],
-          ':TeamRefNumber' => $user['TeamRefNumber'], // Adjust accordingly if TeamRefNumber is not directly available
+          ':TeamRefNumber' => $player_details['TeamRefNumber'], // Adjust accordingly if TeamRefNumber is not directly available
           ':device_used' => $device,
           ':browser_used' => $user_agent,
           ':ip_address' => $ip_address,
           ':login_status' => $login_status,
           ':password_used' => $password
         ]);
-        header("Location: player_dashboard.php");
+        header("Location: playerDashboard.php");
 
       }
     } else {

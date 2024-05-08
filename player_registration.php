@@ -6,7 +6,7 @@ ob_start();
 // Connect to the database
 require 'connection.php';
 
-$TeamRefNumber = $_SESSION['$teamRefNumber']; //need to remove $ sign
+$TeamRefNumber = $_SESSION['teamRefNumber']; //need to remove $ sign
 
 
 

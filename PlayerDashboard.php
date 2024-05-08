@@ -5,8 +5,8 @@ ob_start();
 require 'connection.php';
 
 
-$TeamRefNumber = $_SESSION['$teamRefNumber'];
-$userRefCode = $_SESSION['userRefCode'];
+$TeamRefNumber = $_SESSION['teamRefNumber'];
+$userRefCode = $_SESSION['userRefNo'];
 if ($TeamRefNumber) {
     // Password does not match
     $login_success = "<script>swal('Success!', 'Welcome to Yoshi Tournament.', 'success');</script>";
@@ -17,7 +17,20 @@ if ($TeamRefNumber) {
 
 $stmt = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `userRefNo` = :userRefCode");
 $stmt->execute(['userRefCode' => $userRefCode]);
-$executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$player_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+$stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
+$stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
+$players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
+
+$no_of_players = 0;
+
+// Assuming $players_record is an array containing player records
+foreach ($players_record as $player_record) {
+    // Increment the counter for each player record
+    $no_of_players++;
+}
 
 
 ?>
@@ -70,28 +83,28 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php
 
         // Displaying fetched records
-        foreach ($executives as $executive) {
-            $image_passport = $executive['passport'];
-            $image_logo = $executive['team_logo'];
-            $name = $executive['firstname'];
-            $position = $executive['user_position'];
-            $dob = $executive['dob'];
-            $country = $executive['country'];
-            $state = $executive['state'];
-            $city = $executive['city'];
-            $zipcode = $executive['zipcode'];
-            $phone = $executive['phone'];
-            $email = $executive['email'];
-            $address = $executive['address'];
-            $team_name = $executive['team_name'];
-            $team_country = $executive['team_country'];
-            $team_state = $executive['team_state'];
-            $team_city = $executive['team_city'];
-            $number_of_players = $executive['number_of_players'];
-            $team_address = $executive['team_address'];
-            $time_created = $executive['time_created'];
-            $date_created = $executive['date_created'];
-            $ip_address = $executive['ip_address'];
+        foreach ($player_details as $player_detail) {
+            $image_passport = $player_detail['passport'];
+            $image_logo = $player_detail['team_logo'];
+            $name = $player_detail['firstname'];
+            $position = $player_detail['user_position'];
+            $dob = $player_detail['dob'];
+            $country = $player_detail['country'];
+            $state = $player_detail['state'];
+            $city = $player_detail['city'];
+            $zipcode = $player_detail['zipcode'];
+            $phone = $player_detail['phone'];
+            $email = $player_detail['email'];
+            $address = $player_detail['address'];
+            $team_name = $player_detail['team_name'];
+            $team_country = $player_detail['team_country'];
+            $team_state = $player_detail['team_state'];
+            $team_city = $player_detail['team_city'];
+            $number_of_players = $player_detail['number_of_players'];
+            $team_address = $player_detail['team_address'];
+            $time_created = $player_detail['time_created'];
+            $date_created = $player_detail['date_created'];
+            $ip_address = $player_detail['ip_address'];
             ?>
 
             <nav class="sidebar-nav">
@@ -413,9 +426,12 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <div class="title">
+
                                     <h2> <img class="mx-auto next_match_logo"
                                             src="<?php echo "team_logo/" . $image_logo; ?>"
                                             alt="<?php echo $team_name . "Passport Port"; ?>">&nbsp;&nbsp;<?php echo $team_name; ?>
+
+
                                     </h2>
 
                                 </div>
@@ -449,7 +465,7 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 </div>
                                 <div class="content">
                                     <h6 class="mb-10">Registered Players</h6>
-                                    <h3 class="text-bold mb-10">0</h3>
+                                    <h3 class="text-bold mb-10"><?php echo $no_of_players; ?></h3>
 
                                 </div>
                             </div>
@@ -476,7 +492,7 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="content">
                                     <h6 class="mb-25">Reference Number</h6>
                                     <h3 class="text-bold mb-10" id="textToCopy">
-                                        <?php echo $_SESSION['$teamRefNumber']; ?>
+                                        <?php echo $_SESSION['teamRefNumber']; ?>
                                     </h3>
 
                                 </div>
@@ -539,46 +555,91 @@ $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <?php
+                                        // Displaying fetched records
+                                        foreach ($players_record as $player_record) {
+                                            // Assign values to variables
+                                            $image_passport = $player_record['passport'];
+                                            $image_logo = $player_record['team_logo'];
+                                            $firstname = $player_record['firstname'];
+                                            $surname = $player_record['surname'];
+                                            $position = $player_record['user_position'];
+                                            $dob = $player_record['dob'];
+                                            $gender = $player_record['gender']; // Added missing column
+                                            $height = $player_record['hieght']; // Corrected typo in column name
+                                            $weight = $player_record['weight']; // Added missing column
+                                            $country = $player_record['country'];
+                                            $state = $player_record['state'];
+                                            $city = $player_record['city'];
+                                            $zipcode = $player_record['zipcode'];
+                                            $phone = $player_record['phone'];
+                                            $email = $player_record['email'];
+                                            $address = $player_record['address'];
+                                            $team_name = $player_record['team_name'];
+                                            $player_position = $player_record['player_position']; // Added missing column
+                                            $jersey_number = $player_record['jersy_number']; // Corrected typo in column name
+                                            $team_country = $player_record['team_country'];
+                                            $team_state = $player_record['team_state'];
+                                            $team_city = $player_record['team_city'];
+                                            $number_of_players = $player_record['number_of_players'];
+                                            $team_address = $player_record['team_address'];
+                                            $time_created = $player_record['time_created'];
+                                            $date_created = $player_record['date_created'];
+                                            $ip_address = $player_record['ip_address'];
+                                            ?>
+                                            <tr>
 
-                                            <td>
-                                                <div class="product">
-                                                    <div class="image">
-                                                        <img src="images/Yoshi Logo.png" alt="" />
+                                                <td>
+                                                    <div class="product">
+                                                        <div class="image">
+                                                            <img src="<?php echo "players_Images/" . $image_passport; ?>"
+                                                                alt="" />
+                                                        </div>
+                                                        <na class="text-sm"><?php echo $firstname . " " . $surname; ?></na>
                                                     </div>
-                                                    <p class="text-sm">Abubakar Sadiq</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-sm">Defender</p>
-                                            </td>
-                                            <td>
-                                                <p class="text-sm">+2348167913802</p>
-                                            </td>
-                                            <td>
-                                                <p class="text-sm">abmusadeeq@gmail.com</p>
-                                            </td>
-                                            <td>
-                                                <p class="text-sm">29</p>
-                                            </td>
-                                            <td>
-                                                <div class="action justify-content-end">
-                                                    <button class="more-btn ml-10 dropdown-toggle" id="moreAction1"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="lni lni-more-alt"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                        aria-labelledby="moreAction1">
-                                                        <li class="dropdown-item">
-                                                            <a href="#0" class="text-gray">Remove</a>
-                                                        </li>
-                                                        <li class="dropdown-item">
-                                                            <a href="#0" class="text-gray">Edit</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                                <td>
+                                                    <p class="text-sm"><?php echo $player_position; ?></p>
+                                                </td>
+                                                <td>
+                                                    <p class="text-sm"><?php echo $phone; ?></p>
+                                                </td>
+                                                <td>
+                                                    <p class="text-sm"><?php echo $email; ?></p>
+                                                </td>
+                                                <td>
+                                                    <p class="text-sm"><?php echo $dob; ?></p>
+                                                </td>
+                                                <td>
+                                                    <div class="action justify-content-end">
+                                                        <button class="more-btn ml-10 dropdown-toggle" id="moreAction1"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="lni lni-more-alt"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end"
+                                                            aria-labelledby="moreAction1">
+                                                            <li class="dropdown-item">
+                                                                <a href="#0" class="text-gray">Remove</a>
+                                                            </li>
+                                                            <li class="dropdown-item">
+                                                                <a href="#0" class="text-gray">Edit</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
+                                        <?php if (empty($players_record)) {
+                                            echo "<tr><td colspan='6'><center>
+                                                    <lord-icon
+                                                    src='https://cdn.lordicon.com/vihyezfv.json'
+                                                    trigger='loop'
+                                                    delay='1000'
+                                                    style='width:30px;height:30px'>
+                                                </lord-icon> &nbsp;No record found</center></td></tr>";
+                                        } ?>
 
                                     </tbody>
                                 </table>
