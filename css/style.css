@@ -3714,3 +3714,7 @@ fieldset.rating.star > label:before {
     /* Remove shadow effect */
   }
 }
+
+.player_view_passport {
+  width: 50px !important;
+}
