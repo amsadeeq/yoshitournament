@@ -1,7 +1,13 @@
 <?php
 
+
+//####### Importing database connections and EngineFile
+
+require 'connection.php';
+
+
 if (isset($_GET['logout']) && $_GET['logout'] == 'true') {
-  echo <<<HTML
+  $logout_message = "
   <script>
       new Noty({
           theme: 'metroui',
@@ -9,8 +15,7 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'true') {
           type: 'success',
           timeout: 2000 // 2 seconds
       }).show();
-  </script>
-HTML;
+  </script>";
 }
 
 
@@ -34,9 +39,7 @@ if (session_status() === PHP_SESSION_ACTIVE) {
 
 
 
-//####### Importing database connections and EngineFile
 
-require 'connection.php';
 
 // require 'classes/dbconnection.php';
 // require_once 'classes/yoshiDatabaseConn.php';//creating coonection to the database ubifcs_database
@@ -137,7 +140,7 @@ if (isset($_POST['login'])) {
         // User is a Manager or Coach
         $_SESSION['teamRefNumber'] = $executive['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
         // Insert login log
-        $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+        $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
         VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
         $stmt->execute([
           ':userRefNo' => $user['userRefNo'],
@@ -165,7 +168,7 @@ if (isset($_POST['login'])) {
         $_SESSION['user_position'] = $user['user_position'];
         $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
         // Insert login log
-        $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+        $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
         VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
         $stmt->execute([
           ':userRefNo' => $user['userRefNo'],
@@ -208,7 +211,7 @@ if (isset($_POST['login'])) {
       // Echo the JavaScript code
       echo $login_error_notify;
       // Insert login log
-      $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+      $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
 VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
       $stmt->execute([
         ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
@@ -250,7 +253,7 @@ VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(
     // Echo the JavaScript code
     echo $error_notify;
     // Insert login log
-    $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login-time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+    $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
 VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
     $stmt->execute([
       ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
@@ -1585,10 +1588,12 @@ if (isset($_POST['register'])) {
   <?php
 
   // Echo the JavaScript code
-  echo @$login_error_notify;
+  echo $login_error_notify;
 
   // Echo the JavaScript code
-  echo @$error_notify;
+  echo $error_notify;
+
+  echo $logout_message;
 
   ?>
 
