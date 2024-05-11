@@ -94,7 +94,7 @@ if (isset($_POST['login'])) {
     // User is authenticated
 
     // User found, verify password
-    if (password_verify($password, $user['user_password'])) {
+    if ($user['user_password'] == $password) {
 
 
       $welcome_message = "Welcome  " . $user['user_position'];
