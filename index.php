@@ -97,9 +97,9 @@ if (isset($_POST['login'])) {
     if ($user['user_password'] == $password) {
 
 
-      $welcome_message = "Welcome  " . $user['user_position'];
-      //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
       // Define the notification message
+      $welcome_message = "Welcome  " . $user['user_position'];
+
 
 
       // Generate the JavaScript code to trigger the notification
@@ -132,11 +132,12 @@ if (isset($_POST['login'])) {
         $stmt->bindParam(':userRefNo', $user['userRefNo']);
         $stmt->execute();
         $executive = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
-
         // User is a Manager or Coach
-        $_SESSION['teamRefNumber'] = $executive['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
+        $_SESSION['teamRefNumber'] = $executive['TeamRefNumber'];
+
+        header("Location: dashboard.php");
+
+
         // Insert login log
         // $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
         // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
@@ -152,7 +153,7 @@ if (isset($_POST['login'])) {
         //   ':password_used' => $password
         // ]);
 
-        header("Location: dashboard.php");
+
 
       } else {
         // Fetch user information from yoshi_executive_tbl based on userRefNo
@@ -161,10 +162,11 @@ if (isset($_POST['login'])) {
         $stmt->execute();
         $player_details = $stmt->fetch(PDO::FETCH_ASSOC);
         // User is a Player
-        $_SESSION['userRefNo'] = $user['userRefNo'];
-        $_SESSION['user_email'] = $user['user_email'];
-        $_SESSION['user_position'] = $user['user_position'];
-        $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
+        $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
+
+        header("Location: playerDashboard.php");
+
+
         // Insert login log
         // $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
         // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
@@ -179,14 +181,14 @@ if (isset($_POST['login'])) {
         //   ':login_status' => $login_status,
         //   ':password_used' => $password
         // ]);
-        header("Location: playerDashboard.php");
+
 
       }
     } else {
       // Password does not match
-      $login_error_message = "Invalid email or password.";
-      //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
-      // Define the notification message
+      $login_error_message = "Invalid email or password."; // Define the notification message
+
+
 
 
       // Generate the JavaScript code to trigger the notification
@@ -206,8 +208,9 @@ if (isset($_POST['login'])) {
         </script>
         ";
 
-      // Echo the JavaScript code
-      echo $login_error_notify;
+
+
+
       // Insert login log
 //       $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
 // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
@@ -224,10 +227,10 @@ if (isset($_POST['login'])) {
 //       ]);
     }
   } else {
-    // Define the notification message
+
     // Password does not match
-    $login_error_message = "Invalid email or password.";
-    $error_message = "Invalid email or password.";
+
+    $error_message = "Invalid email or password."; // Define the notification message
     // Set login status to 'failed'
     $login_status = 'failed';
 
@@ -248,8 +251,7 @@ if (isset($_POST['login'])) {
         </script>
         ";
 
-    // Echo the JavaScript code
-    echo $error_notify;
+
     // Insert login log
 //     $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
 // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
