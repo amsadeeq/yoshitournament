@@ -140,19 +140,19 @@ if (isset($_POST['login'])) {
         // User is a Manager or Coach
         $_SESSION['teamRefNumber'] = $executive['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
         // Insert login log
-        $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
-        VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
-        $stmt->execute([
-          ':userRefNo' => $user['userRefNo'],
-          ':user_email' => $user['user_email'],
-          ':user_position' => $user['user_position'],
-          ':TeamRefNumber' => $executive['TeamRefNumber'],
-          ':device_used' => $device,
-          ':browser_used' => $user_agent,
-          ':ip_address' => $ip_address,
-          ':login_status' => $login_status,
-          ':password_used' => $password
-        ]);
+        // $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+        // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+        // $stmt->execute([
+        //   ':userRefNo' => $user['userRefNo'],
+        //   ':user_email' => $user['user_email'],
+        //   ':user_position' => $user['user_position'],
+        //   ':TeamRefNumber' => $executive['TeamRefNumber'],
+        //   ':device_used' => $device,
+        //   ':browser_used' => $user_agent,
+        //   ':ip_address' => $ip_address,
+        //   ':login_status' => $login_status,
+        //   ':password_used' => $password
+        // ]);
 
         header("Location: dashboard.php");
 
@@ -168,19 +168,19 @@ if (isset($_POST['login'])) {
         $_SESSION['user_position'] = $user['user_position'];
         $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber']; // Assuming TeamRefNumber is available in yoshi_signup_tbl
         // Insert login log
-        $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
-        VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
-        $stmt->execute([
-          ':userRefNo' => $user['userRefNo'],
-          ':user_email' => $user['user_email'],
-          ':user_position' => $user['user_position'],
-          ':TeamRefNumber' => $player_details['TeamRefNumber'], // Adjust accordingly if TeamRefNumber is not directly available
-          ':device_used' => $device,
-          ':browser_used' => $user_agent,
-          ':ip_address' => $ip_address,
-          ':login_status' => $login_status,
-          ':password_used' => $password
-        ]);
+        // $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+        // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+        // $stmt->execute([
+        //   ':userRefNo' => $user['userRefNo'],
+        //   ':user_email' => $user['user_email'],
+        //   ':user_position' => $user['user_position'],
+        //   ':TeamRefNumber' => $player_details['TeamRefNumber'], // Adjust accordingly if TeamRefNumber is not directly available
+        //   ':device_used' => $device,
+        //   ':browser_used' => $user_agent,
+        //   ':ip_address' => $ip_address,
+        //   ':login_status' => $login_status,
+        //   ':password_used' => $password
+        // ]);
         header("Location: playerDashboard.php");
 
       }
@@ -211,19 +211,19 @@ if (isset($_POST['login'])) {
       // Echo the JavaScript code
       echo $login_error_notify;
       // Insert login log
-      $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
-VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
-      $stmt->execute([
-        ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
-        ':user_email' => $email,
-        ':user_position' => $user ? $user['user_position'] : 'Not a user',
-        ':TeamRefNumber' => $user && $user['user_position'] == 'Manager/Coach' ? $executive['TeamRefNumber'] : 'Not a user', // Adjust accordingly if TeamRefNumber is not directly available
-        ':device_used' => $device,
-        ':browser_used' => $user_agent,
-        ':ip_address' => $ip_address,
-        ':login_status' => $login_status,
-        ':password_used' => $password
-      ]);
+//       $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+// VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+//       $stmt->execute([
+//         ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
+//         ':user_email' => $email,
+//         ':user_position' => $user ? $user['user_position'] : 'Not a user',
+//         ':TeamRefNumber' => $user && $user['user_position'] == 'Manager/Coach' ? $executive['TeamRefNumber'] : 'Not a user', // Adjust accordingly if TeamRefNumber is not directly available
+//         ':device_used' => $device,
+//         ':browser_used' => $user_agent,
+//         ':ip_address' => $ip_address,
+//         ':login_status' => $login_status,
+//         ':password_used' => $password
+//       ]);
     }
   } else {
     // Define the notification message
@@ -253,19 +253,19 @@ VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(
     // Echo the JavaScript code
     echo $error_notify;
     // Insert login log
-    $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
-VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
-    $stmt->execute([
-      ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
-      ':user_email' => $email,
-      ':user_position' => $user ? $user['user_position'] : 'Not a user',
-      ':TeamRefNumber' => $user && $user['user_position'] == 'Manager/Coach' ? $executive['TeamRefNumber'] : 'Not a user', // Adjust accordingly if TeamRefNumber is not directly available
-      ':device_used' => $device,
-      ':browser_used' => $user_agent,
-      ':ip_address' => $ip_address,
-      ':login_status' => $login_status,
-      ':password_used' => $password
-    ]);
+//     $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+// VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+//     $stmt->execute([
+//       ':userRefNo' => $user ? $user['userRefNo'] : 'Not a user',
+//       ':user_email' => $email,
+//       ':user_position' => $user ? $user['user_position'] : 'Not a user',
+//       ':TeamRefNumber' => $user && $user['user_position'] == 'Manager/Coach' ? $executive['TeamRefNumber'] : 'Not a user', // Adjust accordingly if TeamRefNumber is not directly available
+//       ':device_used' => $device,
+//       ':browser_used' => $user_agent,
+//       ':ip_address' => $ip_address,
+//       ':login_status' => $login_status,
+//       ':password_used' => $password
+//     ]);
 
 
   }
