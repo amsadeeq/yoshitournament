@@ -164,7 +164,7 @@ if (isset($_POST['login'])) {
         // User is a Player
         $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
 
-        header("Location: playerDashboard.php");
+        header("Location: PlayerDashboard.php");
 
 
         // Insert login log
