@@ -72,7 +72,6 @@ if (isset($_POST['login'])) {
   $user_agent = $_SERVER['HTTP_USER_AGENT'];
   $browser = get_browser(null, true);
   $device = $browser['platform'];
-
   // Get user's IP address
   $ip_address = $_SERVER['REMOTE_ADDR'];
 
@@ -81,13 +80,12 @@ if (isset($_POST['login'])) {
   $password = md5(check_input($_POST['login_password'])); // Assuming password is stored as MD5 hash in the database
 
   // Fetching records from the database
-  // Insert data into the database
+
 
   // Prepare SQL statement to fetch user from yoshi_signup_tbl
   // Perform authentication against yoshi_signup_tbl
-  $stmt = $pdo->prepare("SELECT * FROM yoshi_signup_tbl WHERE user_email = :email AND user_password = :password");
+  $stmt = $pdo->prepare("SELECT * FROM yoshi_signup_tbl WHERE user_email = :email");
   $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':password', $password);
   $stmt->execute();
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -96,7 +94,7 @@ if (isset($_POST['login'])) {
     // User is authenticated
 
     // User found, verify password
-    if ($user['user_password'] == $password) {
+    if (password_verify($password, $user['user_password'])) {
 
 
       $welcome_message = "Welcome  " . $user['user_position'];
