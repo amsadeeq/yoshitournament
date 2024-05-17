@@ -356,7 +356,6 @@ foreach ($players_record as $player_record) {
                         <div>
                           <h6 class="fw-500"><?php echo $name; ?></h6>
                           <p><?php echo $position; ?></p>
-                          <p><?php echo $email; ?></p>
                         </div>
                       </div>
 
