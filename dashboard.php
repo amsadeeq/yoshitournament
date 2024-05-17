@@ -356,6 +356,7 @@ foreach ($players_record as $player_record) {
                         <div>
                           <h6 class="fw-500"><?php echo $name; ?></h6>
                           <p><?php echo $position; ?></p>
+                          <p><?php echo $email; ?></p>
                         </div>
                       </div>
 
@@ -375,6 +376,7 @@ foreach ($players_record as $player_record) {
                           <h4 class="text-sm"><?php echo $name; ?></h4>
                           <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
                             href="#"><?php echo $position; ?></a>
+                          <p><?php echo $email; ?></p>
                         </div>
                       </div>
                     </li>
