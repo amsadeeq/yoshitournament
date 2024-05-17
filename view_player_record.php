@@ -93,7 +93,14 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC);
                             <?php echo $record['jersy_number']; ?>
                         </p>
                         <hr>
-                        <p><b>dob:</b> <?php echo $record['dob']; ?></p>
+                        <p><b>dob:</b>
+                            <?php
+                            $birthday = new DateTime($dob);
+                            $currentDate = new DateTime();
+                            $age = $currentDate->diff($birthday)->y;
+                            echo $record['dob'] . "(" . $age . ") years old";
+                            ?>
+                        </p>
                         <hr>
                         <p><b>Gender:</b> <?php echo $record['gender']; ?></p>
                         <hr>
