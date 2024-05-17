@@ -33,7 +33,7 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC);
             <?php if ($record): ?>
 
                 <div class="row">
-                    <div class="col-md-3 col-6">
+                    <div class="col-md-3 col-6 border-light-subtle">
                         <img src="<?php echo "players_Images/" . $record['passport']; ?>"
                             alt="<?php echo $record['firstname'] ?>" class="player_view_passport"
                             style="width: 100% !important; height: 90%; " />
