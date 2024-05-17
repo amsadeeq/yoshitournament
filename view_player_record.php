@@ -99,7 +99,7 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC);
                             $birthday = new DateTime($dob);
                             $currentDate = new DateTime();
                             $age = $currentDate->diff($birthday)->y;
-                            echo $record['dob'] . "(" . $age . ") years old";
+                            echo $record['dob'] . " (" . $age . ") years old";
                             ?>
                         </p>
                         <hr>
