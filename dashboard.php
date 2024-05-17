@@ -375,7 +375,7 @@ foreach ($players_record as $player_record) {
                           <h4 class="text-sm"><?php echo $name; ?></h4>
                           <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
                             href="#"><?php echo $position; ?></a>
-                          <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
+                          <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs -mt-2 "
                             style="font-size:8px;" href="#"><?php echo $email; ?></a>
 
                         </div>
