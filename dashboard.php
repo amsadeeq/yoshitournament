@@ -579,6 +579,10 @@ foreach ($players_record as $player_record) {
                       $time_created = $player_record['time_created'];
                       $date_created = $player_record['date_created'];
                       $ip_address = $player_record['ip_address'];
+
+                      $birthday = new DateTime($dob);
+                      $currentDate = new DateTime();
+                      $age = $currentDate->diff($birthday)->y;
                       ?>
                       <tr>
 
@@ -600,7 +604,7 @@ foreach ($players_record as $player_record) {
                           <p class="text-sm"><?php echo $email; ?></p>
                         </td>
                         <td>
-                          <p class="text-sm"><?php echo $dob; ?></p>
+                          <p class="text-sm"><?php echo $age; ?></p>
                         </td>
                         <td>
                           <div class="action justify-content-end">
