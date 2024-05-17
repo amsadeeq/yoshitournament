@@ -69,7 +69,8 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC);
                                         href="tel:+<?php echo $record['phone']; ?>"><?php echo $record['phone']; ?></a>
                                 </p>
                                 <hr>
-                                <p><a href='mailto: <?php echo $record['email']; ?>'><?php echo $record['email']; ?></a>
+                                <p><a class=" text-gray"
+                                        href='mailto: <?php echo $record['email']; ?>'><?php echo $record['email']; ?></a>
                                 </p>
                                 <hr>
                             </div>
