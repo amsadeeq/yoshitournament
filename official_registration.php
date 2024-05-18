@@ -688,7 +688,7 @@ if (isset($_POST["complete_register"])) {
 
                                         <div class="paymeny comon-steps-div mt-5">
 
-                                            <h2 class="comon-heading m-0"> Team details </h2>
+                                            <mat class="comon-heading m-0"> Professional Information </mat>
 
 
                                             <div class="account-page-n" id="ac-1">
@@ -698,13 +698,28 @@ if (isset($_POST["complete_register"])) {
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
-                                                            <label> Positon<sup style="color: red !important;">*</sup>
+                                                            <label> Position Applying For<sup
+                                                                    style="color: red !important;">*</sup>
                                                             </label> </label>
                                                             <select class="form-select" name="position">
                                                                 <option selected>Select Position</option>
-                                                                <option value="Manager">Manager</option>
-                                                                <option value="Coach">Coach</option>
-                                                                <option value="Founder"> Founder</option>
+                                                                <option value="referee">Referee</option>
+                                                                <option value="assistant_referee">Assistant Referee
+                                                                </option>
+                                                                <option value="fourth_official">Fourth Official</option>
+                                                                <option value="var">Video Assistant Referee (VAR)
+                                                                </option>
+                                                                <option value="avar">Assistant Video Assistant Referee
+                                                                    (AVAR)</option>
+                                                                <option value="aar">Additional Assistant Referee (AAR)
+                                                                </option>
+                                                                <option value="reserve_assistant_referee">Reserve
+                                                                    Assistant Referee</option>
+                                                                <option value="timekeeper">Timekeeper</option>
+                                                                <option value="match_commissioner">Match Commissioner
+                                                                </option>
+                                                                <option value="referee_assessor">Referee
+                                                                    Assessor/Observer</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -712,15 +727,113 @@ if (isset($_POST["complete_register"])) {
 
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
-                                                            <label> Team Name<sup style="color: red !important;">*</sup>
-                                                            </label>
-                                                            <input type="text" name="team_name"
+                                                            <label for="license_status">License Status <sup
+                                                                    style="color: red !important;">*</sup></label>
+                                                            <select id="license_status"
                                                                 class="form-control wizard-required"
-                                                                placeholder="Team/School/Organization/Academy" required>
+                                                                name="license_status" required>
+                                                                <option value="licensed">Licensed</option>
+                                                                <option value="unlicensed">Unlicensed</option>
+                                                            </select>
                                                             <div class="wizard-form-error"></div>
-
                                                         </div>
                                                     </div>
+
+                                                    <div id="licensed_details">
+
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="license_number">License Number </label>
+                                                                <input type="text" id="license_number"
+                                                                    name="license_number"
+                                                                    class="form-control wizard-required">
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="licensing_authority">Licensing
+                                                                    Authority </label>
+                                                                <input type="text" id="licensing_authority"
+                                                                    name="licensing_authority"
+                                                                    class="form-control wizard-required">
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="license_expiry">License Expiry Date:</label>
+                                                                <input type="date" id="license_expiry"
+                                                                    name="license_expiry"
+                                                                    class="form-control wizard-required">
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <!-- HTML code -->
+                                                                <label for="license_document">Upload License
+                                                                    Document:</label>
+                                                                <fieldset>
+                                                                    <p style="font-size: 12px;">[ Note:<sup
+                                                                            style="color: red !important;">*</sup> File
+                                                                        supported .pdf, .jpg or .png </p>
+                                                                    <!-- <legend>Team Logo</legend> -->
+                                                                    <img style="height:10%;width: 45%;"
+                                                                        class="my-select" id="teamImage">
+                                                                    <input type="file" id="license_document"
+                                                                        name="license_document"
+                                                                        onchange="onFileSelectedLogo(event);"
+                                                                        class="form-control wizard-required"
+                                                                        style="border-radius: 10px 10px;"
+                                                                        accept="image/jpeg, image/png" required>
+                                                                    <div class="wizard-form-error"></div>
+                                                                    <progress id="logoProgressBar" value="0" max="100"
+                                                                        style="display: none;"></progress>
+                                                                </fieldset>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="unlicensed_details">
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="intended_authority">Intended Licensing
+                                                                    Authority:</label>
+                                                                <input type="text" id="intended_authority"
+                                                                    name="intended_authority"
+                                                                    class="form-control wizard-required">
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="expected_licensing_date">Expected Date of
+                                                                    Licensing:</label>
+                                                                <input type="date" id="expected_licensing_date"
+                                                                    name="expected_licensing_date"
+                                                                    class="form-control wizard-required">
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="reason_not_licensed">Reason for Not Being
+                                                                    Licensed:</label>
+                                                                <textarea id="reason_not_licensed"
+                                                                    name="reason_not_licensed"></textarea>
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
 
 
 
@@ -986,6 +1099,20 @@ if (isset($_POST["complete_register"])) {
     </script>
 
 
+
+    <script>
+        document.getElementById('license_status').addEventListener('change', function () {
+            var licenseDetails = document.getElementById('licensed_details');
+            var unlicensedDetails = document.getElementById('unlicensed_details');
+            if (this.value === 'licensed') {
+                licenseDetails.style.display = 'block';
+                unlicensedDetails.style.display = 'none';
+            } else {
+                licenseDetails.style.display = 'none';
+                unlicensedDetails.style.display = 'block';
+            }
+        });
+    </script>
 
 
 
