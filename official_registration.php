@@ -828,7 +828,8 @@ if (isset($_POST["complete_register"])) {
                                                                 <label for="reason_not_licensed">Reason for Not Being
                                                                     Licensed:</label>
                                                                 <textarea id="reason_not_licensed"
-                                                                    name="reason_not_licensed"></textarea>
+                                                                    name="reason_not_licensed"
+                                                                    class="form-control wizard-required"></textarea>
                                                                 <div class="wizard-form-error"></div>
                                                             </div>
                                                         </div>
