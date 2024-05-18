@@ -445,8 +445,34 @@ if (isset($_POST['register'])) {
     $_SESSION['userRefCode'] = $userRefCode;        //###
     //########## Initiating session #####################
 
+    ################################################
+    $to = $email;
+    // Set the email subject
+    $subject = "Welcome to Yoshi Tournament  " . date("Y");
+
+    // Set the email message
+    $message = "Hi $position,\n\n";
+    $message .= "Thank you for creating Account with Yoshi Tournament " . date("Y") . ".\n\n";
+    $message .= "Secure your login credential: $email \n\n";
+    $message .= "Password: ******** \n\n";
+    $message .= "Visit www.yoshitournaments.com\n\n";
+    $message .= "Sign: Mr. Sadeeq \n yoshitournaments.com\n\n\n";
+    $message .= "Powered by: Yoshi Football Academy www.yoshifa.com \n &copy; All Rights Reserved " . date('Y');
+
+    // Set additional headers
+    $headers = "From: no-reply@yoshitournament.com\r\n";
+    $headers .= "Reply-To: support@yoshitournament.com\r\n";
+    $headers .= "CC: yoshitournaments@gmail.com\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
+
+    // Send the email
+    $mail_sent = mail($to, $subject, $message, $headers);
+
     if ($position == 'Player') {
       header("Location:referenceNumber.php");
+      exit();
+    } elseif ($position == 'Official') {
+      header("Location:official_registration.php");
       exit();
     } else {
       $register_message = "Welcome  to Yoshi Tournament platform " . $position;
