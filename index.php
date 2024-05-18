@@ -660,7 +660,7 @@ if (isset($_POST['register'])) {
 
 
             <div class="slider-content">
-              <h2>Yoshi National <br>Tournament 2024
+              <h2>Yoshi National <br>Tournament <?php echo date("Y"); ?>
                 <span class="d-block"> Season Begins</span>
               </h2>
               <p> Football is not just about scoring goals; it's about winning together, losing together, and giving
