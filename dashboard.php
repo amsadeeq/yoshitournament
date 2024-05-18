@@ -598,7 +598,8 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                         <td>
                           <div class="product">
                             <div class="image">
-                              <img src="<?php echo "players_Images/" . $image_passport; ?>" alt="" />
+                              <img src="<?php echo "players_Images/" . $image_passport; ?>"
+                                alt="<?php echo $firstname; ?>" />
                             </div>
                             <na class="text-sm"><?php echo $firstname . " " . $surname; ?></na>
                           </div>
@@ -717,31 +718,17 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                       $userRefNo = $matchRecord['userRefNo'];
                       $image_passport = $matchRecord['passport'];
                       $image_logo = $matchRecord['team_logo'];
-                      $firstname = $matchRecord['firstname'];
+                      $firstname = $matchRecord['firstName'];
                       $surname = $matchRecord['surname'];
                       $position = $matchRecord['user_position'];
-                      $dob = $matchRecord['dob'];
-                      $gender = $matchRecord['gender']; // Added missing column
-                      $height = $matchRecord['hieght']; // Corrected typo in column name
-                      $weight = $matchRecord['weight']; // Added missing column
-                      $country = $matchRecord['country'];
-                      $state = $matchRecord['state'];
-                      $city = $matchRecord['city'];
-                      $zipcode = $matchRecord['zipcode'];
-                      $phone = $matchRecord['phone'];
-                      $email = $matchRecord['email'];
-                      $address = $matchRecord['address'];
                       $team_name = $matchRecord['team_name'];
-                      $player_position = $matchRecord['player_position']; // Added missing column
-                      $jersey_number = $matchRecord['jersy_number']; // Corrected typo in column name
-                      $team_country = $matchRecord['team_country'];
-                      $team_state = $matchRecord['team_state'];
-                      $team_city = $matchRecord['team_city'];
-                      $number_of_players = $matchRecord['number_of_players'];
-                      $team_address = $matchRecord['team_address'];
-                      $time_created = $matchRecord['time_created'];
-                      $date_created = $matchRecord['date_created'];
-                      $ip_address = $matchRecord['ip_address'];
+                      $match_team = $matchRecord['match_team'];
+                      $match_date = $matchRecord['match_date'];
+                      $jersey_number = $matchRecord['jersey_number']; // Corrected typo in column name
+                      $time_created = $matchRecord['status_time'];
+                      $date_created = $matchRecord['status_date'];
+                      $score = $matchRecord['score'];
+                      $status = $matchRecord['status'];
 
                       $birthday = new DateTime($dob);
                       $currentDate = new DateTime();
@@ -751,94 +738,52 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                         <td>
                           <div class="product">
                             <div class="image">
-                              <img src="images/Yoshi Logo.png" alt="" />
+                              <img src="<?php echo "players_Images/" . $image_passport; ?>"
+                                alt="<?php echo $firstname; ?>" />
                             </div>
-                            <p class="text-sm">Abubakar Sadiq</p>
+                            <p class="text-sm"><?php echo $firstname . " " . $surname; ?></p>
                           </div>
                         </td>
                         <td>
-                          <p class="text-sm">Midfielder</p>
+                          <p class="text-sm"><?php echo $position; ?></p>
                         </td>
                         <td>
-                          <p class="text-sm">Gombe Unt/Kwara Untd</p>
+                          <p class="text-sm"><?php echo $match_team; ?></p>
+                          <p class="text-xs"><?php echo $match_date; ?></p>
                         </td>
                         <td>
-                          <p class="text-sm">2</p>
+                          <p class="text-sm"><?php echo $score; ?></p>
                         </td>
                         <td>
-                          <span class="status-btn close-btn">Red Card</span>
+                          <?php
+                          if ($status == "Red Card") {
+                            ?>
+                            <span class="status-btn close-btn">Red Card</span>
+                            <?php
+                          } else if ($status == "Yellow Card") {
+                            ?>
+                              <span class="status-btn warning-btn">Yellow Card</span>
+                            <?php
+                          } else if ($status == "Substitution") {
+                            ?>
+                                <span class="status-btn info-btn">Substitution</span>
+                            <?php
+                          } else if ($status == "Injury") {
+                            ?>
+                                  <span class="status-btn primary-btn">Injury</span>
+                            <?php
+                          } else {
+                            ?>
+                                  <span class="status-btn success-btn">Match Completed</span>
+                            <?php
+                          }
+                          ?>
+
+
                         </td>
 
                       </tr>
-                      <tr>
-                        <td>
-                          <div class="product">
-                            <div class="image">
-                              <img src="images/Yoshi Logo.png" alt="" />
-                            </div>
-                            <p class="text-sm">Abubakar Sadiq</p>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="text-sm">Midfielder</p>
-                        </td>
-                        <td>
-                          <p class="text-sm">Gombe Unt/Kwara Untd</p>
-                        </td>
-                        <td>
-                          <p class="text-sm">2</p>
-                        </td>
-                        <td>
-                          <span class="status-btn warning-btn">Yellow Card</span>
-                        </td>
 
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="product">
-                            <div class="image">
-                              <img src="images/Yoshi Logo.png" alt="" />
-                            </div>
-                            <p class="text-sm">Abubakar Sadiq</p>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="text-sm">Midfielder</p>
-                        </td>
-                        <td>
-                          <p class="text-sm">Gombe Unt/Kwara Untd</p>
-                        </td>
-                        <td>
-                          <p class="text-sm">2</p>
-                        </td>
-                        <td>
-                          <span class="status-btn success-btn">Completed</span>
-                        </td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="product">
-                            <div class="image">
-                              <img src="images/Yoshi Logo.png" alt="" />
-                            </div>
-                            <p class="text-sm">Abubakar Sadiq</p>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="text-sm">Midfielder</p>
-                        </td>
-                        <td>
-                          <p class="text-sm">Gombe Unt/Kwara Untd</p>
-                        </td>
-                        <td>
-                          <p class="text-sm">2</p>
-                        </td>
-                        <td>
-                          <span class="status-btn close-btn">Red Card</span>
-                        </td>
-
-                      </tr>
 
                       <?php
                     }
