@@ -278,7 +278,7 @@ if (isset($_POST["complete_register"])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registration - Yoshi Tournament </title>
+    <title>Official Registration - Yoshi Tournament </title>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -437,7 +437,7 @@ if (isset($_POST["complete_register"])) {
 
         <div class="sub-banner">
             <div class="container">
-                <h1 class="text-center"> Registration </h1>
+                <h1 class="text-center"> Official Registration </h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
