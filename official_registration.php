@@ -859,7 +859,7 @@ if (isset($_POST["complete_register"])) {
                                 <div class="col-lg-4">
                                     <div class="ceck-out-right-div new-checkout">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h2 class="page-titel comon-heading m-0"> Team logo </h2>
+                                            <h2 class="page-titel comon-heading m-0"> Featured Image </h2>
 
                                         </div>
                                         <hr class="mt-2">
@@ -871,7 +871,7 @@ if (isset($_POST["complete_register"])) {
                                                     <!-- HTML code -->
                                                     <fieldset>
                                                         <p style="font-size: 12px;">[ Note:<sup
-                                                                style="color: red !important;">*</sup> Team logo
+                                                                style="color: red !important;">*</sup> Official Image
                                                             must be white background ] </p>
                                                         <!-- <legend>Team Logo</legend> -->
                                                         <img style="height:10%;width: 45%;" class="my-select"
