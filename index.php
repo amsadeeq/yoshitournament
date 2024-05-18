@@ -452,12 +452,12 @@ if (isset($_POST['register'])) {
 
     // Set the email message
     $message = "Hi $position,\n\n";
-    $message .= "Thank you for creating Account with Yoshi Tournament " . date("Y") . ".\n\n";
-    $message .= "Secure your login credential: $email \n\n";
-    $message .= "Password: ******** \n\n";
+    $message .= "Thank you for creating Account with Yoshi Tournament " . date("Y") . ".\n";
+    $message .= "Secure your login credential: $email \n";
+    $message .= "Password: ******** \n";
     $message .= "Visit www.yoshitournaments.com\n\n";
-    $message .= "Sign: Mr. Sadeeq \n yoshitournaments.com\n\n\n";
-    $message .= "Powered by: Yoshi Football Academy www.yoshifa.com \n &copy; All Rights Reserved " . date('Y');
+    $message .= "Sign: Mr. Sadeeq \n Yoshi Tournaments \n\n\n";
+    $message .= "Powered by: Yoshi Football Academy www.yoshifa.com All Rights Reserved " . date('Y');
 
     // Set additional headers
     $headers = "From: no-reply@yoshitournament.com\r\n";

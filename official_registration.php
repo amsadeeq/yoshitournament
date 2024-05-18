@@ -435,7 +435,7 @@ if (isset($_POST["complete_register"])) {
     <section class="sub-main-banner float-start w-100">
 
 
-        <div class="sub-banner">
+        <div class="sub-banner" style="background: #071f40 url(../images/rf.jpg) no-repeat !important;">
             <div class="container">
                 <h1 class="text-center"> Official Registration </h1>
                 <nav aria-label="breadcrumb">
