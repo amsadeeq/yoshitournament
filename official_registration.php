@@ -740,190 +740,115 @@ if (isset($_POST["complete_register"])) {
                                                     </div>
 
                                                     <div id="licensed_details">
-
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label for="license_number">License Number </label>
-                                                                <input type="text" id="license_number"
-                                                                    name="license_number"
-                                                                    class="form-control wizard-required">
-                                                                <div class="wizard-form-error"></div>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label for="licensing_authority">Licensing
-                                                                    Authority </label>
-                                                                <input type="text" id="licensing_authority"
-                                                                    name="licensing_authority"
-                                                                    class="form-control wizard-required">
-                                                                <div class="wizard-form-error"></div>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label for="license_expiry">License Expiry Date:</label>
-                                                                <input type="date" id="license_expiry"
-                                                                    name="license_expiry"
-                                                                    class="form-control wizard-required">
-                                                                <div class="wizard-form-error"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <!-- HTML code -->
-                                                                <label for="license_document">Upload License
-                                                                    Document:</label>
-                                                                <fieldset>
-                                                                    <p style="font-size: 12px;">[ Note:<sup
-                                                                            style="color: red !important;">*</sup> File
-                                                                        supported .pdf, .jpg or .png </p>
-                                                                    <!-- <legend>Team Logo</legend> -->
-                                                                    <img style="height:10%;width: 45%;"
-                                                                        class="my-select" id="teamImage">
-                                                                    <input type="file" id="license_document"
-                                                                        name="license_document"
-                                                                        onchange="onFileSelectedLogo(event);"
-                                                                        class="form-control wizard-required"
-                                                                        style="border-radius: 10px 10px;"
-                                                                        accept="image/jpeg, image/png" required>
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label for="license_number">License Number </label>
+                                                                    <input type="text" id="license_number"
+                                                                        name="license_number"
+                                                                        class="form-control wizard-required">
                                                                     <div class="wizard-form-error"></div>
-                                                                    <progress id="logoProgressBar" value="0" max="100"
-                                                                        style="display: none;"></progress>
-                                                                </fieldset>
+                                                                </div>
+                                                            </div>
 
+
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label for="licensing_authority">Licensing
+                                                                        Authority </label>
+                                                                    <input type="text" id="licensing_authority"
+                                                                        name="licensing_authority"
+                                                                        class="form-control wizard-required">
+                                                                    <div class="wizard-form-error"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label for="license_expiry">License Expiry
+                                                                        Date:</label>
+                                                                    <input type="date" id="license_expiry"
+                                                                        name="license_expiry"
+                                                                        class="form-control wizard-required">
+                                                                    <div class="wizard-form-error"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <!-- HTML code -->
+                                                                    <label for="license_document">Upload License
+                                                                        Document:</label>
+                                                                    <fieldset>
+                                                                        <p style="font-size: 12px;">[ Note:<sup
+                                                                                style="color: red !important;">*</sup>
+                                                                            File
+                                                                            supported .pdf, .jpg or .png </p>
+                                                                        <!-- <legend>Team Logo</legend> -->
+                                                                        <img style="height:10%;width: 45%;"
+                                                                            class="my-select" id="teamImage">
+                                                                        <input type="file" id="license_document"
+                                                                            name="license_document"
+                                                                            onchange="onFileSelectedLogo(event);"
+                                                                            class="form-control wizard-required"
+                                                                            style="border-radius: 10px 10px;"
+                                                                            accept="image/jpeg, image/png" required>
+                                                                        <div class="wizard-form-error"></div>
+                                                                        <progress id="logoProgressBar" value="0"
+                                                                            max="100" style="display: none;"></progress>
+                                                                    </fieldset>
+
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div id="unlicensed_details">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label for="intended_authority">Intended Licensing
-                                                                    Authority:</label>
-                                                                <input type="text" id="intended_authority"
-                                                                    name="intended_authority"
-                                                                    class="form-control wizard-required">
-                                                                <div class="wizard-form-error"></div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label for="intended_authority">Intended Licensing
+                                                                        Authority:</label>
+                                                                    <input type="text" id="intended_authority"
+                                                                        name="intended_authority"
+                                                                        class="form-control wizard-required">
+                                                                    <div class="wizard-form-error"></div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label for="expected_licensing_date">Expected Date
+                                                                        of
+                                                                        Licensing:</label>
+                                                                    <input type="date" id="expected_licensing_date"
+                                                                        name="expected_licensing_date"
+                                                                        class="form-control wizard-required">
+                                                                    <div class="wizard-form-error"></div>
+                                                                </div>
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label for="expected_licensing_date">Expected Date of
-                                                                    Licensing:</label>
-                                                                <input type="date" id="expected_licensing_date"
-                                                                    name="expected_licensing_date"
-                                                                    class="form-control wizard-required">
-                                                                <div class="wizard-form-error"></div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label for="reason_not_licensed">Reason for Not
+                                                                        Being
+                                                                        Licensed:</label>
+                                                                    <textarea id="reason_not_licensed"
+                                                                        name="reason_not_licensed"
+                                                                        class="form-control wizard-required"></textarea>
+                                                                    <div class="wizard-form-error"></div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label for="reason_not_licensed">Reason for Not Being
-                                                                    Licensed:</label>
-                                                                <textarea id="reason_not_licensed"
-                                                                    name="reason_not_licensed"
-                                                                    class="form-control wizard-required"></textarea>
-                                                                <div class="wizard-form-error"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <label>Team Country<sup
-                                                                    style="color: red !important;">*</sup></label>
-                                                            <select id='country2' name='team_country'
-                                                                class="form-select"></select>
-
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <label>Team State<sup style="color: red !important;">*</sup>
-                                                            </label>
-                                                            <select class="form-select" id="state2" name="team_state"
-                                                                required></select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <label>Team Town / City<sup
-                                                                    style="color: red !important;">*</sup> </label>
-                                                            <input type="text" class="form-control" name="team_city"
-                                                                required>
-                                                        </div>
-                                                    </div>
-
-
-
-
-
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <label> Number of Players<sup
-                                                                    style="color: red !important;">*</sup></label>
-                                                            <input type="text" class="form-control"
-                                                                name="number_of_players" required>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <label>Team Address <sup
-                                                                    style="color: red !important;">*</sup> </label>
-                                                            <input type="text" class="form-control wizard-required"
-                                                                name="team_address" required>
-                                                            <div class="wizard-form-error"></div>
-
                                                         </div>
                                                     </div>
 
                                                     <p style="font-size: 12px;">[ Note:<sup
                                                             style="color: red !important;">*</sup> Input field
                                                         with asterisk are required ] </p>
-
-
-                                                    <!-- <div class="col-lg-6">
-                                             <div class="row row-cols-1 row-cols-lg-2 mt-2">
-                                                 <div class="col">
-                                                    <label> Adults </label>
-                                                    <input type="text" class="form-control wizard-required">
-                                                    <div class="wizard-form-error"></div>
-                                                 </div>
-                                                 <div class="col">
-                                                    <label> Child <span class="codition-txn"> ( Below 5 years) </span>  </label>
-                                                    <input type="text" class="form-control wizard-required">
-                                                    <div class="wizard-form-error"></div>
-                                                 </div>
-                                             </div>
-                                           
-                                          </div> -->
-
-
                                                 </div>
                                             </div>
-
-
-
-
-
-
                                         </div>
                                     </div>
                                 </div>
