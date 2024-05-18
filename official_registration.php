@@ -732,6 +732,7 @@ if (isset($_POST["complete_register"])) {
                                                             <select id="license_status"
                                                                 class="form-control wizard-required"
                                                                 name="license_status" required>
+                                                                <option selected>Select Licensed Status</option>
                                                                 <option value="licensed">Licensed</option>
                                                                 <option value="unlicensed">Unlicensed</option>
                                                             </select>
@@ -780,10 +781,7 @@ if (isset($_POST["complete_register"])) {
                                                                     <label for="license_document">Upload License
                                                                         Document:</label>
                                                                     <fieldset>
-                                                                        <p style="font-size: 12px;">[ Note:<sup
-                                                                                style="color: red !important;">*</sup>
-                                                                            File
-                                                                            supported .pdf, .jpg or .png </p>
+
                                                                         <!-- <legend>Team Logo</legend> -->
                                                                         <img style="height:10%;width: 45%;"
                                                                             class="my-select" id="teamImage">
@@ -797,6 +795,10 @@ if (isset($_POST["complete_register"])) {
                                                                         <progress id="logoProgressBar" value="0"
                                                                             max="100" style="display: none;"></progress>
                                                                     </fieldset>
+                                                                    <p style="font-size: 12px;">[ Note:<sup
+                                                                            style="color: red !important;">*</sup>
+                                                                        File
+                                                                        supported .pdf, .jpg or .png ] </p>
 
                                                                 </div>
                                                             </div>
