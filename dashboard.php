@@ -19,7 +19,7 @@ $stmt = $pdo->prepare("SELECT * FROM `yoshi_executive_tbl` WHERE `TeamRefNumber`
 $stmt->execute(['teamRefNumber' => $TeamRefNumber]);
 $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
+// Getting Players Records from yoshi_players_tbl
 $stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
 $stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
 $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
@@ -31,6 +31,11 @@ foreach ($players_record as $player_record) {
   // Increment the counter for each player record
   $no_of_players++;
 }
+
+// Getting match history record
+$stmtMatchHistory = $pdo->prepare("SELECT * FROM `yoshi_player_match_history_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
+$stmtMatchHistory->execute(['teamRefNumber' => $TeamRefNumber]);
+$playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
@@ -704,98 +709,149 @@ foreach ($players_record as $player_record) {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>
-                        <div class="product">
-                          <div class="image">
-                            <img src="images/Yoshi Logo.png" alt="" />
-                          </div>
-                          <p class="text-sm">Abubakar Sadiq</p>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-sm">Midfielder</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">Gombe Unt/Kwara Untd</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">2</p>
-                      </td>
-                      <td>
-                        <span class="status-btn close-btn">Red Card</span>
-                      </td>
+                    <?php
+                    // Displaying fetched records
+                    foreach ($playerMatchHistory as $matchRecord) {
+                      // Assign values to variables
+                      $user_id = $matchRecord['id'];
+                      $userRefNo = $matchRecord['userRefNo'];
+                      $image_passport = $matchRecord['passport'];
+                      $image_logo = $matchRecord['team_logo'];
+                      $firstname = $matchRecord['firstname'];
+                      $surname = $matchRecord['surname'];
+                      $position = $matchRecord['user_position'];
+                      $dob = $matchRecord['dob'];
+                      $gender = $matchRecord['gender']; // Added missing column
+                      $height = $matchRecord['hieght']; // Corrected typo in column name
+                      $weight = $matchRecord['weight']; // Added missing column
+                      $country = $matchRecord['country'];
+                      $state = $matchRecord['state'];
+                      $city = $matchRecord['city'];
+                      $zipcode = $matchRecord['zipcode'];
+                      $phone = $matchRecord['phone'];
+                      $email = $matchRecord['email'];
+                      $address = $matchRecord['address'];
+                      $team_name = $matchRecord['team_name'];
+                      $player_position = $matchRecord['player_position']; // Added missing column
+                      $jersey_number = $matchRecord['jersy_number']; // Corrected typo in column name
+                      $team_country = $matchRecord['team_country'];
+                      $team_state = $matchRecord['team_state'];
+                      $team_city = $matchRecord['team_city'];
+                      $number_of_players = $matchRecord['number_of_players'];
+                      $team_address = $matchRecord['team_address'];
+                      $time_created = $matchRecord['time_created'];
+                      $date_created = $matchRecord['date_created'];
+                      $ip_address = $matchRecord['ip_address'];
 
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="product">
-                          <div class="image">
-                            <img src="images/Yoshi Logo.png" alt="" />
+                      $birthday = new DateTime($dob);
+                      $currentDate = new DateTime();
+                      $age = $currentDate->diff($birthday)->y;
+                      ?>
+                      <tr>
+                        <td>
+                          <div class="product">
+                            <div class="image">
+                              <img src="images/Yoshi Logo.png" alt="" />
+                            </div>
+                            <p class="text-sm">Abubakar Sadiq</p>
                           </div>
-                          <p class="text-sm">Abubakar Sadiq</p>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-sm">Midfielder</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">Gombe Unt/Kwara Untd</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">2</p>
-                      </td>
-                      <td>
-                        <span class="status-btn warning-btn">Yellow Card</span>
-                      </td>
+                        </td>
+                        <td>
+                          <p class="text-sm">Midfielder</p>
+                        </td>
+                        <td>
+                          <p class="text-sm">Gombe Unt/Kwara Untd</p>
+                        </td>
+                        <td>
+                          <p class="text-sm">2</p>
+                        </td>
+                        <td>
+                          <span class="status-btn close-btn">Red Card</span>
+                        </td>
 
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="product">
-                          <div class="image">
-                            <img src="images/Yoshi Logo.png" alt="" />
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="product">
+                            <div class="image">
+                              <img src="images/Yoshi Logo.png" alt="" />
+                            </div>
+                            <p class="text-sm">Abubakar Sadiq</p>
                           </div>
-                          <p class="text-sm">Abubakar Sadiq</p>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-sm">Midfielder</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">Gombe Unt/Kwara Untd</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">2</p>
-                      </td>
-                      <td>
-                        <span class="status-btn success-btn">Completed</span>
-                      </td>
+                        </td>
+                        <td>
+                          <p class="text-sm">Midfielder</p>
+                        </td>
+                        <td>
+                          <p class="text-sm">Gombe Unt/Kwara Untd</p>
+                        </td>
+                        <td>
+                          <p class="text-sm">2</p>
+                        </td>
+                        <td>
+                          <span class="status-btn warning-btn">Yellow Card</span>
+                        </td>
 
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="product">
-                          <div class="image">
-                            <img src="images/Yoshi Logo.png" alt="" />
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="product">
+                            <div class="image">
+                              <img src="images/Yoshi Logo.png" alt="" />
+                            </div>
+                            <p class="text-sm">Abubakar Sadiq</p>
                           </div>
-                          <p class="text-sm">Abubakar Sadiq</p>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-sm">Midfielder</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">Gombe Unt/Kwara Untd</p>
-                      </td>
-                      <td>
-                        <p class="text-sm">2</p>
-                      </td>
-                      <td>
-                        <span class="status-btn close-btn">Red Card</span>
-                      </td>
+                        </td>
+                        <td>
+                          <p class="text-sm">Midfielder</p>
+                        </td>
+                        <td>
+                          <p class="text-sm">Gombe Unt/Kwara Untd</p>
+                        </td>
+                        <td>
+                          <p class="text-sm">2</p>
+                        </td>
+                        <td>
+                          <span class="status-btn success-btn">Completed</span>
+                        </td>
 
-                    </tr>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="product">
+                            <div class="image">
+                              <img src="images/Yoshi Logo.png" alt="" />
+                            </div>
+                            <p class="text-sm">Abubakar Sadiq</p>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-sm">Midfielder</p>
+                        </td>
+                        <td>
+                          <p class="text-sm">Gombe Unt/Kwara Untd</p>
+                        </td>
+                        <td>
+                          <p class="text-sm">2</p>
+                        </td>
+                        <td>
+                          <span class="status-btn close-btn">Red Card</span>
+                        </td>
+
+                      </tr>
+
+                      <?php
+                    }
+                    ?>
+                    <?php if (empty($playerMatchHistory)) {
+                      echo "<tr><td colspan='6'><center>
+                      <lord-icon
+                      src='https://cdn.lordicon.com/vihyezfv.json'
+                      trigger='loop'
+                      delay='1000'
+                      style='width:30px;height:30px'>
+                  </lord-icon> &nbsp;No record found</center></td></tr>";
+                    } ?>
                   </tbody>
                 </table>
                 <!-- End Table -->
