@@ -52,6 +52,19 @@ if (isset($_POST['complete_registration'])) {
   //Collecting user information//
 
 
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the selected country code
+    $countryCode = $_POST['countryCode'];
+
+    // Get the phone number
+    $phoneNumber = $_POST['phone'];
+
+    $full_phone = $countryCode . $phoneNumber;
+
+
+  }
+
+
 
 
   $userRefCode = $_SESSION['userRefCode'];
@@ -134,7 +147,7 @@ if (isset($_POST['complete_registration'])) {
         $stmt->bindParam(':state', $state);
         $stmt->bindParam(':city', $city);
         $stmt->bindParam(':zipcode', $zipcode);
-        $stmt->bindParam(':phone', $phone);
+        $stmt->bindParam(':phone', $full_phone);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':address', $address);
         $stmt->bindParam(':team_name', $team_name);
@@ -1244,6 +1257,25 @@ if (isset($_POST['complete_registration'])) {
           success(countryCode);
         });
       }
+    });
+  </script>
+
+  <!-- Initialize intlTelInput -->
+  <script>
+    $(document).ready(function () {
+      var input = document.querySelector("#phone");
+      var iti = window.intlTelInput(input, {
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js",
+        initialCountry: "auto",
+        separateDialCode: true,
+        placeholderNumberType: "MOBILE",
+        geoIpLookup: function (success, failure) {
+          $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
+            var countryCode = (resp && resp.country) ? resp.country : "us";
+            success(countryCode);
+          });
+        }
+      });
     });
   </script>
 
