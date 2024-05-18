@@ -665,7 +665,8 @@ if (isset($_POST['register'])) {
               </h2>
               <p> Football is not just about scoring goals; it's about winning together, losing together, and giving
                 everything for the team. </p>
-              <button type="button" class="buy-now-btn" name="button"> Register here </button>
+              <button type="button" class="buy-now-btn" name="button" data-bs-target='#registerModal'
+                data-bs-toggle='modal'> Register </button>
             </div>
             <div class="number-pagination">
               <span>2</span>
