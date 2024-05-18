@@ -67,7 +67,7 @@ echo "
              </li>
              
           </ul>
-            <p class='text-center  mt-3'> Do not have an account? 
+            <p class='text-center  mt-3'> Already have an account? 
               <a data-bs-toggle='modal' class='regster-bn' data-bs-target='#loginModal' data-bs-dismiss='modal'> Login </a>  </p>
          </div>
        </div>
