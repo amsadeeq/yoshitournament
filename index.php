@@ -1066,12 +1066,13 @@ if (isset($_POST['register'])) {
         <h2 class="comon-heading m-0"> About the
           Yoshi Tournament</h2>
 
-        <p class="col-lg-7 my-4"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-          has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-          type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-          into electronic
-          typesetting, remaining essentially unchanged.</p>
-        <a href="#" class="btn all-cm-btn animate__animated animate__zoomIn"> About More <svg
+        <p class="col-lg-7 my-4"> At <a href="https://www.yoshifa.com" target="_blank">Yoshi Football Academy</a>, based
+          in the UAE with branches around the world, we are dedicated to nurturing football talent and fostering a love
+          for the sport. Our passion for football led to the creation of the Yoshi Tournament, a prestigious event that
+          brings together football teams, organizations, schools, and academies from across the globe. The Yoshi
+          Tournament is more than just a competition; it is a celebration of teamwork, skill, and the spirit of the
+          game. Join us as we continue to inspire and develop the football stars of tomorrow.</p>
+        <a href="about.php" class="btn all-cm-btn animate__animated animate__zoomIn"> About More <svg
             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
             viewBox="0 0 16 16">
             <path fill-rule="evenodd"
