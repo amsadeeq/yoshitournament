@@ -1066,7 +1066,8 @@ if (isset($_POST['register'])) {
         <h2 class="comon-heading m-0"> About the
           Yoshi Tournament</h2>
 
-        <p class="col-lg-7 my-4"> At <a href="https://www.yoshifa.com" target="_blank">Yoshi Football Academy</a>, based
+        <p class="col-lg-7 my-4 lni-text-align-justify"> At <a href="https://www.yoshifa.com" target="_blank">Yoshi
+            Football Academy</a>, based
           in the UAE with branches around the world, we are dedicated to nurturing football talent and fostering a love
           for the sport. Our passion for football led to the creation of the Yoshi Tournament, a prestigious event that
           brings together football teams, organizations, schools, and academies from across the globe. The Yoshi
