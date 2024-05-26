@@ -47,7 +47,7 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
+              <a class="nav-link active" href="index.php">Home</a>
             </li>
 
 
@@ -61,16 +61,16 @@
             </li>
 
             <!-- <li class="nav-item">
-              <a class="nav-link " href="schedule.php">Schedule</a>
-            </li> -->
+          <a class="nav-link " href="schedule.php">Schedule</a>
+        </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="news.php">News</a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link " href="players.php">Players</a>
-            </li>
+            <!-- <li class="nav-item">
+          <a class="nav-link " href="players.php">Players</a>
+        </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="media.php">Media</a>
