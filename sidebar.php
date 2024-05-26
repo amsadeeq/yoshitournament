@@ -42,10 +42,14 @@
       <div class="mobile-menu-sec mt-3">
         <ul>
           <li class="active-m">
-            <a href="matches.php"> Matches </a>
+            <a href="index.php"> Home </a>
+          </li>
+
+          <li class="">
+            <a href="matches.php"> Events </a>
           </li>
           <li>
-            <a href="about.php"> The Club </a>
+            <a href="about.php"> Tournaments </a>
           </li>
 
           <li class="active-m">

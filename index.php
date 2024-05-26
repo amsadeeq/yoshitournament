@@ -572,12 +572,14 @@ if (isset($_POST['register'])) {
               <a class="nav-link active" href="index.php">Home</a>
             </li>
 
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="matches.php">Matches</a>
-            </li> -->
+
 
             <li class="nav-item">
               <a class="nav-link " href="about.php">Tournament</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="matches.php">Events</a>
             </li>
 
             <li class="nav-item">

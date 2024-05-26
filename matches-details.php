@@ -49,12 +49,14 @@
               <a class="nav-link" href="index.php">Home</a>
             </li>
 
-            <!-- <li class="nav-item">
-          <a class="nav-link" href="matches.php">Matches</a>
-        </li> -->
+
 
             <li class="nav-item">
               <a class="nav-link active" href="about.php">Tournament</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="matches.php">Events</a>
             </li>
 
             <li class="nav-item">
@@ -73,8 +75,8 @@
               <a class="nav-link " href="media.php">Media</a>
             </li>
             <!-- <li class="nav-item">
-            <a class="nav-link " href="shop.php">Shop</a>
-          </li> -->
+        <a class="nav-link " href="shop.php">Shop</a>
+      </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="contact.php">Contact</a>
