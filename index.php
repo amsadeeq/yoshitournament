@@ -568,12 +568,16 @@ if (isset($_POST['register'])) {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-            <li class="nav-item">
-              <a class="nav-link" href="matches.php">Matches</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php">Home</a>
             </li>
 
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="matches.php">Matches</a>
+            </li> -->
+
             <li class="nav-item">
-              <a class="nav-link " href="about.php">The Tournament</a>
+              <a class="nav-link " href="about.php">Tournament</a>
             </li>
 
             <li class="nav-item">
