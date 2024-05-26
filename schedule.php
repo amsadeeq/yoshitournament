@@ -111,7 +111,7 @@
         <h1 class="text-center"> Tournament Schedule </h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page"> Schedule </li>
           </ol>
         </nav>
