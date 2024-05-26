@@ -1474,7 +1474,7 @@ if (isset($_POST['register'])) {
 
           <h2 class="comon-heading m-0"> News </h2>
 
-          <a href="#" class="btn all-cm-btn animate__animated animate__zoomIn"> View All <svg
+          <a href="news.php" class="btn all-cm-btn animate__animated animate__zoomIn"> View All <svg
               xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
               viewBox="0 0 16 16">
               <path fill-rule="evenodd"
@@ -1587,7 +1587,7 @@ if (isset($_POST['register'])) {
 
           <h2 class="comon-heading m-0"> Media Gallery </h2>
 
-          <a href="#" class="btn all-cm-btn animate__animated animate__zoomIn"> View All <svg
+          <a href="media.php" class="btn all-cm-btn animate__animated animate__zoomIn"> View All <svg
               xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
               viewBox="0 0 16 16">
               <path fill-rule="evenodd"
