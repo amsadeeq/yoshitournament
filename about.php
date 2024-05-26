@@ -60,9 +60,9 @@
               <a class="nav-link" href="matches.php">Events</a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link " href="schedule.php">Schedule</a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="news.php">News</a>

@@ -590,9 +590,9 @@ if (isset($_POST['register'])) {
               <a class="nav-link " href="news.php">News</a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link " href="players.php">Players</a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="media.php">Media</a>
