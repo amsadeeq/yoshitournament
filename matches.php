@@ -39,19 +39,22 @@
         <a class="navbar-brand" href="index.php">
           <img src="images/logo.png" alt="logo" class="yoshi_logo" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightmobile">
+          <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-            <li class="nav-item">
-              <a class="nav-link active" href="matches.php">Matches</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php">Home</a>
             </li>
 
+            <!-- <li class="nav-item">
+          <a class="nav-link" href="matches.php">Matches</a>
+        </li> -->
+
             <li class="nav-item">
-              <a class="nav-link " href="about.php">The Tournament</a>
+              <a class="nav-link active" href="about.php">Tournament</a>
             </li>
 
             <li class="nav-item">
@@ -70,18 +73,20 @@
               <a class="nav-link " href="media.php">Media</a>
             </li>
             <!-- <li class="nav-item">
-               <a class="nav-link " href="shop.php">Shop</a>
-             </li> -->
+            <a class="nav-link " href="shop.php">Shop</a>
+          </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="contact.php">Contact</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link btn join-btn" data-bs-toggle="modal" class="regster-bn" data-bs-target="#loginModal">
+              <a class="nav-link btn join-btn animate__animated animate__zoomIn" data-bs-toggle="modal"
+                class="regster-bn" data-bs-target="#loginModal">
 
-                Register</a>
+                Sign Up</a>
             </li>
+
 
             <li class="nav-item">
               <a class="nav-link btn bar-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightmobile"><i

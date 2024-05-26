@@ -37,7 +37,7 @@
     <nav class="navbar navbar-expand-lg navbar-light ">
       <div class="container">
         <a class="navbar-brand" href="index.php">
-          <img src="images/logo.png" alt="logo" />
+          <img src="images/logo.png" alt="logo" class="yoshi_logo" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightmobile">
           <i class="fas fa-bars"></i>
@@ -45,16 +45,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php">Home</a>
+            </li>
+
+            <!-- <li class="nav-item">
+          <a class="nav-link" href="matches.php">Matches</a>
+        </li> -->
+
             <li class="nav-item">
-              <a class="nav-link" href="matches.php">Matches</a>
+              <a class="nav-link " href="about.php">Tournament</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link " href="about.php">The Club</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="schedule.php">Schedule</a>
+              <a class="nav-link " href="schedule.php">Schedule</a>
             </li>
 
             <li class="nav-item">
@@ -62,23 +66,27 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="players.php">Players</a>
+              <a class="nav-link " href="players.php">Players</a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link " href="media.php">Media</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="shop.php">Shop</a>
-            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link active" href="shop.php">Shop</a>
+          </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="contact.php">Contact</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link btn join-btn" data-bs-toggle="modal" class="regster-bn"
-                data-bs-target="#loginModal">join Now</a>
+              <a class="nav-link btn join-btn animate__animated animate__zoomIn" data-bs-toggle="modal"
+                class="regster-bn" data-bs-target="#loginModal">
+
+                Sign Up</a>
             </li>
+
 
             <li class="nav-item">
               <a class="nav-link btn bar-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightmobile"><i
