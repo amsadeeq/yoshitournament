@@ -291,12 +291,12 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                            type="button" role="tab" aria-controls="profile" aria-selected="false"> Our Mission
+                            type="button" role="tab" aria-controls="profile" aria-selected="false"> *
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
-                            type="button" role="tab" aria-controls="contact" aria-selected="false"> Our Vision </button>
+                            type="button" role="tab" aria-controls="contact" aria-selected="false"> * </button>
                     </li>
                 </ul>
             </div>
