@@ -46,7 +46,7 @@ echo "
                             
 
                             <li>
-                                <a href='Media.php'> Media </a>
+                                <a href='media.php'> Media </a>
                             </li>
 
                             <li>
