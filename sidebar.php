@@ -11,12 +11,9 @@
   <div class="offcanvas-body">
     <div class="head-contact d-none d-lg-block">
       <a href="index.php" class="logo-side">
-        <img src="images/logo.png" alt="logo" class="side-logo">
+        <img src="images/logo.png" alt="logo" style="width: 100px; height: 100px; " class="side-logo">
       </a>
-      <p class="mt-4"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-        the industry's
-        standard dummy text ever since the 1500s, when an unknown printer
-        took a galley of type and scrambled it to make a type specimen book.
+      <p class="mt-4"> Yoshi Tournaments
       </p>
       <div class="quick-link my-4">
         <ul>
@@ -45,24 +42,32 @@
             <a href="index.php"> Home </a>
           </li>
 
+          <li>
+            <a href="tournaments.php"> Tournaments </a>
+          </li>
+
           <li class="">
             <a href="matches.php"> Events </a>
           </li>
+
           <li>
-            <a href="about.php"> Tournaments </a>
+            <a href="registration.php"> Registration </a>
           </li>
 
-          <li class="active-m">
+
+          <!-- <li class="active-m">
             <a href="schedule.php"> Schedule </a>
-          </li>
+          </li> -->
           <li>
             <a href="news.php"> News </a>
           </li>
-          <li>
-            <a href="players.php"> Players </a>
-          </li>
+
           <li>
             <a href="media.php"> Media </a>
+          </li>
+
+          <li>
+            <a href="about.php"> About Us </a>
           </li>
           <!-- <li>
                <a href="shop.php"> Shop </a>
