@@ -79,7 +79,7 @@ echo "
 
                 </div>
                 <hr/>
-                <p class='text-center copy-t'> Copyright 2024 <a href = 'https://yoshifa.com'>Yoshi Football Academy</a>, All Right Reserved</p>
+                <p class='text-center copy-t'> Copyright 2024 <a style = 'text-decoration: none;' href = 'https://yoshifa.com'>Yoshi Football Academy</a>, All Right Reserved</p>
         </div>
         </footer>
     ";
