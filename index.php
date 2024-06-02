@@ -575,7 +575,7 @@ if (isset($_POST['register'])) {
 
 
             <li class="nav-item">
-              <a class="nav-link" href="about.php">Tournament</a>
+              <a class="nav-link" href="tournaments.php">Tournament</a>
             </li>
 
             <li class="nav-item">

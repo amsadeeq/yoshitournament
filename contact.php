@@ -53,7 +53,7 @@
 
 
             <li class="nav-item">
-              <a class="nav-link" href="about.php">Tournament</a>
+              <a class="nav-link" href="tournaments.php">Tournament</a>
             </li>
 
             <li class="nav-item">
@@ -65,16 +65,16 @@
             </li>
 
             <!-- <li class="nav-item">
-  <a class="nav-link " href="schedule.php">Schedule</a>
-</li> -->
+          <a class="nav-link " href="schedule.php">Schedule</a>
+        </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="news.php">News</a>
             </li>
 
             <!-- <li class="nav-item">
-  <a class="nav-link " href="players.php">Players</a>
-</li> -->
+          <a class="nav-link " href="players.php">Players</a>
+        </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="media.php">Media</a>
@@ -84,8 +84,8 @@
               <a class="nav-link " href="about.php">About us</a>
             </li>
             <!-- <li class="nav-item">
-    <a class="nav-link " href="shop.php">Shop</a>
-  </li> -->
+            <a class="nav-link " href="shop.php">Shop</a>
+          </li> -->
 
             <li class="nav-item">
               <a class="nav-link active" href="contact.php">Contact</a>

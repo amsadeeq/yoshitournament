@@ -54,7 +54,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link active" href="about.php">Tournament</a>
+                            <a class="nav-link active" href="tournaments.php">Tournament</a>
                         </li>
 
                         <li class="nav-item">
