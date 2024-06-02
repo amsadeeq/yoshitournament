@@ -468,7 +468,7 @@
 
         <div class="our-mangent-sft py-5">
             <div class="container">
-                <h2 class="comon-heading m-0"> Tournament Management Staff </h2>
+                <h2 class="comon-heading m-0"> Coordinators </h2>
                 <div class="mangemnet-sf owl-carousel owl-theme mt-4">
                     <div class="items-man">
                         <figure>
@@ -579,7 +579,7 @@
 
         <div class="our-triners py-5">
             <div class="container">
-                <h2 class="comon-heading m-0"> Tournament Coaching Staff </h2>
+                <h2 class="comon-heading m-0"> Tournament Officials </h2>
                 <figure class="achive-div1">
                     <img src="images/bg-6.webp" style="opacity: 0.1;" alt="bg" />
                 </figure>
