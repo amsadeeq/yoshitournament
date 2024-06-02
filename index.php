@@ -1607,98 +1607,253 @@ if (isset($_POST['register'])) {
         </div>
 
 
-        <div class="row g-lg-5 mt-5 mt-lg-0">
-          <div class="col-lg-8">
-            <a href="#" class="left-cm-blogs">
-              <figure class="m-0">
-                <img src="images/Yoshi_8.jpg" alt="blogs" />
-              </figure>
-              <div class="blogs-ps-right ps-lg-4 pt-lg-4">
-                <h5> Yoshi Tournamentin Gombe... </h5>
-                <ul class="list-unstyled d-flex align-items-center mt-2">
-                  <li>
-                    <i class="fas fa-calendar-alt"></i> 27 June, 2024
-                  </li>
-                  <li>
-                    <i class="far fa-comment-dots"></i> 89 Comments
-                  </li>
-                </ul>
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  the printing and typesetting industry.
-                </p>
-                <h4 class="btn mt-4"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-arrow-up-right-square-fill" viewBox="0 0 16 16">
-                    <path
-                      d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM5.904 10.803 10 6.707v2.768a.5.5 0 0 0 1 0V5.5a.5.5 0 0 0-.5-.5H6.525a.5.5 0 1 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 .707.707z" />
-                  </svg> </h4>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-0 mt-lg-0 g-4 g-lg-4">
+
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/Yoshi_5.jpg" class="gallery-div">
+                <figure>
+                  <img src="images/Yoshi_5.jpg" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
               </div>
-            </a>
-
-            <a href="#" class="left-cm-blogs">
-              <figure class="m-0">
-                <img src="images/Yoshi_6.jpg" alt="blogs" />
-              </figure>
-              <div class="blogs-ps-right ps-lg-4 pt-lg-4">
-                <h5> Abuja Matches was a success... </h5>
-                <ul class="list-unstyled d-flex align-items-center mt-2">
-                  <li>
-                    <i class="fas fa-calendar-alt"></i> 27 June, 2024
-                  </li>
-                  <li>
-                    <i class="far fa-comment-dots"></i> 89 Comments
-                  </li>
-                </ul>
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. the printing
-                  and typesetting industry.
-                </p>
-                <h4 class="btn mt-4"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-arrow-up-right-square-fill" viewBox="0 0 16 16">
-                    <path
-                      d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM5.904 10.803 10 6.707v2.768a.5.5 0 0 0 1 0V5.5a.5.5 0 0 0-.5-.5H6.525a.5.5 0 1 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 .707.707z" />
-                  </svg> </h4>
-              </div>
-            </a>
-
-
+            </div>
           </div>
 
-          <div class="col-lg-4 right-home-blogs">
-            <a href="#" class="left-cm-blogs">
-              <figure class="m-0">
-                <img src="images/Yoshi_9.jpg" alt="blogs" />
-              </figure>
-              <div class="blogs-ps-right ps-lg-4 pt-lg-1">
-                <h5 class="mt-0">Gombe FC Team is disqualifieed </h5>
-                <ul class="list-unstyled d-flex align-items-center mt-2">
-                  <li>
-                    <i class="fas fa-calendar-alt"></i> 27 June, 2024
-                  </li>
-                  <li>
-                    <i class="far fa-comment-dots"></i> 89 Comments
-                  </li>
-                </ul>
-
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/Yoshi_6.jpg" class="gallery-div">
+                <figure>
+                  <img src="images/Yoshi_6.jpg" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
               </div>
-            </a>
-
-            <a href="#" class="left-cm-blogs">
-              <figure class="m-0">
-                <img src="images/Yoshi_10.jpg" alt="blogs" />
-              </figure>
-              <div class="blogs-ps-right ps-lg-4 pt-lg-1">
-                <h5 class="mt-0"> Yobe FC is signed new contract with.... </h5>
-                <ul class="list-unstyled d-flex align-items-center mt-2">
-                  <li>
-                    <i class="fas fa-calendar-alt"></i> 27 June, 2020
-                  </li>
-                  <li>
-                    <i class="far fa-comment-dots"></i> 89 Comments
-                  </li>
-                </ul>
-
-              </div>
-            </a>
+            </div>
           </div>
+
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/Yoshi_11.jpg" class="gallery-div">
+                <figure>
+                  <img src="images/Yoshi_11.jpg" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/Yoshi_banner_2.jpg" class="gallery-div">
+                <figure>
+                  <img src="images/Yoshi_banner_2.jpg" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/Yoshi_2.jpg" class="gallery-div">
+                <figure>
+                  <img src="images/Yoshi_2.jpg" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/Yoshi_7.jpg" class="gallery-div">
+                <figure>
+                  <img src="images/Yoshi_7.jpg" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/yoshi_founder.png" class="gallery-div">
+                <figure>
+                  <img src="images/yoshi_founder.png" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/Yoshi_9.jpg" class="gallery-div">
+                <figure>
+                  <img src="images/Yoshi_9.jpg" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/gall4.webp" class="gallery-div">
+                <figure>
+                  <img src="images/gall4.webp" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>21s Cup Best Kick 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/2821048.webp" class="gallery-div">
+                <figure>
+                  <img src="images/2821048.webp" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="comongallery">
+              <a data-fancybox="gallery" href="images/win.jfif" class="gallery-div">
+                <figure>
+                  <img src="images/gall2.jpg" alt="gallery1" />
+                  <figcaption>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="photo-details">
+                <h5>Gombe United Fc Win 2024 </h5>
+                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
         </div>
       </div>
     </div>
