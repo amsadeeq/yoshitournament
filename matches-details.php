@@ -52,11 +52,11 @@
 
 
             <li class="nav-item">
-              <a class="nav-link active" href="about.php">Tournament</a>
+              <a class="nav-link" href="about.php">Tournament</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="matches.php">Events</a>
+              <a class="nav-link active" href="matches.php">Events</a>
             </li>
 
             <li class="nav-item">
