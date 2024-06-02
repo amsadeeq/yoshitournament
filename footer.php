@@ -79,7 +79,9 @@ echo "
 
                 </div>
                 <hr/>
-                <p class='text-center copy-t'> Copyright 2024 <a style = 'text-decoration: none;' target = '_blank'
+                <p class='text-center copy-t'> Copyright 2024 <a style = 'text-decoration: none;' target = '_blank' href = 'https://yoshifa.com'>Yoshi Football Academy</a>, All Right Reserved</p>
+        </div>
+        </footer>
     ";
 
 ?>
