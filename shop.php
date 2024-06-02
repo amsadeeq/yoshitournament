@@ -78,6 +78,10 @@
             <li class="nav-item">
               <a class="nav-link " href="media.php">Media</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="about.php">About us</a>
+            </li>
             <!-- <li class="nav-item">
     <a class="nav-link active" href="shop.php">Shop</a>
   </li> -->

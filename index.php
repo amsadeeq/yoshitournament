@@ -587,23 +587,27 @@ if (isset($_POST['register'])) {
             </li>
 
             <!-- <li class="nav-item">
-      <a class="nav-link " href="schedule.php">Schedule</a>
-    </li> -->
+          <a class="nav-link " href="schedule.php">Schedule</a>
+        </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="news.php">News</a>
             </li>
 
             <!-- <li class="nav-item">
-      <a class="nav-link " href="players.php">Players</a>
-    </li> -->
+          <a class="nav-link " href="players.php">Players</a>
+        </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="media.php">Media</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="about.php">About us</a>
+            </li>
             <!-- <li class="nav-item">
-        <a class="nav-link " href="shop.php">Shop</a>
-      </li> -->
+            <a class="nav-link " href="shop.php">Shop</a>
+          </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="contact.php">Contact</a>

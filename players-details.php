@@ -52,7 +52,7 @@
 
 
             <li class="nav-item">
-              <a class="nav-link" href="about.php">Tournament</a>
+              <a class="nav-link active" href="about.php">Tournament</a>
             </li>
 
             <li class="nav-item">
@@ -76,7 +76,11 @@
 </li> -->
 
             <li class="nav-item">
-              <a class="nav-link active" href="media.php">Media</a>
+              <a class="nav-link " href="media.php">Media</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="about.php">About us</a>
             </li>
             <!-- <li class="nav-item">
     <a class="nav-link " href="shop.php">Shop</a>

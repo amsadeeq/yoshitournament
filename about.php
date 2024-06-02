@@ -53,7 +53,7 @@
 
 
             <li class="nav-item">
-              <a class="nav-link active" href="about.php">Tournament</a>
+              <a class="nav-link" href="about.php">Tournament</a>
             </li>
 
             <li class="nav-item">
@@ -65,23 +65,27 @@
             </li>
 
             <!-- <li class="nav-item">
-          <a class="nav-link " href="schedule.php">Schedule</a>
-        </li> -->
+  <a class="nav-link " href="schedule.php">Schedule</a>
+</li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="news.php">News</a>
             </li>
 
             <!-- <li class="nav-item">
-          <a class="nav-link " href="players.php">Players</a>
-        </li> -->
+  <a class="nav-link " href="players.php">Players</a>
+</li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="media.php">Media</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="about.php">About us</a>
+            </li>
             <!-- <li class="nav-item">
-            <a class="nav-link " href="shop.php">Shop</a>
-          </li> -->
+    <a class="nav-link " href="shop.php">Shop</a>
+  </li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="contact.php">Contact</a>
@@ -113,11 +117,11 @@
 
     <div class="sub-banner">
       <div class="container">
-        <h1 class="text-center"> The Tournament</h1>
+        <h1 class="text-center"> About Us</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">The Tournament</li>
+            <li class="breadcrumb-item active" aria-current="page">About Us</li>
           </ol>
         </nav>
       </div>
@@ -523,7 +527,7 @@
 
     <div class="our-triners py-5">
       <div class="container">
-        <h2 class="comon-heading m-0"> Tournament Coaching Staff </h2>
+        <h2 class="comon-heading m-0"> Yoshi Management </h2>
         <figure class="achive-div1">
           <img src="images/bg-6.webp" style="opacity: 0.1;" alt="bg" />
         </figure>

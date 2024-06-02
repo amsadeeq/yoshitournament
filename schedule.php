@@ -64,7 +64,7 @@
             </li>
 
             <!-- <li class="nav-item">
-  <a class="nav-link " href="schedule.php">Schedule</a>
+  <a class="nav-link active" href="schedule.php">Schedule</a>
 </li> -->
 
             <li class="nav-item">
@@ -77,6 +77,10 @@
 
             <li class="nav-item">
               <a class="nav-link " href="media.php">Media</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="about.php">About us</a>
             </li>
             <!-- <li class="nav-item">
     <a class="nav-link " href="shop.php">Shop</a>
