@@ -172,15 +172,33 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Story </h5>
               <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-              <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It is
-                a long established fact that a
-                reader will be distracted by the readable content of a page when looking at its layout. The point of
-                using Lorem Ipsum
+              <p class="mt-3"> Founded under the umbrella of Yoshifa, a renowned football academy in the UAE with
+                branches around the world, Yoshi Tournaments was born from a passion for football and a desire to
+                provide a platform for competition and growth. Yoshifa has always been committed to nurturing young
+                talent and fostering a love for the sport. Building on this foundation, Yoshi Tournaments was
+                established to extend these values beyond our academy walls and into the global football community.
+
+                Yoshi Tournaments began as a modest initiative, organizing local competitions among football teams,
+                organizations, schools, and other football academies. Our dedication to quality and our commitment to
+                creating unforgettable experiences quickly earned us a reputation for excellence. As we grew, so did the
+                scope of our tournaments, attracting participants from all corners of the globe.
+
+                Today, Yoshi Tournaments stands as a beacon for aspiring footballers and seasoned professionals alike.
+                We pride ourselves on our ability to host well-organized, competitive, and inclusive tournaments that
+                cater to both licensed and unlicensed officials. By integrating advanced technologies and maintaining a
+                keen focus on the needs of our participants, we ensure that every tournament is not just a competition,
+                but a celebration of the beautiful game.
+
+                Our story is one of continuous growth, fueled by a love for football and a commitment to our mission and
+                vision. As we look to the future, we remain dedicated to providing exceptional tournament experiences
+                and fostering a global community united by the joy of football.
+
+                Visit us at <a style="text-decoration: none;" href='tournaments.php'>Tournaments</a> and <a
+                  style="text-decoration: none;" href='https://yoshifa.com'>Yoshifa</a> to
+                learn more about our events,
+                history, and how you can be a
+                part of our ever-growing football family. Together, we are making football dreams come true, one
+                tournament at a time.
               </p>
 
             </div>
@@ -197,17 +215,12 @@
           <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Vision </h5>
-              <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
-              <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It is
-                a long established fact that a
-                reader will be distracted by the readable content of a page when looking at its layout. The point of
-                using Lorem Ipsum
-              </p>
+              <h2 class="comon-heading m-0"> Our vision is to be the leading tournament organizer in the world of
+                football, renowned for our commitment to excellence, inclusivity, and innovation. We aim to inspire and
+                empower football enthusiasts of all ages and backgrounds by offering a dynamic and engaging tournament
+                experience. Through our efforts, we aspire to build a global community that celebrates diversity,
+                nurtures talent, and promotes the values of respect, integrity, and passion for the game.
+                </p>
 
             </div>
             <div class="col position-relative">
@@ -242,15 +255,11 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Mission </h5>
               <h2 class="comon-heading m-0"> Mission of Yoshi Tournament </h2>
-              <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It is
-                a long established fact that a
-                reader will be distracted by the readable content of a page when looking at its layout. The point of
-                using Lorem Ipsum
+              <p class="mt-3"> At Yoshi Tournaments, our mission is to create a premier platform for football
+                competitions that brings together teams, players, and fans from around the world. We are dedicated to
+                fostering a spirit of sportsmanship, excellence, and camaraderie by organizing high-quality tournaments
+                that provide opportunities for talent development, teamwork, and lifelong memories. Our goal is to
+                enhance the love for football and contribute to the growth of the sport globally.
               </p>
 
             </div>
