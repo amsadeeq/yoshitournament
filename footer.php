@@ -38,7 +38,7 @@ echo "
                                 <a href='matches.php'> Events </a>
                             </li>
                             <li>
-                                <a href='registration.php'> Registration.php </a>
+                                <a href='registration.php'> Registration </a>
                             </li>
                             <li>
                                 <a href='news.php'> News </a>
