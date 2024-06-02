@@ -196,8 +196,8 @@
         <div class="container">
           <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
             <div class="col">
-              <h5 class="samll-sub mb-1 mt-0"> The Story </h5>
-              <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
+              <h5 class="samll-sub mb-1 mt-0"> Vision </h5>
+              <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
               <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                 has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
@@ -240,8 +240,8 @@
               </figure>
             </div>
             <div class="col">
-              <h5 class="samll-sub mb-1 mt-0"> The Story </h5>
-              <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
+              <h5 class="samll-sub mb-1 mt-0"> Mission </h5>
+              <h2 class="comon-heading m-0"> Mission of Yoshi Tournament </h2>
               <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                 has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
@@ -267,15 +267,15 @@
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-              role="tab" aria-controls="home" aria-selected="true"> Our History </button>
+              role="tab" aria-controls="home" aria-selected="true"> Timeline </button>
           </li>
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-              role="tab" aria-controls="profile" aria-selected="false"> Our Mission </button>
+              role="tab" aria-controls="profile" aria-selected="false"> * </button>
           </li>
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
-              role="tab" aria-controls="contact" aria-selected="false"> Our Vision </button>
+              role="tab" aria-controls="contact" aria-selected="false"> * </button>
           </li>
         </ul>
       </div>
