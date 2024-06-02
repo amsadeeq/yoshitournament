@@ -213,10 +213,10 @@
       <div class="about-club-top">
         <div class="container">
           <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
-            <div class="col" style="text-align: justify;">
+            <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Vision </h5>
               <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
-              <p class="mt-3">
+              <p class="mt-3" style="text-align: justify;">
                 Our vision is to be the leading tournament organizer in the world of
                 football, renowned for our commitment to excellence, inclusivity, and innovation. We aim to inspire and
                 empower football enthusiasts of all ages and backgrounds by offering a dynamic and engaging tournament
