@@ -12,13 +12,13 @@ echo "
                             </p>
                             <ul class='list-unstyled d-flex align-items-center mt-2'>
                                 <li>
-                                    <a href='https://www.facebook.com/yoshifootball'> <i class='fab fa-facebook'></i> </a>
+                                    <a  target = '_blank' href='https://www.facebook.com/yoshifootball'> <i class='fab fa-facebook'></i> </a>
                                 </li>
                                 <li class='mx-2'>
-                                <a href='https://x.com/yoshi_fa_'> <i class='fab fa-twitter'></i> </a>
+                                    <a  target = '_blank' href='https://x.com/yoshi_fa_'> <i class='fab fa-twitter'></i> </a>
                                 </li>
                                 <li>
-                                <a href='https://www.instagram.com/yoshi.ae/'><i class='fab fa-instagram'></i> </a>
+                                    <a target = '_blank' href='https://www.instagram.com/yoshi.ae/'><i class='fab fa-instagram'></i> </a>
                                 </li>
                             </ul>
                         </div>
