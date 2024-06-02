@@ -116,11 +116,11 @@
 
     <div class="sub-banner">
       <div class="container">
-        <h1 class="text-center"> Matches Details</h1>
+        <h1 class="text-center"> Event Details</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Matches Details</li>
+            <li class="breadcrumb-item active" aria-current="page">Event Details</li>
           </ol>
         </nav>
       </div>
