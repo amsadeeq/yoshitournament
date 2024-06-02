@@ -1785,69 +1785,12 @@ if (isset($_POST['register'])) {
           </div>
 
 
-          <div class="col">
-            <div class="comongallery">
-              <a data-fancybox="gallery" href="images/gall4.webp" class="gallery-div">
-                <figure>
-                  <img src="images/gall4.webp" alt="gallery1" />
-                  <figcaption>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                      class="bi bi-plus-lg" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd"
-                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                    </svg>
-                  </figcaption>
-                </figure>
-              </a>
-              <div class="photo-details">
-                <h5>21s Cup Best Kick 2024 </h5>
-                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="comongallery">
-              <a data-fancybox="gallery" href="images/2821048.webp" class="gallery-div">
-                <figure>
-                  <img src="images/2821048.webp" alt="gallery1" />
-                  <figcaption>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                      class="bi bi-plus-lg" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd"
-                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                    </svg>
-                  </figcaption>
-                </figure>
-              </a>
-              <div class="photo-details">
-                <h5>Gombe United Fc Win 2024 </h5>
-                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
-            </div>
-          </div>
 
 
-          <div class="col">
-            <div class="comongallery">
-              <a data-fancybox="gallery" href="images/win.jfif" class="gallery-div">
-                <figure>
-                  <img src="images/gall2.jpg" alt="gallery1" />
-                  <figcaption>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                      class="bi bi-plus-lg" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd"
-                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                    </svg>
-                  </figcaption>
-                </figure>
-              </a>
-              <div class="photo-details">
-                <h5>Gombe United Fc Win 2024 </h5>
-                <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
-            </div>
-          </div>
+
+
+
+
 
 
 
