@@ -170,7 +170,7 @@
               </figure>
             </div>
             <div class="col">
-              <h5 class="samll-sub mb-1 mt-0"> The Story </h5>
+              <h5 class="samll-sub mb-1 mt-0"> Our Story </h5>
               <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
               <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                 has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
@@ -196,7 +196,7 @@
         <div class="container">
           <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
             <div class="col">
-              <h5 class="samll-sub mb-1 mt-0"> Vision </h5>
+              <h5 class="samll-sub mb-1 mt-0"> Our Vision </h5>
               <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
               <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                 has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
@@ -240,7 +240,7 @@
               </figure>
             </div>
             <div class="col">
-              <h5 class="samll-sub mb-1 mt-0"> Mission </h5>
+              <h5 class="samll-sub mb-1 mt-0"> Our Mission </h5>
               <h2 class="comon-heading m-0"> Mission of Yoshi Tournament </h2>
               <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                 has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
