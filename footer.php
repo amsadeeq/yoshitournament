@@ -1,5 +1,5 @@
 <?php
-    echo "
+echo "
     <footer class='py-5 float-start w-100'>
 
         <div class='container'>
@@ -29,31 +29,32 @@
                         <h5> Resources </h5>
                         <ul class='list-unstyled'>
                             <li>
-                                <a href='#'> Matches </a>
+                                <a href='Index.php'> Home </a>
                             </li>
                             <li>
-                                <a href='#'> The Clubs </a>
+                                <a href='tournaments.php'> Tournaments </a>
                             </li>
                             <li>
-                                <a href='#'> Member </a>
+                                <a href='matches.php'> Events </a>
                             </li>
                             <li>
-                                <a href='#'> News </a>
+                                <a href='registration.php'> Registration.php </a>
                             </li>
                             <li>
-                                <a href='#'> Players </a>
+                                <a href='news.php'> News </a>
+                            </li>
+                            
+
+                            <li>
+                                <a href='Media.php'> Media </a>
                             </li>
 
                             <li>
-                                <a href='#'> Media </a>
+                                <a href='about.php'> About us </a>
                             </li>
 
                             <li>
-                                <a href='#'> Shop </a>
-                            </li>
-
-                            <li>
-                                <a href='#'> Contact </a>
+                                <a href='contact.php'> Contact </a>
                             </li>
                         </ul>
                         
@@ -78,9 +79,9 @@
 
                 </div>
                 <hr/>
-                <p class='text-center copy-t'> Copyright 2024 Yoshi Football Academy, All Right Reserved</p>
+                <p class='text-center copy-t'> Copyright 2024 <a href = 'https://yoshifa.com'>Yoshi Football Academy</a>, All Right Reserved</p>
         </div>
         </footer>
     ";
-    
+
 ?>
