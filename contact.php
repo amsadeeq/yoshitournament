@@ -47,40 +47,53 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
             <li class="nav-item">
-              <a class="nav-link" href="matches.php">Matches</a>
+              <a class="nav-link" href="index.php">Home</a>
+            </li>
+
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.php">Tournament</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link " href="about.php">The Clubs</a>
+              <a class="nav-link" href="matches.php">Events</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link " href="schedule.php">Schedule</a>
+              <a class="nav-link" href="registration.php">Registration</a>
             </li>
+
+            <!-- <li class="nav-item">
+  <a class="nav-link " href="schedule.php">Schedule</a>
+</li> -->
 
             <li class="nav-item">
               <a class="nav-link " href="news.php">News</a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link " href="players.php">Players</a>
-            </li>
+            <!-- <li class="nav-item">
+  <a class="nav-link " href="players.php">Players</a>
+</li> -->
 
             <li class="nav-item">
-              <a class="nav-link" href="media.php">Media</a>
+              <a class="nav-link " href="media.php">Media</a>
             </li>
             <!-- <li class="nav-item">
-               <a class="nav-link " href="shop.php">Shop</a>
-             </li> -->
+    <a class="nav-link " href="shop.php">Shop</a>
+  </li> -->
 
             <li class="nav-item">
               <a class="nav-link active" href="contact.php">Contact</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link btn join-btn" data-bs-toggle="modal" class="regster-bn"
-                data-bs-target="#loginModal">join Now</a>
+              <a class="nav-link btn join-btn animate__animated animate__zoomIn" data-bs-toggle="modal"
+                class="regster-bn" data-bs-target="#loginModal">
+
+                Sign Up</a>
             </li>
+
 
             <li class="nav-item">
               <a class="nav-link btn bar-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightmobile"><i
