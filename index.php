@@ -850,7 +850,7 @@ if (isset($_POST['register'])) {
           <div class="col-lg-7 col-xl-8">
             <div class="d-flex justify-content-between align-items-center">
               <h2 class="comon-heading m-0"> Fixtures & Results </h2>
-              <a href="#" class="btn all-cm-btn  animate__animated animate__zoomIn"> All Matches <svg
+              <a href="matches.php" class="btn all-cm-btn  animate__animated animate__zoomIn"> All Matches <svg
                   xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd"
@@ -966,7 +966,7 @@ if (isset($_POST['register'])) {
             <div class="latest-result-div mt-5 mt-lg-0">
               <div class="d-flex align-items-center justify-content-between">
                 <h2 class="comon-heading m-0"> Latest Results</h2>
-                <a href="#" class="btn viw-btn">
+                <a href="matches.php" class="btn viw-btn">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-up-right-square-fill" viewBox="0 0 16 16">
                     <path
@@ -1434,8 +1434,9 @@ if (isset($_POST['register'])) {
       <div class="container">
         <div class="d-lg-flex justify-content-between">
           <h1 class="comon-heading m-0"> Become part of a Great Team </h1>
-          <a href="#" class="btn all-cm-btn mt-4 mt-lg-0 "> Join Us <svg xmlns="http://www.w3.org/2000/svg" width="16"
-              height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+          <a href="registration.php" class="btn all-cm-btn mt-4 mt-lg-0 "> Join Us <svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short"
+              viewBox="0 0 16 16">
               <path fill-rule="evenodd"
                 d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
             </svg> </a>
