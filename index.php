@@ -1897,8 +1897,7 @@ if (isset($_POST['register'])) {
                       </div>
                       <a data-bs-toggle='modal' -bs-target='#loginModal' type="button"
                         class="text-secondary mt-3 text-decoration-none animated-text d-none d-sm-block"
-                        data-bs-dismiss='modal'><small>Login to
-                          continue</small></a>
+                        data-bs-dismiss='modal'><small>Read more</small></a>
                     </div>
                   </div>
                 </div>
