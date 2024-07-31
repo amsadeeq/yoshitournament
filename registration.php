@@ -170,10 +170,10 @@
                                 <div class="card-body text-center">
                                     <div class="px-4 animated-text">
                                         <h2>Yoshi Abuja Private School Tournament 2024</h2>
-                                        <br /><br />
+                                        <br />
                                         <!-- <p class="my-3 text-secondary">Yoshi Abuja Private Schools Tournaments 2024</p> -->
                                         <!-- <p class="mt-3 mb-4 text-success">Football Tournament</p> -->
-                                        <a href="registration.php" class="btn mt-8 w-100 join-btn"
+                                        <a href="registration.php" class="btn mt-8 w-100 join-btn shadow-sm"
                                             style="border-radius: 15px 15px;">Register</a>
                                     </div>
 
