@@ -164,7 +164,7 @@
                         <div class="row g-0 align-items-center">
                             <div class="col-xs-6 col-sm-6">
                                 <img src="images/Yoshi Modal.png" class="card-img-top" alt="Gift Poster"
-                                    style="border-radius: 10px 0px 10px 0px;">
+                                    style="border-radius: 10px 0px 0px 10px;">
                             </div>
                             <div class="col-xs-6 col-lg-6 col-sm-6">
                                 <div class="card-body text-center">
