@@ -1879,8 +1879,7 @@ if (isset($_POST['register'])) {
                         <p class="mt-3 mb-4 text-success">Football Tournament</p>
 
 
-                        <button class="btn btn-dark rounded-0 mt-10 w-100"
-                          style="border-radius: 10px 10px;">Register</button>
+                        <button class="btn btn-dark rounded-10 mt-8 w-100">Register</button>
                       </div>
                       <a type="button" class="text-secondary mt-3" data-bs-dismiss="modal"><small>Login to
                           continue</small></a>
