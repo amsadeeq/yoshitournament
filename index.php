@@ -547,7 +547,38 @@ if (isset($_POST['register'])) {
   <!-- Include eye icon image for showing and hiding passwords -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+  <style>
+    .modal-content {
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
 
+    .carousel-item img {
+      max-width: 150px;
+      border-radius: 5px;
+    }
+
+    .modal-body .animated-text {
+      opacity: 0;
+      transition: opacity 1s ease-in-out 1s;
+    }
+
+    .modal-body h4 {
+      font-weight: bold;
+      color: #333;
+    }
+
+    #registerBtn {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .show .animated-text {
+      opacity: 1;
+    }
+  </style>
 
 </head>
 
@@ -1785,7 +1816,50 @@ if (isset($_POST['register'])) {
           </div>
 
 
-
+          <!-- Onload Popup Modal -->
+          <div class="modal fade" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body d-flex align-items-center">
+                  <div id="carouselExampleIndicators" class="carousel slide me-3" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="path/to/abuja-main-gate1.jpg" class="d-block w-100" alt="Abuja Main Gate 1">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="path/to/abuja-main-gate2.jpg" class="d-block w-100" alt="Abuja Main Gate 2">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="path/to/abuja-main-gate3.jpg" class="d-block w-100" alt="Abuja Main Gate 3">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="animated-text">
+                    <h4>Yoshi Tournament 2024 for Abuja Private Schools</h4>
+                    <button class="btn btn-primary mt-3" id="registerBtn">Register</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -1852,6 +1926,16 @@ if (isset($_POST['register'])) {
   echo $logout_message;
 
   ?>
+
+  <script>
+    $(document).ready(function () {
+      $('#onloadModal').modal('show');
+
+      $('#onloadModal').on('shown.bs.modal', function () {
+        $('.animated-text').addClass('show');
+      });
+    });
+  </script>
 
 
   <script>
