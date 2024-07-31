@@ -1879,8 +1879,7 @@ if (isset($_POST['register'])) {
                         </div>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="images/Yoshi Modal.png" style="width: 100%;" class="d-block w-100"
-                              alt="Abuja Main Gate 1">
+                            <img src="images/Yoshi Modal.png" class="d-block w-300" alt="Abuja Main Gate 1">
                           </div>
                           <div class="carousel-item">
                             <img src="images/Yoshi Modal.png" class="d-block w-100" alt="Abuja Main Gate 2">
