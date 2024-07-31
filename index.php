@@ -1902,7 +1902,7 @@ if (isset($_POST['register'])) {
                     </div>
                     <div class="col-sm-6 col-xs-12 text-center">
                       <div class="px-4">
-                        <h2>30% Off !</h2>
+                        <h2>Welcome!</h2>
                         <p class="my-3 text-secondary">A perfect way to start your holiday season with our vast
                           collection of gifts.</p>
                         <p class="mt-3 mb-4 text-success">Avail coupon now</p>
