@@ -1817,7 +1817,7 @@ if (isset($_POST['register'])) {
 
 
           <!-- Onload Popup Modal -->
-          <div class="modal fade" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel" aria-hidden="true">
+          <!-- <div class="modal fade" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-body d-flex align-items-center">
@@ -1855,6 +1855,63 @@ if (isset($_POST['register'])) {
                   <div class="animated-text">
                     <h4>Yoshi Tournament 2024 for Abuja Private Schools</h4>
                     <button class="btn btn-primary mt-3" id="registerBtn">Register</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="modal fade" tabindex="-1" role="dialog" id="onloadModal" tabindex="-1"
+            aria-labelledby="onloadModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-body d-flex align-items-center p-0 m-0">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-sm-6 col-xs-12">
+                      <div id="carouselExampleIndicators" class="carousel slide me-3" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="images/front.png" class="d-block w-100" alt="Abuja Main Gate 1">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/0001side.png" class="d-block w-100" alt="Abuja Main Gate 2">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/front.png" class="d-block w-100" alt="Abuja Main Gate 3">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                          data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                          data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 text-center">
+                      <div class="px-4">
+                        <h2>30% Off !</h2>
+                        <p class="my-3 text-secondary">A perfect way to start your holiday season with our vast
+                          collection of gifts.</p>
+                        <p class="mt-3 mb-4 text-success">Avail coupon now</p>
+                        <input type="email" placeholder="Enter Email" class="form-control rounded-0">
+                        <button class="btn btn-dark rounded-0 mt-2 w-100">Send Me Coupon</button>
+                      </div>
+                      <a type="button" class="text-secondary mt-3" data-bs-dismiss="modal"><small>I don't want any
+                          coupons</small></a>
+                    </div>
                   </div>
                 </div>
               </div>
