@@ -158,7 +158,7 @@
     <section class="body-part-total float-start w-100">
         <div class="container matech-div-main my-5">
             <div class="row g-0 align-items-center">
-                <!-- Repeat the card for the remaining 3 columns -->
+                <!-- Repeat the card for the remaining 2 columns -->
                 <div class="col-sm-6 col-xs-6">
                     <div class="card rounded-5 shadow-lg" style=" cursor:pointer; border-radius:10px 10px;">
                         <div class="row g-0 align-items-center">
@@ -180,7 +180,29 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                    <div class="card rounded-5 shadow-lg" style=" cursor:pointer; border-radius:10px 10px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-xs-6 col-sm-6">
+                                <img src="images/Yoshi Modal.png" class="card-img-top" alt="Gift Poster"
+                                    style="border-radius: 10px 0px 0px 10px;">
+                            </div>
+                            <div class="col-xs-6 col-lg-6 col-sm-6">
+                                <div class="card-body text-center">
+                                    <div class="px-4 animated-text">
+                                        <h2>Yoshi Abuja Private School Tournament 2024</h2>
+                                        <br />
+                                        <!-- <p class="my-3 text-secondary">Yoshi Abuja Private Schools Tournaments 2024</p> -->
+                                        <!-- <p class="mt-3 mb-4 text-success">Football Tournament</p> -->
+                                        <a href="registration.php" class="btn mt-8 w-100 join-btn shadow-sm"
+                                            style="border-radius: 15px 15px;">Register</a>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
