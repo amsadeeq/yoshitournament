@@ -563,6 +563,51 @@ if (isset($_POST['register'])) {
       transition: opacity 1s ease-in-out 1s;
     }
 
+    .animated-header {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid orange;
+      /* The typewriter cursor */
+      animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent
+      }
+
+      50% {
+        border-color: orange;
+      }
+    }
+
+    #registerBtn {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .show .animated-text {
+      opacity: 1;
+    }
+
     .modal-body h4 {
       font-weight: bold;
       color: #333;
@@ -1876,10 +1921,10 @@ if (isset($_POST['register'])) {
 
                     </div>
                     <div class="col-sm-6 col-xs-12 text-center">
-                      <div class="px-4">
+                      <div class="px-4 animated-text">
                         <h2>Welcome to!</h2>
-                        <p class="my-3 text-secondary">Yoshi Abuja Private Schools Torunaments 2024</p>
-                        <p class="mt-3 mb-4 text-success">Football Tournament</p>
+                        <p class="my-3 text-secondary animated-header">Yoshi Abuja Private Schools Torunaments 2024</p>
+                        <p class="mt-3 mb-4 text-success animated-header">Football Tournament</p>
 
                         <br /><br /><br /><br /><br />
 
