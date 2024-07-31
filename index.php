@@ -1902,15 +1902,14 @@ if (isset($_POST['register'])) {
                     </div>
                     <div class="col-sm-6 col-xs-12 text-center">
                       <div class="px-4">
-                        <h2>Welcome!</h2>
-                        <p class="my-3 text-secondary">A perfect way to start your holiday season with our vast
-                          collection of gifts.</p>
-                        <p class="mt-3 mb-4 text-success">Avail coupon now</p>
+                        <h2>Welcome to!</h2>
+                        <p class="my-3 text-secondary">Yoshi Abuja Private Schools Torunaments 2024</p>
+                        <p class="mt-3 mb-4 text-success">Football Tournament</p>
                         <input type="email" placeholder="Enter Email" class="form-control rounded-0">
-                        <button class="btn btn-dark rounded-0 mt-2 w-100">Send Me Coupon</button>
+                        <button class="btn btn-dark rounded-0 mt-2 w-100">Register</button>
                       </div>
-                      <a type="button" class="text-secondary mt-3" data-bs-dismiss="modal"><small>I don't want any
-                          coupons</small></a>
+                      <a type="button" class="text-secondary mt-3" data-bs-dismiss="modal"><small>Login to
+                          continue</small></a>
                     </div>
                   </div>
                 </div>
