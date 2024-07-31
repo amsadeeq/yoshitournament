@@ -164,12 +164,12 @@
                         <div class="row g-0 align-items-center">
                             <div class="col-xs-6 col-sm-6">
                                 <img src="images/Yoshi Modal.png" class="card-img-top" alt="Gift Poster"
-                                    style="border-radius: 10px 10px;">
+                                    style="border-radius: 10px 0px 10px 10px;">
                             </div>
                             <div class="col-xs-6 col-lg-6 col-sm-6">
                                 <div class="card-body text-center">
                                     <div class="px-4 animated-text">
-                                        <h2>Welcome to!</h2>
+                                        <h2>Abuja 2024</h2>
                                         <p class="my-3 text-secondary">Yoshi Abuja Private Schools Tournaments 2024</p>
                                         <p class="mt-3 mb-4 text-success">Football Tournament</p>
                                         <a href="registration.php" class="btn mt-8 w-100 join-btn"
