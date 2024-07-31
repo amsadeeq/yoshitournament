@@ -1878,9 +1878,9 @@ if (isset($_POST['register'])) {
                         <p class="my-3 text-secondary">Yoshi Abuja Private Schools Torunaments 2024</p>
                         <p class="mt-3 mb-4 text-success">Football Tournament</p>
 
-                        <input type="hidden" placeholder="Enter Email" hidden class="form-control rounded-0">
+                        <br /><br /><br />
 
-                        <button class="btn btn-dark rounded-20 mt-8 w-100">Register</button>
+                        <button class="btn btn-dark mt-8 w-100" style="border-radius: 15px 15px;">Register</button>
                       </div>
                       <a type="button" class="text-secondary mt-3" data-bs-dismiss="modal"><small>Login to
                           continue</small></a>
