@@ -1871,7 +1871,7 @@ if (isset($_POST['register'])) {
                   <div class="row g-0 align-items-center">
                     <div class="col-sm-6 col-xs-12">
                       <!-- Close button for small screens -->
-                      <button type="button" class="btn-close position-absolute top-0 end-0 m-2 d-sm-none"
+                      <button type="button" data-bs-dismiss="modal" class="btn-close position-absolute top-0 end-0 m-2 d-sm-none"
                         aria-label="Close"></button>
 
                       <img src="images/yoshiStud.png" alt="Gift Poster" style="border-radius: 10px 10px;"
@@ -1880,7 +1880,8 @@ if (isset($_POST['register'])) {
                     </div>
                     <div class="col-sm-6 col-xs-12 text-center">
                       <!-- Close button for large screens -->
-                      <button type="button" class="btn-close float-end d-none d-sm-block" aria-label="Close"></button>
+                      <button type="button" data-bs-dismiss="modal" class="btn-close float-end d-none d-sm-block"
+                        aria-label="Close"></button>
 
                       <div class="px-4 animated-text">
                         <h2>Welcome to!</h2>
