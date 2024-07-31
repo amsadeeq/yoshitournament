@@ -156,41 +156,28 @@
     </section>
 
     <section class="body-part-total float-start w-100">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-            <div class="col">
-                <div class="card">
-                    <img src="images/Yoshi Modal.png" class="card-img-top" alt="Gift Poster"
-                        style="border-radius: 10px 10px;">
-                    <div class="card-body text-center">
-                        <button type="button" class="btn-close float-end" aria-label="Close"></button>
-                        <div class="px-4 animated-text">
-                            <h2>Welcome to!</h2>
-                            <p class="my-3 text-secondary">Yoshi Abuja Private Schools Tournaments 2024</p>
-                            <p class="mt-3 mb-4 text-success">Football Tournament</p>
-                            <a href="registration.php" class="btn mt-8 w-100 join-btn"
-                                style="border-radius: 15px 15px;">Register</a>
-                        </div>
-                        <a href="#" class="text-secondary mt-3 text-decoration-none animated-text"><small>Login to
-                                continue</small></a>
-                    </div>
-                </div>
-            </div>
+        <div class="row">
+
             <!-- Repeat the card for the remaining 3 columns -->
             <div class="col">
                 <div class="card">
-                    <img src="images/Yoshi Modal.png" class="card-img-top" alt="Gift Poster"
-                        style="border-radius: 10px 10px;">
-                    <div class="card-body text-center">
-                        <button type="button" class="btn-close float-end" aria-label="Close"></button>
-                        <div class="px-4 animated-text">
-                            <h2>Welcome to!</h2>
-                            <p class="my-3 text-secondary">Yoshi Abuja Private Schools Tournaments 2024</p>
-                            <p class="mt-3 mb-4 text-success">Football Tournament</p>
-                            <a href="registration.php" class="btn mt-8 w-100 join-btn"
-                                style="border-radius: 15px 15px;">Register</a>
+                    <div class="col-xs-6 col-lg-6 col-sm-6">
+                        <img src="images/Yoshi Modal.png" class="card-img-top" alt="Gift Poster"
+                            style="border-radius: 10px 10px;">
+                    </div>
+                    <div class="col-xs-6 col-lg-6 col-sm-6">
+                        <div class="card-body text-center">
+                            <button type="button" class="btn-close float-end" aria-label="Close"></button>
+                            <div class="px-4 animated-text">
+                                <h2>Welcome to!</h2>
+                                <p class="my-3 text-secondary">Yoshi Abuja Private Schools Tournaments 2024</p>
+                                <p class="mt-3 mb-4 text-success">Football Tournament</p>
+                                <a href="registration.php" class="btn mt-8 w-100 join-btn"
+                                    style="border-radius: 15px 15px;">Register</a>
+                            </div>
+                            <a href="#" class="text-secondary mt-3 text-decoration-none animated-text"><small>Login to
+                                    continue</small></a>
                         </div>
-                        <a href="#" class="text-secondary mt-3 text-decoration-none animated-text"><small>Login to
-                                continue</small></a>
                     </div>
                 </div>
             </div>
