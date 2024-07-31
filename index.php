@@ -1879,7 +1879,8 @@ if (isset($_POST['register'])) {
                         </div>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="images/front.png" class="d-block w-100" alt="Abuja Main Gate 1">
+                            <img src="images/front.png" style="width: 100%;" class="d-block w-100"
+                              alt="Abuja Main Gate 1">
                           </div>
                           <div class="carousel-item">
                             <img src="images/0001side.png" class="d-block w-100" alt="Abuja Main Gate 2">
@@ -1905,7 +1906,7 @@ if (isset($_POST['register'])) {
                         <h2>Welcome to!</h2>
                         <p class="my-3 text-secondary">Yoshi Abuja Private Schools Torunaments 2024</p>
                         <p class="mt-3 mb-4 text-success">Football Tournament</p>
-                        <input type="email" placeholder="Enter Email" class="form-control rounded-0">
+
                         <button class="btn btn-dark rounded-0 mt-2 w-100">Register</button>
                       </div>
                       <a type="button" class="text-secondary mt-3" data-bs-dismiss="modal"><small>Login to
