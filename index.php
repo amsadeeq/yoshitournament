@@ -1868,40 +1868,8 @@ if (isset($_POST['register'])) {
                 <div class="modal-body d-flex align-items-center p-0 m-0">
                   <div class="row g-0 align-items-center">
                     <div class="col-sm-6 col-xs-12">
-                      <div id="carouselExampleIndicators" class="carousel slide me-3" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="images/Yoshi Modal.png" style="width: 100% !important; height: 100% !important;"
-                              class="d-block" alt="Abuja Main Gate 1">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="images/Yoshi Modal.png" style="width: 100% !important; height: 100% !important;"
-                              class="d-block" alt="Abuja Main Gate 2">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="images/Yoshi Modal.png" style="width: 100% !important; height: 100% !important;"
-                              class="d-block" alt="Abuja Main Gate 3">
-                          </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                          data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                          data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
+                      <img src="images/Yoshi Modal.png" alt="Gift Poster" class="img-fluid" id="leftImg">
+
                     </div>
                     <div class="col-sm-6 col-xs-12 text-center">
                       <div class="px-4">
