@@ -1870,12 +1870,13 @@ if (isset($_POST['register'])) {
                 <div class="modal-body d-flex align-items-center p-0 m-0">
                   <div class="row g-0 align-items-center">
                     <div class="col-sm-6 col-xs-12">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                       <img src="images/Yoshi Modal.png" alt="Gift Poster" style="border-radius: 10px 10px;"
                         class="img-fluid" id="leftImg">
 
                     </div>
                     <div class="col-sm-6 col-xs-12 text-center">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       <div class="px-4 animated-text">
                         <h2>Welcome to!</h2>
                         <p class="my-3 text-secondary">Yoshi Abuja Private Schools Torunaments 2024</p>
