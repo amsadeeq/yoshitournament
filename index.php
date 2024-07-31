@@ -1885,12 +1885,12 @@ if (isset($_POST['register'])) {
 
                       <div class="px-4 animated-text">
                         <h2>Welcome to!</h2>
-                        <br class="d-sm-none" />
+                        <br class="d-none d-sm-block" />
                         <h1>Yoshi Abuja Private Schools Tournaments 2024</h1>
                         <!-- <p class="my-3 text-secondary">Yoshi Abuja Private Schools Torunaments 2024</p>
                         <p class="mt-3 mb-4 text-success">Football Tournament</p> -->
 
-                        <br class="d-sm-none" /><br class="d-sm-none" />
+                        <br class="d-none d-sm-block" /><br class="d-none d-sm-block" />
 
                         <a type="button" href="registration.php" class="btn mt-8 w-100 join-btn"
                           style="border-radius: 15px 15px;">Register</a>
