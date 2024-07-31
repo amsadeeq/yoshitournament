@@ -1923,7 +1923,9 @@ if (isset($_POST['register'])) {
                     <div class="col-sm-6 col-xs-12 text-center">
                       <div class="px-4 animated-text">
                         <h2>Welcome to!</h2>
-                        <p class="my-3 text-secondary animated-header">Yoshi Abuja Private Schools Torunaments 2024</p>
+                        <p class="my-3 text-secondary animated-header">Yoshi Abuja</p>
+                        <p class="my-3 text-secondary animated-header">Private Schools</p>
+                        <p class="my-3 text-secondary animated-header">Torunaments 2024</p>
                         <p class="mt-3 mb-4 text-success animated-header">Football Tournament</p>
 
                         <br /><br /><br /><br /><br />
