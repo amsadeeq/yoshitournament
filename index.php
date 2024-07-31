@@ -1866,12 +1866,11 @@ if (isset($_POST['register'])) {
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 
               <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+
                 <div class="modal-body d-flex align-items-center p-0 m-0">
                   <div class="row g-0 align-items-center">
                     <div class="col-sm-6 col-xs-12">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       <img src="images/Yoshi Modal.png" alt="Gift Poster" style="border-radius: 10px 10px;"
                         class="img-fluid" id="leftImg">
 
