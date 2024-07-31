@@ -1877,6 +1877,8 @@ if (isset($_POST['register'])) {
                         <h2>Welcome to!</h2>
                         <p class="my-3 text-secondary">Yoshi Abuja Private Schools Torunaments 2024</p>
                         <p class="mt-3 mb-4 text-success">Football Tournament</p>
+                        <br>
+                        <br>
 
                         <button class="btn btn-dark rounded-0 mt-2 w-100">Register</button>
                       </div>
