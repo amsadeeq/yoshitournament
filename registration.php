@@ -157,7 +157,7 @@
 
     <section class="body-part-total float-start w-100">
         <div class="container matech-div-main my-5">
-            <div class="row">
+            <div class="row g-0 align-items-center">
                 <!-- Repeat the card for the remaining 3 columns -->
                 <div class="col">
                     <div class="card">
