@@ -175,7 +175,7 @@
                                         <br />
                                         <!-- <p class="my-3 text-secondary">Yoshi Abuja Private Schools Tournaments 2024</p> -->
                                         <!-- <p class="mt-3 mb-4 text-success">Football Tournament</p> -->
-                                        <a data-bs-toggle="modal" class="regster-bn" data-bs-target="#loginModal"
+                                        <a data-bs-toggle="modal" data-bs-target="#loginModal"
                                             class="btn mt-8 w-100 join-btn shadow-sm"
                                             style="border-radius: 15px 15px;">Register</a>
                                     </div>
