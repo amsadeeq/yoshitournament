@@ -1885,10 +1885,12 @@ if (isset($_POST['register'])) {
 
                         <br /><br /><br /><br /><br />
 
-                        <button class="btn mt-8 w-100 join-btn" style="border-radius: 15px 15px;">Register</button>
+                        <a type="button" href="registration.php" class="btn mt-8 w-100 join-btn"
+                          style="border-radius: 15px 15px;">Register</a>
                       </div>
                       <a data-bs-toggle='modal' -bs-target='#loginModal' type="button"
-                        class="text-secondary mt-3 text-decoration-none" data-bs-dismiss='modal'><small>Login to
+                        class="text-secondary mt-3 text-decoration-none animated-text"
+                        data-bs-dismiss='modal'><small>Login to
                           continue</small></a>
                     </div>
                   </div>
