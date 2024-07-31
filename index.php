@@ -1880,8 +1880,9 @@ if (isset($_POST['register'])) {
                         aria-label="Close"></button>
                       <div class="px-4 animated-text">
                         <h2>Welcome to!</h2>
-                        <p class="my-3 text-secondary">Yoshi Abuja Private Schools Torunaments 2024</p>
-                        <p class="mt-3 mb-4 text-success">Football Tournament</p>
+                        <h1 class="text-primary">Yoshi Abuja Private Schools Torunaments 2024</h1>
+                        <!-- <p class="my-3 text-secondary">Yoshi Abuja Private Schools Torunaments 2024</p>
+                        <p class="mt-3 mb-4 text-success">Football Tournament</p> -->
 
                         <br /><br /><br /><br /><br />
 
