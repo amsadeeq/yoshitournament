@@ -34,6 +34,11 @@
             transform: translateY(20px);
         }
 
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
         .animate-onload {
             animation: fadeInUp 1s ease-in-out forwards;
         }
