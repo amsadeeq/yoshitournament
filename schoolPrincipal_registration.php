@@ -623,7 +623,7 @@ if (isset($_POST["complete_register"])) {
 
                     <div class="paymeny comon-steps-div mt-5">
 
-                      <h2 class="comon-heading m-0"> Team details </h2>
+                      <h2 class="comon-heading m-0"> School details </h2>
 
 
                       <div class="account-page-n" id="ac-1">
