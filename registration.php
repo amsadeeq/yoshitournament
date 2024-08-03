@@ -27,6 +27,49 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
 
+    <style>
+        .card {
+            transition: transform .2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card:hover .hover-overlay {
+            opacity: 1;
+        }
+
+        .hover-overlay .card-title,
+        .hover-overlay .card-text,
+        .hover-overlay .btn {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .card:hover .hover-overlay .card-title,
+        .card:hover .hover-overlay .card-text,
+        .card:hover .hover-overlay .btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
 
 </head>
 
