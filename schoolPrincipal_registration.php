@@ -505,7 +505,7 @@ if (isset($_POST["complete_register"])) {
                       <h2 class="comon-heading m-0"> Personal details</h2>
 
                       <div class="row mt-4">
-                        <div class="col-lg-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
                           <div class="form-group">
                             <!-- HTML code -->
@@ -525,7 +525,7 @@ if (isset($_POST["complete_register"])) {
                       <br><br>
 
                       <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> Surname<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="text" name="surname" class="form-control wizard-required" required>
@@ -533,7 +533,7 @@ if (isset($_POST["complete_register"])) {
 
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> First Name<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="text" name="firstName" class="form-control wizard-required" required>
@@ -541,8 +541,9 @@ if (isset($_POST["complete_register"])) {
 
                           </div>
                         </div>
-
-                        <div class="col-lg-6">
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> Gender<sup style="color: red !important;">*</sup> </label> </label>
                             <select class="form-select" name="position">
@@ -553,83 +554,74 @@ if (isset($_POST["complete_register"])) {
                             </select>
                           </div>
                         </div>
-
-
-                        <div class="col-lg-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> Date of Birth<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="date" name="dob" class="form-control wizard-required" required />
                             <div class="wizard-form-error"></div>
-
                           </div>
                         </div>
-
-
-
-
-
-
-                        <div class="col-lg-6">
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label>Country<sup style="color: red !important;">*</sup> </label></label>
                             <select id="country" name='country' class="form-select" required></select>
-
                           </div>
                         </div>
-
-
-
-                        <div class="col-lg-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label>State<sup style="color: red !important;">*</sup> </label> </label>
                             <select class="form-select" id="state" name="state" required></select>
                           </div>
                         </div>
-
-                        <div class="col-lg-6">
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> Town / City<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="text" class="form-control" name="city" required>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> Postal Code / Zipcode </label>
                             <input type="text" class="form-control" name="zipcode">
                           </div>
                         </div>
-
-
-
-
-                        <div class="col-lg-6">
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> Phone Number<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="tel" id="phone" name="phone" name="player_phone_number" class="form-control"
                               onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)"
                               style="width: 330px !important;" required />
-
                           </div>
                         </div>
-
-                        <div class="col-lg-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> Email<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="email" class="form-control" name="email"
                               value="<?php echo $_SESSION['email']; ?>" readonly required />
                           </div>
                         </div>
-
-                        <div class="col-lg-6">
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> Address 1<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="text" class="form-control wizard-required" name="address" required>
                             <div class="wizard-form-error"></div>
-
                           </div>
                         </div>
+                      </div>
 
-                        <!-- <div class="col-lg-6">
+
+
+
+
+                      <!-- <div class="col-lg-6">
                                              <div class="row row-cols-1 row-cols-lg-2 mt-2">
                                                  <div class="col">
                                                     <label> Adults </label>
@@ -646,7 +638,7 @@ if (isset($_POST["complete_register"])) {
                                           </div> -->
 
 
-                      </div>
+
                     </div>
 
                   </div>
