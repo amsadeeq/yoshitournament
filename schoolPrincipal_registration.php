@@ -167,7 +167,7 @@ if (isset($_POST["complete_register"])) {
 
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_executive_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`,`dob`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname,:dob, :country, :state, :city, :zipcode, :phone, :email, :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`,`dob`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname,:dob, :country, :state, :city, :zipcode, :phone, :email, :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
@@ -218,7 +218,7 @@ if (isset($_POST["complete_register"])) {
         ################################################
         $to = $email;
         // Set the email subject
-        $subject = "Team Successfully Registered";
+        $subject = "School Team Successfully Registered";
 
         // Set the email message
         $message = "Dear $firstname,\n\n";
@@ -850,7 +850,6 @@ if (isset($_POST["complete_register"])) {
   </section>
 
 
-  <?php include 'footer.php'; ?>
 
 
 
