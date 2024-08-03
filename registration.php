@@ -36,6 +36,10 @@
             transform: scale(1.05);
         }
 
+        .card img {
+            transition: transform 0.5s;
+        }
+
         .hover-overlay {
             position: absolute;
             top: 0;
