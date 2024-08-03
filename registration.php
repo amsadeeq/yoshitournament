@@ -29,11 +29,12 @@
 
     <style>
         .card {
-            transition: transform .2s;
+            transition: transform .2s, box-shadow .2s;
         }
 
         .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .hover-overlay {
