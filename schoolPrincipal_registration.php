@@ -550,7 +550,7 @@ if (isset($_POST["complete_register"])) {
                               <option selected>Select Gender</option>
                               <option value="Male">Male</option>
                               <option value="Female">Female</option>
-                              <option value="Others"> Others</option>
+
                             </select>
                           </div>
                         </div>
@@ -610,47 +610,14 @@ if (isset($_POST["complete_register"])) {
                       <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
-                            <label> Address 1<sup style="color: red !important;">*</sup> </label> </label>
+                            <label> Address<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="text" class="form-control wizard-required" name="address" required>
                             <div class="wizard-form-error"></div>
                           </div>
                         </div>
                       </div>
-
-
-
-
-
-                      <!-- <div class="col-lg-6">
-                                             <div class="row row-cols-1 row-cols-lg-2 mt-2">
-                                                 <div class="col">
-                                                    <label> Adults </label>
-                                                    <input type="text" class="form-control wizard-required">
-                                                    <div class="wizard-form-error"></div>
-                                                 </div>
-                                                 <div class="col">
-                                                    <label> Child <span class="codition-txn"> ( Below 5 years) </span>  </label>
-                                                    <input type="text" class="form-control wizard-required">
-                                                    <div class="wizard-form-error"></div>
-                                                 </div>
-                                             </div>
-                                           
-                                          </div> -->
-
-
-
                     </div>
-
                   </div>
-
-                  <!-- <div class="ad-fm mt-5">
-                                 <div class="form-check additon-cha">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      Collect Ticket Form home <span class="d-block"> (Additional Charges Rs 50/-)</span>
-                                    </label>
-                                  </div>
-                              </div> -->
 
                   <div class="ad-fm mt-5">
 
@@ -663,107 +630,78 @@ if (isset($_POST["complete_register"])) {
                         <div class="row mt-4">
 
                         </div>
+
                         <div class="row">
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label> Positon<sup style="color: red !important;">*</sup> </label> </label>
+                              <label> Position<sup style="color: red !important;">*</sup> </label> </label>
                               <select class="form-select" name="position">
                                 <option selected>Select Position</option>
                                 <option value="Manager">Manager</option>
+                                <option value="Principal"> Principal</option>
                                 <option value="Coach">Coach</option>
-                                <option value="Founder"> Founder</option>
+                                <option value="Game Master"> Game Master</option>
+
                               </select>
                             </div>
                           </div>
-
-
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label> Team Name<sup style="color: red !important;">*</sup> </label>
+                              <label> School Name<sup style="color: red !important;">*</sup> </label>
                               <input type="text" name="team_name" class="form-control wizard-required"
                                 placeholder="Team/School/Organization/Academy" required>
                               <div class="wizard-form-error"></div>
-
                             </div>
                           </div>
-
-
-
+                        </div>
+                        <div class="row">
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label>Team Country<sup style="color: red !important;">*</sup></label>
+                              <label>School Country<sup style="color: red !important;">*</sup></label>
                               <select id='country2' name='team_country' class="form-select"></select>
-
                             </div>
                           </div>
-
-
-
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label>Team State<sup style="color: red !important;">*</sup> </label>
+                              <label>School State<sup style="color: red !important;">*</sup> </label>
                               <select class="form-select" id="state2" name="team_state" required></select>
                             </div>
                           </div>
-
+                        </div>
+                        <div class="row">
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label>Team Town / City<sup style="color: red !important;">*</sup> </label>
+                              <label>Town / City<sup style="color: red !important;">*</sup> </label>
                               <input type="text" class="form-control" name="team_city" required>
                             </div>
                           </div>
-
-
-
-
-
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label> Number of Players<sup style="color: red !important;">*</sup></label>
+                              <label> Number of Students(Players)<sup style="color: red !important;">*</sup></label>
                               <input type="text" class="form-control" name="number_of_players" required>
                             </div>
                           </div>
-
-
-
+                        </div>
+                        <div class="row">
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label>Team Address <sup style="color: red !important;">*</sup> </label>
-                              <input type="text" class="form-control wizard-required" name="team_address" required>
+                              <label>School Postal Code <sup style="color: red !important;">*</sup> </label>
+                              <input type="text" class="form-control wizard-required" name="team_postcode" required>
                               <div class="wizard-form-error"></div>
-
                             </div>
                           </div>
-
-                          <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Input field
-                            with asterisk are required ] </p>
-
-
-                          <!-- <div class="col-lg-6">
-                                             <div class="row row-cols-1 row-cols-lg-2 mt-2">
-                                                 <div class="col">
-                                                    <label> Adults </label>
-                                                    <input type="text" class="form-control wizard-required">
-                                                    <div class="wizard-form-error"></div>
-                                                 </div>
-                                                 <div class="col">
-                                                    <label> Child <span class="codition-txn"> ( Below 5 years) </span>  </label>
-                                                    <input type="text" class="form-control wizard-required">
-                                                    <div class="wizard-form-error"></div>
-                                                 </div>
-                                             </div>
-                                           
-                                          </div> -->
-
-
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label>School Address <sup style="color: red !important;">*</sup> </label>
+                              <input type="text" class="form-control wizard-required" name="team_address" required>
+                              <div class="wizard-form-error"></div>
+                            </div>
+                          </div>
                         </div>
+
+                        <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Input field
+                          with asterisk are required ] </p>
                       </div>
-
-
-
-
-
-
                     </div>
                   </div>
                 </div>
@@ -772,7 +710,7 @@ if (isset($_POST["complete_register"])) {
                 <div class="col-lg-4">
                   <div class="ceck-out-right-div new-checkout">
                     <div class="d-flex justify-content-between align-items-center">
-                      <h2 class="page-titel comon-heading m-0"> Team logo </h2>
+                      <h2 class="page-titel comon-heading m-0"> School logo (Batch) </h2>
 
                     </div>
                     <hr class="mt-2">
@@ -796,49 +734,23 @@ if (isset($_POST["complete_register"])) {
 
                         </div>
                       </div>
-
-
                     </div>
-
-
-
-
-
                   </div>
 
                   <!-- <a href="javascript:;" class="form-wizard-next-btn w-100 text-center float-right mt-2">Complete Regitration</a> -->
 
                   <button type="submit" name="complete_register"
                     class="form-wizard-next-btn w-100 text-center float-right mt-2 buy-now-btn">
-                    Complete Regitration
-
+                    Complete Registration
                   </button>
-
                 </div>
-
-
-
-
               </div>
-
-
-              <div class="form-group d-lg-flex clearfix">
-
-
-              </div>
+              <div class="form-group d-lg-flex clearfix"></div>
             </fieldset>
-
-
-
-
-
           </form>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
 
