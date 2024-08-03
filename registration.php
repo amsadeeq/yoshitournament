@@ -29,7 +29,25 @@
 
     <style>
         .card {
-            transition: transform .2s, box-shadow .2s;
+            transition: transform .2s, box-shadow .2s, opacity 0.5s, transform 0.5s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .animate-onload {
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .card:hover {
@@ -204,8 +222,8 @@
             <div class="row g-4 align-items-center">
                 <!-- Repeat the card for the remaining 2 columns -->
                 <div class="col-sm-6 col-xs-6">
-                    <div class="card rounded-5 shadow-lg btn-hover" data-bs-toggle="modal" data-bs-target="#loginModal"
-                        style="cursor:pointer; border-radius:10px 10px;">
+                    <div class="card rounded-5 shadow-lg btn-hover shadow animate-onload" data-bs-toggle="modal"
+                        data-bs-target="#loginModal" style="cursor:pointer; border-radius:10px 10px;">
                         <div class="row g-0 align-items-center">
                             <div class="col-xs-6 col-sm-6">
                                 <img src="images/yoshiStud.png" class="card-img-top d-none d-sm-block" alt="Gift Poster"
@@ -833,6 +851,18 @@
     <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Add a class to the cards to trigger the animation on load
+            setTimeout(function () {
+                $('.card').each(function (index) {
+                    $(this).addClass('animate-onload');
+                });
+            }, 500); // Adjust the delay as needed
+        });
+
+    </script>
 
     <script>
         AOS.init({
