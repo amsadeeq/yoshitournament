@@ -260,7 +260,7 @@
             <div class="row g-4 align-items-center">
                 <!-- Repeat the card for the remaining 2 columns -->
                 <div class="col-sm-6 col-xs-6">
-                    <div class="card rounded-5 shadow-lg btn-hover shadow animate-onload" data-bs-toggle="modal"
+                    <div class="card rounded-5 shadow-lg animate-onload" data-bs-toggle="modal"
                         data-bs-target="#loginModal" style="cursor:pointer; border-radius:10px 10px;">
                         <div class="row g-0 align-items-center">
                             <div class="col-xs-6 col-sm-6">
