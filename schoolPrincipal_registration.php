@@ -1,24 +1,52 @@
 <?php
-
 session_start();
 ob_start();
-
-// Connect to the database
 require 'connection.php';
 
-$TeamRefNumber = $_SESSION['teamRefNumber']; //need to remove $ sign
+echo $_SESSION['reg_notify'];
+
+if (isset($_POST["complete_register"])) {
 
 
 
 
+  // Function to generate a random string of 3 capital letters
+  function generateRandomLetters()
+  {
+    $letters = '';
+    $alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+    for ($i = 0; $i < 3; $i++) {
+      $letters .= $alphabet[rand(0, strlen($alphabet) - 1)];
+    }
+    return $letters;
+  }
 
-// Prepare and execute query to check if the reference number exists
-$stmt = $pdo->prepare("SELECT * FROM yoshi_executive_tbl WHERE TeamRefNumber = :refNumber");
-$stmt->bindParam(':refNumber', $TeamRefNumber);
-$stmt->execute();
-$executiveDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+  // Function to generate a random string of 5 numbers
+  function generateRandomNumbers()
+  {
+    $numbers = '';
+    for ($i = 0; $i < 5; $i++) {
+      $numbers .= rand(0, 9);
+    }
+    return $numbers;
+  }
 
-if (isset($_POST['complete_registration'])) {
+  // Generate the combination
+  $letters = generateRandomLetters();
+  $numbers = generateRandomNumbers();
+  $combination = $letters . $numbers;
+
+  // Shuffle the combination
+  $combinationArray = str_split($combination);
+  shuffle($combinationArray);
+  $TeamRefNumber = implode('', $combinationArray);
+
+  // Output the result
+  $TeamRefNumber = $TeamRefNumber . date("Y");
+
+
+
+
 
 
   //function checking for malicious inputs using trim(),stripslahes(),htmlspecialchars(),htmlentities()
@@ -30,6 +58,17 @@ if (isset($_POST['complete_registration'])) {
     $data = htmlentities($data);
     return $data;
   }
+
+  // Function to sanitize input data
+  function sanitize_input($data)
+  {
+    return htmlspecialchars(stripslashes(trim($data)));
+  }
+
+
+
+
+
 
   //function for collecting user ip address
   function getRealIpAddr()
@@ -48,35 +87,23 @@ if (isset($_POST['complete_registration'])) {
   }
 
 
+
+
+
+
   // ----------------------------------------------------------------//
   //Collecting user information//
-
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the selected country code
-    $countryCode = $_POST['countryCode'];
-
-    // Get the phone number
-    $phoneNumber = $_POST['phone'];
-
-    $full_phone = $countryCode . $phoneNumber;
-
-
-  }
 
 
 
 
   $userRefCode = $_SESSION['userRefCode'];
-  $TeamRefNumber = $_SESSION['$teamRefNumber'];
+  $TeamRefNumber;
   $position = check_input($_POST['position']); //check_input is sensitising the input field
-  $email = check_input($_POST['email_address']); //check_input is sensitising the input field
+  $email = check_input($_POST['email']); //check_input is sensitising the input field
   $surname = check_input($_POST['surname']); //check_input is sensitising the input field
   $firstname = check_input($_POST['firstName']); //check_input is sensitising the input field
   $dob = check_input($_POST['dob']); //check_input is sensitising the input field
-  $gender = check_input($_POST['gender']); //check_input is sensitising the input field
-  $height = check_input($_POST['height']); //check_input is sensitising the input field
-  $weight = check_input($_POST['weight']); //check_input is sensitising the input field
   $country = check_input($_POST['country']); //check_input is sensitising the input field
   $state = check_input($_POST['state']); //check_input is sensitising the input field
   $city = check_input($_POST['city']); //check_input is sensitising the input field
@@ -88,8 +115,6 @@ if (isset($_POST['complete_registration'])) {
   $team_country = check_input($_POST['team_country']); //check_input is sensitising the input field
   $team_state = check_input($_POST['team_state']); //check_input is sensitising the input field
   $team_city = check_input($_POST['team_city']); //check_input is sensitising the input field
-  $position = check_input($_POST['position']); //check_input is sensitising the input field
-  $jerseyNumber = check_input($_POST['jerseyNumber']); //check_input is sensitising the input field
   $number_of_players = check_input($_POST['number_of_players']); //check_input is sensitising the input field
   $team_address = check_input($_POST['team_address']); //check_input is sensitising the input field
 
@@ -118,11 +143,21 @@ if (isset($_POST['complete_registration'])) {
 
 
 
+
+  //########## Initiating session #####################
+  $_SESSION['email'] = $email;                    //###
+  $_SESSION['postion'] = $position;               //###
+  //$_SESSION['userRefCode'] = $userRefCode;
+  $_SESSION['teamRefNumber'] = $TeamRefNumber;         //###
+  //########## Initiating session #####################
+
+
   if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
     if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention2 == "jpeg" or $imgExtention2 == "png" or $imgExtention2 == "jpg") {
       if ($imgsize1 <= 1048576 && $imgsize2 <= 1048576) {
-        move_uploaded_file($imgloc1, "players_Images/" . $imgname1);
-        //move_uploaded_file($team_logo_tmp, "team_logos/" . $team_logo_name);
+        move_uploaded_file($imgloc1, "executive_Images/" . $imgname1);//moving image to a folder "memberimg"
+        move_uploaded_file($imgloc2, "team_logo/" . $imgname2);//moving image to a folder "memberimg"
+
 
 
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -132,7 +167,7 @@ if (isset($_POST['complete_registration'])) {
 
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_players_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `address`, `team_name`, `player_position`, `jersy_number`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email, :address, :team_name, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_executive_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`,`dob`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname,:dob, :country, :state, :city, :zipcode, :phone, :email, :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
@@ -140,42 +175,57 @@ if (isset($_POST['complete_registration'])) {
         $stmt->bindParam(':surname', $surname);
         $stmt->bindParam(':firstname', $firstname);
         $stmt->bindParam(':dob', $dob);
-        $stmt->bindParam(':gender', $gender);
-        $stmt->bindParam(':height', $height);
-        $stmt->bindParam(':weight', $weight);
         $stmt->bindParam(':country', $country);
         $stmt->bindParam(':state', $state);
         $stmt->bindParam(':city', $city);
         $stmt->bindParam(':zipcode', $zipcode);
-        $stmt->bindParam(':phone', $full_phone);
+        $stmt->bindParam(':phone', $phone);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':address', $address);
+        $stmt->bindParam(':passport', $imgname1);
         $stmt->bindParam(':team_name', $team_name);
-        $stmt->bindParam(':position', $position);
-        $stmt->bindParam(':jerseyNumber', $jerseyNumber);
         $stmt->bindParam(':team_country', $team_country);
         $stmt->bindParam(':team_state', $team_state);
         $stmt->bindParam(':team_city', $team_city);
         $stmt->bindParam(':number_of_players', $number_of_players);
         $stmt->bindParam(':team_address', $team_address);
-        $stmt->bindParam(':passport', $imgname1);
         $stmt->bindParam(':team_logo', $imgname2);
         $stmt->bindParam(':time_create', $time_create);
         $stmt->bindParam(':date_create', $date_create);
         $stmt->bindParam(':ip_address', $ipaddress);
         $stmt->execute();
 
+        $_SESSION['teamRefNumber'] = $TeamRefNumber;
+
+        ################################################
+        //sending email including user details "email", "phone", "account" and access "PIN"
+        // $to = $email;
+        //header with html version
+        // $header = 'from: yoshitournament.com <no-reply@yoshitournament.com>\r\n';
+        // $header .= 'Reply-To: no-reply@yoshitournament.com\r\n';
+        // $header .= 'CC: admin@yoshitournament.com\r\n';
+        // $subject = " Team Successfully Registered ";
+        // $body = "Dear " . $firstname . "Thank you for registering" . $team_name . " with Yoshi Tournament " . date("Y") . " Your Team Reference Number is : " . $TeamRefNumber . " Share it with your team players for registration. Failure to do so will automatically disqualify your team from participation";
+        // $body .= '';
+        // $body .= 'Your players are to used the reference link for registration';
+        // $body .= 'visit www.yoshitournaments.com</p>';
+        // $body .= 'Sign: Mr. Sadeeq Admin  - yoshitournaments.com Thank You';
+        // $body .= '';
+        // $body .= 'yoshifa.com | Allright Reserved' . date('Y') . ' - Yoshi Football Academy';
+        //mail fuction
+        // mail($to, $subject, $body, $header);
+
         ################################################
         $to = $email;
         // Set the email subject
-        $subject = "Registration Successful";
+        $subject = "Team Successfully Registered";
 
         // Set the email message
         $message = "Dear $firstname,\n\n";
-        $message .= "Thank you for registering with Yoshi Tournament " . date("Y") . ".\n\n";
+        $message .= "Thank you for registering" . $team_name . " with Yoshi Tournament " . date("Y") . ".\n\n";
         $message .= "Your Team Reference Number is: $TeamRefNumber \n\n";
-        $message .= "Player Reference Number is: $userRefCode \n\n";
         $message .= "Your position: $position \n\n";
+        $message .= "Share it with your team players for registration. Failure to do so will automatically disqualify your team from participation \n\n";
         $message .= "Schedules for the matches will be send to you soon.\n\n";
         $message .= "Visit www.yoshitournaments.com\n\n";
         $message .= "Sign: Mr. Sadeeq \n Admin - yoshitournaments.com\n\n";
@@ -191,52 +241,17 @@ if (isset($_POST['complete_registration'])) {
         $mail_sent = mail($to, $subject, $message, $headers);
 
         // Redirect user to the dashboard
-        header("Location: player_confirmation.php");
+        header("Location: confirmation.php");
+
+
 
       } else {
-
         $image_size_error = "Please try uploading image less than 500kb";
-
-        // Define the notification message
-
-
-        // Generate the JavaScript code to trigger the notification
-        $size_error_notify = "
-        <script>
-            new Noty({
-                theme: 'metroui',
-                text: '$image_size_error',
-                type: 'error',
-                timeout: 1000
-                
-            }).show();
-        </script>
-        ";
-
-
-
+        echo $image_size_error;
       }
     } else {
-
       $image_error = "Image supported only .jpg, .jpeg, or .png";
-
-      // Define the notification message
-
-
-      // Generate the JavaScript code to trigger the notification
-      $extension_error_notify = "
-        <script>
-            new Noty({
-                theme: 'metroui',
-                text: '$image_error',
-                type: 'error',
-                timeout: 1000
-                
-            }).show();
-        </script>
-        ";
-
-
+      echo $image_error;
     }
 
 
@@ -246,14 +261,16 @@ if (isset($_POST['complete_registration'])) {
 
   }
 
-
-
 }
 
+
+
+
+
+
+
+
 ?>
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -284,30 +301,48 @@ if (isset($_POST['complete_registration'])) {
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
   <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
 
+
   <!-- International Telephone Input CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" />
-  <!-- Include SweetAlert CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
-
-  <!-- Include eye icon image for showing and hiding passwords -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
 
 
-  <!-- Javascript for Passport display -->
+
+  <!-- JavaScript code -->
   <script type="text/javascript">
     function onFileSelected(event) {
       var selectedFile = event.target.files[0];
       var reader = new FileReader();
       var imgtag = document.getElementById("image");
+      var progressBar = document.getElementById("progressBar");
+
+      // Check file type
+      if (!selectedFile.type.match('image/jpeg') && !selectedFile.type.match('image/png')) {
+        alert('Please select a valid image file (jpg, jpeg, png)');
+        return;
+      }
+
       imgtag.title = selectedFile.name;
-      reader.onload = function (event) {
-        image.src = event.target.result;
+
+      reader.onloadstart = function () {
+        progressBar.style.display = 'block'; // Show progress bar when loading starts
       };
+
+      reader.onprogress = function (event) {
+        if (event.lengthComputable) {
+          var percentLoaded = (event.loaded / event.total) * 100;
+          progressBar.value = Math.round(percentLoaded);
+        }
+      };
+
+      reader.onload = function (event) {
+        imgtag.src = event.target.result;
+        progressBar.style.display = 'none'; // Hide progress bar after loading
+      };
+
       reader.readAsDataURL(selectedFile);
     }
   </script>
@@ -328,8 +363,6 @@ if (isset($_POST['complete_registration'])) {
   </script>
 
 
-
-
 </head>
 
 <body>
@@ -348,42 +381,42 @@ if (isset($_POST['complete_registration'])) {
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
             <!-- <li class="nav-item">
-              <a class="nav-link" href="matches.php">Matches</a>
-            </li> -->
-
-            <!-- <li class="nav-item">
-              <a class="nav-link " href="about.php">The Tournament</a>
-            </li> -->
-
-            <!-- <li class="nav-item">
-               <a class="nav-link " href="schedule.php">Schedule</a>
+               <a class="nav-link" href="matches.php">Matches</a>
              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link " href="news.php">News</a>
+               <a class="nav-link " href="about.php">The Tournament</a>
              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link " href="players.php">Players</a>
-             </li> -->
+                <a class="nav-link " href="schedule.php">Schedule</a>
+              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link" href="media.php">Media</a>
-             </li> -->
+                <a class="nav-link " href="news.php">News</a>
+              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link " href="shop.php">Shop</a>
-             </li> -->
+                <a class="nav-link " href="players.php">Players</a>
+              </li> -->
 
             <!-- <li class="nav-item">
-               <a class="nav-link " href="contact.php">Contact</a>
-             </li> -->
+                <a class="nav-link" href="media.php">Media</a>
+              </li> -->
 
             <!-- <li class="nav-item">
-              <a class="nav-link btn join-btn" data-bs-toggle="modal" class="regster-bn" data-bs-target="#loginModal">
-                
-                Register</a>
-            </li> -->
+                <a class="nav-link " href="shop.php">Shop</a>
+              </li> -->
+
+            <!-- <li class="nav-item">
+                <a class="nav-link " href="contact.php">Contact</a>
+              </li> -->
+
+            <!-- <li class="nav-item">
+               <a class="nav-link btn join-btn" data-bs-toggle="modal" class="regster-bn" data-bs-target="#loginModal">
+                 
+                 Register</a>
+             </li> -->
 
             <li class="nav-item">
               <a class="nav-link btn bar-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightmobile"><i
@@ -403,7 +436,7 @@ if (isset($_POST['complete_registration'])) {
 
     <div class="sub-banner">
       <div class="container">
-        <h1 class="text-center"> Player Registration </h1>
+        <h1 class="text-center"> Registration </h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -440,7 +473,7 @@ if (isset($_POST['complete_registration'])) {
 
       <div class="container">
         <div class="form-wizard">
-          <form action="" method="post" role="form" enctype="multipart/form-data" autocomplete='on'>
+          <form action="" method="POST" role="form" enctype="multipart/form-data" autocomplete='on'>
             <div class="form-wizard-header">
 
               <ul class="list-unstyled form-wizard-steps clearfix d-none">
@@ -470,24 +503,27 @@ if (isset($_POST['complete_registration'])) {
                   <div class="ad-fm ">
                     <div class="comon-steps-div">
                       <h2 class="comon-heading m-0"> Personal details</h2>
-                      <div class="row mt-4">
 
+                      <div class="row mt-4">
                         <div class="col-lg-6">
+
                           <div class="form-group">
+                            <!-- HTML code -->
                             <fieldset>
-                              <label> Passport<sup style="color: red !important;">*</sup> </label> </label>
-                              <p style="font-size: 12px;">Note:<sup style="color: red !important;">*</sup> Image size:
-                                300KB, jpg, jpeg, png with team jersey</p>
-                              <img style="height:50%;width: 50%;" class="my-select passport_frame" id="image">
+                              <label>Passport<sup style="color: red !important;">*</sup></label>
+                              <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Image size:
+                                300KB, jpg, jpeg, png ] </p>
+                              <img style="height:50%; width: 50%;" class="my-select" id="image">
                               <input type="file" name="passport" onchange="onFileSelected(event);"
-                                class="form-control wizard-required file_input" style="border-radius: 10px 10px;"
-                                required>
-                              <div class="wizard-form-error"></div>
+                                class="form-control wizard-required" style="border-radius: 10px 10px;"
+                                accept="image/jpeg, image/png" required>
+
                             </fieldset>
                           </div>
                         </div>
-
                       </div>
+                      <br><br>
+
                       <div class="row">
                         <div class="col-lg-6">
                           <div class="form-group">
@@ -497,7 +533,6 @@ if (isset($_POST['complete_registration'])) {
 
                           </div>
                         </div>
-
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> First Name<sup style="color: red !important;">*</sup> </label> </label>
@@ -509,6 +544,19 @@ if (isset($_POST['complete_registration'])) {
 
                         <div class="col-lg-6">
                           <div class="form-group">
+                            <label> Gender<sup style="color: red !important;">*</sup> </label> </label>
+                            <select class="form-select" name="position">
+                              <option selected>Select Gender</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Others"> Others</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="col-lg-6">
+                          <div class="form-group">
                             <label> Date of Birth<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="date" name="dob" class="form-control wizard-required" required />
                             <div class="wizard-form-error"></div>
@@ -516,31 +564,9 @@ if (isset($_POST['complete_registration'])) {
                           </div>
                         </div>
 
-                        <div class="col-lg-6">
-                          <div class="form-group">
-                            <label> Gender<sup style="color: red !important;">*</sup> </label> </label>
-                            <select class="form-select" name="gender">
-                              <option selected> Select Gender </option>
-                              <option value="Male">Male</option>
-                              <option value="Female">Female</option>
-                              <option value="Others"> Others</option>
 
-                            </select>
-                          </div>
-                        </div>
 
-                        <div class="col-lg-6">
-                          <div class="form-group">
-                            <label>Height (cm)<sup style="color: red !important;">*</sup></label>
-                            <input type="text" name="height" class="form-control" required>
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="form-group">
-                            <label>Weight (kg)<sup style="color: red !important;">*</sup></label>
-                            <input type="text" name="weight" class="form-control" required>
-                          </div>
-                        </div>
+
 
 
                         <div class="col-lg-6">
@@ -560,7 +586,6 @@ if (isset($_POST['complete_registration'])) {
                           </div>
                         </div>
 
-
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Town / City<sup style="color: red !important;">*</sup> </label> </label>
@@ -570,45 +595,39 @@ if (isset($_POST['complete_registration'])) {
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Postal Code / Zipcode </label>
-                            <input type="text" class="form-control" name="zipcode"
-                              onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" />
+                            <input type="text" class="form-control" name="zipcode">
                           </div>
                         </div>
 
-                        <div class="col-lg-6">
 
+
+
+                        <div class="col-lg-6">
                           <div class="form-group">
-                            <label> Phone Number<sup style="color: red !important;">*</sup> </label><br>
+                            <label> Phone Number<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="tel" id="phone" name="phone" name="player_phone_number" class="form-control"
                               onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)"
                               style="width: 330px !important;" required />
+
                           </div>
                         </div>
 
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Email<sup style="color: red !important;">*</sup> </label> </label>
-                            <input type="email" value="<?php echo $_SESSION['email']; ?>" class="form-control"
-                              name="email_address" readonly>
+                            <input type="email" class="form-control" name="email"
+                              value="<?php echo $_SESSION['email']; ?>" readonly required />
                           </div>
                         </div>
 
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Address 1<sup style="color: red !important;">*</sup> </label> </label>
-                            <textarea class="form-control wizard-required" cols="4" rows="10" name="address"
-                              required></textarea>
+                            <input type="text" class="form-control wizard-required" name="address" required>
                             <div class="wizard-form-error"></div>
 
                           </div>
                         </div>
-
-
-
-
-
-
-
 
                         <!-- <div class="col-lg-6">
                                              <div class="row row-cols-1 row-cols-lg-2 mt-2">
@@ -653,58 +672,24 @@ if (isset($_POST['complete_registration'])) {
 
                         </div>
                         <div class="row">
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Positon<sup style="color: red !important;">*</sup> </label> </label>
+                              <select class="form-select" name="position">
+                                <option selected>Select Position</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Coach">Coach</option>
+                                <option value="Founder"> Founder</option>
+                              </select>
+                            </div>
+                          </div>
+
 
                           <div class="col-lg-6">
                             <div class="form-group">
                               <label> Team Name<sup style="color: red !important;">*</sup> </label>
                               <input type="text" name="team_name" class="form-control wizard-required"
-                                value="<?php echo $executiveDetails['team_name'] ?>" readonly required>
-                              <div class="wizard-form-error"></div>
-
-                            </div>
-                          </div>
-
-
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <label> Position<sup style="color: red !important;">*</sup> </label> </label>
-                              <select class="form-select" name="position">
-                                <option selected> Select Position </option>
-                                <option value="Goalkeeper">Goalkeeper</option>
-                                <option value="Sweeper keeper">Sweeper keeper</option>
-                                <option value="Defender"> Defender</option>
-                                <option value="Defender (Centre-back)">Defender (Centre-back)</option>
-                                <option value="Defender (Full-back)">Defender (Full-back)</option>
-                                <option value="Defender (central-defender)"> Defender (central-defender)</option>
-                                <option value="Defender (Sweeper)"> Defender (Sweeper)</option>
-                                <option value="Defender (Wing-back)"> Defender (Wing-back)</option>
-                                <option value="Defender (Right Wing-back)"> Defender (Right Wing-back)</option>
-                                <option value="Wing Back">Wing Back</option>
-                                <option value="Midfielder"> Midfielder</option>
-                                <option value="Midfielder (Central Midfielder)"> Midfielder (Central Midfielder)
-                                </option>
-                                <option value="Midfielder (Defensive Midfielder)"> Midfielder (Defensive Midfielder)
-                                </option>
-                                <option value="Midfielder (Attacking Midfielder)"> Midfielder (Attacking Midfielder)
-                                </option>
-                                <option value="Midfielder (Wide Midfielder)"> Midfielder (Wide Midfielder)</option>
-                                <option value="Forward"> Forward</option>
-                                <option value="Forward (Second striker)"> Forward (Second striker)</option>
-                                <option value="Forward (Centre forward)"> Forward (Centre forward)</option>
-                                <option value="Forward (Winger)"> Forward (Winger)</option>
-                                <option value="Forward (Left Winger)"> Forward (Left Winger)</option>
-                                <option value="Forward (Right Winger)"> Forward (Right Winger)</option>
-                                <option value="Striker"> Striker</option>
-                              </select>
-                            </div>
-                          </div>
-
-
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <label> Jersey Number<sup style="color: red !important;">*</sup> </label> </label>
-                              <input type="text" name="jerseyNumber" class="form-control wizard-required jersey-input"
-                                maxlength="2" onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" required />
+                                placeholder="Team/School/Organization/Academy" required>
                               <div class="wizard-form-error"></div>
 
                             </div>
@@ -714,13 +699,8 @@ if (isset($_POST['complete_registration'])) {
 
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label>Select Country<sup style="color: red !important;">*</sup></label>
-                              <select id='country_select' name='team_country' class="form-select" readonly>
-                                <option value="<?php echo $executiveDetails['team_country'] ?>">
-                                  <?php echo $executiveDetails['team_country'] ?>
-                                </option>
-
-                              </select>
+                              <label>Team Country<sup style="color: red !important;">*</sup></label>
+                              <select id='country2' name='team_country' class="form-select"></select>
 
                             </div>
                           </div>
@@ -729,20 +709,15 @@ if (isset($_POST['complete_registration'])) {
 
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label>State<sup style="color: red !important;">*</sup> </label>
-                              <select class="form-select" name="team_state" readonly required>
-                                <option value="<?php echo $executiveDetails['team_state'] ?>">
-                                  <?php echo $executiveDetails['team_state'] ?>
-                                </option>
-                              </select>
+                              <label>Team State<sup style="color: red !important;">*</sup> </label>
+                              <select class="form-select" id="state2" name="team_state" required></select>
                             </div>
                           </div>
 
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label> Town / City<sup style="color: red !important;">*</sup> </label>
-                              <input type="text" class="form-control" name="team_city"
-                                value="<?php echo $executiveDetails['team_city'] ?>" readonly required>
+                              <label>Team Town / City<sup style="color: red !important;">*</sup> </label>
+                              <input type="text" class="form-control" name="team_city" required>
                             </div>
                           </div>
 
@@ -753,10 +728,7 @@ if (isset($_POST['complete_registration'])) {
                           <div class="col-lg-6">
                             <div class="form-group">
                               <label> Number of Players<sup style="color: red !important;">*</sup></label>
-                              <input type="text" class="form-control" name="number_of_players"
-                                placeholder="Number of Players"
-                                onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)"
-                                value="<?php echo $executiveDetails['number_of_players'] ?>" required />
+                              <input type="text" class="form-control" name="number_of_players" required>
                             </div>
                           </div>
 
@@ -764,9 +736,8 @@ if (isset($_POST['complete_registration'])) {
 
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label> Address 1<sup style="color: red !important;">*</sup> </label>
-                              <input type="text" class="form-control wizard-required" name="team_address"
-                                value="<?php echo $executiveDetails['team_address'] ?>" readonly required>
+                              <label>Team Address <sup style="color: red !important;">*</sup> </label>
+                              <input type="text" class="form-control wizard-required" name="team_address" required>
                               <div class="wizard-form-error"></div>
 
                             </div>
@@ -817,10 +788,18 @@ if (isset($_POST['complete_registration'])) {
                     <div class="oder-summary-item">
 
                       <div class="col-lg-12">
-                        <div class="form-group text-center">
+                        <div class="form-group">
+                          <!-- HTML code -->
                           <fieldset>
-                            <img src="team_logo/<?php echo $executiveDetails['team_logo'] ?>" class="team_logo" />
-                            <input type="file" name="team_logo" class="form-control" accept="image/*" hidden />
+                            <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Team logo
+                              must be white background ] </p>
+                            <!-- <legend>Team Logo</legend> -->
+                            <img style="height:10%;width: 45%;" class="my-select" id="teamImage">
+                            <input type="file" name="team_logo" onchange="onFileSelectedLogo(event);"
+                              class="form-control wizard-required" style="border-radius: 10px 10px;"
+                              accept="image/jpeg, image/png" required>
+                            <div class="wizard-form-error"></div>
+                            <progress id="logoProgressBar" value="0" max="100" style="display: none;"></progress>
                           </fieldset>
 
                         </div>
@@ -837,12 +816,10 @@ if (isset($_POST['complete_registration'])) {
 
                   <!-- <a href="javascript:;" class="form-wizard-next-btn w-100 text-center float-right mt-2">Complete Regitration</a> -->
 
-                  <button type="submit" name="complete_registration"
-                    class="form-wizard-next-btn w-100 text-center float-right mt-2 buy-now-btn" id="submit-button">
-                    Complete Registration
-                    <!-- <div class="spinner-border spinner-border-sm" role="status" id="loader">
-                      <span class="visually-hidden">Loading...</span>
-                    </div> -->
+                  <button type="submit" name="complete_register"
+                    class="form-wizard-next-btn w-100 text-center float-right mt-2 buy-now-btn">
+                    Complete Regitration
+
                   </button>
 
                 </div>
@@ -873,11 +850,7 @@ if (isset($_POST['complete_registration'])) {
   </section>
 
 
-
-
-
-
-
+  <?php include 'footer.php'; ?>
 
 
 
@@ -896,11 +869,6 @@ if (isset($_POST['complete_registration'])) {
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
 
-  <!-- Notification Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-  <!-- Include SweetAlert JS -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
   <!-- International Telephone Input JS -->
@@ -919,25 +887,6 @@ if (isset($_POST['complete_registration'])) {
           success(countryCode);
         });
       }
-    });
-  </script>
-
-  <!-- Initialize intlTelInput -->
-  <script>
-    $(document).ready(function () {
-      var input = document.querySelector("#phone");
-      var iti = window.intlTelInput(input, {
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js",
-        initialCountry: "auto",
-        separateDialCode: true,
-        placeholderNumberType: "MOBILE",
-        geoIpLookup: function (success, failure) {
-          $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
-            var countryCode = (resp && resp.country) ? resp.country : "us";
-            success(countryCode);
-          });
-        }
-      });
     });
   </script>
 
@@ -978,7 +927,7 @@ if (isset($_POST['complete_registration'])) {
     });
   </script>
 
-  <!-- <script>
+  <script>
     document.getElementById("submit-button").addEventListener("click", function (event) {
       event.preventDefault();
 
@@ -988,17 +937,12 @@ if (isset($_POST['complete_registration'])) {
       // Simulate a delay
       setTimeout(function () {
         // Redirect to next page (replace "https://www.example.com" with your desired URL)
-        window.location.href = "player_confirmation.php";
+        //window.location.href = "dashboard.php";
       }, 2000);
     });
-  </script> -->
+  </script>
 
-  <?php
-  echo $_SESSION['welcome_message'];
-  echo $size_error_notify;
-  echo $extension_error_notify;
 
-  ?>
 
 
 

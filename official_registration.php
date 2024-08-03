@@ -934,7 +934,7 @@ if (isset($_POST["complete_register"])) {
     </section>
 
 
-    <?php include 'footer.php'; ?>
+
 
 
 

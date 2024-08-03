@@ -24,6 +24,8 @@ echo "
                         <option value='' disabled selected hidden>Position</option>
                         <option value='Official'>Official</option>
                         <option value='Manager/Coach'>Manager/Coach</option>
+                        <option value='Principal/Game Master'>Principal/Game Master</option>
+                        <option value='Students'>Students</option>
                         <option value='Player'>Player</option>
                         </select>
                     </div>

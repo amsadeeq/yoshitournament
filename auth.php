@@ -155,7 +155,7 @@ if (isset($_POST['login'])) {
 
 
 
-            } else {
+            } else if ($user['user_position'] == 'Player') {
                 // Fetch user information from yoshi_executive_tbl based on userRefNo
                 $stmt = $pdo->prepare("SELECT * FROM yoshi_players_tbl WHERE userRefNo = :userRefNo");
                 $stmt->bindParam(':userRefNo', $user['userRefNo']);
@@ -175,6 +175,91 @@ if (isset($_POST['login'])) {
                 //   ':user_email' => $user['user_email'],
                 //   ':user_position' => $user['user_position'],
                 //   ':TeamRefNumber' => $player_details['TeamRefNumber'], // Adjust accordingly if TeamRefNumber is not directly available
+                //   ':device_used' => $device,
+                //   ':browser_used' => $user_agent,
+                //   ':ip_address' => $ip_address,
+                //   ':login_status' => $login_status,
+                //   ':password_used' => $password
+                // ]);
+
+
+            } else if ($user['user_position'] == 'Principal/Game Master') {
+                // Fetch user information from yoshi_executive_tbl based on userRefNo
+                $stmt = $pdo->prepare("SELECT * FROM yoshi_schools_officials_tbl WHERE userRefNo = :userRefNo");
+                $stmt->bindParam(':userRefNo', $user['userRefNo']);
+                $stmt->execute();
+                $player_details = $stmt->fetch(PDO::FETCH_ASSOC);
+                // User is a Player
+                $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
+
+                header("Location: schools/dashboard.php");
+
+
+                // Insert login log
+                // $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+                // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+                // $stmt->execute([
+                //   ':userRefNo' => $user['userRefNo'],
+                //   ':user_email' => $user['user_email'],
+                //   ':user_position' => $user['user_position'],
+                //   ':TeamRefNumber' => $player_details['TeamRefNumber'], // Adjust accordingly if TeamRefNumber is not directly available
+                //   ':device_used' => $device,
+                //   ':browser_used' => $user_agent,
+                //   ':ip_address' => $ip_address,
+                //   ':login_status' => $login_status,
+                //   ':password_used' => $password
+                // ]);
+
+
+            } else if ($user['user_position'] == 'Student') {
+                // Fetch user information from yoshi_executive_tbl based on userRefNo
+                $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
+                $stmt->bindParam(':userRefNo', $user['userRefNo']);
+                $stmt->execute();
+                $player_details = $stmt->fetch(PDO::FETCH_ASSOC);
+                // User is a Player
+                $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
+
+                header("Location: schools/studentDashboard.php");
+
+
+                // Insert login log
+                // $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+                // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+                // $stmt->execute([
+                //   ':userRefNo' => $user['userRefNo'],
+                //   ':user_email' => $user['user_email'],
+                //   ':user_position' => $user['user_position'],
+                //   ':TeamRefNumber' => $player_details['TeamRefNumber'], // Adjust accordingly if TeamRefNumber is not directly available
+                //   ':device_used' => $device,
+                //   ':browser_used' => $user_agent,
+                //   ':ip_address' => $ip_address,
+                //   ':login_status' => $login_status,
+                //   ':password_used' => $password
+                // ]);
+
+
+            } else {
+
+                // Fetch user information from yoshi_executive_tbl based on userRefNo
+                $stmt = $pdo->prepare("SELECT * FROM yoshi_officials_tbl WHERE userRefNo = :userRefNo");
+                $stmt->bindParam(':userRefNo', $user['userRefNo']);
+                $stmt->execute();
+                $executive = $stmt->fetch(PDO::FETCH_ASSOC);
+                // User is a Manager or Coach
+                $_SESSION['teamRefNumber'] = $executive['TeamRefNumber'];
+
+                header("Location: officialDashboard.php");
+
+
+                // Insert login log
+                // $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+                // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+                // $stmt->execute([
+                //   ':userRefNo' => $user['userRefNo'],
+                //   ':user_email' => $user['user_email'],
+                //   ':user_position' => $user['user_position'],
+                //   ':TeamRefNumber' => $executive['TeamRefNumber'],
                 //   ':device_used' => $device,
                 //   ':browser_used' => $user_agent,
                 //   ':ip_address' => $ip_address,
@@ -457,7 +542,7 @@ if (isset($_POST['register'])) {
         $message .= "Password: ******** \n";
         $message .= "Visit www.yoshitournaments.com\n\n";
         $message .= "Sign: Mr. Sadeeq \n Yoshi Tournaments \n\n\n";
-        $message .= "Powered by: Yoshi Football Academy www.yoshifa.com All Rights Reserved " . date('Y');
+        $message .= "Powered by: Yoshi Football Academy (UAE) www.yoshifa.com All Rights Reserved " . date('Y');
 
         // Set additional headers
         $headers = "From: no-reply@yoshitournament.com\r\n";
@@ -473,6 +558,12 @@ if (isset($_POST['register'])) {
             exit();
         } elseif ($position == 'Official') {
             header("Location:official_registration.php");
+            exit();
+        } elseif ($position == 'Student') {
+            header("Location:referenceNumber.php");
+            exit();
+        } elseif ($position == 'Principal/Game Master') {
+            header("Location:schoolPrincipal_registration.php");
             exit();
         } else {
             $register_message = "Welcome  to Yoshi Tournament platform " . $position;

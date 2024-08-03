@@ -13,7 +13,7 @@ $TeamRefNumber = $_SESSION['teamRefNumber']; //need to remove $ sign
 
 
 // Prepare and execute query to check if the reference number exists
-$stmt = $pdo->prepare("SELECT * FROM yoshi_executive_tbl WHERE TeamRefNumber = :refNumber");
+$stmt = $pdo->prepare("SELECT * FROM yoshi_schools_officials_tbl WHERE TeamRefNumber = :refNumber");
 $stmt->bindParam(':refNumber', $TeamRefNumber);
 $stmt->execute();
 $executiveDetails = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -132,7 +132,7 @@ if (isset($_POST['complete_registration'])) {
 
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_players_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `address`, `team_name`, `player_position`, `jersy_number`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email, :address, :team_name, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `address`, `team_name`, `player_position`, `jersy_number`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email, :address, :team_name, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo, :time_create, :date_create, :ip_address)");
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);

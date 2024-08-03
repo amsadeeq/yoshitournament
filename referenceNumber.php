@@ -29,6 +29,12 @@ if (isset($_POST['complete_registration'])) {
   $stmt->bindParam(':refNumber', $refNumber);
   $stmt->execute();
 
+  $stmt2 = $pdo->prepare("SELECT * FROM yoshi_schools_officials_tbl WHERE TeamRefNumber = :refNumber");
+  $stmt2->bindParam(':refNumber', $refNumber);
+  $stmt2->execute();
+
+
+
 
 
   // Fetch the details if the reference number exists
@@ -37,7 +43,7 @@ if (isset($_POST['complete_registration'])) {
 
 
 
-    // Prepare and execute the SQL query
+    // Prepare and execute the SQL query stmt = statement
     $stmt = $pdo->prepare("UPDATE yoshi_signup_tbl 
                            SET TeamRefNumber = :TeamRefNumber, reg_status = 'complete' 
                            WHERE userRefNo = :userRefNo");
@@ -98,6 +104,73 @@ if (isset($_POST['complete_registration'])) {
 
     // Redirect to player_registration.php
     header("Location: player_registration.php");
+    exit;
+  } elseif ($stmt2->rowCount() > 0) {
+
+
+
+
+    // Prepare and execute the SQL query stmt = statement
+    $stmt = $pdo->prepare("UPDATE yoshi_signup_tbl 
+                           SET TeamRefNumber = :TeamRefNumber, reg_status = 'complete' 
+                           WHERE userRefNo = :userRefNo");
+    $stmt->bindParam(':TeamRefNumber', $teamRefNumber);
+    $stmt->bindParam(':userRefNo', $_SESSION['userRefCode']);
+    $stmt->execute();
+
+
+    //$executiveDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Insert record into yoshi_players_tbl
+    // $insertStmt = $pdo->prepare("INSERT INTO yoshi_players_tbl (userRefNo, TeamRefNumber, user_position, surname, firstname, dob, country, state, city, zipcode, phone, email, address, team_name, time_created, date_created, ip_address) 
+    //                                 VALUES (:userRefNo, :TeamRefNumber, :user_position, :surname, :firstname, :dob, :country, :state, :city, :zipcode, :phone, :email, :address, :team_name, :time_created, :date_created, :ip_address)");
+    // $insertStmt->bindParam(':userRefNo', $_SESSION['userRefNo']);
+    // $insertStmt->bindParam(':TeamRefNumber', $executiveDetails['TeamRefNumber']);
+    // $insertStmt->bindParam(':user_position', $executiveDetails['user_position']);
+    // $insertStmt->bindParam(':surname', $executiveDetails['surname']);
+    // $insertStmt->bindParam(':firstname', $executiveDetails['firstname']);
+    // $insertStmt->bindParam(':dob', $executiveDetails['dob']);
+    // $insertStmt->bindParam(':country', $executiveDetails['country']);
+    // $insertStmt->bindParam(':state', $executiveDetails['state']);
+    // $insertStmt->bindParam(':city', $executiveDetails['city']);
+    // $insertStmt->bindParam(':zipcode', $executiveDetails['zipcode']);
+    // $insertStmt->bindParam(':phone', $executiveDetails['phone']);
+    // $insertStmt->bindParam(':email', $executiveDetails['email']);
+    // $insertStmt->bindParam(':address', $executiveDetails['address']);
+    // $insertStmt->bindParam(':team_name', $executiveDetails['team_name']);
+    // $insertStmt->bindParam(':time_created', $executiveDetails['time_created']);
+    // $insertStmt->bindParam(':date_created', $executiveDetails['date_created']);
+    // $insertStmt->bindParam(':ip_address', $executiveDetails['ip_address']);
+    // $insertStmt->execute();
+
+
+    $welcome_message = "Welcome  to Yoshi Tournament";
+    //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
+    // Define the notification message
+
+
+    // Generate the JavaScript code to trigger the notification
+    $welcome_notify = "
+          <script>
+              new Noty({
+                  theme: 'metroui',
+                  text: '$welcome_message',
+                  type: 'success',
+                  timeout: 2000
+                  
+              }).show();
+          </script>
+          ";
+
+    // Password matches
+    // Set session variables based on user's role
+    //$_SESSION['userRefNo'] = $user['userRefNo'];
+
+    $_SESSION['teamRefNumber'] = $refNumber; //need to remove $ sign
+    $_SESSION['welcome_message'] = $welcome_notify;
+
+    // Redirect to player_registration.php
+    header("Location: student_registration.php");
     exit;
   } else {
 
