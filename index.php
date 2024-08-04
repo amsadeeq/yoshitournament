@@ -278,7 +278,7 @@ require 'auth.php';
         <a class="top-next-mc text-center  animate__animated animate__zoomIn">
           <h5 class="mn-mc-titel"> Next Match </h5>
           <hr class="next_match_line" />
-          <h4> 2024-2025 Yoshi Tournament</h4>
+          <h4> YAPS Tournament 2024</h4>
           <div class="d-flex align-items-center justify-content-center mt-2">
 
             <figure>
@@ -288,9 +288,9 @@ require 'auth.php';
 
               <p class="time"> 10:20am </p>
               <h5 class="date">
-                24/ 06/ 2024
+                21/ 09/ 2024
               </h5>
-              <p class="location-mc">Pantami Stadium, Gombe</p>
+              <p class="location-mc">Abuja Stadium</p>
             </div>
 
             <figure>
@@ -301,23 +301,23 @@ require 'auth.php';
         </a>
 
         <a class="top-mc-starts mt-4  animate__animated animate__zoomIn">
-          <h5 class="mn-mc-titel text-center"> 2024 Tournament Starts </h5>
+          <h5 class="mn-mc-titel text-center"> YAPS 2024 Stats </h5>
           <hr />
 
           <ul class="list-unstyled d-flex flex-column justify-content-center w-100">
             <li class="d-flex align-items-center justify-content-between w-100">
               <span class="ct-2"> <i class="fa fa-soccer-ball-o"></i> Goals </span>
-              <span>12 </span>
+              <span class="counter" data-target="12">12 </span>
             </li>
 
             <li class="d-flex align-items-center justify-content-between">
               <span class="ct-2"> <i class="fas fa-mitten"></i> Assists </span>
-              <span>54 </span>
+              <span class="counter" data-target="54">54 </span>
             </li>
 
             <li class="d-flex align-items-center justify-content-between">
-              <span class="ct-2"> <i class="fas fa-running"></i> Apperarences </span>
-              <span>34 </span>
+              <span class="ct-2"> <i class="fas fa-running"></i> Team Participating</span>
+              <span class="counter" data-target="200">200+ </span>
             </li>
 
 
@@ -1472,6 +1472,24 @@ require 'auth.php';
   echo $logout_message;
 
   ?>
+
+  <script>
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach((counter) => {
+      counter.innerText = "0";
+      const updateCounter = () => {
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText;
+        const increment = target / 200;
+        if (count < target) {
+          counter.innerText = `${Math.ceil(count + increment)}`;
+          setTimeout(updateCounter, 1);
+        } else counter.innerText = target;
+      };
+      updateCounter();
+    });
+  </script>
 
   <script>
     $(document).ready(function () {
