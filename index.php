@@ -382,7 +382,7 @@ require 'auth.php';
         <div class="row gx-lg-5">
           <div class="col-lg-7 col-xl-8">
             <div class="d-flex justify-content-between align-items-center">
-              <h2 class="comon-heading m-0"> Fixtures & Results </h2>
+              <h2 class="comon-heading m-0">Matches</h2>
               <a href="matches.php" class="btn all-cm-btn  animate__animated animate__zoomIn"> All Matches <svg
                   xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -498,7 +498,7 @@ require 'auth.php';
           <div class="col-lg-5 col-xl-4 ">
             <div class="latest-result-div mt-5 mt-lg-0">
               <div class="d-flex align-items-center justify-content-between">
-                <h2 class="comon-heading m-0"> Latest Results</h2>
+                <h2 class="comon-heading m-0"> Results</h2>
                 <a href="matches.php" class="btn viw-btn">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-up-right-square-fill" viewBox="0 0 16 16">
@@ -642,12 +642,12 @@ require 'auth.php';
 
         <p class="col-lg-7 my-4"> At <a href="https://www.yoshifa.com" class="text-decoration-none"
             target="_blank">Yoshi
-            Football Academy</a>, based
-          in the UAE with branches around the world, we are dedicated to nurturing football talent and fostering a love
-          for the sport. Our passion for football led to the creation of the Yoshi Tournament, a prestigious event that
-          brings together football teams, organizations, schools, and academies from across the globe. The Yoshi
-          Tournament is more than just a competition; it is a celebration of teamwork, skill, and the spirit of the
-          game. Join us as we continue to inspire and develop the football stars of tomorrow.</p>
+            Football Academy</a>, Having completed projects and based on our experience in Nigeria - Yoshi Tournaments
+          has been established to cater to the growing number of Amateur, Semipro and Professional players. The key aim
+          of the tournaments is to provide a platform for players from all backgrounds and experience levels to
+          experience competitive gameplay and gain exposure with the opportunity to level up continuously. The
+          tournaments are much more than football matches - offering players and teams opportunities to network,
+          collaborate and benefit from the Yoshi FA coaching methodology. </p>
         <a href="about.php" class="btn all-cm-btn animate__animated animate__zoomIn"> About More <svg
             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
             viewBox="0 0 16 16">
