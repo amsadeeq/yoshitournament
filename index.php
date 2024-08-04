@@ -80,6 +80,10 @@ require 'auth.php';
     .show .animated-text {
       opacity: 1;
     }
+
+    .justify-text {
+      text-align: justify;
+    }
   </style>
 
 </head>
