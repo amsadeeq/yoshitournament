@@ -1481,7 +1481,7 @@ require 'auth.php';
       const updateCounter = () => {
         const target = +counter.getAttribute("data-target");
         const count = +counter.innerText;
-        const increment = target / 200;
+        const increment = target / 500;
         if (count < target) {
           counter.innerText = `${Math.ceil(count + increment)}`;
           setTimeout(updateCounter, 1);
