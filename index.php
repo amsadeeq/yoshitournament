@@ -640,8 +640,8 @@ require 'auth.php';
         <h2 class="comon-heading m-0"> About the
           Yoshi Tournament</h2>
 
-        <p class="col-lg-7 my-4"> At <a href="https://www.yoshifa.com" class="text-decoration-none"
-            target="_blank">Yoshi
+        <p class="col-lg-7 my-4 justify-text text-justify"> At <a href="https://www.yoshifa.com"
+            class="text-decoration-none" target="_blank">Yoshi
             Football Academy</a>, Having completed projects and based on our experience in Nigeria - Yoshi Tournaments
           has been established to cater to the growing number of Amateur, Semipro and Professional players. The key aim
           of the tournaments is to provide a platform for players from all backgrounds and experience levels to
