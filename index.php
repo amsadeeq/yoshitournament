@@ -86,7 +86,7 @@ require 'auth.php';
     }
 
     .countdown-timer {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: bold;
       margin-bottom: 1rem;
       animation: glow 1s ease-in-out infinite alternate;
@@ -456,7 +456,7 @@ require 'auth.php';
               </div>
 
               <div class="col  animate__animated animate__zoomIn">
-                <a href="#" class="items-matchs">
+                <a href="#" class="items-matchs animate__animated animate__zoomIn">
                   <figure class="m-0 bg-mc-1">
                     <img src="images/bg-ms2.jpeg" alt="bg-ms" />
                   </figure>
@@ -484,7 +484,7 @@ require 'auth.php';
               </div>
 
               <div class="col  animate__animated animate__zoomIn">
-                <a href="#" class="items-matchs">
+                <a href="#" class="items-matchs animate__animated animate__zoomIn">
                   <figure class="m-0 bg-mc-1">
                     <img src="images/bg-mc3.jpeg" alt="bg-ms" />
                   </figure>
@@ -513,7 +513,7 @@ require 'auth.php';
 
 
               <div class="col  animate__animated animate__zoomIn">
-                <a href="#" class="items-matchs">
+                <a href="#" class="items-matchs animate__animated animate__zoomIn">
                   <figure class="m-0 bg-mc-1">
                     <img src="images/bg-mc.jpg" alt="bg-ms" />
                   </figure>
