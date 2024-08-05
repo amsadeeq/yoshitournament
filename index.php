@@ -86,7 +86,7 @@ require 'auth.php';
     }
 
     .countdown-timer {
-      font-size: 1rem;
+      font-size: 2rem;
       font-weight: bold;
       margin-bottom: 1rem;
       animation: glow 1s ease-in-out infinite alternate;
