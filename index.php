@@ -527,7 +527,10 @@ require 'auth.php';
               <div class="ltest-divbm mt-4">
                 <a href="#" class="comon-items-div">
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="cm-culb">
+                    <h5> Match Results
+                      <span class="d-block"> Updating... </span>
+                    </h5>
+                    <!-- <div class="cm-culb">
                       <figure class="d-flex align-items-center">
                         <figcaption class="me-2">Gombe Utd</figcaption>
                         <img src="images/fc-1.jpg" alt="cl2" />
@@ -545,7 +548,7 @@ require 'auth.php';
 
                     </div>
                   </div>
-                  <p class="text-center"> <i class="fas fa-map-marker-alt"></i> Dec 2, 2023/ Abuja Stadium</p>
+                  <p class="text-center"> <i class="fas fa-map-marker-alt"></i> Dec 2, 2023/ Abuja Stadium</p> -->
                 </a>
 
                 <a href="#" class="comon-items-div">
