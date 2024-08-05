@@ -172,33 +172,12 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Story </h5>
               <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-              <p class="mt-3"> Founded under the umbrella of Yoshifa, a renowned football academy in the UAE with
-                branches around the world, Yoshi Tournaments was born from a passion for football and a desire to
-                provide a platform for competition and growth. Yoshifa has always been committed to nurturing young
-                talent and fostering a love for the sport. Building on this foundation, Yoshi Tournaments was
-                established to extend these values beyond our academy walls and into the global football community.
-
-                Yoshi Tournaments began as a modest initiative, organizing local competitions among football teams,
-                organizations, schools, and other football academies. Our dedication to quality and our commitment to
-                creating unforgettable experiences quickly earned us a reputation for excellence. As we grew, so did the
-                scope of our tournaments, attracting participants from all corners of the globe.
-
-                Today, Yoshi Tournaments stands as a beacon for aspiring footballers and seasoned professionals alike.
-                We pride ourselves on our ability to host well-organized, competitive, and inclusive tournaments that
-                cater to both licensed and unlicensed officials. By integrating advanced technologies and maintaining a
-                keen focus on the needs of our participants, we ensure that every tournament is not just a competition,
-                but a celebration of the beautiful game.
-
-                Our story is one of continuous growth, fueled by a love for football and a commitment to our mission and
-                vision. As we look to the future, we remain dedicated to providing exceptional tournament experiences
-                and fostering a global community united by the joy of football.
-
-                Visit us at <a style="text-decoration: none;" href='tournaments.php'>Tournaments</a> and <a
-                  style="text-decoration: none;" href='https://yoshifa.com'>Yoshifa</a> to
-                learn more about our events,
-                history, and how you can be a
-                part of our ever-growing football family. Together, we are making football dreams come true, one
-                tournament at a time.
+              <p class="mt-3"> Born from a deep-rooted passion for football, Yoshi Tournaments emerged to address a
+                critical gap in player development within Abuja. We recognized the limited competitive opportunities
+                available to local players and saw an urgent need to create a platform that would challenge and nurture
+                talent at all levels. Our journey began with modest competitions among schools, but our unwavering
+                commitment to quality and unforgettable experiences quickly established Yoshi Tournaments as a beacon of
+                excellence in the football community.
               </p>
 
             </div>
@@ -217,12 +196,11 @@
               <h5 class="samll-sub mb-1 mt-0"> Our Vision </h5>
               <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
               <p class="mt-3" style="text-align: justify;">
-                Having completed projects and based on our experience in Nigeria - Yoshi Tournaments has been
-                established to cater to the growing number of Amateur, Semipro and Professional players. The key aim of
-                the tournaments is to provide a platform for players from all backgrounds and experience levels to
-                experience competitive gameplay and gain exposure with the opportunity to level up continuously. The
-                tournaments are much more than football matches - offering players and teams opportunities to network,
-                collaborate and benefit from the Yoshi FA coaching methodology.
+                Our vision is to create a dynamic platform that empowers aspiring football players of all backgrounds to
+                showcase their extraordinary abilities. We strive to be the catalyst for unlocking hidden potential,
+                providing a stage where talent can flourish and dreams can take flight. By offering a diverse range of
+                competitive opportunities, we aim to inspire and nurture the next generation of football stars while
+                fostering a vibrant and inclusive football community.
               </p>
 
             </div>
@@ -258,14 +236,14 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Mission </h5>
               <h2 class="comon-heading m-0"> Mission of Yoshi Tournament </h2>
-              <p class="mt-3"> At Yoshi Tournaments, our mission is to create a premier platform for football
-                competitions that brings together teams, players, and fans from around the world. We are dedicated to
-                fostering a spirit of sportsmanship, excellence, and camaraderie by organizing high-quality tournaments
-                that provide opportunities for talent development, teamwork, and lifelong memories. Our goal is to
-                enhance the love for football and contribute to the growth of the sport globally.
-              </p>
+              <p class="mt-3"> We are dedicated to designing and executing exceptional tournament and league formats
+                that provide a level playing field for all aspiring footballers. Our mission is to create opportunities
+                for players to compete, learn, and grow, regardless of their experience or background. Through
+                meticulous planning and execution, we aim to deliver unforgettable experiences that leave a lasting
+                impact on the lives of participants and contribute to the overall development of the sport.
 
-            </div>
+
+              div>
           </div>
         </div>
       </div>
@@ -333,13 +311,7 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                      distribution of letters, as opposed to using 'Content here, content here', making it look like
-                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the like).</p>
+                    <p> Yoshi FA was established in Dubai, UAE in July 2020 and officially began operations in December 2020. Ahmed's (Founder and CEO) strong commitment and passion for player development along with a practical and empathetic approach led to the growth of the academy in Dubai. During the initial phase of operations -  the approach and coaching methodology was developed based on the planer categories across varying capability levels. The Yoshi family has ever since been growing across Dubai.</p>
                   </div>
                 </div>
               </div>
@@ -351,13 +323,7 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                      distribution of letters, as opposed to using 'Content here, content here', making it look like
-                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the like).</p>
+                    <p> The first contract for long term pitch rental was signed with a private school in Dubai - allowing Yoshi FA to call Dubai its home. This year saw the first official employee for the academy allowing Yoshi FA to scale coaching operations. With a keen eye for detail and learnings from courses for football development - the Yoshi FA coaching methodology is cemented and refined on a continuous basis with the core element revolving around grass-root coaching. The first Yoshi FA strategic plan was established in 2021 with a mission to revolutionize Football across the Middle East and Africa</p>
                   </div>
                 </div>
               </div>
@@ -369,13 +335,7 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                      distribution of letters, as opposed to using 'Content here, content here', making it look like
-                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the like).</p>
+                    <p> Yoshi FA held its first international project in 2022 - the Abuja Summer Camp. The camp was an astounding success with over 50 players training with Yoshi FA over a span of 2 weeks in Abuja, Nigeria. The camp concluded with a historic win against the official AS Roma U-23 team - proving Yoshi FA’s coaching methodology and prowess. Along the same timeframe Yoshi FA established its second branch in Sharjah, UAE expanding its services to cater to the growing need for grassroots coaching in the UAE. 2022 was a stepping stone for Yoshi FA from a media perspective - with International media recognition (Vanguard - Nigeria).</p>
                   </div>
                 </div>
               </div>
@@ -387,13 +347,7 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                      distribution of letters, as opposed to using 'Content here, content here', making it look like
-                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the like).</p>
+                    <p> Building on its successes, Yoshi FA expanded its reach in 2023. The Dubai Summer Camp offered players a fun and engaging football experience in a controlled indoor environment by hosting sessions over 2 weeks in an indoor football dome in Dubai in the summer to beat the heat and included fun activities for players.. The Gombe Run in Nigeria was a highlight, demonstrating Yoshi FA's commitment to community well-being and promoting an active lifestyle. With over 1,000 participants, the event showcased the academy's ability to create impactful community initiatives.</p>
                   </div>
                 </div>
               </div>
@@ -405,13 +359,8 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                      distribution of letters, as opposed to using 'Content here, content here', making it look like
-                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the like).</p>
+                    <p> 2024 marks a pivotal year for Yoshi FA as we embark on establishing our first football academy in Abuja, Nigeria. This ambitious project is a testament to our commitment to nurturing young talent and revolutionizing player development in the region. By leveraging our international expertise and partnerships, we aim to create a world-class academy that provides unparalleled opportunities for aspiring footballers.
+Building upon our successful track record, Yoshi Tournaments will launch in 2024, offering a platform for players of all levels to compete, showcase their skills, and experience the thrill of competitive football. Our tournaments will be characterized by fair play, intense competition, and a focus on player development. We are excited to create a vibrant tournament ecosystem that fosters a love for the game and inspires future football stars.</p>
                   </div>
                 </div>
               </div>
@@ -426,7 +375,7 @@
     </div>
 
 
-    <div class="our-mangent-sft py-5">
+    <!-- <div class="our-mangent-sft py-5">
       <div class="container">
         <h2 class="comon-heading m-0"> Tournament Management Staff </h2>
         <div class="mangemnet-sf owl-carousel owl-theme mt-4">
@@ -480,10 +429,10 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
 
 
-    <div class="achivement-div py-5">
+    <!-- <div class="achivement-div py-5">
 
       <div class="container">
         <h2 class="comon-heading m-0"> Achievement </h2>
@@ -534,10 +483,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
-    <div class="our-triners py-5">
+    <!-- <div class="our-triners py-5">
       <div class="container">
         <h2 class="comon-heading m-0"> Yoshi Management </h2>
         <figure class="achive-div1">
@@ -597,11 +546,11 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="our-sponcer py-5">
       <div class="container">
-        <h2 class="comon-heading m-0"> Our Sponsors </h2>
+        <h2 class="comon-heading m-0"> Our Partners </h2>
         <div class="sponcer-slide owl-carousel owl-theme mt-5">
           <div class="itesm-sp">
             <figure>
@@ -656,48 +605,48 @@
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/jquery.min.js"></script>
-  <script src="js/custom.js"></script>
-  <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+ 
+  
+     <script src="js/owl.carousel.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
-
-  <script>
-    AOS.init({
+  
+ 
+         AOS.init({
       offset: 100,
-      easing: 'ease',
+        easing: 'ease',
       delay: 0,
-      once: true,
-      duration: 800,
+             once: true,
+  
+  
+    } );
 
-    });
+  
+  
+    <script>
+        $(document).ready(function () {
+          var TIMEOUT = 6000;
 
-  </script>
+          var interval = setInterval(handleNext, TIMEOUT);
 
-  <script>
-    $(document).ready(function () {
-      var TIMEOUT = 6000;
+   
+             var $radios = $('input[class*="slide-radio"]');
+            var $activeRadio = $('input[class*="slide-radio"]:checked');
 
-      var interval = setInterval(handleNext, TIMEOUT);
+            var currentIndex = $activeRadio.index();
+            var radiosLength = $radios.length;
 
-      function handleNext() {
-        var $radios = $('input[class*="slide-radio"]');
-        var $activeRadio = $('input[class*="slide-radio"]:checked');
-
-        var currentIndex = $activeRadio.index();
-        var radiosLength = $radios.length;
-
-        $radios.attr("checked", false);
+            $radios.attr("checked", false);
 
         if (currentIndex >= radiosLength - 1) {
-          $radios.first().attr("checked", true);
-        } else {
-          $activeRadio.next('input[class*="slide-radio"]').attr("checked", true);
-        }
-      }
-    });
-  </script>
-
+     
+               } else {
+   
+             }
+          }
+    })    ;
+  
+      
 
 
 </body>
