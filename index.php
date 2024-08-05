@@ -401,7 +401,10 @@ require 'auth.php';
                     <img src="images/bg-mc.jpg" alt="bg-ms" />
                   </figure>
                   <div class="matches-div-home">
-                    <h5> Pantami Stadium, Gombe
+                    <h5> Next Match
+                      <span class="d-block"> Coming Soon! </span>
+                    </h5>
+                    <!-- <h5> Pantami Stadium, Gombe
                       <span class="d-block"> June 02, 2024 </span>
                     </h5>
                     <div class="d-flex align-items-center justify-content-between">
@@ -415,7 +418,7 @@ require 'auth.php';
                         <img src="images/team_4.png" alt="cl2" />
                         <figcaption>Yobe Untd</figcaption>
                       </figure>
-                    </div>
+                    </div> -->
                   </div>
                 </a>
               </div>
