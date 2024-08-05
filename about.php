@@ -473,7 +473,7 @@ Building upon our successful track record, Yoshi Tournaments will launch in 2024
     </div> -->
 
 
-    <div class="our-triners py-5">
+    <!-- <div class="our-triners py-5">
       <div class="container">
         <h2 class="comon-heading m-0"> Yoshi Management </h2>
         <figure class="achive-div1">
@@ -533,11 +533,11 @@ Building upon our successful track record, Yoshi Tournaments will launch in 2024
 
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="our-sponcer py-5">
       <div class="container">
-        <h2 class="comon-heading m-0"> Our Sponsors </h2>
+        <h2 class="comon-heading m-0"> Our Partners </h2>
         <div class="sponcer-slide owl-carousel owl-theme mt-5">
           <div class="itesm-sp">
             <figure>
