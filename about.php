@@ -359,8 +359,13 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> 2024 marks a pivotal year for Yoshi FA as we embark on establishing our first football academy in Abuja, Nigeria. This ambitious project is a testament to our commitment to nurturing young talent and revolutionizing player development in the region. By leveraging our international expertise and partnerships, we aim to create a world-class academy that provides unparalleled opportunities for aspiring footballers.
-Building upon our successful track record, Yoshi Tournaments will launch in 2024, offering a platform for players of all levels to compete, showcase their skills, and experience the thrill of competitive football. Our tournaments will be characterized by fair play, intense competition, and a focus on player development. We are excited to create a vibrant tournament ecosystem that fosters a love for the game and inspires future football stars.</p>
+                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
+                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                      distribution of letters, as opposed to using 'Content here, content here', making it look like
+                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                      their infancy. Various versions have evolved over the years, sometimes by
+                      accident, sometimes on purpose (injected humour and the like).</p>
                   </div>
                 </div>
               </div>
@@ -550,7 +555,7 @@ Building upon our successful track record, Yoshi Tournaments will launch in 2024
 
     <div class="our-sponcer py-5">
       <div class="container">
-        <h2 class="comon-heading m-0"> Our Partners </h2>
+        <h2 class="comon-heading m-0"> Our Sponsors </h2>
         <div class="sponcer-slide owl-carousel owl-theme mt-5">
           <div class="itesm-sp">
             <figure>
