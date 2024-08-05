@@ -340,7 +340,7 @@
               <div class="tab-pane fade" id="yd-hom5" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <div class="comon-fild-ads1 d-lg-flex align-items-center">
                   <figure>
-                    <img src="images/wine2.jpg" alt="bg" />
+                    <img src="images/yoshiStud.png" alt="bg" />
                   </figure>
 
                   <div class="left-history">
