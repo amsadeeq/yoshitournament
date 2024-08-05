@@ -209,7 +209,7 @@ require 'auth.php';
               <h2>YOSHI TOURNAMENTS
                 <span class="d-block"> NOW IN ABUJA! </span>
               </h2>
-              <p style="text-align: just !important; font-size:16px;"> An epic showdown awaits you in Abuja! Yoshi
+              <p style="text-align: justify !important; font-size:16px;"> An epic showdown awaits you in Abuja! Yoshi
                 Tournaments has been officially launched in Abuja,
                 Nigeria.
                 After careful Planning and consideration to provide a world-class experience along with a host of
