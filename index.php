@@ -530,6 +530,7 @@ require 'auth.php';
                     <h5> Match Results
                       <span class="d-block"> Updating... </span>
                     </h5>
+
                     <!-- <div class="cm-culb">
                       <figure class="d-flex align-items-center">
                         <figcaption class="me-2">Gombe Utd</figcaption>
@@ -546,9 +547,9 @@ require 'auth.php';
 
                       </figure>
 
-                    </div>
+                    </div> -->
                   </div>
-                  <p class="text-center"> <i class="fas fa-map-marker-alt"></i> Dec 2, 2023/ Abuja Stadium</p> -->
+                  <!-- <p class="text-center"> <i class="fas fa-map-marker-alt"></i> Dec 2, 2023/ Abuja Stadium</p> -->
                 </a>
 
                 <a href="#" class="comon-items-div">
