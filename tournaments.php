@@ -153,7 +153,6 @@
                 </li>
             </ul>
         </div>
-
     </section>
 
     <section class="body-part-total float-start w-100">
@@ -174,7 +173,8 @@
                         <div class="col">
                             <h5 class="samll-sub mb-1 mt-0"> Why We Started </h5>
                             <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-                            <p class="mt-3">We founded Yoshi Tournaments out of a deep-rooted passion for football and a
+                            <p class="mt-3" style="text-align:justify !important;">We founded Yoshi Tournaments out of a
+                                deep-rooted passion for football and a
                                 clear vision to bridge the gap in player development within Abuja. Recognizing the
                                 limited competitive opportunities available to local players, we understood the urgent
                                 need for a platform that would challenge and nurture talent at all levels. Yoshi
@@ -184,7 +184,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="about-page-main comon-sub-page-main">
@@ -195,7 +194,8 @@
                         <div class="col">
                             <h5 class="samll-sub mb-1 mt-0"> Benefits and Key Differentiators </h5>
                             <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-                            <p class="mt-3"> Yoshi Tournaments offers players unparalleled opportunities to shine. Our
+                            <p class="mt-3" style="text-align:justify !important;"> Yoshi Tournaments offers players
+                                unparalleled opportunities to shine. Our
                                 tournaments provide a platform for players to test their abilities against diverse
                                 competition, fostering growth and development. We believe in inclusivity and offer free
                                 participation to all Abuja Private School students. For top performers, we have exciting
@@ -204,7 +204,6 @@
                                 standards ensures a competitive, fair, and professionally managed tournament experience
                                 for everyone involved. Join us and be part of the next generation of football stars.
                             </p>
-
                         </div>
                         <div class="col position-relative">
                             <figure class="big-img">
@@ -214,11 +213,9 @@
                                 <img src="images/pexels-photo-12460951.jfif" alt="pic2">
                             </figure>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
 
 
@@ -238,21 +235,19 @@
                         <div class="col">
                             <h5 class="samll-sub mb-1 mt-0"> The Story </h5>
                             <h2 class="comon-heading m-0"> Our Vision </h2>
-                            <p class="mt-3"> Having successfully launched our inaugural tournament, we are committed to
+                            <p class="mt-3" style="text-align:justify !important;"> Having successfully launched our
+                                inaugural tournament, we are committed to
                                 expanding our reach and impact. Our goal is to host multiple tournaments in 2025,
                                 catering to a wider audience including public sector, corporate, and school communities.
                                 Beyond the matches, Yoshi Tournaments offers a holistic football experience. Players and
                                 teams have the opportunity to network, collaborate, and benefit from the expertise of
                                 our Yoshi FA coaching team. We believe in fostering a strong football community where
                                 everyone can grow and succeed.
-
                             </p>
-
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
 

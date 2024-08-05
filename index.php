@@ -348,7 +348,7 @@ require 'auth.php';
 
             <li class="d-flex align-items-center justify-content-between">
               <span class="ct-2"> <i class="fas fa-running"></i> Team Participating</span>
-              <span class="counter" data-target="200">200+ </span>
+              <span class="counter" data-target="200">200+ </span>+
             </li>
 
 
@@ -456,7 +456,7 @@ require 'auth.php';
               </div>
 
               <div class="col  animate__animated animate__zoomIn">
-                <a href="#" class="items-matchs animate__animated animate__zoomIn">
+                <a href="#" class="items-matchs">
                   <figure class="m-0 bg-mc-1">
                     <img src="images/bg-ms2.jpeg" alt="bg-ms" />
                   </figure>
@@ -484,7 +484,7 @@ require 'auth.php';
               </div>
 
               <div class="col  animate__animated animate__zoomIn">
-                <a href="#" class="items-matchs animate__animated animate__zoomIn">
+                <a href="#" class="items-matchs">
                   <figure class="m-0 bg-mc-1">
                     <img src="images/bg-mc3.jpeg" alt="bg-ms" />
                   </figure>
@@ -513,7 +513,7 @@ require 'auth.php';
 
 
               <div class="col  animate__animated animate__zoomIn">
-                <a href="#" class="items-matchs animate__animated animate__zoomIn">
+                <a href="#" class="items-matchs">
                   <figure class="m-0 bg-mc-1">
                     <img src="images/bg-mc.jpg" alt="bg-ms" />
                   </figure>
