@@ -206,8 +206,8 @@ require 'auth.php';
 
             <div class="slider-content">
               <h3> Welcome To Yoshi Tournaments </h3>
-              <h2>EPIC SHOWDOWN IN ABUJA:
-                <span class="d-block"> YOSHI TOURNAMENTS OFFICIALLY LAUNCHED! </span>
+              <h2>YOSHI TOURNAMENTS
+                <span class="d-block"> NOW IN ABUJA! </span>
               </h2>
               <p> Football tournaments are not just about winning games; they're about the passion, camaraderie, and
                 unforgettable moments that unite players and fans alike in the beautiful game</p>
