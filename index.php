@@ -209,8 +209,10 @@ require 'auth.php';
               <h2>YOSHI TOURNAMENTS
                 <span class="d-block"> NOW IN ABUJA! </span>
               </h2>
-              <p> Football tournaments are not just about winning games; they're about the passion, camaraderie, and
-                unforgettable moments that unite players and fans alike in the beautiful game</p>
+              <p> An epic showdown awaits you in Abuja! Yoshi Tournaments has been officially launched in Abuja,
+                Nigeria.
+                After careful Planning and consideration to provide a world-class experience along with a host of
+                opportunities for players and teams</p>
               <a href="about.php" class="buy-now-btn" name="button">
 
                 Tournament
