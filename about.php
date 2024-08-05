@@ -226,7 +226,7 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Mission </h5>
               <h2 class="comon-heading m-0"> Mission of Yoshi Tournament </h2>
-              <p class="mt-3"> We are dedicated to designing and executing exceptional tournament and league formats that provide a level playing field for all aspiring footballers. Our mission is to create opportunities for players to compete, learn, and grow, regardless of their experience or background. Through meticulous planning and execution, we aim to deliver unforgettable experiences that leave a lasting impact on the lives of participants and contribute to the overall development of the sport.
+              <p class="mt-3" style="text-align: justify !important;"> We are dedicated to designing and executing exceptional tournament and league formats that provide a level playing field for all aspiring footballers. Our mission is to create opportunities for players to compete, learn, and grow, regardless of their experience or background. Through meticulous planning and execution, we aim to deliver unforgettable experiences that leave a lasting impact on the lives of participants and contribute to the overall development of the sport.
               </p>
 
             </div>
