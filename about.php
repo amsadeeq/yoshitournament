@@ -190,11 +190,7 @@
               <h5 class="samll-sub mb-1 mt-0"> Our Vision </h5>
               <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
               <p class="mt-3" style="text-align: justify;">
-                Our vision is to be the leading tournament organizer in the world of
-                football, renowned for our commitment to excellence, inclusivity, and innovation. We aim to inspire and
-                empower football enthusiasts of all ages and backgrounds by offering a dynamic and engaging tournament
-                experience. Through our efforts, we aspire to build a global community that celebrates diversity,
-                nurtures talent, and promotes the values of respect, integrity, and passion for the game.
+              Our vision is to create a dynamic platform that empowers aspiring football players of all backgrounds to showcase their extraordinary abilities. We strive to be the catalyst for unlocking hidden potential, providing a stage where talent can flourish and dreams can take flight. By offering a diverse range of competitive opportunities, we aim to inspire and nurture the next generation of football stars while fostering a vibrant and inclusive football community
               </p>
 
             </div>
