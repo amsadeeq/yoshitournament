@@ -209,12 +209,12 @@ require 'auth.php';
               <h2>YOSHI TOURNAMENTS
                 <span class="d-block"> NOW IN ABUJA! </span>
               </h2>
-              <p style="text-align: just !important; font-size:11px;"> An epic showdown awaits you in Abuja! Yoshi
+              <p style="text-align: just !important; font-size:16px;"> An epic showdown awaits you in Abuja! Yoshi
                 Tournaments has been officially launched in Abuja,
                 Nigeria.
                 After careful Planning and consideration to provide a world-class experience along with a host of
                 opportunities for players and teams</p>
-              <a href="about.php" class="buy-now-btn" name="button">
+              <button href="about.php" class="buy-now-btn" onclick="" name="button">
 
                 Tournament
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -222,11 +222,7 @@ require 'auth.php';
                   <path fill-rule="evenodd"
                     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
                   </path>
-                </svg> </a>
-
-
-
-
+                </svg> </button>
             </div>
             <div class="number-pagination">
               <span>1</span>
