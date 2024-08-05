@@ -226,11 +226,7 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Mission </h5>
               <h2 class="comon-heading m-0"> Mission of Yoshi Tournament </h2>
-              <p class="mt-3"> At Yoshi Tournaments, our mission is to create a premier platform for football
-                competitions that brings together teams, players, and fans from around the world. We are dedicated to
-                fostering a spirit of sportsmanship, excellence, and camaraderie by organizing high-quality tournaments
-                that provide opportunities for talent development, teamwork, and lifelong memories. Our goal is to
-                enhance the love for football and contribute to the growth of the sport globally.
+              <p class="mt-3"> We are dedicated to designing and executing exceptional tournament and league formats that provide a level playing field for all aspiring footballers. Our mission is to create opportunities for players to compete, learn, and grow, regardless of their experience or background. Through meticulous planning and execution, we aim to deliver unforgettable experiences that leave a lasting impact on the lives of participants and contribute to the overall development of the sport.
               </p>
 
             </div>
