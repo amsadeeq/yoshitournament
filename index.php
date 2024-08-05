@@ -371,8 +371,12 @@ require 'auth.php';
               <!-- <a href="#" class="comon-news-links">
                 <i class="far fa-dot-circle"></i> Gombe Untd 1 - 0 Defeat to Kwara Untd
               </a> -->
+
               <a href="#" class="comon-news-links">
                 <i class="far fa-dot-circle"></i> Yoshi Abuja Private Schools coming on 14 August
+              </a>
+              <a href="#" class="comon-news-links">
+                <i class="far fa-dot-circle"></i> Yoshi Tournament Officials meets with Abuja Private schools Executives
               </a>
               <a href="#" class="comon-news-links">
                 <i class="far fa-dot-circle"></i> Live Football Scores, Fixtures & Results
