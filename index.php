@@ -84,6 +84,33 @@ require 'auth.php';
     .justify-text {
       text-align: justify;
     }
+
+    .countdown-timer {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700;
+      }
+
+      to {
+        text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ffd700;
+      }
+    }
   </style>
 
 </head>
