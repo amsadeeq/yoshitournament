@@ -368,8 +368,11 @@ require 'auth.php';
           </div>
           <div class="col-lg-9">
             <div class="latest-news owl-carousel owl-theme mt-3 py-3">
-              <a href="#" class="comon-news-links">
+              <!-- <a href="#" class="comon-news-links">
                 <i class="far fa-dot-circle"></i> Gombe Untd 1 - 0 Defeat to Kwara Untd
+              </a> -->
+              <a href="#" class="comon-news-links">
+                <i class="far fa-dot-circle"></i> Yoshi Abuja Private Schools coming on 14 August
               </a>
               <a href="#" class="comon-news-links">
                 <i class="far fa-dot-circle"></i> Live Football Scores, Fixtures & Results
