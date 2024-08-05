@@ -311,7 +311,13 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> Yoshi FA was established in Dubai, UAE in July 2020 and officially began operations in December 2020. Ahmed's (Founder and CEO) strong commitment and passion for player development along with a practical and empathetic approach led to the growth of the academy in Dubai. During the initial phase of operations -  the approach and coaching methodology was developed based on the planer categories across varying capability levels. The Yoshi family has ever since been growing across Dubai.</p>
+                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
+                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                      distribution of letters, as opposed to using 'Content here, content here', making it look like
+                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                      their infancy. Various versions have evolved over the years, sometimes by
+                      accident, sometimes on purpose (injected humour and the like).</p>
                   </div>
                 </div>
               </div>
@@ -323,7 +329,13 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> The first contract for long term pitch rental was signed with a private school in Dubai - allowing Yoshi FA to call Dubai its home. This year saw the first official employee for the academy allowing Yoshi FA to scale coaching operations. With a keen eye for detail and learnings from courses for football development - the Yoshi FA coaching methodology is cemented and refined on a continuous basis with the core element revolving around grass-root coaching. The first Yoshi FA strategic plan was established in 2021 with a mission to revolutionize Football across the Middle East and Africa</p>
+                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
+                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                      distribution of letters, as opposed to using 'Content here, content here', making it look like
+                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                      their infancy. Various versions have evolved over the years, sometimes by
+                      accident, sometimes on purpose (injected humour and the like).</p>
                   </div>
                 </div>
               </div>
@@ -335,7 +347,13 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> Yoshi FA held its first international project in 2022 - the Abuja Summer Camp. The camp was an astounding success with over 50 players training with Yoshi FA over a span of 2 weeks in Abuja, Nigeria. The camp concluded with a historic win against the official AS Roma U-23 team - proving Yoshi FA’s coaching methodology and prowess. Along the same timeframe Yoshi FA established its second branch in Sharjah, UAE expanding its services to cater to the growing need for grassroots coaching in the UAE. 2022 was a stepping stone for Yoshi FA from a media perspective - with International media recognition (Vanguard - Nigeria).</p>
+                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
+                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                      distribution of letters, as opposed to using 'Content here, content here', making it look like
+                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                      their infancy. Various versions have evolved over the years, sometimes by
+                      accident, sometimes on purpose (injected humour and the like).</p>
                   </div>
                 </div>
               </div>
@@ -347,7 +365,13 @@
 
                   <div class="left-history">
                     <h2>It is a long established fact that a reader </h2>
-                    <p> Building on its successes, Yoshi FA expanded its reach in 2023. The Dubai Summer Camp offered players a fun and engaging football experience in a controlled indoor environment by hosting sessions over 2 weeks in an indoor football dome in Dubai in the summer to beat the heat and included fun activities for players.. The Gombe Run in Nigeria was a highlight, demonstrating Yoshi FA's commitment to community well-being and promoting an active lifestyle. With over 1,000 participants, the event showcased the academy's ability to create impactful community initiatives.</p>
+                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
+                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                      distribution of letters, as opposed to using 'Content here, content here', making it look like
+                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                      their infancy. Various versions have evolved over the years, sometimes by
+                      accident, sometimes on purpose (injected humour and the like).</p>
                   </div>
                 </div>
               </div>
