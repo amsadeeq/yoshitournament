@@ -983,7 +983,7 @@ require 'auth.php';
 
     <div class="our-sponcer py-5">
       <div class="container">
-        <h2 class="comon-heading m-0"> Our Sponsors </h2>
+        <h2 class="comon-heading m-0"> Our Partners </h2>
         <div class="sponcer-slide owl-carousel owl-theme mt-5">
           <div class="itesm-sp animate__animated animate__zoomIn">
             <figure>
@@ -1038,7 +1038,7 @@ require 'auth.php';
                 <img src="images/Yoshi_8.jpg" alt="blogs" />
               </figure>
               <div class="blogs-ps-right ps-lg-4 pt-lg-4">
-                <h5> Yoshi Tournamentin Gombe... </h5>
+                <h5> Yoshi Tournament in Gombe... </h5>
                 <ul class="list-unstyled d-flex align-items-center mt-2">
                   <li>
                     <i class="fas fa-calendar-alt"></i> 27 June, 2024
@@ -1092,7 +1092,7 @@ require 'auth.php';
                 <img src="images/Yoshi_9.jpg" alt="blogs" />
               </figure>
               <div class="blogs-ps-right ps-lg-4 pt-lg-1">
-                <h5 class="mt-0">Gombe FC Team is disqualifieed </h5>
+                <h5 class="mt-0">Gombe FC Team is disqualified </h5>
                 <ul class="list-unstyled d-flex align-items-center mt-2">
                   <li>
                     <i class="fas fa-calendar-alt"></i> 27 June, 2024
