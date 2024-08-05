@@ -429,7 +429,10 @@ require 'auth.php';
                     <img src="images/bg-ms2.jpeg" alt="bg-ms" />
                   </figure>
                   <div class="matches-div-home">
-                    <h5> Abuja Central Stadium
+                    <h5> Next Match
+                      <span class="d-block"> Coming Soon! </span>
+                    </h5>
+                    <!-- <h5> Abuja Central Stadium
                       <span class="d-block"> June 03, 2024 </span>
                     </h5>
                     <div class="d-flex align-items-center justify-content-between">
@@ -443,7 +446,7 @@ require 'auth.php';
                         <img src="images/team_7.png" alt="cl2" />
                         <figcaption>Jos Untd</figcaption>
                       </figure>
-                    </div>
+                    </div> -->
                   </div>
                 </a>
               </div>
@@ -454,7 +457,10 @@ require 'auth.php';
                     <img src="images/bg-mc3.jpeg" alt="bg-ms" />
                   </figure>
                   <div class="matches-div-home">
-                    <h5> Abuja Central Stadium
+                    <h5> Next Match
+                      <span class="d-block"> Coming Soon! </span>
+                    </h5>
+                    <!-- <h5> Abuja Central Stadium
                       <span class="d-block"> June 03, 2024 </span>
                     </h5>
                     <div class="d-flex align-items-center justify-content-between">
@@ -468,7 +474,7 @@ require 'auth.php';
                         <img src="images/team_2.jpg" alt="cl2" />
                         <figcaption>Italy FC.</figcaption>
                       </figure>
-                    </div>
+                    </div> -->
                   </div>
                 </a>
               </div>
@@ -480,7 +486,10 @@ require 'auth.php';
                     <img src="images/bg-mc.jpg" alt="bg-ms" />
                   </figure>
                   <div class="matches-div-home">
-                    <h5> Yobe Central Stadium
+                    <h5> Next Match
+                      <span class="d-block"> Coming Soon! </span>
+                    </h5>
+                    <!-- <h5> Yobe Central Stadium
                       <span class="d-block"> June 03, 2024 </span>
                     </h5>
                     <div class="d-flex align-items-center justify-content-between">
@@ -494,7 +503,7 @@ require 'auth.php';
                         <img src="images/team_5.png" alt="cl2" />
                         <figcaption>Italy FC.</figcaption>
                       </figure>
-                    </div>
+                    </div> -->
                   </div>
                 </a>
               </div>
