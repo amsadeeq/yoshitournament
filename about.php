@@ -172,12 +172,33 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Story </h5>
               <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-              <p class="mt-3"> Born from a deep-rooted passion for football, Yoshi Tournaments emerged to address a
-                critical gap in player development within Abuja. We recognized the limited competitive opportunities
-                available to local players and saw an urgent need to create a platform that would challenge and nurture
-                talent at all levels. Our journey began with modest competitions among schools, but our unwavering
-                commitment to quality and unforgettable experiences quickly established Yoshi Tournaments as a beacon of
-                excellence in the football community.
+              <p class="mt-3"> Founded under the umbrella of Yoshifa, a renowned football academy in the UAE with
+                branches around the world, Yoshi Tournaments was born from a passion for football and a desire to
+                provide a platform for competition and growth. Yoshifa has always been committed to nurturing young
+                talent and fostering a love for the sport. Building on this foundation, Yoshi Tournaments was
+                established to extend these values beyond our academy walls and into the global football community.
+
+                Yoshi Tournaments began as a modest initiative, organizing local competitions among football teams,
+                organizations, schools, and other football academies. Our dedication to quality and our commitment to
+                creating unforgettable experiences quickly earned us a reputation for excellence. As we grew, so did the
+                scope of our tournaments, attracting participants from all corners of the globe.
+
+                Today, Yoshi Tournaments stands as a beacon for aspiring footballers and seasoned professionals alike.
+                We pride ourselves on our ability to host well-organized, competitive, and inclusive tournaments that
+                cater to both licensed and unlicensed officials. By integrating advanced technologies and maintaining a
+                keen focus on the needs of our participants, we ensure that every tournament is not just a competition,
+                but a celebration of the beautiful game.
+
+                Our story is one of continuous growth, fueled by a love for football and a commitment to our mission and
+                vision. As we look to the future, we remain dedicated to providing exceptional tournament experiences
+                and fostering a global community united by the joy of football.
+
+                Visit us at <a style="text-decoration: none;" href='tournaments.php'>Tournaments</a> and <a
+                  style="text-decoration: none;" href='https://yoshifa.com'>Yoshifa</a> to
+                learn more about our events,
+                history, and how you can be a
+                part of our ever-growing football family. Together, we are making football dreams come true, one
+                tournament at a time.
               </p>
 
             </div>
@@ -196,11 +217,11 @@
               <h5 class="samll-sub mb-1 mt-0"> Our Vision </h5>
               <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
               <p class="mt-3" style="text-align: justify;">
-                Our vision is to create a dynamic platform that empowers aspiring football players of all backgrounds to
-                showcase their extraordinary abilities. We strive to be the catalyst for unlocking hidden potential,
-                providing a stage where talent can flourish and dreams can take flight. By offering a diverse range of
-                competitive opportunities, we aim to inspire and nurture the next generation of football stars while
-                fostering a vibrant and inclusive football community.
+                Our vision is to be the leading tournament organizer in the world of
+                football, renowned for our commitment to excellence, inclusivity, and innovation. We aim to inspire and
+                empower football enthusiasts of all ages and backgrounds by offering a dynamic and engaging tournament
+                experience. Through our efforts, we aspire to build a global community that celebrates diversity,
+                nurtures talent, and promotes the values of respect, integrity, and passion for the game.
               </p>
 
             </div>
@@ -236,14 +257,14 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Mission </h5>
               <h2 class="comon-heading m-0"> Mission of Yoshi Tournament </h2>
-              <p class="mt-3"> We are dedicated to designing and executing exceptional tournament and league formats
-                that provide a level playing field for all aspiring footballers. Our mission is to create opportunities
-                for players to compete, learn, and grow, regardless of their experience or background. Through
-                meticulous planning and execution, we aim to deliver unforgettable experiences that leave a lasting
-                impact on the lives of participants and contribute to the overall development of the sport.
+              <p class="mt-3"> At Yoshi Tournaments, our mission is to create a premier platform for football
+                competitions that brings together teams, players, and fans from around the world. We are dedicated to
+                fostering a spirit of sportsmanship, excellence, and camaraderie by organizing high-quality tournaments
+                that provide opportunities for talent development, teamwork, and lifelong memories. Our goal is to
+                enhance the love for football and contribute to the growth of the sport globally.
+              </p>
 
-
-              div>
+            </div>
           </div>
         </div>
       </div>
@@ -634,48 +655,48 @@
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/jquery.min.js"></script>
- 
-  
-     <script src="js/owl.carousel.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
-  
- 
-         AOS.init({
+
+  <script>
+    AOS.init({
       offset: 100,
         easing: 'ease',
       delay: 0,
-             once: true,
-  
-  
-    } );
+      once: true,
+      duration: 800,
 
-  
-  
-    <script>
-        $(document).ready(function () {
-          var TIMEOUT = 6000;
+    });
+    
+  </script>
 
-          var interval = setInterval(handleNext, TIMEOUT);
+  <script>
+    $(document).ready(function () {
+      var TIMEOUT = 6000;
 
-   
-             var $radios = $('input[class*="slide-radio"]');
-            var $activeRadio = $('input[class*="slide-radio"]:checked');
+      var interval = setInterval(handleNext, TIMEOUT);
 
-            var currentIndex = $activeRadio.index();
-            var radiosLength = $radios.length;
+      function handleNext() {
+        var $radios = $('input[class*="slide-radio"]');
+        var $activeRadio = $('input[class*="slide-radio"]:checked');
 
-            $radios.attr("checked", false);
+        var currentIndex = $activeRadio.index();
+        var radiosLength = $radios.length;
+
+        $radios.attr("checked", false);
 
         if (currentIndex >= radiosLength - 1) {
-     
-               } else {
-   
-             }
-          }
-    })    ;
-  
-      
+          $radios.first().attr("checked", true);
+        } else {
+          $activeRadio.next('input[class*="slide-radio"]').attr("checked", true);
+        }
+      }
+    });
+  </script>
+
 
 
 </body>
