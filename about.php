@@ -296,14 +296,8 @@
                   </figure>
 
                   <div class="left-history">
-                    <h2>It is a long established fact that a reader </h2>
-                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                      distribution of letters, as opposed to using 'Content here, content here', making it look like
-                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the like).</p>
+                    <h2>Building Dreams: Yoshi FA's Evolution in Dubai </h2>
+                    <p> Yoshi FA was established in Dubai, UAE in July 2020 and officially began operations in December 2020. Ahmed's (Founder and CEO) strong commitment and passion for player development along with a practical and empathetic approach led to the growth of the academy in Dubai. During the initial phase of operations -  the approach and coaching methodology was developed based on the planer categories across varying capability levels. The Yoshi family has ever since been growing across Dubai.</p>
                   </div>
                 </div>
               </div>
@@ -314,14 +308,8 @@
                   </figure>
 
                   <div class="left-history">
-                    <h2>It is a long established fact that a reader </h2>
-                    <p> It is a long established fact that a reader will be distracted by the readable content of a page
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                      distribution of letters, as opposed to using 'Content here, content here', making it look like
-                      readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                      their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the like).</p>
+                    <h2>Building a Legacy: Yoshi FA's Commitment to Grass-Root Coaching </h2>
+                    <p> The first contract for long term pitch rental was signed with a private school in Dubai - allowing Yoshi FA to call Dubai its home. This year saw the first official employee for the academy allowing Yoshi FA to scale coaching operations. With a keen eye for detail and learnings from courses for football development - the Yoshi FA coaching methodology is cemented and refined on a continuous basis with the core element revolving around grass-root coaching. The first Yoshi FA strategic plan was established in 2021 with a mission to revolutionize Football across the Middle East and Africa.</p>
                   </div>
                 </div>
               </div>
