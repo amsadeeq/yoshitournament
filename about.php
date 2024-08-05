@@ -172,7 +172,7 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Story </h5>
               <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-              <p class="mt-3"> Born from a deep-rooted passion for football, Yoshi Tournaments emerged to address a critical gap in player development within Abuja. We recognized the limited competitive opportunities available to local players and saw an urgent need to create a platform that would challenge and nurture talent at all levels. Our journey began with modest competitions among schools, but our unwavering commitment to quality and unforgettable experiences quickly established Yoshi Tournaments as a beacon of excellence in the football community</p>
+              <p class="mt-3 lni-text-align-justify"> Born from a deep-rooted passion for football, Yoshi Tournaments emerged to address a critical gap in player development within Abuja. We recognized the limited competitive opportunities available to local players and saw an urgent need to create a platform that would challenge and nurture talent at all levels. Our journey began with modest competitions among schools, but our unwavering commitment to quality and unforgettable experiences quickly established Yoshi Tournaments as a beacon of excellence in the football community</p>
 
             </div>
           </div>
