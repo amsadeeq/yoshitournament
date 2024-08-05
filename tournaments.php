@@ -172,25 +172,14 @@
                             </figure>
                         </div>
                         <div class="col">
-                            <h5 class="samll-sub mb-1 mt-0"> The Story </h5>
+                            <h5 class="samll-sub mb-1 mt-0"> Why We Started </h5>
                             <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-                            <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley
-                                of type and scrambled it to make a type specimen book. It has survived not only five
-                                centuries, but also
-                                the leap into electronic typesetting, remaining essentially unchanged. It was
-                                popularised in the 1960s
-                                with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                recently with desktop publishing software like Aldus PageMaker including versions of
-                                Lorem Ipsum. It is
-                                a long established fact that a
-                                reader will be distracted by the readable content of a page when looking at its layout.
-                                The point of
-                                using Lorem Ipsum
-                            </p>
-
+                            <p class="mt-3">We founded Yoshi Tournaments out of a deep-rooted passion for football and a
+                                clear vision to bridge the gap in player development within Abuja. Recognizing the
+                                limited competitive opportunities available to local players, we understood the urgent
+                                need for a platform that would challenge and nurture talent at all levels. Yoshi
+                                Tournaments was born from this determination to provide players with the in-game
+                                experience essential for their growth and progression.</p>
                         </div>
                     </div>
                 </div>
@@ -204,23 +193,16 @@
                 <div class="container">
                     <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
                         <div class="col">
-                            <h5 class="samll-sub mb-1 mt-0"> The Story </h5>
+                            <h5 class="samll-sub mb-1 mt-0"> Benefits and Key Differentiators </h5>
                             <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-                            <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley
-                                of type and scrambled it to make a type specimen book. It has survived not only five
-                                centuries, but also
-                                the leap into electronic typesetting, remaining essentially unchanged. It was
-                                popularised in the 1960s
-                                with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                recently with desktop publishing software like Aldus PageMaker including versions of
-                                Lorem Ipsum. It is
-                                a long established fact that a
-                                reader will be distracted by the readable content of a page when looking at its layout.
-                                The point of
-                                using Lorem Ipsum
+                            <p class="mt-3"> Yoshi Tournaments offers players unparalleled opportunities to shine. Our
+                                tournaments provide a platform for players to test their abilities against diverse
+                                competition, fostering growth and development. We believe in inclusivity and offer free
+                                participation to all Abuja Private School students. For top performers, we have exciting
+                                rewards including trophies, medals, and potential scouting opportunities. All
+                                participants will receive a certificate of recognition. Our commitment to international
+                                standards ensures a competitive, fair, and professionally managed tournament experience
+                                for everyone involved. Join us and be part of the next generation of football stars.
                             </p>
 
                         </div>
@@ -255,22 +237,15 @@
                         </div>
                         <div class="col">
                             <h5 class="samll-sub mb-1 mt-0"> The Story </h5>
-                            <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-                            <p class="mt-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley
-                                of type and scrambled it to make a type specimen book. It has survived not only five
-                                centuries, but also
-                                the leap into electronic typesetting, remaining essentially unchanged. It was
-                                popularised in the 1960s
-                                with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                recently with desktop publishing software like Aldus PageMaker including versions of
-                                Lorem Ipsum. It is
-                                a long established fact that a
-                                reader will be distracted by the readable content of a page when looking at its layout.
-                                The point of
-                                using Lorem Ipsum
+                            <h2 class="comon-heading m-0"> Our Vision </h2>
+                            <p class="mt-3"> Having successfully launched our inaugural tournament, we are committed to
+                                expanding our reach and impact. Our goal is to host multiple tournaments in 2025,
+                                catering to a wider audience including public sector, corporate, and school communities.
+                                Beyond the matches, Yoshi Tournaments offers a holistic football experience. Players and
+                                teams have the opportunity to network, collaborate, and benefit from the expertise of
+                                our Yoshi FA coaching team. We believe in fostering a strong football community where
+                                everyone can grow and succeed.
+
                             </p>
 
                         </div>
@@ -283,7 +258,7 @@
 
 
 
-        <div class="our-mangent-sft py-5">
+        <!-- <div class="our-mangent-sft py-5">
             <div class="container">
                 <h2 class="comon-heading m-0"> Coordinators </h2>
                 <div class="mangemnet-sf owl-carousel owl-theme mt-4">
@@ -337,10 +312,10 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
-        <div class="achivement-div py-5">
+        <!-- <div class="achivement-div py-5">
 
             <div class="container">
                 <h2 class="comon-heading m-0"> Achievement </h2>
@@ -391,7 +366,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
         <div class="our-triners py-5">
@@ -458,7 +433,7 @@
 
         <div class="our-sponcer py-5">
             <div class="container">
-                <h2 class="comon-heading m-0"> Our Sponsors </h2>
+                <h2 class="comon-heading m-0"> Our Partners </h2>
                 <div class="sponcer-slide owl-carousel owl-theme mt-5">
                     <div class="itesm-sp">
                         <figure>

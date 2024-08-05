@@ -217,11 +217,12 @@
               <h5 class="samll-sub mb-1 mt-0"> Our Vision </h5>
               <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
               <p class="mt-3" style="text-align: justify;">
-                Our vision is to be the leading tournament organizer in the world of
-                football, renowned for our commitment to excellence, inclusivity, and innovation. We aim to inspire and
-                empower football enthusiasts of all ages and backgrounds by offering a dynamic and engaging tournament
-                experience. Through our efforts, we aspire to build a global community that celebrates diversity,
-                nurtures talent, and promotes the values of respect, integrity, and passion for the game.
+                Having completed projects and based on our experience in Nigeria - Yoshi Tournaments has been
+                established to cater to the growing number of Amateur, Semipro and Professional players. The key aim of
+                the tournaments is to provide a platform for players from all backgrounds and experience levels to
+                experience competitive gameplay and gain exposure with the opportunity to level up continuously. The
+                tournaments are much more than football matches - offering players and teams opportunities to network,
+                collaborate and benefit from the Yoshi FA coaching methodology.
               </p>
 
             </div>
