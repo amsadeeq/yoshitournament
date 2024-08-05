@@ -172,34 +172,7 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Story </h5>
               <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-              <p class="mt-3"> Founded under the umbrella of Yoshifa, a renowned football academy in the UAE with
-                branches around the world, Yoshi Tournaments was born from a passion for football and a desire to
-                provide a platform for competition and growth. Yoshifa has always been committed to nurturing young
-                talent and fostering a love for the sport. Building on this foundation, Yoshi Tournaments was
-                established to extend these values beyond our academy walls and into the global football community.
-
-                Yoshi Tournaments began as a modest initiative, organizing local competitions among football teams,
-                organizations, schools, and other football academies. Our dedication to quality and our commitment to
-                creating unforgettable experiences quickly earned us a reputation for excellence. As we grew, so did the
-                scope of our tournaments, attracting participants from all corners of the globe.
-
-                Today, Yoshi Tournaments stands as a beacon for aspiring footballers and seasoned professionals alike.
-                We pride ourselves on our ability to host well-organized, competitive, and inclusive tournaments that
-                cater to both licensed and unlicensed officials. By integrating advanced technologies and maintaining a
-                keen focus on the needs of our participants, we ensure that every tournament is not just a competition,
-                but a celebration of the beautiful game.
-
-                Our story is one of continuous growth, fueled by a love for football and a commitment to our mission and
-                vision. As we look to the future, we remain dedicated to providing exceptional tournament experiences
-                and fostering a global community united by the joy of football.
-
-                Visit us at <a style="text-decoration: none;" href='tournaments.php'>Tournaments</a> and <a
-                  style="text-decoration: none;" href='https://yoshifa.com'>Yoshifa</a> to
-                learn more about our events,
-                history, and how you can be a
-                part of our ever-growing football family. Together, we are making football dreams come true, one
-                tournament at a time.
-              </p>
+              <p class="mt-3"> Born from a deep-rooted passion for football, Yoshi Tournaments emerged to address a critical gap in player development within Abuja. We recognized the limited competitive opportunities available to local players and saw an urgent need to create a platform that would challenge and nurture talent at all levels. Our journey began with modest competitions among schools, but our unwavering commitment to quality and unforgettable experiences quickly established Yoshi Tournaments as a beacon of excellence in the football community</p>
 
             </div>
           </div>
