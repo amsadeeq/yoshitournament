@@ -641,7 +641,7 @@ require 'auth.php';
                         <figure class="d-flex align-items-center">
                           <img src="images/fc-1.jpg" alt="fbn" />
                           <figcaption>
-                            Loading...
+                            &nbsp;Loading...
                           </figcaption>
                         </figure>
                       </div>
@@ -681,52 +681,13 @@ require 'auth.php';
                 <tbody>
                   <tr>
                     <td>
-                      June 10, 2024
+                      0
                     </td>
-                    <td> Abuja FC <span>vs</span> Gombe FC</td>
-                    <td>4:00pm</td>
-                    <td>Murtala Mohammmed Stadium</td>
+                    <td> Loading.. <span>vs</span> Loading...</td>
+                    <td>0:00</td>
+                    <td>Loading...</td>
                   </tr>
-                  <tr>
-                    <td>
-                      June 10, 2024
-                    </td>
-                    <td> Abuja FC <span>vs</span> Gombe FC</td>
-                    <td>4:00pm</td>
-                    <td>Murtala Mohammmed Stadium</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      June 10, 2024
-                    </td>
-                    <td> Abuja FC <span>vs</span> Gombe FC</td>
-                    <td>4:00pm</td>
-                    <td>Murtala Mohammmed Stadium</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      June 10, 2024
-                    </td>
-                    <td> Abuja FC <span>vs</span> Gombe FC</td>
-                    <td>4:00pm</td>
-                    <td>Murtala Mohammmed Stadium</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      June 10, 2024
-                    </td>
-                    <td> Abuja FC <span>vs</span> Gombe FC</td>
-                    <td>4:00pm</td>
-                    <td>Murtala Mohammmed Stadium</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      June 10, 2024
-                    </td>
-                    <td> Abuja FC <span>vs</span> Gombe FC</td>
-                    <td>4:00pm</td>
-                    <td>Murtala Mohammmed Stadium</td>
-                  </tr>
+
                 </tbody>
                 <tfoot>
                   <tr>
