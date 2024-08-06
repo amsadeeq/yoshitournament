@@ -241,7 +241,7 @@ require 'auth.php';
                 Nigeria.
                 After careful Planning and consideration to provide a world-class experience along with a host of
                 opportunities for players and teams</p>
-              <button class="buy-now-btn" onclick="window.location.href = 'about.php';" name="button">
+              <button class="buy-now-btn" onclick="window.location.href = 'tournaments.php';" name="button">
 
                 Tournament
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
