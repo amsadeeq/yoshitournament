@@ -348,7 +348,7 @@ require 'auth.php';
 
             <li class="d-flex align-items-center justify-content-between">
               <span class="ct-2"> <i class="fas fa-running"></i> Team Participating</span>
-              <span class="counter" data-target="200">200+ </span>+
+              <span class="counter" data-target="200"> 200+ </span>
             </li>
 
 
