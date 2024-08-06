@@ -641,97 +641,16 @@ require 'auth.php';
                         <figure class="d-flex align-items-center">
                           <img src="images/fc-1.jpg" alt="fbn" />
                           <figcaption>
-                            Abuja FC.
+                            Loading...
                           </figcaption>
                         </figure>
                       </div>
 
                     </td>
-                    <td>13</td>
-                    <td>01</td>
-                    <td>61</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
                   </tr>
-                  <tr>
-                    <td>
-                      <div class="comon-ft-cl">
-                        <figure class="d-flex align-items-center">
-                          <img src="images/fc-2.jpg" alt="fbn" />
-                          <figcaption>
-                            Abuja FC.
-                          </figcaption>
-                        </figure>
-                      </div>
-                    </td>
-                    <td>12</td>
-                    <td>20</td>
-                    <td>61</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="comon-ft-cl">
-                        <figure class="d-flex align-items-center">
-                          <img src="images/fc-1.jpg" alt="fbn" />
-                          <figcaption>
-                            Abuja FC.
-                          </figcaption>
-                        </figure>
-                      </div>
-                    </td>
-                    <td>25</td>
-                    <td>36</td>
-                    <td>61</td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <div class="comon-ft-cl">
-                        <figure class="d-flex align-items-center">
-                          <img src="images/fc-1.jpg" alt="fbn" />
-                          <figcaption>
-                            Abuja FC.
-                          </figcaption>
-                        </figure>
-                      </div>
-                    </td>
-                    <td>25</td>
-                    <td>36</td>
-                    <td>61</td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <div class="comon-ft-cl">
-                        <figure class="d-flex align-items-center">
-                          <img src="images/fc-1.jpg" alt="fbn" />
-                          <figcaption>
-                            Abuja FC.
-                          </figcaption>
-                        </figure>
-                      </div>
-                    </td>
-                    <td>12</td>
-                    <td>36</td>
-                    <td>61</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="comon-ft-cl">
-                        <figure class="d-flex align-items-center">
-                          <img src="images/fc-1.jpg" alt="fbn" />
-                          <figcaption>
-                            Abuja FC.
-                          </figcaption>
-                        </figure>
-                      </div>
-                    </td>
-                    <td>12</td>
-                    <td>36</td>
-                    <td>61</td>
-                  </tr>
-
-
-
-
                 </tbody>
                 <tfoot>
                   <tr>
