@@ -737,7 +737,7 @@ require 'auth.php';
             </div>
           </a>
 
-          <a href="#" class="comon-plyaers">
+          <!-- <a href="#" class="comon-plyaers">
             <figure>
               <img src="images/Yoshi_1.png" alt="team1" />
               <figcaption>
@@ -754,9 +754,9 @@ require 'auth.php';
               </h5>
               <span class="num"> 32 </span>
             </div>
-          </a>
+          </a> -->
 
-          <a href="#" class="comon-plyaers">
+          <!-- <a href="#" class="comon-plyaers">
             <figure>
               <img src="images/Yoshi_1.png" alt="team1" />
               <figcaption>
@@ -773,9 +773,9 @@ require 'auth.php';
               </h5>
               <span class="num"> 99 </span>
             </div>
-          </a>
+          </a> -->
 
-          <a href="#" class="comon-plyaers">
+          <!-- <a href="#" class="comon-plyaers">
             <figure>
               <img src="images/Yoshi_1.png" alt="team1" />
               <figcaption>
@@ -792,7 +792,7 @@ require 'auth.php';
               </h5>
               <span class="num"> 15 </span>
             </div>
-          </a>
+          </a> -->
 
 
         </div>
