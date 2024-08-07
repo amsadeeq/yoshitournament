@@ -16,7 +16,7 @@ require 'auth.php';
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yoshi Tournament - Registration </title>
+    <title>Registration - Yoshi Tournament </title>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

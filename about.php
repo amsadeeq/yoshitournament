@@ -1,3 +1,14 @@
+<?php
+
+
+//####### Importing database connections and EngineFile
+
+require 'auth.php';
+
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -5,7 +16,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yoshi Tournament - Home </title>
+  <title>About - Yoshi Tournament </title>
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -172,7 +183,12 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Story </h5>
               <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
-              <p class="mt-3" style="text-align: justify !important;"> Born from a deep-rooted passion for football, Yoshi Tournaments emerged to address a critical gap in player development within Abuja. We recognized the limited competitive opportunities available to local players and saw an urgent need to create a platform that would challenge and nurture talent at all levels. Our journey began with modest competitions among schools, but our unwavering commitment to quality and unforgettable experiences quickly established Yoshi Tournaments as a beacon of excellence in the football community</p>
+              <p class="mt-3" style="text-align: justify !important;"> Born from a deep-rooted passion for football,
+                Yoshi Tournaments emerged to address a critical gap in player development within Abuja. We recognized
+                the limited competitive opportunities available to local players and saw an urgent need to create a
+                platform that would challenge and nurture talent at all levels. Our journey began with modest
+                competitions among schools, but our unwavering commitment to quality and unforgettable experiences
+                quickly established Yoshi Tournaments as a beacon of excellence in the football community</p>
 
             </div>
           </div>
@@ -190,7 +206,11 @@
               <h5 class="samll-sub mb-1 mt-0"> Our Vision </h5>
               <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
               <p class="mt-3" style="text-align: justify;">
-              Our vision is to create a dynamic platform that empowers aspiring football players of all backgrounds to showcase their extraordinary abilities. We strive to be the catalyst for unlocking hidden potential, providing a stage where talent can flourish and dreams can take flight. By offering a diverse range of competitive opportunities, we aim to inspire and nurture the next generation of football stars while fostering a vibrant and inclusive football community
+                Our vision is to create a dynamic platform that empowers aspiring football players of all backgrounds to
+                showcase their extraordinary abilities. We strive to be the catalyst for unlocking hidden potential,
+                providing a stage where talent can flourish and dreams can take flight. By offering a diverse range of
+                competitive opportunities, we aim to inspire and nurture the next generation of football stars while
+                fostering a vibrant and inclusive football community
               </p>
 
             </div>
@@ -226,7 +246,12 @@
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Mission </h5>
               <h2 class="comon-heading m-0"> Mission of Yoshi Tournament </h2>
-              <p class="mt-3" style="text-align: justify !important;"> We are dedicated to designing and executing exceptional tournament and league formats that provide a level playing field for all aspiring footballers. Our mission is to create opportunities for players to compete, learn, and grow, regardless of their experience or background. Through meticulous planning and execution, we aim to deliver unforgettable experiences that leave a lasting impact on the lives of participants and contribute to the overall development of the sport.
+              <p class="mt-3" style="text-align: justify !important;"> We are dedicated to designing and executing
+                exceptional tournament and league formats that provide a level playing field for all aspiring
+                footballers. Our mission is to create opportunities for players to compete, learn, and grow, regardless
+                of their experience or background. Through meticulous planning and execution, we aim to deliver
+                unforgettable experiences that leave a lasting impact on the lives of participants and contribute to the
+                overall development of the sport.
               </p>
 
             </div>
@@ -297,7 +322,12 @@
 
                   <div class="left-history">
                     <h2>Building Dreams: Yoshi FA's Evolution in Dubai </h2>
-                    <p style="text-align: justify !important;"> Yoshi FA was established in Dubai, UAE in July 2020 and officially began operations in December 2020. Ahmed's (Founder and CEO) strong commitment and passion for player development along with a practical and empathetic approach led to the growth of the academy in Dubai. During the initial phase of operations -  the approach and coaching methodology was developed based on the planer categories across varying capability levels. The Yoshi family has ever since been growing across Dubai.</p>
+                    <p style="text-align: justify !important;"> Yoshi FA was established in Dubai, UAE in July 2020 and
+                      officially began operations in December 2020. Ahmed's (Founder and CEO) strong commitment and
+                      passion for player development along with a practical and empathetic approach led to the growth of
+                      the academy in Dubai. During the initial phase of operations - the approach and coaching
+                      methodology was developed based on the planer categories across varying capability levels. The
+                      Yoshi family has ever since been growing across Dubai.</p>
                   </div>
                 </div>
               </div>
@@ -309,7 +339,13 @@
 
                   <div class="left-history">
                     <h2>Building a Legacy: Yoshi FA's Commitment to Grass-Root Coaching </h2>
-                    <p style="text-align: justify !important;"> The first contract for long term pitch rental was signed with a private school in Dubai - allowing Yoshi FA to call Dubai its home. This year saw the first official employee for the academy allowing Yoshi FA to scale coaching operations. With a keen eye for detail and learnings from courses for football development - the Yoshi FA coaching methodology is cemented and refined on a continuous basis with the core element revolving around grass-root coaching. The first Yoshi FA strategic plan was established in 2021 with a mission to revolutionize Football across the Middle East and Africa.</p>
+                    <p style="text-align: justify !important;"> The first contract for long term pitch rental was signed
+                      with a private school in Dubai - allowing Yoshi FA to call Dubai its home. This year saw the first
+                      official employee for the academy allowing Yoshi FA to scale coaching operations. With a keen eye
+                      for detail and learnings from courses for football development - the Yoshi FA coaching methodology
+                      is cemented and refined on a continuous basis with the core element revolving around grass-root
+                      coaching. The first Yoshi FA strategic plan was established in 2021 with a mission to
+                      revolutionize Football across the Middle East and Africa.</p>
                   </div>
                 </div>
               </div>
@@ -321,7 +357,13 @@
 
                   <div class="left-history">
                     <h2>Expanding Horizons: Yoshi FA's International and Local Growth </h2>
-                    <p style="text-align: justify !important;"> Yoshi FA held its first international project in 2022 - the Abuja Summer Camp. The camp was an astounding success with over 50 players training with Yoshi FA over a span of 2 weeks in Abuja, Nigeria. The camp concluded with a historic win against the official AS Roma U-23 team - proving Yoshi FA's coaching methodology and prowess. Along the same time frame Yoshi FA established its second branch in Sharjah, UAE expanding its services to cater to the growing need for grassroots coaching in the UAE. 2022 was a stepping stone for Yoshi FA from a media perspective - with International media recognition (Vanguard - Nigeria).</p>
+                    <p style="text-align: justify !important;"> Yoshi FA held its first international project in 2022 -
+                      the Abuja Summer Camp. The camp was an astounding success with over 50 players training with Yoshi
+                      FA over a span of 2 weeks in Abuja, Nigeria. The camp concluded with a historic win against the
+                      official AS Roma U-23 team - proving Yoshi FA's coaching methodology and prowess. Along the same
+                      time frame Yoshi FA established its second branch in Sharjah, UAE expanding its services to cater
+                      to the growing need for grassroots coaching in the UAE. 2022 was a stepping stone for Yoshi FA
+                      from a media perspective - with International media recognition (Vanguard - Nigeria).</p>
                   </div>
                 </div>
               </div>
@@ -333,7 +375,13 @@
 
                   <div class="left-history">
                     <h2>Reaching New Heights: Yoshi FA's Community and Player Engagement </h2>
-                    <p style="text-align: justify !important;"> Building on its successes, Yoshi FA expanded its reach in 2023. The Dubai Summer Camp offered players a fun and engaging football experience in a controlled indoor environment by hosting sessions over 2 weeks in an indoor football dome in Dubai in the summer to beat the heat and included fun activities for players. The Gombe Run in Nigeria was a highlight, demonstrating Yoshi FA's commitment to community well-being and promoting an active lifestyle. With over 1,000 participants, the event showcased the academy's ability to create impactful community initiatives.</p>
+                    <p style="text-align: justify !important;"> Building on its successes, Yoshi FA expanded its reach
+                      in 2023. The Dubai Summer Camp offered players a fun and engaging football experience in a
+                      controlled indoor environment by hosting sessions over 2 weeks in an indoor football dome in Dubai
+                      in the summer to beat the heat and included fun activities for players. The Gombe Run in Nigeria
+                      was a highlight, demonstrating Yoshi FA's commitment to community well-being and promoting an
+                      active lifestyle. With over 1,000 participants, the event showcased the academy's ability to
+                      create impactful community initiatives.</p>
                   </div>
                 </div>
               </div>
@@ -345,9 +393,17 @@
 
                   <div class="left-history">
                     <h2>Yoshi Tournaments Abuja: Unveiling a New Era in Football Competitions 2024 </h2>
-                    <p style="text-align: justify !important;"> 2024 marks a pivotal year for Yoshi FA as we embark on establishing our first football academy in Abuja, Nigeria. This ambitious project is a testament to our commitment to nurturing young talent and revolutionizing player development in the region. By leveraging our international expertise and partnerships, we aim to create a world-class academy that provides unparalleled opportunities for aspiring footballers.
-Building upon our successful track record, Yoshi Tournaments will launch in 2024, offering a platform for players of all levels to compete, showcase their skills, and experience the thrill of competitive football. Our tournaments will be characterized by fair play, intense competition, and a focus on player development. We are excited to create a vibrant tournament ecosystem that fosters a love for the game and inspires future football stars.
-</p>
+                    <p style="text-align: justify !important;"> 2024 marks a pivotal year for Yoshi FA as we embark on
+                      establishing our first football academy in Abuja, Nigeria. This ambitious project is a testament
+                      to our commitment to nurturing young talent and revolutionizing player development in the region.
+                      By leveraging our international expertise and partnerships, we aim to create a world-class academy
+                      that provides unparalleled opportunities for aspiring footballers.
+                      Building upon our successful track record, Yoshi Tournaments will launch in 2024, offering a
+                      platform for players of all levels to compete, showcase their skills, and experience the thrill of
+                      competitive football. Our tournaments will be characterized by fair play, intense competition, and
+                      a focus on player development. We are excited to create a vibrant tournament ecosystem that
+                      fosters a love for the game and inspires future football stars.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -601,13 +657,13 @@ Building upon our successful track record, Yoshi Tournaments will launch in 2024
   <script>
     AOS.init({
       offset: 100,
-        easing: 'ease',
+      easing: 'ease',
       delay: 0,
       once: true,
       duration: 800,
 
     });
-    
+
   </script>
 
   <script>
