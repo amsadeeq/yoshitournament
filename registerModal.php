@@ -22,11 +22,11 @@ echo "
                     <div class='phone-div'>
                         <select name='position' class='form-select form-control login-input mb-3' aria-label='Default select example' required>
                         <option value='' disabled selected hidden>Position</option>
-                        <option value='Official'>Official</option>
-                        <option value='Manager/Coach'>Manager/Coach</option>
+                        <!-- <option value='Official'>Official</option>-->
+                        <!--<option value='Manager/Coach'>Manager/Coach</option>-->
                         <option value='Coach/Sport Director'>Coach/Sport Director</option>
                         <option value='Students'>Students</option>
-                        <option value='Player'>Player</option>
+                        <!--<option value='Player'>Player</option>-->
                         </select>
                     </div>
 
