@@ -533,11 +533,12 @@ if (isset($_POST['register'])) {
         ################################################
         $to = $email;
         // Set the email subject
-        $subject = "Welcome to Yoshi Tournament  " . date("Y");
+        $subject = "YAPS 2024 Yoshi Tournament - Abuja  " . date("Y");
 
         // Set the email message
-        $message = "Hi $position,\n\n";
+        $message = "Dear $position,\n\n";
         $message .= "Thank you for creating Account with Yoshi Tournament " . date("Y") . ".\n";
+        $message .= "For Yoshi Abuja Private Schools (YAPS) " . date("Y") . ".\n";
         $message .= "Secure your login credential: $email \n";
         $message .= "Password: ******** \n";
         $message .= "Visit www.yoshitournaments.com\n\n";
@@ -562,8 +563,10 @@ if (isset($_POST['register'])) {
         } elseif ($position == 'Student') {
             header("Location:referenceNumber.php");
             exit();
-        } elseif ($position == 'Principal/Game Master') {
-            header("Location:schoolPrincipal_registration.php");
+        } elseif ($position == 'Coach/Sport Director') {
+            // header("Location:school_registration.php");
+            header("Location:confirmed_signup.php");
+
             exit();
         } else {
             $register_message = "Welcome  to Yoshi Tournament platform " . $position;
