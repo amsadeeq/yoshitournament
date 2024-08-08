@@ -174,10 +174,10 @@ ob_start();
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content confirm_modal text-center">
-                    <div class="modal-header">
+                    <!-- <div class="modal-header">
 
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+                    </div> -->
                     <div class="modal-body">
                       <svg class="check_logo" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 130.2 130.2">
