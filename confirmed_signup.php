@@ -189,7 +189,8 @@ ob_start();
                       <!-- <i class="fas fa-check-circle fa-6x text-success"></i> -->
                       <h3 class="mt-4">Signup Completed </h3>
                       <p class="lead text-dark">Thank you for creating account with us. You will be redirected to
-                        Registration form in .</p>
+                        Registration form in <span class="countdown" id="countdown">Redirecting in 5 seconds...</span>.
+                      </p>
                     </div>
                     <!-- <div class="modal-footer">
                       <a href="dashboard.php" class="btn btn-success btn-border-radius">Continue to Dashboard</a>
@@ -235,6 +236,35 @@ ob_start();
   <script src="js/owl.carousel.min.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
+
+
+
+  <!-- ########### Redirection code #######-->
+  <script>
+    // Function to redirect after countdown
+    function redirectWithCountdown(url, seconds) {
+      var countdownElement = document.getElementById('countdown');
+      countdownElement.textContent = 'Redirecting in ' + seconds + ' seconds...';
+
+      if (seconds <= 0) {
+        window.location.href = url;
+      } else {
+        setTimeout(function () {
+          redirectWithCountdown(url, seconds - 1);
+        }, 1000);
+      }
+    }
+
+    // Call the function on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      var url = 'school_registration.php';
+      var seconds = 5; // Change to the desired countdown time in seconds
+
+      redirectWithCountdown(url, seconds);
+    });
+  </script>
+
+
 
 
   <script>
