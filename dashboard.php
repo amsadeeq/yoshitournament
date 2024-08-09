@@ -6,6 +6,7 @@ require 'connection.php';
 
 
 $TeamRefNumber = $_SESSION['teamRefNumber'];
+echo $TeamRefNumber;
 if ($TeamRefNumber) {
   // Password does not match
   $login_success = "<script>swal('Success!', 'Welcome to Yoshi Tournament.', 'success');</script>";
