@@ -99,24 +99,27 @@ if (isset($_POST["complete_register"])) {
 
   $userRefCode = $_SESSION['userRefCode'];
   $TeamRefNumber;
-  $position = check_input($_POST['position']); //check_input is sensitising the input field
-  $email = check_input($_POST['email']); //check_input is sensitising the input field
-  $surname = check_input($_POST['surname']); //check_input is sensitising the input field
-  $firstname = check_input($_POST['firstName']); //check_input is sensitising the input field
-  $dob = check_input($_POST['dob']); //check_input is sensitising the input field
-  $country = check_input($_POST['country']); //check_input is sensitising the input field
-  $state = check_input($_POST['state']); //check_input is sensitising the input field
-  $city = check_input($_POST['city']); //check_input is sensitising the input field
-  $zipcode = check_input($_POST['zipcode']); //check_input is sensitising the input field
-  $phone = check_input($_POST['phone']); //check_input is sensitising the input field
-  $address = check_input($_POST['address']); //check_input is sensitising the input field
+  $position = check_input($_POST['position']); //check_input is sensitizing the input field
+  $email = check_input($_POST['email']); //check_input is sensitizing the input field
+  $surname = check_input($_POST['surname']); //check_input is sensitizing the input field
+  $firstname = check_input($_POST['firstName']); //check_input is sensitizing the input field
+  $dob = check_input($_POST['dob']); //check_input is sensitizing the input field
+  $gender = check_input($_POST['gender']); //check_input is sensitizing the input field
+  $country = check_input($_POST['country']); //check_input is sensitizing the input field
+  $state = check_input($_POST['state']); //check_input is sensitizing the input field
+  $city = check_input($_POST['city']); //check_input is sensitizing the input field
+  $zipcode = check_input($_POST['zipcode']); //check_input is sensitizing the input field
+  $means_id = check_input($_POST['means_id']); //check_input is sensitizing the input field
+  $id_number = check_input($_POST['id_number']); //check_input is sensitizing the input field
+  $phone = check_input($_POST['phone']); //check_input is sensitizing the input field
+  $address = check_input($_POST['address']); //check_input is sensitizing the input field
 
-  $team_name = check_input($_POST['team_name']); //check_input is sensitising the input field
-  $team_country = check_input($_POST['team_country']); //check_input is sensitising the input field
-  $team_state = check_input($_POST['team_state']); //check_input is sensitising the input field
-  $team_city = check_input($_POST['team_city']); //check_input is sensitising the input field
-  $number_of_players = check_input($_POST['number_of_players']); //check_input is sensitising the input field
-  $team_address = check_input($_POST['team_address']); //check_input is sensitising the input field
+  $team_name = check_input($_POST['team_name']); //check_input is sensitizing the input field
+  $team_country = check_input($_POST['team_country']); //check_input is sensitizing the input field
+  $team_state = check_input($_POST['team_state']); //check_input is sensitizing the input field
+  $team_city = check_input($_POST['team_city']); //check_input is sensitizing the input field
+  $number_of_players = check_input($_POST['number_of_players']); //check_input is sensitizing the input field
+  $team_address = check_input($_POST['team_address']); //check_input is sensitizing the input field
 
   $time = time();//function for current time
   $date_create = date("d/M/Y", $time);//function for current date
@@ -146,7 +149,7 @@ if (isset($_POST["complete_register"])) {
 
   //########## Initiating session #####################
   $_SESSION['email'] = $email;                    //###
-  $_SESSION['postion'] = $position;               //###
+  $_SESSION['position'] = $position;               //###
   //$_SESSION['userRefCode'] = $userRefCode;
   $_SESSION['teamRefNumber'] = $TeamRefNumber;         //###
   //########## Initiating session #####################
@@ -155,8 +158,8 @@ if (isset($_POST["complete_register"])) {
   if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
     if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention2 == "jpeg" or $imgExtention2 == "png" or $imgExtention2 == "jpg") {
       if ($imgsize1 <= 1048576 && $imgsize2 <= 1048576) {
-        move_uploaded_file($imgloc1, "executive_Images/" . $imgname1);//moving image to a folder "memberimg"
-        move_uploaded_file($imgloc2, "team_logo/" . $imgname2);//moving image to a folder "memberimg"
+        move_uploaded_file($imgloc1, "school_registrant_photo/" . $imgname1);//moving image to a folder "memberimg"
+        move_uploaded_file($imgloc2, "school_logo/" . $imgname2);//moving image to a folder "memberimg"
 
 
 
@@ -167,7 +170,7 @@ if (isset($_POST["complete_register"])) {
 
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`,`dob`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname,:dob, :country, :state, :city, :zipcode, :phone, :email, :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`,`dob`,`gender`, `country`, `state`, `city`, `zipcode`, `phone`, `email`,`means_id`,`id_number`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname,:dob,:gender, :country, :state, :city, :zipcode, :phone, :email,:means_id, :id_number,  :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
@@ -175,12 +178,15 @@ if (isset($_POST["complete_register"])) {
         $stmt->bindParam(':surname', $surname);
         $stmt->bindParam(':firstname', $firstname);
         $stmt->bindParam(':dob', $dob);
+        $stmt->bindParam(':gender', $gender);
         $stmt->bindParam(':country', $country);
         $stmt->bindParam(':state', $state);
         $stmt->bindParam(':city', $city);
         $stmt->bindParam(':zipcode', $zipcode);
         $stmt->bindParam(':phone', $phone);
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':means_id', $means_id);
+        $stmt->bindParam(':id_number', $id_number);
         $stmt->bindParam(':address', $address);
         $stmt->bindParam(':passport', $imgname1);
         $stmt->bindParam(':team_name', $team_name);
@@ -218,18 +224,18 @@ if (isset($_POST["complete_register"])) {
         ################################################
         $to = $email;
         // Set the email subject
-        $subject = "School Team Successfully Registered";
+        $subject = "YAPS 2024 School Team Successfully Registered";
 
         // Set the email message
         $message = "Dear $firstname,\n\n";
-        $message .= "Thank you for registering" . $team_name . " with Yoshi Tournament " . date("Y") . ".\n\n";
+        $message .= "Thank you for registering" . $team_name . " with Yoshi Tournament (YAPS) " . date("Y") . ".\n\n";
         $message .= "Your Team Reference Number is: $TeamRefNumber \n\n";
         $message .= "Your position: $position \n\n";
-        $message .= "Share it with your team players for registration. Failure to do so will automatically disqualify your team from participation \n\n";
+        $message .= "Share it with your team players for registration. Failure to do so will automatically disqualify your school/team from participation \n\n";
         $message .= "Schedules for the matches will be send to you soon.\n\n";
         $message .= "Visit www.yoshitournaments.com\n\n";
-        $message .= "Sign: Mr. Sadeeq \n Admin - yoshitournaments.com\n\n";
-        $message .= "Yoshi Football Academy www.yoshifa.com \n All Rights Reserved " . date('Y');
+        $message .= "Sign: Mr. Sadeeq \n yoshitournaments.com\n\n";
+        $message .= "Yoshi Football Academy (UAE) www.yoshifa.com \n All Rights Reserved " . date('Y');
 
         // Set additional headers
         $headers = "From: no-reply@yoshitournament.com\r\n";
@@ -510,7 +516,7 @@ if (isset($_POST["complete_register"])) {
                           <div class="form-group">
                             <!-- HTML code -->
                             <fieldset>
-                              <label>Passport<sup style="color: red !important;">*</sup></label>
+                              <label>Passport Photo<sup style="color: red !important;">*</sup></label>
                               <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Image size:
                                 300KB, jpg, jpeg, png ] </p>
                               <img style="height:50%; width: 50%;" class="my-select" id="image">
@@ -546,7 +552,7 @@ if (isset($_POST["complete_register"])) {
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
                             <label> Gender<sup style="color: red !important;">*</sup> </label> </label>
-                            <select class="form-select" name="position">
+                            <select class="form-select" name="gender">
                               <option selected>Select Gender</option>
                               <option value="Male">Male</option>
                               <option value="Female">Female</option>
@@ -610,6 +616,31 @@ if (isset($_POST["complete_register"])) {
                       <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div class="form-group">
+                            <label> Means of Identification<sup style="color: red !important;">*</sup> </label> </label>
+                            <select class="form-select" name="means_id">
+                              <option selected>Select ID</option>
+                              <option value="National Identification Number">National Identification Number(NIN)
+                              </option>
+                              <option value="Driver's License">Driver's License</option>
+                              <option value="International Passport">International Passport</option>
+                              <option value="Office ID">Office ID</option>
+                              <option value="Voter's Card">Voter's Card</option>
+
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <div class="form-group">
+                            <label> ID Number<sup style="color: red !important;">*</sup> </label> </label>
+                            <input type="text" class="form-control wizard-required" placeholder="123456789"
+                              name="id_number" required>
+                            <div class="wizard-form-error"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <div class="form-group">
                             <label> Address<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="text" class="form-control wizard-required" name="address" required>
                             <div class="wizard-form-error"></div>
@@ -634,12 +665,12 @@ if (isset($_POST["complete_register"])) {
                         <div class="row">
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label> Position<sup style="color: red !important;">*</sup> </label> </label>
-                              <select class="form-select" name="position">
-                                <option selected>Select Position</option>
-                                <option value="Manager">Manager</option>
-                                <option value="Principal"> Principal</option>
+                              <label> Position / Designation<sup style="color: red !important;">*</sup> </label>
+                              </label>
+                              <select class="form-select" name="position" required>
+                                <option selected>Select Position / Designation</option>
                                 <option value="Coach">Coach</option>
+                                <option value="Sport Director"> Sport Director</option>
                                 <option value="Game Master"> Game Master</option>
 
                               </select>
@@ -649,7 +680,7 @@ if (isset($_POST["complete_register"])) {
                             <div class="form-group">
                               <label> School Name<sup style="color: red !important;">*</sup> </label>
                               <input type="text" name="team_name" class="form-control wizard-required"
-                                placeholder="Team/School/Organization/Academy" required>
+                                placeholder="Team/School/Academy" required>
                               <div class="wizard-form-error"></div>
                             </div>
                           </div>
@@ -658,7 +689,7 @@ if (isset($_POST["complete_register"])) {
                           <div class="col-lg-6">
                             <div class="form-group">
                               <label>School Country<sup style="color: red !important;">*</sup></label>
-                              <select id='country2' name='team_country' class="form-select"></select>
+                              <select id='country2' name='team_country' class="form-select" required></select>
                             </div>
                           </div>
                           <div class="col-lg-6">
@@ -678,15 +709,20 @@ if (isset($_POST["complete_register"])) {
                           <div class="col-lg-6">
                             <div class="form-group">
                               <label> Number of Students(Players)<sup style="color: red !important;">*</sup></label>
-                              <input type="text" class="form-control" name="number_of_players" required>
+
+                              <input type="text" class="form-control" id="number_of_players" name="number_of_players"
+                                required>
+                              <div class="invalid-feedback">
+                                Please enter a valid number.
+                              </div>
                             </div>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6">
                             <div class="form-group">
-                              <label>School Postal Code <sup style="color: red !important;">*</sup> </label>
-                              <input type="text" class="form-control wizard-required" name="team_postcode" required>
+                              <label>School Postal Code </label>
+                              <input type="text" class="form-control wizard-required" name="team_postcode">
                               <div class="wizard-form-error"></div>
                             </div>
                           </div>
@@ -790,6 +826,27 @@ if (isset($_POST["complete_register"])) {
           success(countryCode);
         });
       }
+    });
+  </script>
+
+  <!--- ######### Check input number only ########## -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var numberInput = document.getElementById('number_of_players');
+
+      numberInput.addEventListener('input', function () {
+        // Remove non-numeric characters using regex
+        var originalValue = this.value;
+        this.value = this.value.replace(/[^0-9]/g, '');
+
+        // Check if the input was modified (non-numeric characters were found)
+        if (this.value !== originalValue) {
+          this.classList.add('is-invalid'); // Add 'is-invalid' class if invalid
+        } else {
+          this.classList.remove('is-invalid'); // Remove 'is-invalid' class if valid
+        }
+      });
     });
   </script>
 

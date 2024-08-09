@@ -189,7 +189,7 @@ ob_start();
                       <!-- <i class="fas fa-check-circle fa-6x text-success"></i> -->
                       <h3 class="mt-4">Signup Completed </h3>
                       <p class="lead text-dark">Thank you for creating account with us. You will be redirected to
-                        Registration form in <span class="countdown" id="countdown">Redirecting in 5 seconds...</span>.
+                        Registration form <span class="countdown" id="countdown">Redirecting in 5 seconds...</span>.
                       </p>
                     </div>
                     <!-- <div class="modal-footer">
