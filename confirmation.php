@@ -174,10 +174,10 @@ ob_start();
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content confirm_modal text-center">
-                    <div class="modal-header">
+                    <!-- <div class="modal-header">
 
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+                    </div> -->
                     <div class="modal-body">
                       <svg class="check_logo" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 130.2 130.2">
@@ -189,7 +189,8 @@ ob_start();
                       <!-- <i class="fas fa-check-circle fa-6x text-success"></i> -->
                       <h3 class="mt-4">Registration Completed </h3>
                       <p class="lead text-dark">Thank you for registering with us. We have sent you a confirmation email
-                        with team reference number and link to the email address you provided.</p>
+                        with team reference number and link to the email address you provided. <span class="countdown"
+                          id="countdown">Redirecting in 5 seconds...</span>.</p>
                     </div>
                     <div class="modal-footer">
                       <a href="dashboard.php" class="btn btn-success btn-border-radius">Continue to Dashboard</a>
@@ -235,6 +236,38 @@ ob_start();
   <script src="js/owl.carousel.min.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
+
+
+
+
+
+  <!-- ########### Redirection code #######-->
+  <script>
+    // Function to redirect after countdown
+    function redirectWithCountdown(url, seconds) {
+      var countdownElement = document.getElementById('countdown');
+      countdownElement.textContent = 'Redirecting in ' + seconds + ' seconds...';
+
+      if (seconds <= 0) {
+        window.location.href = url;
+      } else {
+        setTimeout(function () {
+          redirectWithCountdown(url, seconds - 1);
+        }, 1000);
+      }
+    }
+
+    // Call the function on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      var url = 'dashboard.php';
+      var seconds = 5; // Change to the desired countdown time in seconds
+
+      redirectWithCountdown(url, seconds);
+    });
+  </script>
+
+
+
 
 
   <script>
