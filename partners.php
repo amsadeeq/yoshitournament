@@ -17,7 +17,7 @@
                     <img src="images/yoshibite.png" alt="sp" />
                 </figure>
             </div>
-            <div class="itesm-sp animate__animated animate__zoomIn">
+            <div class="animate__animated animate__zoomIn">
                 <figure>
                     <img src="images/atroturf.png" alt="sp" />
                 </figure>
