@@ -851,11 +851,13 @@ if (isset($_POST["complete_register"])) {
 
       // Check if the value exceeds the maximum length
       if (inputField.value.length > maxLength) {
-        exceedFeedback.style.display = 'block';
-        inputField.value = inputField.value.substring(0, maxLength);
+        exceedFeedback.style.display = 'block'; // Show the feedback
       } else {
-        exceedFeedback.style.display = 'none';
+        exceedFeedback.style.display = 'none'; // Hide the feedback
       }
+
+      // If the input exceeds the maximum length, truncate the value
+      inputField.value = inputField.value.substring(0, maxLength);
 
       // If the input is empty or invalid, show the invalid feedback
       if (inputField.value.length === 0 || isNaN(inputField.value)) {
@@ -864,6 +866,7 @@ if (isset($_POST["complete_register"])) {
         inputField.classList.remove('is-invalid');
       }
     });
+
 
   </script>
 
