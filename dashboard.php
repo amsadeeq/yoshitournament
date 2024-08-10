@@ -20,11 +20,6 @@ $stmt = $pdo->prepare("SELECT * FROM `yoshi_executive_tbl` WHERE `TeamRefNumber`
 $stmt->execute(['teamRefNumber' => $TeamRefNumber]);
 $executives = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// ##### Fetching record for School Officials #######
-
-$stmt_school = $pdo->prepare("SELECT * FROM `yoshi_schools_officials_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
-$stmt_school->execute(['teamRefNumber' => $TeamRefNumber]);
-$school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -97,10 +92,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
     <?php
 
     // Displaying fetched records
-    // Determine which records to display
-    $official_record = !empty($school_official) ? $school_official : $executives;
-
-    foreach ($official_record as $executive) {
+    foreach ($executives as $executive) {
       $image_passport = $executive['passport'];
       $image_logo = $executive['team_logo'];
       $name = $executive['firstname'];
@@ -338,14 +330,8 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                     <li>
                       <a href="#0">
                         <div class="image">
-                          <?php
-                          // Determine which records to display
-                          $official_record = !empty($school_official) ? '<img src="<?php echo "school_logo/" . $image_logo; ?>"
-                            alt="<?php echo $team_name . "Passport Port"; ?>" />' : '<img src="<?php echo "team_logo/" . $image_logo; ?>"
-                            alt="<?php echo $team_name . "Passport Port"; ?>" />';
-
-                          ?>
-
+                          <img src="<?php echo "team_logo/" . $image_logo; ?>"
+                            alt="<?php echo $team_name . "Passport Port"; ?>" />
                         </div>
                         <div class="content">
                           <h6>
