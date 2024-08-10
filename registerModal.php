@@ -44,7 +44,7 @@ echo "
                 
                     <div class='forget2 mt-3 ml-3 d-flex justify-content-between'>
                         <input type='checkbox' name='check_policy' class='form-check-input' id='exampleCheck1' required />
-                        <label class='form-check-label form-text' for='exampleCheck1'> By clicking Register, you agree to our Terms of Use and Cookie Policy</label>
+                        <label class='form-check-label form-text' for='exampleCheck1'> By clicking signup, you agree to our Terms of Use and Cookie Policy</label>
                     </div>
            
                 </div>
