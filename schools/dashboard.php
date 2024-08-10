@@ -824,7 +824,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
               <p class="text-sm">
                 Powered by
                 <a href="https://yoshifa.com" rel="nofollow" target="_blank">
-                  Yoshi Football Academy 2024
+                  Yoshi Football Academy United Arab Emirate (UAE) <?php echo date("Y"); ?>
                 </a>
               </p>
             </div>
