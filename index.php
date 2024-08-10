@@ -1096,7 +1096,7 @@ require 'auth.php';
                       <button type="button" data-bs-dismiss="modal"
                         class="btn-close position-absolute top-0 end-0 m-2 d-sm-none" aria-label="Close"></button>
 
-                      <img src="images/yoshiStud.png" alt="Gift Poster" style="border-radius: 10px 10px;"
+                      <img src="images/yoshiStud.jpg" alt="Gift Poster" style="border-radius: 10px 10px;"
                         class="img-fluid" id="leftImg">
 
                     </div>
