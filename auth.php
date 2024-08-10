@@ -513,7 +513,7 @@ if (isset($_POST['register'])) {
 
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_signup_tbl` (`id`, `userRefNo`, `user_email`, `user_position`, `user_password`, `termsCondition`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :email, :position, :password, :termsCondition, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_signup_tbl` (`id`, `userRefNo`, `user_email`, `user_position`,`reg_status`, `user_password`, `termsCondition`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :email, :position, 0, :password, :termsCondition, :time_create, :date_create, :ip_address)");
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':position', $position);
