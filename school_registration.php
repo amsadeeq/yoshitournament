@@ -720,8 +720,8 @@ if (isset($_POST["complete_register"])) {
                               <div class="invalid-feedback">
                                 Please enter a valid number.
                               </div>
-                              <div class="exceed-feedback text-danger" style="display: none;">
-                                Maximum of 12 digits is allowed.
+                              <div class="exceed-feedback text-danger" style="display: none;font-size:11px;">
+                                Maximum of 12 players is not allowed.
                               </div>
                             </div>
                           </div>
