@@ -19,7 +19,7 @@
             </div>
             <div class="itesm-sp animate__animated animate__zoomIn">
                 <figure>
-                    <img src="images/sponsor_4.png" alt="sp" />
+                    <img src="images/astroTurfAbuja.png" alt="sp" />
                 </figure>
             </div>
             <div class="itesm-sp animate__animated animate__zoomIn">
