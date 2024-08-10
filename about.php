@@ -97,7 +97,7 @@ require 'auth.php';
           <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
             <div class="col position-relative">
               <figure class="big-img">
-                <img src="images/Yoshi_10.jpg" alt="pic">
+                <img src="images/about_Banner 01.jpg" alt="pic">
               </figure>
               <figure class="small-img">
                 <img src="images/pexels-photo-12460951.jfif" alt="pic2">
@@ -139,7 +139,7 @@ require 'auth.php';
             </div>
             <div class="col position-relative">
               <figure class="big-img">
-                <img src="images/Yoshi_10.jpg" alt="pic">
+                <img src="images/about_Banner 02.jpg" alt="pic">
               </figure>
               <figure class="small-img">
                 <img src="images/pexels-photo-12460951.jfif" alt="pic2">
@@ -275,7 +275,7 @@ require 'auth.php';
               <div class="tab-pane fade" id="yd-hom3" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <div class="comon-fild-ads1 d-lg-flex align-items-center">
                   <figure>
-                    <img src="images/Yoshi_11.jpg" alt="bg" />
+                    <img src="images/Timeline 2022 Image.jpg" alt="bg" />
                   </figure>
 
                   <div class="left-history">
