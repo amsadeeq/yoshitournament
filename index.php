@@ -179,7 +179,7 @@ require 'auth.php';
               <a class="nav-link btn join-btn animate__animated animate__zoomIn" data-bs-toggle="modal"
                 class="regster-bn" data-bs-target="#loginModal">
 
-                Sign Up</a>
+                Login</a>
             </li>
 
 
@@ -205,25 +205,16 @@ require 'auth.php';
 
       <div class="banner-part">
         <div class="css-slider-wrapper">
-          <input type="radio" name="slider" class="slide-radio1" checked id="slider_1" />
+          <!-- <input type="radio" name="slider" class="slide-radio1" checked id="slider_1" />
           <input type="radio" name="slider" class="slide-radio2" id="slider_2" />
-          <input type="radio" name="slider" class="slide-radio3" id="slider_3" />
+          <input type="radio" name="slider" class="slide-radio3" id="slider_3" /> -->
 
 
           <!-- Slider Pagination -->
           <div class="slider-pagination">
-            <label for="slider_1" class="page1">
-
-            </label>
-            <label for="slider_2" class="page2">
-
-            </label>
-            <label for="slider_3" class="page3">
-
-            </label>
-
-
-
+            <label for="slider_1" class="page1"></label>
+            <label for="slider_2" class="page2"></label>
+            <label for="slider_3" class="page3"></label>
           </div>
 
           <!-- Slider #1 -->
@@ -256,10 +247,6 @@ require 'auth.php';
 
           <!-- Slider #2 -->
           <div class="slider slide-2">
-
-
-
-
             <div class="slider-content">
               <h2>Yoshi National <br>Tournament <?php echo date("Y"); ?>
                 <span class="d-block"> Season Begins</span>
@@ -295,9 +282,6 @@ require 'auth.php';
               <span>3</span>
             </div>
           </div>
-
-
-
         </div>
       </div>
 
@@ -309,23 +293,19 @@ require 'auth.php';
           <hr class="next_match_line" />
           <h4> YAPS Tournament 2024</h4>
           <div class="d-flex align-items-center justify-content-center mt-2">
-
             <figure>
               <img src="images/team_3.png" class="next_match_logo" alt="cl1" />
             </figure>
             <div class="mc-details-top text-center">
-
               <p class="time"> 10:20am </p>
               <h5 class="date">
                 21/ 09/ 2024
               </h5>
               <p class="location-mc">Abuja Stadium</p>
             </div>
-
             <figure>
               <img src="images/team_4.png" class="next_match_logo" alt="cl2" />
             </figure>
-
           </div>
         </a>
 
@@ -345,8 +325,8 @@ require 'auth.php';
             </li>
 
             <li class="d-flex align-items-center justify-content-between">
-              <span class="ct-2"> <i class="fas fa-running"></i> Team Participating</span>
-              <span class="counter" data-target="200"> 200+ </span>
+              <span class="ct-2"> <i class="fas fa-running"></i> Players Participating</span>
+              <span class="counter" data-target="600"> 600+ </span>
             </li>
 
 
