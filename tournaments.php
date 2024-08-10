@@ -200,7 +200,7 @@ require 'auth.php';
                                 <img src="images/Banner 03.jpg" alt="pic">
                             </figure>
                             <figure class="small-img">
-                                <img src="images/YOSHIS SPORTS Vision Tech.jpg" alt="pic2">
+                                <img src="images/wine2.jpg" alt="pic2">
                             </figure>
                         </div>
                         <div class="col">
