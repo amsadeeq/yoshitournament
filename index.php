@@ -140,9 +140,9 @@ require 'auth.php';
               <a class="nav-link" href="tournaments.php">Tournament</a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="matches.php">Events</a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
               <a class="nav-link" href="registration.php">Registration</a>
@@ -205,9 +205,9 @@ require 'auth.php';
 
       <div class="banner-part">
         <div class="css-slider-wrapper">
-          <!-- <input type="radio" name="slider" class="slide-radio1" checked id="slider_1" />
+          <input type="radio" name="slider" class="slide-radio1" checked id="slider_1" />
           <input type="radio" name="slider" class="slide-radio2" id="slider_2" />
-          <input type="radio" name="slider" class="slide-radio3" id="slider_3" /> -->
+          <input type="radio" name="slider" class="slide-radio3" id="slider_3" />
 
 
           <!-- Slider Pagination -->
@@ -247,6 +247,10 @@ require 'auth.php';
 
           <!-- Slider #2 -->
           <div class="slider slide-2">
+
+
+
+
             <div class="slider-content">
               <h2>Yoshi National <br>Tournament <?php echo date("Y"); ?>
                 <span class="d-block"> Season Begins</span>
@@ -282,6 +286,9 @@ require 'auth.php';
               <span>3</span>
             </div>
           </div>
+
+
+
         </div>
       </div>
 
@@ -293,19 +300,23 @@ require 'auth.php';
           <hr class="next_match_line" />
           <h4> YAPS Tournament 2024</h4>
           <div class="d-flex align-items-center justify-content-center mt-2">
+
             <figure>
               <img src="images/team_3.png" class="next_match_logo" alt="cl1" />
             </figure>
             <div class="mc-details-top text-center">
+
               <p class="time"> 10:20am </p>
               <h5 class="date">
                 21/ 09/ 2024
               </h5>
               <p class="location-mc">Abuja Stadium</p>
             </div>
+
             <figure>
               <img src="images/team_4.png" class="next_match_logo" alt="cl2" />
             </figure>
+
           </div>
         </a>
 
