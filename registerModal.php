@@ -55,21 +55,7 @@ echo "
         </form>
 
  
-          <h6 class='text-center'>
-           or sign in with
-          </h6>
-          <ul class='list-unstyled socal-linka-div d-flex  align-content-center justify-content-center'>
-             <li>
-                <a href='#' class='facebtn'> <i class='fab fa-facebook-f'></i> </a>
-             </li>
-             <li>
-               <a href='#' class='twiiterbtn'> <i class='fab fa-twitter'></i> </a>
-             </li>
-             <li>
-               <a href='#' class='googlebtn'> <i class='fab fa-google-plus-g'></i> </a>
-             </li>
-             
-          </ul>
+          
             <p class='text-center  mt-3'> Already have an account? 
               <a data-bs-toggle='modal' class='regster-bn' data-bs-target='#loginModal' data-bs-dismiss='modal'> Login </a>  </p>
          </div>
@@ -78,4 +64,21 @@ echo "
      </div>
    </div>
 </div>";
+
+
+// <h6 class='text-center'>
+//  or sign in with
+// </h6>
+// <ul class='list-unstyled socal-linka-div d-flex  align-content-center justify-content-center'>
+//    <li>
+//       <a href='#' class='facebtn'> <i class='fab fa-facebook-f'></i> </a>
+//    </li>
+//    <li>
+//      <a href='#' class='twiiterbtn'> <i class='fab fa-twitter'></i> </a>
+//    </li>
+//    <li>
+//      <a href='#' class='googlebtn'> <i class='fab fa-google-plus-g'></i> </a>
+//    </li>
+
+// </ul>
 ?>
