@@ -164,7 +164,7 @@ require 'auth.php';
                     <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
                         <div class="col">
                             <h5 class="samll-sub mb-1 mt-0"> Benefits and Key Differentiators </h5>
-                            <h2 class="comon-heading m-0"> About Yoshi FA World Wide Tournament </h2>
+                            <h2 class="comon-heading m-0"> Yoshi Tournaments to the world </h2>
                             <p class="mt-3" style="text-align:justify !important;"> Yoshi Tournaments offers players
                                 unparalleled opportunities to shine. Our
                                 tournaments provide a platform for players to test their abilities against diverse
