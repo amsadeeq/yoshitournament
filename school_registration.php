@@ -842,28 +842,20 @@ if (isset($_POST["complete_register"])) {
   <script>
     document.getElementById('number_of_players').addEventListener('input', function (e) {
       const inputField = e.target;
-      const maxLength = 12;
+      const maxNumber = 12;
       const exceedFeedback = document.querySelector('.exceed-feedback');
       const value = inputField.value;
 
       // Remove non-numeric characters
       inputField.value = value.replace(/\D/g, '');
 
-      // Check if the value exceeds the maximum length
-      if (inputField.value.length > maxLength) {
+      // Check if the value exceeds the maximum allowed number
+      if (parseInt(inputField.value, 10) > maxNumber) {
         exceedFeedback.style.display = 'block'; // Show the feedback
+        inputField.classList.add('is-invalid'); // Add invalid class
       } else {
         exceedFeedback.style.display = 'none'; // Hide the feedback
-      }
-
-      // If the input exceeds the maximum length, truncate the value
-      inputField.value = inputField.value.substring(0, maxLength);
-
-      // If the input is empty or invalid, show the invalid feedback
-      if (inputField.value.length === 0 || isNaN(inputField.value)) {
-        inputField.classList.add('is-invalid');
-      } else {
-        inputField.classList.remove('is-invalid');
+        inputField.classList.remove('is-invalid'); // Remove invalid class
       }
     });
 
