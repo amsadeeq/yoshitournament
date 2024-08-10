@@ -4,6 +4,7 @@ ob_start();
 require 'connection.php';
 
 echo $_SESSION['reg_notify'];
+$userRefCode = $_SESSION['userRefCode'];
 
 if (isset($_POST["complete_register"])) {
 
@@ -158,8 +159,8 @@ if (isset($_POST["complete_register"])) {
   if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
     if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention2 == "jpeg" or $imgExtention2 == "png" or $imgExtention2 == "jpg") {
       if ($imgsize1 <= 1048576 && $imgsize2 <= 1048576) {
-        move_uploaded_file($imgloc1, "school_registrant_photo/" . $imgname1);//moving image to a folder "memberimg"
-        move_uploaded_file($imgloc2, "school_logo/" . $imgname2);//moving image to a folder "memberimg"
+        move_uploaded_file($imgloc1, "schols/school_registrant_photo/" . $imgname1);//moving image to a folder "memberimg"
+        move_uploaded_file($imgloc2, "schols/school_logo/" . $imgname2);//moving image to a folder "memberimg"
 
 
 
@@ -169,8 +170,10 @@ if (isset($_POST["complete_register"])) {
         $userRefNo = $_SESSION['userRefCode'];
 
         // Insert data into the database
+        $stmt = $pdo->prepare("UPDATE `yoshi_signup_tbl` SET `TeamRefNumber` = '$TeamRefNumber', `reg_status` = 'registered' WHERE `userRefNo` = '$userRefCode'");
 
         $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`,`dob`,`gender`, `country`, `state`, `city`, `zipcode`, `phone`, `email`,`means_id`,`id_number`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname,:dob,:gender, :country, :state, :city, :zipcode, :phone, :email,:means_id, :id_number,  :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
+
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);

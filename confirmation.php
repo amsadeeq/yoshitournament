@@ -1,6 +1,7 @@
 <?php
 session_start();
 ob_start();
+$userRefCode = $_SESSION['userRefCode'];
 
 
 ?>
@@ -259,7 +260,7 @@ ob_start();
 
     // Call the function on page load
     document.addEventListener('DOMContentLoaded', function () {
-      var url = 'dashboard.php';
+      var url = 'schools/dashboard.php';
       var seconds = 5; // Change to the desired countdown time in seconds
 
       redirectWithCountdown(url, seconds);
