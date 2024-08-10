@@ -281,7 +281,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
       </nav>
       <div class="promo-box">
         <div class="promo-icon">
-          <img class="mx-auto next_match_logo" src="<?php echo "team_logo/" . $image_logo; ?>"
+          <img class="mx-auto next_match_logo" src="<?php echo "school_logo/" . $image_logo; ?>"
             alt="<?php echo $team_name . "Passport Port"; ?>">
         </div>
         <h3><?php echo $team_name; ?> </h3>
@@ -330,7 +330,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                     <li>
                       <a href="#0">
                         <div class="image">
-                          <img src="<?php echo "../team_logo/" . $image_logo; ?>"
+                          <img src="<?php echo "school_logo/" . $image_logo; ?>"
                             alt="<?php echo $team_name . "Passport Port"; ?>" />
                         </div>
                         <div class="content">
@@ -359,7 +359,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
 
                       <div class="info">
                         <div class="image">
-                          <img src="<?php echo "../executive_Images/" . $image_passport; ?>"
+                          <img src="<?php echo "school_registrant_photo/" . $image_passport; ?>"
                             alt="<?php echo $position . "Passport Port"; ?>" />
                         </div>
                         <div>
@@ -377,7 +377,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                     <li>
                       <div class="author-info flex items-center !p-1">
                         <div class="image">
-                          <img src="<?php echo "../executive_Images/" . $image_passport; ?>"
+                          <img src="<?php echo "school_registrant_photo/" . $image_passport; ?>"
                             alt="<?php echo $position . "Passport Port"; ?>">
                         </div>
                         <div class="content">
@@ -431,7 +431,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="title">
-                  <h2> <img class="mx-auto next_match_logo" src="<?php echo "../team_logo/" . $image_logo; ?>"
+                  <h2> <img class="mx-auto next_match_logo" src="<?php echo "school_logo/" . $image_logo; ?>"
                       alt="<?php echo $team_name . "Passport Port"; ?>">&nbsp;&nbsp;<?php echo $team_name; ?></h2>
 
                 </div>
