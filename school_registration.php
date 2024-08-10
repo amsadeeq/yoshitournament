@@ -844,20 +844,23 @@ if (isset($_POST["complete_register"])) {
       const inputField = e.target;
       const maxNumber = 12;
       const exceedFeedback = document.querySelector('.exceed-feedback');
-      const value = inputField.value;
+      let value = inputField.value;
 
       // Remove non-numeric characters
-      inputField.value = value.replace(/\D/g, '');
+      value = value.replace(/\D/g, '');
 
-      // Check if the value exceeds the maximum allowed number
-      if (parseInt(inputField.value, 10) > maxNumber) {
+      // If the value exceeds the maximum allowed number, truncate it
+      if (parseInt(value, 10) > maxNumber) {
         exceedFeedback.style.display = 'block'; // Show the feedback
         inputField.classList.add('is-invalid'); // Add invalid class
+        inputField.value = maxNumber; // Set the input field to the maximum number
       } else {
         exceedFeedback.style.display = 'none'; // Hide the feedback
         inputField.classList.remove('is-invalid'); // Remove invalid class
+        inputField.value = value; // Update the input field with the valid value
       }
     });
+
 
 
   </script>
