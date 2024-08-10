@@ -17,14 +17,14 @@
                     <img src="images/yoshibite.png" alt="sp" />
                 </figure>
             </div>
-            <div class="animate__animated animate__zoomIn">
+            <div class="itesm-sp animate__animated animate__zoomIn">
                 <figure>
                     <img src="images/atroturf.png" alt="sp" />
                 </figure>
             </div>
             <div class="itesm-sp animate__animated animate__zoomIn">
                 <figure>
-                    <img src="images/sponsor_6.jpeg" alt="sp" />
+                    <img src="images/mohaCreativity.png" alt="sp" />
                 </figure>
             </div>
             <div class="itesm-sp animate__animated animate__zoomIn">
