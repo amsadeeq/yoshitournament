@@ -10,7 +10,7 @@ echo "
           
          <div id='login-td-div' class='com-div-md'>
            <span class='text-center d-table m-auto user-icon'> <i class='fas fa-user-circle'></i> </span>
-           <h5 class='text-center mb-3 form-text'> Sign In </h5>
+           <h5 class='text-center mb-3 form-text'> Login </h5>
            <button type='button' class='close' data-bs-dismiss='modal' aria-label='Close'>
             <span aria-hidden='true'>×</span>
           </button>
