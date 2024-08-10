@@ -720,6 +720,9 @@ if (isset($_POST["complete_register"])) {
                               <div class="invalid-feedback">
                                 Please enter a valid number.
                               </div>
+                              <div class="exceed-feedback text-danger" style="display: none;">
+                                Maximum of 12 digits is allowed.
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -837,22 +840,31 @@ if (isset($_POST["complete_register"])) {
   <!--- ######### Check input number only ########## -->
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var numberInput = document.getElementById('number_of_players');
+    document.getElementById('number_of_players').addEventListener('input', function (e) {
+      const inputField = e.target;
+      const maxLength = 12;
+      const exceedFeedback = document.querySelector('.exceed-feedback');
+      const value = inputField.value;
 
-      numberInput.addEventListener('input', function () {
-        // Remove non-numeric characters using regex
-        var originalValue = this.value;
-        this.value = this.value.replace(/[^0-9]/g, '');
+      // Remove non-numeric characters
+      inputField.value = value.replace(/\D/g, '');
 
-        // Check if the input was modified (non-numeric characters were found)
-        if (this.value !== originalValue) {
-          this.classList.add('is-invalid'); // Add 'is-invalid' class if invalid
-        } else {
-          this.classList.remove('is-invalid'); // Remove 'is-invalid' class if valid
-        }
-      });
+      // Check if the value exceeds the maximum length
+      if (inputField.value.length > maxLength) {
+        exceedFeedback.style.display = 'block';
+        inputField.value = inputField.value.substring(0, maxLength);
+      } else {
+        exceedFeedback.style.display = 'none';
+      }
+
+      // If the input is empty or invalid, show the invalid feedback
+      if (inputField.value.length === 0 || isNaN(inputField.value)) {
+        inputField.classList.add('is-invalid');
+      } else {
+        inputField.classList.remove('is-invalid');
+      }
     });
+
   </script>
 
 
