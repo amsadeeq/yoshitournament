@@ -135,7 +135,7 @@ require 'auth.php';
                     <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
                         <div class="col position-relative">
                             <figure class="big-img">
-                                <img src="images/Yoshi_10.jpg" alt="pic">
+                                <img src="images/Banner 01.jpeg" alt="pic">
                             </figure>
                             <figure class="small-img">
                                 <img src="images/pexels-photo-12460951.jfif" alt="pic2">
@@ -178,7 +178,7 @@ require 'auth.php';
                         </div>
                         <div class="col position-relative">
                             <figure class="big-img">
-                                <img src="images/Yoshi_10.jpg" alt="pic">
+                                <img src="images/Banner 02.jpg" alt="pic">
                             </figure>
                             <figure class="small-img">
                                 <img src="images/pexels-photo-12460951.jfif" alt="pic2">
@@ -197,7 +197,7 @@ require 'auth.php';
                     <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
                         <div class="col position-relative">
                             <figure class="big-img">
-                                <img src="images/Yoshi_10.jpg" alt="pic">
+                                <img src="images/Banner 03.jpg" alt="pic">
                             </figure>
                             <figure class="small-img">
                                 <img src="images/pexels-photo-12460951.jfif" alt="pic2">
