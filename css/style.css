@@ -68,6 +68,10 @@ var {
   padding: 0;
   vertical-align: baseline;
 }
+html,
+body {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
 
 body {
   margin: 0;
