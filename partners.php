@@ -14,7 +14,7 @@
             </div>
             <div class="itesm-sp animate__animated animate__zoomIn">
                 <figure>
-                    <img src="images/Yoshi Bites_V1_2_120620 conv 1.png" alt="sp" />
+                    <img src="images/yoshibite.png" alt="sp" />
                 </figure>
             </div>
             <div class="itesm-sp animate__animated animate__zoomIn">
