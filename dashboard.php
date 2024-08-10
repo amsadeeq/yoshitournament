@@ -338,8 +338,14 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                     <li>
                       <a href="#0">
                         <div class="image">
-                          <img src="<?php echo "team_logo/" . $image_logo; ?>"
-                            alt="<?php echo $team_name . "Passport Port"; ?>" />
+                          <?php
+                          // Determine which records to display
+                          $official_record = !empty($school_official) ? '<img src="<?php echo "school_logo/" . $image_logo; ?>"
+                            alt="<?php echo $team_name . "Passport Port"; ?>" />' : '<img src="<?php echo "team_logo/" . $image_logo; ?>"
+                            alt="<?php echo $team_name . "Passport Port"; ?>" />';
+
+                          ?>
+
                         </div>
                         <div class="content">
                           <h6>
