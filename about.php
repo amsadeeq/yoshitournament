@@ -514,38 +514,9 @@ require 'auth.php';
       </div>
     </div> -->
 
-    <div class="our-sponcer py-5">
-      <div class="container">
-        <h2 class="comon-heading m-0"> Our Partners </h2>
-        <div class="sponcer-slide owl-carousel owl-theme mt-5">
-          <div class="itesm-sp">
-            <figure>
-              <img src="images/Sponsors.png" alt="sp" />
-            </figure>
-          </div>
-          <div class="itesm-sp">
-            <figure>
-              <img src="images/Sponsor_2.png" alt="sp" />
-            </figure>
-          </div>
-          <div class="itesm-sp">
-            <figure>
-              <img src="images/sponsor_4.png" alt="sp" />
-            </figure>
-          </div>
-          <div class="itesm-sp">
-            <figure>
-              <img src="images/sponsor_6.jpeg" alt="sp" />
-            </figure>
-          </div>
-          <div class="itesm-sp">
-            <figure>
-              <img src="images/sponsor_7.png" alt="sp" />
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!---- ###### Our Partners ##########-->
+
+    <?php require 'partners.php'; ?>
 
 
   </section>
