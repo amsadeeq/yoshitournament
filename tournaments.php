@@ -138,7 +138,7 @@ require 'auth.php';
                                 <img src="images/Banner 01.jpeg" alt="pic">
                             </figure>
                             <figure class="small-img">
-                                <img src="images/Yoshi_9.jpg" alt="pic2">
+                                <img src="images/Yoshi_8.jpg" alt="pic2">
                             </figure>
                         </div>
                         <div class="col">
@@ -181,7 +181,7 @@ require 'auth.php';
                                 <img src="images/Banner 02.jpg" alt="pic">
                             </figure>
                             <figure class="small-img">
-                                <img src="images/Yoshi_8.jpg" alt="pic2">
+                                <img src="images/Yoshi_9.jpg" alt="pic2">
                             </figure>
                         </div>
                     </div>
@@ -200,7 +200,7 @@ require 'auth.php';
                                 <img src="images/Banner 03.jpg" alt="pic">
                             </figure>
                             <figure class="small-img">
-                                <img src="images/yoshi_banner_3.jpg" alt="pic2">
+                                <img src="images/yoshi_present.jpg" alt="pic2">
                             </figure>
                         </div>
                         <div class="col">
