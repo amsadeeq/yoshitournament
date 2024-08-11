@@ -162,7 +162,7 @@ require 'auth.php';
             <div class="about-club-top">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
-                        <div class="col position-relative d-none d-sm-block">
+                        <div class="col position-relative d-sm-none">
                             <figure class="big-img">
                                 <img src="images/Banner 02.jpg" alt="pic">
                             </figure>
@@ -184,7 +184,7 @@ require 'auth.php';
                                 for everyone involved. Join us and be part of the next generation of football stars.
                             </p>
                         </div>
-                        <div class="col position-relative d-sm-none">
+                        <div class="col position-relative d-none d-sm-block">
                             <figure class="big-img">
                                 <img src="images/Banner 02.jpg" alt="pic">
                             </figure>
