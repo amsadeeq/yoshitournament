@@ -121,9 +121,14 @@ if (isset($_POST['login'])) {
             $_SESSION['userRefNo'] = $user['userRefNo'];
             $_SESSION['user_email'] = $user['user_email'];
             $_SESSION['user_position'] = $user['user_position'];
+            $_SESSION['position'] = $user['user_position'];
+            $_SESSION['email'] = $user['user_email'];
+            $_SESSION['teamRefNumber'] = $user['TeamRefNumber'];
             $_SESSION['welcome'] = $welcome_notify;
             // Set login status to 'passed'
             $login_status = 'passed';
+
+
 
 
             if ($user['user_position'] == 'Manager/Coach') {
@@ -183,7 +188,7 @@ if (isset($_POST['login'])) {
                 // ]);
 
 
-            } else if ($user['user_position'] == 'Principal/Game Master') {
+            } else if ($user['user_position'] == 'Coach/Sport Director') {
                 // Fetch user information from yoshi_executive_tbl based on userRefNo
                 $stmt = $pdo->prepare("SELECT * FROM yoshi_schools_officials_tbl WHERE userRefNo = :userRefNo");
                 $stmt->bindParam(':userRefNo', $user['userRefNo']);
