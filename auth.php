@@ -570,7 +570,7 @@ if (isset($_POST['register'])) {
         // Set additional headers
         $headers = "From: no-reply@yoshitournament.com\r\n";
         $headers .= "Reply-To: support@yoshitournament.com\r\n";
-        $headers .= "CC: yoshitournaments@gmail.com\r\n";
+        // $headers .= "CC: yoshitournaments@gmail.com\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
 
         // Send the email
