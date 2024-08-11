@@ -1537,7 +1537,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
         event.preventDefault(); // Prevent default link behavior
 
         // Perform sign-out logic here
-        fetch('logout.php')
+        fetch('../logout.php')
           .then(response => {
             if (response.ok) {
               // Session destroyed successfully
@@ -1550,7 +1550,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
               }).show();
 
               // Redirect to the index.php page
-              window.location.href = 'index.php';
+              window.location.href = '../index.php';
             } else {
               // Failed to destroy session
               // Show error notification
