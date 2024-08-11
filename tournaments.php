@@ -162,6 +162,14 @@ require 'auth.php';
             <div class="about-club-top">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
+                        <div class="col position-relative d-none d-sm-block">
+                            <figure class="big-img">
+                                <img src="images/Banner 02.jpg" alt="pic">
+                            </figure>
+                            <figure class="small-img">
+                                <img src="images/Yoshi_9.jpg" alt="pic2">
+                            </figure>
+                        </div>
                         <div class="col">
                             <h5 class="samll-sub mb-1 mt-0"> Benefits and Key Differentiators </h5>
                             <h2 class="comon-heading m-0"> Yoshi Tournaments to the world </h2>
@@ -176,7 +184,7 @@ require 'auth.php';
                                 for everyone involved. Join us and be part of the next generation of football stars.
                             </p>
                         </div>
-                        <div class="col position-relative">
+                        <div class="col position-relative d-sm-none">
                             <figure class="big-img">
                                 <img src="images/Banner 02.jpg" alt="pic">
                             </figure>
