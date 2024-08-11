@@ -133,11 +133,11 @@ require 'auth.php';
 
 
           <!-- Slider Pagination -->
-          <div class="slider-pagination">
+          <!-- <div class="slider-pagination">
             <label for="slider_1" class="page1"></label>
             <label for="slider_2" class="page2"></label>
             <label for="slider_3" class="page3"></label>
-          </div>
+          </div> -->
 
           <!-- Slider #1 -->
           <div class="slider slide-1">
