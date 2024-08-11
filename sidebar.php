@@ -38,7 +38,7 @@
 
       <div class="mobile-menu-sec mt-3">
         <ul>
-          <li class="active-m">
+          <li> <!--class="active-m"-->
             <a href="index.php"> Home </a>
           </li>
 
@@ -46,9 +46,9 @@
             <a href="tournaments.php"> Tournaments </a>
           </li>
 
-          <li class="">
+          <!-- <li class="">
             <a href="matches.php"> Events </a>
-          </li>
+          </li> -->
 
           <li>
             <a href="registration.php"> Registration </a>
