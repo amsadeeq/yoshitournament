@@ -125,6 +125,14 @@ require 'auth.php';
       <div class="about-club-top">
         <div class="container">
           <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
+            <div class="col position-relative d-sm-none">
+              <figure class="big-img">
+                <img src="images/about_Banner 02.jpg" alt="pic">
+              </figure>
+              <figure class="small-img">
+                <img src="images/pexels-photo-12460951.jfif" alt="pic2">
+              </figure>
+            </div>
             <div class="col">
               <h5 class="samll-sub mb-1 mt-0"> Our Vision </h5>
               <h2 class="comon-heading m-0"> Vision of Yoshi Tournament </h2>
@@ -137,7 +145,7 @@ require 'auth.php';
               </p>
 
             </div>
-            <div class="col position-relative">
+            <div class="col position-relative d-none d-sm-block">
               <figure class="big-img">
                 <img src="images/about_Banner 02.jpg" alt="pic">
               </figure>
