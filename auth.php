@@ -193,11 +193,19 @@ if (isset($_POST['login'])) {
                 $stmt = $pdo->prepare("SELECT * FROM yoshi_schools_officials_tbl WHERE userRefNo = :userRefNo");
                 $stmt->bindParam(':userRefNo', $user['userRefNo']);
                 $stmt->execute();
-                $player_details = $stmt->fetch(PDO::FETCH_ASSOC);
+                $school_officials = $stmt->fetch(PDO::FETCH_ASSOC);
                 // User is a Player
-                $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
+                $_SESSION['teamRefNumber'] = $school_officials['TeamRefNumber'];
 
-                header("Location: schools/dashboard.php");
+                switch ($user['reg_status']) {
+                    case 0:
+                        header("Location: school_registration.php");
+                        break;
+                    default:
+                        header("Location: schools/dashboard.php");
+                        break;
+                }
+
 
 
                 // Insert login log
@@ -225,7 +233,16 @@ if (isset($_POST['login'])) {
                 // User is a Player
                 $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
 
-                header("Location: schools/studentDashboard.php");
+                switch ($user['reg_status']) {
+                    case 0:
+                        header("Location: student_registration.php");
+                        break;
+                    default:
+                        header("Location: schools/studentDashboard.php");
+                        break;
+                }
+
+
 
 
                 // Insert login log
