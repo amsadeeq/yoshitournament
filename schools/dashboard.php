@@ -81,63 +81,68 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
   <!-- ======== Preloader =========== -->
 
   <!-- ======== sidebar-nav start =========== -->
-  <aside class="sidebar-nav-wrapper">
-    <div class="navbar-logo">
-      <a href="dashboard.php" class="d-flex justify-content-center align-items-center">
-        <img src="../images/logo.png" alt="logo" class="yoshi_logo" />
+  <?php
+  if (!empty($TeamRefNumber)) {
 
-      </a>
-    </div>
 
-    <?php
+    ?>
+    <aside class="sidebar-nav-wrapper">
+      <div class="navbar-logo">
+        <a href="dashboard.php" class="d-flex justify-content-center align-items-center">
+          <img src="../images/logo.png" alt="logo" class="yoshi_logo" />
 
-    // Displaying fetched records
-    foreach ($school_official as $executive) {
-      $image_passport = $executive['passport'];
-      $image_logo = $executive['team_logo'];
-      $name = $executive['firstname'];
-      $position = $executive['user_position'];
-      $dob = $executive['dob'];
-      $country = $executive['country'];
-      $state = $executive['state'];
-      $city = $executive['city'];
-      $zipcode = $executive['zipcode'];
-      $phone = $executive['phone'];
-      $email = $executive['email'];
-      $address = $executive['address'];
-      $team_name = $executive['team_name'];
-      $team_country = $executive['team_country'];
-      $team_state = $executive['team_state'];
-      $team_city = $executive['team_city'];
-      $number_of_players = $executive['number_of_players'];
-      $team_address = $executive['team_address'];
-      $time_created = $executive['time_created'];
-      $date_created = $executive['date_created'];
-      $ip_address = $executive['ip_address'];
-      ?>
+        </a>
+      </div>
 
-      <nav class="sidebar-nav">
-        <ul>
-          <li class="nav-item nav-item-has-children">
-            <a href="#0" data-bs-toggle="collapse" data-bs-target="#ddmenu_1" aria-controls="ddmenu_1"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M8.74999 18.3333C12.2376 18.3333 15.1364 15.8128 15.7244 12.4941C15.8448 11.8143 15.2737 11.25 14.5833 11.25H9.99999C9.30966 11.25 8.74999 10.6903 8.74999 10V5.41666C8.74999 4.7263 8.18563 4.15512 7.50586 4.27556C4.18711 4.86357 1.66666 7.76243 1.66666 11.25C1.66666 15.162 4.83797 18.3333 8.74999 18.3333Z" />
-                  <path
-                    d="M17.0833 10C17.7737 10 18.3432 9.43708 18.2408 8.75433C17.7005 5.14918 14.8508 2.29947 11.2457 1.75912C10.5629 1.6568 10 2.2263 10 2.91665V9.16666C10 9.62691 10.3731 10 10.8333 10H17.0833Z" />
-                </svg>
-              </span>
-              <span class="text">Dashboard</span>
-            </a>
-            <ul id="ddmenu_1" class="collapse show dropdown-nav">
-              <li>
-                <a href="dashboard.php" class="active"> main </a>
-              </li>
-            </ul>
-          </li>
-          <!-- <li class="nav-item nav-item-has-children">
+      <?php
+
+      // Displaying fetched records
+      foreach ($school_official as $executive) {
+        $image_passport = $executive['passport'];
+        $image_logo = $executive['team_logo'];
+        $name = $executive['firstname'];
+        $position = $executive['user_position'];
+        $dob = $executive['dob'];
+        $country = $executive['country'];
+        $state = $executive['state'];
+        $city = $executive['city'];
+        $zipcode = $executive['zipcode'];
+        $phone = $executive['phone'];
+        $email = $executive['email'];
+        $address = $executive['address'];
+        $team_name = $executive['team_name'];
+        $team_country = $executive['team_country'];
+        $team_state = $executive['team_state'];
+        $team_city = $executive['team_city'];
+        $number_of_players = $executive['number_of_players'];
+        $team_address = $executive['team_address'];
+        $time_created = $executive['time_created'];
+        $date_created = $executive['date_created'];
+        $ip_address = $executive['ip_address'];
+        ?>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="nav-item nav-item-has-children">
+              <a href="#0" data-bs-toggle="collapse" data-bs-target="#ddmenu_1" aria-controls="ddmenu_1"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M8.74999 18.3333C12.2376 18.3333 15.1364 15.8128 15.7244 12.4941C15.8448 11.8143 15.2737 11.25 14.5833 11.25H9.99999C9.30966 11.25 8.74999 10.6903 8.74999 10V5.41666C8.74999 4.7263 8.18563 4.15512 7.50586 4.27556C4.18711 4.86357 1.66666 7.76243 1.66666 11.25C1.66666 15.162 4.83797 18.3333 8.74999 18.3333Z" />
+                    <path
+                      d="M17.0833 10C17.7737 10 18.3432 9.43708 18.2408 8.75433C17.7005 5.14918 14.8508 2.29947 11.2457 1.75912C10.5629 1.6568 10 2.2263 10 2.91665V9.16666C10 9.62691 10.3731 10 10.8333 10H17.0833Z" />
+                  </svg>
+                </span>
+                <span class="text">Dashboard</span>
+              </a>
+              <ul id="ddmenu_1" class="collapse show dropdown-nav">
+                <li>
+                  <a href="dashboard.php" class="active"> main </a>
+                </li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item nav-item-has-children">
             <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_2" aria-controls="ddmenu_2"
               aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon">
@@ -164,7 +169,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
           <span class="divider">
             <hr />
           </span> -->
-          <!-- <li class="nav-item nav-item-has-children">
+            <!-- <li class="nav-item nav-item-has-children">
             <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_4" aria-controls="ddmenu_4"
               aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon">
@@ -256,594 +261,598 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
               <span class="text">Tables</span>
             </a>
           </li> -->
-          <span class="divider">
-            <hr />
-          </span>
+            <span class="divider">
+              <hr />
+            </span>
 
-          <li class="nav-item">
-            <a href="notification.php">
-              <span class="icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M10.8333 2.50008C10.8333 2.03984 10.4602 1.66675 9.99999 1.66675C9.53975 1.66675 9.16666 2.03984 9.16666 2.50008C9.16666 2.96032 9.53975 3.33341 9.99999 3.33341C10.4602 3.33341 10.8333 2.96032 10.8333 2.50008Z" />
-                  <path
-                    d="M17.5 5.41673C17.5 7.02756 16.1942 8.33339 14.5833 8.33339C12.9725 8.33339 11.6667 7.02756 11.6667 5.41673C11.6667 3.80589 12.9725 2.50006 14.5833 2.50006C16.1942 2.50006 17.5 3.80589 17.5 5.41673Z" />
-                  <path
-                    d="M11.4272 2.69637C10.9734 2.56848 10.4947 2.50006 10 2.50006C7.10054 2.50006 4.75003 4.85057 4.75003 7.75006V9.20873C4.75003 9.72814 4.62082 10.2393 4.37404 10.6963L3.36705 12.5611C2.89938 13.4272 3.26806 14.5081 4.16749 14.9078C7.88074 16.5581 12.1193 16.5581 15.8326 14.9078C16.732 14.5081 17.1007 13.4272 16.633 12.5611L15.626 10.6963C15.43 10.3333 15.3081 9.93606 15.2663 9.52773C15.0441 9.56431 14.8159 9.58339 14.5833 9.58339C12.2822 9.58339 10.4167 7.71791 10.4167 5.41673C10.4167 4.37705 10.7975 3.42631 11.4272 2.69637Z" />
-                  <path
-                    d="M7.48901 17.1925C8.10004 17.8918 8.99841 18.3335 10 18.3335C11.0016 18.3335 11.9 17.8918 12.511 17.1925C10.8482 17.4634 9.15183 17.4634 7.48901 17.1925Z" />
-                </svg>
-              </span>
-              <span class="text">Notifications</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="promo-box">
-        <div class="promo-icon">
-          <img class="mx-auto next_match_logo" src="<?php echo "school_logo/" . $image_logo; ?>"
-            alt="<?php echo $team_name . "Passport Port"; ?>">
+            <li class="nav-item">
+              <a href="notification.php">
+                <span class="icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.8333 2.50008C10.8333 2.03984 10.4602 1.66675 9.99999 1.66675C9.53975 1.66675 9.16666 2.03984 9.16666 2.50008C9.16666 2.96032 9.53975 3.33341 9.99999 3.33341C10.4602 3.33341 10.8333 2.96032 10.8333 2.50008Z" />
+                    <path
+                      d="M17.5 5.41673C17.5 7.02756 16.1942 8.33339 14.5833 8.33339C12.9725 8.33339 11.6667 7.02756 11.6667 5.41673C11.6667 3.80589 12.9725 2.50006 14.5833 2.50006C16.1942 2.50006 17.5 3.80589 17.5 5.41673Z" />
+                    <path
+                      d="M11.4272 2.69637C10.9734 2.56848 10.4947 2.50006 10 2.50006C7.10054 2.50006 4.75003 4.85057 4.75003 7.75006V9.20873C4.75003 9.72814 4.62082 10.2393 4.37404 10.6963L3.36705 12.5611C2.89938 13.4272 3.26806 14.5081 4.16749 14.9078C7.88074 16.5581 12.1193 16.5581 15.8326 14.9078C16.732 14.5081 17.1007 13.4272 16.633 12.5611L15.626 10.6963C15.43 10.3333 15.3081 9.93606 15.2663 9.52773C15.0441 9.56431 14.8159 9.58339 14.5833 9.58339C12.2822 9.58339 10.4167 7.71791 10.4167 5.41673C10.4167 4.37705 10.7975 3.42631 11.4272 2.69637Z" />
+                    <path
+                      d="M7.48901 17.1925C8.10004 17.8918 8.99841 18.3335 10 18.3335C11.0016 18.3335 11.9 17.8918 12.511 17.1925C10.8482 17.4634 9.15183 17.4634 7.48901 17.1925Z" />
+                  </svg>
+                </span>
+                <span class="text">Notifications</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="promo-box">
+          <div class="promo-icon">
+            <img class="mx-auto next_match_logo" src="<?php echo "school_logo/" . $image_logo; ?>"
+              alt="<?php echo $team_name . "Passport Port"; ?>">
+          </div>
+          <h3><?php echo $team_name; ?> </h3>
+          <p>Congratulations! Your team will participate in the upcoming Yoshi Tournament</p>
+          <a href="#" target="_blank" rel="nofollow" class="main-btn primary-btn btn-hover">
+            View Team
+          </a>
         </div>
-        <h3><?php echo $team_name; ?> </h3>
-        <p>Congratulations! Your team will participate in the upcoming Yoshi Tournament</p>
-        <a href="#" target="_blank" rel="nofollow" class="main-btn primary-btn btn-hover">
-          View Team
-        </a>
-      </div>
-    </aside>
-    <div class="overlay"></div>
-    <!-- ======== sidebar-nav end =========== -->
+      </aside>
+      <div class="overlay"></div>
+      <!-- ======== sidebar-nav end =========== -->
 
-    <!-- ======== main-wrapper start =========== -->
-    <main class="main-wrapper">
-      <!-- ========== header start ========== -->
-      <header class="header">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-5 col-md-5 col-6">
-              <div class="header-left d-flex align-items-center">
-                <div class="menu-toggle-btn mr-15">
-                  <button id="menu-toggle" class="main-btn primary-btn btn-hover">
-                    <i class="lni lni-chevron-left me-2"></i>
-                  </button>
+      <!-- ======== main-wrapper start =========== -->
+      <main class="main-wrapper">
+        <!-- ========== header start ========== -->
+        <header class="header">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-5 col-md-5 col-6">
+                <div class="header-left d-flex align-items-center">
+                  <div class="menu-toggle-btn mr-15">
+                    <button id="menu-toggle" class="main-btn primary-btn btn-hover">
+                      <i class="lni lni-chevron-left me-2"></i>
+                    </button>
+                  </div>
+
                 </div>
-
               </div>
-            </div>
-            <div class="col-lg-7 col-md-7 col-6">
-              <div class="header-right">
-                <!-- notification start -->
-                <div class="notification-box ml-15 d-none d-md-flex">
-                  <button class="dropdown-toggle" type="button" id="notification" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M11 20.1667C9.88317 20.1667 8.88718 19.63 8.23901 18.7917H13.761C13.113 19.63 12.1169 20.1667 11 20.1667Z"
-                        fill="" />
-                      <path
-                        d="M10.1157 2.74999C10.1157 2.24374 10.5117 1.83333 11 1.83333C11.4883 1.83333 11.8842 2.24374 11.8842 2.74999V2.82604C14.3932 3.26245 16.3051 5.52474 16.3051 8.24999V14.287C16.3051 14.5301 16.3982 14.7633 16.564 14.9352L18.2029 16.6342C18.4814 16.9229 18.2842 17.4167 17.8903 17.4167H4.10961C3.71574 17.4167 3.5185 16.9229 3.797 16.6342L5.43589 14.9352C5.6017 14.7633 5.69485 14.5301 5.69485 14.287V8.24999C5.69485 5.52474 7.60672 3.26245 10.1157 2.82604V2.74999Z"
-                        fill="" />
-                    </svg>
-                    <span></span>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notification">
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="<?php echo "school_logo/" . $image_logo; ?>"
-                            alt="<?php echo $team_name . "Passport Port"; ?>" />
+              <div class="col-lg-7 col-md-7 col-6">
+                <div class="header-right">
+                  <!-- notification start -->
+                  <div class="notification-box ml-15 d-none d-md-flex">
+                    <button class="dropdown-toggle" type="button" id="notification" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M11 20.1667C9.88317 20.1667 8.88718 19.63 8.23901 18.7917H13.761C13.113 19.63 12.1169 20.1667 11 20.1667Z"
+                          fill="" />
+                        <path
+                          d="M10.1157 2.74999C10.1157 2.24374 10.5117 1.83333 11 1.83333C11.4883 1.83333 11.8842 2.24374 11.8842 2.74999V2.82604C14.3932 3.26245 16.3051 5.52474 16.3051 8.24999V14.287C16.3051 14.5301 16.3982 14.7633 16.564 14.9352L18.2029 16.6342C18.4814 16.9229 18.2842 17.4167 17.8903 17.4167H4.10961C3.71574 17.4167 3.5185 16.9229 3.797 16.6342L5.43589 14.9352C5.6017 14.7633 5.69485 14.5301 5.69485 14.287V8.24999C5.69485 5.52474 7.60672 3.26245 10.1157 2.82604V2.74999Z"
+                          fill="" />
+                      </svg>
+                      <span></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notification">
+                      <li>
+                        <a href="#0">
+                          <div class="image">
+                            <img src="<?php echo "school_logo/" . $image_logo; ?>"
+                              alt="<?php echo $team_name . "Passport Port"; ?>" />
+                          </div>
+                          <div class="content">
+                            <h6>
+                              Update
+
+                            </h6>
+                            <p>
+                              No update !
+                            </p>
+                            <span>10 mins ago</span>
+                          </div>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+                  <!-- notification end -->
+
+                  <!-- profile start -->
+                  <div class="profile-box ml-15">
+                    <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <div class="profile-info">
+
+
+                        <div class="info">
+                          <div class="image">
+                            <img src="<?php echo "school_registrant_photo/" . $image_passport; ?>"
+                              alt="<?php echo $position . "Passport Port"; ?>" />
+                          </div>
+                          <div>
+                            <h6 class="fw-500"><?php echo $name; ?></h6>
+                            <p><?php echo $position; ?></p>
+                          </div>
                         </div>
-                        <div class="content">
-                          <h6>
-                            Update
-
-                          </h6>
-                          <p>
-                            No update !
-                          </p>
-                          <span>10 mins ago</span>
-                        </div>
-                      </a>
-                    </li>
-
-                  </ul>
-                </div>
-                <!-- notification end -->
-
-                <!-- profile start -->
-                <div class="profile-box ml-15">
-                  <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="profile-info">
 
 
-                      <div class="info">
-                        <div class="image">
-                          <img src="<?php echo "school_registrant_photo/" . $image_passport; ?>"
-                            alt="<?php echo $position . "Passport Port"; ?>" />
-                        </div>
-                        <div>
-                          <h6 class="fw-500"><?php echo $name; ?></h6>
-                          <p><?php echo $position; ?></p>
-                        </div>
+
+
                       </div>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+                      <li>
+                        <div class="author-info flex items-center !p-1">
+                          <div class="image">
+                            <img src="<?php echo "school_registrant_photo/" . $image_passport; ?>"
+                              alt="<?php echo $position . "Passport Port"; ?>">
+                          </div>
+                          <div class="content">
+                            <h4 class="text-sm"><?php echo $name; ?></h4>
+                            <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
+                              href="#"><?php echo $position; ?></a>
+                            <span
+                              class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs -mt-2 "
+                              style="font-size:8px;" href="#"><?php echo $email; ?></span>
 
-
-
-
-                    </div>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
-                    <li>
-                      <div class="author-info flex items-center !p-1">
-                        <div class="image">
-                          <img src="<?php echo "school_registrant_photo/" . $image_passport; ?>"
-                            alt="<?php echo $position . "Passport Port"; ?>">
+                          </div>
                         </div>
-                        <div class="content">
-                          <h4 class="text-sm"><?php echo $name; ?></h4>
-                          <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
-                            href="#"><?php echo $position; ?></a>
-                          <span
-                            class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs -mt-2 "
-                            style="font-size:8px;" href="#"><?php echo $email; ?></span>
-
-                        </div>
-                      </div>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                      <a href="#0">
-                        <i class="lni lni-user"></i> View Profile
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#0">
-                        <i class="lni lni-alarm"></i> Notifications
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#0"> <i class="lni lni-inbox"></i> Messages </a>
-                    </li>
-                    <li>
-                      <a href="#0"> <i class="lni lni-cog"></i> Account </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                      <a href="#0" id="signOutBtn"> <i class="lni lni-exit"></i> Sign Out </a>
-                    </li>
-                  </ul>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#0">
+                          <i class="lni lni-user"></i> View Profile
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#0">
+                          <i class="lni lni-alarm"></i> Notifications
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#0"> <i class="lni lni-inbox"></i> Messages </a>
+                      </li>
+                      <li>
+                        <a href="#0"> <i class="lni lni-cog"></i> Account </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#0" id="signOutBtn"> <i class="lni lni-exit"></i> Sign Out </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- profile end -->
                 </div>
-                <!-- profile end -->
               </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <!-- ========== header end ========== -->
+        <!-- ========== header end ========== -->
 
-      <!-- ========== section start ========== -->
-      <section class="section">
-        <div class="container-fluid">
-          <!-- ========== title-wrapper start ========== -->
-          <div class="title-wrapper pt-30">
-            <div class="row align-items-center">
-              <div class="col-md-6">
-                <div class="title">
-                  <h2> <img class="mx-auto next_match_logo" src="<?php echo "school_logo/" . $image_logo; ?>"
-                      alt="<?php echo $team_name . "Passport Port"; ?>">&nbsp;&nbsp;<?php echo $team_name; ?></h2>
+        <!-- ========== section start ========== -->
+        <section class="section">
+          <div class="container-fluid">
+            <!-- ========== title-wrapper start ========== -->
+            <div class="title-wrapper pt-30">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="title">
+                    <h2> <img class="mx-auto next_match_logo" src="<?php echo "school_logo/" . $image_logo; ?>"
+                        alt="<?php echo $team_name . "Passport Port"; ?>">&nbsp;&nbsp;<?php echo $team_name; ?></h2>
 
+                  </div>
                 </div>
-              </div>
-              <!-- end col -->
-              <div class="col-md-6">
-                <div class="breadcrumb-wrapper">
-                  <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="#0">Dashboard</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">
-                        Main
-                      </li>
-                    </ol>
-                  </nav>
+                <!-- end col -->
+                <div class="col-md-6">
+                  <div class="breadcrumb-wrapper">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="#0">Dashboard</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                          Main
+                        </li>
+                      </ol>
+                    </nav>
+                  </div>
                 </div>
+                <!-- end col -->
               </div>
-              <!-- end col -->
+              <!-- end row -->
             </div>
-            <!-- end row -->
-          </div>
-          <!-- ========== title-wrapper end ========== -->
+            <!-- ========== title-wrapper end ========== -->
+            <div class="row">
+
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="icon-card mb-30">
+                  <div class="icon text-success">
+                    <i class="lni lni-user"></i>
+                  </div>
+                  <div class="content">
+                    <h6 class="mb-10">Registered Players</h6>
+                    <h3 class="text-bold mb-10"><?php echo $no_of_players; ?></h3>
+
+                  </div>
+                </div>
+                <!-- End Icon Cart -->
+              </div>
+              <!-- End Col -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="icon-card mb-30">
+                  <div class="icon orange">
+                    <i class="lni lni-user"></i>
+                  </div>
+                  <div class="content">
+                    <h6 class="mb-10">Number of Players</h6>
+                    <h3 class="text-bold mb-10"><?php echo $number_of_players; ?></h3>
+
+                  </div>
+                </div>
+                <!-- End Icon Cart -->
+              </div>
+              <!-- End Col -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="icon-card mb-30" onclick="copyToClipboard()">
+
+                  <div class="content">
+                    <h6 class="mb-25">Reference Number</h6>
+                    <h3 class="text-bold mb-10" id="textToCopy">
+                      <?php echo $_SESSION['teamRefNumber']; ?>
+                    </h3>
+
+                  </div>
+                </div>
+                <!-- End Icon Cart -->
+              </div>
+              <!-- End Col -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="icon-card mb-30">
+
+                  <div class="content">
+                    <h6 class="mb-25">Reference Link</h6>
+                    <h6 class="text-wrap mb-10">https://yoshifa...</h6>
+
+                  </div>
+                  <div class="icon orange" onclick="shareLink()">
+                    <i class="lni lni-share"></i>
+                  </div>
+                </div>
+                <!-- End Icon Cart -->
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+            <?php
+      }
+      ?>
           <div class="row">
 
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-              <div class="icon-card mb-30">
-                <div class="icon text-success">
-                  <i class="lni lni-user"></i>
-                </div>
-                <div class="content">
-                  <h6 class="mb-10">Registered Players</h6>
-                  <h3 class="text-bold mb-10"><?php echo $no_of_players; ?></h3>
+            <div class="col-lg-12">
+              <div class="card-style mb-30">
+                <div class="title d-flex flex-wrap justify-content-between align-items-center">
+                  <div class="left">
+                    <h6 class="text-medium mb-30">List of Players</h6>
+                  </div>
 
+                </div>
+                <!-- End Title -->
+                <div class="table-responsive">
+                  <table class="table top-selling-table">
+                    <thead>
+                      <tr>
+
+                        <th>
+                          <h6 class="text-sm text-medium">Players</h6>
+                        </th>
+                        <th class="min-width">
+                          <h6 class="text-sm text-medium">Position</h6>
+                        </th>
+                        <th class="min-width">
+                          <h6 class="text-sm text-medium">Phone Number</h6>
+                        </th>
+                        <th class="min-width">
+                          <h6 class="text-sm text-medium">Email</h6>
+                        </th>
+                        <th class="min-width">
+                          <h6 class="text-sm text-medium">Age</h6>
+                        </th>
+                        <th></th>
+                      </tr>
+                    </thead>
+
+
+
+
+                    <tbody>
+                      <?php
+                      // Displaying fetched records
+                      foreach ($players_record as $player_record) {
+                        // Assign values to variables
+                        $user_id = $player_record['id'];
+                        $userRefNo = $player_record['userRefNo'];
+                        $image_passport = $player_record['passport'];
+                        $image_logo = $player_record['team_logo'];
+                        $firstname = $player_record['firstname'];
+                        $surname = $player_record['surname'];
+                        $position = $player_record['user_position'];
+                        $dob = $player_record['dob'];
+                        $gender = $player_record['gender']; // Added missing column
+                        $height = $player_record['hieght']; // Corrected typo in column name
+                        $weight = $player_record['weight']; // Added missing column
+                        $country = $player_record['country'];
+                        $state = $player_record['state'];
+                        $city = $player_record['city'];
+                        $zipcode = $player_record['zipcode'];
+                        $phone = $player_record['phone'];
+                        $email = $player_record['email'];
+                        $address = $player_record['address'];
+                        $team_name = $player_record['team_name'];
+                        $player_position = $player_record['player_position']; // Added missing column
+                        $jersey_number = $player_record['jersy_number']; // Corrected typo in column name
+                        $team_country = $player_record['team_country'];
+                        $team_state = $player_record['team_state'];
+                        $team_city = $player_record['team_city'];
+                        $number_of_players = $player_record['number_of_players'];
+                        $team_address = $player_record['team_address'];
+                        $time_created = $player_record['time_created'];
+                        $date_created = $player_record['date_created'];
+                        $ip_address = $player_record['ip_address'];
+
+                        $birthday = new DateTime($dob);
+                        $currentDate = new DateTime();
+                        $age = $currentDate->diff($birthday)->y;
+                        ?>
+                        <tr>
+
+                          <td>
+                            <div class="product">
+                              <div class="image">
+                                <img src="<?php echo "../players_Images/" . $image_passport; ?>"
+                                  alt="<?php echo $firstname; ?>" />
+                              </div>
+                              <na class="text-sm"><?php echo $firstname . " " . $surname; ?></na>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-sm"><?php echo $player_position; ?></p>
+                          </td>
+                          <td>
+                            <p class="text-sm"><?php echo $phone; ?></p>
+                          </td>
+                          <td>
+                            <p class="text-sm"><?php echo $email; ?></p>
+                          </td>
+                          <td>
+                            <p class="text-sm"><?php echo $age; ?></p>
+                          </td>
+                          <td>
+                            <div class="action justify-content-end">
+                              <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="lni lni-more-alt"></i>
+                              </button>
+                              <!-- HTML Dropdown Menu -->
+                              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                                <li class="dropdown-item">
+                                  <a href="#" class="text-gray view-record"
+                                    data-user-id="<?php echo $userRefNo; ?>">View</a>
+                                </li>
+                                <li class="dropdown-item">
+                                  <a href="#" class="text-gray edit-record"
+                                    data-user-id="<?php echo $userRefNo; ?>">Edit</a>
+                                </li>
+                                <li class="dropdown-item">
+                                  <a href="#" class="text-gray delete-record"
+                                    data-user-id="<?php echo $userRefNo; ?>">Remove</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <?php
+                      }
+                      ?>
+                      <?php if (empty($players_record)) {
+                        echo "<tr><td colspan='6'><center>
+                      <lord-icon
+                      src='https://cdn.lordicon.com/vihyezfv.json'
+                      trigger='loop'
+                      delay='1000'
+                      style='width:30px;height:30px'>
+                  </lord-icon> &nbsp;No record found</center></td></tr>";
+                      } ?>
+
+                    </tbody>
+                  </table>
+                  <!-- End Table -->
                 </div>
               </div>
-              <!-- End Icon Cart -->
-            </div>
-            <!-- End Col -->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-              <div class="icon-card mb-30">
-                <div class="icon orange">
-                  <i class="lni lni-user"></i>
-                </div>
-                <div class="content">
-                  <h6 class="mb-10">Number of Players</h6>
-                  <h3 class="text-bold mb-10"><?php echo $number_of_players; ?></h3>
-
-                </div>
-              </div>
-              <!-- End Icon Cart -->
-            </div>
-            <!-- End Col -->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-              <div class="icon-card mb-30" onclick="copyToClipboard()">
-
-                <div class="content">
-                  <h6 class="mb-25">Reference Number</h6>
-                  <h3 class="text-bold mb-10" id="textToCopy">
-                    <?php echo $_SESSION['teamRefNumber']; ?>
-                  </h3>
-
-                </div>
-              </div>
-              <!-- End Icon Cart -->
-            </div>
-            <!-- End Col -->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-              <div class="icon-card mb-30">
-
-                <div class="content">
-                  <h6 class="mb-25">Reference Link</h6>
-                  <h6 class="text-wrap mb-10">https://yoshifa...</h6>
-
-                </div>
-                <div class="icon orange" onclick="shareLink()">
-                  <i class="lni lni-share"></i>
-                </div>
-              </div>
-              <!-- End Icon Cart -->
             </div>
             <!-- End Col -->
           </div>
           <!-- End Row -->
-          <?php
-    }
-    ?>
-        <div class="row">
 
-          <div class="col-lg-12">
-            <div class="card-style mb-30">
-              <div class="title d-flex flex-wrap justify-content-between align-items-center">
-                <div class="left">
-                  <h6 class="text-medium mb-30">List of Players</h6>
+          <!-- View/Edit Record Modal -->
+          <div class="modal" id="recordModal">
+            <!-- Modal content goes here -->
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-12">
+              <div class="card-style mb-30">
+                <div class="title d-flex flex-wrap align-items-center justify-content-between">
+                  <div class="left">
+                    <h6 class="text-medium mb-30">Match History</h6>
+                  </div>
+
                 </div>
-
-              </div>
-              <!-- End Title -->
-              <div class="table-responsive">
-                <table class="table top-selling-table">
-                  <thead>
-                    <tr>
-
-                      <th>
-                        <h6 class="text-sm text-medium">Players</h6>
-                      </th>
-                      <th class="min-width">
-                        <h6 class="text-sm text-medium">Position</h6>
-                      </th>
-                      <th class="min-width">
-                        <h6 class="text-sm text-medium">Phone Number</h6>
-                      </th>
-                      <th class="min-width">
-                        <h6 class="text-sm text-medium">Email</h6>
-                      </th>
-                      <th class="min-width">
-                        <h6 class="text-sm text-medium">Age</h6>
-                      </th>
-                      <th></th>
-                    </tr>
-                  </thead>
-
-
-
-
-                  <tbody>
-                    <?php
-                    // Displaying fetched records
-                    foreach ($players_record as $player_record) {
-                      // Assign values to variables
-                      $user_id = $player_record['id'];
-                      $userRefNo = $player_record['userRefNo'];
-                      $image_passport = $player_record['passport'];
-                      $image_logo = $player_record['team_logo'];
-                      $firstname = $player_record['firstname'];
-                      $surname = $player_record['surname'];
-                      $position = $player_record['user_position'];
-                      $dob = $player_record['dob'];
-                      $gender = $player_record['gender']; // Added missing column
-                      $height = $player_record['hieght']; // Corrected typo in column name
-                      $weight = $player_record['weight']; // Added missing column
-                      $country = $player_record['country'];
-                      $state = $player_record['state'];
-                      $city = $player_record['city'];
-                      $zipcode = $player_record['zipcode'];
-                      $phone = $player_record['phone'];
-                      $email = $player_record['email'];
-                      $address = $player_record['address'];
-                      $team_name = $player_record['team_name'];
-                      $player_position = $player_record['player_position']; // Added missing column
-                      $jersey_number = $player_record['jersy_number']; // Corrected typo in column name
-                      $team_country = $player_record['team_country'];
-                      $team_state = $player_record['team_state'];
-                      $team_city = $player_record['team_city'];
-                      $number_of_players = $player_record['number_of_players'];
-                      $team_address = $player_record['team_address'];
-                      $time_created = $player_record['time_created'];
-                      $date_created = $player_record['date_created'];
-                      $ip_address = $player_record['ip_address'];
-
-                      $birthday = new DateTime($dob);
-                      $currentDate = new DateTime();
-                      $age = $currentDate->diff($birthday)->y;
-                      ?>
+                <!-- End Title -->
+                <div class="table-responsive">
+                  <table class="table top-selling-table">
+                    <thead>
                       <tr>
+                        <th>
+                          <h6 class="text-sm text-medium">Players</h6>
+                        </th>
+                        <th class="min-width">
+                          <h6 class="text-sm text-medium">
+                            Position
+                          </h6>
+                        </th>
+                        <th class="min-width">
+                          <h6 class="text-sm text-medium">
+                            Match/Date
+                          </h6>
+                        </th>
+                        <th class="min-width">
+                          <h6 class="text-sm text-medium">
+                            Score
+                          </h6>
+                        </th>
+                        <th class="min-width">
+                          <h6 class="text-sm text-medium">
+                            Status
+                          </h6>
+                        </th>
 
-                        <td>
-                          <div class="product">
-                            <div class="image">
-                              <img src="<?php echo "../players_Images/" . $image_passport; ?>"
-                                alt="<?php echo $firstname; ?>" />
-                            </div>
-                            <na class="text-sm"><?php echo $firstname . " " . $surname; ?></na>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="text-sm"><?php echo $player_position; ?></p>
-                        </td>
-                        <td>
-                          <p class="text-sm"><?php echo $phone; ?></p>
-                        </td>
-                        <td>
-                          <p class="text-sm"><?php echo $email; ?></p>
-                        </td>
-                        <td>
-                          <p class="text-sm"><?php echo $age; ?></p>
-                        </td>
-                        <td>
-                          <div class="action justify-content-end">
-                            <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown"
-                              aria-expanded="false">
-                              <i class="lni lni-more-alt"></i>
-                            </button>
-                            <!-- HTML Dropdown Menu -->
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
-                              <li class="dropdown-item">
-                                <a href="#" class="text-gray view-record"
-                                  data-user-id="<?php echo $userRefNo; ?>">View</a>
-                              </li>
-                              <li class="dropdown-item">
-                                <a href="#" class="text-gray edit-record"
-                                  data-user-id="<?php echo $userRefNo; ?>">Edit</a>
-                              </li>
-                              <li class="dropdown-item">
-                                <a href="#" class="text-gray delete-record"
-                                  data-user-id="<?php echo $userRefNo; ?>">Remove</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
                       </tr>
+                    </thead>
+                    <tbody>
                       <?php
-                    }
-                    ?>
-                    <?php if (empty($players_record)) {
-                      echo "<tr><td colspan='6'><center>
+                      // Displaying fetched records
+                      foreach ($playerMatchHistory as $matchRecord) {
+                        // Assign values to variables
+                        $user_id = $matchRecord['id'];
+                        $userRefNo = $matchRecord['userRefNo'];
+                        $image_passport = $matchRecord['passport'];
+                        $image_logo = $matchRecord['team_logo'];
+                        $firstname = $matchRecord['firstName'];
+                        $surname = $matchRecord['surname'];
+                        $position = $matchRecord['user_position'];
+                        $team_name = $matchRecord['team_name'];
+                        $match_team = $matchRecord['match_team'];
+                        $match_date = $matchRecord['match_date'];
+                        $jersey_number = $matchRecord['jersey_number']; // Corrected typo in column name
+                        $time_created = $matchRecord['status_time'];
+                        $date_created = $matchRecord['status_date'];
+                        $score = $matchRecord['score'];
+                        $status = $matchRecord['status'];
+
+                        $birthday = new DateTime($dob);
+                        $currentDate = new DateTime();
+                        $age = $currentDate->diff($birthday)->y;
+                        ?>
+                        <tr>
+                          <td>
+                            <div class="product">
+                              <div class="image">
+                                <img src="<?php echo "../players_Images/" . $image_passport; ?>"
+                                  alt="<?php echo $firstname; ?>" />
+                              </div>
+                              <p class="text-sm"><?php echo $firstname . " " . $surname; ?></p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-sm"><?php echo $position; ?></p>
+                          </td>
+                          <td>
+                            <p class="text-sm"><?php echo $match_team; ?></p>
+                            <p class="text-xs"><?php echo $match_date; ?></p>
+                          </td>
+                          <td>
+                            <p class="text-sm"><?php echo $score; ?></p>
+                          </td>
+                          <td>
+                            <?php
+                            if ($status == "Red Card") {
+                              ?>
+                              <span class="status-btn close-btn">Red Card</span>
+                              <?php
+                            } else if ($status == "Yellow Card") {
+                              ?>
+                                <span class="status-btn warning-btn">Yellow Card</span>
+                              <?php
+                            } else if ($status == "Substitution") {
+                              ?>
+                                  <span class="status-btn info-btn">Substitution</span>
+                              <?php
+                            } else if ($status == "Injury") {
+                              ?>
+                                    <span class="status-btn primary-btn">Injury</span>
+                              <?php
+                            } else {
+                              ?>
+                                    <span class="status-btn success-btn">Match Completed</span>
+                              <?php
+                            }
+                            ?>
+
+
+                          </td>
+
+                        </tr>
+
+
+                        <?php
+                      }
+                      ?>
+                      <?php if (empty($playerMatchHistory)) {
+                        echo "<tr><td colspan='6'><center>
                       <lord-icon
                       src='https://cdn.lordicon.com/vihyezfv.json'
                       trigger='loop'
                       delay='1000'
                       style='width:30px;height:30px'>
                   </lord-icon> &nbsp;No record found</center></td></tr>";
-                    } ?>
-
-                  </tbody>
-                </table>
-                <!-- End Table -->
-              </div>
-            </div>
-          </div>
-          <!-- End Col -->
-        </div>
-        <!-- End Row -->
-
-        <!-- View/Edit Record Modal -->
-        <div class="modal" id="recordModal">
-          <!-- Modal content goes here -->
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-12">
-            <div class="card-style mb-30">
-              <div class="title d-flex flex-wrap align-items-center justify-content-between">
-                <div class="left">
-                  <h6 class="text-medium mb-30">Match History</h6>
+                      } ?>
+                    </tbody>
+                  </table>
+                  <!-- End Table -->
                 </div>
-
               </div>
-              <!-- End Title -->
-              <div class="table-responsive">
-                <table class="table top-selling-table">
-                  <thead>
-                    <tr>
-                      <th>
-                        <h6 class="text-sm text-medium">Players</h6>
-                      </th>
-                      <th class="min-width">
-                        <h6 class="text-sm text-medium">
-                          Position
-                        </h6>
-                      </th>
-                      <th class="min-width">
-                        <h6 class="text-sm text-medium">
-                          Match/Date
-                        </h6>
-                      </th>
-                      <th class="min-width">
-                        <h6 class="text-sm text-medium">
-                          Score
-                        </h6>
-                      </th>
-                      <th class="min-width">
-                        <h6 class="text-sm text-medium">
-                          Status
-                        </h6>
-                      </th>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+        <!-- end container -->
+      </section>
+      <!-- ========== section end ========== -->
 
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                    // Displaying fetched records
-                    foreach ($playerMatchHistory as $matchRecord) {
-                      // Assign values to variables
-                      $user_id = $matchRecord['id'];
-                      $userRefNo = $matchRecord['userRefNo'];
-                      $image_passport = $matchRecord['passport'];
-                      $image_logo = $matchRecord['team_logo'];
-                      $firstname = $matchRecord['firstName'];
-                      $surname = $matchRecord['surname'];
-                      $position = $matchRecord['user_position'];
-                      $team_name = $matchRecord['team_name'];
-                      $match_team = $matchRecord['match_team'];
-                      $match_date = $matchRecord['match_date'];
-                      $jersey_number = $matchRecord['jersey_number']; // Corrected typo in column name
-                      $time_created = $matchRecord['status_time'];
-                      $date_created = $matchRecord['status_date'];
-                      $score = $matchRecord['score'];
-                      $status = $matchRecord['status'];
-
-                      $birthday = new DateTime($dob);
-                      $currentDate = new DateTime();
-                      $age = $currentDate->diff($birthday)->y;
-                      ?>
-                      <tr>
-                        <td>
-                          <div class="product">
-                            <div class="image">
-                              <img src="<?php echo "../players_Images/" . $image_passport; ?>"
-                                alt="<?php echo $firstname; ?>" />
-                            </div>
-                            <p class="text-sm"><?php echo $firstname . " " . $surname; ?></p>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="text-sm"><?php echo $position; ?></p>
-                        </td>
-                        <td>
-                          <p class="text-sm"><?php echo $match_team; ?></p>
-                          <p class="text-xs"><?php echo $match_date; ?></p>
-                        </td>
-                        <td>
-                          <p class="text-sm"><?php echo $score; ?></p>
-                        </td>
-                        <td>
-                          <?php
-                          if ($status == "Red Card") {
-                            ?>
-                            <span class="status-btn close-btn">Red Card</span>
-                            <?php
-                          } else if ($status == "Yellow Card") {
-                            ?>
-                              <span class="status-btn warning-btn">Yellow Card</span>
-                            <?php
-                          } else if ($status == "Substitution") {
-                            ?>
-                                <span class="status-btn info-btn">Substitution</span>
-                            <?php
-                          } else if ($status == "Injury") {
-                            ?>
-                                  <span class="status-btn primary-btn">Injury</span>
-                            <?php
-                          } else {
-                            ?>
-                                  <span class="status-btn success-btn">Match Completed</span>
-                            <?php
-                          }
-                          ?>
-
-
-                        </td>
-
-                      </tr>
-
-
-                      <?php
-                    }
-                    ?>
-                    <?php if (empty($playerMatchHistory)) {
-                      echo "<tr><td colspan='6'><center>
-                      <lord-icon
-                      src='https://cdn.lordicon.com/vihyezfv.json'
-                      trigger='loop'
-                      delay='1000'
-                      style='width:30px;height:30px'>
-                  </lord-icon> &nbsp;No record found</center></td></tr>";
-                    } ?>
-                  </tbody>
-                </table>
-                <!-- End Table -->
+      <!-- ========== footer start =========== -->
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 order-last order-md-first">
+              <div class="copyright text-center text-md-start">
+                <p class="text-sm">
+                  Powered by
+                  <a href="https://yoshifa.com" rel="nofollow" target="_blank">
+                    Yoshi Football Academy United Arab Emirate (UAE) <?php echo date("Y"); ?>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <!-- end col-->
+            <div class="col-md-6">
+              <div class="terms d-flex justify-content-center justify-content-md-end">
+                <a href="#0" class="text-sm">Term & Conditions</a>
+                <a href="#0" class="text-sm ml-15">Privacy & Policy</a>
               </div>
             </div>
           </div>
-          <!-- End Col -->
+          <!-- end row -->
         </div>
-        <!-- End Row -->
-      </div>
-      <!-- end container -->
-    </section>
-    <!-- ========== section end ========== -->
-
-    <!-- ========== footer start =========== -->
-    <footer class="footer">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6 order-last order-md-first">
-            <div class="copyright text-center text-md-start">
-              <p class="text-sm">
-                Powered by
-                <a href="https://yoshifa.com" rel="nofollow" target="_blank">
-                  Yoshi Football Academy United Arab Emirate (UAE) <?php echo date("Y"); ?>
-                </a>
-              </p>
-            </div>
-          </div>
-          <!-- end col-->
-          <div class="col-md-6">
-            <div class="terms d-flex justify-content-center justify-content-md-end">
-              <a href="#0" class="text-sm">Term & Conditions</a>
-              <a href="#0" class="text-sm ml-15">Privacy & Policy</a>
-            </div>
-          </div>
-        </div>
-        <!-- end row -->
-      </div>
-      <!-- end container -->
-    </footer>
-    <!-- ========== footer end =========== -->
-  </main>
-  <!-- ======== main-wrapper end =========== -->
+        <!-- end container -->
+      </footer>
+      <!-- ========== footer end =========== -->
+    </main>
+    <!-- ======== main-wrapper end =========== -->
+  <?php } else {
+    header("Location: ../index.php");
+  }
+  ?>
 
   <!-- ========= All Javascript files linkup ======== -->
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
