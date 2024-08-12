@@ -234,7 +234,7 @@ require 'auth.php';
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">A-Z</a></li>
-                <li><a class="dropdown-item" href="#">Best Selling</a></li>
+                <li><a class="dropdown-item" href="#">Most Read</a></li>
                 <li><a class="dropdown-item" href="#">Most Popular</a></li>
               </ul>
             </div>
