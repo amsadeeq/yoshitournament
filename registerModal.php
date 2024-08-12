@@ -25,7 +25,7 @@ echo "
                         <!-- <option value='Official'>Official</option>-->
                         <!--<option value='Manager/Coach'>Manager/Coach</option>-->
                         <option value='Coach/Sport Director'>Coach / Sport Director</option>
-                        <option value='Students'>Students</option>
+                        <option value='Student'>Student</option>
                         <!--<option value='Player'>Player</option>-->
                         </select>
                     </div>
