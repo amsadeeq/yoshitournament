@@ -101,21 +101,6 @@ require 'auth.php';
 
         <div class="d-flex align-items-center justify-content-between">
           <h2 class="comon-heading"> Featured News </h2>
-          <div class="d-lg-flex align-items-center">
-            <p class="me-3"> Showing 1-4 of 13 results </p>
-            <div class="dropdown">
-              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Sort by Latest
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">A-Z</a></li>
-                <li><a class="dropdown-item" href="#">Best Selling</a></li>
-                <li><a class="dropdown-item" href="#">Most Popular</a></li>
-              </ul>
-            </div>
-          </div>
-
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-md-5 gy-lg-0 gx-lg-5 mt-0">
@@ -445,7 +430,7 @@ require 'auth.php';
         </div>
 
 
-        <div class="next-buuton-div d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <!-- <div class="next-buuton-div d-flex flex-column flex-md-row justify-content-between align-items-center">
           <div class="left-page-number order-3 order-lg-1 d-flex align-items-center">
             Users per page
 
@@ -473,7 +458,7 @@ require 'auth.php';
               </button>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
