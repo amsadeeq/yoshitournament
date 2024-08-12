@@ -147,7 +147,7 @@ require 'auth.php';
             <a href="https://www.vanguardngr.com/2022/08/dubai-based-football-academy-brings-summer-camp-to-nigeria-2/"
               class="comon-blogs1">
               <figure>
-                <img src="images/Yoshi_1.png" alt="bn" />
+                <img src="images/yoshi_founder.png" alt="bn" />
                 <figcaption>
                   <b class="d-block">1</b>
                   August
