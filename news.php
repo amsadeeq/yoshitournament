@@ -101,20 +101,21 @@ require 'auth.php';
 
         <div class="d-flex align-items-center justify-content-between">
           <h2 class="comon-heading"> Featured News </h2>
+          <hr />
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-md-5 gy-lg-0 gx-lg-5 mt-0">
           <div class="col">
             <a href="news-details.php" class="comon-blogs1">
               <figure>
-                <img src="images/bg-mc.jpg" alt="bn" />
+                <img src="images/coach_news.jpeg" alt="bn" />
                 <figcaption>
-                  <b class="d-block">06</b>
-                  June
+                  <b class="d-block">21</b>
+                  Sep
                 </figcaption>
               </figure>
               <div class="news-items-del">
-                <h5>NNPC Win 3-0</h5>
+                <h5>Turning dreams into reality: Ahmad Mustapha Geidam's soccer triumph with Yoshi Academy</h5>
                 <ul class="list-unstyled d-flex align-items-center my-2">
                   <li>
                     <i class="far fa-user"></i> Abubakar
@@ -127,14 +128,15 @@ require 'auth.php';
                   </li>
                 </ul>
 
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's </p>
+                <p class="mt-2"> Ahmad's journey from a football-loving child in Africa to a certified coach and
+                  entrepreneur in the UAE is a testament to the power of resilience and determination </p>
 
-                <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <a href="https://www.khaleejtimes.com/kt-network/turning-dreams-into-reality-ahmad-mustapha-geidams-soccer-triumph-with-yoshi-academy"
+                  class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                     fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                       d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
-                  </svg> </h6>
+                  </svg> </a>
               </div>
 
             </a>
@@ -180,222 +182,6 @@ require 'auth.php';
             <a href="news-details.php" class="comon-blogs1">
               <figure>
                 <img src="images/fgh.jpg" alt="bn" />
-                <figcaption>
-                  <b class="d-block">06</b>
-                  June
-                </figcaption>
-              </figure>
-              <div class="news-items-del">
-                <h5>Yoshi Tournament 2024 recap</h5>
-                <ul class="list-unstyled d-flex align-items-center my-2">
-                  <li>
-                    <i class="far fa-user"></i> Abubakar
-                  </li>
-                  <li>
-                    <i class="far fa-comment"></i> 125
-                  </li>
-                  <li>
-                    <i class="far fa-clock"></i> 1 Day ago
-                  </li>
-                </ul>
-
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's </p>
-
-                <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
-                  </svg> </h6>
-              </div>
-
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="news-details.php" class="comon-blogs1">
-              <figure>
-                <img src="images/gfs.jpg" alt="bn" />
-                <figcaption>
-                  <b class="d-block">06</b>
-                  June
-                </figcaption>
-              </figure>
-              <div class="news-items-del">
-                <h5>NNPC Win 3-0</h5>
-                <ul class="list-unstyled d-flex align-items-center my-2">
-                  <li>
-                    <i class="far fa-user"></i> Abubakar
-                  </li>
-                  <li>
-                    <i class="far fa-comment"></i> 125
-                  </li>
-                  <li>
-                    <i class="far fa-clock"></i> 1 Day ago
-                  </li>
-                </ul>
-
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's </p>
-
-                <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
-                  </svg> </h6>
-              </div>
-
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="news-details.php" class="comon-blogs1">
-              <figure>
-                <img src="images/blogs-tg.webp" alt="bn" />
-                <figcaption>
-                  <b class="d-block">16</b>
-                  June
-                </figcaption>
-              </figure>
-              <div class="news-items-del">
-                <h5>Kano Pillers signed agreement </h5>
-                <ul class="list-unstyled d-flex align-items-center my-2">
-                  <li>
-                    <i class="far fa-user"></i> Abubakar
-                  </li>
-                  <li>
-                    <i class="far fa-comment"></i> 125
-                  </li>
-                  <li>
-                    <i class="far fa-clock"></i> 1 Day ago
-                  </li>
-                </ul>
-
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's </p>
-
-                <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
-                  </svg> </h6>
-              </div>
-
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="news-details.php" class="comon-blogs1">
-              <figure>
-                <img src="images/wine2.jpg" alt="bn" />
-                <figcaption>
-                  <b class="d-block">06</b>
-                  June
-                </figcaption>
-              </figure>
-              <div class="news-items-del">
-                <h5>Yoshi Tournament 2024 recap</h5>
-                <ul class="list-unstyled d-flex align-items-center my-2">
-                  <li>
-                    <i class="far fa-user"></i> Abubakar
-                  </li>
-                  <li>
-                    <i class="far fa-comment"></i> 125
-                  </li>
-                  <li>
-                    <i class="far fa-clock"></i> 1 Day ago
-                  </li>
-                </ul>
-
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's </p>
-
-                <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
-                  </svg> </h6>
-              </div>
-
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="news-details.php" class="comon-blogs1">
-              <figure>
-                <img src="images/win.jfif" alt="bn" />
-                <figcaption>
-                  <b class="d-block">06</b>
-                  June
-                </figcaption>
-              </figure>
-              <div class="news-items-del">
-                <h5>France FC open to Serie A return</h5>
-                <ul class="list-unstyled d-flex align-items-center my-2">
-                  <li>
-                    <i class="far fa-user"></i> Abubakar
-                  </li>
-                  <li>
-                    <i class="far fa-comment"></i> 125
-                  </li>
-                  <li>
-                    <i class="far fa-clock"></i> 1 Day ago
-                  </li>
-                </ul>
-
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's </p>
-
-                <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
-                  </svg> </h6>
-              </div>
-
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="news-details.php" class="comon-blogs1">
-              <figure>
-                <img src="images/news-2.jpg" alt="bn" />
-                <figcaption>
-                  <b class="d-block">16</b>
-                  June
-                </figcaption>
-              </figure>
-              <div class="news-items-del">
-                <h5>Kano Pillers signed agreement </h5>
-                <ul class="list-unstyled d-flex align-items-center my-2">
-                  <li>
-                    <i class="far fa-user"></i> Abubakar
-                  </li>
-                  <li>
-                    <i class="far fa-comment"></i> 125
-                  </li>
-                  <li>
-                    <i class="far fa-clock"></i> 1 Day ago
-                  </li>
-                </ul>
-
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's </p>
-
-                <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
-                  </svg> </h6>
-              </div>
-
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="#" class="comon-blogs1">
-              <figure>
-                <img src="images/news1.jpg" alt="bn" />
                 <figcaption>
                   <b class="d-block">06</b>
                   June
