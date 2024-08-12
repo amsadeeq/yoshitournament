@@ -106,7 +106,8 @@ require 'auth.php';
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-md-5 gy-lg-0 gx-lg-5 mt-0">
           <div class="col">
-            <a href="news-details.php" class="comon-blogs1">
+            <a href="https://www.khaleejtimes.com/kt-network/turning-dreams-into-reality-ahmad-mustapha-geidams-soccer-triumph-with-yoshi-academy"
+              class="comon-blogs1">
               <figure>
                 <img src="images/coach_news.jpeg" alt="bn" />
                 <figcaption>
@@ -143,16 +144,17 @@ require 'auth.php';
           </div>
 
           <div class="col">
-            <a href="news-details.php" class="comon-blogs1">
+            <a href="https://www.vanguardngr.com/2022/08/dubai-based-football-academy-brings-summer-camp-to-nigeria-2/"
+              class="comon-blogs1">
               <figure>
-                <img src="images/bg-mc3.jpeg" alt="bn" />
+                <img src="images/Yoshi_1.png" alt="bn" />
                 <figcaption>
-                  <b class="d-block">16</b>
-                  June
+                  <b class="d-block">1</b>
+                  August
                 </figcaption>
               </figure>
               <div class="news-items-del">
-                <h5> Yoshi signed agreement Kano Pillers</h5>
+                <h5> Dubai-based Football Academy brings Summer Camp to Nigeria</h5>
                 <ul class="list-unstyled d-flex align-items-center my-2">
                   <li>
                     <i class="far fa-user"></i> Abubakar
@@ -165,8 +167,10 @@ require 'auth.php';
                   </li>
                 </ul>
 
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's </p>
+                <p class="mt-2"> In a bid of providing a standard platform for talent development towards becoming a
+                  global superstar, Dubai-based global football Academy, Yoshi Football Academy has concluded plans to
+                  begin a summer football camp in Nigeria to forestall and build a formidable next football generation.
+                </p>
 
                 <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                     fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
@@ -178,41 +182,6 @@ require 'auth.php';
             </a>
           </div>
 
-          <div class="col">
-            <a href="news-details.php" class="comon-blogs1">
-              <figure>
-                <img src="images/fgh.jpg" alt="bn" />
-                <figcaption>
-                  <b class="d-block">06</b>
-                  June
-                </figcaption>
-              </figure>
-              <div class="news-items-del">
-                <h5>Yoshi Tournament 2024 recap</h5>
-                <ul class="list-unstyled d-flex align-items-center my-2">
-                  <li>
-                    <i class="far fa-user"></i> Abubakar
-                  </li>
-                  <li>
-                    <i class="far fa-comment"></i> 125
-                  </li>
-                  <li>
-                    <i class="far fa-clock"></i> 1 Day ago
-                  </li>
-                </ul>
-
-                <p class="mt-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's </p>
-
-                <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
-                  </svg> </h6>
-              </div>
-
-            </a>
-          </div>
         </div>
 
 

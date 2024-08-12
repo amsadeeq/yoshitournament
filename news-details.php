@@ -108,12 +108,13 @@ require 'auth.php';
               <div class="d-lg-flex justify-content-between share-div">
                 <ul class="list-unstyled d-flex">
                   <li> <i class="far fa-user"></i> By Author </li>
-                  <li> <i class="far fa-calendar-alt"></i> Oct 12, 2024 </li>
+                  <li> <i class="far fa-calendar-alt"></i> Thu 21 Sep 2023, 1:48 PM </li>
                   <li> <i class="far fa-comment"></i> 2 comments </li>
                 </ul>
                 <a data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fas fa-share-alt"></i> Share</a>
               </div>
-              <h2 class="comon-heading mt-4"> Gombe United scored 2-0 played with Kwara FC. </h2>
+              <h2 class="comon-heading mt-4"> Turning dreams into reality: Ahmad Mustapha Geidam's soccer triumph with
+                Yoshi Academy </h2>
               <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
                 scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
