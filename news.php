@@ -100,7 +100,7 @@ require 'auth.php';
       <div class="container">
 
         <div class="d-flex align-items-center justify-content-between">
-          <h2 class="comon-heading"> Our News </h2>
+          <h2 class="comon-heading"> Featured News </h2>
           <div class="d-lg-flex align-items-center">
             <p class="me-3"> Showing 1-4 of 13 results </p>
             <div class="dropdown">
@@ -479,7 +479,7 @@ require 'auth.php';
     </div>
 
 
-  <div class="our-news-div-main py-5">
+    <div class="our-news-div-main py-5">
       <div class="container">
 
         <div class="d-flex align-items-center justify-content-between">
