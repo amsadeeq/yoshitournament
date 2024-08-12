@@ -131,7 +131,7 @@ require 'auth.php';
 
                 <p class="mt-2" style="text-align: justify !important;"> Ahmad's journey from a football-loving child in
                   Africa to a certified coach and entrepreneur in the UAE is a testament to the power of resilience and
-                  determination </p>
+                  determination.</p>
 
                 <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                     fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
@@ -167,9 +167,9 @@ require 'auth.php';
                   </li>
                 </ul>
 
-                <p class="mt-2"> In a bid of providing a standard platform for talent development towards becoming a
-                  global superstar, Dubai-based global football Academy, Yoshi Football Academy has concluded plans to
-                  begin a summer football camp in Nigeria to forestall and build a formidable next football generation.
+                <p class="mt-2"> Yoshi Football Academy, a Dubai-based global football academy, plans to launch a summer
+                  camp in Nigeria. This initiative aims to develop talent and create the next generation of football
+                  stars.
                 </p>
 
                 <h6 class="btn reda-btn mt-3"> Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
