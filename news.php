@@ -167,7 +167,8 @@ require 'auth.php';
                   </li>
                 </ul>
 
-                <p class="mt-2"> Yoshi Football Academy, a Dubai-based global football academy, plans to launch a summer
+                <p class="mt-2" style="text-align: justify !important;"> Yoshi Football Academy, a Dubai-based global
+                  football academy, plans to launch a summer
                   camp in Nigeria. This initiative aims to develop talent and create the next generation of football
                   stars.
                 </p>
@@ -243,6 +244,9 @@ require 'auth.php';
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-md-5 gy-lg-0 gx-lg-5 mt-0">
           <div class="col">
+            <h3>Loading....</h3>
+          </div>
+          <!-- <div class="col">
             <a href="news-details.php" class="comon-blogs1">
               <figure>
                 <img src="images/bg-mc.jpg" alt="bn" />
@@ -564,7 +568,7 @@ require 'auth.php';
               </div>
 
             </a>
-          </div>
+          </div> -->
         </div>
 
 
