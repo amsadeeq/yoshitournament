@@ -38,7 +38,7 @@ echo "
            <a data-bs-toggle='modal' class='regster-bn' data-bs-target='#lostpsModal' data-bs-dismiss='modal'> Forget password ? </a>  </p>
 
           <p class='text-center  mt-3'> Student or Player ? 
-          <a data-bs-toggle='modal' class='regster-bn' href='referenceNumber.php' data-bs-dismiss='modal'> Reference Number </a>  </p>
+          <a class='regster-bn' href='referenceNumber.php'> Reference Number </a>  </p>
            
            
             
