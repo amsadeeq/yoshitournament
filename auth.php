@@ -2,13 +2,22 @@
 
 session_start();
 ob_start();
-
-
 //####### Importing database connections and EngineFile
 
 require 'connection.php';
 
-
+/**
+ * Retrieves the team reference number for the current player from the session, or sets it to an empty string if not available.
+ *
+ * This code checks if the 'teamRefNumber' key is set in the session and has a non-empty value. If so, it assigns that value to the `$player_teamRefNumber` variable. If the key is not set or has an empty value, it sets `$player_teamRefNumber` to an empty string.
+ *
+ * This function is likely used to maintain the team reference number for the current player across multiple requests, as it is stored in the session.
+ */
+if (isset($_SESSION['teamRefNumber']) && $_SESSION['teamRefNumber']) {
+    $player_teamRefNumber = $_SESSION['teamRefNumber'];
+} else {
+    $player_teamRefNumber = '';
+}
 
 
 
@@ -507,14 +516,13 @@ if (isset($_POST['register'])) {
 
 
 
-
-
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_signup_tbl` (`id`, `userRefNo`, `user_email`, `user_position`,`reg_status`, `user_password`, `termsCondition`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :email, :position,0, :password, :termsCondition, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_signup_tbl` (`id`, `userRefNo`, `user_email`, `user_position`,`TeamRefNumber`,`reg_status`, `user_password`, `termsCondition`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :email, :position,:TeamRefNumber, 0, :password, :termsCondition, :time_create, :date_create, :ip_address)");
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':position', $position);
+        $stmt->bindParam(':TeamRefNumber', $player_teamRefNumber);
         $stmt->bindParam(':password', $hashed_password);
         $stmt->bindParam(':termsCondition', $termsCondition);
         $stmt->bindParam(':time_create', $time_create);
@@ -522,7 +530,11 @@ if (isset($_POST['register'])) {
         $stmt->bindParam(':ip_address', $_SERVER['REMOTE_ADDR']); // Get user's IP address
         $stmt->execute();
 
-
+        //########## Initiating session #####################
+        $_SESSION['email'] = $email;                    //###
+        $_SESSION['position'] = $position;               //###
+        $_SESSION['userRefCode'] = $userRefCode;        //###
+        //########## Initiating session #####################
 
         ################################################
         $to = $email;
@@ -540,33 +552,28 @@ if (isset($_POST['register'])) {
         $message .= "Powered by: Yoshi Football Academy (UAE) www.yoshifa.com All Rights Reserved " . date('Y');
 
         // Set additional headers
-        // $headers = "From: no-reply@yoshitournament.com\r\n";
-        // $headers .= "Reply-To: support@yoshitournament.com\r\n";
+        $headers = "From: no-reply@yoshitournament.com\r\n";
+        $headers .= "Reply-To: support@yoshitournament.com\r\n";
         // $headers .= "CC: yoshitournaments@gmail.com\r\n";
-        // $headers .= "X-Mailer: PHP/" . phpversion();
+        $headers .= "X-Mailer: PHP/" . phpversion();
 
         // Send the email
-        // $mail_sent = mail($to, $subject, $message, $headers);
+        $mail_sent = mail($to, $subject, $message, $headers);
 
-        // if ($position == 'Player') {
-        //     header("Location:referenceNumber.php");
-        //     exit();
-        // } elseif ($position == 'Official') {
-        //     header("Location:official_registration.php");
-        //     exit();
-        // } elseif ($position == 'Student') {
-        //     header("Location:student_registration.php");
-        //     exit();
-        // } 
-        if ($position == 'Coach/Sport Director') {
-            //header("Location:school_registration.php");
+        if ($position == 'Player') {
+            header("Location:referenceNumber.php");
+            exit();
+        } elseif ($position == 'Official') {
+            header("Location:official_registration.php");
+            exit();
+        } elseif ($position == 'Student') {
+            header("Location:student_registration.php");
+            exit();
+        } elseif ($position == 'Coach/Sport Director') {
+            // header("Location:school_registration.php");
             header("Location:confirmed_signup.php");
-            //########## Initiating session #####################
-            $_SESSION['email'] = $email;                    //###
-            $_SESSION['userRefCode'] = $userRefCode;        //###
-            //########## Initiating session #####################
 
-
+            exit();
         } else {
             $register_message = "Welcome  to Yoshi Tournament platform " . $position;
             //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
