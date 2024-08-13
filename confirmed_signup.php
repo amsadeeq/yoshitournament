@@ -1,6 +1,7 @@
 <?php
 session_start();
 ob_start();
+$_SESSION['email'];
 
 
 ?>
@@ -313,7 +314,7 @@ ob_start();
       // Simulate a delay
       setTimeout(function () {
         // Redirect to next page (replace "https://www.example.com" with your desired URL)
-        window.location.href = "index.php";
+        window.location.href = "school_registration.php";
       }, 2000);
     });
   </script>
@@ -360,7 +361,7 @@ ob_start();
       $('#exampleModal').modal('show');
 
       $('#exampleModal').on('hidden.bs.modal', function () {
-        window.location.href = 'dashboard.php';
+        window.location.href = 'school_registration.php';
       });
     });
   </script>

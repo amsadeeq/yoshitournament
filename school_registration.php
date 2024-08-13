@@ -6,6 +6,9 @@ require 'connection.php';
 echo $_SESSION['reg_notify'];
 $userRefCode = $_SESSION['userRefCode'];
 
+echo $userRefCode;
+echo $_SESSION['email'];
+
 if (isset($_POST["complete_register"])) {
 
 
@@ -385,7 +388,7 @@ if (isset($_POST["complete_register"])) {
 
 <body>
 
-  <?php require 'reg_header.php'; ?>
+
 
   <section class="sub-main-banner float-start w-100">
 
@@ -559,7 +562,7 @@ if (isset($_POST["complete_register"])) {
                           <div class="form-group">
                             <label> Email<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="email" class="form-control" name="email"
-                              value="<?php echo $_SESSION['email']; ?>" readonly required />
+                              value="<?php echo $_SESSION['email']; ?>" readonly />
                           </div>
                         </div>
                       </div>
