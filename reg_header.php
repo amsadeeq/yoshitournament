@@ -3,7 +3,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="#">
                 <img src="images/logo.png" alt="logo" class="yoshi_logo" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
