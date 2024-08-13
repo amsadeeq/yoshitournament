@@ -813,8 +813,7 @@ if (isset($_POST['complete_registration'])) {
                             </div>
                           </div>
 
-                          <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Input field
-                            with asterisk are required ] </p>
+
 
 
                           <!-- <div class="col-lg-6">
