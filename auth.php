@@ -502,11 +502,7 @@ if (isset($_POST['register'])) {
         // Hash the password
         $hashed_password = md5($password);
 
-        //########## Initiating session #####################
-        $_SESSION['email'] = $email;                    //###
-        $_SESSION['position'] = $position;               //###
-        $_SESSION['userRefCode'] = $userRefCode;        //###
-        //########## Initiating session #####################
+
 
 
 
@@ -560,11 +556,10 @@ if (isset($_POST['register'])) {
         //     exit();
         // } 
         if ($position == 'Coach/Sport Director') {
-            header("Location:school_registration.php");
-            //header("Location:confirmed_signup.php");
+            //header("Location:school_registration.php");
+            header("Location:confirmed_signup.php");
             //########## Initiating session #####################
             $_SESSION['email'] = $email;                    //###
-            $_SESSION['position'] = $position;               //###
             $_SESSION['userRefCode'] = $userRefCode;        //###
             //########## Initiating session #####################
 
