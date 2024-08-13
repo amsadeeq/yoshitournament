@@ -5,18 +5,7 @@
 
 require 'connection.php';
 
-/**
- * Retrieves the team reference number for the current player from the session, or sets it to an empty string if not available.
- *
- * This code checks if the 'teamRefNumber' key is set in the session and has a non-empty value. If so, it assigns that value to the `$player_teamRefNumber` variable. If the key is not set or has an empty value, it sets `$player_teamRefNumber` to an empty string.
- *
- * This function is likely used to maintain the team reference number for the current player across multiple requests, as it is stored in the session.
- */
-if (isset($_SESSION['teamRefNumber']) && $_SESSION['teamRefNumber']) {
-    $player_teamRefNumber = $_SESSION['teamRefNumber'];
-} else {
-    $player_teamRefNumber = '';
-}
+
 
 
 
