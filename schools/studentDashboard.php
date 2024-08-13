@@ -1449,7 +1449,7 @@ foreach ($players_record as $player_record) {
                 event.preventDefault(); // Prevent default link behavior
 
                 // Perform sign-out logic here
-                fetch('logout.php')
+                fetch('../logout.php')
                     .then(response => {
                         if (response.ok) {
                             // Session destroyed successfully
