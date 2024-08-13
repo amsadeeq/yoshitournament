@@ -602,7 +602,7 @@ if (isset($_POST['complete_registration'])) {
                             <div class="form-group">
                               <label> Team Name<sup style="color: red !important;">*</sup> </label>
                               <input type="text" name="team_name" class="form-control wizard-required"
-                                value="<?php echo $executiveDetails['team_name'] ?>" readonly required>
+                                value="<?php echo $studentDetails['team_name'] ?>" readonly required>
                               <div class="wizard-form-error"></div>
 
                             </div>
@@ -660,8 +660,8 @@ if (isset($_POST['complete_registration'])) {
                             <div class="form-group">
                               <label>Select Country<sup style="color: red !important;">*</sup></label>
                               <select id='country_select' name='team_country' class="form-select" readonly>
-                                <option value="<?php echo $executiveDetails['team_country'] ?>">
-                                  <?php echo $executiveDetails['team_country'] ?>
+                                <option value="<?php echo $studentDetails['team_country'] ?>">
+                                  <?php echo $studentDetails['team_country'] ?>
                                 </option>
 
                               </select>
@@ -675,8 +675,8 @@ if (isset($_POST['complete_registration'])) {
                             <div class="form-group">
                               <label>State<sup style="color: red !important;">*</sup> </label>
                               <select class="form-select" name="team_state" readonly required>
-                                <option value="<?php echo $executiveDetails['team_state'] ?>">
-                                  <?php echo $executiveDetails['team_state'] ?>
+                                <option value="<?php echo $studentDetails['team_state'] ?>">
+                                  <?php echo $studentDetails['team_state'] ?>
                                 </option>
                               </select>
                             </div>
@@ -686,7 +686,7 @@ if (isset($_POST['complete_registration'])) {
                             <div class="form-group">
                               <label> Town / City<sup style="color: red !important;">*</sup> </label>
                               <input type="text" class="form-control" name="team_city"
-                                value="<?php echo $executiveDetails['team_city'] ?>" readonly required>
+                                value="<?php echo $studentDetails['team_city'] ?>" readonly required>
                             </div>
                           </div>
 
@@ -700,7 +700,7 @@ if (isset($_POST['complete_registration'])) {
                               <input type="text" class="form-control" name="number_of_players"
                                 placeholder="Number of Players"
                                 onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)"
-                                value="<?php echo $executiveDetails['number_of_players'] ?>" required />
+                                value="<?php echo $studentDetails['number_of_players'] ?>" required />
                             </div>
                           </div>
 
@@ -710,7 +710,7 @@ if (isset($_POST['complete_registration'])) {
                             <div class="form-group">
                               <label> Address 1<sup style="color: red !important;">*</sup> </label>
                               <input type="text" class="form-control wizard-required" name="team_address"
-                                value="<?php echo $executiveDetails['team_address'] ?>" readonly required>
+                                value="<?php echo $studentDetails['team_address'] ?>" readonly required>
                               <div class="wizard-form-error"></div>
 
                             </div>
@@ -763,7 +763,8 @@ if (isset($_POST['complete_registration'])) {
                       <div class="col-lg-12">
                         <div class="form-group text-center">
                           <fieldset>
-                            <img src="team_logo/<?php echo $executiveDetails['team_logo'] ?>" class="team_logo" />
+                            <img src="schools/school_logo/<?php echo $studentDetails['team_logo'] ?>"
+                              class="team_logo" />
                             <input type="file" name="team_logo" class="form-control" accept="image/*" hidden />
                           </fieldset>
 
