@@ -43,7 +43,7 @@ ob_start();
 
     <nav class="navbar navbar-expand-lg navbar-light ">
       <div class="container">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="#">
           <img src="images/logo.png" alt="logo" class="yoshi_logo" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightmobile">
@@ -169,10 +169,7 @@ ob_start();
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content confirm_modal text-center">
-                    <div class="modal-header">
 
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
                     <div class="modal-body">
                       <svg class="check_logo" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 130.2 130.2">

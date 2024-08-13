@@ -6,7 +6,7 @@ require '../connection.php';
 
 
 $TeamRefNumber = $_SESSION['teamRefNumber'];
-$userRefCode = $_SESSION['userRefNo'];
+$userRefCode = $_SESSION['userRefCode'];
 if ($TeamRefNumber) {
     // Password does not match
     $login_success = "<script>swal('Success!', 'Welcome to Yoshi Tournament.', 'success');</script>";
@@ -15,7 +15,7 @@ if ($TeamRefNumber) {
 // Fetching records from the database
 // Insert data into the database
 
-$stmt = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `userRefNo` = :userRefCode");
+$stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :userRefCode");
 $stmt->execute(['userRefCode' => $userRefCode]);
 $player_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
