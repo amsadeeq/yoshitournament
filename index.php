@@ -1117,10 +1117,10 @@ require 'auth.php';
 
                         <a type="button" href="registration.php" class="btn mt-8 w-100 join-btn"
                           style="border-radius: 15px 15px;">Register</a>
+
                       </div>
-                      <a data-bs-toggle='modal' -bs-target='#loginModal' type="button"
-                        class="text-secondary mt-3 text-decoration-none animated-text d-none d-sm-block"
-                        data-bs-dismiss='modal'><small>Read more</small></a>
+                      <a type="button" href="referenceNumber.php" class="btn mt-8 w-100 join-btn"
+                        style="border-radius: 15px 15px;">Student Register</a>
                     </div>
                   </div>
                 </div>
