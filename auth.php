@@ -541,13 +541,13 @@ if (isset($_POST['register'])) {
         $message .= "Powered by: Yoshi Football Academy (UAE) www.yoshifa.com All Rights Reserved " . date('Y');
 
         // Set additional headers
-        $headers = "From: no-reply@yoshitournament.com\r\n";
-        $headers .= "Reply-To: support@yoshitournament.com\r\n";
+        // $headers = "From: no-reply@yoshitournament.com\r\n";
+        // $headers .= "Reply-To: support@yoshitournament.com\r\n";
         // $headers .= "CC: yoshitournaments@gmail.com\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion();
+        // $headers .= "X-Mailer: PHP/" . phpversion();
 
         // Send the email
-        $mail_sent = mail($to, $subject, $message, $headers);
+        // $mail_sent = mail($to, $subject, $message, $headers);
 
         // if ($position == 'Player') {
         //     header("Location:referenceNumber.php");
@@ -560,15 +560,15 @@ if (isset($_POST['register'])) {
         //     exit();
         // } 
         if ($position == 'Coach/Sport Director') {
-            // header("Location:school_registration.php");
-            header("Location:confirmed_signup.php");
+            header("Location:school_registration.php");
+            //header("Location:confirmed_signup.php");
             //########## Initiating session #####################
             $_SESSION['email'] = $email;                    //###
             $_SESSION['position'] = $position;               //###
             $_SESSION['userRefCode'] = $userRefCode;        //###
             //########## Initiating session #####################
 
-            exit();
+
         } else {
             $register_message = "Welcome  to Yoshi Tournament platform " . $position;
             //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
