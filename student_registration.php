@@ -421,7 +421,7 @@ if (isset($_POST['complete_registration'])) {
                             <fieldset>
                               <label> Passport<sup style="color: red !important;">*</sup> </label> </label>
                               <p style="font-size: 12px;">Note:<sup style="color: red !important;">*</sup> Image size:
-                                300KB, jpg, jpeg, png with team jersey</p>
+                                300KB, jpg, jpeg, png</p>
                               <img style="height:50%;width: 50%;" class="my-select passport_frame" id="image">
                               <input type="file" name="passport" onchange="onFileSelected(event);"
                                 class="form-control wizard-required file_input" style="border-radius: 10px 10px;"
