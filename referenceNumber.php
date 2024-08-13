@@ -57,7 +57,7 @@ if (isset($_POST['complete_registration'])) {
       $_SESSION['welcome_message'] = $welcome_notify;
 
       // Redirect to player_registration.php
-      header("Location: signup.php");
+      header("Location: players_signup.php");
       exit;
 
     } else {
@@ -83,8 +83,7 @@ if (isset($_POST['complete_registration'])) {
             </script>
             ";
     }
-  } 
-  else {
+  } else {
 
 
     // Reference number is invalid
@@ -113,7 +112,7 @@ if (isset($_POST['complete_registration'])) {
 
 
 
-  
+
 
 ?>
 
