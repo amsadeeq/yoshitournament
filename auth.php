@@ -513,14 +513,16 @@ if (isset($_POST['register'])) {
         // Hash the password
         $hashed_password = md5($password);
 
-
-
-        // Insert data into the database
         //########## Initiating session #####################
         $_SESSION['email'] = $email;                    //###
         $_SESSION['position'] = $position;               //###
         $_SESSION['userRefCode'] = $userRefCode;        //###
         //########## Initiating session #####################
+
+
+
+        // Insert data into the database
+
         $stmt = $pdo->prepare("INSERT INTO `yoshi_signup_tbl` (`id`, `userRefNo`, `user_email`, `user_position`,`TeamRefNumber`,`reg_status`, `user_password`, `termsCondition`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :email, :position,:TeamRefNumber, 0, :password, :termsCondition, :time_create, :date_create, :ip_address)");
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':email', $email);
@@ -533,11 +535,7 @@ if (isset($_POST['register'])) {
         $stmt->bindParam(':ip_address', $_SERVER['REMOTE_ADDR']); // Get user's IP address
         $stmt->execute();
 
-        //########## Initiating session #####################
-        $_SESSION['email'] = $email;                    //###
-        $_SESSION['position'] = $position;               //###
-        $_SESSION['userRefCode'] = $userRefCode;        //###
-        //########## Initiating session #####################
+
 
         ################################################
         $to = $email;
@@ -563,16 +561,17 @@ if (isset($_POST['register'])) {
         // Send the email
         $mail_sent = mail($to, $subject, $message, $headers);
 
-        if ($position == 'Player') {
-            header("Location:referenceNumber.php");
-            exit();
-        } elseif ($position == 'Official') {
-            header("Location:official_registration.php");
-            exit();
-        } elseif ($position == 'Student') {
-            header("Location:student_registration.php");
-            exit();
-        } elseif ($position == 'Coach/Sport Director') {
+        // if ($position == 'Player') {
+        //     header("Location:referenceNumber.php");
+        //     exit();
+        // } elseif ($position == 'Official') {
+        //     header("Location:official_registration.php");
+        //     exit();
+        // } elseif ($position == 'Student') {
+        //     header("Location:student_registration.php");
+        //     exit();
+        // } 
+        if ($position == 'Coach/Sport Director') {
             // header("Location:school_registration.php");
             header("Location:confirmed_signup.php");
             //########## Initiating session #####################

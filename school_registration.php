@@ -3,7 +3,7 @@ session_start();
 ob_start();
 require 'connection.php';
 
-echo $_SESSION['reg_notify'];
+// echo $_SESSION['reg_notify'];
 $userRefCode = $_SESSION['userRefCode'];
 
 echo $userRefCode;
