@@ -189,9 +189,7 @@ ob_start();
                       </svg>
                       <!-- <i class="fas fa-check-circle fa-6x text-success"></i> -->
                       <h3 class="mt-4">Signup Completed </h3>
-                      <h3><?php echo $_SESSION['email'];                    //###
-                      
-                      echo $_SESSION['userRefCode']; ?></h3>
+
                       <p class="lead text-dark">Thank you for creating account with us. You will be redirected to
                         Registration form <span class="countdown" id="countdown">Redirecting in 5 seconds...</span>.
                       </p>
@@ -244,7 +242,7 @@ ob_start();
 
 
   <!-- ########### Redirection code #######-->
-  <!-- <script>
+  <script>
     // Function to redirect after countdown
     function redirectWithCountdown(url, seconds) {
       var countdownElement = document.getElementById('countdown');
@@ -266,7 +264,7 @@ ob_start();
 
       redirectWithCountdown(url, seconds);
     });
-  </script> -->
+  </script>
 
 
 

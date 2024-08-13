@@ -388,7 +388,7 @@ if (isset($_POST["complete_register"])) {
 
 <body>
 
-
+  <?php require 'reg_header.php'; ?>
 
   <section class="sub-main-banner float-start w-100">
 
