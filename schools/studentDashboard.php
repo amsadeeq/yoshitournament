@@ -162,7 +162,7 @@ foreach ($players_record as $player_record) {
                         <span class="divider">
                             <hr />
                         </span>
-                        <li class="nav-item nav-item-has-children">
+                        <!-- <li class="nav-item nav-item-has-children">
                             <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_4"
                                 aria-controls="ddmenu_4" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon">
@@ -194,8 +194,8 @@ foreach ($players_record as $player_record) {
                                     <a href="typography.php"> Typography </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item nav-item-has-children">
+                        </li> -->
+                        <!-- <li class="nav-item nav-item-has-children">
                             <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_55"
                                 aria-controls="ddmenu_55" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon">
@@ -223,8 +223,8 @@ foreach ($players_record as $player_record) {
                                     <a href="mdi-icons.php"> MDI Icons </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item nav-item-has-children">
+                        </li> -->
+                        <!-- <li class="nav-item nav-item-has-children">
                             <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_5"
                                 aria-controls="ddmenu_5" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon">
@@ -257,7 +257,7 @@ foreach ($players_record as $player_record) {
                                 </span>
                                 <span class="text">Tables</span>
                             </a>
-                        </li>
+                        </li> -->
                         <span class="divider">
                             <hr />
                         </span>
@@ -284,7 +284,7 @@ foreach ($players_record as $player_record) {
                 </nav>
                 <div class="promo-box">
                     <div class="promo-icon">
-                        <img class="mx-auto next_match_logo" src="<?php echo "../team_logo/" . $image_logo; ?>"
+                        <img class="mx-auto next_match_logo" src="<?php echo "school_logo/" . $image_logo; ?>"
                             alt="<?php echo $team_name . "Passport Port"; ?>">
                     </div>
                     <h3><?php echo $team_name; ?> </h3>
@@ -334,7 +334,7 @@ foreach ($players_record as $player_record) {
                                             <li>
                                                 <a href="#0">
                                                     <div class="image">
-                                                        <img src="<?php echo "../team_logo/" . $image_logo; ?>"
+                                                        <img src="<?php echo "school_logo/" . $image_logo; ?>"
                                                             alt="<?php echo $team_name . "Passport Port"; ?>" />
                                                     </div>
                                                     <div class="content">
@@ -363,7 +363,7 @@ foreach ($players_record as $player_record) {
 
                                                 <div class="info">
                                                     <div class="image">
-                                                        <img src="<?php echo "../players_Images/" . $image_passport; ?>"
+                                                        <img src="<?php echo "student_photo/" . $image_passport; ?>"
                                                             alt="<?php echo $position . "Passport Port"; ?>" />
                                                     </div>
                                                     <div>
@@ -381,7 +381,7 @@ foreach ($players_record as $player_record) {
                                             <li>
                                                 <div class="author-info flex items-center !p-1">
                                                     <div class="image">
-                                                        <img src="<?php echo "../players_Images/" . $image_passport; ?>"
+                                                        <img src="<?php echo "student_photo/" . $image_passport; ?>"
                                                             alt="<?php echo $position . "Passport Port"; ?>">
                                                     </div>
                                                     <div class="content">
@@ -433,7 +433,7 @@ foreach ($players_record as $player_record) {
                                     <div class="title">
 
                                         <h2> <img class="mx-auto next_match_logo"
-                                                src="<?php echo "../team_logo/" . $image_logo; ?>"
+                                                src="<?php echo "school_logo/" . $image_logo; ?>"
                                                 alt="<?php echo $team_name . "Passport Port"; ?>">&nbsp;&nbsp;<?php echo $team_name; ?>
 
 
@@ -490,36 +490,7 @@ foreach ($players_record as $player_record) {
                                 </div>
                                 <!-- End Icon Cart -->
                             </div>
-                            <!-- End Col -->
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-                                <div class="icon-card mb-30" onclick="copyToClipboard()">
 
-                                    <div class="content">
-                                        <h6 class="mb-25">Reference Number</h6>
-                                        <h3 class="text-bold mb-10" id="textToCopy">
-                                            <?php echo $_SESSION['teamRefNumber']; ?>
-                                        </h3>
-
-                                    </div>
-                                </div>
-                                <!-- End Icon Cart -->
-                            </div>
-                            <!-- End Col -->
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-                                <div class="icon-card mb-30">
-
-                                    <div class="content">
-                                        <h6 class="mb-25">Reference Link</h6>
-                                        <h6 class="text-wrap mb-10">https://yoshifa...</h6>
-
-                                    </div>
-                                    <div class="icon orange" onclick="shareLink()">
-                                        <i class="lni lni-share"></i>
-                                    </div>
-                                </div>
-                                <!-- End Icon Cart -->
-                            </div>
-                            <!-- End Col -->
                         </div>
                         <!-- End Row -->
                         <?php
@@ -597,7 +568,7 @@ foreach ($players_record as $player_record) {
                                                     <td>
                                                         <div class="product">
                                                             <div class="image">
-                                                                <img src="<?php echo "../players_Images/" . $image_passport; ?>"
+                                                                <img src="<?php echo "student_photo/" . $image_passport; ?>"
                                                                     alt="" />
                                                             </div>
                                                             <na class="text-sm"><?php echo $firstname . " " . $surname; ?></na>
@@ -697,7 +668,7 @@ foreach ($players_record as $player_record) {
 
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <!-- <tbody>
                                             <tr>
                                                 <td>
                                                     <div class="product">
@@ -790,7 +761,7 @@ foreach ($players_record as $player_record) {
                                                 </td>
 
                                             </tr>
-                                        </tbody>
+                                        </tbody> -->
                                     </table>
                                     <!-- End Table -->
                                 </div>
