@@ -6,8 +6,6 @@ require 'connection.php';
 // echo $_SESSION['reg_notify'];
 $userRefCode = $_SESSION['userRefCode'];
 
-echo $userRefCode;
-echo $_SESSION['email'];
 
 if (isset($_POST["complete_register"])) {
 
