@@ -516,7 +516,11 @@ if (isset($_POST['register'])) {
 
 
         // Insert data into the database
-
+        //########## Initiating session #####################
+        $_SESSION['email'] = $email;                    //###
+        $_SESSION['position'] = $position;               //###
+        $_SESSION['userRefCode'] = $userRefCode;        //###
+        //########## Initiating session #####################
         $stmt = $pdo->prepare("INSERT INTO `yoshi_signup_tbl` (`id`, `userRefNo`, `user_email`, `user_position`,`TeamRefNumber`,`reg_status`, `user_password`, `termsCondition`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :email, :position,:TeamRefNumber, 0, :password, :termsCondition, :time_create, :date_create, :ip_address)");
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':email', $email);
@@ -571,6 +575,11 @@ if (isset($_POST['register'])) {
         } elseif ($position == 'Coach/Sport Director') {
             // header("Location:school_registration.php");
             header("Location:confirmed_signup.php");
+            //########## Initiating session #####################
+            $_SESSION['email'] = $email;                    //###
+            $_SESSION['position'] = $position;               //###
+            $_SESSION['userRefCode'] = $userRefCode;        //###
+            //########## Initiating session #####################
 
             exit();
         } else {
