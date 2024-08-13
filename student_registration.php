@@ -747,6 +747,164 @@ if (isset($_POST['complete_registration'])) {
 
                     </div>
                   </div>
+
+                  <div class="ad-fm mt-5">
+
+                    <div class="paymeny comon-steps-div mt-5">
+
+                      <h2 class="comon-heading m-0"> Yoshi Tournament Jersey </h2>
+
+
+                      <div class="account-page-n" id="ac-1">
+                        <div class="row mt-4">
+
+                        </div>
+                        <div class="row">
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Team Name<sup style="color: red !important;">*</sup> </label>
+                              <input type="text" name="team_name" class="form-control wizard-required"
+                                value="<?php echo $studentDetails['team_name'] ?>" readonly required>
+                              <div class="wizard-form-error"></div>
+
+                            </div>
+                          </div>
+
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Position<sup style="color: red !important;">*</sup> </label> </label>
+                              <select class="form-select" name="position">
+                                <option selected> Select Position </option>
+                                <option value="Goalkeeper">Goalkeeper</option>
+                                <option value="Sweeper keeper">Sweeper keeper</option>
+                                <option value="Defender"> Defender</option>
+                                <option value="Defender (Centre-back)">Defender (Centre-back)</option>
+                                <option value="Defender (Full-back)">Defender (Full-back)</option>
+                                <option value="Defender (central-defender)"> Defender (central-defender)</option>
+                                <option value="Defender (Sweeper)"> Defender (Sweeper)</option>
+                                <option value="Defender (Wing-back)"> Defender (Wing-back)</option>
+                                <option value="Defender (Right Wing-back)"> Defender (Right Wing-back)</option>
+                                <option value="Wing Back">Wing Back</option>
+                                <option value="Midfielder"> Midfielder</option>
+                                <option value="Midfielder (Central Midfielder)"> Midfielder (Central Midfielder)
+                                </option>
+                                <option value="Midfielder (Defensive Midfielder)"> Midfielder (Defensive Midfielder)
+                                </option>
+                                <option value="Midfielder (Attacking Midfielder)"> Midfielder (Attacking Midfielder)
+                                </option>
+                                <option value="Midfielder (Wide Midfielder)"> Midfielder (Wide Midfielder)</option>
+                                <option value="Forward"> Forward</option>
+                                <option value="Forward (Second striker)"> Forward (Second striker)</option>
+                                <option value="Forward (Centre forward)"> Forward (Centre forward)</option>
+                                <option value="Forward (Winger)"> Forward (Winger)</option>
+                                <option value="Forward (Left Winger)"> Forward (Left Winger)</option>
+                                <option value="Forward (Right Winger)"> Forward (Right Winger)</option>
+                                <option value="Striker"> Striker</option>
+                              </select>
+                            </div>
+                          </div>
+
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Jersey Number<sup style="color: red !important;">*</sup> </label> </label>
+                              <input type="text" name="jerseyNumber" class="form-control wizard-required jersey-input"
+                                maxlength="2" onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" required />
+                              <div class="wizard-form-error"></div>
+
+                            </div>
+                          </div>
+
+
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label>Select Country<sup style="color: red !important;">*</sup></label>
+                              <select id='country_select' name='team_country' class="form-select" readonly>
+                                <option value="<?php echo $studentDetails['team_country'] ?>">
+                                  <?php echo $studentDetails['team_country'] ?>
+                                </option>
+
+                              </select>
+
+                            </div>
+                          </div>
+
+
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label>State<sup style="color: red !important;">*</sup> </label>
+                              <select class="form-select" name="team_state" readonly required>
+                                <option value="<?php echo $studentDetails['team_state'] ?>">
+                                  <?php echo $studentDetails['team_state'] ?>
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Town / City<sup style="color: red !important;">*</sup> </label>
+                              <input type="text" class="form-control" name="team_city"
+                                value="<?php echo $studentDetails['team_city'] ?>" readonly required>
+                            </div>
+                          </div>
+
+
+
+
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Number of Players<sup style="color: red !important;">*</sup></label>
+                              <input type="text" class="form-control" name="number_of_players"
+                                placeholder="Number of Players"
+                                onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)"
+                                value="<?php echo $studentDetails['number_of_players'] ?>" required />
+                            </div>
+                          </div>
+
+
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Address 1<sup style="color: red !important;">*</sup> </label>
+                              <input type="text" class="form-control wizard-required" name="team_address"
+                                value="<?php echo $studentDetails['team_address'] ?>" readonly required>
+                              <div class="wizard-form-error"></div>
+
+                            </div>
+                          </div>
+
+                          <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Input field
+                            with asterisk are required ] </p>
+
+
+                          <!-- <div class="col-lg-6">
+                                             <div class="row row-cols-1 row-cols-lg-2 mt-2">
+                                                 <div class="col">
+                                                    <label> Adults </label>
+                                                    <input type="text" class="form-control wizard-required">
+                                                    <div class="wizard-form-error"></div>
+                                                 </div>
+                                                 <div class="col">
+                                                    <label> Child <span class="codition-txn"> ( Below 5 years) </span>  </label>
+                                                    <input type="text" class="form-control wizard-required">
+                                                    <div class="wizard-form-error"></div>
+                                                 </div>
+                                             </div>
+                                           
+                                          </div> -->
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
 
 
