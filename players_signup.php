@@ -3,6 +3,7 @@
 session_start();
 // Connect to the database
 require 'connection.php';
+require 'auth.php';
 
 
 // Check if the reference number is submitted
@@ -83,8 +84,7 @@ if (isset($_POST['complete_registration'])) {
             </script>
             ";
     }
-  } 
-  else {
+  } else {
 
 
     // Reference number is invalid
@@ -113,7 +113,7 @@ if (isset($_POST['complete_registration'])) {
 
 
 
-  
+
 
 ?>
 
@@ -268,98 +268,105 @@ if (isset($_POST['complete_registration'])) {
 
       <div class="container">
         <div class="form-wizard">
-         
-            <div class="form-wizard-header">
 
-              <ul class="list-unstyled form-wizard-steps clearfix d-none">
-                <li class="active">
-                  <small class="d-block mb-3"> Checkout </small>
-                  <span>1</span>
+          <div class="form-wizard-header">
 
-                </li>
+            <ul class="list-unstyled form-wizard-steps clearfix d-none">
+              <li class="active">
+                <small class="d-block mb-3"> Checkout </small>
+                <span>1</span>
 
-
-                <li>
-                  <small class="d-block mb-3"> Finished </small>
-                  <span>4</span>
-
-                </li>
-
-              </ul>
-
-            </div>
+              </li>
 
 
-            <fieldset class="wizard-fieldset show">
+              <li>
+                <small class="d-block mb-3"> Finished </small>
+                <span>4</span>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <fieldset class="wizard-fieldset show">
 
             <div class='modal fade login-div-modal' data-backdrop="static" id="exampleModal" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLabel" aria-hidden="true" aria-labelledby='exampleModalLabel' aria-hidden='true'>
-   <div class='modal-dialog'>
-     <div class='modal-content'>
-       <div class='modal-header'>
-         
-       </div>
-       <div class='modal-body'>
-         <div id='login-td-div' class='com-div-md'>
-           <span class='text-center d-table m-auto user-icon'> <i class='fas fa-user-circle'></i> </span>
-           <h5 class='text-center mb-3 form-text'> Player Signup </h5>
-           
+              aria-labelledby="exampleModalLabel" aria-hidden="true" aria-labelledby='exampleModalLabel'
+              aria-hidden='true'>
+              <div class='modal-dialog'>
+                <div class='modal-content'>
+                  <div class='modal-header'>
 
-        <form method = 'POST' class='form'>
+                  </div>
+                  <div class='modal-body'>
+                    <div id='login-td-div' class='com-div-md'>
+                      <span class='text-center d-table m-auto user-icon'> <i class='fas fa-user-circle'></i> </span>
+                      <h5 class='text-center mb-3 form-text'> Player Signup </h5>
 
-            <div class='login-modal-pn'>
-                <div class='cm-select-login mt-3'>
-              
-                    <div class='phone-div'>
-                        <select name='position' class='form-select form-control login-input mb-3' aria-label='Default select example' required>
-                        <option value='' disabled selected hidden>Position</option>
-                        <!-- <option value='Official'>Official</option>-->
-                        <!--<option value='Manager/Coach'>Manager/Coach</option>-->
-                        <option value='Student'>Student</option>
-                        <!--<option value='Player'>Player</option>-->
-                        </select>
-                    </div>
 
-                    <div class='phone-div'>
-                        <input type='email' name='email' class='form-control login-input' placeholder='Email' alt='pn' required />
-                    </div>
+                      <form method='POST' class='form'>
 
-                    <div class='phone-div'>
-                        <input type='password' name='password' class='form-control login-input' placeholder='Password' alt='pn' required />
-                    </div>
+                        <div class='login-modal-pn'>
+                          <div class='cm-select-login mt-3'>
 
-                    <div class='phone-div'>
-                        <input type='password' name='confirm_password' class='form-control login-input' placeholder='Confirm Password' alt='pn' required>
+                            <div class='phone-div'>
+                              <select name='position' class='form-select form-control login-input mb-3'
+                                aria-label='Default select example' required>
+                                <option value='' disabled selected hidden>Position</option>
+                                <!-- <option value='Official'>Official</option>-->
+                                <!--<option value='Manager/Coach'>Manager/Coach</option>-->
+                                <option value='Student'>Student</option>
+                                <!--<option value='Player'>Player</option>-->
+                              </select>
+                            </div>
+
+                            <div class='phone-div'>
+                              <input type='email' name='email' class='form-control login-input' placeholder='Email'
+                                alt='pn' required />
+                            </div>
+
+                            <div class='phone-div'>
+                              <input type='password' name='password' class='form-control login-input'
+                                placeholder='Password' alt='pn' required />
+                            </div>
+
+                            <div class='phone-div'>
+                              <input type='password' name='confirm_password' class='form-control login-input'
+                                placeholder='Confirm Password' alt='pn' required>
+                            </div>
+
+                            <div class='forget2 mt-3 ml-3 d-flex justify-content-between'>
+                              <input type='checkbox' name='check_policy' class='form-check-input' id='exampleCheck1'
+                                required />
+                              <label class='form-check-label form-text' for='exampleCheck1'> By clicking signup, you
+                                agree to our Terms of Use and Cookie Policy</label>
+                            </div>
+
+                          </div>
+
+
+                          <button type='submit' class='btn continue-bn login-input' name='register'> Sign Up </button>
+                        </div>
+                      </form>
+
                     </div>
-                
-                    <div class='forget2 mt-3 ml-3 d-flex justify-content-between'>
-                        <input type='checkbox' name='check_policy' class='form-check-input' id='exampleCheck1' required />
-                        <label class='form-check-label form-text' for='exampleCheck1'> By clicking signup, you agree to our Terms of Use and Cookie Policy</label>
-                    </div>
-           
+                  </div>
+
                 </div>
-            
-                
-                <button type='submit' class='btn continue-bn login-input' name='register' > Sign Up </button>
+              </div>
             </div>
-        </form>
-
-         </div>
-       </div>
-      
-     </div>
-   </div>
-</div>
 
 
 
 
-              
-
-            </fieldset>
 
 
-          
+          </fieldset>
+
+
+
         </div>
 
       </div>
