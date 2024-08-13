@@ -310,7 +310,7 @@ ob_start();
       // Simulate a delay
       setTimeout(function () {
         // Redirect to next page (replace "https://www.example.com" with your desired URL)
-        window.location.href = "PlayerDashboard.php";
+        window.location.href = "schools/studentDashboard.php";
       }, 2000);
     });
   </script>
@@ -357,7 +357,7 @@ ob_start();
       $('#exampleModal').modal('show');
 
       $('#exampleModal').on('hidden.bs.modal', function () {
-        window.location.href = 'PlayerDashboard.php';
+        window.location.href = 'schools/studentDashboard.php';
       });
     });
   </script>
