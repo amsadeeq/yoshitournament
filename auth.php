@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+ob_start();
+
 
 //####### Importing database connections and EngineFile
 
