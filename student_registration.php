@@ -537,6 +537,24 @@ if (isset($_POST['complete_registration'])) {
                           </div>
                         </div>
 
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <div class="form-group">
+                            <label> Means of Identification<sup style="color: red !important;">*</sup> </label> </label>
+                            <select class="form-select" name="means_id">
+                              <option selected>Select ID</option>
+                              <option value="Student ID">Student ID</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <div class="form-group">
+                            <label> Student ID Number<sup style="color: red !important;">*</sup> </label> </label>
+                            <input type="text" class="form-control wizard-required" placeholder="123456789"
+                              name="id_number" required>
+                            <div class="wizard-form-error"></div>
+                          </div>
+                        </div>
+
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Address 1<sup style="color: red !important;">*</sup> </label> </label>
