@@ -7,6 +7,11 @@ ob_start();
 require 'connection.php';
 
 $TeamRefNumber = $_SESSION['teamRefNumber']; //need to remove $ sign
+//########## Initiating session #####################
+$email = $_SESSION['email'];                  //###
+$position = $_SESSION['position'];               //###
+$userRefCode = $_SESSION['userRefCode'];        //###
+//########## Initiating session #####################
 
 
 
@@ -16,7 +21,7 @@ $TeamRefNumber = $_SESSION['teamRefNumber']; //need to remove $ sign
 $stmt = $pdo->prepare("SELECT * FROM yoshi_schools_officials_tbl WHERE TeamRefNumber = :refNumber");
 $stmt->bindParam(':refNumber', $TeamRefNumber);
 $stmt->execute();
-$executiveDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+$studentDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (isset($_POST['complete_registration'])) {
 
@@ -68,7 +73,7 @@ if (isset($_POST['complete_registration'])) {
 
 
   $userRefCode = $_SESSION['userRefCode'];
-  $TeamRefNumber = $_SESSION['$teamRefNumber'];
+  $TeamRefNumber = $_SESSION['teamRefNumber'];
   $position = check_input($_POST['position']); //check_input is sensitising the input field
   $email = check_input($_POST['email_address']); //check_input is sensitising the input field
   $surname = check_input($_POST['surname']); //check_input is sensitising the input field
@@ -120,7 +125,7 @@ if (isset($_POST['complete_registration'])) {
 
   if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
     if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention2 == "jpeg" or $imgExtention2 == "png" or $imgExtention2 == "jpg") {
-      if ($imgsize1 <= 1048576 && $imgsize2 <= 1048576) {
+      if ($imgsize1 <= 3145728 && $imgsize2 <= 3145728) {
         move_uploaded_file($imgloc1, "players_Images/" . $imgname1);
         //move_uploaded_file($team_logo_tmp, "team_logos/" . $team_logo_name);
 
@@ -172,19 +177,19 @@ if (isset($_POST['complete_registration'])) {
 
         // Set the email message
         $message = "Dear $firstname,\n\n";
-        $message .= "Thank you for registering with Yoshi Tournament " . date("Y") . ".\n\n";
-        $message .= "Your Team Reference Number is: $TeamRefNumber \n\n";
+        $message .= "Thank you for registering with Yoshi Tournament (YAPS) " . date("Y") . ".\n\n";
+        $message .= "Your Team Reference Number is : $TeamRefNumber \n\n";
         $message .= "Player Reference Number is: $userRefCode \n\n";
         $message .= "Your position: $position \n\n";
         $message .= "Schedules for the matches will be send to you soon.\n\n";
         $message .= "Visit www.yoshitournaments.com\n\n";
         $message .= "Sign: Mr. Sadeeq \n Admin - yoshitournaments.com\n\n";
-        $message .= "Yoshi Football Academy www.yoshifa.com \n All Rights Reserved " . date('Y');
+        $message .= "Yoshi Football Academy UAE www.yoshifa.com \n All Rights Reserved " . date('Y');
 
         // Set additional headers
         $headers = "From: no-reply@yoshitournament.com\r\n";
         $headers .= "Reply-To: support@yoshitournament.com\r\n";
-        $headers .= "CC: yoshitournaments@gmail.com\r\n";
+        // $headers .= "CC: yoshitournaments@gmail.com\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
 
         // Send the email

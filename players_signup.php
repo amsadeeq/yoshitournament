@@ -124,7 +124,7 @@ if (isset($_POST['complete_registration'])) {
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Confirmation - Yoshi Tournament </title>
+  <title>Player Signup - Yoshi Tournament </title>
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -236,7 +236,7 @@ if (isset($_POST['complete_registration'])) {
 
     <div class="sub-banner">
       <div class="container">
-        <h1 class="text-center"> Team Reference Number </h1>
+        <h1 class="text-center"> Player Signup </h1>
 
       </div>
     </div>
@@ -268,7 +268,7 @@ if (isset($_POST['complete_registration'])) {
 
       <div class="container">
         <div class="form-wizard">
-          <form method="POST" role="form">
+         
             <div class="form-wizard-header">
 
               <ul class="list-unstyled form-wizard-steps clearfix d-none">
@@ -292,48 +292,74 @@ if (isset($_POST['complete_registration'])) {
 
             <fieldset class="wizard-fieldset show">
 
+            <div class='modal fade login-div-modal' data-backdrop="static" id="exampleModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true" aria-labelledby='exampleModalLabel' aria-hidden='true'>
+   <div class='modal-dialog'>
+     <div class='modal-content'>
+       <div class='modal-header'>
+         
+       </div>
+       <div class='modal-body'>
+         <div id='login-td-div' class='com-div-md'>
+           <span class='text-center d-table m-auto user-icon'> <i class='fas fa-user-circle'></i> </span>
+           <h5 class='text-center mb-3 form-text'> Player Signup </h5>
+           
 
+        <form method = 'POST' class='form'>
 
-
-              <!-- Modal -->
-              <div class="modal fade" data-backdrop="static" id="exampleModal" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content  text-center">
-                    <div class="modal-header"></div>
-                    <div class="modal-body">
-                      <!-- <svg class="check_logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-                                <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
-                                <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
-                            </svg> -->
-                      <div class="fa-3x">
-                        <!-- bounce animation with no "squish" or "rebound" -->
-                        <i class="fa-solid fa-unlock fa-bounce"
-                          style="--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;color:#dc3545;"></i>
-                      </div>
-
-
-                      <!-- <i class="fas fa-check-circle fa-6x text-success"></i> -->
-                      <h3 class="mt-4">Enter Team Reference Number</h3>
-                      <div class='phone-div'>
-                        <input type='text' name='refNumber' class='form-control login-input'
-                          placeholder='Reference Number' pattern="[A-Za-z0-9]{12}" alt='pn' autofocus required
-                          minlength="12" maxlength="12" />
-                      </div>
+            <div class='login-modal-pn'>
+                <div class='cm-select-login mt-3'>
+              
+                    <div class='phone-div'>
+                        <select name='position' class='form-select form-control login-input mb-3' aria-label='Default select example' required>
+                        <option value='' disabled selected hidden>Position</option>
+                        <!-- <option value='Official'>Official</option>-->
+                        <!--<option value='Manager/Coach'>Manager/Coach</option>-->
+                        <option value='Student'>Student</option>
+                        <!--<option value='Player'>Player</option>-->
+                        </select>
                     </div>
-                    <div class="modal-footer">
-                      <button type="submit" name="complete_registration"
-                        class="btn btn-danger btn-border-radius">Complete Signup</button>
-                      <!-- <a href="player_registration.php" class="btn btn-danger btn-border-radius">Complete Signup</a> -->
+
+                    <div class='phone-div'>
+                        <input type='email' name='email' class='form-control login-input' placeholder='Email' alt='pn' required />
                     </div>
-                  </div>
+
+                    <div class='phone-div'>
+                        <input type='password' name='password' class='form-control login-input' placeholder='Password' alt='pn' required />
+                    </div>
+
+                    <div class='phone-div'>
+                        <input type='password' name='confirm_password' class='form-control login-input' placeholder='Confirm Password' alt='pn' required>
+                    </div>
+                
+                    <div class='forget2 mt-3 ml-3 d-flex justify-content-between'>
+                        <input type='checkbox' name='check_policy' class='form-check-input' id='exampleCheck1' required />
+                        <label class='form-check-label form-text' for='exampleCheck1'> By clicking signup, you agree to our Terms of Use and Cookie Policy</label>
+                    </div>
+           
                 </div>
-              </div>
+            
+                
+                <button type='submit' class='btn continue-bn login-input' name='register' > Sign Up </button>
+            </div>
+        </form>
+
+         </div>
+       </div>
+      
+     </div>
+   </div>
+</div>
+
+
+
+
+              
 
             </fieldset>
 
 
-          </form>
+          
         </div>
 
       </div>
