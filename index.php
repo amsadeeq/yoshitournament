@@ -1117,10 +1117,12 @@ require 'auth.php';
 
                         <a type="button" href="registration.php" class="btn mt-8 w-100 join-btn"
                           style="border-radius: 15px 15px;">Register</a>
+                          <br />
+                          <a type="button" href="referenceNumber.php" class="btn mt-8 w-100 join-btn"
+                        style="border-radius: 15px 15px;">Student Register</a>
 
                       </div>
-                      <a type="button" href="referenceNumber.php" class="btn mt-8 w-100 join-btn"
-                        style="border-radius: 15px 15px;">Student Register</a>
+                      
                     </div>
                   </div>
                 </div>
