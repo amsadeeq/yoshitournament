@@ -45,6 +45,12 @@ if (isset($_POST["complete_register"])) {
   // Output the result
   $TeamRefNumber = $TeamRefNumber . date("Y");
 
+  // Hash the unique number using md5
+  $hashedTeamRefNumber = md5($TeamRefNumber);
+
+  // Save the hashed value in another variable
+  $hashedValue = $hashedTeamRefNumber;
+
 
 
 
@@ -158,7 +164,7 @@ if (isset($_POST["complete_register"])) {
 
   if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
     if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention2 == "jpeg" or $imgExtention2 == "png" or $imgExtention2 == "jpg") {
-      if ($imgsize1 <= 1048576 && $imgsize2 <= 1048576) {
+      if ($imgsize1 <= 3145728 && $imgsize2 <= 3145728) {
         move_uploaded_file($imgloc1, "schools/school_registrant_photo/" . $imgname1);//moving image to a folder "memberimg"
         move_uploaded_file($imgloc2, "schools/school_logo/" . $imgname2);//moving image to a folder "memberimg"
 
@@ -174,11 +180,12 @@ if (isset($_POST["complete_register"])) {
         $stmt->execute([':TeamRefNumber' => $TeamRefNumber, ':userRefNo' => $userRefNo]);
 
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`,`dob`,`gender`, `country`, `state`, `city`, `zipcode`, `phone`, `email`,`means_id`,`id_number`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname,:dob,:gender, :country, :state, :city, :zipcode, :phone, :email,:means_id, :id_number,  :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`,`hsh_teamRefNumber`, `user_position`, `surname`, `firstname`,`dob`,`gender`, `country`, `state`, `city`, `zipcode`, `phone`, `email`,`means_id`,`id_number`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber,:hsh_teamRefNumber, :position, :surname, :firstname,:dob,:gender, :country, :state, :city, :zipcode, :phone, :email,:means_id, :id_number,  :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
 
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
+        $stmt->bindParam(':hsh_teamRefNumber', $hashedValue);
         $stmt->bindParam(':position', $position);
         $stmt->bindParam(':surname', $surname);
         $stmt->bindParam(':firstname', $firstname);
