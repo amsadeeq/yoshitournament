@@ -242,7 +242,7 @@ ob_start();
 
 
   <!-- ########### Redirection code #######-->
-  <!-- <script>
+  <script>
     // Function to redirect after countdown
     function redirectWithCountdown(url, seconds) {
       var countdownElement = document.getElementById('countdown');
@@ -264,7 +264,7 @@ ob_start();
 
       redirectWithCountdown(url, seconds);
     });
-  </script> -->
+  </script>
 
 
 
