@@ -20,7 +20,7 @@ $stmt->execute(['userRefCode' => $userRefCode]);
 $player_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-$stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_players_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
+$stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
 $stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
 $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
 
