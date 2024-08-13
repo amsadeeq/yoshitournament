@@ -163,10 +163,10 @@ if (isset($_POST["complete_register"])) {
 
 
   if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
-    if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention2 == "jpeg" or $imgExtention2 == "png" or $imgExtention2 == "jpg") {
-      if ($imgsize1 <= 3145728 && $imgsize2 <= 3145728) {
-        move_uploaded_file($imgloc1, "schools/school_registrant_photo/" . $imgname1);//moving image to a folder "memberimg"
-        move_uploaded_file($imgloc2, "schools/school_logo/" . $imgname2);//moving image to a folder "memberimg"
+    if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg") {
+      if ($imgsize1 <= 3145728) {
+        move_uploaded_file($imgloc1, "student_photo/" . $imgname1);//moving image to a folder "memberimg"
+        // move_uploaded_file($imgloc2, "schools/school_logo/" . $imgname2);//moving image to a folder "memberimg"
 
 
 
