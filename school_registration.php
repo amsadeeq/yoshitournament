@@ -253,11 +253,11 @@ if (isset($_POST["complete_register"])) {
         // Set additional headers
         $headers = "From: no-reply@yoshitournament.com\r\n";
         $headers .= "Reply-To: support@yoshitournament.com\r\n";
-        $headers .= "CC: yoshitournaments@gmail.com\r\n";
+        // $headers .= "CC: yoshitournaments@gmail.com\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
 
         // Send the email
-        $mail_sent = mail($to, $subject, $message, $headers);
+        //$mail_sent = mail($to, $subject, $message, $headers);
 
         // Redirect user to the dashboard
         header("Location: confirmation.php");
