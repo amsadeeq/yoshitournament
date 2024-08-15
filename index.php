@@ -221,8 +221,14 @@ require 'auth.php';
         <a class="top-next-mc text-center  animate__animated animate__zoomIn">
           <h5 class="mn-mc-titel"> Next Match </h5>
           <hr class="next_match_line" />
-          <h4> YAPS Tournament 2024</h4>
-          <div class="d-flex align-items-center justify-content-center mt-2">
+          <h4> YAPS TOURNAMENT CATEGORIES 2024</h4>
+
+          <h5>Primary School on 14th September 2024</h5>
+          <h5>Junior Sec School on 21st September 2024</h5>
+          <h5>Senior Sec School on 28th September 2024</h5>
+
+
+          <!-- <div class="d-flex align-items-center justify-content-center mt-2">
 
             <figure>
               <img src="images/team_3.png" class="next_match_logo" alt="cl1" />
@@ -240,7 +246,7 @@ require 'auth.php';
               <img src="images/team_4.png" class="next_match_logo" alt="cl2" />
             </figure>
 
-          </div>
+          </div> -->
         </a>
 
         <a class="top-mc-starts mt-4  animate__animated animate__zoomIn">
