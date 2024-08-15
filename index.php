@@ -330,7 +330,7 @@ require 'auth.php';
       </div>
     </div>
 
-    <!--- ####### Matches and Result will be here ########## --->
+    <!--- ####### Matches and Result will be here require 'matchesResult.php'; ########## --->
 
 
 
@@ -710,10 +710,10 @@ require 'auth.php';
                   </figcaption>
                 </figure>
               </a>
-              <div class="photo-details">
+              <!-- <div class="photo-details">
                 <h5>Gombe United Fc Win 2024 </h5>
                 <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -731,10 +731,10 @@ require 'auth.php';
                   </figcaption>
                 </figure>
               </a>
-              <div class="photo-details">
+              <!-- <div class="photo-details">
                 <h5>Gombe United Fc Win 2024 </h5>
                 <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -753,10 +753,10 @@ require 'auth.php';
                   </figcaption>
                 </figure>
               </a>
-              <div class="photo-details">
+              <!-- <div class="photo-details">
                 <h5>Gombe United Fc Win 2024 </h5>
                 <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -775,10 +775,10 @@ require 'auth.php';
                   </figcaption>
                 </figure>
               </a>
-              <div class="photo-details">
+              <!-- <div class="photo-details">
                 <h5>Gombe United Fc Win 2024 </h5>
                 <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -798,10 +798,10 @@ require 'auth.php';
                   </figcaption>
                 </figure>
               </a>
-              <div class="photo-details">
+              <!-- <div class="photo-details">
                 <h5>Gombe United Fc Win 2024 </h5>
                 <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -819,10 +819,10 @@ require 'auth.php';
                   </figcaption>
                 </figure>
               </a>
-              <div class="photo-details">
+              <!-- <div class="photo-details">
                 <h5>Gombe United Fc Win 2024 </h5>
                 <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -841,10 +841,10 @@ require 'auth.php';
                   </figcaption>
                 </figure>
               </a>
-              <div class="photo-details">
+              <!-- <div class="photo-details">
                 <h5>Gombe United Fc Win 2024 </h5>
                 <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -863,10 +863,10 @@ require 'auth.php';
                   </figcaption>
                 </figure>
               </a>
-              <div class="photo-details">
+              <!-- <div class="photo-details">
                 <h5>Gombe United Fc Win 2024 </h5>
                 <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-              </div>
+              </div> -->
             </div>
           </div>
 
