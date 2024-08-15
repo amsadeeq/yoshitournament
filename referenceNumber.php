@@ -4,6 +4,10 @@ session_start();
 // Connect to the database
 require 'connection.php';
 
+if (isset($_GET['id'])) {
+  $refNumberFromLink = $_GET['id'];
+}
+
 
 // Check if the reference number is submitted
 if (isset($_POST['complete_registration'])) {
@@ -302,9 +306,9 @@ if (isset($_POST['complete_registration'])) {
                     <div class="modal-header"></div>
                     <div class="modal-body">
                       <!-- <svg class="check_logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-                                <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
-                                <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
-                            </svg> -->
+                        <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+                        <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+                      </svg> -->
                       <div class="fa-3x">
                         <!-- bounce animation with no "squish" or "rebound" -->
                         <i class="fa-solid fa-unlock fa-bounce"
@@ -317,7 +321,7 @@ if (isset($_POST['complete_registration'])) {
                       <div class='phone-div'>
                         <input type='text' name='refNumber' class='form-control login-input'
                           placeholder='Reference Number' pattern="[A-Za-z0-9]{12}" alt='pn' autofocus required
-                          minlength="12" maxlength="12" />
+                          minlength="12" maxlength="12" value="<?php echo $refNumberFromLink; ?>" />
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -427,7 +431,7 @@ if (isset($_POST['complete_registration'])) {
       // Simulate a delay
       setTimeout(function () {
         // Redirect to next page (replace "https://www.example.com" with your desired URL)
-        window.location.href = "index.php";
+        window.location.href = "referenceNumber.php";
       }, 2000);
     });
   </script>
