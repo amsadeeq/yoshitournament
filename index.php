@@ -223,9 +223,9 @@ require 'auth.php';
           <hr class="next_match_line" />
           <h4> YAPS TOURNAMENT CATEGORIES 2024</h4>
 
-          <h4>Primary School on 14th September 2024</h4>
-          <h4>Junior Sec School on 21st September 2024</h4>
-          <h4>Senior Sec School on 28th September 2024</h4>
+          <p>Primary School on 14th Sept 2024</p>
+          <p>Junior Sec School on 21st Sept 2024</p>
+          <p>Senior Sec School on 28th Sept 2024</p>
 
 
           <!-- <div class="d-flex align-items-center justify-content-center mt-2">
@@ -532,7 +532,7 @@ require 'auth.php';
       </div>
     </div>
 
-    <div class="table-ag-div py-5">
+    <!-- <div class="table-ag-div py-5">
       <div class="container">
         <h2 class="comon-heading m-0"> League Table & Schedule </h2>
 
@@ -621,9 +621,9 @@ require 'auth.php';
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="team-div-1">
+    <!-- <div class="team-div-1">
       <div class="container">
         <div class="d-flex align-items-center justify-content-between">
           <h2 class="comon-heading m-0"> Players Squad </h2>
@@ -715,7 +715,7 @@ require 'auth.php';
 
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="join-us-div">
       <div class="container">
