@@ -1,6 +1,7 @@
 <?php
 
-
+session_start();
+ob_start();
 //####### Importing database connections and EngineFile
 
 require 'auth.php';
@@ -1115,14 +1116,23 @@ require 'auth.php';
 
                         <br class="d-none d-sm-block" /><br class="d-none d-sm-block" />
 
-                        <a type="button" href="registration.php" class="btn mt-8 w-100 join-btn"
-                          style="border-radius: 15px 15px;">Register</a>
-                          <br />
-                          <a type="button" href="referenceNumber.php" class="btn mt-8 w-100 join-btn"
-                        style="border-radius: 15px 15px;">Student Register</a>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <a type="button" href="registration.php" class="btn mt-8 w-100 join-btn"
+                              style="border-radius: 15px 15px;">Register</a>
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <a type="button" href="referenceNumber.php" class="btn mt-8 w-100 join-btn"
+                              style="border-radius: 15px 15px;">Student Register</a>
+                          </div>
+                        </div>
+
+
+                        <br />
+
 
                       </div>
-                      
+
                     </div>
                   </div>
                 </div>
