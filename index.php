@@ -223,9 +223,9 @@ require 'auth.php';
           <hr class="next_match_line" />
           <h4> YAPS TOURNAMENT CATEGORIES 2024</h4>
 
-          <span>Primary School 14th Sept 2024</span>
-          <span>Junior Sec School 21st Sept 2024</span>
-          <span>Senior Sec School 28th Sept 2024</span>
+          <p class=" text-white">Primary School 14th Sept 2024</p>
+          <p class=" text-white"></p>>Junior Sec School 21st Sept 2024</p>
+          <p class=" text-white"></p>>Senior Sec School 28th Sept 2024</p>
 
 
           <!-- <div class="d-flex align-items-center justify-content-center mt-2">
