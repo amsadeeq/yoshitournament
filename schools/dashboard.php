@@ -607,7 +607,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                           <td>
                             <div class="product">
                               <div class="image">
-                                <img src="<?php echo "../players_Images/" . $image_passport; ?>"
+                                <img src="<?php echo "student_photo/" . $image_passport; ?>"
                                   alt="<?php echo $firstname; ?>" />
                               </div>
                               <na class="text-sm"><?php echo $firstname . " " . $surname; ?></na>
