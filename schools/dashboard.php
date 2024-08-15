@@ -1527,7 +1527,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
   <script>
     function shareLink() {
       var teamRefNumber = '<?php echo $_SESSION['teamRefNumber']; ?>';
-      var url = 'referenceNumber.php?id=' + teamRefNumber;
+      var url = 'https://yoshitournaments.com/referenceNumber.php?id=' + teamRefNumber;
       navigator.share({
         title: 'Share Reference Link',
         text: 'Check out my reference link',
