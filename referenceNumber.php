@@ -468,6 +468,24 @@ if (isset($_POST['complete_registration'])) {
       });
     });
 
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+        backdrop: 'static',  // Prevent closing when clicking outside
+        keyboard: false      // Prevent closing with ESC key
+      });
+
+      // Show the modal when the page loads
+      myModal.show();
+
+      // Re-show the modal if it is hidden (like clicking outside)
+      document.getElementById('exampleModal').addEventListener('hidden.bs.modal', function () {
+        myModal.show();
+      });
+    });
+
+
   </script>
 
 
