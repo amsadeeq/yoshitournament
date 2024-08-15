@@ -330,7 +330,7 @@ require 'auth.php';
       </div>
     </div>
 
-    <!--- ####### Matches and Result will be here <?php require 'matchesResult.php'; ?> ########## --->
+    <!--- ####### Matches and Result will be here ########## --->
 
 
 
