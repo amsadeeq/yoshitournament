@@ -57,7 +57,7 @@
               <br />
 
               <div>
-                <h1><img src="../../images/logo.png" /> Yoshi Tournaments</h1>
+                <h1><img src="../../images/logo.png" style="width: 40px; height: 40px;" /> Yoshi Tournaments</h1>
                 <p>©2024 All Rights Reserved. Yoshi Football Academy, Dubai, UAE. Privacy and Terms</p>
               </div>
             </div>
