@@ -146,14 +146,14 @@ foreach ($players_record as $player_record) {
                                             d="M13.125 2.29167L16.0417 5.20834H14.1667C13.5913 5.20834 13.125 4.74197 13.125 4.16667V2.29167Z" />
                                     </svg>
                                 </span>
-                                <span class="text">Pages</span>
+                                <span class="text">Matches</span>
                             </a>
                             <ul id="ddmenu_2" class="collapse dropdown-nav">
                                 <li>
-                                    <a href="../settings.php"> Settings </a>
+                                    <a href="#"> Next Matches </a>
                                 </li>
                                 <li>
-                                    <a href="blank-page.php"> Blank Page </a>
+                                    <a href="#"> Previous Matches </a>
                                 </li>
                             </ul>
                         </li>
@@ -541,6 +541,7 @@ foreach ($players_record as $player_record) {
                                                 $surname = $player_record['surname'];
                                                 $position = $player_record['user_position'];
                                                 $dob = $player_record['dob'];
+                                                $userRefNo = $player_record['userRefNo'];
                                                 $gender = $player_record['gender']; // Added missing column
                                                 $height = $player_record['hieght']; // Corrected typo in column name
                                                 $weight = $player_record['weight']; // Added missing column
@@ -595,7 +596,8 @@ foreach ($players_record as $player_record) {
                                                             <ul class="dropdown-menu dropdown-menu-end"
                                                                 aria-labelledby="moreAction1">
                                                                 <li class="dropdown-item">
-                                                                    <a href="#0" class="text-gray">View</a>
+                                                                    <a href="#" class="text-gray view-record"
+                                                                        data-user-id="<?php echo $userRefNo; ?>">View</a>
                                                                 </li>
 
                                                             </ul>
@@ -1370,6 +1372,55 @@ foreach ($players_record as $player_record) {
 
     ?>
 
+
+    <script>
+        $(document).ready(function () {
+            // View Record
+            $('.view-record').click(function (e) {
+                e.preventDefault();
+                var userId = $(this).data('user-id');
+                $.ajax({
+                    url: 'view_student_record.php',
+                    type: 'POST',
+                    data: { userId: userId },
+                    success: function (response) {
+                        $('#recordModal').html(response).modal('show');
+                    }
+                });
+            });
+
+            // Edit Record
+            $('.edit-record').click(function (e) {
+                e.preventDefault();
+                var userId = $(this).data('user-id');
+                $.ajax({
+                    url: 'edit_record.php',
+                    type: 'POST',
+                    data: { userId: userId },
+                    success: function (response) {
+                        $('#recordModal').html(response).modal('show');
+                    }
+                });
+            });
+
+            // Delete Record
+            $('.delete-record').click(function (e) {
+                e.preventDefault();
+                var userId = $(this).data('user-id');
+                if (confirm('Are you sure you want to delete this record?')) {
+                    $.ajax({
+                        url: 'delete_record.php',
+                        type: 'POST',
+                        data: { userId: userId },
+                        success: function (response) {
+                            // Handle success response, e.g., refresh page
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
     <script>
         function copyToClipboard() {
             var text = document.getElementById("textToCopy").innerText;
@@ -1425,7 +1476,7 @@ foreach ($players_record as $player_record) {
         }
     </script>
 
-    <script>
+    <!-- <script>
         function shareLink() {
             var teamRefNumber = '<?php echo $_SESSION['teamRefNumber']; ?>';
             var url = 'referenceNumber.php?id=' + teamRefNumber;
@@ -1437,7 +1488,7 @@ foreach ($players_record as $player_record) {
                 .then(() => console.log('Shared successfully'))
                 .catch(error => console.error('Error sharing:', error));
         }
-    </script>
+    </script> -->
 
 
     <script>
