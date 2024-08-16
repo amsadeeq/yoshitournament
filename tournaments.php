@@ -369,7 +369,7 @@ require 'auth.php';
                         </figure>
                         <div class="name">
                             <h5> Abubakar Sadiq
-                                <span class="d-block">Trainer</span>
+                                <span class="d-block">Referee</span>
                             </h5>
                         </div>
                     </div>
@@ -380,7 +380,7 @@ require 'auth.php';
                         </figure>
                         <div class="name">
                             <h5> Abubakar Sadiq
-                                <span class="d-block">Trainer</span>
+                                <span class="d-block">Medical Staff</span>
                             </h5>
                         </div>
                     </div>
