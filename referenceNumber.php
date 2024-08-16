@@ -127,7 +127,7 @@ if (isset($_POST['complete_registration'])) {
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Confirmation - Yoshi Tournament </title>
+  <title>Reference Number - Yoshi Tournament </title>
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
