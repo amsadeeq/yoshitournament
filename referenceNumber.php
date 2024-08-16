@@ -305,7 +305,7 @@ if (isset($_POST['complete_registration'])) {
                   <div class="modal-content  text-center">
                     <div class="modal-header">
                       <button type="button" class="btn btn-link float-start" onclick="window.location.href='index.php'">
-                        <i class="fas fa-home fs-3" style="color: grey;"></i>
+                        <i class="fas fa-home fs-3" style="color: #dc3545;"></i>
                       </button>
                     </div>
                     <div class="modal-body">
