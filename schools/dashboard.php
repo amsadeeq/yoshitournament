@@ -637,14 +637,14 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                                   <a href="#" class="text-gray view-record"
                                     data-user-id="<?php echo $userRefNo; ?>">View</a>
                                 </li>
-                                <li class="dropdown-item">
+                                <!-- <li class="dropdown-item">
                                   <a href="#" class="text-gray edit-record"
                                     data-user-id="<?php echo $userRefNo; ?>">Edit</a>
                                 </li>
                                 <li class="dropdown-item">
                                   <a href="#" class="text-gray delete-record"
                                     data-user-id="<?php echo $userRefNo; ?>">Remove</a>
-                                </li>
+                                </li> -->
                               </ul>
                             </div>
                           </td>
