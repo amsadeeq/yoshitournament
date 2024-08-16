@@ -41,7 +41,7 @@
               <input type="password" class="form-control" name="a_password" placeholder="Password" required />
             </div>
             <div>
-              <button type="submit" class="btn btn-default submit">Continue</button>
+              <button type="submit" class="btn btn-warning submit">Continue</button>
 
               <a class="reset_pass" href="#">Lost your password?</a>
             </div>
