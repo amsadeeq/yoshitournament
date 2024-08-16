@@ -79,7 +79,7 @@ foreach ($players_record as $player_record) {
         ?>
         <aside class="sidebar-nav-wrapper">
             <div class="navbar-logo">
-                <a href="index.php" class="d-flex justify-content-center align-items-center">
+                <a href="studentDashboard.php" class="d-flex justify-content-center align-items-center">
                     <img src="../images/logo.png" alt="logo" class="yoshi_logo" />
 
                 </a>
@@ -595,11 +595,9 @@ foreach ($players_record as $player_record) {
                                                             <ul class="dropdown-menu dropdown-menu-end"
                                                                 aria-labelledby="moreAction1">
                                                                 <li class="dropdown-item">
-                                                                    <a href="#0" class="text-gray">Remove</a>
+                                                                    <a href="#0" class="text-gray">View</a>
                                                                 </li>
-                                                                <li class="dropdown-item">
-                                                                    <a href="#0" class="text-gray">Edit</a>
-                                                                </li>
+
                                                             </ul>
                                                         </div>
                                                     </td>

@@ -876,7 +876,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
         e.preventDefault();
         var userId = $(this).data('user-id');
         $.ajax({
-          url: 'view_player_record.php',
+          url: 'view_student_record.php',
           type: 'POST',
           data: { userId: userId },
           success: function (response) {
