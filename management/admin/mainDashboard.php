@@ -44,7 +44,8 @@ $email = $_SESSION['a_email'];
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="images/favicon.ico" type="image/ico" />
+  <!-- <link rel="icon" href="images/favicon.ico" type="image/ico" /> -->
+  <link rel="shortcut icon" href="../../images/logo.png" type="image/x-icon">
 
   <title>Management</title>
 
@@ -75,7 +76,7 @@ $email = $_SESSION['a_email'];
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
             <a href="mainDashboard.php" class="site_title"><img src="../../images/logo.png"
-                style="width: 60px; height: 60px;" /> <span>Yoshi Tournaments</span></a>
+                style="width: 40px; height: 40px;" /> <span>Yoshi Tournaments</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -83,8 +84,8 @@ $email = $_SESSION['a_email'];
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <!-- <img src="images/img.jpg" alt="..." class="img-circle profile_img"> -->
-              <i class="fa fa-user green"></i>
+              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
@@ -230,8 +231,7 @@ $email = $_SESSION['a_email'];
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                   data-toggle="dropdown" aria-expanded="false">
-                  <!-- <img src="images/img.jpg" alt=""> -->
-                  <i class="fa fa-user green"></i> Abubakar Sadiq
+                  <img src="images/img.jpg" alt=""> Abubakar Sadiq
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="javascript:;"> Profile</a>
