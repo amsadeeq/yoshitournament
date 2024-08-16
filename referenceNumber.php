@@ -303,7 +303,11 @@ if (isset($_POST['complete_registration'])) {
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content  text-center">
-                    <div class="modal-header"></div>
+                    <div class="modal-header">
+                      <button type="button" class="btn btn-link float-start" onclick="window.location.href='index.php'">
+                        <i class="fas fa-home"></i>
+                      </button>
+                    </div>
                     <div class="modal-body">
                       <!-- <svg class="check_logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
                         <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
