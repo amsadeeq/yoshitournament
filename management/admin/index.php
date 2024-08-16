@@ -1,4 +1,12 @@
-<?php ?>
+<?php
+
+session_start();
+ob_start();
+
+require_once '../../connection.php';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +40,7 @@
     <div class="login_wrapper">
       <div class="animate form login_form">
         <section class="login_content">
-          <form>
+          <form method="POST" class="form">
             <h1>Admin Login</h1>
             <div>
               <input type="email" class="form-control" name="a_email" placeholder="Username" required />

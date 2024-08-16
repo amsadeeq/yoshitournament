@@ -773,67 +773,7 @@ if (isset($_POST['complete_registration'])) {
                     </div>
                   </div>
 
-                  <div class="ad-fm mt-5">
 
-                    <div class="paymeny comon-steps-div mt-5">
-
-                      <h2 class="comon-heading m-0"> Yoshi Tournament Jersey </h2>
-
-
-                      <div class="account-page-n" id="ac-1">
-                        <div class="row mt-4">
-
-                        </div>
-                        <div class="row">
-
-
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <label> Jersey Size </label>
-                              <select class="form-select" name="jersey_size">
-                                <option selected> Select Jersey Size </option>
-                                <option value="s">Small (S)</option>
-                                <option value="m">Medium (M)</option>
-                                <option value="l">Large (L)</option>
-                                <option value="xl">Extra Large (XL)</option>
-                                <option value="xxl">Extra-Extra Large (XXL)</option>
-                              </select>
-                            </div>
-                          </div>
-
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <label> Jersey Size Number<sup style="color: red !important;">*</sup> </label>
-                              <input type="number" name="jersey_size_number" class="form-control wizard-required"
-                                required>
-                              <div class="wizard-form-error"></div>
-                            </div>
-                          </div>
-
-
-
-
-                          <!-- <div class="col-lg-6">
-                                             <div class="row row-cols-1 row-cols-lg-2 mt-2">
-                                                 <div class="col">
-                                                    <label> Adults </label>
-                                                    <input type="text" class="form-control wizard-required">
-                                                    <div class="wizard-form-error"></div>
-                                                 </div>
-                                                 <div class="col">
-                                                    <label> Child <span class="codition-txn"> ( Below 5 years) </span>  </label>
-                                                    <input type="text" class="form-control wizard-required">
-                                                    <div class="wizard-form-error"></div>
-                                                 </div>
-                                             </div>
-                                           
-                                          </div> -->
-
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
                 </div>
 
