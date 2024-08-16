@@ -18,12 +18,12 @@
                 </figure>
             </div>
             <div class="itesm-sp animate__animated animate__zoomIn">
-                <figure class=" align-content-center">
+                <figure>
                     <img style="width: 70px !important; height: 70px !important;" src="images/atroturf.png" alt="sp" />
                 </figure>
             </div>
             <div class="itesm-sp animate__animated animate__zoomIn">
-                <figure class=" align-content-center">
+                <figure>
                     <img style="width: 70px !important; height: 70px !important;" src="images/mohaCreativity.png"
                         alt="sp" />
                 </figure>

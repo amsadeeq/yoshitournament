@@ -353,11 +353,11 @@ require 'auth.php';
 
                     <div class="items-coach-man">
                         <figure>
-                            <img src="images/Yoshi_1.jpg" alt="pmg" />
+                            <img src="images/admin_avatar.png" alt="pmg" />
                         </figure>
                         <div class="name">
                             <h5> Abubakar Sadiq
-                                <span class="d-block">Trainer</span>
+                                <span class="d-block">Admin</span>
                             </h5>
                         </div>
                     </div>
