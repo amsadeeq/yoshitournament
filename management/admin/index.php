@@ -6,6 +6,20 @@ ob_start();
 require_once '../../connection.php';
 
 
+if (isset($_POST['access'])) {
+  $email = $_POST['a_email'];
+  $password = $_POST['a_password'];
+
+  if ($email == 'admin@yoshitournaments.com' && $password == '1234@dcba') {
+    header('Location: mainDashboard.php');
+    $_SESSION['a_email'] = $email;
+    exit;
+  } else {
+    header('Location: index.php');
+  }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
