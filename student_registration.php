@@ -95,11 +95,9 @@ if (isset($_POST['complete_registration'])) {
   $team_country = check_input($_POST['team_country']); //check_input is sensitising the input field
   $team_state = check_input($_POST['team_state']); //check_input is sensitising the input field
   $team_city = check_input($_POST['team_city']); //check_input is sensitising the input field
-  $team_captain = check_input($_POST['team_captain']); //check_input is sensitising the input field
   $position = check_input($_POST['position']); //check_input is sensitising the input field
   $jerseyNumber = check_input($_POST['jerseyNumber']); //check_input is sensitising the input field
-  $jersey_size_number = check_input($_POST['jersey_size_number']); //check_input is sensitising the input field
-  $jersey_size = check_input($_POST['jersey_size']); //check_input is sensitising the input field
+
   $number_of_players = check_input($_POST['number_of_players']); //check_input is sensitising the input field
   $team_address = check_input($_POST['team_address']); //check_input is sensitising the input field
 
@@ -142,7 +140,7 @@ if (isset($_POST['complete_registration'])) {
 
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `means_id`, `id_number`, `address`, `team_name`, `player_position`, `team_captain`, `jersy_number`, `jersey_size`, `jersey_size_number`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email,:means_id,:id_number, :address, :team_name, :position,:team_captain, :jerseyNumber,:jersey_size,:jersey_size_number, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `means_id`, `id_number`, `address`, `team_name`, `player_position`, `jersy_number`,`team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email,:means_id,:id_number, :address, :team_name, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo, :time_create, :date_create, :ip_address)");
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
@@ -164,10 +162,7 @@ if (isset($_POST['complete_registration'])) {
         $stmt->bindParam(':address', $address);
         $stmt->bindParam(':team_name', $team_name);
         $stmt->bindParam(':position', $position);
-        $stmt->bindParam(':team_captain', $team_captain);
         $stmt->bindParam(':jerseyNumber', $jerseyNumber);
-        $stmt->bindParam(':jersey_size', $jersey_size);
-        $stmt->bindParam(':jersey_size_number', $jersey_size_number);
         $stmt->bindParam(':team_country', $team_country);
         $stmt->bindParam(':team_state', $team_state);
         $stmt->bindParam(':team_city', $team_city);
@@ -684,18 +679,6 @@ if (isset($_POST['complete_registration'])) {
                               <div class="wizard-form-error"></div>
                             </div>
                           </div>
-
-
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <label>Are you a Team Captain ?<sup style="color: red !important;">*</sup></label>
-                              <select name='team_captain' class="form-select">
-                                <option value="1">Yes</option>
-                                <option value="0">No</option>
-                              </select>
-                            </div>
-                          </div>
-
 
 
                           <div class="col-lg-6">
