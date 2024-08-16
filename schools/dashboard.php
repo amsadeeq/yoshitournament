@@ -24,7 +24,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
 
 // Getting Players Records from yoshi_players_tbl
-$stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
+$stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY `id` DESC");
 $stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
 $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
 
