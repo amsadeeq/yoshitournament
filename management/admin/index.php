@@ -41,7 +41,8 @@
               <input type="password" class="form-control" name="a_password" placeholder="Password" required />
             </div>
             <div>
-              <button type="submit" class="btn btn-danger submit" style="border-radius: 15px 15px;">Continue</button>
+              <button type="submit" name="access" class="btn btn-danger submit"
+                style="border-radius: 15px 15px;">Access</button>
 
               <a class="reset_pass" href="#">Lost your password?</a>
             </div>
@@ -49,7 +50,7 @@
             <div class="clearfix"></div>
 
             <div class="separator">
-              <p class="change_link">New to site?
+              <p class="change_link">New to Admin?
                 <a href="#signup" class="to_register"> Validate </a>
               </p>
 
@@ -67,25 +68,31 @@
 
       <div id="register" class="animate form registration_form">
         <section class="login_content">
-          <form>
-            <h1>Create Account</h1>
+          <form method="POST" class="'form">
+            <h1>Validate Account</h1>
             <div>
-              <input type="text" class="form-control" placeholder="Username" required="" />
+              <input type="text" class="form-control" name="a_username" placeholder="Username" required />
             </div>
             <div>
-              <input type="email" class="form-control" placeholder="Email" required="" />
+              <input type="email" class="form-control" name="a_email" placeholder="Email" required />
             </div>
             <div>
-              <input type="password" class="form-control" placeholder="Password" required="" />
+              <input type="password" class="form-control" name="temporary_password" placeholder="Temporary Password"
+                required />
             </div>
             <div>
-              <a class="btn btn-default submit" href="index.html">Submit</a>
+              <input type="password" class="form-control" name="original_password" placeholder="Your Password"
+                required />
+            </div>
+            <div>
+              <button type="submit" name="validate" class="btn btn-danger submit"
+                style="border-radius: 15px 15px;">Validate</button>
             </div>
 
             <div class="clearfix"></div>
 
             <div class="separator">
-              <p class="change_link">Already a member ?
+              <p class="change_link">Already an Admin ?
                 <a href="#signin" class="to_register"> Log in </a>
               </p>
 
@@ -93,8 +100,8 @@
               <br />
 
               <div>
-                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                <h1><img src="../../images/logo.png" style="width: 60px; height: 60px;" /> Yoshi Tournaments</h1>
+                <p>©2024 All Rights Reserved. Yoshi Football Academy, Dubai, UAE. Privacy and Terms</p>
               </div>
             </div>
           </form>
