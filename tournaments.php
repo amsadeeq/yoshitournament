@@ -391,7 +391,7 @@ require 'auth.php';
                             <img src="images/support_marshal.png" alt="pmg" />
                         </figure>
                         <div class="name">
-                            <h5> Abubakar Sadiq
+                            <h5>
                                 <span class="d-block">⁠Support Marshal</span>
                             </h5>
                         </div>
