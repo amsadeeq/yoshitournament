@@ -365,7 +365,7 @@ require 'auth.php';
 
                     <div class="items-coach-man">
                         <figure>
-                            <img src="images/Yoshi_1.jpg" alt="pmg" />
+                            <img src="images/referee_avatar_bg.png" alt="pmg" />
                         </figure>
                         <div class="name">
                             <h5> Abubakar Sadiq
