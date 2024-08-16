@@ -33,7 +33,7 @@
       <div class="animate form login_form">
         <section class="login_content">
           <form>
-            <h1>Login Form</h1>
+            <h1>Admin Login</h1>
             <div>
               <input type="email" class="form-control" name="a_email" placeholder="Username" required />
             </div>
@@ -57,7 +57,7 @@
               <br />
 
               <div>
-                <h1><img src="../../images/logo.png" style="width: 40px; height: 40px;" /> Yoshi Tournaments</h1>
+                <h1><img src="../../images/logo.png" style="width: 60px; height: 60px;" /> Yoshi Tournaments</h1>
                 <p>©2024 All Rights Reserved. Yoshi Football Academy, Dubai, UAE. Privacy and Terms</p>
               </div>
             </div>
