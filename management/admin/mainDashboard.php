@@ -10,29 +10,29 @@ $email = $_SESSION['a_email'];
 
 // ##### Fetching record for School Officials #######
 
-$stmt_school = $pdo->prepare("SELECT * FROM `yoshi_schools_officials_tbl`");
-$stmt_school->execute();
-$school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
+// $stmt_school = $pdo->prepare("SELECT * FROM `yoshi_schools_officials_tbl`");
+// $stmt_school->execute();
+// $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
 
 
 // Getting Players Records from yoshi_players_tbl
-$stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` ORDER BY `id` DESC");
-$stmtPlayers->execute();
-$players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
+// $stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` ORDER BY `id` DESC");
+// $stmtPlayers->execute();
+// $players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
 
-$no_of_players = 0;
+// $no_of_players = 0;
 
 // Assuming $players_record is an array containing player records
-foreach ($players_record as $player_record) {
-  // Increment the counter for each player record
-  $no_of_players++;
-}
+// foreach ($players_record as $player_record) {
+//   // Increment the counter for each player record
+//   $no_of_players++;
+// }
 
 // Getting match history record
-$stmtMatchHistory = $pdo->prepare("SELECT * FROM `yoshi_player_match_history_tbl`");
-$stmtMatchHistory->execute();
-$playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
+// $stmtMatchHistory = $pdo->prepare("SELECT * FROM `yoshi_player_match_history_tbl`");
+// $stmtMatchHistory->execute();
+// $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
