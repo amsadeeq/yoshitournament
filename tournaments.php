@@ -356,7 +356,7 @@ require 'auth.php';
                             <img src="images/admin_role.png" alt="pmg" />
                         </figure>
                         <div class="name">
-                            <h5> Abubakar Sadiq
+                            <h5>
                                 <span class="d-block">Admin</span>
                             </h5>
                         </div>
@@ -368,7 +368,7 @@ require 'auth.php';
                             <img src="images/referee_avatar_bg.png" alt="pmg" />
                         </figure>
                         <div class="name">
-                            <h5> Abubakar Sadiq
+                            <h5>
                                 <span class="d-block">Referee</span>
                             </h5>
                         </div>
@@ -379,7 +379,7 @@ require 'auth.php';
                             <img src="images/dr_avatar_vec.png" alt="pmg" />
                         </figure>
                         <div class="name">
-                            <h5> Abubakar Sadiq
+                            <h5>
                                 <span class="d-block">Medical Staff</span>
                             </h5>
                         </div>
