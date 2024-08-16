@@ -102,7 +102,7 @@ require 'auth.php';
                 <ul class="list-unstyled mt-4">
                   <li>
                     <span class="icm"> <i class="fas fa-phone-alt"></i> </span>
-                    <span> +234 8167913802</span>
+                    <span> +2349014889669</span>
                   </li>
                   <li>
                     <span class="icm"> <i class="fas fa-envelope"></i> </span>
@@ -110,7 +110,7 @@ require 'auth.php';
                   </li>
                   <li>
                     <span class="icm"> <i class="fas fa-map-marker-alt"></i> </span>
-                    <span> 508 Flat A3 Nuri, Johor, Malaysia </span>
+                    <span> Abuja, Nigeria </span>
                   </li>
                 </ul>
               </div>
@@ -146,12 +146,12 @@ require 'auth.php';
                   </li>
                   <li>
                     <span class="icm"> <i class="fas fa-envelope"></i> </span>
-                    <span> infor@yoshi.com</span>
+                    <span> admin@yoshi.com</span>
                   </li>
                   <li>
                     <span class="icm"> <i class="fas fa-map-marker-alt"></i> </span>
                     <span>
-                      MSB Al Nahda 2, United Arab Emirates </span>
+                      MSB Al Nahda 2, Dubai, United Arab Emirates </span>
                   </li>
                 </ul>
               </div>
@@ -171,7 +171,7 @@ require 'auth.php';
             <div class="col-md-7">
               <div class="conatct-form-div mb-5">
 
-                <h2 class="comon-heading m-0"> Leave Us for Your Info </h2>
+                <h2 class="comon-heading m-0"> Contact Us </h2>
                 <form method="PSOT">
                   <div class="row mt-4">
                     <div class="col-lg-6">
