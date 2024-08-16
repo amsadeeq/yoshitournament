@@ -147,7 +147,7 @@ require 'auth.php';
             </div>
             <div class="col position-relative d-none d-sm-block">
               <figure class="big-img">
-                <img src="images/about_Banner 02.jpg" alt="pic">
+                <img src="images/about_img.JPG" alt="pic">
               </figure>
               <figure class="small-img">
                 <img src="images/pexels-photo-12460951.jfif" alt="pic2">
