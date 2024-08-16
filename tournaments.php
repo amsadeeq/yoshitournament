@@ -388,14 +388,16 @@ require 'auth.php';
 
                     <div class="items-coach-man">
                         <figure>
-                            <img src="images/Yoshi_1.jpg" alt="pmg" />
+                            <img src="images/support_marshal.png" alt="pmg" />
                         </figure>
                         <div class="name">
                             <h5> Abubakar Sadiq
-                                <span class="d-block">Trainer</span>
+                                <span class="d-block">⁠Support Marshal</span>
                             </h5>
                         </div>
                     </div>
+
+
 
 
 
