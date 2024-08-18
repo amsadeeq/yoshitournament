@@ -1511,7 +1511,7 @@ foreach ($players_record as $player_record) {
                             }).show();
 
                             // Redirect to the index.php page
-                            window.location.href = 'index.php';
+                            window.location.href = '../index.php';
                         } else {
                             // Failed to destroy session
                             // Show error notification
