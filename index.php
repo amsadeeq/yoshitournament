@@ -948,12 +948,12 @@ require 'auth.php';
 
                         <br class="d-none d-sm-block" /><br class="d-none d-sm-block" />
 
-                        <div class="row">
+                        <div class="row grid gap-3">
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <a type="button" href="registration.php" class="btn mt-8 w-100 join-btn fs-6"
                               style="border-radius: 15px 15px;">Register Your School</a>
                           </div>
-                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-">
                             <a type="button" href="referenceNumber.php" class="btn mt-8 w-100 join-btn fs-6"
                               style="border-radius: 15px 15px;">Register as a Student</a>
                           </div>
