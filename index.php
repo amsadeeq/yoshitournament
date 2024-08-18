@@ -561,9 +561,9 @@ require 'auth.php';
 
     <?php require 'partners.php'; ?>
 
+    <!---- ###### Index News ##########-->
+    <!-- <?php //require 'indexNews.php' ?> -->
 
-
-    <?php require 'indexNews.php' ?>
 
     <div class="newd-blogs-div py-5">
       <div class="container">
