@@ -2,7 +2,7 @@
 
 <div class="modal fade" tabindex="-1" role="dialog" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen-sm-down modal-lg modal-dialog-centered" role="document">
+    <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body d-flex align-items-center p-0 m-0">
                 <div class="row g-0 align-items-center">

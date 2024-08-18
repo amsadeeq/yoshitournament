@@ -2,7 +2,7 @@
 echo "
   
 <div class='modal fade login-div-modal' id='loginModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-   <div class='modal-dialog'>
+   <div class='modal-dialog modal-fullscreen-sm-down'>
      <div class='modal-content'>
        <div class='modal-header'></div>
         <form method = 'POST' role = 'form'>
