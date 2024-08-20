@@ -192,14 +192,15 @@ if (isset($_POST['complete_registration'])) {
 
         // Set the email message
         $message = "Dear $firstname,\n\n";
-        $message .= "Thank you for registering with Yoshi Tournament (YAPS) " . date("Y") . ".\n\n";
+        $message .= "Your registration for the Yoshi Abuja Private Schools Tournament " . date("Y") . " is successful under (" . $studentDetails['team_name'] . " - " . $studentDetails['surname'] . " " . $studentDetails['firstname'] . ")! \n\n";
         $message .= "Your Team Reference Number is : $TeamRefNumber \n\n";
-        $message .= "Player Reference Number is: $userRefCode \n\n";
-        $message .= "Your position: $position \n\n";
-        $message .= "Schedules for the matches will be send to you soon.\n\n";
-        $message .= "Visit www.yoshitournaments.com\n\n";
-        $message .= "Sign: Mr. Sadeeq \n Admin - yoshitournaments.com\n\n";
-        $message .= "Yoshi Football Academy UAE www.yoshifa.com \n All Rights Reserved " . date('Y');
+        // $message .= "Player Reference Number is: $userRefCode \n\n";
+        // $message .= "Your position: $position \n\n";
+        // $message .= "Schedules for the matches will be send to you soon.\n\n";
+        $message .= "Visit our website for further updates on schedules: www.yoshitournaments.com\n\n";
+        $message .= "Best Regards, \n\n";
+        $message .= "Halilu Muazu \n Tournament Coordinator\n\n";
+        $message .= "Yoshi Football Academy UAE \n";
 
         // Set additional headers
         $headers = "From: no-reply@yoshitournament.com\r\n";
