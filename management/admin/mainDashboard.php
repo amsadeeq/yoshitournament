@@ -298,7 +298,7 @@ $email = $_SESSION['a_email'];
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
             <div class="tile-stats">
               <div class="icon" style="font-size:30px;">
-                <i class="fa fa-user"></i>
+                <i class="fa fa-user-o" aria-hidden="true"></i>
               </div>
               <div class="count">179</div>
               <h3>Sign ups</h3>
