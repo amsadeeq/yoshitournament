@@ -286,10 +286,10 @@ $email = $_SESSION['a_email'];
       <div class="right_col" role="main">
         <!-- top tiles -->
         <div class="row">
-          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 shadow-lg">
+          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
             <div class="tile-stats">
               <div class="icon">
-                <i class="fa fa-user"></i>
+                <i class="fa fa-user-circle"></i>
               </div>
               <div class="count">179</div>
 
