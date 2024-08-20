@@ -359,7 +359,7 @@ if (isset($_POST['complete_registration'])) {
         <h1 class="text-center"> Player Registration </h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page"> Registration </li>
           </ol>
         </nav>
