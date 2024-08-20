@@ -60,10 +60,8 @@ if (isset($_POST['complete_registration'])) {
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the selected country code
     $countryCode = $_POST['countryCode'];
-
     // Get the phone number
     $phoneNumber = $_POST['phone'];
-
     $full_phone = $countryCode . $phoneNumber;
 
 
@@ -100,6 +98,13 @@ if (isset($_POST['complete_registration'])) {
 
   $number_of_players = check_input($_POST['number_of_players']); //check_input is sensitising the input field
   $team_address = check_input($_POST['team_address']); //check_input is sensitising the input field
+
+
+  $emergency_name = check_input($_POST['emergency_name']); //check_input is sensitising the input field
+  $emergency_phone = check_input($_POST['emergency_phone']); //check_input is sensitising the input field
+  $emergency_email = check_input($_POST['emergency_email']); //check_input is sensitising the input field
+  $emergency_address = check_input($_POST['emergency_address']); //check_input is sensitising the input field
+
 
   $time = time();//function for current time
   $date_create = date("d/M/Y", $time);//function for current date
@@ -140,7 +145,7 @@ if (isset($_POST['complete_registration'])) {
 
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `means_id`, `id_number`, `address`, `team_name`, `player_position`, `jersy_number`,`team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email,:means_id,:id_number, :address, :team_name, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `means_id`, `id_number`, `address`, `team_name`, `player_position`, `jersy_number`,`team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `emergency_name`, `emergency_phone`, `emergency_email`, `emergency_address`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email,:means_id,:id_number, :address, :team_name, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo,:emergency_name,:emergency_phone,:emergency_email,:emergency_address, :time_create, :date_create, :ip_address)");
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
@@ -170,6 +175,10 @@ if (isset($_POST['complete_registration'])) {
         $stmt->bindParam(':team_address', $team_address);
         $stmt->bindParam(':passport', $imgname1);
         $stmt->bindParam(':team_logo', $imgname2);
+        $stmt->bindParam(':emergency_name', $emergency_name);
+        $stmt->bindParam(':emergency_phone', $emergency_phone);
+        $stmt->bindParam(':emergency_email', $emergency_email);
+        $stmt->bindParam(':emergency_address', $emergency_address);
         $stmt->bindParam(':time_create', $time_create);
         $stmt->bindParam(':date_create', $date_create);
         $stmt->bindParam(':ip_address', $ipaddress);
@@ -252,16 +261,7 @@ if (isset($_POST['complete_registration'])) {
 
 
     }
-
-
-
-
-
-
   }
-
-
-
 }
 
 ?>
@@ -445,7 +445,9 @@ if (isset($_POST['complete_registration'])) {
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Surname<sup style="color: red !important;">*</sup> </label> </label>
-                            <input type="text" name="surname" class="form-control wizard-required" required>
+                            <input type="text" name="surname" class="form-control wizard-required" value="?php if (isset($surname)) {
+                              echo $surname;
+                            } ?>" placeholder="Surname" required>
                             <div class="wizard-form-error"></div>
 
                           </div>
@@ -454,7 +456,9 @@ if (isset($_POST['complete_registration'])) {
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> First Name<sup style="color: red !important;">*</sup> </label> </label>
-                            <input type="text" name="firstName" class="form-control wizard-required" required>
+                            <input type="text" name="firstName" class="form-control wizard-required" value="<?php if (isset($firstName)) {
+                              echo $firstName;
+                            } ?>" placeholder=" First Name" required>
                             <div class="wizard-form-error"></div>
 
                           </div>
@@ -463,7 +467,9 @@ if (isset($_POST['complete_registration'])) {
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Date of Birth<sup style="color: red !important;">*</sup> </label> </label>
-                            <input type="date" name="dob" class="form-control wizard-required" required />
+                            <input type="date" name="dob" class="form-control wizard-required" value="<?php if (isset($dob)) {
+                              echo $dob;
+                            } ?>" placeholder="dd/mm/YYYY" required />
                             <div class="wizard-form-error"></div>
 
                           </div>
@@ -472,8 +478,8 @@ if (isset($_POST['complete_registration'])) {
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Gender<sup style="color: red !important;">*</sup> </label> </label>
-                            <select class="form-select" name="gender">
-                              <option selected> Select Gender </option>
+                            <select class="form-select" name="gender" required>
+                              <!-- <option  selected> Select Gender </option> -->
                               <option value="Male">Male</option>
                               <option value="Female">Female</option>
                               <option value="Others"> Others</option>
@@ -485,13 +491,17 @@ if (isset($_POST['complete_registration'])) {
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label>Height (cm)</label>
-                            <input type="text" name="height" class="form-control">
+                            <input type="text" name="height" value="<?php if (isset($height)) {
+                              echo $height;
+                            } ?>" class="form-control">
                           </div>
                         </div>
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label>Weight (kg)</label>
-                            <input type="text" name="weight" class="form-control">
+                            <input type="text" name="weight" value="<?php if (isset($weight)) {
+                              echo $weight;
+                            } ?>" class="form-control">
                           </div>
                         </div>
 
@@ -517,14 +527,18 @@ if (isset($_POST['complete_registration'])) {
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Town / City<sup style="color: red !important;">*</sup> </label> </label>
-                            <input type="text" class="form-control" name="city" required>
+                            <input type="text" class="form-control" name="city" value="<?php if (isset($city)) {
+                              echo $city;
+                            } ?>" required>
                           </div>
                         </div>
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Postal Code / Zipcode </label>
                             <input type="text" class="form-control" name="zipcode"
-                              onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" />
+                              onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" value="<?php if (isset($zipcode)) {
+                                echo $zipcode;
+                              } ?>" />
                           </div>
                         </div>
 
@@ -534,7 +548,9 @@ if (isset($_POST['complete_registration'])) {
                             <label> Phone Number<sup style="color: red !important;">*</sup> </label><br>
                             <input type="tel" id="phone" name="phone" name="player_phone_number" class="form-control"
                               onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)"
-                              style="width: 330px !important;" required />
+                              style="width: 330px !important;" value="<?php if (isset($player_phone_number)) {
+                                echo $player_phone_number;
+                              } ?>" required />
                           </div>
                         </div>
 
@@ -550,7 +566,6 @@ if (isset($_POST['complete_registration'])) {
                           <div class="form-group">
                             <label> Means of Identification<sup style="color: red !important;">*</sup> </label> </label>
                             <select class="form-select" name="means_id">
-                              <option selected>Select ID</option>
                               <option value="Student ID">Student ID</option>
                             </select>
                           </div>
@@ -559,7 +574,9 @@ if (isset($_POST['complete_registration'])) {
                           <div class="form-group">
                             <label> Student ID Number<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="text" class="form-control wizard-required" placeholder="123456789"
-                              name="id_number" required>
+                              name="id_number" value="<?php if (isset($id_number)) {
+                                echo $id_number;
+                              } ?>" required>
                             <div class="wizard-form-error"></div>
                           </div>
                         </div>
@@ -567,10 +584,10 @@ if (isset($_POST['complete_registration'])) {
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Address 1<sup style="color: red !important;">*</sup> </label> </label>
-                            <textarea class="form-control wizard-required" cols="4" rows="10" name="address"
-                              required></textarea>
+                            <textarea class="form-control wizard-required" cols="4" rows="10" name="address" value="<?php if (isset($address)) {
+                              echo $address;
+                            } ?>" required></textarea>
                             <div class="wizard-form-error"></div>
-
                           </div>
                         </div>
 
@@ -600,7 +617,6 @@ if (isset($_POST['complete_registration'])) {
 
                       </div>
                     </div>
-
                   </div>
 
                   <!-- <div class="ad-fm mt-5">
@@ -613,16 +629,10 @@ if (isset($_POST['complete_registration'])) {
                               </div> -->
 
                   <div class="ad-fm mt-5">
-
                     <div class="paymeny comon-steps-div mt-5">
-
                       <h2 class="comon-heading m-0"> Team details </h2>
-
-
                       <div class="account-page-n" id="ac-1">
-                        <div class="row mt-4">
-
-                        </div>
+                        <div class="row mt-4"></div>
                         <div class="row">
 
                           <div class="col-lg-6">
@@ -631,7 +641,6 @@ if (isset($_POST['complete_registration'])) {
                               <input type="text" name="team_name" class="form-control wizard-required"
                                 value="<?php echo $studentDetails['team_name'] ?>" readonly required>
                               <div class="wizard-form-error"></div>
-
                             </div>
                           </div>
 
@@ -640,7 +649,7 @@ if (isset($_POST['complete_registration'])) {
                             <div class="form-group">
                               <label> Position<sup style="color: red !important;">*</sup> </label> </label>
                               <select class="form-select" name="position">
-                                <option selected> Select Position </option>
+                                <option value="null" selected> Select Position </option>
                                 <option value="Goalkeeper">Goalkeeper</option>
                                 <option value="Sweeper keeper">Sweeper keeper</option>
                                 <option value="Defender"> Defender</option>
@@ -675,7 +684,9 @@ if (isset($_POST['complete_registration'])) {
                             <div class="form-group">
                               <label> Jersey Number<sup style="color: red !important;">*</sup> </label> </label>
                               <input type="text" name="jerseyNumber" class="form-control wizard-required jersey-input"
-                                maxlength="2" onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" required />
+                                maxlength="2" onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" value="<?php if (isset($jerseyNumber)) {
+                                  echo $jerseyNumber;
+                                } ?>" required />
                               <div class="wizard-form-error"></div>
                             </div>
                           </div>
@@ -688,9 +699,7 @@ if (isset($_POST['complete_registration'])) {
                                 <option value="<?php echo $studentDetails['team_country'] ?>">
                                   <?php echo $studentDetails['team_country'] ?>
                                 </option>
-
                               </select>
-
                             </div>
                           </div>
 
@@ -725,7 +734,7 @@ if (isset($_POST['complete_registration'])) {
                               <input type="text" class="form-control" name="number_of_players"
                                 placeholder="Number of Players"
                                 onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)"
-                                value="<?php echo $studentDetails['number_of_players'] ?>" required />
+                                value="<?php echo $studentDetails['number_of_players'] ?>" readonly required />
                             </div>
                           </div>
 
@@ -737,7 +746,6 @@ if (isset($_POST['complete_registration'])) {
                               <input type="text" class="form-control wizard-required" name="team_address"
                                 value="<?php echo $studentDetails['team_address'] ?>" readonly required>
                               <div class="wizard-form-error"></div>
-
                             </div>
                           </div>
 
@@ -764,17 +772,79 @@ if (isset($_POST['complete_registration'])) {
 
                         </div>
                       </div>
-
-
-
-
-
-
                     </div>
                   </div>
 
+                  <div class="ad-fm mt-5">
+                    <div class="paymeny comon-steps-div mt-5">
+                      <h2 class="comon-heading m-0"> Emergency Contact (Parent Details) </h2>
+                      <div class="account-page-n" id="ac-1">
+                        <!-- <div class="row mt-4"></div> -->
+                        <div class="row">
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Full Name <sup style="color: red !important;">*</sup> </label>
+                              <input type="text" name="emergency_name" class="form-control wizard-required" value="<?php if (isset($emergency_name)) {
+                                echo $emergency_name;
+                              } ?>" placeholder="Full Name" required>
+                              <div class="wizard-form-error"></div>
+                            </div>
+                          </div>
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Email<sup style="color: red !important;">*</sup> </label>
+                              <input type="email" class="form-control" name="emergency_email" value="<?php if (isset($emergency_email)) {
+                                echo $emergency_email;
+                              } ?>" placeholder="emergency@email.com" required>
+                            </div>
+                          </div>
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Phone Number<sup style="color: red !important;">*</sup> </label>
+                              <input type="tel" class="form-control" name="emergency_phone" value="<?php if (isset($emergency_phone)) {
+                                echo $emergency_phone;
+                              } ?>" placeholder="e.g 08167913802" required>
+                            </div>
+                          </div>
 
 
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Emergency Address<sup style="color: red !important;">*</sup> </label>
+                              <textarea rows="4" class="form-control" name="emergency_address" value="<?php if (isset($emergency_address)) {
+                                echo $emergency_address;
+                              } ?>" placeholder="e.g 08167913802" required></textarea>
+                            </div>
+                          </div>
+
+                          <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Input field
+                            with asterisk are required ] </p>
+
+
+                          <!-- <div class="col-lg-6">
+                                             <div class="row row-cols-1 row-cols-lg-2 mt-2">
+                                                 <div class="col">
+                                                    <label> Adults </label>
+                                                    <input type="text" class="form-control wizard-required">
+                                                    <div class="wizard-form-error"></div>
+                                                 </div>
+                                                 <div class="col">
+                                                    <label> Child <span class="codition-txn"> ( Below 5 years) </span>  </label>
+                                                    <input type="text" class="form-control wizard-required">
+                                                    <div class="wizard-form-error"></div>
+                                                 </div>
+                                             </div>
+                                           
+                                          </div> -->
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
 
@@ -787,7 +857,6 @@ if (isset($_POST['complete_registration'])) {
                     <hr class="mt-2">
 
                     <div class="oder-summary-item">
-
                       <div class="col-lg-12">
                         <div class="form-group text-center">
                           <fieldset>
@@ -795,17 +864,9 @@ if (isset($_POST['complete_registration'])) {
                               class="team_logo" />
                             <input type="file" name="team_logo" class="form-control" accept="image/*" hidden />
                           </fieldset>
-
                         </div>
                       </div>
-
-
                     </div>
-
-
-
-
-
                   </div>
 
                   <!-- <a href="javascript:;" class="form-wizard-next-btn w-100 text-center float-right mt-2">Complete Regitration</a> -->
@@ -817,32 +878,14 @@ if (isset($_POST['complete_registration'])) {
                       <span class="visually-hidden">Loading...</span>
                     </div> -->
                   </button>
-
                 </div>
-
-
-
-
               </div>
-
-
-              <div class="form-group d-lg-flex clearfix">
-
-
-              </div>
+              <div class="form-group d-lg-flex clearfix"></div>
             </fieldset>
-
-
-
-
-
           </form>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
 
