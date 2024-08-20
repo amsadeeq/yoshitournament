@@ -7,7 +7,7 @@ ob_start();
 require 'connection.php';
 
 $TeamRefNumber = $_SESSION['teamRefNumber']; //need to remove $ sign
-echo $TeamRefNumber;
+$TeamRefNumber;
 //########## Initiating session #####################
 $email = $_SESSION['email'];                  //###
 $position = $_SESSION['position'];               //###
