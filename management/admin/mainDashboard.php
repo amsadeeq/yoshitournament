@@ -297,11 +297,11 @@ $email = $_SESSION['a_email'];
         <div class="row">
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
             <div class="tile-stats">
-              <div class="icon">
+              <div class="icon" style="font-size:30px;">
                 <i class="fa fa-user"></i>
               </div>
               <div class="count">179</div>
-              <h5>Sign ups</h5>
+              <h3>Sign ups</h3>
             </div>
           </div>
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
