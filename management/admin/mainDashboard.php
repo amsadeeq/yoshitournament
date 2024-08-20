@@ -4,6 +4,17 @@ session_start();
 ob_start();
 $email = $_SESSION['a_email'];
 
+require '../../connection.php';
+
+// Prepare SQL statement to fetch user from yoshi_signup_tbl
+// Perform authentication against yoshi_signup_tbl
+$stmt = $pdo->prepare("SELECT COUNT(*) as total_users FROM yoshi_signup_tbl");
+$stmt->execute();
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$total_users = $result['total_users'];
+
+
+
 
 // Fetching records from the database
 // Insert data into the database
@@ -300,7 +311,7 @@ $email = $_SESSION['a_email'];
               <div class="icon" style="font-size:30px;">
                 <i class="fa-regular fa-user"></i>
               </div>
-              <div class="count">179</div>
+              <div class="count"><?php echo $total_users; ?></div>
               <h3>Sign ups</h3>
             </div>
           </div>
