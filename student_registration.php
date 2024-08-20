@@ -7,6 +7,7 @@ ob_start();
 require 'connection.php';
 
 $TeamRefNumber = $_SESSION['teamRefNumber']; //need to remove $ sign
+echo $TeamRefNumber;
 //########## Initiating session #####################
 $email = $_SESSION['email'];                  //###
 $position = $_SESSION['position'];               //###
@@ -19,7 +20,7 @@ $userRefCode = $_SESSION['userRefCode'];        //###
 
 // Prepare and execute query to check if the reference number exists
 $stmt = $pdo->prepare("SELECT * FROM yoshi_schools_officials_tbl WHERE TeamRefNumber = :refNumber");
-$stmt->bindParam(':refNumber', $TeamRefNumber);
+$stmt->bindParam(':refNumber', $_SESSION['teamRefNumber']);
 $stmt->execute();
 $studentDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -349,7 +350,7 @@ if (isset($_POST['complete_registration'])) {
 <body>
 
   <!-- Top Bar Start -->
-  <?php require 'reg_header.php'; ?>
+  <?php //require 'reg_header.php'; ?>
 
   <section class="sub-main-banner float-start w-100">
 
