@@ -695,11 +695,11 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                         <th>
                           <h6 class="text-sm text-medium">Players</h6>
                         </th>
-                        <th class="min-width">
+                        <!-- <th class="min-width">
                           <h6 class="text-sm text-medium">
                             Position
                           </h6>
-                        </th>
+                        </th> -->
                         <th class="min-width">
                           <h6 class="text-sm text-medium">
                             Match/Date
@@ -707,7 +707,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                         </th>
                         <th class="min-width">
                           <h6 class="text-sm text-medium">
-                            Score
+                            Goal
                           </h6>
                         </th>
                         <th class="min-width">
@@ -753,9 +753,9 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                               <p class="text-sm"><?php echo $firstname . " " . $surname; ?></p>
                             </div>
                           </td>
-                          <td>
-                            <p class="text-sm"><?php echo $position; ?></p>
-                          </td>
+                          <!-- <td>
+                            <p class="text-sm"><?php //echo $position; ?></p>
+                          </td> -->
                           <td>
                             <p class="text-sm"><?php echo $match_team; ?></p>
                             <p class="text-xs"><?php echo $match_date; ?></p>

@@ -647,17 +647,12 @@ foreach ($players_record as $player_record) {
                                                 </th>
                                                 <th class="min-width">
                                                     <h6 class="text-sm text-medium">
-                                                        Position
-                                                    </h6>
-                                                </th>
-                                                <th class="min-width">
-                                                    <h6 class="text-sm text-medium">
                                                         Match/Date
                                                     </h6>
                                                 </th>
                                                 <th class="min-width">
                                                     <h6 class="text-sm text-medium">
-                                                        Score
+                                                        Goal
                                                     </h6>
                                                 </th>
                                                 <th class="min-width">
@@ -665,7 +660,6 @@ foreach ($players_record as $player_record) {
                                                         Status
                                                     </h6>
                                                 </th>
-
                                             </tr>
                                         </thead>
                                         <!-- <tbody>
