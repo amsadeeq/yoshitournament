@@ -44,7 +44,7 @@ if (isset($_POST["complete_register"])) {
   $TeamRefNumber = implode('', $combinationArray);
 
   // Output the result
-  $TeamRefNumber = $TeamRefNumber . date("Y");
+  $TeamRefNumber = date("Y") . $TeamRefNumber;
 
   // Hash the unique number using md5
   $hashedTeamRefNumber = md5($TeamRefNumber);

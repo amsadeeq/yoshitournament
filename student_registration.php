@@ -445,7 +445,7 @@ if (isset($_POST['complete_registration'])) {
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label> Surname<sup style="color: red !important;">*</sup> </label> </label>
-                            <input type="text" name="surname" class="form-control wizard-required" value="?php if (isset($surname)) {
+                            <input type="text" name="surname" class="form-control wizard-required" value="<?php if (isset($surname)) {
                               echo $surname;
                             } ?>" placeholder="Surname" required>
                             <div class="wizard-form-error"></div>
