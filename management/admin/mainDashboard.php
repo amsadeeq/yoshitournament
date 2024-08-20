@@ -289,11 +289,11 @@ $email = $_SESSION['a_email'];
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
             <div class="tile-stats">
               <div class="icon">
-                <i class="fa fa-caret-square-o-right"></i>
+                <i class="fa fa-user"></i>
               </div>
               <div class="count">179</div>
 
-              <h3>New Sign ups</h3>
+              <h3>Sign ups</h3>
               <p>Lorem ipsum psdea itgum rixt.</p>
             </div>
           </div>
