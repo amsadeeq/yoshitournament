@@ -16,14 +16,26 @@ $total_users = $result['total_users'];
 
 
 
+
+
+
 // Fetching records from the database
 // Insert data into the database
 
 // ##### Fetching record for School Officials #######
 
-// $stmt_school = $pdo->prepare("SELECT * FROM `yoshi_schools_officials_tbl`");
-// $stmt_school->execute();
-// $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
+$stmt_school = $pdo->prepare("SELECT COUNT(*) as total_school_officials FROM yoshi_schools_officials_tbl");
+$stmt_school->execute();
+$result_school = $stmt_school->fetch(PDO::FETCH_ASSOC);
+$total_school_officials = $result_school['total_school_officials'];
+
+
+// ##### Fetching record for School Officials #######
+
+$stmt_student = $pdo->prepare("SELECT COUNT(*) as total_student  FROM yoshi_school_students_tbl");
+$stmt_student->execute();
+$result_student = $stmt_student->fetch(PDO::FETCH_ASSOC);
+$total_student = $result_student['total_student '];
 
 
 
@@ -320,9 +332,9 @@ $total_users = $result['total_users'];
               <div class="icon">
                 <i class="fa fa-comments-o"></i>
               </div>
-              <div class="count">179</div>
+              <div class="count"><?php echo $total_school_officials; ?></div>
 
-              <h3>New Sign ups</h3>
+              <h3>Schools Registered</h3>
 
             </div>
           </div>
@@ -331,9 +343,9 @@ $total_users = $result['total_users'];
               <div class="icon">
                 <i class="fa fa-sort-amount-desc"></i>
               </div>
-              <div class="count">179</div>
+              <div class="count"><?php echo $total_student; ?></div>
 
-              <h3>New Sign ups</h3>
+              <h3>Students Registered</h3>
 
             </div>
           </div>
