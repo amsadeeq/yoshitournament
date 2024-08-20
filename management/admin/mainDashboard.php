@@ -35,7 +35,7 @@ $total_school_officials = $result_school['total_school_officials'];
 $stmt_student = $pdo->prepare("SELECT COUNT(*) as total_student  FROM yoshi_school_students_tbl");
 $stmt_student->execute();
 $result_student = $stmt_student->fetch(PDO::FETCH_ASSOC);
-$total_student = $result_student['total_student '];
+$total_student = $result_student['total_student'];
 
 
 
@@ -334,7 +334,7 @@ $total_student = $result_student['total_student '];
               </div>
               <div class="count"><?php echo $total_school_officials; ?></div>
 
-              <h3>Schools Registered</h3>
+              <h3>Schools</h3>
 
             </div>
           </div>
@@ -345,7 +345,7 @@ $total_student = $result_student['total_student '];
               </div>
               <div class="count"><?php echo $total_student; ?></div>
 
-              <h3>Students Registered</h3>
+              <h3>Students</h3>
 
             </div>
           </div>
