@@ -15,7 +15,7 @@ if ($TeamRefNumber) {
 // Fetching records from the database
 // Insert data into the database
 
-$stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :userRefCode ORDER BY id DESC");
+$stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :userRefCode ORDER BY `id` DESC");
 $stmt->execute(['userRefCode' => $userRefCode]);
 $player_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
