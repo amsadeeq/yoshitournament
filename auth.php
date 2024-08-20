@@ -218,7 +218,7 @@ if (isset($_POST['login'])) {
 
                 switch ($user['reg_status']) {
                     case 0:
-                        $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
+                        $_SESSION['teamRefNumber'] = $user['TeamRefNumber'];
                         header("Location: student_registration.php");
 
                         break;
