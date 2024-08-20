@@ -198,9 +198,9 @@ if (isset($_POST['complete_registration'])) {
         // $message .= "Your position: $position \n\n";
         // $message .= "Schedules for the matches will be send to you soon.\n\n";
         $message .= "Visit our website for further updates on schedules: www.yoshitournaments.com\n\n";
-        $message .= "Best Regards, \n\n";
-        $message .= "Halilu Muazu \n Tournament Coordinator\n\n";
-        $message .= "Yoshi Football Academy UAE \n";
+        $message .= "Best Regards,\n\n";
+        $message .= "Halilu Muazu\nTournament Coordinator\n";
+        $message .= "Yoshi Football Academy UAE\n";
 
         // Set additional headers
         $headers = "From: no-reply@yoshitournament.com\r\n";
