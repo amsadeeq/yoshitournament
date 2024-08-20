@@ -350,7 +350,7 @@ if (isset($_POST['complete_registration'])) {
 <body>
 
   <!-- Top Bar Start -->
-  <?php //require 'reg_header.php'; ?>
+  <?php require 'reg_header.php'; ?>
 
   <section class="sub-main-banner float-start w-100">
 
