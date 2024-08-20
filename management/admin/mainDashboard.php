@@ -301,9 +301,7 @@ $email = $_SESSION['a_email'];
                 <i class="fa fa-user"></i>
               </div>
               <div class="count">179</div>
-
               <h3>Sign ups</h3>
-              <p>Lorem ipsum psdea itgum rixt.</p>
             </div>
           </div>
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
