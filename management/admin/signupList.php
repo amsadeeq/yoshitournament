@@ -10,10 +10,7 @@ require '../../connection.php';
 $stmt_signup = $pdo->prepare("SELECT * FROM `yoshi_signup_tbl`");
 $stmt_signup->execute();
 $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
-foreach ($users as $user) {
-  echo $user['user_email'];
-  echo $user['userRefNo'];
-}
+
 
 
 ?>
@@ -341,9 +338,10 @@ foreach ($users as $user) {
                           <tbody>
                             <?php
                             foreach ($users as $user) {
+                              $userRefNo = $user['userRefNo'];
                               ?>
                               <tr>
-                                <td><?php echo $user['userRefNo']; ?></td>
+                                <td><?php echo $userRefNo; ?></td>
                                 <td><?php echo $user['user_email']; ?></td>
                                 <td><?php echo $user['user_position']; ?></td>
                                 <td><?php echo $user['TeamRefNumber']; ?></td>
