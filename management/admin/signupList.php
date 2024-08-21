@@ -7,7 +7,7 @@ require '../../connection.php';
 
 // Prepare SQL statement to fetch user from yoshi_signup_tbl
 // Perform authentication against yoshi_signup_tbl
-$stmt_signup = $pdo->prepare("SELECT * FROM yoshi_signup_tbl");
+$stmt_signup = $pdo->prepare("SELECT * FROM `yoshi_signup_tbl`");
 $stmt_signup->execute();
 $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
 
@@ -345,10 +345,13 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
                                 <td><?php echo $user['TeamRefNumber']; ?></td>
                                 <td><?php echo $user['time_created']; ?></td>
                                 <td><?php echo $user['date_created']; ?></td>
-                                <td><?php if ($user['reg_status'] == "1") {
-                                  echo "Complete";
-                                } else {
-                                  echo "Pending...";
+                                <td><?php switch ($user['reg_status']) {
+                                  case "1":
+                                    echo "Complete";
+                                    break;
+                                  default:
+                                    echo "Pending...";
+                                    break;
                                 } ?></td>
                               </tr>
                               <?php
@@ -356,12 +359,12 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
                             ?>
                             <?php if (empty($users)) {
                               echo "<tr><td colspan='6'><center>
-                      <lord-icon
-                      src='https://cdn.lordicon.com/vihyezfv.json'
-                      trigger='loop'
-                      delay='1000'
-                      style='width:30px;height:30px'>
-                  </lord-icon> &nbsp;No record found</center></td></tr>";
+                              <lord-icon
+                              src='https://cdn.lordicon.com/vihyezfv.json'
+                              trigger='loop'
+                              delay='1000'
+                              style='width:30px;height:30px'>
+                            </lord-icon> &nbsp;No record found</center></td></tr>";
                             } ?>
                           </tbody>
                         </table>
