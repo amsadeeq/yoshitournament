@@ -120,7 +120,6 @@ $total_student = $result_student['total_student'];
     .stats_text {
       font-size: 16px !important;
       color: dimgrey !important;
-      margin: auto !important;
       margin-left: 10px;
     }
   </style>
