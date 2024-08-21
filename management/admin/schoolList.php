@@ -405,18 +405,32 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                               <thead>
                                 <tr>
                                   <th>#</th>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
-                                  <th>Username</th>
+                                  <th>Photo</th>
+                                  <th>Full Name</th>
+
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                  <th scope="row">1</th>
-                                  <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>@mdo</td>
-                                </tr>
+                                <?php
+                                $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY id DESC ");
+                                $stmt_player->execute(['teamRefNumber' => $school['TeamRefNumber']]);
+                                $players_record = $stmt_player->fetchAll(PDO::FETCH_ASSOC);
+
+                                $sn = 0;
+                                foreach ($players_record as $player) {
+                                  $sn = $sn + 1;
+
+                                  ?>
+                                  <tr>
+                                    <th scope="row"><?php echo $sn; ?></th>
+                                    <td>
+                                      <img src="<?php echo "../../schools/student_photo/" . $player['passport']; ?>"
+                                        style="width: 40px; height:40px;" />
+                                    </td>
+                                    <td><?php echo $player['surname'] . " " . $player['firstName']; ?></td>
+                                    <!-- <td>@mdo</td> -->
+                                  </tr>
+                                <?php } ?>
                               </tbody>
                             </table>
                           </div>
@@ -424,39 +438,6 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                         <?php
                             }
                             ?>
-                    </div>
-                    <div class="panel">
-                      <a class="panel-heading collapsed" role="tab" id="headingTwo" data-toggle="collapse"
-                        data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <h4 class="panel-title">Collapsible Group Items #2</h4>
-                      </a>
-                      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-                        aria-labelledby="headingTwo">
-                        <div class="panel-body">
-                          <p><strong>Collapsible Item 2 data</strong>
-                          </p>
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                          squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                          nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel">
-                      <a class="panel-heading collapsed" role="tab" id="headingThree" data-toggle="collapse"
-                        data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-                        aria-controls="collapseThree">
-                        <h4 class="panel-title">Collapsible Group Items #3</h4>
-                      </a>
-                      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-                        aria-labelledby="headingThree">
-                        <div class="panel-body">
-                          <p><strong>Collapsible Item 3 data</strong>
-                          </p>
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                          squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                          nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <!-- end of accordion -->
