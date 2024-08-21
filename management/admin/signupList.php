@@ -339,15 +339,22 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
                             <?php
                             foreach ($users as $user) {
                               $userRefNo = $user['userRefNo'];
+                              $userEmail = $user['user_email'];
+                              $userPosition = $user['user_position'];
+                              $teamRefNumber = $user['TeamRefNumber'];
+                              $timeCreated = $user['time_created'];
+                              $dateCreated = $user['date_created'];
+                              $regStatus = $user['reg_status'];
+
                               ?>
                               <tr>
                                 <td><?php echo $userRefNo; ?></td>
-                                <td><?php echo $user['user_email']; ?></td>
-                                <td><?php echo $user['user_position']; ?></td>
-                                <td><?php echo $user['TeamRefNumber']; ?></td>
-                                <td><?php echo $user['time_created']; ?></td>
-                                <td><?php echo $user['date_created']; ?></td>
-                                <td><?php switch ($user['reg_status']) {
+                                <td><?php echo $userEmail; ?></td>
+                                <td><?php echo $userPosition; ?></td>
+                                <td><?php echo $teamRefNumber; ?></td>
+                                <td><?php echo $timeCreated; ?></td>
+                                <td><?php echo $dateCreated; ?></td>
+                                <td><?php switch ($regStatus) {
                                   case "1":
                                     echo "Complete";
                                     break;
