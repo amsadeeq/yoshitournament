@@ -7,23 +7,11 @@ require '../../connection.php';
 
 // Prepare SQL statement to fetch user from yoshi_signup_tbl
 // Perform authentication against yoshi_signup_tbl
-$stmt_signup = $pdo->prepare("SELECT * FROM `yoshi_signup_tbl`");
+$stmt_signup = $pdo->prepare("SELECT * FROM `yoshi_signup_tbl` ORDER BY id DESC");
 $stmt_signup->execute();
 $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($users as $user) {
-  // Access user information using $user variable
-  $name = $user['TeamRefNumber'];
-  $email = $user['user_email'];
-  // ... access other fields as needed
 
-  // Output user information
-  echo "Name: $name<br>";
-  echo "Email: $email<br>";
-  // ... output other fields as needed
-
-  echo "<br>";
-}
 
 
 
