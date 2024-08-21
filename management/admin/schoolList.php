@@ -369,17 +369,17 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                       $sn = 0;
                       foreach ($school_official as $school) {
                         $sn = $sn + 1;
-                        $userRefNo = $user['userRefNo'];
-                        $userEmail = $user['user_email'];
-                        $userPosition = $user['user_position'];
-                        $teamRefNumber = $user['TeamRefNumber'];
-                        $timeCreated = $user['time_created'];
-                        $dateCreated = $user['date_created'];
-                        $regStatus = $user['reg_status'];
+                        $userRefNo = $school['userRefNo'];
+                        $userEmail = $school['user_email'];
+                        $userPosition = $school['user_position'];
+                        $teamRefNumber = $school['TeamRefNumber'];
+                        $timeCreated = $school['time_created'];
+                        $dateCreated = $school['date_created'];
+                        $regStatus = $school['reg_status'];
                         ?>
                         <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
-                          data-parent="#accordion" href="<?php echo "#collapse" . $user['userRefNo']; ?>"
-                          aria-expanded="true" aria-controls="<?php echo "#collapse" . $user['userRefNo']; ?>">
+                          data-parent="#accordion" href="<?php echo "#collapse" . $school['TeamRefNumber']; ?>"
+                          aria-expanded="true" aria-controls="<?php echo "#collapse" . $school['TeamRefNumber']; ?>">
 
                           <table class="table table-striped table-bordered">
                             <tbody>
