@@ -102,27 +102,7 @@ require 'auth.php';
                 <ul class="list-unstyled mt-4">
                   <li>
                     <span class="icm"> <i class="fas fa-phone-alt"></i> </span>
-                    <span> +2349014889669</span>
-                  </li>
-                  <li>
-                    <span class="icm"> <i class="fas fa-envelope"></i> </span>
-                    <span> abmusadeeq@gmail.com</span>
-                  </li>
-                  <li>
-                    <span class="icm"> <i class="fas fa-map-marker-alt"></i> </span>
-                    <span> Abuja, Nigeria </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="comon-div-cont">
-                <h5> Media enquiries </h5>
-                <ul class="list-unstyled mt-4">
-                  <li>
-                    <span class="icm"> <i class="fas fa-phone-alt"></i> </span>
-                    <span> +234 817 516 0704</span>
+                    <span> +2349086658888</span>
                   </li>
                   <li>
                     <span class="icm"> <i class="fas fa-envelope"></i> </span>
@@ -138,6 +118,26 @@ require 'auth.php';
 
             <div class="col">
               <div class="comon-div-cont">
+                <h5> Media enquiries </h5>
+                <ul class="list-unstyled mt-4">
+                  <li>
+                    <span class="icm"> <i class="fas fa-phone-alt"></i> </span>
+                    <span> +2349014889669</span>
+                  </li>
+                  <li>
+                    <span class="icm"> <i class="fas fa-envelope"></i> </span>
+                    <span> moha@gmail.com</span>
+                  </li>
+                  <li>
+                    <span class="icm"> <i class="fas fa-map-marker-alt"></i> </span>
+                    <span> Accra St, Wuse, Abuja 904101, FCT, Nigeria </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="comon-div-cont">
                 <h5> Head Office </h5>
                 <ul class="list-unstyled mt-4">
                   <li>
@@ -146,7 +146,7 @@ require 'auth.php';
                   </li>
                   <li>
                     <span class="icm"> <i class="fas fa-envelope"></i> </span>
-                    <span> admin@yoshi.com</span>
+                    <span> admin@yoshifa.com</span>
                   </li>
                   <li>
                     <span class="icm"> <i class="fas fa-map-marker-alt"></i> </span>
@@ -200,13 +200,17 @@ require 'auth.php';
 
             <div class="col-md-5 cm-text-n">
 
-              <h2 class="comon-heading m-0"> Locantion </h2>
+              <h2 class="comon-heading m-0"> Location </h2>
 
               <div class="map-div1 mt-4">
                 <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.986648701019!2d7.462705473144424!3d9.064980088428527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b2ef3a98ae9%3A0x683e4999c9a157e7!2sAstro%20Turf%20Abuja!5e0!3m2!1sen!2smy!4v1724230717765!5m2!1sen!2smy"
+                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.3953026045897!2d55.37223197372947!3d25.290919527901313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d6a554bb84d%3A0x98a3a204daa7be43!2sYoshi%20Football%20Academy%20(Dubai)!5e0!3m2!1sen!2smy!4v1709824238897!5m2!1sen!2smy"
                   width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 
               </div>
 
