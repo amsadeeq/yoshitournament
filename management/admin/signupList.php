@@ -12,6 +12,7 @@ $stmt_signup->execute();
 $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
 foreach ($users as $user) {
   echo $user['user_email'];
+  echo $user['userRefNo'];
 }
 
 
