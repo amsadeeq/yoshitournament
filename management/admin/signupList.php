@@ -316,20 +316,6 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
               <div class="x_panel">
                 <div class="x_title">
                   <h2>List of Accounts <small>(Users) <?php echo $email; ?></small></h2>
-                  <!-- <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i
-                          class="fa fa-wrench"></i></a>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Settings 1</a>
-                        <a class="dropdown-item" href="#">Settings 2</a>
-                      </div>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul> -->
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -349,15 +335,34 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>45681932</td>
-                              <td>email@email.com</td>
-                              <td>Coach</td>
-                              <td>25ZN362Q2024</td>
-                              <td>2011/04/25</td>
-                              <td>11pm</td>
-                              <td>Registered</td>
-                            </tr>
+                            <?php
+                            foreach ($users as $user) {
+                              ?>
+                              <tr>
+                                <td><?php echo $user['userRefNo']; ?></td>
+                                <td><?php echo $user['user_email']; ?></td>
+                                <td><?php echo $user['user_position']; ?></td>
+                                <td><?php echo $user['TeamRefNumber']; ?></td>
+                                <td><?php echo $user['time_created']; ?></td>
+                                <td><?php echo $user['date_created']; ?></td>
+                                <td><?php if ($user['reg_status'] == 1) {
+                                  echo "Complete";
+                                } else {
+                                  echo "Pending...";
+                                } ?></td>
+                              </tr>
+                              <?php
+                            }
+                            ?>
+                            <?php if (empty($users)) {
+                              echo "<tr><td colspan='6'><center>
+                      <lord-icon
+                      src='https://cdn.lordicon.com/vihyezfv.json'
+                      trigger='loop'
+                      delay='1000'
+                      style='width:30px;height:30px'>
+                  </lord-icon> &nbsp;No record found</center></td></tr>";
+                            } ?>
                           </tbody>
                         </table>
                       </div>
