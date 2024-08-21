@@ -344,9 +344,9 @@ foreach ($users as $user) {
                               <th>Email</th>
                               <th>Position</th>
                               <th>Team Reference</th>
-                              <!-- <th>Time Created</th>
+                              <th>Time Created</th>
                               <th>Date</th>
-                              <th>Reg Status</th> -->
+                              <th>Reg Status</th>
                             </tr>
                           </thead>
                           <tbody>
