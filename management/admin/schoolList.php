@@ -49,7 +49,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Yoshi</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -476,7 +476,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       <!-- footer content -->
       <footer>
         <div class="pull-right">
-          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          Yoshi - Powered by <a href="https://colorlib.com">YoshiFA</a>
         </div>
         <div class="clearfix"></div>
       </footer>
