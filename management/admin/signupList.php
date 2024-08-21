@@ -345,7 +345,7 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
                                 <td><?php echo $user['TeamRefNumber']; ?></td>
                                 <td><?php echo $user['time_created']; ?></td>
                                 <td><?php echo $user['date_created']; ?></td>
-                                <td><?php if ($user['reg_status'] == 1) {
+                                <td><?php if ($user['reg_status'] == "1") {
                                   echo "Complete";
                                 } else {
                                   echo "Pending...";
