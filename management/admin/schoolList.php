@@ -365,23 +365,24 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                   <!-- start accordion -->
                   <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel">
-                      <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
-                        data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <?php
+                      $sn = 0;
+                      foreach ($school_official as $school) {
+                        $sn = $sn + 1;
+                        $userRefNo = $user['userRefNo'];
+                        $userEmail = $user['user_email'];
+                        $userPosition = $user['user_position'];
+                        $teamRefNumber = $user['TeamRefNumber'];
+                        $timeCreated = $user['time_created'];
+                        $dateCreated = $user['date_created'];
+                        $regStatus = $user['reg_status'];
+                        ?>
+                        <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
+                          data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 
-                        <table class="table table-striped table-bordered">
-                          <tbody>
-                            <?php
-                            $sn = 0;
-                            foreach ($school_official as $school) {
-                              $sn = $sn + 1;
-                              $userRefNo = $user['userRefNo'];
-                              $userEmail = $user['user_email'];
-                              $userPosition = $user['user_position'];
-                              $teamRefNumber = $user['TeamRefNumber'];
-                              $timeCreated = $user['time_created'];
-                              $dateCreated = $user['date_created'];
-                              $regStatus = $user['reg_status'];
-                              ?>
+                          <table class="table table-striped table-bordered">
+                            <tbody>
+
                               <tr class="panel-title">
                                 <td><?php echo $sn; ?></td>
                                 <td>
@@ -454,8 +455,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                           </div>
                         </div>
                         <?php
-                            }
-                            ?>
+                      }
+                      ?>
                     </div>
                   </div>
                   <!-- end of accordion -->
