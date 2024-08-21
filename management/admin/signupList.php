@@ -340,7 +340,7 @@ foreach ($users as $user) {
                         <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
                           <thead>
                             <tr>
-                              <!-- <th>User ID</th> -->
+                              <th>User ID</th>
                               <th>Email</th>
                               <th>Position</th>
                               <th>Team Reference</th>
@@ -352,7 +352,7 @@ foreach ($users as $user) {
                           <tbody>
                             <?php
                             foreach ($users as $user) {
-                              // $userRefNo = $user['userRefNo'];
+                              $userRefNo = $user['userRefNo'];
                               $userEmail = $user['user_email'];
                               $userPosition = $user['user_position'];
                               $teamRefNumber = $user['TeamRefNumber'];
