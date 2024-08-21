@@ -342,8 +342,9 @@ $total_student = $result_student['total_student'];
       <div class="right_col" role="main">
         <!-- top tiles -->
         <div class="row">
-          <a href="signupList.php" class=" text-decoration-none">
-            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+
+          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+            <a href="signupList.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon" style="font-size:30px;">
                   <i class="fa-regular fa-user"></i>
@@ -351,20 +352,23 @@ $total_student = $result_student['total_student'];
                 <div class="count"><?php echo $total_users; ?></div>
                 <h4 class="stats_text">Sign ups</h4>
               </div>
-            </div>
-          </a>
-
-          <a href="schoolList.php" class=" text-decoration-none"></a>
-          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <div class="tile-stats">
-              <div class="icon">
-                <i class="fas fa-school"></i>
-              </div>
-              <div class="count"><?php echo $total_school_officials; ?></div>
-              <h4 class="stats_text">Schools</h4>
-            </div>
+            </a>
           </div>
-          </a>
+
+
+
+          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+            <a href="schoolList.php" class=" text-decoration-none">
+              <div class="tile-stats">
+                <div class="icon">
+                  <i class="fas fa-school"></i>
+                </div>
+                <div class="count"><?php echo $total_school_officials; ?></div>
+                <h4 class="stats_text">Schools</h4>
+              </div>
+            </a>
+          </div>
+
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
             <div class="tile-stats">
               <div class="icon">
