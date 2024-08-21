@@ -106,6 +106,12 @@ $total_student = $result_student['total_student'];
 
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
+
+  <style>
+    .icon {
+      font-size: 50px !important;
+    }
+  </style>
 </head>
 
 <body class="nav-md">
