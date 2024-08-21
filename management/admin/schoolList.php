@@ -427,7 +427,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                       <img src="<?php echo "../../schools/student_photo/" . $player['passport']; ?>"
                                         style="width: 40px; height:40px;" />
                                     </td>
-                                    <td><?php echo $player['surname'] . " " . $player['firstName']; ?></td>
+                                    <td><?php echo $player['surname'] . " " . $player['firstname']; ?></td>
                                     <!-- <td>@mdo</td> -->
                                   </tr>
                                 <?php } ?>
