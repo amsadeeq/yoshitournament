@@ -10,7 +10,7 @@ require '../../connection.php';
 $stmt_signup = $pdo->prepare("SELECT * FROM `yoshi_signup_tbl`");
 $stmt_signup->execute();
 $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
-echo $users;
+echo $users['user_email'];
 
 
 ?>
