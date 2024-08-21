@@ -378,8 +378,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                         $regStatus = $user['reg_status'];
                         ?>
                         <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
-                          data-parent="#accordion" href="<?php echo "#collapse" . $player['id']; ?>" aria-expanded="true"
-                          aria-controls="<?php echo "#collapse" . $player['id']; ?>">
+                          data-parent="#accordion" href="<?php echo "#collapse" . $user['id']; ?>" aria-expanded="true"
+                          aria-controls="<?php echo "#collapse" . $user['id']; ?>">
 
                           <table class="table table-striped table-bordered">
                             <tbody>
