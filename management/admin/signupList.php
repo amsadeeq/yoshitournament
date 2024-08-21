@@ -340,34 +340,34 @@ foreach ($users as $user) {
                         <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
                           <thead>
                             <tr>
-                              <th>User ID</th>
+                              <!-- <th>User ID</th> -->
                               <th>Email</th>
                               <th>Position</th>
                               <th>Team Reference</th>
-                              <th>Time Created</th>
+                              <!-- <th>Time Created</th>
                               <th>Date</th>
-                              <th>Reg Status</th>
+                              <th>Reg Status</th> -->
                             </tr>
                           </thead>
                           <tbody>
                             <?php
                             foreach ($users as $user) {
-                              $userRefNo = $user['userRefNo'];
+                              // $userRefNo = $user['userRefNo'];
                               $userEmail = $user['user_email'];
                               $userPosition = $user['user_position'];
                               $teamRefNumber = $user['TeamRefNumber'];
-                              $timeCreated = $user['time_created'];
-                              $dateCreated = $user['date_created'];
-                              $regStatus = $user['reg_status'];
+                              // $timeCreated = $user['time_created'];
+                              // $dateCreated = $user['date_created'];
+                              // $regStatus = $user['reg_status'];
                               ?>
                               <tr>
-                                <td><?php echo $userRefNo; ?></td>
+                                <!-- <td><?php //echo $userRefNo; ?></td> -->
                                 <td><?php echo $userEmail; ?></td>
                                 <td><?php echo $userPosition; ?></td>
                                 <td><?php echo $teamRefNumber; ?></td>
-                                <td><?php echo $timeCreated; ?></td>
-                                <td><?php echo $dateCreated; ?></td>
-                                <td><?php echo $regStatus; ?></td>
+                                <!-- <td><?php //echo $timeCreated; ?></td>
+                                <td><?php //echo $dateCreated; ?></td>
+                                <td><?php //echo $regStatus; ?></td> -->
                               </tr>
                               <?php
                             }
