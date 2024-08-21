@@ -8,10 +8,17 @@ require '../../connection.php';
 
 // Prepare SQL statement to fetch user from yoshi_signup_tbl
 // Perform authentication against yoshi_signup_tbl
-$stmt = $pdo->prepare("SELECT COUNT(*) as total_users FROM yoshi_signup_tbl");
-$stmt->execute();
-$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt_signup = $pdo->prepare("SELECT COUNT(*) as total_users FROM yoshi_signup_tbl");
+$stmt_signup->execute();
+$result = $stmt_signup->fetch(PDO::FETCH_ASSOC);
 $total_users = $result['total_users'];
+
+// Prepare SQL statement to fetch user from yoshi_signup_tbl
+// Perform authentication against yoshi_signup_tbl
+$stmt_pending = $pdo->prepare("SELECT COUNT(*) as total_users FROM yoshi_signup_tbl WHERE reg_status = 0");
+$stmt_pending->execute();
+$result_pending = $stmt_pending->fetch(PDO::FETCH_ASSOC);
+$total_users_pending = $result_pending['total_users'];
 
 
 
@@ -352,11 +359,15 @@ $total_student = $result_student['total_student'];
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
             <div class="tile-stats">
               <div class="icon">
-                <i class="fa fa-user-o"></i>
+                <i class="fas fa-user-clock"></i>
               </div>
-              <div class="count">179</div>
+              <div class="count"><?php if (!empty($total_users_pending)) {
+                echo $total_users_pending;
+              } else {
+                echo "0";
+              } ?></div>
 
-              <h3>New Sign ups</h3>
+              <h3>Pending</h3>
 
             </div>
           </div>
