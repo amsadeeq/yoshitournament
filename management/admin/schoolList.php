@@ -339,7 +339,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                             <?php
                             $sn = 0;
                             foreach ($school_official as $school) {
-
+                              $sn = $sn + 1;
                               $userRefNo = $user['userRefNo'];
                               $userEmail = $user['user_email'];
                               $userPosition = $user['user_position'];
@@ -349,7 +349,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                               $regStatus = $user['reg_status'];
                               ?>
                               <tr>
-                                <td><?php echo $sn++; ?></td>
+                                <td><?php echo $sn; ?></td>
                                 <td>
                                   <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>" />
                                 </td>
