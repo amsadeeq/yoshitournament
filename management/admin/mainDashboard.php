@@ -341,7 +341,7 @@ $total_student = $result_student['total_student'];
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
             <div class="tile-stats">
               <div class="icon">
-                <i class="fa fa-sort-amount-desc"></i>
+                <i class="fas fa-user-graduate"></i>
               </div>
               <div class="count"><?php echo $total_student; ?></div>
 
