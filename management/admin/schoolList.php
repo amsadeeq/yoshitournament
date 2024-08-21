@@ -5,7 +5,7 @@ ob_start();
 
 require '../../connection.php';
 
-$stmt_school = $pdo->prepare("SELECT * FROM `yoshi_schools_officials_tbl` ");
+$stmt_school = $pdo->prepare("SELECT * FROM `yoshi_schools_officials_tbl` ORDER BY id DESC ");
 $stmt_school->execute();
 $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
@@ -351,7 +351,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                               <tr>
                                 <td><?php echo $sn; ?></td>
                                 <td>
-                                  <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>" />
+                                  <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>"
+                                    style="width: 40px; height:40px;" />
                                 </td>
                                 <td><?php echo $school['team_name']; ?></td>
                                 <td><?php echo $school['TeamRefNumber']; ?></td>
