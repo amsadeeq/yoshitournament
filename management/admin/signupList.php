@@ -9,7 +9,21 @@ require '../../connection.php';
 // Perform authentication against yoshi_signup_tbl
 $stmt_signup = $pdo->prepare("SELECT * FROM `yoshi_signup_tbl`");
 $stmt_signup->execute();
-$users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
+$users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($users as $user) {
+  // Access user information using $user variable
+  $name = $user['TeamRefNumber'];
+  $email = $user['user_email'];
+  // ... access other fields as needed
+
+  // Output user information
+  echo "Name: $name<br>";
+  echo "Email: $email<br>";
+  // ... output other fields as needed
+
+  echo "<br>";
+}
 
 
 
@@ -339,14 +353,12 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
                             <?php
                             foreach ($users as $user) {
                               $userRefNo = $user['userRefNo'];
-                              echo $userRefNo;
                               $userEmail = $user['user_email'];
                               $userPosition = $user['user_position'];
                               $teamRefNumber = $user['TeamRefNumber'];
                               $timeCreated = $user['time_created'];
                               $dateCreated = $user['date_created'];
                               $regStatus = $user['reg_status'];
-
                               ?>
                               <tr>
                                 <td><?php echo $userRefNo; ?></td>
