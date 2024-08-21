@@ -339,6 +339,7 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
                             <?php
                             foreach ($users as $user) {
                               $userRefNo = $user['userRefNo'];
+                              echo $userRefNo;
                               $userEmail = $user['user_email'];
                               $userPosition = $user['user_position'];
                               $teamRefNumber = $user['TeamRefNumber'];
