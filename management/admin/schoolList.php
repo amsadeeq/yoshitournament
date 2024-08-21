@@ -400,8 +400,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                             </tbody>
                           </table>
                         </a>
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                          aria-labelledby="headingOne">
+                        <div id="<?php echo "#collapse" . $school['TeamRefNumber']; ?>" class="panel-collapse collapse in"
+                          role="tabpanel" aria-labelledby="headingOne">
                           <div class="panel-body">
                             <table class="table table-bordered">
                               <thead>
