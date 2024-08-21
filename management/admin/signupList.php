@@ -361,7 +361,7 @@ foreach ($users as $user) {
                               $regStatus = $user['reg_status'];
                               ?>
                               <tr>
-                                <!-- <td><?php //echo $userRefNo; ?></td> -->
+                                <td><?php //echo $userRefNo; ?></td>
                                 <td><?php echo $userEmail; ?></td>
                                 <td><?php echo $userPosition; ?></td>
                                 <td><?php echo $teamRefNumber; ?></td>
