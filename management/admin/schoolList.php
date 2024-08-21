@@ -325,18 +325,21 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                         <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
                           <thead>
                             <tr>
-                              <th>User ID</th>
+                              <th>S/No</th>
+                              <th>School Logo</th>
+                              <th>School Name</th>
+                              <th>Team Ref No.</th>
+                              <th>Team Address</th>
+                              <th>Phone</th>
                               <th>Email</th>
-                              <th>Position</th>
-                              <th>Team Reference</th>
-                              <th>Time Created</th>
-                              <th>Date</th>
-                              <th>Reg Status</th>
+
                             </tr>
                           </thead>
                           <tbody>
                             <?php
-                            foreach ($users as $user) {
+                            $sn = 0;
+                            foreach ($school_official as $school) {
+
                               $userRefNo = $user['userRefNo'];
                               $userEmail = $user['user_email'];
                               $userPosition = $user['user_position'];
@@ -346,13 +349,15 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                               $regStatus = $user['reg_status'];
                               ?>
                               <tr>
-                                <td><?php echo $userRefNo; ?></td>
-                                <td><?php echo $userEmail; ?></td>
-                                <td><?php echo $userPosition; ?></td>
-                                <td><?php echo $teamRefNumber; ?></td>
-                                <td><?php echo $timeCreated; ?></td>
-                                <td><?php echo $dateCreated; ?></td>
-                                <td><?php echo $regStatus; ?></td>
+                                <td><?php echo $sn++; ?></td>
+                                <td>
+                                  <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>" />
+                                </td>
+                                <td><?php echo $school['team_name']; ?></td>
+                                <td><?php echo $school['TeamRefNumber']; ?></td>
+                                <td><?php echo $school['team_address']; ?></td>
+                                <td><?php echo $school['phone']; ?></td>
+                                <td><?php echo $school['email']; ?></td>
                               </tr>
                               <?php
                             }
