@@ -316,7 +316,7 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
               <div class="x_panel">
                 <div class="x_title">
                   <h2>List of Accounts <small>(Users) <?php echo $email; ?></small></h2>
-                  <ul class="nav navbar-right panel_toolbox">
+                  <!-- <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
                     <li class="dropdown">
@@ -329,7 +329,7 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
                     </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
-                  </ul>
+                  </ul> -->
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
