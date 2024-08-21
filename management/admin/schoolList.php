@@ -436,14 +436,17 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                     <td><?php echo $player['phone']; ?></td>
                                     <td><?php echo $player['email']; ?></td>
                                     <td>
-                                      <a
-                                        href="tel:<?php echo $player['emergency_phone']; ?>"><?php echo $player['emergency_phone']; ?></a>
+                                      <h6><a
+                                          href="tel:<?php echo $player['emergency_phone']; ?>"><?php echo $player['emergency_phone']; ?></a>
+                                      </h6>
                                       <br />
-                                      <a
-                                        href="mailto:<?php echo $player['emergency_email']; ?>"><?php echo $player['emergency_email']; ?></a>
+                                      <h6>
+                                        <a
+                                          href="mailto:<?php echo $player['emergency_email']; ?>"><?php echo $player['emergency_email']; ?></a>
+                                      </h6>
                                       <br />
-                                      <h4><?php echo $player['emergency_name']; ?></h4>
-                                      <h4><?php echo $player['emergency_address']; ?></h4>
+                                      <h6><?php echo $player['emergency_name']; ?></h6>
+                                      <h6><?php echo $player['emergency_address']; ?></h6>
 
                                     </td>
                                   </tr>
