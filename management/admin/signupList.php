@@ -338,7 +338,14 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $teamRefNumber; ?></td>
                                 <td><?php echo $timeCreated; ?></td>
                                 <td><?php echo $dateCreated; ?></td>
-                                <td><?php echo $regStatus; ?></td>
+                                <td><?php switch ($regStatus) {
+                                  case 1:
+                                    echo "Complete";
+                                    break;
+                                  default:
+                                    echo "Pending";
+                                    break;
+                                } ?></td>
                               </tr>
                               <?php
                             }
