@@ -354,27 +354,12 @@ $users = $stmt_signup->fetch(PDO::FETCH_ASSOC);
                                 <td><?php echo $teamRefNumber; ?></td>
                                 <td><?php echo $timeCreated; ?></td>
                                 <td><?php echo $dateCreated; ?></td>
-                                <td><?php switch ($regStatus) {
-                                  case "1":
-                                    echo "Complete";
-                                    break;
-                                  default:
-                                    echo "Pending...";
-                                    break;
-                                } ?></td>
+                                <td><?php echo $regStatus; ?></td>
                               </tr>
                               <?php
                             }
                             ?>
-                            <?php if (empty($users)) {
-                              echo "<tr><td colspan='6'><center>
-                              <lord-icon
-                              src='https://cdn.lordicon.com/vihyezfv.json'
-                              trigger='loop'
-                              delay='1000'
-                              style='width:30px;height:30px'>
-                            </lord-icon> &nbsp;No record found</center></td></tr>";
-                            } ?>
+
                           </tbody>
                         </table>
                       </div>
