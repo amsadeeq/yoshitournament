@@ -110,7 +110,7 @@ $total_student = $result_student['total_student'];
   <style>
     .icon {
       font-size: 50px !important;
-      color: #ccc;
+      color: #eee;
     }
   </style>
 </head>
