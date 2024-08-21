@@ -368,7 +368,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                       <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
                         data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 
-                        <table>
+                        <table class="table table-striped table-bordered">
                           <tbody>
                             <?php
                             $sn = 0;
