@@ -367,7 +367,38 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                     <div class="panel">
                       <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
                         data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <h4 class="panel-title">Collapsible Group Items #1</h4>
+
+                        <table>
+                          <tbody>
+                            <?php
+                            $sn = 0;
+                            foreach ($school_official as $school) {
+                              $sn = $sn + 1;
+                              $userRefNo = $user['userRefNo'];
+                              $userEmail = $user['user_email'];
+                              $userPosition = $user['user_position'];
+                              $teamRefNumber = $user['TeamRefNumber'];
+                              $timeCreated = $user['time_created'];
+                              $dateCreated = $user['date_created'];
+                              $regStatus = $user['reg_status'];
+                              ?>
+                              <tr class="panel-title">
+                                <td><?php echo $sn; ?></td>
+                                <td>
+                                  <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>"
+                                    style="width: 40px; height:40px;" />
+                                </td>
+                                <td><?php echo $school['team_name']; ?></td>
+                                <td><?php echo $school['TeamRefNumber']; ?></td>
+                                <td><?php echo $school['team_address']; ?></td>
+                                <td><?php echo $school['phone']; ?></td>
+                                <td><?php echo $school['email']; ?></td>
+                              </tr>
+                              <?php
+                            }
+                            ?>
+                          </tbody>
+                        </table>
                       </a>
                       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
                         aria-labelledby="headingOne">
