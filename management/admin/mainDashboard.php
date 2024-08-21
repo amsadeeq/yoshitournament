@@ -112,6 +112,15 @@ $total_student = $result_student['total_student'];
       font-size: 50px !important;
       color: #eee !important;
     }
+
+    .tile-stats {
+      border-radius: 15px 15px !important;
+    }
+
+    .stats_text {
+      font-size: 16px !important;
+      color: dimgrey !important;
+    }
   </style>
 </head>
 
@@ -338,7 +347,7 @@ $total_student = $result_student['total_student'];
                 <i class="fa-regular fa-user"></i>
               </div>
               <div class="count"><?php echo $total_users; ?></div>
-              <h3>Sign ups</h3>
+              <h4 class="stats_text">Sign ups</h4>
             </div>
           </div>
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
@@ -348,7 +357,7 @@ $total_student = $result_student['total_student'];
               </div>
               <div class="count"><?php echo $total_school_officials; ?></div>
 
-              <h3>Schools</h3>
+              <h4 class="stats_text">Schools</h4>
 
             </div>
           </div>
@@ -359,7 +368,7 @@ $total_student = $result_student['total_student'];
               </div>
               <div class="count"><?php echo $total_student; ?></div>
 
-              <h3>Students</h3>
+              <h4 class="stats_text">Students</h4>
 
             </div>
           </div>
@@ -374,7 +383,7 @@ $total_student = $result_student['total_student'];
                 echo "0";
               } ?></div>
 
-              <h3>Pending</h3>
+              <h4 class="stats_text">Pending</h4>
 
             </div>
           </div>
