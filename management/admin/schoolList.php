@@ -378,13 +378,14 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                         $regStatus = $user['reg_status'];
                         ?>
                         <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
-                          data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          data-parent="#accordion" href="<?php echo "#collapse" . $player['id']; ?>" aria-expanded="true"
+                          aria-controls="<?php echo "#collapse" . $player['id']; ?>">
 
                           <table class="table table-striped table-bordered">
                             <tbody>
 
                               <tr class="panel-title">
-                                <td><?php echo $sn; ?></td>
+                                <td><?php echo $player['id']; ?></td>
                                 <td>
                                   <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>"
                                     style="width: 40px; height:40px;" />
