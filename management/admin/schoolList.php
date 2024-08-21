@@ -406,7 +406,11 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                 <tr>
                                   <th>#</th>
                                   <th>Photo</th>
+                                  <th>User Ref No</th>
                                   <th>Full Name</th>
+                                  <th>Phone</th>
+                                  <th>Email</th>
+                                  <th>Emergency</th>
 
                                 </tr>
                               </thead>
@@ -422,13 +426,26 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
                                   ?>
                                   <tr>
-                                    <th scope="row"><?php echo $sn; ?></th>
+                                    <th><?php echo $sn; ?></th>
+                                    <td><?php echo $player['userRefNo']; ?></td>
                                     <td>
                                       <img src="<?php echo "../../schools/student_photo/" . $player['passport']; ?>"
                                         style="width: 40px; height:40px;" />
                                     </td>
                                     <td><?php echo $player['surname'] . " " . $player['firstname']; ?></td>
-                                    <!-- <td>@mdo</td> -->
+                                    <td><?php echo $player['phone']; ?></td>
+                                    <td><?php echo $player['email']; ?></td>
+                                    <td>
+                                      <a
+                                        href="tel:<?php echo $player['emergency_phone']; ?>"><?php echo $player['emergency_phone']; ?></a>
+                                      <br />
+                                      <a
+                                        href="mailto:<?php echo $player['emergency_email']; ?>"><?php echo $player['emergency_email']; ?></a>
+                                      <br />
+                                      <h4><?php echo $player['emergency_name']; ?></h4>
+                                      <h4><?php echo $player['emergency_address']; ?></h4>
+
+                                    </td>
                                   </tr>
                                 <?php } ?>
                               </tbody>
