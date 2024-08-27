@@ -100,7 +100,7 @@ require 'auth.php';
                 <img src="images/about_Banner 01.jpg" alt="pic">
               </figure>
               <figure class="small-img">
-                <img src="images/pexels-photo-12460951.jfif" alt="pic2">
+                <img src="images/Yoshi_10.jpg" alt="pic2">
               </figure>
             </div>
             <div class="col">
@@ -130,7 +130,7 @@ require 'auth.php';
                 <img src="images/about_Banner 02.jpg" alt="pic">
               </figure>
               <figure class="small-img">
-                <img src="images/pexels-photo-12460951.jfif" alt="pic2">
+                <img src="images/Yoshi_11.jpg" alt="pic2">
               </figure>
             </div>
             <div class="col">
@@ -150,7 +150,7 @@ require 'auth.php';
                 <img src="images/about_Banner 02.jpg" alt="pic">
               </figure>
               <figure class="small-img">
-                <img src="images/pexels-photo-12460951.jfif" alt="pic2">
+                <img src="images/abuja_ (44).jpg" alt="pic2">
               </figure>
             </div>
 
