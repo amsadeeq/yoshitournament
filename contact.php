@@ -110,7 +110,7 @@ require 'auth.php';
                   </li>
                   <li>
                     <span class="icm"> <i class="fas fa-map-marker-alt"></i> </span>
-                    <span> No 45 Ivy Apartment, Abuja, Nigeria </span>
+                    <span> Astor Turf Abuja, Accra St, Wuse, Abuja 904101, FCT, Nigeria </span>
                   </li>
                 </ul>
               </div>
@@ -130,7 +130,7 @@ require 'auth.php';
                   </li>
                   <li>
                     <span class="icm"> <i class="fas fa-map-marker-alt"></i> </span>
-                    <span> Accra St, Wuse, Abuja 904101, FCT, Nigeria </span>
+                    <span> Astor Turf Abuja, Accra St, Wuse, Abuja 904101, FCT, Nigeria </span>
                   </li>
                 </ul>
               </div>
