@@ -255,17 +255,17 @@ require 'auth.php';
 
           <ul class="list-unstyled d-flex flex-column justify-content-center w-100">
             <li class="d-flex align-items-center justify-content-between w-100">
-              <span class="ct-2"> <i class="fa fa-soccer-ball-o"></i> Goals </span>
-              <span class="counter" data-target="12">12 </span>
+              <span class="ct-2"> <i class="fa fa-soccer-ball-o"></i> Schools </span>
+              <span class="counter" data-target="12">16 </span>
             </li>
 
             <li class="d-flex align-items-center justify-content-between">
-              <span class="ct-2"> <i class="fas fa-mitten"></i> Assists </span>
-              <span class="counter" data-target="54">54 </span>
+              <span class="ct-2"> <i class="fas fa-mitten"></i> Trophies </span>
+              <span class="counter" data-target="54">10 </span>
             </li>
 
             <li class="d-flex align-items-center justify-content-between">
-              <span class="ct-2"> <i class="fas fa-running"></i> Players Participating</span>
+              <span class="ct-2"> <i class="fas fa-running"></i> Players</span>
               <span class="counter" data-target="600"> 600+ </span>
             </li>
 
