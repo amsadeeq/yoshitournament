@@ -403,6 +403,8 @@ if (isset($_POST['complete_registration'])) {
       if (!regex.test(key)) {
         event.preventDefault();
         showError("Invalid key, Please check reference Number.");
+      } else {
+        hideError();
       }
     }
 
@@ -410,6 +412,11 @@ if (isset($_POST['complete_registration'])) {
       var errorDiv = document.getElementById("error-message");
       errorDiv.innerText = message;
       errorDiv.style.display = "block";
+    }
+
+    function hideError() {
+      var errorDiv = document.getElementById("error-message");
+      errorDiv.style.display = "none";
     }
   </script>
 
