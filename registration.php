@@ -171,7 +171,7 @@ require 'auth.php';
         </div>
 
 
-        <div class="matech-div-main my-5">
+        <!-- <div class="matech-div-main my-5">
             <div class="mn-next-part">
                 <div class="container">
                     <h2 class="comon-heading m-0"> Fixtures </h2>
@@ -736,7 +736,7 @@ require 'auth.php';
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </section>
