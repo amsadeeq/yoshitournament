@@ -402,7 +402,7 @@ if (isset($_POST['complete_registration'])) {
       var regex = /^[A-Za-z0-9]+$/;
       if (!regex.test(key)) {
         event.preventDefault();
-        showError("Only alphanumeric characters are allowed.");
+        showError("Invalid key, Please check reference Number.");
       }
     }
 
