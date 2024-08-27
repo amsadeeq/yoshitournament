@@ -325,7 +325,7 @@ if (isset($_POST['complete_registration'])) {
                       <div class='phone-div'>
                         <input type='text' name='refNumber' class='form-control login-input'
                           placeholder='Reference Number' pattern="[A-Za-z0-9]{12}" alt='pn' autofocus required
-                          minlength="12" maxlength="12" value="<?php echo $refNumberFromLink; ?>" />
+                          minlength="12" maxlength="12" oninput="validateInput(this)" value="<?php echo $refNumberFromLink; ?>" />
                       </div>
                     </div>
                     <div class="modal-footer">
