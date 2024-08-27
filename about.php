@@ -127,10 +127,10 @@ require 'auth.php';
           <div class="row row-cols-1 row-cols-lg-2 g-lg-5">
             <div class="col position-relative d-sm-none">
               <figure class="big-img">
-                <img src="images/about_Banner 02.jpg" alt="pic">
+                <img src="images/abuja_ (42).jpg" alt="pic">
               </figure>
               <figure class="small-img">
-                <img src="images/abuja_ (42).jpg" alt="pic2">
+                <img src="images/abuja_ (72).jpg" alt="pic2">
               </figure>
             </div>
             <div class="col">
@@ -147,10 +147,10 @@ require 'auth.php';
             </div>
             <div class="col position-relative d-none d-sm-block">
               <figure class="big-img">
-                <img src="images/about_Banner 02.jpg" alt="pic">
+                <img src="images/abuja_ (42).jpg" alt="pic">
               </figure>
               <figure class="small-img">
-                <img src="images/abuja_ (42).jpg" alt="pic2">
+                <img src="images/abuja_ (72).jpg" alt="pic2">
               </figure>
             </div>
 
