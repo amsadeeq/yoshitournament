@@ -325,7 +325,12 @@ if (isset($_POST['complete_registration'])) {
                       <div class='phone-div'>
                         <input type='text' name='refNumber' class='form-control login-input'
                           placeholder='Reference Number' pattern="[A-Za-z0-9]{12}" alt='pn' autofocus required
-                          minlength="12" maxlength="12" oninput="validateInput(this)" value="<?php echo $refNumberFromLink; ?>" />
+                          minlength="12" maxlength="12" oninput="validateInput(this)"
+                          value="<?php echo $refNumberFromLink; ?>" onkeypress="return validateKeyPress(event)" />
+
+
+
+                        <div id="error-message" style="display: none; color: red;"></div>
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -388,6 +393,25 @@ if (isset($_POST['complete_registration'])) {
 
   ?>
 
+
+  <!--- ############ Validate Input field ############## ---->
+
+  <script>
+    function validateKeyPress(event) {
+      var key = event.key;
+      var regex = /^[A-Za-z0-9]+$/;
+      if (!regex.test(key)) {
+        event.preventDefault();
+        showError("Only alphanumeric characters are allowed.");
+      }
+    }
+
+    function showError(message) {
+      var errorDiv = document.getElementById("error-message");
+      errorDiv.innerText = message;
+      errorDiv.style.display = "block";
+    }
+  </script>
 
   <script>
     AOS.init({
