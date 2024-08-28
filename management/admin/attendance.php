@@ -31,8 +31,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- QR Code Scanner Library -->
   <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
-  <!-- jQuery for AJAX -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 
   <!-- Custom Theme Style -->
@@ -380,6 +379,8 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
     html5QrcodeScanner.render(onScanSuccess, onScanFailure);
   </script>
 
+  <!-- jQuery for AJAX -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- jQuery -->
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
