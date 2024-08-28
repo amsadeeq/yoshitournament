@@ -91,6 +91,7 @@ if (isset($_POST['complete_registration'])) {
   $address = check_input($_POST['address']); //check_input is sensitising the input field
 
   $team_name = check_input($_POST['team_name']); //check_input is sensitising the input field
+  $category = check_input($_POST['category']); //check_input is sensitising the input field
   $team_country = check_input($_POST['team_country']); //check_input is sensitising the input field
   $team_state = check_input($_POST['team_state']); //check_input is sensitising the input field
   $team_city = check_input($_POST['team_city']); //check_input is sensitising the input field
@@ -146,7 +147,7 @@ if (isset($_POST['complete_registration'])) {
 
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `means_id`, `id_number`, `address`, `team_name`, `player_position`, `jersy_number`,`team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `emergency_name`, `emergency_phone`, `emergency_email`, `emergency_address`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email,:means_id,:id_number, :address, :team_name, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo,:emergency_name,:emergency_phone,:emergency_email,:emergency_address, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `means_id`, `id_number`, `address`, `team_name`,`category`, `player_position`, `jersy_number`,`team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `emergency_name`, `emergency_phone`, `emergency_email`, `emergency_address`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email,:means_id,:id_number, :address, :team_name, :category, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo,:emergency_name,:emergency_phone,:emergency_email,:emergency_address, :time_create, :date_create, :ip_address)");
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
@@ -167,6 +168,7 @@ if (isset($_POST['complete_registration'])) {
         $stmt->bindParam(':id_number', $id_number);
         $stmt->bindParam(':address', $address);
         $stmt->bindParam(':team_name', $team_name);
+        $stmt->bindParam(':category', $category);
         $stmt->bindParam(':position', $position);
         $stmt->bindParam(':jerseyNumber', $jerseyNumber);
         $stmt->bindParam(':team_country', $team_country);
@@ -643,6 +645,19 @@ if (isset($_POST['complete_registration'])) {
                               <input type="text" name="team_name" class="form-control wizard-required"
                                 value="<?php echo $studentDetails['team_name'] ?>" readonly required>
                               <div class="wizard-form-error"></div>
+                            </div>
+                          </div>
+
+
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label> Category (Section)<sup style="color: red !important;">*</sup> </label> </label>
+                              <select class="form-select" name="gender" required>
+                                <option selected> Select Section</option>
+                                <option value="Primary">Primary Section</option>
+                                <option value="Junior"> Junior Section</option>
+                                <option value="Secondary">Secondary Section</option>
+                              </select>
                             </div>
                           </div>
 
