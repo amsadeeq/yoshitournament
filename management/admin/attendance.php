@@ -300,8 +300,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="clearfix"></div>
 
 
-                <div id="qr-reader" class="qr-reader"></div>
-                <div class="alert alert-info mt-3" id="qr-result">Scan a QR code to register attendance.</div>
+
 
 
                 <div class="qr-container col-4">
@@ -311,7 +310,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   </div>
 
                   <div class="qr-detected-container" style="display: none;">
-                    <form action="./endpoint/add-attendance.php" method="POST">
+                    <form action="validate_attendance.php" method="POST">
                       <h4 class="text-center">Student QR Detected!</h4>
                       <input type="hidden" id="detected-qr-code" name="qr_code">
                       <button type="submit" class="btn btn-dark form-control">Submit Attendance</button>
