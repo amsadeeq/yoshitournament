@@ -208,24 +208,25 @@ if (isset($_POST['login'])) {
 
 
             } elseif ($user['user_position'] == 'Student') {
+                echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii";
                 // Fetch user information from yoshi_executive_tbl based on userRefNo
-                $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
-                $stmt->bindParam(':userRefNo', $user['userRefNo']);
-                $stmt->execute();
-                $player_details = $stmt->fetch(PDO::FETCH_ASSOC);
+                // $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
+                // $stmt->bindParam(':userRefNo', $user['userRefNo']);
+                // $stmt->execute();
+                // $player_details = $stmt->fetch(PDO::FETCH_ASSOC);
                 // User is a Player
-                $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
+                // $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
 
-                switch ($user['reg_status']) {
-                    case 0:
-                        $_SESSION['teamRefNumber'] = $user['TeamRefNumber'];
-                        header("Location: student_registration.php");
+                // switch ($user['reg_status']) {
+                //     case 0:
+                //         $_SESSION['teamRefNumber'] = $user['TeamRefNumber'];
+                //         header("Location: student_registration.php");
 
-                        break;
-                    default:
-                        header("Location: schools/studentDashboard.php");
-                        break;
-                }
+                //         break;
+                //     default:
+                //         header("Location: schools/studentDashboard.php");
+                //         break;
+                // }
 
 
 
