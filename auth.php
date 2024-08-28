@@ -218,18 +218,28 @@ if (isset($_POST['login'])) {
                 // User is a Player
                 $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
 
-                switch ($player_details['reg_status']) {
-                    case 0:
+                if ($player_details['reg_status'] == 1) {
+                    // header("Location: schools/studentDashboard.php");
+                    echo "I am 1";
 
-                        // header("Location: student_registration.php");
-                        echo "I am 0";
+                } else {
+                    // header("Location: student_registration.php");
+                    echo "I am 0";
 
-                        break;
-                    default:
-                        // header("Location: schools/studentDashboard.php");
-                        echo "I am 1";
-                        break;
                 }
+
+                // switch ($player_details['reg_status']) {
+                //     case 0:
+
+                //         header("Location: student_registration.php");
+                //         echo "I am 0";
+
+                //         break;
+                //     default:
+                //         header("Location: schools/studentDashboard.php");
+                //         echo "I am 1";
+                //         break;
+                // }
 
 
 
