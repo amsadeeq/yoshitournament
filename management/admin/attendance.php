@@ -6,7 +6,9 @@ $email = $_SESSION['a_email'];
 
 require '../../connection.php';
 
-
+// Fetch attendance records
+$stmt = $pdo->query("SELECT * FROM yoshi_school_students_tbl WHERE attendance = 1 ORDER BY attendance_date DESC, attendance_time DESC");
+$attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +28,11 @@ require '../../connection.php';
   <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- NProgress -->
   <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+
+  <!-- QR Code Scanner Library -->
+  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+  <!-- jQuery for AJAX -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
   <!-- Custom Theme Style -->
@@ -294,9 +301,8 @@ require '../../connection.php';
                 <div class="clearfix"></div>
 
 
-                <h3 class="text-center">Scan QR Code to Validate Attendance</h3>
-                <div id="reader" class="d-flex justify-content-center"></div>
-                <div class="alert alert-info mt-3" id="result">Waiting for scan...</div>
+                <div id="qr-reader" class="qr-reader"></div>
+                <div class="alert alert-info mt-3" id="qr-result">Scan a QR code to register attendance.</div>
 
 
 
@@ -313,6 +319,27 @@ require '../../connection.php';
         </div>
       </div>
       <!-- /page content -->
+      <div class="container mt-5">
+        <h2 class="text-center">Attendance List</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>User Reference Number</th>
+              <th>Attendance Time</th>
+              <th>Attendance Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($attendances as $attendance): ?>
+              <tr>
+                <td><?php echo htmlspecialchars($attendance['userRefNo']); ?></td>
+                <td><?php echo htmlspecialchars($attendance['attendance_time']); ?></td>
+                <td><?php echo htmlspecialchars($attendance['attendance_date']); ?></td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
 
       <!-- footer content -->
       <footer>
@@ -327,7 +354,8 @@ require '../../connection.php';
 
   <script>
     function onScanSuccess(decodedText, decodedResult) {
-      document.getElementById("result").innerHTML = `QR Code detected: ${decodedText}`;
+      // Handle the result of the scan
+      $('#qr-result').html(`QR Code detected: ${decodedText}`);
 
       // Make an AJAX call to validate attendance
       $.ajax({
@@ -335,26 +363,21 @@ require '../../connection.php';
         type: 'POST',
         data: { userRefNo: decodedText },
         success: function (response) {
-          $('#result').html(response);
+          $('#qr-result').html(response);
         }
       });
     }
 
     function onScanFailure(error) {
+      // Handle scan failure, typically ignore
       console.warn(`Code scan error = ${error}`);
     }
 
-    // Wait for the DOM to be fully loaded before initializing the scanner
-    document.addEventListener("DOMContentLoaded", function () {
-      let html5QrcodeScanner = new Html5QrcodeScanner(
-        "reader",
-        { fps: 10, qrbox: 250 }
-      );
-      html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-    });
+    // Initialize QR code scanner
+    let html5QrcodeScanner = new Html5QrcodeScanner(
+      "qr-reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
   </script>
-  <!-- QR code scanner -->
-  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
 
 
   <!-- jQuery -->

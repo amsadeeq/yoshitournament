@@ -1,25 +1,31 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    include('../../connection.php'); // Include your DB connection file
-
+include('../../connection.php'); // Include your DB connection file
+// Check if userRefNo is posted
+if (isset($_POST['userRefNo'])) {
     $userRefNo = $_POST['userRefNo'];
 
-    // Validate the user reference number in the database
-    $stmt = $pdo->prepare("SELECT * FROM `yoshi_signup_tbl` WHERE `userRefNo` = :userRefNo");
+    // Validate the userRefNo format if necessary
+    // Check if the userRefNo exists in the database
+    $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
     $stmt->execute(['userRefNo' => $userRefNo]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $student = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user) {
-        // Update attendance record
-        // $updateStmt = $pdo->prepare("UPDATE `yoshi_signup_tbl` SET `attendance` = 'present' WHERE `userRefNo` = :userRefNo");
-        // $updateStmt->execute(['userRefNo' => $userRefNo]);
+    if ($student) {
+        // Update attendance details
+        $attendance_time = date("H:i:s");
+        $attendance_date = date("Y-m-d");
 
-        echo "<div class='alert alert-success'>Attendance recorded for user: $userRefNo</div>";
+        $updateStmt = $pdo->prepare("UPDATE yoshi_school_students_tbl SET attendance = 1, attendance_time = :attendance_time, attendance_date = :attendance_date WHERE userRefNo = :userRefNo");
+        $updateStmt->execute([
+            'attendance_time' => $attendance_time,
+            'attendance_date' => $attendance_date,
+            'userRefNo' => $userRefNo
+        ]);
+
+        echo "<div class='alert alert-success'>Attendance marked successfully for $userRefNo.</div>";
     } else {
-        echo "<div class='alert alert-danger'>Invalid QR Code.</div>";
+        echo "<div class='alert alert-danger'>User reference number not found.</div>";
     }
 }
-
 
 ?>
