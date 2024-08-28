@@ -220,7 +220,7 @@ if (isset($_POST['login'])) {
                 if ($user['reg_status'] == 1) {
                     //header("Location: schools/studentDashboard.php");
                     echo $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
-                    $_SESSION['userRefCode'] = $player_details['userRefNo'];
+                    echo $_SESSION['userRefCode'] = $player_details['userRefNo'];
                     exit;
                 } else {
                     //header("Location: student_registration.php");
