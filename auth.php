@@ -218,7 +218,8 @@ if (isset($_POST['login'])) {
                 // User is a Player
                 $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
 
-                if ($player_details['reg_status'] == 1) {
+
+                if ($user['reg_status'] == 1) {
                     // header("Location: schools/studentDashboard.php");
                     echo "I am 1";
 
