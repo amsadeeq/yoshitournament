@@ -67,7 +67,7 @@ require 'auth.php';
     <div class="cart-sec-ban">
       <ul class="list-unstyled">
         <li>
-          <a href="#" class="btn side_btn" data-bs-toggle="modal" class="reAbujaer-bn" data-bs-target="#loginModal">
+          <a href="#" class="btn side_btn" data-bs-toggle="modal" class="regster-bn" data-bs-target="#loginModal">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person"
               viewBox="0 0 16 16">
               <path
