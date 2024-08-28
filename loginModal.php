@@ -27,8 +27,13 @@
                 </div>
                 <div class='phone-div'>
 
-                  <input type='password' name='login_password' class='form-control login-input' id='login-password'
-                    placeholder='Password' alt='pn' required />
+                  <div class='input-group'>
+                    <input type='password' name='login_password' class='form-control login-input' id='login-password'
+                      placeholder='Password' alt='pn' required />
+                    <button class='btn btn-outline-secondary' type='button' id='password-toggle'>
+                      <i class='fa fa-eye'></i>
+                    </button>
+                  </div>
                 </div>
 
 
@@ -53,6 +58,21 @@
 
         </div>
       </form>
+
+      <script>
+        const passwordToggle = document.getElementById('password-toggle');
+        const passwordInput = document.getElementById('login-password');
+
+        passwordToggle.addEventListener('click', function () {
+          if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordToggle.innerHTML = '<i class="fa fa-eye-slash"></i>';
+          } else {
+            passwordInput.type = 'password';
+            passwordToggle.innerHTML = '<i class="fa fa-eye"></i>';
+          }
+        });
+      </script>
     </div>
   </div>
 </div>
