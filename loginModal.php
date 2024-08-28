@@ -30,7 +30,7 @@
                   <div class='input-group'>
                     <input type='password' name='login_password' class='form-control login-input' id='login-password'
                       placeholder='Password' alt='pn' required />
-                    <button class='form-control login-input' type='button' id='password-toggle'>
+                    <button class='login-input' type='button' id='password-toggle'>
                       <i class='fa fa-eye'></i>
                     </button>
                   </div>
