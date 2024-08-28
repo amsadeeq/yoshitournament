@@ -304,7 +304,20 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="alert alert-info mt-3" id="qr-result">Scan a QR code to register attendance.</div>
 
 
+                <div class="qr-container col-4">
+                  <div class="scanner-con">
+                    <h5 class="text-center">Scan you QR Code here for your attedance</h5>
+                    <video id="interactive" class="viewport" width="100%">
+                  </div>
 
+                  <div class="qr-detected-container" style="display: none;">
+                    <form action="./endpoint/add-attendance.php" method="POST">
+                      <h4 class="text-center">Student QR Detected!</h4>
+                      <input type="hidden" id="detected-qr-code" name="qr_code">
+                      <button type="submit" class="btn btn-dark form-control">Submit Attendance</button>
+                    </form>
+                  </div>
+                </div>
 
 
 
@@ -378,6 +391,53 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
       "qr-reader", { fps: 10, qrbox: 250 });
     html5QrcodeScanner.render(onScanSuccess, onScanFailure);
   </script>
+
+
+
+  <!-- instascan Js -->
+  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+  <script>
+
+
+    let scanner;
+
+    function startScanner() {
+      scanner = new Instascan.Scanner({ video: document.getElementById('interactive') });
+
+      scanner.addListener('scan', function (content) {
+        $("#detected-qr-code").val(content);
+        console.log(content);
+        scanner.stop();
+        document.querySelector(".qr-detected-container").style.display = '';
+        document.querySelector(".scanner-con").style.display = 'none';
+      });
+
+      Instascan.Camera.getCameras()
+        .then(function (cameras) {
+          if (cameras.length > 0) {
+            scanner.start(cameras[0]);
+          } else {
+            console.error('No cameras found.');
+            alert('No cameras found.');
+          }
+        })
+        .catch(function (err) {
+          console.error('Camera access error:', err);
+          alert('Camera access error: ' + err);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', startScanner);
+
+    function deleteAttendance(id) {
+      if (confirm("Do you want to remove this attendance?")) {
+        window.location = "./endpoint/delete-attendance.php?attendance=" + id;
+      }
+    }
+  </script>
+
+
 
 
   <!-- jQuery -->
