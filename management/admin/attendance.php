@@ -27,9 +27,6 @@ require '../../connection.php';
   <!-- NProgress -->
   <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
 
-  <!-- QR code scanner -->
-  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
-
 
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
@@ -356,6 +353,9 @@ require '../../connection.php';
       html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     });
   </script>
+  <!-- QR code scanner -->
+  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+
 
   <!-- jQuery -->
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
