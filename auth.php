@@ -230,9 +230,11 @@ if (isset($_POST['login'])) {
                 switch ($user['reg_status']) {
                     case 0:
                         header("Location: student_registration.php");
+                        echo "is not working";
                         break;
                     default:
                         header("Location: schools/studentDashboard.php");
+                        echo "is working";
                         break;
                 }
 
