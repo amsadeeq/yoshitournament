@@ -218,9 +218,9 @@ if (isset($_POST['login'])) {
                 // User is a Player
                 $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
                 if ($user['reg_status'] == 1) {
-                    header("Location: schools/studentDashboard.php");
+                    header("Location:schools/studentDashboard.php");
                 } else {
-                    header("Location: student_registration.php");
+                    header("Location:student_registration.php");
                 }
 
                 // switch ($player_details['reg_status']) {
@@ -620,5 +620,5 @@ if (isset($_POST['register'])) {
 
 }
 
-
+ob_end_flush();
 ?>
