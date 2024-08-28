@@ -303,7 +303,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-                <div class="qr-container col-4 col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="qr-container col-12 col-sm-12 col-md-4 col-lg-4">
                   <div class="scanner-con">
                     <h5 class="text-center">Scan you QR Code here for your attedance</h5>
                     <video id="interactive" class="viewport" width="100%">
