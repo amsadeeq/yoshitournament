@@ -219,8 +219,10 @@ if (isset($_POST['login'])) {
                 $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
                 if ($user['reg_status'] == 1) {
                     header("Location:schools/studentDashboard.php");
+                    echo "Is working";
                 } else {
                     header("Location:student_registration.php");
+                    echo "is not working";
                 }
 
                 // switch ($player_details['reg_status']) {
