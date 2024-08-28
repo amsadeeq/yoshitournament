@@ -332,7 +332,10 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <table class="table table-bordered">
               <thead>
                 <tr>
+                  <th>User</th>
+                  <th>Full Name</th>
                   <th>User Reference Number</th>
+                  <th>Category (Section)</th>
                   <th>Attendance Time</th>
                   <th>Attendance Date</th>
                 </tr>
@@ -340,7 +343,12 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
               <tbody>
                 <?php foreach ($attendances as $attendance): ?>
                   <tr>
+                    <td><?php echo htmlspecialchars($attendance['passort']); ?></td>
+                    <td>
+                      <?php echo htmlspecialchars($attendance['surname']) . " " . htmlspecialchars($attendance['firstname']); ?>
+                    </td>
                     <td><?php echo htmlspecialchars($attendance['userRefNo']); ?></td>
+                    <td><?php echo htmlspecialchars($attendance['category']); ?></td>
                     <td><?php echo htmlspecialchars($attendance['attendance_time']); ?></td>
                     <td><?php echo htmlspecialchars($attendance['attendance_date']); ?></td>
                   </tr>

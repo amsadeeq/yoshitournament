@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "
             <script>
-                alert('Please fill in all fields!');
+                alert('Please check QR!');
                 window.location.href = 'attendance.php';
             </script>
         ";
