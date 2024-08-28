@@ -87,58 +87,44 @@
 </div>
 
 <script>
-  const passwordInput = document.getElementById('password');
-  const confirmPasswordInput = document.getElementById('confirmPassword');
-  const passwordError = document.getElementById('passwordError');
+  document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const passwordError = document.getElementById('passwordError');
 
-  function togglePasswordVisibility(inputId) {
-    const input = document.getElementById(inputId);
-    const icon = input.nextElementSibling.querySelector('i');
+    function togglePasswordVisibility(inputId) {
+      const input = document.getElementById(inputId);
+      const icon = input.nextElementSibling.querySelector('i');
 
-    if (input.type === 'password') {
-      input.type = 'text';
-      icon.classList.remove('fa-eye');
-      icon.classList.add('fa-eye-slash');
-    } else {
-      input.type = 'password';
-      icon.classList.remove('fa-eye-slash');
-      icon.classList.add('fa-eye');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+      }
     }
-  }
 
-  document.getElementById('showPassword').addEventListener('click', function () {
-    togglePasswordVisibility('password');
-  });
+    document.getElementById('showPassword').addEventListener('click', function () {
+      togglePasswordVisibility('password');
+    });
 
-  document.getElementById('showConfirmPassword').addEventListener('click', function () {
-    togglePasswordVisibility('confirmPassword');
-  });
+    document.getElementById('showConfirmPassword').addEventListener('click', function () {
+      togglePasswordVisibility('confirmPassword');
+    });
 
-  confirmPasswordInput.addEventListener('keyup', function () {
-    if (passwordInput.value !== confirmPasswordInput.value) {
-      confirmPasswordInput.classList.add('is-invalid');
-      passwordError.style.display = 'block';
-    } else {
-      confirmPasswordInput.classList.remove('is-invalid');
-      passwordError.style.display = 'none';
-    }
+    confirmPasswordInput.addEventListener('keyup', function () {
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        confirmPasswordInput.classList.add('is-invalid');
+        passwordError.style.display = 'block';
+      } else {
+        confirmPasswordInput.classList.remove('is-invalid');
+        passwordError.style.display = 'none';
+      }
+    });
   });
 </script>
 
-
-<!-- // <h6 class='text-center'>
-  // or sign in with
-  // </h6>
-// <ul class='list-unstyled socal-linka-div d-flex  align-content-center justify-content-center'>
-  // <li>
-    // <a href='#' class='facebtn'> <i class='fab fa-facebook-f'></i> </a>
-    // </li>
-  // <li>
-    // <a href='#' class='twiiterbtn'> <i class='fab fa-twitter'></i> </a>
-    // </li>
-  // <li>
-    // <a href='#' class='googlebtn'> <i class='fab fa-google-plus-g'></i> </a>
-    // </li>
-
-  // </ul> -->
 <?php ?>
