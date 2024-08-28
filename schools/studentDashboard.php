@@ -493,40 +493,7 @@ foreach ($players_record as $player_record) {
                                 <!-- End Icon Cart -->
                             </div>
 
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-                                <div class="icon-card mb-30">
 
-                                    <div class="content">
-                                        <!-- Display the QR code image -->
-                                        <?php
-                                        // Include the main library file
-                                        include 'phpqrcode/qrlib.php';
-
-                                        // Assume $userRefCode is defined earlier in your code
-                                
-
-
-
-                                        // Define the path where you want to save the QR code image
-                                        $filePath = 'qrcodes/attendance_qr_' . $userRefCode . '.png';
-
-                                        // Check if the directory exists, if not create it
-                                        if (!file_exists('qrcodes')) {
-                                            mkdir('qrcodes', 0777, true);
-                                        }
-
-                                        // Generate the QR code and save it to the specified file
-                                        QRcode::png($userRefCode, $filePath, QR_ECLEVEL_L, 10, 2);
-
-                                        // Display the QR code image
-                                        echo '<img src="' . $filePath . '" alt="QR Code for Attendance" style="width:100%;height:100%;">';
-                                        ?>
-
-                                    </div>
-                                </div>
-                                <!-- End Icon Cart -->
-                            </div>
-                            <!-- End Col -->
 
                         </div>
                         <!-- End Row -->
@@ -801,6 +768,42 @@ foreach ($players_record as $player_record) {
                         <!-- End Col -->
                     </div>
                     <!-- End Row -->
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="icon-card mb-30">
+
+                                <div class="content">
+                                    <!-- Display the QR code image -->
+                                    <?php
+                                    // Include the main library file
+                                    include 'phpqrcode/qrlib.php';
+
+                                    // Assume $userRefCode is defined earlier in your code
+                                
+
+
+
+                                    // Define the path where you want to save the QR code image
+                                    $filePath = 'qrcodes/attendance_qr_' . $userRefCode . '.png';
+
+                                    // Check if the directory exists, if not create it
+                                    if (!file_exists('qrcodes')) {
+                                        mkdir('qrcodes', 0777, true);
+                                    }
+
+                                    // Generate the QR code and save it to the specified file
+                                    QRcode::png($userRefCode, $filePath, QR_ECLEVEL_L, 10, 2);
+
+                                    // Display the QR code image
+                                    echo '<img src="' . $filePath . '" alt="QR Code for Attendance" style="width:100%;height:100%;">';
+                                    ?>
+
+                                </div>
+                            </div>
+                            <!-- End Icon Cart -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
                 </div>
                 <!-- end container -->
             </section>
