@@ -303,7 +303,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-                <div class="qr-container col-4">
+                <div class="qr-container col-4 col-xs-12 col-sm-12 col-md-4 col-lg-4">
                   <div class="scanner-con">
                     <h5 class="text-center">Scan you QR Code here for your attedance</h5>
                     <video id="interactive" class="viewport" width="100%">
@@ -329,34 +329,37 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </div>
           <div class="container mt-5">
             <h2 class="text-center">Attendance List</h2>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>User</th>
-                  <th>Full Name</th>
-                  <th>User Reference Number</th>
-                  <th>Category (Section)</th>
-                  <th>Attendance Time</th>
-                  <th>Attendance Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($attendances as $attendance): ?>
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
                   <tr>
-                    <td>
-                      <?php echo "<img style='width:40px;height:40px;' src = ../../../../schools/student_photo/" . htmlspecialchars($attendance['passport']) . " />"; ?>
-                    </td>
-                    <td>
-                      <?php echo htmlspecialchars($attendance['surname']) . " " . htmlspecialchars($attendance['firstname']); ?>
-                    </td>
-                    <td><?php echo htmlspecialchars($attendance['userRefNo']); ?></td>
-                    <td><?php echo htmlspecialchars($attendance['category']); ?></td>
-                    <td><?php echo htmlspecialchars($attendance['attendance_time']); ?></td>
-                    <td><?php echo htmlspecialchars($attendance['attendance_date']); ?></td>
+                    <th>User</th>
+                    <th>Full Name</th>
+                    <th>User Reference Number</th>
+                    <th>Category (Section)</th>
+                    <th>Attendance Time</th>
+                    <th>Attendance Date</th>
                   </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  <?php foreach ($attendances as $attendance): ?>
+                    <tr>
+                      <td>
+                        <?php echo "<img style='width:40px;height:40px;' src = ../../../../schools/student_photo/" . htmlspecialchars($attendance['passport']) . " />"; ?>
+                      </td>
+                      <td>
+                        <?php echo htmlspecialchars($attendance['surname']) . " " . htmlspecialchars($attendance['firstname']); ?>
+                      </td>
+                      <td><?php echo htmlspecialchars($attendance['userRefNo']); ?></td>
+                      <td><?php echo htmlspecialchars($attendance['category']); ?></td>
+                      <td><?php echo htmlspecialchars($attendance['attendance_time']); ?></td>
+                      <td><?php echo htmlspecialchars($attendance['attendance_date']); ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+
           </div>
 
         </div>
