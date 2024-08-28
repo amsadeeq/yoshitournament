@@ -117,7 +117,7 @@ require 'auth.php';
 <body>
 
 
-  <!-- <?php //require 'header.php'; ?> -->
+  <?php require 'header.php'; ?>
 
   <section class="banner float-start w-100">
     <div class="container">
