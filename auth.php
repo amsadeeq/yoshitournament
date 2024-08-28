@@ -216,18 +216,18 @@ if (isset($_POST['login'])) {
                 $player_details = $stmt->fetch(PDO::FETCH_ASSOC);
                 echo $player_details['TeamRefNumber'];
                 // User is a Player
-                // $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
+                $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
 
-                // switch ($user['reg_status']) {
-                //     case 0:
-                //         $_SESSION['teamRefNumber'] = $user['TeamRefNumber'];
-                //         header("Location: student_registration.php");
+                switch ($player_details['reg_status']) {
+                    case 0:
 
-                //         break;
-                //     default:
-                //         header("Location: schools/studentDashboard.php");
-                //         break;
-                // }
+                        header("Location: student_registration.php");
+
+                        break;
+                    default:
+                        header("Location: schools/studentDashboard.php");
+                        break;
+                }
 
 
 
