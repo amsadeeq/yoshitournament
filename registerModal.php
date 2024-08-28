@@ -114,7 +114,7 @@
     togglePasswordVisibility('confirmPassword');
   });
 
-  confirmPasswordInput.addEventListener('input', function () {
+  confirmPasswordInput.addEventListener('keyup', function () {
     if (passwordInput.value !== confirmPasswordInput.value) {
       confirmPasswordInput.classList.add('is-invalid');
       passwordError.style.display = 'block';
