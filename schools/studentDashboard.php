@@ -497,11 +497,11 @@ foreach ($players_record as $player_record) {
                                 <a href="#attendance">
                                     <div class="icon-card mb-30">
                                         <div class="icon text-success">
-                                            <i class="lni lni-qrcode"></i>
+                                            <i class="lni lni-frame-expand"></i>
                                         </div>
                                         <div class="content">
                                             <h6 class="mb-10">Attendance</h6>
-
+                                            <h3 class="text-bold mb-10"><?php echo $no_of_players; ?></h3>
 
                                         </div>
                                     </div>
