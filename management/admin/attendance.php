@@ -303,7 +303,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-                <div class="qr-container col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="qr-container col-12 col-sm-12 col-md-5 col-lg-5">
                   <div class="scanner-con">
                     <h5 class="text-center">Scan you QR Code here for your attedance</h5>
                     <video id="interactive" class="viewport" width="100%">
@@ -428,7 +428,9 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
       Instascan.Camera.getCameras()
         .then(function (cameras) {
           if (cameras.length > 0) {
-            scanner.start(cameras[0]);
+            // Use the back camera if available, otherwise use the front camera
+            const selectedCamera = cameras.find(camera => camera.name.includes('back')) || cameras[0];
+            scanner.start(selectedCamera);
           } else {
             console.error('No cameras found.');
             alert('No cameras found.');
