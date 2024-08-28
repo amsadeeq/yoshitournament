@@ -8,30 +8,7 @@ require '../connection.php';
 
 $TeamRefNumber = $_SESSION['teamRefNumber'];
 $userRefCode = $_SESSION['userRefCode'];
-if ($TeamRefNumber) {
-    // Password does not match
-    $login_success = "<script>swal('Success!', 'Welcome to Yoshi Tournament.', 'success');</script>";
 
-}
-// Fetching records from the database
-// Insert data into the database
-
-$stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :userRefCode ORDER BY `id` DESC");
-$stmt->execute(['userRefCode' => $userRefCode]);
-$player_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-$stmtPlayers = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY `id` DESC");
-$stmtPlayers->execute(['teamRefNumber' => $TeamRefNumber]);
-$players_record = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
-
-$no_of_players = 0;
-
-// Assuming $players_record is an array containing player records
-foreach ($players_record as $player_record) {
-    // Increment the counter for each player record
-    $no_of_players++;
-}
 
 
 
