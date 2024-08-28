@@ -255,36 +255,37 @@ if (isset($_POST['login'])) {
                 // ]);
 
 
-            } else {
-
-                // Fetch user information from yoshi_executive_tbl based on userRefNo
-                $stmt = $pdo->prepare("SELECT * FROM yoshi_officials_tbl WHERE userRefNo = :userRefNo");
-                $stmt->bindParam(':userRefNo', $user['userRefNo']);
-                $stmt->execute();
-                $executive = $stmt->fetch(PDO::FETCH_ASSOC);
-                // User is a Manager or Coach
-                $_SESSION['teamRefNumber'] = $executive['TeamRefNumber'];
-
-                header("Location: officialDashboard.php");
-
-
-                // Insert login log
-                // $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
-                // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
-                // $stmt->execute([
-                //   ':userRefNo' => $user['userRefNo'],
-                //   ':user_email' => $user['user_email'],
-                //   ':user_position' => $user['user_position'],
-                //   ':TeamRefNumber' => $executive['TeamRefNumber'],
-                //   ':device_used' => $device,
-                //   ':browser_used' => $user_agent,
-                //   ':ip_address' => $ip_address,
-                //   ':login_status' => $login_status,
-                //   ':password_used' => $password
-                // ]);
-
-
             }
+            //else {
+
+            // Fetch user information from yoshi_executive_tbl based on userRefNo
+            // $stmt = $pdo->prepare("SELECT * FROM yoshi_officials_tbl WHERE userRefNo = :userRefNo");
+            // $stmt->bindParam(':userRefNo', $user['userRefNo']);
+            // $stmt->execute();
+            // $executive = $stmt->fetch(PDO::FETCH_ASSOC);
+            // User is a Manager or Coach
+            // $_SESSION['teamRefNumber'] = $executive['TeamRefNumber'];
+
+            // header("Location: officialDashboard.php");
+
+
+            // Insert login log
+            // $stmt = $pdo->prepare("INSERT INTO login_log_history (userRefNo, user_email, user_position, TeamRefNumber, `login_time`, `login_date`, device_used, browser_used, ip_address, login_status, password_used)
+            // VALUES (:userRefNo, :user_email, :user_position, :TeamRefNumber, NOW(), CURDATE(), :device_used, :browser_used, :ip_address, :login_status, :password_used)");
+            // $stmt->execute([
+            //   ':userRefNo' => $user['userRefNo'],
+            //   ':user_email' => $user['user_email'],
+            //   ':user_position' => $user['user_position'],
+            //   ':TeamRefNumber' => $executive['TeamRefNumber'],
+            //   ':device_used' => $device,
+            //   ':browser_used' => $user_agent,
+            //   ':ip_address' => $ip_address,
+            //   ':login_status' => $login_status,
+            //   ':password_used' => $password
+            // ]);
+
+
+            //}
         } else {
             // Password does not match
             $login_error_message = "Invalid email or password."; // Define the notification message
