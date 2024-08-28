@@ -58,7 +58,7 @@ foreach ($players_record as $player_record) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" />
     <!-- Include SweetAlert CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> -->
+
 
 
 
@@ -493,27 +493,6 @@ foreach ($players_record as $player_record) {
                                 </div>
                                 <!-- End Icon Cart -->
                             </div>
-
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-                                <a href="#attendance">
-                                    <div class="icon-card mb-30">
-                                        <div class="icon text-success">
-                                            <i class="lni lni-frame-expand"></i>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="mb-10">Attendance</h6>
-                                            <h3 class="text-bold mb-10">Click here</h3>
-
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <!-- End Icon Cart -->
-                            </div>
-                            <!-- End Col -->
-
-
-
                         </div>
                         <!-- End Row -->
                         <?php
@@ -787,20 +766,7 @@ foreach ($players_record as $player_record) {
                         <!-- End Col -->
                     </div>
                     <!-- End Row -->
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-sm-6" id="attendance">
-                            <div class="icon-card mb-30">
 
-                                <div class="content">
-                                    <!-- Display the QR code image -->
-
-
-                                </div>
-                            </div>
-                            <!-- End Icon Cart -->
-                        </div>
-                        <!-- End Col -->
-                    </div>
                 </div>
                 <!-- end container -->
             </section>
