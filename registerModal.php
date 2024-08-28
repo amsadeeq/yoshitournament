@@ -73,7 +73,8 @@
               </div>
 
 
-              <button type='submit' class='btn continue-bn login-input' name='register'> Sign Up </button>
+              <button type='submit' class='btn continue-bn login-input' name='register' id='submitButton'> Sign Up
+              </button>
             </div>
           </form>
 
@@ -95,6 +96,7 @@
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
     const passwordError = document.getElementById('passwordError');
+    const submitButton = document.getElementById('submitButton');
 
     function togglePasswordVisibility(inputId) {
       const input = document.getElementById(inputId);
@@ -123,9 +125,11 @@
       if (passwordInput.value !== confirmPasswordInput.value) {
         confirmPasswordInput.classList.add('is-invalid');
         passwordError.style.display = 'block';
+        submitButton.disabled = true;
       } else {
         confirmPasswordInput.classList.remove('is-invalid');
         passwordError.style.display = 'none';
+        submitButton.disabled = false;
       }
     });
   });
