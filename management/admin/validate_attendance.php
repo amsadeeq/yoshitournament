@@ -7,9 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['qr_code'])) {
         $qrCode = $_POST['qr_code'];
 
-        echo "<script>
-        alert($qrCode);
-        </script>";
+
 
         // Check if the userRefNo exists in the database
         $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
@@ -44,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "<script>
                 alert('Attendance already marked for $userRefNo.');
                 </script>";
-                // header("Location: attendance.php");
+                header("Location: attendance.php");
                 exit();
 
             } else {
