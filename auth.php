@@ -171,7 +171,7 @@ if (isset($_POST['login'])) {
                 // ]);
 
 
-            } elseif ($user['user_position'] == 'Coach/Sport Director') {
+            } else if ($user['user_position'] == 'Coach/Sport Director') {
                 // Fetch user information from yoshi_executive_tbl based on userRefNo
                 $stmt = $pdo->prepare("SELECT * FROM yoshi_schools_officials_tbl WHERE userRefNo = :userRefNo");
                 $stmt->bindParam(':userRefNo', $user['userRefNo']);
@@ -207,7 +207,7 @@ if (isset($_POST['login'])) {
                 // ]);
 
 
-            } elseif ($user['user_position'] == 'Student') {
+            } else if ($user['user_position'] == 'Student') {
 
                 // Fetch user information from yoshi_executive_tbl based on userRefNo
                 $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
@@ -218,7 +218,7 @@ if (isset($_POST['login'])) {
                 // User is a Player
                 $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
                 if ($user['reg_status'] == 1) {
-                    header("Location: schools/studentDashboard.php");
+                    header("Location: schools/dashboard.php");
                     exit;
                 } else {
                     header("Location: student_registration.php");
