@@ -299,7 +299,7 @@ require '../../connection.php';
 
                 <h3 class="text-center">Scan QR Code to Validate Attendance</h3>
                 <div id="reader" class="d-flex justify-content-center"></div>
-                <div class="alert alert-info mt-3" id="result"></div>
+                <div class="alert alert-info mt-3" id="result">Waiting for scan...</div>
 
 
 
