@@ -208,25 +208,19 @@ if (isset($_POST['login'])) {
 
 
             } elseif ($user['user_position'] == 'Student') {
-                echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii";
+
                 // Fetch user information from yoshi_executive_tbl based on userRefNo
                 $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
                 $stmt->bindParam(':userRefNo', $user['userRefNo']);
                 $stmt->execute();
                 $player_details = $stmt->fetch(PDO::FETCH_ASSOC);
-                echo $player_details['TeamRefNumber'];
+
                 // User is a Player
                 $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
-
-
                 if ($user['reg_status'] == 1) {
-                    // header("Location: schools/studentDashboard.php");
-                    echo "I am 1";
-
+                    header("Location: schools/studentDashboard.php");
                 } else {
-                    // header("Location: student_registration.php");
-                    echo "I am 0";
-
+                    header("Location: student_registration.php");
                 }
 
                 // switch ($player_details['reg_status']) {
