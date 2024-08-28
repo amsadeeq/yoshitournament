@@ -36,18 +36,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
+
+
         try {
-            $updateStmt = $pdo->prepare("UPDATE yoshi_school_students_tbl SET attendance = 1, attendance_time = :attendance_time,
+
+            if ($selectStmt['attendance'] == 1) {
+                echo "<script>
+                alert('Attendance already marked for $userRefNo.');
+                </script>";
+                header("Location: attendance.php");
+                exit();
+
+            } else {
+                $updateStmt = $pdo->prepare("UPDATE yoshi_school_students_tbl SET attendance = 1, attendance_time = :attendance_time,
             attendance_date = :attendance_date WHERE userRefNo = :userRefNo");
-            $updateStmt->execute([
-                'attendance_time' => $attendance_time,
-                'attendance_date' => $attendance_date,
-                'userRefNo' => $userRefNo
-            ]);
+                $updateStmt->execute([
+                    'attendance_time' => $attendance_time,
+                    'attendance_date' => $attendance_date,
+                    'userRefNo' => $userRefNo
+                ]);
 
-            header("Location: attendance.php");
+                header("Location: attendance.php");
 
-            exit();
+                exit();
+            }
         } catch (PDOException $e) {
             echo "Error:" . $e->getMessage();
         }
