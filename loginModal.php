@@ -27,39 +27,34 @@
                 </div>
                 <div class='phone-div'>
 
-                  <div class='password-div'></div>
                   <input type='password' name='login_password' class='form-control login-input' id='login-password'
                     placeholder='Password' alt='pn' required />
-                  <span class='password-toggle' onclick='togglePasswordVisibility()'>
-                    <i class='fas fa-eye'></i>
-                  </span>
                 </div>
+
+
               </div>
 
-
+              <button type='submit' class='btn continue-bn login-input' name='login'> Sign In </button>
             </div>
 
-            <button type='submit' class='btn continue-bn login-input' name='login'> Sign In </button>
+            <p class='text-center  mt-3'>
+              <a data-bs-toggle='modal' class='regster-bn' data-bs-target='#lostpsModal' data-bs-dismiss='modal'> Forget
+                password ? </a>
+            </p>
+
+            <p class='text-center  mt-3'> Student or Player ?
+              <a class='regster-bn' href='referenceNumber.php'> Reference Number </a>
+            </p>
+
+
+
           </div>
-
-          <p class='text-center  mt-3'>
-            <a data-bs-toggle='modal' class='regster-bn' data-bs-target='#lostpsModal' data-bs-dismiss='modal'> Forget
-              password ? </a>
-          </p>
-
-          <p class='text-center  mt-3'> Student or Player ?
-            <a class='regster-bn' href='referenceNumber.php'> Reference Number </a>
-          </p>
-
 
 
         </div>
-
-
+      </form>
     </div>
-    </form>
   </div>
-</div>
 </div>
 
 <!-- <p class='text-center  mt-3'> Do not have an account yet ?
