@@ -40,7 +40,8 @@ require '../../connection.php';
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            <a href="mainDashboard.php" class="site_title"><img src="../../images/logo.png"
+                style="width: 40px; height: 40px;" /> <span>Yoshi Tournaments</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -283,18 +284,7 @@ require '../../connection.php';
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Contacts Design</h3>
-            </div>
-
-            <div class="title_right">
-              <div class="col-md-5 col-sm-5  form-group pull-right top_search">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search for...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                  </span>
-                </div>
-              </div>
+              <h3>Attendance</h3>
             </div>
           </div>
 
@@ -303,364 +293,32 @@ require '../../connection.php';
           <div class="row">
             <div class="x_panel">
               <div class="x_content">
-                <div class="col-md-12 col-sm-12  text-center">
-                  <ul class="pagination pagination-split">
-                    <li><a href="#">A</a></li>
-                    <li><a href="#">B</a></li>
-                    <li><a href="#">C</a></li>
-                    <li><a href="#">D</a></li>
-                    <li><a href="#">E</a></li>
-                    <li>...</li>
-                    <li><a href="#">W</a></li>
-                    <li><a href="#">X</a></li>
-                    <li><a href="#">Y</a></li>
-                    <li><a href="#">Z</a></li>
-                  </ul>
-                </div>
-
                 <div class="clearfix"></div>
 
-                <div class="col-md-4 col-sm-4  profile_details">
-                  <div class="well profile_view">
-                    <div class="col-sm-12">
-                      <h4 class="brief"><i>Digital Strategist</i></h4>
-                      <div class="left col-md-7 col-sm-7">
-                        <h2>Nicole Pearson</h2>
-                        <p><strong>About: </strong> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                        <ul class="list-unstyled">
-                          <li><i class="fa fa-building"></i> Address: </li>
-                          <li><i class="fa fa-phone"></i> Phone #: </li>
-                        </ul>
-                      </div>
-                      <div class="right col-md-5 col-sm-5 text-center">
-                        <img src="images/img.jpg" alt="" class="img-circle img-fluid">
-                      </div>
-                    </div>
-                    <div class=" profile-bottom text-center">
-                      <div class=" col-sm-6 emphasis">
-                        <p class="ratings">
-                          <a>4.0</a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star-o"></span></a>
-                        </p>
-                      </div>
-                      <div class=" col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                          </i> <i class="fa fa-comments-o"></i> </button>
-                        <button type="button" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"> </i> View Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <h1>Admin QR Scanner</h1>
+                <div id="qr-reader" style="width: 500px;"></div>
 
-                <div class="col-md-4 col-sm-4  profile_details">
-                  <div class="well profile_view">
-                    <div class="col-sm-12">
-                      <h4 class="brief"><i>Digital Strategist</i></h4>
-                      <div class="left col-sm-7">
-                        <h2>Nicole Pearson</h2>
-                        <p><strong>About: </strong> Web Designer / UI. </p>
-                        <ul class="list-unstyled">
-                          <li><i class="fa fa-building"></i> Address: </li>
-                          <li><i class="fa fa-phone"></i> Phone #: </li>
-                        </ul>
-                      </div>
-                      <div class="right col-sm-5 text-center">
-                        <img src="images/user.png" alt="" class="img-circle img-fluid">
-                      </div>
-                    </div>
-                    <div class=" bottom text-center">
-                      <div class=" col-sm-6 emphasis">
-                        <p class="ratings">
-                          <a>4.0</a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star-o"></span></a>
-                        </p>
-                      </div>
-                      <div class=" col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                          </i> <i class="fa fa-comments-o"></i> </button>
-                        <button type="button" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"> </i> View Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <script>
+                  function onScanSuccess(decodedText, decodedResult) {
+                    // Handle the decoded text (QR code content)
+                    console.log(`Scan result: ${decodedText}`);
+                    alert(`Scanned content: ${decodedText}`);
+                    // Optionally, send the decodedText to the server for validation
+                  }
 
-                <div class="col-md-4 col-sm-4  profile_details">
-                  <div class="well profile_view">
-                    <div class="col-sm-12">
-                      <h4 class="brief"><i>Digital Strategist</i></h4>
-                      <div class="left col-sm-7">
-                        <h2>Nicole Pearson</h2>
-                        <p><strong>About: </strong> Web Designer / UI. </p>
-                        <ul class="list-unstyled">
-                          <li><i class="fa fa-building"></i> Address: </li>
-                          <li><i class="fa fa-phone"></i> Phone #: </li>
-                        </ul>
-                      </div>
-                      <div class="right col-sm-5 text-center">
-                        <img src="images/user.png" alt="" class="img-circle img-fluid">
-                      </div>
-                    </div>
-                    <div class=" bottom text-center">
-                      <div class=" col-sm-6 emphasis">
-                        <p class="ratings">
-                          <a>4.0</a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star-o"></span></a>
-                        </p>
-                      </div>
-                      <div class=" col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                          </i> <i class="fa fa-comments-o"></i> </button>
-                        <button type="button" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"> </i> View Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  // Initialize the QR scanner
+                  var html5QrcodeScanner = new Html5QrcodeScanner(
+                    "qr-reader", { fps: 10, qrbox: 250 });
+                  html5QrcodeScanner.render(onScanSuccess);
+                </script>
 
-                <div class="col-md-4 col-sm-4  profile_details">
-                  <div class="well profile_view">
-                    <div class="col-sm-12">
-                      <h4 class="brief"><i>Digital Strategist</i></h4>
-                      <div class="left col-sm-7">
-                        <h2>Nicole Pearson</h2>
-                        <p><strong>About: </strong> Web Designer / UI. </p>
-                        <ul class="list-unstyled">
-                          <li><i class="fa fa-building"></i> Address: </li>
-                          <li><i class="fa fa-phone"></i> Phone #: </li>
-                        </ul>
-                      </div>
-                      <div class="right col-sm-5 text-center">
-                        <img src="images/user.png" alt="" class="img-circle img-fluid">
-                      </div>
-                    </div>
-                    <div class=" bottom text-center">
-                      <div class=" col-sm-6 emphasis">
-                        <p class="ratings">
-                          <a>4.0</a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star-o"></span></a>
-                        </p>
-                      </div>
-                      <div class=" col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                          </i> <i class="fa fa-comments-o"></i> </button>
-                        <button type="button" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"> </i> View Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="col-md-4 col-sm-4  profile_details">
-                  <div class="well profile_view">
-                    <div class="col-sm-12">
-                      <h4 class="brief"><i>Digital Strategist</i></h4>
-                      <div class="left col-sm-7">
-                        <h2>Nicole Pearson</h2>
-                        <p><strong>About: </strong> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                        <ul class="list-unstyled">
-                          <li><i class="fa fa-building"></i> Address: </li>
-                          <li><i class="fa fa-phone"></i> Phone #: </li>
-                        </ul>
-                      </div>
-                      <div class="right col-sm-5 text-center">
-                        <img src="images/img.jpg" alt="" class="img-circle img-fluid">
-                      </div>
-                    </div>
-                    <div class=" bottom text-center">
-                      <div class=" col-sm-6 emphasis">
-                        <p class="ratings">
-                          <a>4.0</a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star-o"></span></a>
-                        </p>
-                      </div>
-                      <div class=" col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                          </i> <i class="fa fa-comments-o"></i> </button>
-                        <button type="button" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"> </i> View Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="col-md-4 col-sm-4  profile_details">
-                  <div class="well profile_view">
-                    <div class="col-sm-12">
-                      <h4 class="brief"><i>Digital Strategist</i></h4>
-                      <div class="left col-sm-7">
-                        <h2>Nicole Pearson</h2>
-                        <p><strong>About: </strong> Web Designer / UI. </p>
-                        <ul class="list-unstyled">
-                          <li><i class="fa fa-building"></i> Address: </li>
-                          <li><i class="fa fa-phone"></i> Phone #: </li>
-                        </ul>
-                      </div>
-                      <div class="right col-sm-5 text-center">
-                        <img src="images/user.png" alt="" class="img-circle img-fluid">
-                      </div>
-                    </div>
-                    <div class=" bottom text-center">
-                      <div class=" col-sm-6 emphasis">
-                        <p class="ratings">
-                          <a>4.0</a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star-o"></span></a>
-                        </p>
-                      </div>
-                      <div class=" col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                          </i> <i class="fa fa-comments-o"></i> </button>
-                        <button type="button" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"> </i> View Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="col-md-4 col-sm-4  profile_details">
-                  <div class="well profile_view">
-                    <div class="col-sm-12">
-                      <h4 class="brief"><i>Digital Strategist</i></h4>
-                      <div class="left col-sm-7">
-                        <h2>Nicole Pearson</h2>
-                        <p><strong>About: </strong> Web Designer / UI. </p>
-                        <ul class="list-unstyled">
-                          <li><i class="fa fa-building"></i> Address: </li>
-                          <li><i class="fa fa-phone"></i> Phone #: </li>
-                        </ul>
-                      </div>
-                      <div class="right col-sm-5 text-center">
-                        <img src="images/user.png" alt="" class="img-circle img-fluid">
-                      </div>
-                    </div>
-                    <div class=" bottom text-center">
-                      <div class=" col-sm-6 emphasis">
-                        <p class="ratings">
-                          <a>4.0</a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star-o"></span></a>
-                        </p>
-                      </div>
-                      <div class=" col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                          </i> <i class="fa fa-comments-o"></i> </button>
-                        <button type="button" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"> </i> View Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="col-md-4 col-sm-4  profile_details">
-                  <div class="well profile_view">
-                    <div class="col-sm-12">
-                      <h4 class="brief"><i>Digital Strategist</i></h4>
-                      <div class="left col-sm-7">
-                        <h2>Nicole Pearson</h2>
-                        <p><strong>About: </strong> Web Designer / UI. </p>
-                        <ul class="list-unstyled">
-                          <li><i class="fa fa-building"></i> Address: </li>
-                          <li><i class="fa fa-phone"></i> Phone #: </li>
-                        </ul>
-                      </div>
-                      <div class="right col-sm-5 text-center">
-                        <img src="images/user.png" alt="" class="img-circle img-fluid">
-                      </div>
-                    </div>
-                    <div class=" bottom text-center">
-                      <div class=" col-sm-6 emphasis">
-                        <p class="ratings">
-                          <a>4.0</a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star-o"></span></a>
-                        </p>
-                      </div>
-                      <div class=" col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                          </i> <i class="fa fa-comments-o"></i> </button>
-                        <button type="button" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"> </i> View Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="col-md-4 col-sm-4  profile_details">
-                  <div class="well profile_view">
-                    <div class="col-sm-12">
-                      <h4 class="brief"><i>Digital Strategist</i></h4>
-                      <div class="left col-sm-7">
-                        <h2>Nicole Pearson</h2>
-                        <p><strong>About: </strong> Web Designer / UI. </p>
-                        <ul class="list-unstyled">
-                          <li><i class="fa fa-building"></i> Address: </li>
-                          <li><i class="fa fa-phone"></i> Phone #: </li>
-                        </ul>
-                      </div>
-                      <div class="right col-sm-5 text-center">
-                        <img src="images/user.png" alt="" class="img-circle img-fluid">
-                      </div>
-                    </div>
-                    <div class=" bottom text-center">
-                      <div class=" col-sm-6 emphasis">
-                        <p class="ratings">
-                          <a>4.0</a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star"></span></a>
-                          <a href="#"><span class="fa fa-star-o"></span></a>
-                        </p>
-                      </div>
-                      <div class=" col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                          </i> <i class="fa fa-comments-o"></i> </button>
-                        <button type="button" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"> </i> View Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
+
               </div>
             </div>
           </div>
@@ -671,7 +329,7 @@ require '../../connection.php';
       <!-- footer content -->
       <footer>
         <div class="pull-right">
-          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          Yoshi Admin - by <a href="https://yoshifa.com">Yoshifa.com</a>
         </div>
         <div class="clearfix"></div>
       </footer>
