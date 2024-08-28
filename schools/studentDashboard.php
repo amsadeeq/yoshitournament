@@ -467,6 +467,34 @@ foreach ($players_record as $player_record) {
 
                             <div class="col-xl-3 col-lg-4 col-sm-6">
                                 <div class="icon-card mb-30">
+                                    <div class="icon text-success">
+                                        <i class="lni lni-user"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="mb-10">Registered Players</h6>
+                                        <h3 class="text-bold mb-10"><?php echo $no_of_players; ?></h3>
+
+                                    </div>
+                                </div>
+                                <!-- End Icon Cart -->
+                            </div>
+                            <!-- End Col -->
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="icon-card mb-30">
+                                    <div class="icon orange">
+                                        <i class="lni lni-user"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="mb-10">Number of Players</h6>
+                                        <h3 class="text-bold mb-10"><?php echo $number_of_players; ?></h3>
+
+                                    </div>
+                                </div>
+                                <!-- End Icon Cart -->
+                            </div>
+
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="icon-card mb-30">
 
                                     <div class="content">
                                         <!-- Display the QR code image -->
@@ -499,21 +527,6 @@ foreach ($players_record as $player_record) {
                                 <!-- End Icon Cart -->
                             </div>
                             <!-- End Col -->
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-                                <div class="icon-card mb-30">
-                                    <div class="icon orange">
-                                        <i class="lni lni-user"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="mb-10">Number of Players</h6>
-                                        <h3 class="text-bold mb-10"><?php echo $number_of_players; ?></h3>
-
-                                    </div>
-                                </div>
-                                <!-- End Icon Cart -->
-                            </div>
-
-
 
                         </div>
                         <!-- End Row -->
