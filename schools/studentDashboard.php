@@ -519,7 +519,7 @@ foreach ($players_record as $player_record) {
                                         QRcode::png($userRefCode, $filePath, QR_ECLEVEL_L, 10, 2);
 
                                         // Display the QR code image
-                                        echo '<img src="' . $filePath . '" alt="QR Code for Attendance">';
+                                        echo '<img src="' . $filePath . '" alt="QR Code for Attendance" style="width:50px;height:50px;">';
                                         ?>
 
                                     </div>
