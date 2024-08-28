@@ -32,21 +32,7 @@ foreach ($players_record as $player_record) {
     $no_of_players++;
 }
 
-use Endroid\QrCode\QrCode;
-use Endroid\QrCode\Writer\PngWriter;
 
-$userRefNo = $_SESSION['userRefNo'] ?? 'DEFAULT_REF_NO';
-
-// Create a new QR code
-$qrCode = new QrCode($userRefNo);
-$qrCode->setSize(200);
-
-$writer = new PngWriter();
-$qrCodeImage = $writer->write($qrCode);
-
-// Save the QR code image or output it directly
-header('Content-Type: ' . $qrCodeImage->getMimeType());
-$qrCodeImage->getString();
 
 
 ?>
