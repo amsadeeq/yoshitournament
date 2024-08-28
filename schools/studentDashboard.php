@@ -467,12 +467,32 @@ foreach ($players_record as $player_record) {
 
                             <div class="col-xl-3 col-lg-4 col-sm-6">
                                 <div class="icon-card mb-30">
-                                    <div class="icon text-success">
-                                        <i class="lni lni-user"></i>
-                                    </div>
+
                                     <div class="content">
-                                        <h6 class="mb-10">Registered Players</h6>
-                                        <h3 class="text-bold mb-10"><?php echo $no_of_players; ?></h3>
+                                        <!-- Display the QR code image -->
+                                        <?php
+                                        // Include the main library file
+                                        include 'phpqrcode/qrlib.php';
+
+                                        // Assume $userRefCode is defined earlier in your code
+                                
+
+
+
+                                        // Define the path where you want to save the QR code image
+                                        $filePath = 'qrcodes/attendance_qr_' . $userRefCode . '.png';
+
+                                        // Check if the directory exists, if not create it
+                                        if (!file_exists('qrcodes')) {
+                                            mkdir('qrcodes', 0777, true);
+                                        }
+
+                                        // Generate the QR code and save it to the specified file
+                                        QRcode::png($userRefCode, $filePath, QR_ECLEVEL_L, 10, 2);
+
+                                        // Display the QR code image
+                                        echo '<img src="' . $filePath . '" alt="QR Code for Attendance">';
+                                        ?>
 
                                     </div>
                                 </div>
@@ -493,14 +513,7 @@ foreach ($players_record as $player_record) {
                                 <!-- End Icon Cart -->
                             </div>
 
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-                                <div class="content">
-                                    <div id="qrcode"></div>
-                                    <button class="btn btn-primary" id="saveBtn">Save QR Code</button>
-                                </div>
-                                <!-- End Icon Cart -->
-                            </div>
-                            <!-- End Col -->
+
 
                         </div>
                         <!-- End Row -->
@@ -828,34 +841,7 @@ foreach ($players_record as $player_record) {
 
 
 
-    <script>
-        $(document).ready(function () {
-            // Assuming $userRefNo is fetched from PHP session or database
-            var userRefNo = "<?php echo $userRefCode; ?>";
-            var qrcode = new QRCode(document.getElementById("qrcode"), {
-                text: userRefNo,
-                width: 200,
-                height: 200
-            });
-        });
 
-        // Function to save the QR code image
-        document.getElementById('saveBtn').addEventListener('click', function () {
-            // Get the canvas element created by qrcodejs
-            var canvas = document.querySelector('#qrcode canvas');
-
-            // Convert the canvas to a Data URL
-            var dataURL = canvas.toDataURL("image/png");
-
-            // Create a temporary link element
-            var downloadLink = document.createElement('a');
-            downloadLink.href = dataURL;
-            downloadLink.download = 'YAPSAQCode.png';  // Specify the file name
-
-            // Trigger the download by simulating a click
-            downloadLink.click();
-        });
-    </script>
 
 
 
