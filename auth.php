@@ -552,8 +552,8 @@ if (isset($_POST['register'])) {
         $message .= "Secure your login credential: $email \n";
         $message .= "Password: ******** \n";
         $message .= "Visit www.yoshitournaments.com\n\n";
-        $message .= "Sign: Mr. Sadeeq \n Yoshi Tournaments \n\n\n";
-        $message .= "Powered by: Yoshi Football Academy (UAE) www.yoshifa.com All Rights Reserved " . date('Y');
+        $message .= "Halilu Mu'azu \n Coordinator \n Yoshi Tournaments \n\n\n";
+        $message .= "Powered by: Yoshi Football Academy, Dubai (UAE) www.yoshifa.com All Rights Reserved " . date('Y');
 
         // Set additional headers
         $headers = "From: no-reply@yoshitournament.com\r\n";
