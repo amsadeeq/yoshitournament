@@ -805,9 +805,7 @@ foreach ($players_record as $player_record) {
                                     $filePath = 'qrcodes/attendance_qr_' . $userRefCode . '.png';
 
                                     // Check if the directory exists, if not create it
-                                    if (!file_exists('qrcodes')) {
-                                        mkdir('qrcodes', 0777, true);
-                                    }
+                                
 
                                     // Generate the QR code and save it to the specified file
                                     QRcode::png($userRefCode, $filePath, QR_ECLEVEL_L, 10, 2);
