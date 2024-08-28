@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "<script>
                 alert('Attendance already marked for $userRefNo.');
                 </script>";
-                header("Location: attendance.php");
+                // header("Location: attendance.php");
                 exit();
 
             } else {
