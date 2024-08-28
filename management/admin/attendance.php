@@ -8,7 +8,7 @@ require '../../connection.php';
 
 
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -330,7 +330,6 @@ require '../../connection.php';
 
   <script>
     function onScanSuccess(decodedText, decodedResult) {
-      // Handle the result of the scan
       document.getElementById("result").innerHTML = `QR Code detected: ${decodedText}`;
 
       // Make an AJAX call to validate attendance
@@ -345,16 +344,17 @@ require '../../connection.php';
     }
 
     function onScanFailure(error) {
-      // Handle scan failure, typically ignore
       console.warn(`Code scan error = ${error}`);
     }
 
-    // Initialize the scanner
-    let html5QrcodeScanner = new Html5QrcodeScanner(
-      "reader",
-      { fps: 10, qrbox: 250 }
-    );
-    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+    // Wait for the DOM to be fully loaded before initializing the scanner
+    document.addEventListener("DOMContentLoaded", function () {
+      let html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader",
+        { fps: 10, qrbox: 250 }
+      );
+      html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+    });
   </script>
 
   <!-- jQuery -->
