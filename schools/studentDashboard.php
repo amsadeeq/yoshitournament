@@ -501,7 +501,7 @@ foreach ($players_record as $player_record) {
                                         </div>
                                         <div class="content">
                                             <h6 class="mb-10">Attendance</h6>
-                                            <h3 class="text-bold mb-10"><?php echo $no_of_players; ?></h3>
+                                            
 
                                         </div>
                                     </div>
