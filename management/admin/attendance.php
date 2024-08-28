@@ -344,7 +344,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php foreach ($attendances as $attendance): ?>
                   <tr>
                     <td>
-                      <?php echo "<img src = ../../../../schools/student_photo/" . htmlspecialchars($attendance['passport']); ?>
+                      <?php echo "<img style='width:40px;height:40px;' src = ../../../../schools/student_photo/" . htmlspecialchars($attendance['passport']) . "/>"; ?>
                     </td>
                     <td>
                       <?php echo htmlspecialchars($attendance['surname']) . " " . htmlspecialchars($attendance['firstname']); ?>
