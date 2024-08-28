@@ -106,8 +106,9 @@ require 'auth.php';
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li><a class="dropdown-item" href="#">A-Z</a></li>
-                  <li><a class="dropdown-item" href="#">Best Selling</a></li>
-                  <li><a class="dropdown-item" href="#">Most Popular</a></li>
+                  <li><a class="dropdown-item" href="#">Z-A</a></li>
+                  <li><a class="dropdown-item" href="#">Newest</a></li>
+                  <li><a class="dropdown-item" href="#">Oldest</a></li>
                 </ul>
               </div>
             </div>
@@ -388,7 +389,7 @@ require 'auth.php';
 
           <div class="next-buuton-div d-flex flex-column flex-md-row justify-content-between align-items-center">
             <div class="left-page-number order-3 order-lg-1 d-flex align-items-center">
-              Users per page
+              Pictures per page
 
 
               <select class="form-select" aria-label="Default select example">
