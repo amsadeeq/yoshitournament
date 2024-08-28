@@ -343,7 +343,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
               <tbody>
                 <?php foreach ($attendances as $attendance): ?>
                   <tr>
-                    <td><?php echo htmlspecialchars($attendance['passort']); ?></td>
+                    <td><?php echo htmlspecialchars($attendance['passport']); ?></td>
                     <td>
                       <?php echo htmlspecialchars($attendance['surname']) . " " . htmlspecialchars($attendance['firstname']); ?>
                     </td>
