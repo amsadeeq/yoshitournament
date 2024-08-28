@@ -316,30 +316,31 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
               </div>
             </div>
           </div>
+          <div class="container mt-5">
+            <h2 class="text-center">Attendance List</h2>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>User Reference Number</th>
+                  <th>Attendance Time</th>
+                  <th>Attendance Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($attendances as $attendance): ?>
+                  <tr>
+                    <td><?php echo htmlspecialchars($attendance['userRefNo']); ?></td>
+                    <td><?php echo htmlspecialchars($attendance['attendance_time']); ?></td>
+                    <td><?php echo htmlspecialchars($attendance['attendance_date']); ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+
         </div>
       </div>
       <!-- /page content -->
-      <div class="container mt-5">
-        <h2 class="text-center">Attendance List</h2>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>User Reference Number</th>
-              <th>Attendance Time</th>
-              <th>Attendance Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($attendances as $attendance): ?>
-              <tr>
-                <td><?php echo htmlspecialchars($attendance['userRefNo']); ?></td>
-                <td><?php echo htmlspecialchars($attendance['attendance_time']); ?></td>
-                <td><?php echo htmlspecialchars($attendance['attendance_date']); ?></td>
-              </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
-      </div>
 
       <!-- footer content -->
       <footer>
