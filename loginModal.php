@@ -31,7 +31,7 @@
                     <input type='password' name='login_password' class='form-control login-input' id='login-password'
                       placeholder='Password' alt='pn' required />
                     <span class=''
-                      style="float: right; margin-left: -25px; margin-top: -25px; position: relative; z-index: 2;border-radius: 0px 15px 0px 15px;"
+                      style="float: right; margin-left: -30px; margin-top: 10px; position: relative; z-index: 2;"
                       type='button' id='password-toggle'>
                       <i class='fa fa-eye'></i>
                     </span>
