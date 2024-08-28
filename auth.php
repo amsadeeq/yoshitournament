@@ -218,12 +218,10 @@ if (isset($_POST['login'])) {
                 // User is a Player
                 $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
                 if ($user['reg_status'] == 1) {
-                    // header("Location: schools/studentDashboard.php");
-                    echo "Is working";
+                    header("Location: schools/studentDashboard.php");
                     exit;
                 } else {
-                    // header("Location: student_registration.php");
-                    echo "is not working";
+                    header("Location: student_registration.php");
                     exit;
                 }
 
