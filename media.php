@@ -120,9 +120,9 @@ require 'auth.php';
 
             <div class="col">
               <div class="comongallery">
-                <a data-fancybox="gallery" href="images/Yoshi_5.jpg" class="gallery-div">
+                <a data-fancybox="gallery" href="images/abuja_ (44).jpg" class="gallery-div">
                   <figure>
-                    <img src="images/Yoshi_5.jpg" alt="gallery1" />
+                    <img src="images/abuja_ (44).jpg" alt="gallery1" />
                     <figcaption>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -132,18 +132,18 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
             <div class="col">
               <div class="comongallery">
-                <a data-fancybox="gallery" href="images/Yoshi_6.jpg" class="gallery-div">
+                <a data-fancybox="gallery" href="images/abuja_ (159).JPG" class="gallery-div">
                   <figure>
-                    <img src="images/Yoshi_6.jpg" alt="gallery1" />
+                    <img src="images/abuja_ (159).JPG" alt="gallery1" />
                     <figcaption>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -153,19 +153,19 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
 
             <div class="col">
               <div class="comongallery">
-                <a data-fancybox="gallery" href="images/Yoshi_11.jpg" class="gallery-div">
+                <a data-fancybox="gallery" href="images/abuja_ (46).jpg" class="gallery-div">
                   <figure>
-                    <img src="images/Yoshi_11.jpg" alt="gallery1" />
+                    <img src="images/abuja_ (46).jpg" alt="gallery1" />
                     <figcaption>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -175,10 +175,10 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
@@ -197,10 +197,10 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
@@ -208,9 +208,9 @@ require 'auth.php';
 
             <div class="col">
               <div class="comongallery">
-                <a data-fancybox="gallery" href="images/Yoshi_2.jpg" class="gallery-div">
+                <a data-fancybox="gallery" href="images/abuja_ (58).jpg" class="gallery-div">
                   <figure>
-                    <img src="images/Yoshi_2.jpg" alt="gallery1" />
+                    <img src="images/abuja_ (58).jpg" alt="gallery1" />
                     <figcaption>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -220,18 +220,18 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
             <div class="col">
               <div class="comongallery">
-                <a data-fancybox="gallery" href="images/Yoshi_7.jpg" class="gallery-div">
+                <a data-fancybox="gallery" href="images/abuja_ (56).jpg class=" gallery-div">
                   <figure>
-                    <img src="images/Yoshi_7.jpg" alt="gallery1" />
+                    <img src="images/abuja_ (56).jpg alt=" gallery1" />
                     <figcaption>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -241,19 +241,19 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
 
             <div class="col">
               <div class="comongallery">
-                <a data-fancybox="gallery" href="images/yoshi_founder.png" class="gallery-div">
+                <a data-fancybox="gallery" href="images/abuja_ (20).jpg" class="gallery-div">
                   <figure>
-                    <img src="images/yoshi_founder.png" alt="gallery1" />
+                    <img src="images/abuja_ (20).jpg" alt="gallery1" />
                     <figcaption>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -263,10 +263,10 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
@@ -285,19 +285,19 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
 
             <div class="col">
               <div class="comongallery">
-                <a data-fancybox="gallery" href="images/gall4.webp" class="gallery-div">
+                <a data-fancybox="gallery" href="images/abuja_ (91).jpg" class="gallery-div">
                   <figure>
-                    <img src="images/gall4.webp" alt="gallery1" />
+                    <img src="images/abuja_ (91).jpg" alt="gallery1" />
                     <figcaption>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -307,18 +307,18 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>21s Cup Best Kick 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
             <div class="col">
               <div class="comongallery">
-                <a data-fancybox="gallery" href="images/2821048.webp" class="gallery-div">
+                <a data-fancybox="gallery" href="images/abuja_ (76).jpg" class="gallery-div">
                   <figure>
-                    <img src="images/2821048.webp" alt="gallery1" />
+                    <img src="images/abuja_ (76).jpg" alt="gallery1" />
                     <figcaption>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -328,19 +328,19 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
 
             <div class="col">
               <div class="comongallery">
-                <a data-fancybox="gallery" href="images/win.jfif" class="gallery-div">
+                <a data-fancybox="gallery" href="images/abuja_ (37).jpg" class="gallery-div">
                   <figure>
-                    <img src="images/gall2.jpg" alt="gallery1" />
+                    <img src="images/abuja_ (37).jpg" alt="gallery1" />
                     <figcaption>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -350,10 +350,10 @@ require 'auth.php';
                     </figcaption>
                   </figure>
                 </a>
-                <div class="photo-details">
+                <!-- <div class="photo-details">
                   <h5>Gombe United Fc Win 2024 </h5>
                   <h6> <i class="far fa-clock"></i> 1years Ago</h6>
-                </div>
+                </div> -->
               </div>
             </div>
 
