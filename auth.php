@@ -221,11 +221,13 @@ if (isset($_POST['login'])) {
                 switch ($player_details['reg_status']) {
                     case 0:
 
-                        header("Location: student_registration.php");
+                        // header("Location: student_registration.php");
+                        echo "I am 0";
 
                         break;
                     default:
-                        header("Location: schools/studentDashboard.php");
+                        // header("Location: schools/studentDashboard.php");
+                        echo "I am 1";
                         break;
                 }
 
