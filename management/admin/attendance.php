@@ -295,22 +295,10 @@ require '../../connection.php';
               <div class="x_content">
                 <div class="clearfix"></div>
 
-                <h1>Admin QR Scanner</h1>
+
                 <div id="qr-reader" style="width: 500px;"></div>
 
-                <script>
-                  function onScanSuccess(decodedText, decodedResult) {
-                    // Handle the decoded text (QR code content)
-                    console.log(`Scan result: ${decodedText}`);
-                    alert(`Scanned content: ${decodedText}`);
-                    // Optionally, send the decodedText to the server for validation
-                  }
 
-                  // Initialize the QR scanner
-                  var html5QrcodeScanner = new Html5QrcodeScanner(
-                    "qr-reader", { fps: 10, qrbox: 250 });
-                  html5QrcodeScanner.render(onScanSuccess);
-                </script>
 
 
 
@@ -348,6 +336,20 @@ require '../../connection.php';
 
   <!-- Custom Theme Scripts -->
   <script src="../build/js/custom.min.js"></script>
+
+  <script>
+    function onScanSuccess(decodedText, decodedResult) {
+      // Handle the decoded text (QR code content)
+      console.log(`Scan result: ${decodedText}`);
+      alert(`Scanned content: ${decodedText}`);
+      // Optionally, send the decodedText to the server for validation
+    }
+
+    // Initialize the QR scanner
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+      "qr-reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess);
+  </script>
 </body>
 
 </html>
