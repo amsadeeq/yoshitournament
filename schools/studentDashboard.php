@@ -497,17 +497,19 @@ foreach ($players_record as $player_record) {
 
 
                             <div class="col-xl-3 col-lg-4 col-sm-6">
-                                <a href="#attendance"></a>
-                                <div class="icon-card mb-30">
-                                    <div class="icon text-success">
-                                        <i class="lni lni-pointer-down"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="mb-10">Attendance</h6>
-                                        <h3 class="text-bold mb-10">Click hear</h3>
+                                <a href="#attendance">
+                                    <div class="icon-card mb-30">
+                                        <div class="icon text-success">
+                                            <i class="lni lni-pointer-down"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h6 class="mb-10">Attendance</h6>
+                                            <h3 class="text-bold mb-10">Click hear</h3>
 
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
+
                                 <!-- End Icon Cart -->
                             </div>
                             <!-- End Col -->
