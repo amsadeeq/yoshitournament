@@ -313,7 +313,7 @@ if (isset($_POST['complete_registration'])) {
   <!-- Include eye icon image for showing and hiding passwords -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 
   <!-- Javascript for Passport display -->

@@ -32,6 +32,22 @@ foreach ($players_record as $player_record) {
     $no_of_players++;
 }
 
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Writer\PngWriter;
+
+$userRefNo = $_SESSION['userRefNo'] ?? 'DEFAULT_REF_NO';
+
+// Create a new QR code
+$qrCode = new QrCode($userRefNo);
+$qrCode->setSize(200);
+
+$writer = new PngWriter();
+$qrCodeImage = $writer->write($qrCode);
+
+// Save the QR code image or output it directly
+header('Content-Type: ' . $qrCodeImage->getMimeType());
+$qrCodeImage->getString();
+
 
 ?>
 <!DOCTYPE html>
@@ -55,7 +71,7 @@ foreach ($players_record as $player_record) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" />
     <!-- Include SweetAlert CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 
 
@@ -491,6 +507,15 @@ foreach ($players_record as $player_record) {
                                 <!-- End Icon Cart -->
                             </div>
 
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="content">
+                                    <div id="qrcode"></div>
+                                    <button class="btn btn-primary" id="saveBtn">Save QR Code</button>
+                                </div>
+                                <!-- End Icon Cart -->
+                            </div>
+                            <!-- End Col -->
+
                         </div>
                         <!-- End Row -->
                         <?php
@@ -814,6 +839,37 @@ foreach ($players_record as $player_record) {
     <script src="../assets/js/world-merc.js"></script>
     <script src="../assets/js/polyfill.js"></script>
     <script src="../assets/js/main.js"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            // Assuming $userRefNo is fetched from PHP session or database
+            var userRefNo = "<?php echo $userRefCode; ?>";
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: userRefNo,
+                width: 200,
+                height: 200
+            });
+        });
+
+        // Function to save the QR code image
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            // Get the canvas element created by qrcodejs
+            var canvas = document.querySelector('#qrcode canvas');
+
+            // Convert the canvas to a Data URL
+            var dataURL = canvas.toDataURL("image/png");
+
+            // Create a temporary link element
+            var downloadLink = document.createElement('a');
+            downloadLink.href = dataURL;
+            downloadLink.download = 'YAPSAQCode.png';  // Specify the file name
+
+            // Trigger the download by simulating a click
+            downloadLink.click();
+        });
+    </script>
 
 
 
