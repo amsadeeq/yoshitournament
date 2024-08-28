@@ -6,6 +6,7 @@ $email = $_SESSION['a_email'];
 
 require '../../connection.php';
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -327,18 +328,6 @@ require '../../connection.php';
     </div>
   </div>
 
-  <!-- jQuery -->
-  <script src="../vendors/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- FastClick -->
-  <script src="../vendors/fastclick/lib/fastclick.js"></script>
-  <!-- NProgress -->
-  <script src="../vendors/nprogress/nprogress.js"></script>
-
-  <!-- Custom Theme Scripts -->
-  <script src="../build/js/custom.min.js"></script>
-
   <script>
     function onScanSuccess(decodedText, decodedResult) {
       // Handle the result of the scan
@@ -360,12 +349,27 @@ require '../../connection.php';
       console.warn(`Code scan error = ${error}`);
     }
 
+    // Initialize the scanner
     let html5QrcodeScanner = new Html5QrcodeScanner(
       "reader",
       { fps: 10, qrbox: 250 }
     );
     html5QrcodeScanner.render(onScanSuccess, onScanFailure);
   </script>
+
+  <!-- jQuery -->
+  <script src="../vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- FastClick -->
+  <script src="../vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="../vendors/nprogress/nprogress.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="../build/js/custom.min.js"></script>
+
+
 </body>
 
 </html>
