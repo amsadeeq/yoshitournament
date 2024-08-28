@@ -171,7 +171,7 @@ if (isset($_POST['login'])) {
                 // ]);
 
 
-            } else if ($user['user_position'] == 'Coach/Sport Director') {
+            } elseif ($user['user_position'] == 'Coach/Sport Director') {
                 // Fetch user information from yoshi_executive_tbl based on userRefNo
                 $stmt = $pdo->prepare("SELECT * FROM yoshi_schools_officials_tbl WHERE userRefNo = :userRefNo");
                 $stmt->bindParam(':userRefNo', $user['userRefNo']);
@@ -207,7 +207,7 @@ if (isset($_POST['login'])) {
                 // ]);
 
 
-            } else if ($user['user_position'] == 'Student') {
+            } elseif ($user['user_position'] == 'Student') {
                 // Fetch user information from yoshi_executive_tbl based on userRefNo
                 $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
                 $stmt->bindParam(':userRefNo', $user['userRefNo']);
