@@ -41,9 +41,11 @@
                   <div class='input-group'>
                     <input type='password' name='password' id='password' class='form-control login-input'
                       placeholder='Password' alt='pn' required />
-                    <button class='btn btn-outline-secondary' type='button' id='showPassword'>
+                    <span
+                      style="float: right; margin-left: -25px; margin-top: 10px; position: relative; z-index: 3;color:#aaa;"
+                      type='button' id='showPassword'>
                       <i class='fas fa-eye'></i>
-                    </button>
+                    </span>
                   </div>
                 </div>
 
@@ -51,9 +53,11 @@
                   <div class='input-group'>
                     <input type='password' name='confirm_password' id='confirmPassword' class='form-control login-input'
                       placeholder='Confirm Password' alt='pn' required>
-                    <button class='btn btn-outline-secondary' type='button' id='showConfirmPassword'>
+                    <span
+                      style="float: right; margin-left: -25px; margin-top: 10px; position: relative; z-index: 3;color:#aaa;"
+                      type='button' id='showConfirmPassword'>
                       <i class='fas fa-eye'></i>
-                    </button>
+                      </>
                   </div>
                   <div class='invalid-feedback' id='passwordError'>
                     Passwords do not match.
@@ -87,7 +91,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
     const passwordError = document.getElementById('passwordError');
