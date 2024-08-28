@@ -104,6 +104,9 @@ $total_student = $result_student['total_student'];
   <!-- bootstrap-daterangepicker -->
   <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
+  <!-- QR code scanner -->
+  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
 
@@ -350,7 +353,63 @@ $total_student = $result_student['total_student'];
                   <i class="fa-regular fa-user"></i>
                 </div>
                 <div class="count"><?php echo $total_users; ?></div>
-                <h4 class="stats_text">Sign ups</h4>
+                <h4 class="stats_text">Sign up</h4>
+              </div>
+            </a>
+          </div>
+
+
+
+          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+            <a href="schoolList.php" class=" text-decoration-none">
+              <div class="tile-stats">
+                <div class="icon">
+                  <i class="fas fa-school"></i>
+                </div>
+                <div class="count"><?php echo $total_school_officials; ?></div>
+                <h4 class="stats_text">Schools</h4>
+              </div>
+            </a>
+          </div>
+
+          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+            <div class="tile-stats">
+              <div class="icon">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <div class="count"><?php echo $total_student; ?></div>
+
+              <h4 class="stats_text">Students</h4>
+
+            </div>
+          </div>
+          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+            <div class="tile-stats">
+              <div class="icon">
+                <i class="fas fa-user-clock"></i>
+              </div>
+              <div class="count"><?php if (!empty($total_users_pending)) {
+                echo $total_users_pending;
+              } else {
+                echo "0";
+              } ?></div>
+
+              <h4 class="stats_text">Pending</h4>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+            <a href="signupList.php" class=" text-decoration-none">
+              <div class="tile-stats">
+                <div class="icon" style="font-size:30px;">
+                  <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="count"><?php echo $total_users; ?></div>
+                <h4 class="stats_text">Attendance</h4>
               </div>
             </a>
           </div>

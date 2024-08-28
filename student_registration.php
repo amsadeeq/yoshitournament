@@ -652,7 +652,7 @@ if (isset($_POST['complete_registration'])) {
                           <div class="col-lg-6">
                             <div class="form-group">
                               <label> Category (Section)<sup style="color: red !important;">*</sup> </label> </label>
-                              <select class="form-select" name="gender" required>
+                              <select class="form-select" name="category" required>
                                 <option selected> Select Section</option>
                                 <option value="Primary">Primary Section</option>
                                 <option value="Junior"> Junior Section</option>
