@@ -58,7 +58,8 @@ foreach ($players_record as $player_record) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" />
     <!-- Include SweetAlert CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
-
+    <!-- Include QR Code Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 
 
@@ -493,6 +494,23 @@ foreach ($players_record as $player_record) {
                                 </div>
                                 <!-- End Icon Cart -->
                             </div>
+
+
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <a href="#attendance"></a>
+                                <div class="icon-card mb-30">
+                                    <div class="icon text-success">
+                                        <i class="lni lni-pointer-down"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="mb-10">Attendance</h6>
+                                        <h3 class="text-bold mb-10">Click hear</h3>
+
+                                    </div>
+                                </div>
+                                <!-- End Icon Cart -->
+                            </div>
+                            <!-- End Col -->
                         </div>
                         <!-- End Row -->
                         <?php
@@ -766,6 +784,43 @@ foreach ($players_record as $player_record) {
                         <!-- End Col -->
                     </div>
                     <!-- End Row -->
+
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-sm-6" id="attendance">
+                            <div class="icon-card mb-30">
+                                <div class="content">
+                                    <!-- Display the QR code image -->
+                                    <?php
+                                    // Include the main library file
+                                    include 'phpqrcode/qrlib.php';
+
+
+
+                                    // Define the content for the QR code using the $userRefCode variable
+                                
+
+                                    // Define the path where you want to save the QR code image
+                                    $filePath = 'qrcodes/attendance_qr_' . $userRefCode . '.png';
+
+                                    // Check if the directory exists, if not create it
+                                    if (!file_exists('qrcodes')) {
+                                        mkdir('qrcodes', 0777, true);
+                                    }
+
+                                    // Generate the QR code and save it to the specified file
+                                    QRcode::png($userRefCode, $filePath, QR_ECLEVEL_L, 10, 2);
+
+                                    // Display the QR code image
+                                    echo '<img src="' . $filePath . '" alt="QR Code for Attendance" style="width:100%;height:100%;">';
+                                    ?>
+
+                                </div>
+                            </div>
+                            <!-- End Icon Cart -->
+                        </div>
+                        <!-- End Col -->
+
+                    </div>
 
                 </div>
                 <!-- end container -->
