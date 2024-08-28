@@ -4,6 +4,27 @@ ob_start();
 
 require '../connection.php';
 
+// Include the main library file
+include 'phpqrcode/qrlib.php';
+
+// Assume $userRefCode is defined earlier in your code
+
+
+
+
+
+
+
+
+// Set the content type header to display image
+header('Content-Type: image/png');
+
+// Generate the QR code and save it to the specified file
+QRcode::png($userRefCode, null, QR_ECLEVEL_L, 10, 2);
+
+// Display the QR code image
+$qr = '<img src="studentDashboard.php" alt="QR Code for Attendance" style="width:100%;height:100%;">';
+
 
 $TeamRefNumber = $_SESSION['teamRefNumber'];
 $userRefCode = $_SESSION['userRefCode'];
@@ -793,25 +814,7 @@ foreach ($players_record as $player_record) {
                                 <div class="content">
                                     <!-- Display the QR code image -->
                                     <?php
-                                    // Include the main library file
-                                    include 'phpqrcode/qrlib.php';
-
-                                    // Assume $userRefCode is defined earlier in your code
-                                
-
-
-
-                                    // Define the path where you want to save the QR code image
-                                    $filePath = 'qrcodes/attendance_qr_' . $userRefCode . '.png';
-
-                                    // Check if the directory exists, if not create it
-                                
-
-                                    // Generate the QR code and save it to the specified file
-                                    QRcode::png($userRefCode, $filePath, QR_ECLEVEL_L, 10, 2);
-
-                                    // Display the QR code image
-                                    echo '<img src="' . $filePath . '" alt="QR Code for Attendance" style="width:100%;height:100%;">';
+                                    echo $qr;
                                     ?>
 
                                 </div>
