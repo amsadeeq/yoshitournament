@@ -24,10 +24,11 @@
         </ul>
       </div>
       <ul class="side-media">
-        <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-        <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
-        <li> <a href="#"> <i class="fab fa-google-plus-g"></i> </a> </li>
-        <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li>
+        <li> <a target='_blank' href="https://www.facebook.com/yoshifootball"> <i class="fab fa-facebook-f"></i> </a>
+        </li>
+        <li> <a target='_blank' href="https://x.com/yoshi_fa_"> <i class="fab fa-twitter"></i> </a> </li>
+        <li> <a target='_blank' href="mailto: info@yoshifa.com"> <i class="fab fa-google-plus-g"></i> </a> </li>
+        <li> <a target='_blank' href="https://www.instagram.com/yoshi.ae/"> <i class="fab fa-instagram"></i> </a> </li>
       </ul>
     </div>
 
