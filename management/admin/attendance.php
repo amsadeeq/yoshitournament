@@ -415,7 +415,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
     let scanner;
 
     function startScanner() {
-      scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false, backgroundScan: false, });
+      scanner = new Instascan.Scanner({ video: document.getElementById('interactive'), mirror: false, backgroundScan: false, });
 
       scanner.addListener('scan', function (content) {
         $("#detected-qr-code").val(content);
