@@ -656,7 +656,7 @@ if (isset($_POST['complete_registration'])) {
                                 <option selected> Select Section</option>
                                 <option value="Primary">Primary Section</option>
                                 <option value="Junior"> Junior Section</option>
-                                <option value="Secondary">Secondary Section</option>
+                                <option value="Senior">Senior Section</option>
                               </select>
                             </div>
                           </div>
