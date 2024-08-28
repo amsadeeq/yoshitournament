@@ -296,7 +296,9 @@ require '../../connection.php';
                 <div class="clearfix"></div>
 
 
-                <div id="qr-reader" style="width: 500px;"></div>
+                <h3 class="text-center">Scan QR Code to Validate Attendance</h3>
+                <div id="reader" class="d-flex justify-content-center"></div>
+                <div class="alert alert-info mt-3" id="result"></div>
 
 
 
@@ -339,16 +341,30 @@ require '../../connection.php';
 
   <script>
     function onScanSuccess(decodedText, decodedResult) {
-      // Handle the decoded text (QR code content)
-      console.log(`Scan result: ${decodedText}`);
-      alert(`Scanned content: ${decodedText}`);
-      // Optionally, send the decodedText to the server for validation
+      // Handle the result of the scan
+      document.getElementById("result").innerHTML = `QR Code detected: ${decodedText}`;
+
+      // Make an AJAX call to validate attendance
+      $.ajax({
+        url: 'validate_attendance.php',
+        type: 'POST',
+        data: { userRefNo: decodedText },
+        success: function (response) {
+          $('#result').html(response);
+        }
+      });
     }
 
-    // Initialize the QR scanner
-    var html5QrcodeScanner = new Html5QrcodeScanner(
-      "qr-reader", { fps: 10, qrbox: 250 });
-    html5QrcodeScanner.render(onScanSuccess);
+    function onScanFailure(error) {
+      // Handle scan failure, typically ignore
+      console.warn(`Code scan error = ${error}`);
+    }
+
+    let html5QrcodeScanner = new Html5QrcodeScanner(
+      "reader",
+      { fps: 10, qrbox: 250 }
+    );
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
   </script>
 </body>
 
