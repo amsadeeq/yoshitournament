@@ -11,10 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         alert($qrCode);
         </script>";
 
-        // // Check if the userRefNo exists in the database
-        // $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
-        // $stmt->execute(['userRefNo' => $qrCode]);
-        // $selectStmt = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Check if the userRefNo exists in the database
+        $stmt = $pdo->prepare("SELECT * FROM yoshi_school_students_tbl WHERE userRefNo = :userRefNo");
+        $stmt->execute(['userRefNo' => $qrCode]);
+        $selectStmt = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        echo $selectStmt['surname'];
 
         // // $selectStmt = $conn->prepare("SELECT tbl_student_id FROM tbl_student WHERE generated_code = :generated_code");
         // // $selectStmt->bindParam(":generated_code", $qrCode, PDO::PARAM_STR);
