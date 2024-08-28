@@ -38,13 +38,26 @@
                 </div>
 
                 <div class='phone-div'>
-                  <input type='password' name='password' id='password' class='form-control login-input'
-                    placeholder='Password' alt='pn' required />
+                  <div class='input-group'>
+                    <input type='password' name='password' id='password' class='form-control login-input'
+                      placeholder='Password' alt='pn' required />
+                    <button class='btn btn-outline-secondary' type='button' id='showPassword'>
+                      <i class='fas fa-eye'></i>
+                    </button>
+                  </div>
                 </div>
 
                 <div class='phone-div'>
-                  <input type='password' name='confirm_password' id='confirm_password' class='form-control login-input'
-                    placeholder='Confirm Password' alt='pn' required>
+                  <div class='input-group'>
+                    <input type='password' name='confirm_password' id='confirmPassword' class='form-control login-input'
+                      placeholder='Confirm Password' alt='pn' required>
+                    <button class='btn btn-outline-secondary' type='button' id='showConfirmPassword'>
+                      <i class='fas fa-eye'></i>
+                    </button>
+                  </div>
+                  <div class='invalid-feedback' id='passwordError'>
+                    Passwords do not match.
+                  </div>
                 </div>
 
                 <div class='forget2 mt-3 ml-3 d-flex justify-content-between'>
@@ -75,16 +88,39 @@
 
 <script>
   const passwordInput = document.getElementById('password');
-  const confirmPasswordInput = document.getElementById('confirm_password');
+  const confirmPasswordInput = document.getElementById('confirmPassword');
+  const passwordError = document.getElementById('passwordError');
 
-  confirmPasswordInput.addEventListener('input', () => {
-    const password = passwordInput.value;
-    const confirmPassword = confirmPasswordInput.value;
+  function togglePasswordVisibility(inputId) {
+    const input = document.getElementById(inputId);
+    const icon = input.nextElementSibling.querySelector('i');
 
-    if (password !== confirmPassword) {
-      confirmPasswordInput.setCustomValidity('Passwords do not match');
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
     } else {
-      confirmPasswordInput.setCustomValidity('');
+      input.type = 'password';
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+    }
+  }
+
+  document.getElementById('showPassword').addEventListener('click', function () {
+    togglePasswordVisibility('password');
+  });
+
+  document.getElementById('showConfirmPassword').addEventListener('click', function () {
+    togglePasswordVisibility('confirmPassword');
+  });
+
+  confirmPasswordInput.addEventListener('input', function () {
+    if (passwordInput.value !== confirmPasswordInput.value) {
+      confirmPasswordInput.classList.add('is-invalid');
+      passwordError.style.display = 'block';
+    } else {
+      confirmPasswordInput.classList.remove('is-invalid');
+      passwordError.style.display = 'none';
     }
   });
 </script>
