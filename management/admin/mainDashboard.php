@@ -21,6 +21,13 @@ $result_pending = $stmt_pending->fetch(PDO::FETCH_ASSOC);
 $total_users_pending = $result_pending['total_users'];
 
 
+// Perform authentication against yoshi_signup_tbl
+$stmt_attendance = $pdo->prepare("SELECT COUNT(*) as total_attendance FROM yoshi_school_students_tbl WHERE attendance = 1");
+$stmt_attendance->execute();
+$result_attendance = $stmt_attendance->fetch(PDO::FETCH_ASSOC);
+$total_attendance = $result_attendance['total_attendance'];
+
+
 
 
 
@@ -408,7 +415,7 @@ $total_student = $result_student['total_student'];
                 <div class="icon" style="font-size:30px;">
                   <i class="fa-regular fa-user"></i>
                 </div>
-                <div class="count"><?php echo $total_users; ?></div>
+                <div class="count"><?php echo $total_attendance; ?></div>
                 <h4 class="stats_text">Attendance</h4>
               </div>
             </a>
