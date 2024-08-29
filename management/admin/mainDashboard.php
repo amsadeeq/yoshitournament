@@ -423,7 +423,7 @@ $total_student = $result_student['total_student'];
             <a href="attendance.php" class=" text-decoration-none">
               <div class="tile-stats" style="background-color:#83c5be;">
                 <div class="icon" style="font-size:30px;">
-                  <i class="fas fa-users-medical"></i>
+                  <i class="fas fa-user-plus"></i>
                 </div>
                 <div class="count"><?php echo $total_attendance; ?></div>
                 <h4 class="stats_text">Attendance</h4>
