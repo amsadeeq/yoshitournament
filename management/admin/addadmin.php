@@ -443,11 +443,11 @@ $email = $_SESSION['a_email'];
 																	<div class="btn-group" role="group"
 																		aria-label="Basic example">
 																		<button type="button"
-																			class="btn btn-secondary">View</button>
+																			class="btn btn-sm btn-secondary">View</button>
 																		<button type="button"
-																			class="btn btn-warning">Suspend</button>
+																			class="btn btn-sm btn-warning">Suspend</button>
 																		<button type="button"
-																			class="btn btn-danger">Delete</button>
+																			class="btn btn-sm btn-danger">Delete</button>
 																	</div>
 																</td>
 															</tr>
@@ -462,14 +462,14 @@ $email = $_SESSION['a_email'];
 																	<span class="badge badge-warning">Pending</span>
 																</td>
 																<td>
-																	<div class="btn-group btn-group-xs" role="group"
+																	<div class="btn-group btn-group-sm" role="group"
 																		aria-label="Basic example">
 																		<button type="button"
-																			class="btn btn-secondary">View</button>
+																			class="btn btn-sm btn-secondary">View</button>
 																		<button type="button"
-																			class="btn btn-warning">Suspend</button>
+																			class="btn btn-sm btn-warning">Suspend</button>
 																		<button type="button"
-																			class="btn btn-danger">Delete</button>
+																			class="btn btn-sm btn-danger">Delete</button>
 																	</div>
 																</td>
 															</tr>
