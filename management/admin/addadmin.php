@@ -341,7 +341,7 @@ $email = $_SESSION['a_email'];
 													class="form-control">
 											</div>
 										</div>
-										<div class="form-group row">
+										<div class="item form-group">
 											<label class="control-label col-md-3 col-sm-3 ">Admin Role</label>
 											<div class="col-md-9 col-sm-9 ">
 												<select class="form-control">
