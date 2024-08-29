@@ -384,12 +384,12 @@ $email = $_SESSION['a_email'];
 													name="phone" placeholder="simple password" required="required">
 											</div>
 										</div>
-										<br /><br />
+
 										<div class="ln_solid"></div>
+										<br /><br />
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 												<button class="btn btn-primary" type="button">Cancel</button>
-
 												<button type="submit" class="btn btn-success">Add admin</button>
 											</div>
 										</div>
