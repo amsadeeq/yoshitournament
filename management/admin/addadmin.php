@@ -415,66 +415,69 @@ $email = $_SESSION['a_email'];
 										<div class="col-md-12 col-sm-12  ">
 											<div class="x_panel">
 												<div class="x_content">
-													<table class="table table-hover">
-														<thead>
-															<tr>
-																<th>#</th>
-																<th>Admin ID</th>
-																<th>Full Name</th>
-																<th>Email</th>
-																<th>Phone</th>
-																<th>Role</th>
-																<th>Status</th>
-																<th>Action</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<th scope="row">1</th>
-																<td>123456</td>
-																<td>Abubakar Sadiq Muhammad</td>
-																<td>abmusadeeq@gmail.com</td>
-																<td>08167913802</td>
-																<td>view Role</td>
-																<td>
-																	<span class="badge badge-success">Updated</span>
-																</td>
-																<td>
-																	<div class="btn-group" role="group"
-																		aria-label="Basic example">
-																		<button type="button"
-																			class="btn btn-sm btn-secondary">View</button>
-																		<button type="button"
-																			class="btn btn-sm btn-warning">Suspend</button>
-																		<button type="button"
-																			class="btn btn-sm btn-danger">Delete</button>
-																	</div>
-																</td>
-															</tr>
-															<tr>
-																<th scope="row">1</th>
-																<td>123456</td>
-																<td>Abubakar Sadiq Muhammad</td>
-																<td>abmusadeeq@gmail.com</td>
-																<td>08167913802</td>
-																<td>view Role</td>
-																<td>
-																	<span class="badge badge-warning">Pending</span>
-																</td>
-																<td>
-																	<div class="btn-group btn-group-sm" role="group"
-																		aria-label="Basic example">
-																		<button type="button"
-																			class="btn btn-sm btn-secondary">View</button>
-																		<button type="button"
-																			class="btn btn-sm btn-warning">Suspend</button>
-																		<button type="button"
-																			class="btn btn-sm btn-danger">Delete</button>
-																	</div>
-																</td>
-															</tr>
-														</tbody>
-													</table>
+													<div class=" table-responsive ">
+														<table class="table table-hover">
+															<thead>
+																<tr>
+																	<th>#</th>
+																	<th>Admin ID</th>
+																	<th>Full Name</th>
+																	<th>Email</th>
+																	<th>Phone</th>
+																	<th>Role</th>
+																	<th>Status</th>
+																	<th>Action</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<th scope="row">1</th>
+																	<td>123456</td>
+																	<td>Abubakar Sadiq Muhammad</td>
+																	<td>abmusadeeq@gmail.com</td>
+																	<td>08167913802</td>
+																	<td>view Role</td>
+																	<td>
+																		<span class="badge badge-success">Updated</span>
+																	</td>
+																	<td>
+																		<div class="btn-group" role="group"
+																			aria-label="Basic example">
+																			<button type="button"
+																				class="btn btn-sm btn-secondary">View</button>
+																			<button type="button"
+																				class="btn btn-sm btn-warning">Suspend</button>
+																			<button type="button"
+																				class="btn btn-sm btn-danger">Delete</button>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<th scope="row">1</th>
+																	<td>123456</td>
+																	<td>Abubakar Sadiq Muhammad</td>
+																	<td>abmusadeeq@gmail.com</td>
+																	<td>08167913802</td>
+																	<td>view Role</td>
+																	<td>
+																		<span class="badge badge-warning">Pending</span>
+																	</td>
+																	<td>
+																		<div class="btn-group btn-group-sm" role="group"
+																			aria-label="Basic example">
+																			<button type="button"
+																				class="btn btn-sm btn-secondary">View</button>
+																			<button type="button"
+																				class="btn btn-sm btn-warning">Suspend</button>
+																			<button type="button"
+																				class="btn btn-sm btn-danger">Delete</button>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+
 												</div>
 											</div>
 										</div>
