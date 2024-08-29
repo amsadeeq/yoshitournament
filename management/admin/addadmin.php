@@ -329,7 +329,7 @@ $email = $_SESSION['a_email'];
 											</label>
 											<div class="col-md-6 col-sm-6 ">
 												<input type="text" name="full_name" id="first-name" required="required"
-													class="form-control " placeholder="Full Name">
+													class="form-control ">
 											</div>
 										</div>
 										<div class="item form-group">
@@ -338,7 +338,16 @@ $email = $_SESSION['a_email'];
 											</label>
 											<div class="col-md-6 col-sm-6 ">
 												<input type="email" id="last-name" name="email" required="required"
-													class="form-control" placeholder="example@email.com">
+													class="form-control">
+											</div>
+										</div>
+										<div class="item form-group">
+											<label for="middle-name"
+												class="col-form-label col-md-3 col-sm-3 label-align">Phone
+												Number</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input id="middle-name" class="form-control" type="text"
+													name="middle-name">
 											</div>
 										</div>
 										<div class="item form-group">
@@ -354,14 +363,7 @@ $email = $_SESSION['a_email'];
 												</select>
 											</div>
 										</div>
-										<div class="item form-group">
-											<label for="middle-name"
-												class="col-form-label col-md-3 col-sm-3 label-align">Phone Number</label>
-											<div class="col-md-6 col-sm-6 ">
-												<input id="middle-name" class="form-control" type="text"
-													name="middle-name">
-											</div>
-										</div>
+
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
 											<div class="col-md-6 col-sm-6 ">
