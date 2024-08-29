@@ -44,6 +44,16 @@ $result_school = $stmt_school->fetch(PDO::FETCH_ASSOC);
 $total_school_officials = $result_school['total_school_officials'];
 
 
+// ##### Fetching record for admins #######
+
+$stmt_admin = $pdo->prepare("SELECT COUNT(*) as total_admin FROM yoshi_admins_tbl");
+$stmt_admin->execute();
+$result_admin = $stmt_admin->fetch(PDO::FETCH_ASSOC);
+$total__admin = $result_admin['total_admin'];
+
+
+
+
 // ##### Fetching record for School Officials #######
 
 $stmt_student = $pdo->prepare("SELECT COUNT(*) as total_student  FROM yoshi_school_students_tbl");
@@ -424,13 +434,13 @@ $total_student = $result_student['total_student'];
 
 
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <a href="schoolList.php" class=" text-decoration-none">
+            <a href="addadmin.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon">
                   <i class="fas fa-school"></i>
                 </div>
-                <div class="count"><?php echo $total_school_officials; ?></div>
-                <h4 class="stats_text">Schools</h4>
+                <div class="count"><?php echo $total__admin; ?></div>
+                <h4 class="stats_text">Add Admin</h4>
               </div>
             </a>
           </div>
