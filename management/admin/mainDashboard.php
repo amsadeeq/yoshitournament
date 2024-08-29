@@ -367,7 +367,7 @@ $total_student = $result_student['total_student'];
             <a href="signupList.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon" style="font-size:30px;">
-                  <i class="fa-regular fa-user"></i>
+                  <i class="fas fa-users"></i>
                 </div>
                 <div class="count"><?php echo $total_users; ?></div>
                 <h4 class="stats_text">Sign up</h4>
@@ -401,7 +401,7 @@ $total_student = $result_student['total_student'];
             </div>
           </div>
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <div class="tile-stats">
+            <div class="tile-stats" style="background-color: #ffbc42;">
               <div class="icon">
                 <i class="fas fa-user-clock"></i>
               </div>
@@ -423,7 +423,7 @@ $total_student = $result_student['total_student'];
             <a href="attendance.php" class=" text-decoration-none">
               <div class="tile-stats" style="background-color:#83c5be;">
                 <div class="icon" style="font-size:30px;">
-                  <i class="fas fa-user-plus"></i>
+                  <i class="fas fa-users-medical"></i>
                 </div>
                 <div class="count"><?php echo $total_attendance; ?></div>
                 <h4 class="stats_text">Attendance</h4>
@@ -437,7 +437,7 @@ $total_student = $result_student['total_student'];
             <a href="addadmin.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon">
-                  <i class="fas fa-school"></i>
+                  <i class="fas fa-user-tie"></i>
                 </div>
                 <div class="count"><?php echo $total__admin; ?></div>
                 <h4 class="stats_text">Add Admin</h4>
