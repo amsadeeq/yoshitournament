@@ -321,7 +321,8 @@ $email = $_SESSION['a_email'];
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+									<form id="demo-form2" method="POST" data-parsley-validate
+										class="form-horizontal form-label-left">
 
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align"
@@ -364,7 +365,7 @@ $email = $_SESSION['a_email'];
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Admin
 												Role</label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control">
+												<select class="form-control" required="required">
 													<option value="null">Choose Role</option>
 													<option value="View Role">View Role</option>
 													<option value="Patial Role">Patial Role</option>
@@ -379,7 +380,7 @@ $email = $_SESSION['a_email'];
 												Password</label>
 											<div class="col-md-6 col-sm-6 ">
 												<input id="middle-name" id="last-name" class="form-control" type="text"
-													name="phone" placeholder="simple password">
+													name="phone" placeholder="simple password" required="required">
 											</div>
 										</div>
 
