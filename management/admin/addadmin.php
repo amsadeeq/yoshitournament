@@ -374,7 +374,7 @@ $email = $_SESSION['a_email'];
 												</select>
 											</div>
 										</div>
-										<br />
+
 										<div class="item form-group">
 											<label for="middle-name"
 												class="col-form-label col-md-3 col-sm-3 label-align">Temporary
@@ -384,7 +384,7 @@ $email = $_SESSION['a_email'];
 													name="phone" placeholder="simple password" required="required">
 											</div>
 										</div>
-
+										<br /><br />
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
