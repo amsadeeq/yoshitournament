@@ -398,6 +398,27 @@ $email = $_SESSION['a_email'];
 							</div>
 						</div>
 					</div>
+
+					<div class="row">
+						<div class="col-md-12 col-sm-12 ">
+							<div class="x_panel">
+								<div class="x_title">
+									<h2>Admin Lists </h2>
+
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+									<br />
+									<form id="demo-form2" method="POST" data-parsley-validate
+										class="form-horizontal form-label-left">
+
+
+
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!-- /page content -->
