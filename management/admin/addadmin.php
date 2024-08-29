@@ -462,7 +462,7 @@ $email = $_SESSION['a_email'];
 																	<span class="badge badge-warning">Pending</span>
 																</td>
 																<td>
-																	<div class="btn-group" role="group"
+																	<div class="btn-group btn-group-xs" role="group"
 																		aria-label="Basic example">
 																		<button type="button"
 																			class="btn btn-secondary">View</button>
