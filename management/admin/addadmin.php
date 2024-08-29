@@ -412,8 +412,49 @@ $email = $_SESSION['a_email'];
 									<form id="demo-form2" method="POST" data-parsley-validate
 										class="form-horizontal form-label-left">
 
-
-
+										<div class="col-md-12 col-sm-12  ">
+											<div class="x_panel">
+												<div class="x_content">
+													<table class="table table-hover">
+														<thead>
+															<tr>
+																<th>#</th>
+																<th>Admin ID</th>
+																<th>Full Name</th>
+																<th>Email</th>
+																<th>Phone</th>
+																<th>Role</th>
+																<th>Status</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<th scope="row">1</th>
+																<td>123456</td>
+																<td>Abubakar Sadiq Muhammad</td>
+																<td>abmusadeeq@gmail.com</td>
+																<td>08167913802</td>
+																<td>view Role</td>
+																<td>
+																	<span class="badge badge-success">Updated</span>
+																</td>
+															</tr>
+															<tr>
+																<th scope="row">1</th>
+																<td>123456</td>
+																<td>Abubakar Sadiq Muhammad</td>
+																<td>abmusadeeq@gmail.com</td>
+																<td>08167913802</td>
+																<td>view Role</td>
+																<td>
+																	<span class="badge badge-warning">Pending</span>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
 									</form>
 								</div>
 							</div>
