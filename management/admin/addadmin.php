@@ -439,6 +439,17 @@ $email = $_SESSION['a_email'];
 																<td>
 																	<span class="badge badge-success">Updated</span>
 																</td>
+																<td>
+																	<div class="btn-group" role="group"
+																		aria-label="Basic example">
+																		<button type="button"
+																			class="btn btn-secondary">View</button>
+																		<button type="button"
+																			class="btn btn-warning">Suspend</button>
+																		<button type="button"
+																			class="btn btn-danger">Delete</button>
+																	</div>
+																</td>
 															</tr>
 															<tr>
 																<th scope="row">1</th>
@@ -449,6 +460,17 @@ $email = $_SESSION['a_email'];
 																<td>view Role</td>
 																<td>
 																	<span class="badge badge-warning">Pending</span>
+																</td>
+																<td>
+																	<div class="btn-group" role="group"
+																		aria-label="Basic example">
+																		<button type="button"
+																			class="btn btn-secondary">View</button>
+																		<button type="button"
+																			class="btn btn-warning">Suspend</button>
+																		<button type="button"
+																			class="btn btn-danger">Delete</button>
+																	</div>
 																</td>
 															</tr>
 														</tbody>
