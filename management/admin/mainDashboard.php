@@ -409,9 +409,9 @@ $total_student = $result_student['total_student'];
 
         <div class="row">
 
-          <div class="animated flipInY bg-success col-lg-3 col-md-3 col-sm-6">
+          <div class="animated flipInY  col-lg-3 col-md-3 col-sm-6">
             <a href="attendance.php" class=" text-decoration-none">
-              <div class="tile-stats">
+              <div class="tile-stats" style="background-color:#83c5be;">
                 <div class="icon" style="font-size:30px;">
                   <i class="fas fa-user-plus"></i>
                 </div>
