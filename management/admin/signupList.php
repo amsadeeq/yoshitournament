@@ -340,10 +340,10 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dateCreated; ?></td>
                                 <td><?php switch ($regStatus) {
                                   case 1:
-                                    echo "Complete";
+                                    echo '<span class="badge badge-success">Complete</span>';
                                     break;
                                   default:
-                                    echo "Pending";
+                                    echo '<span class="badge badge-warning">Pending</span>';
                                     break;
                                 } ?></td>
                               </tr>
