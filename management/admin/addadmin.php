@@ -325,25 +325,26 @@ $email = $_SESSION['a_email'];
 
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align"
-												for="first-name">First Name <span class="required">*</span>
+												for="first-name">Full Name <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="first-name" required="required"
-													class="form-control ">
+												<input type="text" name="full_name" id="first-name" required="required"
+													class="form-control " placeholder="Full Name">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align"
-												for="last-name">Last Name <span class="required">*</span>
+												for="last-name">Email <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="last-name" required="required"
-													class="form-control">
+												<input type="email" id="last-name" name="email" required="required"
+													class="form-control" placeholder="example@email.com">
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="control-label col-md-3 col-sm-3 ">Admin Role</label>
-											<div class="col-md-9 col-sm-9 ">
+											<label class="col-form-label col-md-3 col-sm-3 label-align">Admin
+												Role</label>
+											<div class="col-md-6 col-sm-6 ">
 												<select class="form-control">
 													<option value="null">Choose Role</option>
 													<option value="View Role">View Role</option>
@@ -355,8 +356,7 @@ $email = $_SESSION['a_email'];
 										</div>
 										<div class="item form-group">
 											<label for="middle-name"
-												class="col-form-label col-md-3 col-sm-3 label-align">Middle Name /
-												Initial</label>
+												class="col-form-label col-md-3 col-sm-3 label-align">Phone Number</label>
 											<div class="col-md-6 col-sm-6 ">
 												<input id="middle-name" class="form-control" type="text"
 													name="middle-name">
