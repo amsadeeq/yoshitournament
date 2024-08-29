@@ -425,6 +425,7 @@ $email = $_SESSION['a_email'];
 																<th>Phone</th>
 																<th>Role</th>
 																<th>Status</th>
+																<th>Action</th>
 															</tr>
 														</thead>
 														<tbody>
