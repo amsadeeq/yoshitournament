@@ -102,8 +102,8 @@ if (isset($_POST['addadmin'])) {
 	// Hash the password
 	$hashed_password = md5($temp_password);
 	// Insert data into the database
-	$stmt = $pdo->prepare("INSERT INTO `yoshi_admins_tbl` (`id`, `userRefNo`, `full_name`, `admin_email`, `admin_phone`, `admin_role`, `temp_password`,`time_created`, `date_created`, `acct_status`) VALUES (NULL, :userRefNo, :full_name, :email, :phone, :role, :hashed_password, :time_create, :date_create, :status)");
-	$stmt->bindParam(':userRefNo', $userRefCode);
+	$stmt = $pdo->prepare("INSERT INTO `yoshi_admins_tbl` (`id`, `admin_userID`, `full_name`, `admin_email`, `admin_phone`, `admin_role`, `temp_password`,`time_created`, `date_created`, `acct_status`) VALUES (NULL, :admin_userID, :full_name, :email, :phone, :role, :hashed_password, :time_create, :date_create, :status)");
+	$stmt->bindParam(':admin_userID', $userRefCode);
 	$stmt->bindParam(':full_name', $full_name);
 	$stmt->bindParam(':email', $email); // Changed from 'admin_email' to 'email'
 	$stmt->bindParam(':phone', $phone); // Changed from 'admin_phone' to 'phone'
