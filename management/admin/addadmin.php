@@ -110,10 +110,8 @@ try {
 		$stmt->bindParam(':phone', $phone); // Changed from 'admin_phone' to 'phone'
 		$stmt->bindParam(':role', $role);
 		$stmt->bindParam(':hashed_password', $hashed_password);
-		$stmt->bindParam(':time_created', $time_create);
-		$stmt->bindParam(':date_created', $date_create);
-		$stmt->bindParam(':time_updated', $time_create);
-		$stmt->bindParam(':date_updated', $date_create);
+		$stmt->bindParam(':time_create', $time_create); // Changed from 'time_created' to 'time_create'
+		$stmt->bindParam(':date_create', $date_create); // Changed from 'date_created' to 'date_create'
 		$stmt->bindParam(':status', $status);
 		$stmt->execute();
 
