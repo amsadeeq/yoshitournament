@@ -592,12 +592,12 @@ try {
 
 
 
-																$id = $row['id'];
-																$name = $row['full_name'];
-																$email = $row['admin_email'];
-																$phone = $row['admin_phone'];
-																$role = $row['admin_role'];
-																$status = $row['acct_status'];
+																$id = $admin['id'];
+																$name = $admin['full_name'];
+																$email = $admin['admin_email'];
+																$phone = $admin['admin_phone'];
+																$role = $admin['admin_role'];
+																$status = $admin['acct_status'];
 																?>
 																<tr>
 
