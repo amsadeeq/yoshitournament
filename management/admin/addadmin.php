@@ -6,6 +6,162 @@ ob_start();
 require_once '../../connection.php';
 $email = $_SESSION['a_email'];
 
+if (isset($_POST['addadmin'])) {
+
+	//**** function reference number to each registered coach/manager of the team ***//
+	function productCode($length = 8)
+	{
+		// start with a blank reference number
+		$userRefCode = "";
+
+		// define possible characters - any character in this string can be
+		$possible = "0123456789";
+
+		// we refer to the length of $possible a few times, so let's grab it now
+		$maxlength = strlen($possible);
+
+		// check for length overflow and truncate if necessary
+		if ($length > $maxlength) {
+			$length = $maxlength;
+		}
+
+		// set up a counter for how many characters are in the pin so far
+		$i = 0;
+
+		// add random characters to $userRefCode until $length is reached
+		while ($i < $length) {
+			// pick a random character from the possible ones
+			$char = substr($possible, mt_rand(0, $maxlength - 1), 1);
+
+			// have we already used this character in $userRefCode?
+			if (!strstr($userRefCode, $char)) {
+				// no, so it's OK to add it onto the end of whatever we've already got...
+				$userRefCode .= $char;
+				// ... and increase the counter by one
+				$i++;
+			}
+		}
+
+		// done!
+		return $userRefCode;
+	}
+
+	$userRefCode = productCode(8); //function that generate 8 unique characters for reference number
+
+	//function checking for malicious inputs using trim(),stripslahes(),htmlspecialchars(),htmlentities()
+	function check_input($data)
+	{
+		$data = trim($data);
+		$data = stripcslashes($data);
+		$data = htmlspecialchars($data);
+		$data = htmlentities($data);
+		return $data;
+	}
+
+	// Function to sanitize input data
+	function sanitize_input($data)
+	{
+		return htmlspecialchars(stripslashes(trim($data)));
+	}
+
+	//function for collecting user ip address
+	// function getRealIpAddr()
+	// {
+	// 	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+	// 		//check IP from internet
+	// 		$ip = $_SERVER['HTTP_CLIENT_IP'];
+	// 	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+	// 		//check IP is passed from proxy
+	// 		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	// 	} else {
+	// 		//get IP address from remote address
+	// 		$ip = $_SERVER['REMOTE_ADDR'];
+	// 	}
+	// 	return $ip;
+	// }
+
+	// ----------------------------------------------------------------//
+	//Collecting user information//
+
+	$full_name = check_input($_POST['full_name']); //check_input is sensitising the input field
+	$phone = check_input($_POST['phone']); //check_input is sensitising the input field
+	$email = check_input($_POST['email']); //check_input is sensitising the input field
+	$role = check_input($_POST['role']); //check_input is sensitising the input field
+	$gender = check_input($_POST['gender']); //check_input is sensitising the input field
+	$temp_password = check_input($_POST['temp_password']); //check_input is sensitising the input field
+
+	$status = "pending";
+	$time = time(); //function for current time
+	$date_create = date("d/M/Y", $time); //function for current date
+	$time_create = date("H:i:s a"); //function for current time using "strtotime" to minus 1hour
+	// $ipaddress = getRealIpAddr();
+
+	if (empty($temp_password)) {
+		$password_error = 'Oops! Enter password';
+	} else {
+		// Collecting user information
+		$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+		// Hash the password
+		$hashed_password = md5($temp_password);
+		// Insert data into the database
+		$stmt = $pdo->prepare("INSERT INTO `yoshi_admins_tbl` (`id`, `userRefNo`, `full_name`, `admin_email`, `admin_phone`, `admin_role`, `temp_password`,`time_created`, `date_created`, `time_updated`, `date_updated`, `acct_status`) VALUES (NULL, :userRefNo, :full_name, :email, :phone, :role, :hashed_password, :time_create, :date_create, :time_updated, :date_updated, :status)");
+		$stmt->bindParam(':userRefNo', $userRefCode);
+		$stmt->bindParam(':full_name', $full_name);
+		$stmt->bindParam(':email', $email); // Changed from 'admin_email' to 'email'
+		$stmt->bindParam(':phone', $phone); // Changed from 'admin_phone' to 'phone'
+		$stmt->bindParam(':role', $role);
+		$stmt->bindParam(':hashed_password', $hashed_password);
+		$stmt->bindParam(':time_created', $time_create);
+		$stmt->bindParam(':date_created', $date_create);
+		$stmt->bindParam(':time_updated', $time_create);
+		$stmt->bindParam(':date_updated', $date_create);
+		$stmt->bindParam(':status', $status);
+		$stmt->execute();
+
+		################################################
+		$to = $email;
+		// Set the email subject
+		$subject = "Admin Account Created - Yoshi Tournaments";
+
+		$message = "Dear Admin,\n\n";
+		$message .= "An admin account has been created for you on Yoshi Tournaments.\n";
+		$message .= "Please visit the following link to activate your account and create a new password:\n";
+		$message .= "https://www.yoshitournaments.com/management/admin/index.php\n\n";
+		$message .= "Your temporary password is: $temp_password\n\n";
+		$message .= "Once you have activated your account and created a new password, you will be able to access the admin panel and manage the tournament.\n\n";
+		$message .= "If you have any questions or need further assistance, please feel free to contact us at account@yoshitournaments.com or +2348167913802.\n\n";
+		$message .= "Best Regards,\n";
+		$message .= "Yoshi Tournament Team";
+
+		// Set additional headers
+		$headers = "From: no-reply@yoshitournament.com\r\n";
+		$headers .= "Reply-To: support@yoshitournament.com\r\n";
+		// $headers .= "CC: yoshitournaments@gmail.com\r\n";
+		$headers .= "X-Mailer: PHP/" . phpversion();
+		// Send the email
+		$mail_sent = mail($to, $subject, $message, $headers);
+		$register_message = "Account Successfully created !";
+		//echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
+		// Define the notification message
+		// Generate the JavaScript code to trigger the notification
+		$welcome_notify = "
+		<script>
+			new Noty({
+				theme: 'metroui',
+				text: '$register_message',
+				type: 'success',
+				timeout: 1000
+				
+			}).show();
+		</script>
+		";
+	}
+	echo $welcome_notify;
+	exit;
+}
+
+?>
+
 
 
 ?>
@@ -39,6 +195,12 @@ $email = $_SESSION['a_email'];
 	<link href="../vendors/starrr/dist/starrr.css" rel="stylesheet">
 	<!-- bootstrap-daterangepicker -->
 	<link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" />
+	<!-- Include SweetAlert CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+
+
 
 	<!-- Custom Theme Style -->
 	<link href="../build/css/custom.min.css" rel="stylesheet">
@@ -354,7 +516,7 @@ $email = $_SESSION['a_email'];
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control">
+												<select class="form-control" name="gender">
 													<option value="null">Choose Gender</option>
 													<option value="Male">Male</option>
 													<option value="Female">Female</option>
@@ -365,7 +527,7 @@ $email = $_SESSION['a_email'];
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Admin
 												Role</label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" required="required">
+												<select class="form-control" name="role" required="required">
 													<option value="null">Choose Role</option>
 													<option value="View Role">View Role</option>
 													<option value="Patial Role">Patial Role</option>
@@ -381,19 +543,19 @@ $email = $_SESSION['a_email'];
 												Password</label>
 											<div class="col-md-6 col-sm-6 ">
 												<input id="middle-name" id="last-name" class="form-control" type="text"
-													name="phone" placeholder="simple password" required="required">
+													name="temp_password" placeholder="simple password"
+													required="required">
 											</div>
 										</div>
 
 										<div class="ln_solid"></div>
-										<br /><br />
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 												<button class="btn btn-primary" type="button">Cancel</button>
-												<button type="submit" class="btn btn-success">Add admin</button>
+												<button type="submit" name="addadmin" class="btn btn-success">Add
+													admin</button>
 											</div>
 										</div>
-
 									</form>
 								</div>
 							</div>
@@ -405,84 +567,80 @@ $email = $_SESSION['a_email'];
 							<div class="x_panel">
 								<div class="x_title">
 									<h2>Admin Lists </h2>
-
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2" method="POST" data-parsley-validate
-										class="form-horizontal form-label-left">
-
-										<div class="col-md-12 col-sm-12  ">
-											<div class="x_panel">
-												<div class="x_content">
-													<div class=" table-responsive ">
-														<table class="table table-hover">
-															<thead>
-																<tr>
-																	<th>#</th>
-																	<th>Admin ID</th>
-																	<th>Full Name</th>
-																	<th>Email</th>
-																	<th>Phone</th>
-																	<th>Role</th>
-																	<th>Status</th>
-																	<th>Action</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>123456</td>
-																	<td>Abubakar Sadiq Muhammad</td>
-																	<td>abmusadeeq@gmail.com</td>
-																	<td>08167913802</td>
-																	<td>view Role</td>
-																	<td>
-																		<span class="badge badge-success">Updated</span>
-																	</td>
-																	<td>
-																		<div class="btn-group" role="group"
-																			aria-label="Basic example">
-																			<button type="button"
-																				class="btn btn-sm btn-secondary">View</button>
-																			<button type="button"
-																				class="btn btn-sm btn-warning">Suspend</button>
-																			<button type="button"
-																				class="btn btn-sm btn-danger">Delete</button>
-																		</div>
-																	</td>
-																</tr>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>123456</td>
-																	<td>Abubakar Sadiq Muhammad</td>
-																	<td>abmusadeeq@gmail.com</td>
-																	<td>08167913802</td>
-																	<td>view Role</td>
-																	<td>
-																		<span class="badge badge-warning">Pending</span>
-																	</td>
-																	<td>
-																		<div class="btn-group btn-group-sm" role="group"
-																			aria-label="Basic example">
-																			<button type="button"
-																				class="btn btn-sm btn-secondary">View</button>
-																			<button type="button"
-																				class="btn btn-sm btn-warning">Suspend</button>
-																			<button type="button"
-																				class="btn btn-sm btn-danger">Delete</button>
-																		</div>
-																	</td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-
+									<div class="col-md-12 col-sm-12  ">
+										<div class="x_panel">
+											<div class="x_content">
+												<div class=" table-responsive ">
+													<table class="table table-hover">
+														<thead>
+															<tr>
+																<th>#</th>
+																<th>ID</th>
+																<th>Name</th>
+																<th>Email</th>
+																<th>Phone</th>
+																<th>Role</th>
+																<th>Status</th>
+																<th>Action</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<th scope="row">1</th>
+																<td>123456</td>
+																<td>Abubakar Sadiq Muhammad</td>
+																<td>abmusadeeq@gmail.com</td>
+																<td>08167913802</td>
+																<td>view Role</td>
+																<td>
+																	<span class="badge badge-success">Updated</span>
+																</td>
+																<td>
+																	<div class="btn-group" role="group"
+																		aria-label="Basic example">
+																		<button type="button"
+																			class="btn btn-sm btn-secondary">View</button>
+																		<button type="button"
+																			class="btn btn-sm btn-warning">Suspend</button>
+																		<button type="button"
+																			class="btn btn-sm btn-danger">Delete</button>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<th scope="row">1</th>
+																<td>123456</td>
+																<td>Abubakar Sadiq Muhammad</td>
+																<td>abmusadeeq@gmail.com</td>
+																<td>08167913802</td>
+																<td>view Role</td>
+																<td>
+																	<span class="badge badge-warning">Pending</span>
+																</td>
+																<td>
+																	<div class="btn-group btn-group-sm" role="group"
+																		aria-label="Basic example">
+																		<button type="button"
+																			class="btn btn-sm btn-secondary">View</button>
+																		<button type="button"
+																			class="btn btn-sm btn-warning">Suspend</button>
+																		<button type="button"
+																			class="btn btn-sm btn-danger">Delete</button>
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
 												</div>
+
 											</div>
 										</div>
-									</form>
+									</div>
+
 								</div>
 							</div>
 						</div>
@@ -501,6 +659,15 @@ $email = $_SESSION['a_email'];
 			<!-- /footer content -->
 		</div>
 	</div>
+
+	<script>
+		// Prevent the page from reloading after form submission
+		document.addEventListener('DOMContentLoaded', function () {
+			document.querySelector('form').addEventListener('submit', function (e) {
+				e.preventDefault();
+			});
+		});
+	</script>
 
 	<!-- jQuery -->
 	<script src="../vendors/jquery/dist/jquery.min.js"></script>
@@ -537,6 +704,12 @@ $email = $_SESSION['a_email'];
 	<script src="../vendors/starrr/dist/starrr.js"></script>
 	<!-- Custom Theme Scripts -->
 	<script src="../build/js/custom.min.js"></script>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+	<!-- Include SweetAlert JS -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
