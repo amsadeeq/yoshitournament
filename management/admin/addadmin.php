@@ -156,8 +156,7 @@ if (isset($_POST['addadmin'])) {
 		</script>
 		";
 	}
-	echo $welcome_notify;
-	exit;
+
 }
 
 ?>
@@ -574,100 +573,196 @@ if (isset($_POST['addadmin'])) {
 									<div class="col-md-12 col-sm-12  ">
 										<div class="x_panel">
 											<div class="x_content">
-												<div class=" table-responsive ">
-													<table class="table table-hover">
-														<thead>
+												<div class="table-responsive"></div>
+												<table class="table table-hover">
+													<thead>
+														<tr>
+															<th>#</th>
+															<th>ID</th>
+															<th>Name</th>
+															<th>Email</th>
+															<th>Phone</th>
+															<th>Role</th>
+															<th>Status</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<?php
+														// Fetch data from yoshi_admin_tbl and populate the table
+														$query = "SELECT * FROM yoshi_admin_tbl";
+														$result = mysqli_query($conn, $query);
+														if (mysqli_num_rows($result) > 0) {
+															$count = 1;
+															while ($row = mysqli_fetch_assoc($result)) {
+																$id = $row['id'];
+																$name = $row['name'];
+																$email = $row['email'];
+																$phone = $row['phone'];
+																$role = $row['role'];
+																$status = $row['status'];
+																?>
+																<tr>
+																	<th scope="row"><?php echo $count; ?></th>
+																	<td><?php echo $id; ?></td>
+																	<td><?php echo $name; ?></td>
+																	<td><?php echo $email; ?></td>
+																	<td><?php echo $phone; ?></td>
+																	<td><?php echo $role; ?></td>
+																	<td>
+																		<?php if ($status == 'Updated') { ?>
+																			<span
+																				class="badge badge-success"><?php echo $status; ?></span>
+																		<?php } elseif ($status == 'Pending') { ?>
+																			<span
+																				class="badge badge-warning"><?php echo $status; ?></span>
+																		<?php } ?>
+																	</td>
+																	<td>
+																		<div class="btn-group" role="group"
+																			aria-label="Basic example">
+																			<button type="button"
+																				class="btn btn-sm btn-secondary"
+																				data-toggle="modal"
+																				data-target="#viewModal<?php echo $id; ?>"
+																				data-id="<?php echo $id; ?>">View</button>
+																			<button type="button" class="btn btn-sm btn-warning"
+																				data-toggle="modal"
+																				data-target="#suspendModal<?php echo $id; ?>"
+																				data-id="<?php echo $id; ?>">Suspend</button>
+																			<button type="button" class="btn btn-sm btn-danger"
+																				data-toggle="modal"
+																				data-target="#deleteModal<?php echo $id; ?>"
+																				data-id="<?php echo $id; ?>">Delete</button>
+																		</div>
+																	</td>
+																</tr>
+																<?php
+																$count++;
+															}
+														} else {
+															?>
 															<tr>
-																<th>#</th>
-																<th>ID</th>
-																<th>Name</th>
-																<th>Email</th>
-																<th>Phone</th>
-																<th>Role</th>
-																<th>Status</th>
-																<th>Action</th>
+																<td colspan="8">No records found.</td>
 															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<th scope="row">1</th>
-																<td>123456</td>
-																<td>Abubakar Sadiq Muhammad</td>
-																<td>abmusadeeq@gmail.com</td>
-																<td>08167913802</td>
-																<td>view Role</td>
-																<td>
-																	<span class="badge badge-success">Updated</span>
-																</td>
-																<td>
-																	<div class="btn-group" role="group"
-																		aria-label="Basic example">
-																		<button type="button"
-																			class="btn btn-sm btn-secondary">View</button>
-																		<button type="button"
-																			class="btn btn-sm btn-warning">Suspend</button>
-																		<button type="button"
-																			class="btn btn-sm btn-danger">Delete</button>
-																	</div>
-																</td>
-															</tr>
-															<tr>
-																<th scope="row">1</th>
-																<td>123456</td>
-																<td>Abubakar Sadiq Muhammad</td>
-																<td>abmusadeeq@gmail.com</td>
-																<td>08167913802</td>
-																<td>view Role</td>
-																<td>
-																	<span class="badge badge-warning">Pending</span>
-																</td>
-																<td>
-																	<div class="btn-group btn-group-sm" role="group"
-																		aria-label="Basic example">
-																		<button type="button"
-																			class="btn btn-sm btn-secondary">View</button>
-																		<button type="button"
-																			class="btn btn-sm btn-warning">Suspend</button>
-																		<button type="button"
-																			class="btn btn-sm btn-danger">Delete</button>
-																	</div>
-																</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
+														<?php } ?>
+													</tbody>
+												</table>
+											</div>
 
+											<!-- View Modal -->
+											<div class="modal fade" id="viewModal<?php echo $id; ?>" tabindex="-1"
+												role="dialog" aria-labelledby="viewModalLabel<?php echo $id; ?>"
+												aria-hidden="true">
+												<div class="modal-dialog" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title"
+																id="viewModalLabel<?php echo $id; ?>">View Admin</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<!-- Add the necessary fields to display admin details -->
+															<p>ID: <?php echo $id; ?></p>
+															<p>Name: <?php echo $name; ?></p>
+															<p>Email: <?php echo $email; ?></p>
+															<p>Phone: <?php echo $phone; ?></p>
+															<p>Role: <?php echo $role; ?></p>
+															<p>Status: <?php echo $status; ?></p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-dismiss="modal">Close</button>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Suspend Modal -->
+											<div class="modal fade" id="suspendModal<?php echo $id; ?>" tabindex="-1"
+												role="dialog" aria-labelledby="suspendModalLabel<?php echo $id; ?>"
+												aria-hidden="true">
+												<div class="modal-dialog" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title"
+																id="suspendModalLabel<?php echo $id; ?>">Suspend Admin
+															</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<!-- Add the necessary fields and confirmation message for suspending the admin -->
+															<p>Are you sure you want to suspend this admin?</p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-dismiss="modal">Cancel</button>
+															<button type="button"
+																class="btn btn-warning">Suspend</button>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Delete Modal -->
+											<div class="modal fade" id="deleteModal<?php echo $id; ?>" tabindex="-1"
+												role="dialog" aria-labelledby="deleteModalLabel<?php echo $id; ?>"
+												aria-hidden="true">
+												<div class="modal-dialog" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title"
+																id="deleteModalLabel<?php echo $id; ?>">Delete Admin
+															</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<!-- Add the necessary fields and confirmation message for deleting the admin -->
+															<p>Are you sure you want to delete this admin?</p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-dismiss="modal">Cancel</button>
+															<button type="button" class="btn btn-danger">Delete</button>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
 
+									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- /page content -->
-
-			<!-- footer content -->
-			<footer>
-				<div class="pull-right">
-					Yoshi Admin - by <a href="https://yoshifa.com">Yoshi Football Academy</a>
-				</div>
-				<div class="clearfix"></div>
-			</footer>
-			<!-- /footer content -->
 		</div>
 	</div>
+	<!-- /page content -->
 
-	<script>
-		// Prevent the page from reloading after form submission
-		document.addEventListener('DOMContentLoaded', function () {
-			document.querySelector('form').addEventListener('submit', function (e) {
-				e.preventDefault();
-			});
-		});
-	</script>
+	<!-- footer content -->
+	<footer>
+		<div class="pull-right">
+			Yoshi Admin - by <a href="https://yoshifa.com">Yoshi Football Academy</a>
+		</div>
+		<div class="clearfix"></div>
+	</footer>
+	<!-- /footer content -->
+	</div>
+	</div>
+
+
 
 	<!-- jQuery -->
 	<script src="../vendors/jquery/dist/jquery.min.js"></script>
@@ -710,6 +805,14 @@ if (isset($_POST['addadmin'])) {
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<!-- Include SweetAlert JS -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+	<?php
+
+	echo $welcome_notify;
+	exit;
+
+	?>
 
 </body>
 
