@@ -610,10 +610,14 @@ try {
 																		<?php if ($status == 'Updated') { ?>
 																			<span
 																				class="badge badge-success"><?php echo $status; ?></span>
+																		<?php } elseif ($status == 'suspend') { ?>
+																			<span
+																				class="badge badge-warning"><?php echo $status; ?></span>
 																		<?php } elseif ($status == 'Pending') { ?>
 																			<span
 																				class="badge badge-warning"><?php echo $status; ?></span>
 																		<?php } ?>
+
 																	</td>
 																	<td>
 																		<div class="btn-group" role="group"
@@ -739,7 +743,7 @@ try {
 												});
 											}
 										</script>
-										
+
 
 										<!-- Delete Modal -->
 										<div class="modal fade" id="deleteModal<?php echo $id; ?>" tabindex="-1"
