@@ -710,11 +710,36 @@ try {
 													<div class="modal-footer">
 														<button type="button" class="btn btn-secondary"
 															data-dismiss="modal">Cancel</button>
-														<button type="button" class="btn btn-warning">Suspend</button>
+														<button type="button" name="suspend" class="btn btn-warning"
+															onclick="suspendAdmin(<?php echo $id; ?>)">Suspend</button>
 													</div>
 												</div>
 											</div>
 										</div>
+
+										<script>
+											function suspendAdmin(adminId) {
+												// Send an AJAX request to update the admin's status to "suspend"
+												$.ajax({
+													url: 'suspend_admin.php',
+													method: 'POST',
+													data: { adminId: adminId },
+													success: function (response) {
+														// Handle the response from the server
+														if (response === 'success') {
+															// Reload the page or update the admin's status dynamically
+															location.reload();
+														} else {
+															alert('Failed to suspend admin. Please try again.');
+														}
+													},
+													error: function () {
+														alert('An error occurred while suspending admin. Please try again.');
+													}
+												});
+											}
+										</script>
+										
 
 										<!-- Delete Modal -->
 										<div class="modal fade" id="deleteModal<?php echo $id; ?>" tabindex="-1"
