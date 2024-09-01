@@ -571,81 +571,70 @@ if (isset($_POST['addadmin'])) {
 									<div class="col-md-12 col-sm-12  ">
 										<div class="x_panel">
 											<div class="x_content">
-												<div class="table-responsive"></div>
-												<table class="table table-hover">
-													<thead>
-														<tr>
-															<th>#</th>
-															<th>ID</th>
-															<th>Name</th>
-															<th>Email</th>
-															<th>Phone</th>
-															<th>Role</th>
-															<th>Status</th>
-															<th>Action</th>
-														</tr>
-													</thead>
-													<tbody>
-														<?php
-														// Fetch data from yoshi_admin_tbl and populate the table
-														$query = "SELECT * FROM yoshi_admin_tbl";
-														$result = mysqli_query($conn, $query);
-														if (mysqli_num_rows($result) > 0) {
-															$count = 1;
-															while ($row = mysqli_fetch_assoc($result)) {
-																$id = $row['id'];
-																$name = $row['name'];
-																$email = $row['email'];
-																$phone = $row['phone'];
-																$role = $row['role'];
-																$status = $row['status'];
+												<div class="table-responsive">
+													<table class="table table-hover">
+														<thead>
+															<tr>
+																<th>#</th>
+																<th>ID</th>
+																<th>Name</th>
+																<th>Email</th>
+																<th>Phone</th>
+																<th>Role</th>
+																<th>Status</th>
+																<th>Action</th>
+															</tr>
+														</thead>
+														<tbody>
+															<?php
+															// Fetch data from yoshi_admin_tbl and populate the table
+															$query = "SELECT * FROM yoshi_admin_tbl";
+															$stmt = $pdo->query($query);
+															if ($stmt->rowCount() > 0) {
+																$count = 1;
+																while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+																	$id = $row['id'];
+																	$name = $row['name'];
+																	$email = $row['email'];
+																	$phone = $row['phone'];
+																	$role = $row['role'];
+																	$status = $row['status'];
+																	?>
+																	<tr>
+																		<th scope="row"><?php echo $count; ?></th>
+																		<td><?php echo $id; ?></td>
+																		<td><?php echo $name; ?></td>
+																		<td><?php echo $email; ?></td>
+																		<td><?php echo $phone; ?></td>
+																		<td><?php echo $role; ?></td>
+																		<td>
+																			<?php if ($status == 'Updated') { ?>
+																				<span class="badge badge-success"><?php echo $status; ?></span>
+																			<?php } elseif ($status == 'Pending') { ?>
+																				<span class="badge badge-warning"><?php echo $status; ?></span>
+																			<?php } ?>
+																		</td>
+																		<td>
+																			<div class="btn-group" role="group" aria-label="Basic example">
+																				<button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#viewModal<?php echo $id; ?>" data-id="<?php echo $id; ?>">View</button>
+																				<button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#suspendModal<?php echo $id; ?>" data-id="<?php echo $id; ?>">Suspend</button>
+																				<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $id; ?>" data-id="<?php echo $id; ?>">Delete</button>
+																			</div>
+																		</td>
+																	</tr>
+																	<?php
+																	$count++;
+																}
+															} else {
 																?>
 																<tr>
-																	<th scope="row"><?php echo $count; ?></th>
-																	<td><?php echo $id; ?></td>
-																	<td><?php echo $name; ?></td>
-																	<td><?php echo $email; ?></td>
-																	<td><?php echo $phone; ?></td>
-																	<td><?php echo $role; ?></td>
-																	<td>
-																		<?php if ($status == 'Updated') { ?>
-																			<span
-																				class="badge badge-success"><?php echo $status; ?></span>
-																		<?php } elseif ($status == 'Pending') { ?>
-																			<span
-																				class="badge badge-warning"><?php echo $status; ?></span>
-																		<?php } ?>
-																	</td>
-																	<td>
-																		<div class="btn-group" role="group"
-																			aria-label="Basic example">
-																			<button type="button"
-																				class="btn btn-sm btn-secondary"
-																				data-toggle="modal"
-																				data-target="#viewModal<?php echo $id; ?>"
-																				data-id="<?php echo $id; ?>">View</button>
-																			<button type="button" class="btn btn-sm btn-warning"
-																				data-toggle="modal"
-																				data-target="#suspendModal<?php echo $id; ?>"
-																				data-id="<?php echo $id; ?>">Suspend</button>
-																			<button type="button" class="btn btn-sm btn-danger"
-																				data-toggle="modal"
-																				data-target="#deleteModal<?php echo $id; ?>"
-																				data-id="<?php echo $id; ?>">Delete</button>
-																		</div>
-																	</td>
+																	<td colspan="8">No records found.</td>
 																</tr>
-																<?php
-																$count++;
-															}
-														} else {
-															?>
-															<tr>
-																<td colspan="8">No records found.</td>
-															</tr>
-														<?php } ?>
-													</tbody>
-												</table>
+															<?php } ?>
+														</tbody>
+													</table>
+												</div>
+											</div>
 											</div>
 
 											<!-- View Modal -->
