@@ -586,65 +586,70 @@ try {
 														</thead>
 														<tbody>
 															<?php
-															// Fetch data from yoshi_admin_tbl and populate the table
-															$query = "SELECT * FROM yoshi_admin_tbl";
-															$stmt = $pdo->query($query);
-															if ($stmt->rowCount() > 0) {
-																$count = 1;
-																while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-																	$id = $row['id'];
-																	$name = $row['full_name'];
-																	$email = $row['admin_email'];
-																	$phone = $row['admin_phone'];
-																	$role = $row['admin_role'];
-																	$status = $row['acct_status'];
+															try {
+																// Fetch data from yoshi_admin_tbl and populate the table
+																$query = "SELECT * FROM yoshi_admin_tbl";
+																$stmt = $pdo->query($query);
+																if ($stmt->rowCount() > 0) {
+																	$count = 1;
+																	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+																		$id = $row['id'];
+																		$name = $row['full_name'];
+																		$email = $row['admin_email'];
+																		$phone = $row['admin_phone'];
+																		$role = $row['admin_role'];
+																		$status = $row['acct_status'];
+																		?>
+																		<tr>
+																			<th><?php echo $count; ?></th>
+																			<td><?php echo $id; ?></td>
+																			<td><?php echo $name; ?></td>
+																			<td><?php echo $email; ?></td>
+																			<td><?php echo $phone; ?></td>
+																			<td><?php echo $role; ?></td>
+																			<td>
+																				<?php if ($status == 'Updated') { ?>
+																					<span
+																						class="badge badge-success"><?php echo $status; ?></span>
+																				<?php } elseif ($status == 'Pending') { ?>
+																					<span
+																						class="badge badge-warning"><?php echo $status; ?></span>
+																				<?php } ?>
+																			</td>
+																			<td>
+																				<div class="btn-group" role="group"
+																					aria-label="Basic example">
+																					<button type="button"
+																						class="btn btn-sm btn-secondary"
+																						data-toggle="modal"
+																						data-target="#viewModal<?php echo $id; ?>"
+																						data-id="<?php echo $id; ?>">View</button>
+																					<button type="button"
+																						class="btn btn-sm btn-warning"
+																						data-toggle="modal"
+																						data-target="#suspendModal<?php echo $id; ?>"
+																						data-id="<?php echo $id; ?>">Suspend</button>
+																					<button type="button"
+																						class="btn btn-sm btn-danger"
+																						data-toggle="modal"
+																						data-target="#deleteModal<?php echo $id; ?>"
+																						data-id="<?php echo $id; ?>">Delete</button>
+																				</div>
+																			</td>
+																		</tr>
+																		<?php
+																		$count++;
+																	}
+																} else {
 																	?>
 																	<tr>
-																		<th scope="row"><?php echo $count; ?></th>
-																		<td><?php echo $id; ?></td>
-																		<td><?php echo $name; ?></td>
-																		<td><?php echo $email; ?></td>
-																		<td><?php echo $phone; ?></td>
-																		<td><?php echo $role; ?></td>
-																		<td>
-																			<?php if ($status == 'Updated') { ?>
-																				<span
-																					class="badge badge-success"><?php echo $status; ?></span>
-																			<?php } elseif ($status == 'Pending') { ?>
-																				<span
-																					class="badge badge-warning"><?php echo $status; ?></span>
-																			<?php } ?>
-																		</td>
-																		<td>
-																			<div class="btn-group" role="group"
-																				aria-label="Basic example">
-																				<button type="button"
-																					class="btn btn-sm btn-secondary"
-																					data-toggle="modal"
-																					data-target="#viewModal<?php echo $id; ?>"
-																					data-id="<?php echo $id; ?>">View</button>
-																				<button type="button"
-																					class="btn btn-sm btn-warning"
-																					data-toggle="modal"
-																					data-target="#suspendModal<?php echo $id; ?>"
-																					data-id="<?php echo $id; ?>">Suspend</button>
-																				<button type="button"
-																					class="btn btn-sm btn-danger"
-																					data-toggle="modal"
-																					data-target="#deleteModal<?php echo $id; ?>"
-																					data-id="<?php echo $id; ?>">Delete</button>
-																			</div>
-																		</td>
+																		<td colspan="8">No records found.</td>
 																	</tr>
-																	<?php
-																	$count++;
-																}
-															} else {
-																?>
-																<tr>
-																	<td colspan="8">No records found.</td>
-																</tr>
-															<?php } ?>
+																<?php }
+															} catch (PDOException $e) {
+																echo "Error: " . $e->getMessage();
+															}
+															?>
 														</tbody>
 													</table>
 													</table>
