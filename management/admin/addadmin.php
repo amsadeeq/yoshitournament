@@ -593,11 +593,11 @@ try {
 																$count = 1;
 																while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 																	$id = $row['id'];
-																	$name = $row['name'];
-																	$email = $row['email'];
-																	$phone = $row['phone'];
-																	$role = $row['role'];
-																	$status = $row['status'];
+																	$name = $row['full_name'];
+																	$email = $row['admin_email'];
+																	$phone = $row['admin_phone'];
+																	$role = $row['admin_role'];
+																	$status = $row['acct_status'];
 																	?>
 																	<tr>
 																		<th scope="row"><?php echo $count; ?></th>
@@ -646,6 +646,7 @@ try {
 																</tr>
 															<?php } ?>
 														</tbody>
+													</table>
 													</table>
 												</div>
 											</div>
