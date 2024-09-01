@@ -96,55 +96,53 @@ if (isset($_POST['addadmin'])) {
 	$time_create = date("H:i:s a"); //function for current time using "strtotime" to minus 1hour
 	// $ipaddress = getRealIpAddr();
 
-	if (empty($temp_password)) {
-		$password_error = 'Oops! Enter password';
-	} else {
-		// Collecting user information
-		$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-		// Hash the password
-		$hashed_password = md5($temp_password);
-		// Insert data into the database
-		$stmt = $pdo->prepare("INSERT INTO `yoshi_admins_tbl` (`id`, `userRefNo`, `full_name`, `admin_email`, `admin_phone`, `admin_role`, `temp_password`,`time_created`, `date_created`, `time_updated`, `date_updated`, `acct_status`) VALUES (NULL, :userRefNo, :full_name, :email, :phone, :role, :hashed_password, :time_create, :date_create, :time_updated, :date_updated, :status)");
-		$stmt->bindParam(':userRefNo', $userRefCode);
-		$stmt->bindParam(':full_name', $full_name);
-		$stmt->bindParam(':email', $email); // Changed from 'admin_email' to 'email'
-		$stmt->bindParam(':phone', $phone); // Changed from 'admin_phone' to 'phone'
-		$stmt->bindParam(':role', $role);
-		$stmt->bindParam(':hashed_password', $hashed_password);
-		$stmt->bindParam(':time_created', $time_create);
-		$stmt->bindParam(':date_created', $date_create);
-		$stmt->bindParam(':time_updated', $time_create);
-		$stmt->bindParam(':date_updated', $date_create);
-		$stmt->bindParam(':status', $status);
-		$stmt->execute();
 
-		################################################
-		$to = $email;
-		// Set the email subject
-		$subject = "Admin Account Created - Yoshi Tournaments";
+	// Collecting user information
+	$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+	// Hash the password
+	$hashed_password = md5($temp_password);
+	// Insert data into the database
+	$stmt = $pdo->prepare("INSERT INTO `yoshi_admins_tbl` (`id`, `userRefNo`, `full_name`, `admin_email`, `admin_phone`, `admin_role`, `temp_password`,`time_created`, `date_created`, `acct_status`) VALUES (NULL, :userRefNo, :full_name, :email, :phone, :role, :hashed_password, :time_create, :date_create, :status)");
+	$stmt->bindParam(':userRefNo', $userRefCode);
+	$stmt->bindParam(':full_name', $full_name);
+	$stmt->bindParam(':email', $email); // Changed from 'admin_email' to 'email'
+	$stmt->bindParam(':phone', $phone); // Changed from 'admin_phone' to 'phone'
+	$stmt->bindParam(':role', $role);
+	$stmt->bindParam(':hashed_password', $hashed_password);
+	$stmt->bindParam(':time_created', $time_create);
+	$stmt->bindParam(':date_created', $date_create);
+	$stmt->bindParam(':time_updated', $time_create);
+	$stmt->bindParam(':date_updated', $date_create);
+	$stmt->bindParam(':status', $status);
+	$stmt->execute();
 
-		$message = "Dear Admin,\n\n";
-		$message .= "An admin account has been created for you on Yoshi Tournaments.\n";
-		$message .= "Please visit the following link to activate your account and create a new password:\n";
-		$message .= "https://www.yoshitournaments.com/management/admin/index.php\n\n";
-		$message .= "Your temporary password is: $temp_password\n\n";
-		$message .= "Once you have activated your account and created a new password, you will be able to access the admin panel and manage the tournament.\n\n";
-		$message .= "If you have any questions or need further assistance, please feel free to contact us at account@yoshitournaments.com or +2348167913802.\n\n";
-		$message .= "Best Regards,\n";
-		$message .= "Yoshi Tournament Team";
+	################################################
+	$to = $email;
+	// Set the email subject
+	$subject = "Admin Account Created - Yoshi Tournaments";
 
-		// Set additional headers
-		$headers = "From: no-reply@yoshitournament.com\r\n";
-		$headers .= "Reply-To: support@yoshitournament.com\r\n";
-		// $headers .= "CC: yoshitournaments@gmail.com\r\n";
-		$headers .= "X-Mailer: PHP/" . phpversion();
-		// Send the email
-		$mail_sent = mail($to, $subject, $message, $headers);
-		$register_message = "Account Successfully created !";
-		//echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
-		// Define the notification message
-		// Generate the JavaScript code to trigger the notification
-		$welcome_notify = "
+	$message = "Dear Admin,\n\n";
+	$message .= "An admin account has been created for you on Yoshi Tournaments.\n";
+	$message .= "Please visit the following link to activate your account and create a new password:\n";
+	$message .= "https://www.yoshitournaments.com/management/admin/index.php\n\n";
+	$message .= "Your temporary password is: $temp_password\n\n";
+	$message .= "Once you have activated your account and created a new password, you will be able to access the admin panel and manage the tournament.\n\n";
+	$message .= "If you have any questions or need further assistance, please feel free to contact us at account@yoshitournaments.com or +2348167913802.\n\n";
+	$message .= "Best Regards,\n";
+	$message .= "Yoshi Tournament Team";
+
+	// Set additional headers
+	$headers = "From: no-reply@yoshitournament.com\r\n";
+	$headers .= "Reply-To: support@yoshitournament.com\r\n";
+	// $headers .= "CC: yoshitournaments@gmail.com\r\n";
+	$headers .= "X-Mailer: PHP/" . phpversion();
+	// Send the email
+	$mail_sent = mail($to, $subject, $message, $headers);
+	$register_message = "Account Successfully created !";
+	//echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
+	// Define the notification message
+	// Generate the JavaScript code to trigger the notification
+	$welcome_notify = "
 		<script>
 			new Noty({
 				theme: 'metroui',
@@ -155,7 +153,7 @@ if (isset($_POST['addadmin'])) {
 			}).show();
 		</script>
 		";
-	}
+
 
 }
 
