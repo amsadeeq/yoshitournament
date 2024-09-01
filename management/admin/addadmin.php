@@ -609,16 +609,31 @@ if (isset($_POST['addadmin'])) {
 																		<td><?php echo $role; ?></td>
 																		<td>
 																			<?php if ($status == 'Updated') { ?>
-																				<span class="badge badge-success"><?php echo $status; ?></span>
+																				<span
+																					class="badge badge-success"><?php echo $status; ?></span>
 																			<?php } elseif ($status == 'Pending') { ?>
-																				<span class="badge badge-warning"><?php echo $status; ?></span>
+																				<span
+																					class="badge badge-warning"><?php echo $status; ?></span>
 																			<?php } ?>
 																		</td>
 																		<td>
-																			<div class="btn-group" role="group" aria-label="Basic example">
-																				<button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#viewModal<?php echo $id; ?>" data-id="<?php echo $id; ?>">View</button>
-																				<button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#suspendModal<?php echo $id; ?>" data-id="<?php echo $id; ?>">Suspend</button>
-																				<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $id; ?>" data-id="<?php echo $id; ?>">Delete</button>
+																			<div class="btn-group" role="group"
+																				aria-label="Basic example">
+																				<button type="button"
+																					class="btn btn-sm btn-secondary"
+																					data-toggle="modal"
+																					data-target="#viewModal<?php echo $id; ?>"
+																					data-id="<?php echo $id; ?>">View</button>
+																				<button type="button"
+																					class="btn btn-sm btn-warning"
+																					data-toggle="modal"
+																					data-target="#suspendModal<?php echo $id; ?>"
+																					data-id="<?php echo $id; ?>">Suspend</button>
+																				<button type="button"
+																					class="btn btn-sm btn-danger"
+																					data-toggle="modal"
+																					data-target="#deleteModal<?php echo $id; ?>"
+																					data-id="<?php echo $id; ?>">Delete</button>
 																			</div>
 																		</td>
 																	</tr>
@@ -635,106 +650,105 @@ if (isset($_POST['addadmin'])) {
 													</table>
 												</div>
 											</div>
-											</div>
+										</div>
 
-											<!-- View Modal -->
-											<div class="modal fade" id="viewModal<?php echo $id; ?>" tabindex="-1"
-												role="dialog" aria-labelledby="viewModalLabel<?php echo $id; ?>"
-												aria-hidden="true">
-												<div class="modal-dialog" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title"
-																id="viewModalLabel<?php echo $id; ?>">View Admin</h5>
-															<button type="button" class="close" data-dismiss="modal"
-																aria-label="Close">
-																<span aria-hidden="true">&times;</span>
-															</button>
-														</div>
-														<div class="modal-body">
-															<!-- Add the necessary fields to display admin details -->
-															<p>ID: <?php echo $id; ?></p>
-															<p>Name: <?php echo $name; ?></p>
-															<p>Email: <?php echo $email; ?></p>
-															<p>Phone: <?php echo $phone; ?></p>
-															<p>Role: <?php echo $role; ?></p>
-															<p>Status: <?php echo $status; ?></p>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-secondary"
-																data-dismiss="modal">Close</button>
-														</div>
+										<!-- View Modal -->
+										<div class="modal fade" id="viewModal<?php echo $id; ?>" tabindex="-1"
+											role="dialog" aria-labelledby="viewModalLabel<?php echo $id; ?>"
+											aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="viewModalLabel<?php echo $id; ?>">
+															View Admin</h5>
+														<button type="button" class="close" data-dismiss="modal"
+															aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
 													</div>
-												</div>
-											</div>
-
-											<!-- Suspend Modal -->
-											<div class="modal fade" id="suspendModal<?php echo $id; ?>" tabindex="-1"
-												role="dialog" aria-labelledby="suspendModalLabel<?php echo $id; ?>"
-												aria-hidden="true">
-												<div class="modal-dialog" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title"
-																id="suspendModalLabel<?php echo $id; ?>">Suspend Admin
-															</h5>
-															<button type="button" class="close" data-dismiss="modal"
-																aria-label="Close">
-																<span aria-hidden="true">&times;</span>
-															</button>
-														</div>
-														<div class="modal-body">
-															<!-- Add the necessary fields and confirmation message for suspending the admin -->
-															<p>Are you sure you want to suspend this admin?</p>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-secondary"
-																data-dismiss="modal">Cancel</button>
-															<button type="button"
-																class="btn btn-warning">Suspend</button>
-														</div>
+													<div class="modal-body">
+														<!-- Add the necessary fields to display admin details -->
+														<p>ID: <?php echo $id; ?></p>
+														<p>Name: <?php echo $name; ?></p>
+														<p>Email: <?php echo $email; ?></p>
+														<p>Phone: <?php echo $phone; ?></p>
+														<p>Role: <?php echo $role; ?></p>
+														<p>Status: <?php echo $status; ?></p>
 													</div>
-												</div>
-											</div>
-
-											<!-- Delete Modal -->
-											<div class="modal fade" id="deleteModal<?php echo $id; ?>" tabindex="-1"
-												role="dialog" aria-labelledby="deleteModalLabel<?php echo $id; ?>"
-												aria-hidden="true">
-												<div class="modal-dialog" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title"
-																id="deleteModalLabel<?php echo $id; ?>">Delete Admin
-															</h5>
-															<button type="button" class="close" data-dismiss="modal"
-																aria-label="Close">
-																<span aria-hidden="true">&times;</span>
-															</button>
-														</div>
-														<div class="modal-body">
-															<!-- Add the necessary fields and confirmation message for deleting the admin -->
-															<p>Are you sure you want to delete this admin?</p>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-secondary"
-																data-dismiss="modal">Cancel</button>
-															<button type="button" class="btn btn-danger">Delete</button>
-														</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary"
+															data-dismiss="modal">Close</button>
 													</div>
 												</div>
 											</div>
 										</div>
 
+										<!-- Suspend Modal -->
+										<div class="modal fade" id="suspendModal<?php echo $id; ?>" tabindex="-1"
+											role="dialog" aria-labelledby="suspendModalLabel<?php echo $id; ?>"
+											aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title"
+															id="suspendModalLabel<?php echo $id; ?>">Suspend Admin
+														</h5>
+														<button type="button" class="close" data-dismiss="modal"
+															aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<!-- Add the necessary fields and confirmation message for suspending the admin -->
+														<p>Are you sure you want to suspend this admin?</p>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary"
+															data-dismiss="modal">Cancel</button>
+														<button type="button" class="btn btn-warning">Suspend</button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Delete Modal -->
+										<div class="modal fade" id="deleteModal<?php echo $id; ?>" tabindex="-1"
+											role="dialog" aria-labelledby="deleteModalLabel<?php echo $id; ?>"
+											aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="deleteModalLabel<?php echo $id; ?>">
+															Delete Admin
+														</h5>
+														<button type="button" class="close" data-dismiss="modal"
+															aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<!-- Add the necessary fields and confirmation message for deleting the admin -->
+														<p>Are you sure you want to delete this admin?</p>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary"
+															data-dismiss="modal">Cancel</button>
+														<button type="button" class="btn btn-danger">Delete</button>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
+
 								</div>
 							</div>
-
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<!-- /page content -->
 
