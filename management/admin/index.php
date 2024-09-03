@@ -39,12 +39,12 @@ if (isset($_POST['validate'])) {
   }
 
 
-  $email = sanitize_input(check_input($_POST['a_email']));
-  $temporaryPassword = sanitize_input(check_input($_POST['temporary_password']));
-  $originalPassword = sanitize_input(check_input($_POST['original_password']));
+  $email = check_input($_POST['a_email']);
+  $temporaryPassword = check_input($_POST['temporary_password']);
+  $originalPassword = check_input($_POST['original_password']);
 
   // Perform input sanitization
-  $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+  // $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
   $stmt = $pdo->prepare("SELECT * FROM `yoshi_admins_tbl` WHERE admin_email = :email");
   $stmt->bindParam(':email', $email);
