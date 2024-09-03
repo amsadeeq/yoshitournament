@@ -402,8 +402,7 @@ $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 												<button class="btn btn-primary" type="button">Cancel</button>
-												<button type="submit" name="addadmin" class="btn btn-success">Add
-													admin</button>
+												<button type="submit" name="addadmin" class="btn btn-success" onclick="registerAdmin()">Add admin</button>
 											</div>
 										</div>
 									</form>
