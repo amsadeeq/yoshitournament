@@ -61,6 +61,8 @@ if (isset($_POST['validate'])) {
   // Perform security checks
   // ...
 
+  echo $admins['temp_password'];
+
   // Check if temporary password matches the expected value
   if (md5($temporaryPassword) == $admins['temp_password']) {
     echo "Yes";
