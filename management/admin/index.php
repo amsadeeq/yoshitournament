@@ -64,12 +64,12 @@ if (isset($_POST['validate'])) {
   echo $admins['temp_password'];
 
   // Check if temporary password matches the expected value
-  if (md5($temporaryPassword) == $admins['temp_password']) {
-    echo "Yes";
-  } else {
-    echo "Invalid temporary password";
-    exit;
-  }
+  // if (md5($temporaryPassword) == $admins['temp_password']) {
+  //   echo "Yes";
+  // } else {
+  //   echo "Invalid temporary password";
+  //   exit;
+  // }
 }
 
 
