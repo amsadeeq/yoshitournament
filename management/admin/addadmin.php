@@ -574,7 +574,7 @@ try {
 										<div class="x_panel">
 											<div class="x_content">
 												<div class="table-responsive">
-													<table class="table table-hover">
+													<table id="adminTable" class="table table-hover">
 														<thead>
 															<tr>
 
@@ -587,7 +587,7 @@ try {
 																<th>Action</th>
 															</tr>
 														</thead>
-														<tbody id="adminTableBody"></tbody>
+
 														<tbody>
 
 															<?php foreach ($admins as $admin) {
@@ -641,6 +641,9 @@ try {
 																		</div>
 																	</td>
 																</tr>
+
+																<!-- Container for dynamically generated modals -->
+																<div id="dynamicModals"></div>
 
 																<!-- View Modal -->
 																<div class="modal fade"
@@ -879,76 +882,201 @@ try {
 
 
 
-
 	<script>
-		// Function to update the admin table dynamically
-		function updateAdminTable() {
+		function fetchAdmins() {
 			$.ajax({
 				url: 'get_admins.php',
 				method: 'GET',
-				success: function (response) {
-					try {
-						// Parse the JSON response
-						var admins = JSON.parse(response);
+				dataType: 'json',
+				success: function (admins) {
+					// Clear the current table body
+					$('#adminTable tbody').empty();
 
-						// Clear the existing table body
-						$('#adminTableBody').empty();
+					// Clear any existing modals to avoid duplicates
+					$('#dynamicModals').empty();
 
-						// Iterate through the admins and append rows to the table
-						admins.forEach(function (admin) {
-							var id = admin.id;
-							var admin_id = admin.admin_userID;
-							var name = admin.full_name;
-							var email = admin.admin_email;
-							var phone = admin.admin_phone;
-							var role = admin.admin_role;
-							var status = admin.acct_status;
-
-							var statusBadge = '';
-							if (status === 'Updated') {
-								statusBadge = '<span class="badge badge-success">' + status + '</span>';
-							} else if (status === 'suspend') {
-								statusBadge = '<span class="badge badge-danger">' + status + '</span>';
-							} else if (status === 'pending') {
-								statusBadge = '<span class="badge badge-warning">' + status + '</span>';
-							}
-
-							var row = '<tr>' +
-								'<td>' + id + '</td>' +
-								'<td>' + name + '</td>' +
-								'<td>' + email + '</td>' +
-								'<td>' + phone + '</td>' +
-								'<td>' + role + '</td>' +
-								'<td>' + statusBadge + '</td>' +
-								'<td>' +
-								'<div class="btn-group" role="group" aria-label="Basic example">' +
-								'<button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#viewModal' + admin_id + '" data-id="' + admin_id + '">View</button>' +
-								'<button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#suspendModal' + admin_id + '" data-id="' + admin_id + '">Suspend</button>' +
-								'<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal' + admin_id + '" data-id="' + admin_id + '">Delete</button>' +
-								'</div>' +
-								'</td>' +
-								'</tr>';
-
-							$('#adminTableBody').append(row);
-						});
-					} catch (error) {
-						console.error('An error occurred while parsing the JSON response:', error);
+					if (admins.error) {
+						alert('Error fetching data: ' + admins.error);
+						return;
 					}
+
+					// Populate the table with new data
+					admins.forEach(function (admin) {
+						let adminRow = `
+					<tr>
+						<td>${admin.id}</td>
+						<td>${admin.full_name}</td>
+						<td>${admin.admin_email}</td>
+						<td>${admin.admin_phone}</td>
+						<td>${admin.admin_role}</td>
+						<td>
+							${getStatusBadge(admin.acct_status)}
+						</td>
+						<td>
+							<div class="btn-group" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-sm btn-secondary"
+									data-toggle="modal" data-target="#viewModal${admin.admin_userID}" data-id="${admin.admin_userID}">View</button>
+								<button type="button" class="btn btn-sm btn-warning"
+									data-toggle="modal" data-target="#suspendModal${admin.admin_userID}" data-id="${admin.admin_userID}">Suspend</button>
+								<button type="button" class="btn btn-sm btn-danger"
+									data-toggle="modal" data-target="#deleteModal${admin.admin_userID}" data-id="${admin.admin_userID}">Delete</button>
+							</div>
+						</td>
+					</tr>
+				`;
+
+						// Append row to the table body
+						$('#adminTable tbody').append(adminRow);
+
+						// Generate and append modals for the current admin
+						let modals = generateModals(admin);
+						$('#dynamicModals').append(modals);
+					});
 				},
 				error: function () {
-					alert('An error occurred while updating the admin table. Please try again.');
+					alert('An error occurred while fetching data.');
 				}
 			});
 		}
 
-		// Call the updateAdminTable function initially
+		// Helper function to generate status badge
+		function getStatusBadge(status) {
+			if (status === 'Updated') {
+				return `<span class="badge badge-success">${status}</span>`;
+			} else if (status === 'suspend') {
+				return `<span class="badge badge-danger">${status}</span>`;
+			} else if (status === 'pending') {
+				return `<span class="badge badge-warning">${status}</span>`;
+			} else {
+				return `<span class="badge badge-secondary">${status}</span>`;
+			}
+		}
+
+		// Helper function to generate modals dynamically
+		function generateModals(admin) {
+			return `
+		<!-- View Modal -->
+		<div class="modal fade" id="viewModal${admin.admin_userID}" tabindex="-1" role="dialog"
+			aria-labelledby="viewModalLabel${admin.admin_userID}" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="viewModalLabel${admin.admin_userID}">View Admin</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>ID: ${admin.admin_userID}</p>
+						<p>Name: ${admin.full_name}</p>
+						<p>Email: ${admin.admin_email}</p>
+						<p>Phone: ${admin.admin_phone}</p>
+						<p>Role: ${admin.admin_role}</p>
+						<p>Status: ${admin.acct_status}</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Suspend Modal -->
+		<div class="modal fade" id="suspendModal${admin.admin_userID}" tabindex="-1" role="dialog"
+			aria-labelledby="suspendModalLabel${admin.admin_userID}" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="suspendModalLabel${admin.admin_userID}">Suspend Admin</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure you want to suspend this admin?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-warning" onclick="suspendAdmin(${admin.admin_userID})">Suspend</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Delete Modal -->
+		<div class="modal fade" id="deleteModal${admin.admin_userID}" tabindex="-1" role="dialog"
+			aria-labelledby="deleteModalLabel${admin.admin_userID}" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="deleteModalLabel${admin.admin_userID}">Delete Admin</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure you want to delete this admin?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-danger" onclick="deleteAdmin(${admin.admin_userID})">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	`;
+		}
+
+		// Suspend admin function
+		function suspendAdmin(adminId) {
+			$.ajax({
+				url: 'suspend_admin.php',
+				method: 'POST',
+				data: { adminId: adminId },
+				success: function (response) {
+					if (response === 'success') {
+						// Reload the admin data dynamically
+						fetchAdmins();
+					} else {
+						alert('Failed to suspend admin. Please try again.');
+					}
+				},
+				error: function () {
+					alert('An error occurred while suspending admin. Please try again.');
+				}
+			});
+		}
+
+		// Delete admin function
+		function deleteAdmin(adminId) {
+			$.ajax({
+				url: 'delete_admin.php',
+				method: 'POST',
+				data: { adminId: adminId },
+				success: function (response) {
+					if (response === 'success') {
+						// Reload the admin data dynamically
+						fetchAdmins();
+					} else {
+						alert('Failed to delete admin. Please try again.');
+					}
+				},
+				error: function () {
+					alert('An error occurred while deleting admin. Please try again.');
+				}
+			});
+		}
+
+		// Refresh the table every 5 seconds
+		setInterval(fetchAdmins, 5000);
+
+		// Fetch the admins when the page loads
 		$(document).ready(function () {
-			updateAdminTable();
+			fetchAdmins();
 		});
 
-		// Set an interval to update the admin table every 5 seconds
-		setInterval(updateAdminTable, 5000);
 	</script>
+
 
 
 
