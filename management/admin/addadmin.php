@@ -861,7 +861,7 @@ try {
 		}
 
 		// Refresh the table every 5 seconds
-		setInterval(fetchAdmins, 5000);
+		setInterval(fetchAdmins, 50000);
 
 		// Fetch the admins when the page loads
 		$(document).ready(function () {
