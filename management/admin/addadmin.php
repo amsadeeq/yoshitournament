@@ -587,11 +587,10 @@ try {
 																<th>Action</th>
 															</tr>
 														</thead>
+														<tbody id="adminTableBody"></tbody>
 														<tbody>
+
 															<?php foreach ($admins as $admin) {
-
-
-
 																$id = $admin['id'];
 																$admin_id = $admin['admin_userID'];
 																$name = $admin['full_name'];
@@ -601,7 +600,6 @@ try {
 																$status = $admin['acct_status'];
 																?>
 																<tr>
-
 																	<td><?php echo $id; ?></td>
 																	<td><?php echo $name; ?></td>
 																	<td><?php echo $email; ?></td>
@@ -618,7 +616,6 @@ try {
 																			<span
 																				class="badge badge-warning"><?php echo $status; ?></span>
 																		<?php } ?>
-
 																	</td>
 																	<td>
 																		<div class="btn-group" role="group"
@@ -627,17 +624,20 @@ try {
 																				class="btn btn-sm btn-secondary"
 																				data-toggle="modal"
 																				data-target="#viewModal<?php echo $admin_id; ?>"
-																				data-id="<?php echo $admin_id; ?>">View</button>
+																				data-id="<?php echo $admin_id; ?>">View
+																			</button>
 																			<button type="button"
 																				class="btn btn-sm btn-warning"
 																				data-toggle="modal"
 																				data-target="#suspendModal<?php echo $admin_id; ?>"
-																				data-id="<?php echo $admin_id; ?>">Suspend</button>
+																				data-id="<?php echo $admin_id; ?>">Suspend
+																			</button>
 																			<button type="button"
 																				class="btn btn-sm btn-danger"
 																				data-toggle="modal"
 																				data-target="#deleteModal<?php echo $admin_id; ?>"
-																				data-id="<?php echo $admin_id; ?>">Delete</button>
+																				data-id="<?php echo $admin_id; ?>">Delete
+																			</button>
 																		</div>
 																	</td>
 																</tr>
@@ -688,8 +688,7 @@ try {
 																			<div class="modal-header">
 																				<h5 class="modal-title"
 																					id="suspendModalLabel<?php echo $admin_id; ?>">
-																					Suspend Admin
-																				</h5>
+																					Suspend Admin</h5>
 																				<button type="button" class="close"
 																					data-dismiss="modal" aria-label="Close">
 																					<span aria-hidden="true">&times;</span>
@@ -698,7 +697,8 @@ try {
 																			<div class="modal-body">
 																				<!-- Add the necessary fields and confirmation message for suspending the admin -->
 																				<p>Are you sure you want to suspend this
-																					admin?</p>
+																					admin?
+																				</p>
 																			</div>
 																			<div class="modal-footer">
 																				<button type="button"
@@ -706,7 +706,8 @@ try {
 																					data-dismiss="modal">Cancel</button>
 																				<button type="button" name="suspend"
 																					class="btn btn-warning"
-																					onclick="suspendAdmin(<?php echo $admin_id; ?>)">Suspend</button>
+																					onclick="suspendAdmin(<?php echo $admin_id; ?>)">Suspend
+																				</button>
 																			</div>
 																		</div>
 																	</div>
@@ -735,7 +736,6 @@ try {
 																	}
 																</script>
 
-
 																<!-- Delete Modal -->
 																<div class="modal fade"
 																	id="deleteModal<?php echo $admin_id; ?>" tabindex="-1"
@@ -747,8 +747,7 @@ try {
 																			<div class="modal-header">
 																				<h5 class="modal-title"
 																					id="deleteModalLabel<?php echo $admin_id; ?>">
-																					Delete Admin
-																				</h5>
+																					Delete Admin</h5>
 																				<button type="button" class="close"
 																					data-dismiss="modal" aria-label="Close">
 																					<span aria-hidden="true">&times;</span>
@@ -757,14 +756,16 @@ try {
 																			<div class="modal-body">
 																				<!-- Add the necessary fields and confirmation message for deleting the admin -->
 																				<p>Are you sure you want to delete this
-																					admin?</p>
+																					admin?
+																				</p>
 																			</div>
 																			<div class="modal-footer">
 																				<button type="button"
 																					class="btn btn-secondary"
 																					data-dismiss="modal">Cancel</button>
 																				<button type="button" class="btn btn-danger"
-																					onclick="deleteAdmin(<?php echo $admin_id; ?>)">Delete</button>
+																					onclick="deleteAdmin(<?php echo $admin_id; ?>)">Delete
+																				</button>
 																			</div>
 																		</div>
 																	</div>
@@ -791,42 +792,102 @@ try {
 																		});
 																	}
 																</script>
+															<?php } ?>
+
+															<?php if (empty($admins)) { ?>
+																<tr>
+																	<td colspan="8" class="text-center"
+																		style="text-align:center;">No records found.</td>
+																</tr>
+															<?php } ?>
+														</tbody>
 
 
-													</div>
 
 
 
-												<?php } ?>
+														<script>
+															// Function to update the admin table dynamically
+															function updateAdminTable() {
+																$.ajax({
+																	url: 'get_admins.php',
+																	method: 'GET',
+																	success: function (response) {
+																		// Parse the JSON response
+																		var admins = JSON.parse(response);
 
-												<?php
-												if (empty($admins)) { ?>
+																		// Clear the existing table body
+																		$('#adminTableBody').empty();
 
-													<tr>
-														<td colspan="8" class=" text-center " style=" text-align:center;">No
-															records found.</td>
-													</tr>
+																		// Iterate through the admins and append rows to the table
+																		admins.forEach(function (admin) {
+																			var id = admin.id;
+																			var admin_id = admin.admin_userID;
+																			var name = admin.full_name;
+																			var email = admin.admin_email;
+																			var phone = admin.admin_phone;
+																			var role = admin.admin_role;
+																			var status = admin.acct_status;
 
-												<?php } ?>
+																			var statusBadge = '';
+																			if (status === 'Updated') {
+																				statusBadge = '<span class="badge badge-success">' + status + '</span>';
+																			} else if (status === 'suspend') {
+																				statusBadge = '<span class="badge badge-danger">' + status + '</span>';
+																			} else if (status === 'pending') {
+																				statusBadge = '<span class="badge badge-warning">' + status + '</span>';
+																			}
 
-												</tbody>
-												</table>
-												</table>
+																			var row = '<tr>' +
+																				'<td>' + id + '</td>' +
+																				'<td>' + name + '</td>' +
+																				'<td>' + email + '</td>' +
+																				'<td>' + phone + '</td>' +
+																				'<td>' + role + '</td>' +
+																				'<td>' + statusBadge + '</td>' +
+																				'<td>' +
+																				'<div class="btn-group" role="group" aria-label="Basic example">' +
+																				'<button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#viewModal' + admin_id + '" data-id="' + admin_id + '">View</button>' +
+																				'<button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#suspendModal' + admin_id + '" data-id="' + admin_id + '">Suspend</button>' +
+																				'<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal' + admin_id + '" data-id="' + admin_id + '">Delete</button>' +
+																				'</div>' +
+																				'</td>' +
+																				'</tr>';
+
+																			$('#adminTableBody').append(row);
+																		});
+																	},
+																	error: function () {
+																		alert('An error occurred while updating the admin table. Please try again.');
+																	}
+																});
+															}
+
+															// Call the updateAdminTable function initially
+															updateAdminTable();
+
+															// Set an interval to update the admin table every 5 seconds
+															setInterval(updateAdminTable, 5000);
+														</script>
+
+														</tbody>
+													</table>
+													</table>
+												</div>
 											</div>
 										</div>
+
+
+
 									</div>
-
-
-
 								</div>
 							</div>
-						</div>
 
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<!-- /page content -->
 
