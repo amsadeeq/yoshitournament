@@ -613,7 +613,7 @@ try {
 																		<?php } elseif ($status == 'suspend') { ?>
 																			<span
 																				class="badge badge-warning"><?php echo $status; ?></span>
-																		<?php } elseif ($status == 'Pending') { ?>
+																		<?php } elseif ($status == 'pending') { ?>
 																			<span
 																				class="badge badge-warning"><?php echo $status; ?></span>
 																		<?php } ?>
