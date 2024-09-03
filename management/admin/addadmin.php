@@ -593,6 +593,7 @@ try {
 
 
 																$id = $admin['id'];
+																$admin_id = $admin['admin_userID'];
 																$name = $admin['full_name'];
 																$email = $admin['admin_email'];
 																$phone = $admin['admin_phone'];
@@ -625,18 +626,18 @@ try {
 																			<button type="button"
 																				class="btn btn-sm btn-secondary"
 																				data-toggle="modal"
-																				data-target="#viewModal<?php echo $id; ?>"
-																				data-id="<?php echo $id; ?>">View</button>
+																				data-target="#viewModal<?php echo $admin_id; ?>"
+																				data-id="<?php echo $admin_id; ?>">View</button>
 																			<button type="button"
 																				class="btn btn-sm btn-warning"
 																				data-toggle="modal"
-																				data-target="#suspendModal<?php echo $id; ?>"
-																				data-id="<?php echo $id; ?>">Suspend</button>
+																				data-target="#suspendModal<?php echo $admin_id; ?>"
+																				data-id="<?php echo $admin_id; ?>">Suspend</button>
 																			<button type="button"
 																				class="btn btn-sm btn-danger"
 																				data-toggle="modal"
-																				data-target="#deleteModal<?php echo $id; ?>"
-																				data-id="<?php echo $id; ?>">Delete</button>
+																				data-target="#deleteModal<?php echo $admin_id; ?>"
+																				data-id="<?php echo $admin_id; ?>">Delete</button>
 																		</div>
 																	</td>
 																</tr>
@@ -662,13 +663,14 @@ try {
 										</div>
 
 										<!-- View Modal -->
-										<div class="modal fade" id="viewModal<?php echo $id; ?>" tabindex="-1"
-											role="dialog" aria-labelledby="viewModalLabel<?php echo $id; ?>"
+										<div class="modal fade" id="viewModal<?php echo $admin_id; ?>" tabindex="-1"
+											role="dialog" aria-labelledby="viewModalLabel<?php echo $admin_id; ?>"
 											aria-hidden="true">
 											<div class="modal-dialog" role="document">
 												<div class="modal-content">
 													<div class="modal-header">
-														<h5 class="modal-title" id="viewModalLabel<?php echo $id; ?>">
+														<h5 class="modal-title"
+															id="viewModalLabel<?php echo $admin_id; ?>">
 															View Admin</h5>
 														<button type="button" class="close" data-dismiss="modal"
 															aria-label="Close">
@@ -677,7 +679,7 @@ try {
 													</div>
 													<div class="modal-body">
 														<!-- Add the necessary fields to display admin details -->
-														<p>ID: <?php echo $id; ?></p>
+														<p>ID: <?php echo $admin_id; ?></p>
 														<p>Name: <?php echo $name; ?></p>
 														<p>Email: <?php echo $email; ?></p>
 														<p>Phone: <?php echo $phone; ?></p>
@@ -693,14 +695,14 @@ try {
 										</div>
 
 										<!-- Suspend Modal -->
-										<div class="modal fade" id="suspendModal<?php echo $id; ?>" tabindex="-1"
-											role="dialog" aria-labelledby="suspendModalLabel<?php echo $id; ?>"
+										<div class="modal fade" id="suspendModal<?php echo $admin_id; ?>" tabindex="-1"
+											role="dialog" aria-labelledby="suspendModalLabel<?php echo $admin_id; ?>"
 											aria-hidden="true">
 											<div class="modal-dialog" role="document">
 												<div class="modal-content">
 													<div class="modal-header">
 														<h5 class="modal-title"
-															id="suspendModalLabel<?php echo $id; ?>">Suspend Admin
+															id="suspendModalLabel<?php echo $admin_id; ?>">Suspend Admin
 														</h5>
 														<button type="button" class="close" data-dismiss="modal"
 															aria-label="Close">
@@ -715,7 +717,7 @@ try {
 														<button type="button" class="btn btn-secondary"
 															data-dismiss="modal">Cancel</button>
 														<button type="button" name="suspend" class="btn btn-warning"
-															onclick="suspendAdmin(<?php echo $id; ?>)">Suspend</button>
+															onclick="suspendAdmin(<?php echo $admin_id; ?>)">Suspend</button>
 													</div>
 												</div>
 											</div>
@@ -746,13 +748,14 @@ try {
 
 
 										<!-- Delete Modal -->
-										<div class="modal fade" id="deleteModal<?php echo $id; ?>" tabindex="-1"
-											role="dialog" aria-labelledby="deleteModalLabel<?php echo $id; ?>"
+										<div class="modal fade" id="deleteModal<?php echo $admin_id; ?>" tabindex="-1"
+											role="dialog" aria-labelledby="deleteModalLabel<?php echo $admin_id; ?>"
 											aria-hidden="true">
 											<div class="modal-dialog" role="document">
 												<div class="modal-content">
 													<div class="modal-header">
-														<h5 class="modal-title" id="deleteModalLabel<?php echo $id; ?>">
+														<h5 class="modal-title"
+															id="deleteModalLabel<?php echo $admin_id; ?>">
 															Delete Admin
 														</h5>
 														<button type="button" class="close" data-dismiss="modal"
