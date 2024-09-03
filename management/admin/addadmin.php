@@ -763,12 +763,36 @@ try {
 																				<button type="button"
 																					class="btn btn-secondary"
 																					data-dismiss="modal">Cancel</button>
-																				<button type="button"
-																					class="btn btn-danger">Delete</button>
+																				<button type="button" class="btn btn-danger"
+																					onclick="deleteAdmin(<?php echo $admin_id; ?>)">Delete</button>
 																			</div>
 																		</div>
 																	</div>
 																</div>
+																<script>
+																	function deleteAdmin(adminId) {
+																		// Send an AJAX request to delete the admin
+																		$.ajax({
+																			url: 'delete_admin.php',
+																			method: 'POST',
+																			data: { adminId: adminId },
+																			success: function (response) {
+																				// Handle the response from the server
+																				if (response === 'success') {
+																					// Reload the page or update the admin list dynamically
+																					location.reload();
+																				} else {
+																					alert('Failed to delete admin. Please try again.');
+																				}
+																			},
+																			error: function () {
+																				alert('An error occurred while deleting admin. Please try again.');
+																			}
+																		});
+																	}
+																</script>
+
+
 													</div>
 
 
