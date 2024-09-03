@@ -887,49 +887,53 @@ try {
 				url: 'get_admins.php',
 				method: 'GET',
 				success: function (response) {
-					// Parse the JSON response
-					var admins = JSON.parse(response);
+					try {
+						// Parse the JSON response
+						var admins = JSON.parse(response);
 
-					// Clear the existing table body
-					$('#adminTableBody').empty();
+						// Clear the existing table body
+						$('#adminTableBody').empty();
 
-					// Iterate through the admins and append rows to the table
-					admins.forEach(function (admin) {
-						var id = admin.id;
-						var admin_id = admin.admin_userID;
-						var name = admin.full_name;
-						var email = admin.admin_email;
-						var phone = admin.admin_phone;
-						var role = admin.admin_role;
-						var status = admin.acct_status;
+						// Iterate through the admins and append rows to the table
+						admins.forEach(function (admin) {
+							var id = admin.id;
+							var admin_id = admin.admin_userID;
+							var name = admin.full_name;
+							var email = admin.admin_email;
+							var phone = admin.admin_phone;
+							var role = admin.admin_role;
+							var status = admin.acct_status;
 
-						var statusBadge = '';
-						if (status === 'Updated') {
-							statusBadge = '<span class="badge badge-success">' + status + '</span>';
-						} else if (status === 'suspend') {
-							statusBadge = '<span class="badge badge-danger">' + status + '</span>';
-						} else if (status === 'pending') {
-							statusBadge = '<span class="badge badge-warning">' + status + '</span>';
-						}
+							var statusBadge = '';
+							if (status === 'Updated') {
+								statusBadge = '<span class="badge badge-success">' + status + '</span>';
+							} else if (status === 'suspend') {
+								statusBadge = '<span class="badge badge-danger">' + status + '</span>';
+							} else if (status === 'pending') {
+								statusBadge = '<span class="badge badge-warning">' + status + '</span>';
+							}
 
-						var row = '<tr>' +
-							'<td>' + id + '</td>' +
-							'<td>' + name + '</td>' +
-							'<td>' + email + '</td>' +
-							'<td>' + phone + '</td>' +
-							'<td>' + role + '</td>' +
-							'<td>' + statusBadge + '</td>' +
-							'<td>' +
-							'<div class="btn-group" role="group" aria-label="Basic example">' +
-							'<button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#viewModal' + admin_id + '" data-id="' + admin_id + '">View</button>' +
-							'<button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#suspendModal' + admin_id + '" data-id="' + admin_id + '">Suspend</button>' +
-							'<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal' + admin_id + '" data-id="' + admin_id + '">Delete</button>' +
-							'</div>' +
-							'</td>' +
-							'</tr>';
+							var row = '<tr>' +
+								'<td>' + id + '</td>' +
+								'<td>' + name + '</td>' +
+								'<td>' + email + '</td>' +
+								'<td>' + phone + '</td>' +
+								'<td>' + role + '</td>' +
+								'<td>' + statusBadge + '</td>' +
+								'<td>' +
+								'<div class="btn-group" role="group" aria-label="Basic example">' +
+								'<button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#viewModal' + admin_id + '" data-id="' + admin_id + '">View</button>' +
+								'<button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#suspendModal' + admin_id + '" data-id="' + admin_id + '">Suspend</button>' +
+								'<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal' + admin_id + '" data-id="' + admin_id + '">Delete</button>' +
+								'</div>' +
+								'</td>' +
+								'</tr>';
 
-						$('#adminTableBody').append(row);
-					});
+							$('#adminTableBody').append(row);
+						});
+					} catch (error) {
+						console.error('An error occurred while parsing the JSON response:', error);
+					}
 				},
 				error: function () {
 					alert('An error occurred while updating the admin table. Please try again.');
