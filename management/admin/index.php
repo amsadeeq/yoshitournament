@@ -46,8 +46,10 @@ if (isset($_POST['validate'])) {
   // Perform input sanitization
   $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
-  $stmt = $pdo->query("SELECT * FROM `yoshi_admins_tbl`");
-  $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt = $pdo->prepare("SELECT * FROM `yoshi_admins_tbl` WHERE admin_email = :email");
+  $stmt->bindParam(':email', $email);
+  $stmt->execute();
+  $admins = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all rows from the query
 
 
   // Perform input validation
