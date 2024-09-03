@@ -15,21 +15,7 @@ if (isset($_POST['adminId'])) {
 
     // Check if the update was successful
     if ($stmt->rowCount() > 0) {
-        $success_message = "Admin Suspended Successfully !";
-        //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
-        // Define the notification message
-        // Generate the JavaScript code to trigger the notification
-        $welcome_notify = "
-			<script>
-				new Noty({
-					theme: 'metroui',
-					text: '$success_message',
-					type: 'success',
-					timeout: 1000
-					
-				}).show();
-			</script>
-			";
+        echo "success";
     } else {
         $error_message = "Oops! Please try again later!";
         //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
