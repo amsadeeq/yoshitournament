@@ -868,6 +868,16 @@ try {
 			fetchAdmins();
 		});
 
+
+		$('#dynamicModals').on('shown.bs.modal', function (e) {
+			console.log('Modal is shown:', e.target.id);
+		});
+
+		$('#dynamicModals').on('hidden.bs.modal', function (e) {
+			console.log('Modal is hidden:', e.target.id);
+		});
+
+
 	</script>
 
 
