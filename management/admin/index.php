@@ -69,6 +69,13 @@ if (isset($_POST['validate'])) {
 
   // Check if temporary password matches the expected value
   if (md5($temporaryPassword) == $admins['temp_password']) {
+    // Update the admin's password
+    $new_password = md5($originalPassword);
+    $stmt = $pdo->prepare("UPDATE `yoshi_admins_tbl` SET `password` = :password, `acct_status` = 'Updated', `time_updated` = NOW(), `date_updated` = CURDATE() WHERE admin_email = :email");
+    $stmt->bindParam(':password', $new_password);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
     echo "Yes";
   } else {
     echo "Invalid temporary password";
