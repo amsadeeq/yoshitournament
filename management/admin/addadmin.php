@@ -642,140 +642,156 @@ try {
 																	</td>
 																</tr>
 
+																<!-- View Modal -->
+																<div class="modal fade"
+																	id="viewModal<?php echo $admin_id; ?>" tabindex="-1"
+																	role="dialog"
+																	aria-labelledby="viewModalLabel<?php echo $admin_id; ?>"
+																	aria-hidden="true">
+																	<div class="modal-dialog" role="document">
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<h5 class="modal-title"
+																					id="viewModalLabel<?php echo $admin_id; ?>">
+																					View Admin</h5>
+																				<button type="button" class="close"
+																					data-dismiss="modal" aria-label="Close">
+																					<span aria-hidden="true">&times;</span>
+																				</button>
+																			</div>
+																			<div class="modal-body">
+																				<!-- Add the necessary fields to display admin details -->
+																				<p>ID: <?php echo $admin_id; ?></p>
+																				<p>Name: <?php echo $name; ?></p>
+																				<p>Email: <?php echo $email; ?></p>
+																				<p>Phone: <?php echo $phone; ?></p>
+																				<p>Role: <?php echo $role; ?></p>
+																				<p>Status: <?php echo $status; ?></p>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button"
+																					class="btn btn-secondary"
+																					data-dismiss="modal">Close</button>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<!-- Suspend Modal -->
+																<div class="modal fade"
+																	id="suspendModal<?php echo $admin_id; ?>" tabindex="-1"
+																	role="dialog"
+																	aria-labelledby="suspendModalLabel<?php echo $admin_id; ?>"
+																	aria-hidden="true">
+																	<div class="modal-dialog" role="document">
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<h5 class="modal-title"
+																					id="suspendModalLabel<?php echo $admin_id; ?>">
+																					Suspend Admin
+																				</h5>
+																				<button type="button" class="close"
+																					data-dismiss="modal" aria-label="Close">
+																					<span aria-hidden="true">&times;</span>
+																				</button>
+																			</div>
+																			<div class="modal-body">
+																				<!-- Add the necessary fields and confirmation message for suspending the admin -->
+																				<p>Are you sure you want to suspend this
+																					admin?</p>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button"
+																					class="btn btn-secondary"
+																					data-dismiss="modal">Cancel</button>
+																				<button type="button" name="suspend"
+																					class="btn btn-warning"
+																					onclick="suspendAdmin(<?php echo $admin_id; ?>)">Suspend</button>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<script>
+																	function suspendAdmin(adminId) {
+																		// Send an AJAX request to update the admin's status to "suspend"
+																		$.ajax({
+																			url: 'suspend_admin.php',
+																			method: 'POST',
+																			data: { adminId: adminId },
+																			success: function (response) {
+																				// Handle the response from the server
+																				if (response === 'success') {
+																					// Reload the page or update the admin's status dynamically
+																					location.reload();
+																				} else {
+																					alert('Failed to suspend admin. Please try again.');
+																				}
+																			},
+																			error: function () {
+																				alert('An error occurred while suspending admin. Please try again.');
+																			}
+																		});
+																	}
+																</script>
 
 
-															<?php } ?>
-
-															<?php
-															if (empty($admins)) { ?>
-
-																<tr>
-																	<td colspan="8">No records found.</td>
-																</tr>
-
-															<?php } ?>
-
-														</tbody>
-													</table>
-													</table>
-												</div>
-											</div>
-										</div>
-
-										<!-- View Modal -->
-										<div class="modal fade" id="viewModal<?php echo $admin_id; ?>" tabindex="-1"
-											role="dialog" aria-labelledby="viewModalLabel<?php echo $admin_id; ?>"
-											aria-hidden="true">
-											<div class="modal-dialog" role="document">
-												<div class="modal-content">
-													<div class="modal-header">
-														<h5 class="modal-title"
-															id="viewModalLabel<?php echo $admin_id; ?>">
-															View Admin</h5>
-														<button type="button" class="close" data-dismiss="modal"
-															aria-label="Close">
-															<span aria-hidden="true">&times;</span>
-														</button>
+																<!-- Delete Modal -->
+																<div class="modal fade"
+																	id="deleteModal<?php echo $admin_id; ?>" tabindex="-1"
+																	role="dialog"
+																	aria-labelledby="deleteModalLabel<?php echo $admin_id; ?>"
+																	aria-hidden="true">
+																	<div class="modal-dialog" role="document">
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<h5 class="modal-title"
+																					id="deleteModalLabel<?php echo $admin_id; ?>">
+																					Delete Admin
+																				</h5>
+																				<button type="button" class="close"
+																					data-dismiss="modal" aria-label="Close">
+																					<span aria-hidden="true">&times;</span>
+																				</button>
+																			</div>
+																			<div class="modal-body">
+																				<!-- Add the necessary fields and confirmation message for deleting the admin -->
+																				<p>Are you sure you want to delete this
+																					admin?</p>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button"
+																					class="btn btn-secondary"
+																					data-dismiss="modal">Cancel</button>
+																				<button type="button"
+																					class="btn btn-danger">Delete</button>
+																			</div>
+																		</div>
+																	</div>
+																</div>
 													</div>
-													<div class="modal-body">
-														<!-- Add the necessary fields to display admin details -->
-														<p>ID: <?php echo $admin_id; ?></p>
-														<p>Name: <?php echo $name; ?></p>
-														<p>Email: <?php echo $email; ?></p>
-														<p>Phone: <?php echo $phone; ?></p>
-														<p>Role: <?php echo $role; ?></p>
-														<p>Status: <?php echo $status; ?></p>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-secondary"
-															data-dismiss="modal">Close</button>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<!-- Suspend Modal -->
-										<div class="modal fade" id="suspendModal<?php echo $admin_id; ?>" tabindex="-1"
-											role="dialog" aria-labelledby="suspendModalLabel<?php echo $admin_id; ?>"
-											aria-hidden="true">
-											<div class="modal-dialog" role="document">
-												<div class="modal-content">
-													<div class="modal-header">
-														<h5 class="modal-title"
-															id="suspendModalLabel<?php echo $admin_id; ?>">Suspend Admin
-														</h5>
-														<button type="button" class="close" data-dismiss="modal"
-															aria-label="Close">
-															<span aria-hidden="true">&times;</span>
-														</button>
-													</div>
-													<div class="modal-body">
-														<!-- Add the necessary fields and confirmation message for suspending the admin -->
-														<p>Are you sure you want to suspend this admin?</p>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-secondary"
-															data-dismiss="modal">Cancel</button>
-														<button type="button" name="suspend" class="btn btn-warning"
-															onclick="suspendAdmin(<?php echo $admin_id; ?>)">Suspend</button>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<script>
-											function suspendAdmin(adminId) {
-												// Send an AJAX request to update the admin's status to "suspend"
-												$.ajax({
-													url: 'suspend_admin.php',
-													method: 'POST',
-													data: { adminId: adminId },
-													success: function (response) {
-														// Handle the response from the server
-														if (response === 'success') {
-															// Reload the page or update the admin's status dynamically
-															location.reload();
-														} else {
-															alert('Failed to suspend admin. Please try again.');
-														}
-													},
-													error: function () {
-														alert('An error occurred while suspending admin. Please try again.');
-													}
-												});
-											}
-										</script>
 
 
-										<!-- Delete Modal -->
-										<div class="modal fade" id="deleteModal<?php echo $admin_id; ?>" tabindex="-1"
-											role="dialog" aria-labelledby="deleteModalLabel<?php echo $admin_id; ?>"
-											aria-hidden="true">
-											<div class="modal-dialog" role="document">
-												<div class="modal-content">
-													<div class="modal-header">
-														<h5 class="modal-title"
-															id="deleteModalLabel<?php echo $admin_id; ?>">
-															Delete Admin
-														</h5>
-														<button type="button" class="close" data-dismiss="modal"
-															aria-label="Close">
-															<span aria-hidden="true">&times;</span>
-														</button>
-													</div>
-													<div class="modal-body">
-														<!-- Add the necessary fields and confirmation message for deleting the admin -->
-														<p>Are you sure you want to delete this admin?</p>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-secondary"
-															data-dismiss="modal">Cancel</button>
-														<button type="button" class="btn btn-danger">Delete</button>
-													</div>
-												</div>
+
+												<?php } ?>
+
+												<?php
+												if (empty($admins)) { ?>
+
+													<tr>
+														<td colspan="8">No records found.</td>
+													</tr>
+
+												<?php } ?>
+
+												</tbody>
+												</table>
+												</table>
 											</div>
 										</div>
 									</div>
+
+
 
 								</div>
 							</div>
