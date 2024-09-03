@@ -20,6 +20,55 @@ if (isset($_POST['access'])) {
 }
 
 
+if (isset($_POST['validate'])) {
+
+  //function checking for malicious inputs using trim(),stripslahes(),htmlspecialchars(),htmlentities()
+  function check_input($data)
+  {
+    $data = trim($data);
+    $data = stripcslashes($data);
+    $data = htmlspecialchars($data);
+    $data = htmlentities($data);
+    return $data;
+  }
+
+  // Function to sanitize input data
+  function sanitize_input($data)
+  {
+    return htmlspecialchars(stripslashes(trim($data)));
+  }
+
+
+  $email = sanitize_input(check_input($_POST['a_email']));
+  $temporaryPassword = sanitize_input(check_input($_POST['temporary_password']));
+  $originalPassword = sanitize_input(check_input($_POST['original_password']));
+
+  // Perform input sanitization
+  $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+  $stmt = $pdo->query("SELECT * FROM `yoshi_admins_tbl`");
+  $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+  // Perform input validation
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email address";
+    exit;
+  }
+
+  // Perform security checks
+  // ...
+
+  // Check if temporary password matches the expected value
+  if (md5($temporaryPassword) == $admins['temp_password']) {
+    echo "Yes";
+  } else {
+    echo "Invalid temporary password";
+    exit;
+  }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,11 +139,9 @@ if (isset($_POST['access'])) {
 
       <div id="register" class="animate form registration_form">
         <section class="login_content">
-          <form method="POST" class="'form">
+          <form method="POST" class="form">
             <h1>Validate Account</h1>
-            <div>
-              <input type="text" class="form-control" name="a_username" placeholder="Username" required />
-            </div>
+
             <div>
               <input type="email" class="form-control" name="a_email" placeholder="Email" required />
             </div>
@@ -127,6 +174,8 @@ if (isset($_POST['access'])) {
               </div>
             </div>
           </form>
+        </section>
+
         </section>
       </div>
     </div>
