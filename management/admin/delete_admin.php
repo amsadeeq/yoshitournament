@@ -1,5 +1,12 @@
 <?php
 
+
+session_start();
+ob_start();
+
+require_once '../../connection.php';
+$email = $_SESSION['a_email'];
+
 if (isset($_POST['adminId'])) {
     $adminId = $_POST['adminId'];
 
