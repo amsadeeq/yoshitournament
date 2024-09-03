@@ -60,6 +60,9 @@ if (isset($_POST['validate'])) {
 
   // Perform security checks
   // ...
+  echo $email;
+  echo $originalPassword;
+  echo md5($temporaryPassword);
 
   echo $admins['temp_password'];
 
