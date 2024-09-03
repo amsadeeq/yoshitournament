@@ -49,8 +49,7 @@ if (isset($_POST['validate'])) {
   $stmt = $pdo->prepare("SELECT * FROM `yoshi_admins_tbl` WHERE admin_email = :email");
   $stmt->bindParam(':email', $email);
   $stmt->execute();
-  $admins = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all rows from the query
-
+  $admins = $stmt->fetch(PDO::FETCH_ASSOC); // Fetch a single row from the query
 
   // Perform input validation
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -64,7 +63,11 @@ if (isset($_POST['validate'])) {
   echo $originalPassword;
   echo md5($temporaryPassword);
 
-  echo $admins['full_name'];
+  if ($admins) {
+    echo $admins['full_name'];
+  } else {
+    echo "Admin not found";
+  }
 
   // Check if temporary password matches the expected value
   // if (md5($temporaryPassword) == $admins['temp_password']) {
