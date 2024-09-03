@@ -803,7 +803,8 @@ try {
 												if (empty($admins)) { ?>
 
 													<tr>
-														<td colspan="8">No records found.</td>
+														<td colspan="8" class=" text-center " style=" text-align:center;">No
+															records found.</td>
 													</tr>
 
 												<?php } ?>
