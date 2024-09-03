@@ -64,7 +64,7 @@ if (isset($_POST['validate'])) {
   echo $originalPassword;
   echo md5($temporaryPassword);
 
-  echo $admins[1];
+  echo $admins['full_name'];
 
   // Check if temporary password matches the expected value
   // if (md5($temporaryPassword) == $admins['temp_password']) {
