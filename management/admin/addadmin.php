@@ -578,7 +578,7 @@ try {
 														<thead>
 															<tr>
 
-																<th>ID</th>
+
 																<th>Name</th>
 																<th>Email</th>
 																<th>Phone</th>
@@ -697,7 +697,7 @@ try {
 					admins.forEach(function (admin) {
 						let adminRow = `
 					<tr>
-						<td>${admin.id}</td>
+						
 						<td>${admin.full_name}</td>
 						<td>${admin.admin_email}</td>
 						<td>${admin.admin_phone}</td>
