@@ -8,7 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title> &nbsp;&nbsp; Student List for Yoshi Abuja Private Schools Tournaments (YAPS) - <?php echo date("Y"); ?>
+  <title style="text-align: center;"> &nbsp;&nbsp; Student List for Yoshi Abuja Private Schools Tournaments (YAPS) -
+    <?php echo date("Y"); ?>
   </title>
 
   <!-- Bootstrap -->
