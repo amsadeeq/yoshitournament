@@ -99,7 +99,7 @@ $total_student = $result_student['total_student'];
   <!-- Bootstrap -->
   <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <!-- <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -947,12 +947,7 @@ $total_student = $result_student['total_student'];
       <!-- /page content -->
 
       <!-- footer content -->
-      <footer>
-        <div class="pull-right">
-          Yoshi Tournaments by <a href="https://colorlib.com">Yoshi Football Academy UAE</a>
-        </div>
-        <div class="clearfix"></div>
-      </footer>
+      <?php require 'mainFooter.php'; ?>
       <!-- /footer content -->
     </div>
   </div>
