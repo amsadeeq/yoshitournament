@@ -58,7 +58,7 @@ $attendances = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <!-- /sidebar menu -->
 
           <!-- /menu footer buttons -->
-          <?php require 'footButton'; ?>
+          <?php require 'footerButton'; ?>
           <!-- /menu footer buttons -->
         </div>
       </div>
