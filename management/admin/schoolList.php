@@ -97,7 +97,6 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                               <th>Team Address</th>
                               <th>Phone</th>
                               <th>Email</th>
-
                             </tr>
                           </thead>
                           <tbody>
@@ -128,7 +127,6 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                               <?php
                             }
                             ?>
-
                           </tbody>
                         </table>
                       </div>
@@ -137,131 +135,132 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="col-md-12 col-sm-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2><i class="fa fa-align-left"></i> Schools and Players</h2>
+          <div class="col-md-12 col-sm-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2><i class="fa fa-align-left"></i> Schools and Players</h2>
 
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
 
-                  <!-- start accordion -->
-                  <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
-                    <div class="panel">
-                      <?php
-                      $sn = 0;
-                      foreach ($school_official as $school) {
-                        $sn = $sn + 1;
-                        $userRefNo = $school['userRefNo'];
-                        $userEmail = $school['user_email'];
-                        $userPosition = $school['user_position'];
-                        $teamRefNumber = $school['TeamRefNumber'];
-                        $timeCreated = $school['time_created'];
-                        $dateCreated = $school['date_created'];
-                        $regStatus = $school['reg_status'];
-                        ?>
-                        <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
-                          data-parent="#accordion" href="<?php echo "#collapse" . $school['TeamRefNumber']; ?>"
-                          aria-expanded="true" aria-controls="<?php echo "#collapse" . $school['TeamRefNumber']; ?>">
+                <!-- start accordion -->
+                <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="panel">
+                    <?php
+                    $sn = 0;
+                    foreach ($school_official as $school) {
+                      $sn = $sn + 1;
+                      $userRefNo = $school['userRefNo'];
+                      $userEmail = $school['user_email'];
+                      $userPosition = $school['user_position'];
+                      $teamRefNumber = $school['TeamRefNumber'];
+                      $timeCreated = $school['time_created'];
+                      $dateCreated = $school['date_created'];
+                      $regStatus = $school['reg_status'];
+                      ?>
+                      <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion"
+                        href="<?php echo "#collapse" . $school['TeamRefNumber']; ?>" aria-expanded="true"
+                        aria-controls="<?php echo "#collapse" . $school['TeamRefNumber']; ?>">
 
-                          <table class="table table-striped table-bordered">
-                            <tbody>
+                        <table class="table table-striped table-bordered">
+                          <tbody>
 
-                              <tr class="panel-title">
-                                <td><?php echo $school['id']; ?></td>
-                                <td>
-                                  <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>"
-                                    style="width: 40px; height:40px;" />
-                                </td>
-                                <td><?php echo $school['team_name']; ?></td>
-                                <td><?php echo $school['TeamRefNumber']; ?></td>
-                                <td><?php echo $school['team_address']; ?></td>
-                                <td><?php echo $school['phone']; ?></td>
-                                <td><?php echo $school['email']; ?></td>
+                            <tr class="panel-title">
+                              <td><?php echo $school['id']; ?></td>
+                              <td>
+                                <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>"
+                                  style="width: 40px; height:40px;" />
+                              </td>
+                              <td><?php echo $school['team_name']; ?></td>
+                              <td><?php echo $school['TeamRefNumber']; ?></td>
+                              <td><?php echo $school['team_address']; ?></td>
+                              <td><?php echo $school['phone']; ?></td>
+                              <td><?php echo $school['email']; ?></td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </a>
+                      <div id="<?php echo "collapse" . $school['TeamRefNumber']; ?>" class="panel-collapse collapse in"
+                        role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                          <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Photo</th>
+                                <th>User Ref No</th>
+                                <th>Full Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Emergency</th>
+
                               </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                              $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY id DESC ");
+                              $stmt_player->execute(['teamRefNumber' => $school['TeamRefNumber']]);
+                              $players_record = $stmt_player->fetchAll(PDO::FETCH_ASSOC);
 
+                              $sn = 0;
+                              foreach ($players_record as $player) {
+                                $sn = $sn + 1;
+
+                                ?>
+                                <tr>
+                                  <th><?php echo $sn; ?></th>
+                                  <td><?php echo $player['userRefNo']; ?></td>
+                                  <td>
+                                    <img src="<?php echo "../../schools/student_photo/" . $player['passport']; ?>"
+                                      style="width: 40px; height:40px;" />
+                                  </td>
+                                  <td><?php echo $player['surname'] . " " . $player['firstname']; ?></td>
+                                  <td><?php echo $player['phone']; ?></td>
+                                  <td><?php echo $player['email']; ?></td>
+                                  <td>
+                                    <h6><a
+                                        href="tel:<?php echo $player['emergency_phone']; ?>"><?php echo $player['emergency_phone']; ?></a>
+                                    </h6>
+                                    <h6>
+                                      <a
+                                        href="mailto:<?php echo $player['emergency_email']; ?>"><?php echo $player['emergency_email']; ?></a>
+                                    </h6>
+                                    <h6><?php echo $player['emergency_name']; ?></h6>
+                                    <h6><?php echo $player['emergency_address']; ?></h6>
+
+                                  </td>
+                                </tr>
+                              <?php } ?>
                             </tbody>
                           </table>
-                        </a>
-                        <div id="<?php echo "collapse" . $school['TeamRefNumber']; ?>" class="panel-collapse collapse in"
-                          role="tabpanel" aria-labelledby="headingOne">
-                          <div class="panel-body">
-                            <table class="table table-bordered">
-                              <thead>
-                                <tr>
-                                  <th>#</th>
-                                  <th>Photo</th>
-                                  <th>User Ref No</th>
-                                  <th>Full Name</th>
-                                  <th>Phone</th>
-                                  <th>Email</th>
-                                  <th>Emergency</th>
-
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <?php
-                                $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY id DESC ");
-                                $stmt_player->execute(['teamRefNumber' => $school['TeamRefNumber']]);
-                                $players_record = $stmt_player->fetchAll(PDO::FETCH_ASSOC);
-
-                                $sn = 0;
-                                foreach ($players_record as $player) {
-                                  $sn = $sn + 1;
-
-                                  ?>
-                                  <tr>
-                                    <th><?php echo $sn; ?></th>
-                                    <td><?php echo $player['userRefNo']; ?></td>
-                                    <td>
-                                      <img src="<?php echo "../../schools/student_photo/" . $player['passport']; ?>"
-                                        style="width: 40px; height:40px;" />
-                                    </td>
-                                    <td><?php echo $player['surname'] . " " . $player['firstname']; ?></td>
-                                    <td><?php echo $player['phone']; ?></td>
-                                    <td><?php echo $player['email']; ?></td>
-                                    <td>
-                                      <h6><a
-                                          href="tel:<?php echo $player['emergency_phone']; ?>"><?php echo $player['emergency_phone']; ?></a>
-                                      </h6>
-                                      <h6>
-                                        <a
-                                          href="mailto:<?php echo $player['emergency_email']; ?>"><?php echo $player['emergency_email']; ?></a>
-                                      </h6>
-                                      <h6><?php echo $player['emergency_name']; ?></h6>
-                                      <h6><?php echo $player['emergency_address']; ?></h6>
-
-                                    </td>
-                                  </tr>
-                                <?php } ?>
-                              </tbody>
-                            </table>
-                          </div>
                         </div>
-                        <?php
-                      }
-                      ?>
-                    </div>
+                      </div>
+                      <?php
+                    }
+                    ?>
                   </div>
-                  <!-- end of accordion -->
-
-
                 </div>
+                <!-- end of accordion -->
+
+
               </div>
             </div>
-
-
           </div>
+
+
         </div>
       </div>
-      <!-- /page content -->
-
-      <!-- footer content -->
-      <?php require 'mainFooter.php'; ?>
-      <!-- /footer content -->
     </div>
+    <!-- /page content -->
+
+    <!-- footer content -->
+    <?php require 'mainFooter.php'; ?>
+    <!-- /footer content -->
+  </div>
   </div>
 
   <!-- jQuery -->

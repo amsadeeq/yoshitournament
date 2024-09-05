@@ -1078,16 +1078,15 @@ $students = $stmt_student->fetchAll(PDO::FETCH_ASSOC);
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap"
                           cellspacing="0" width="100%">
                           <thead>
-                            <tr>
-                              <th>First name</th>
-                              <th>Last name</th>
-                              <th>Position</th>
-                              <th>Office</th>
-                              <th>Age</th>
-                              <th>Start date</th>
-                              <th>Salary</th>
-                              <th>Extn.</th>
-                              <th>E-mail</th>
+                          <tr>
+                              <th>S/No</th>
+                              <th>School Logo</th>
+                              <th>School Name</th>
+                              <th>Team Ref No.</th>
+                              <th>Team Address</th>
+                              <th>Phone</th>
+                              <th>Email</th>
+
                             </tr>
                           </thead>
                           <tbody>
