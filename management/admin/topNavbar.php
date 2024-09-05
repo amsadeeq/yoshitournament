@@ -8,9 +8,8 @@
         <nav class="nav navbar-nav">
             <ul class=" navbar-right" style="border-radius:15px 15px !important;">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
-                    <a href="javascript:;" style="border-radius:15px 15px !important;"
-                        class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
-                        data-toggle="dropdown" aria-expanded="false">
+                    <a href="javascript:;" style="border-radius:15px 15px;" class="user-profile dropdown-toggle"
+                        aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                         <img src="images/img.jpg" alt="">Admin
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
@@ -20,7 +19,7 @@
                             <span>Settings</span>
                         </a>
                         <a class="dropdown-item" href="javascript:;">Help</a>
-                        <a class="dropdown-item" href="javascript:;" onclick="logout();"><i
+                        <a class="dropdown-item bg-danger" href="javascript:;" onclick="logout();"><i
                                 class="fa fa-sign-out pull-right"></i> Log Out</a>
                     </div>
                 </li>
@@ -31,13 +30,14 @@
                         <i class="fa fa-envelope-o"></i>
                         <span class="badge bg-green">6</span>
                     </a>
-                    <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                    <ul class="dropdown-menu list-unstyled msg_list" style="border-radius:15px 15px !important;"
+                        role="menu" aria-labelledby="navbarDropdown1">
                         <li class="nav-item">
                             <a class="dropdown-item">
                                 <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
                                 <span>
                                     <span>Admin</span>
-                                    <span class="time">3 mins ago</span>
+                                    <span class="time">0 mins ago</span>
                                 </span>
                                 <span class="message">
                                     Loading...

@@ -4,21 +4,17 @@
     <div class="menu_section">
         <h3>General</h3>
         <ul class="nav side-menu">
-            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-home"></i> Dashboard <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="index2.html">Dashboard2</a></li>
-                    <li><a href="index3.html">Dashboard3</a></li>
+                    <li><a href="mainDashboard.php">Dashboard</a></li>
+
                 </ul>
             </li>
-            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-edit"></i> Registraion <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="form.html">General Form</a></li>
-                    <li><a href="form_advanced.html">Advanced Components</a></li>
-                    <li><a href="form_validation.html">Form Validation</a></li>
-                    <li><a href="form_wizards.html">Form Wizard</a></li>
-                    <li><a href="form_upload.html">Form Upload</a></li>
-                    <li><a href="form_buttons.html">Form Buttons</a></li>
+                    <li><a href="attendance.php">Attendance</a></li>
+                    <li><a href="addadmin.php">Add Admin</a></li>
+
                 </ul>
             </li>
             <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
@@ -34,10 +30,10 @@
                     <li><a href="calendar.html">Calendar</a></li>
                 </ul>
             </li>
-            <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-table"></i> Schools/Students <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="tables.html">Tables</a></li>
-                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                    <li><a href="schoolList.php">Schools</a></li>
+                    <li><a href="StudentsList.php">Students</a></li>
                 </ul>
             </li>
             <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
@@ -49,15 +45,15 @@
                     <li><a href="other_charts.html">Other Charts</a></li>
                 </ul>
             </li>
-            <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-user"></i>Accounts <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                    <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                    <li><a href="signupList.php">Accounts</a></li>
+                    <li><a href="pending.php">Account Pending</a></li>
                 </ul>
             </li>
         </ul>
     </div>
-    <div class="menu_section">
+    <!-- <div class="menu_section">
         <h3>Live On</h3>
         <ul class="nav side-menu">
             <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
@@ -99,7 +95,7 @@
             <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span
                         class="label label-success pull-right">Coming Soon</span></a></li>
         </ul>
-    </div>
+    </div> -->
 
 </div>
 
