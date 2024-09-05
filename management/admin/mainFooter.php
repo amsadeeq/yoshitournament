@@ -3,7 +3,7 @@
 
 <footer>
     <div class="pull-right">
-        Yoshi Tournaments by <a href="https://colorlib.com">Yoshi Football Academy UAE</a>
+        Yoshi Tournaments <?php echo date("Y"); ?> by <a href="#">Yoshi Football Academy Dubai, UAE</a>
     </div>
     <div class="clearfix"></div>
 </footer>

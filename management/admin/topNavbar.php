@@ -7,7 +7,7 @@
         </div>
         <nav class="nav navbar-nav">
             <ul class=" navbar-right">
-                <li class="nav-item dropdown open" style="padding-left: 15px;">
+                <li class="nav-item dropdown open" style="padding-left: 15px; border-radius:15px 15px !important;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                         data-toggle="dropdown" aria-expanded="false">
                         <img src="images/img.jpg" alt="">Admin
@@ -35,50 +35,15 @@
                             <a class="dropdown-item">
                                 <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
                                 <span>
-                                    <span>John Smith</span>
+                                    <span>Admin</span>
                                     <span class="time">3 mins ago</span>
                                 </span>
                                 <span class="message">
-                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                    Loading...
                                 </span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="dropdown-item">
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                <span>
-                                    <span>John Smith</span>
-                                    <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="dropdown-item">
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                <span>
-                                    <span>John Smith</span>
-                                    <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="dropdown-item">
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                <span>
-                                    <span>John Smith</span>
-                                    <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                            </a>
-                        </li>
+
                         <li class="nav-item">
                             <div class="text-center">
                                 <a class="dropdown-item">
