@@ -36,7 +36,7 @@
             <li><a><i class="fa fa-table"></i> Schools / Students <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="schoolList.php">Schools</a></li>
-                    <li><a href="StudentsList.php">Students</a></li>
+                    <li><a href="studentList.php">Students</a></li>
                 </ul>
             </li>
             <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
