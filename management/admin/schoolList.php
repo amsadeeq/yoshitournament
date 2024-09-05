@@ -105,13 +105,13 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                             $sn = 0;
                             foreach ($school_official as $school) {
                               $sn = $sn + 1;
-                              $userRefNo = $user['userRefNo'];
-                              $userEmail = $user['user_email'];
-                              $userPosition = $user['user_position'];
-                              $teamRefNumber = $user['TeamRefNumber'];
-                              $timeCreated = $user['time_created'];
-                              $dateCreated = $user['date_created'];
-                              $regStatus = $user['reg_status'];
+                              $userRefNo = $school['userRefNo'];
+                              $userEmail = $school['user_email'];
+                              $userPosition = $school['user_position'];
+                              $teamRefNumber = $school['TeamRefNumber'];
+                              $timeCreated = $school['time_created'];
+                              $dateCreated = $school['date_created'];
+                              $regStatus = $school['reg_status'];
                               ?>
                               <tr>
                                 <td><?php echo $sn; ?></td>
@@ -170,7 +170,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                             <tbody>
 
                               <tr class="panel-title">
-                                <td><?php echo $player['id']; ?></td>
+                                <td><?php echo $school['id']; ?></td>
                                 <td>
                                   <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>"
                                     style="width: 40px; height:40px;" />
@@ -259,12 +259,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       <!-- /page content -->
 
       <!-- footer content -->
-      <footer>
-        <div class="pull-right">
-          Yoshi - Powered by <a href="https://colorlib.com">YoshiFA</a>
-        </div>
-        <div class="clearfix"></div>
-      </footer>
+      <?php require 'mainFooter.php'; ?>
       <!-- /footer content -->
     </div>
   </div>

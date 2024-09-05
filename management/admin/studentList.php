@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+ob_start();
+
+require '../../connection.php';
+
+$stmt_student = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` ORDER BY category ASC ");
+$stmt_student->execute();
+$students = $stmt_student->fetchAll(PDO::FETCH_ASSOC);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
