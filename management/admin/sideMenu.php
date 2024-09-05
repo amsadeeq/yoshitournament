@@ -10,10 +10,13 @@
 
                 </ul>
             </li>
-            <li><a><i class="fa fa-edit"></i> Registraion <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-edit"></i> Registraion / Update <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="attendance.php">Attendance</a></li>
                     <li><a href="addadmin.php">Add Admin</a></li>
+                    <li><a href="addMatchResult.php">Add Match Result</a></li>
+                    <li><a href="Matches.php">Matches</a></li>
+
 
                 </ul>
             </li>
@@ -30,7 +33,7 @@
                     <li><a href="calendar.html">Calendar</a></li>
                 </ul>
             </li>
-            <li><a><i class="fa fa-table"></i> Schools/Students <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-table"></i> Schools / Students <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="schoolList.php">Schools</a></li>
                     <li><a href="StudentsList.php">Students</a></li>
