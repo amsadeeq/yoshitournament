@@ -10,18 +10,16 @@
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                         data-toggle="dropdown" aria-expanded="false">
-                        <img src="images/img.jpg" alt=""> Admin
+                        <img src="images/img.jpg" alt="">John Doe
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="javascript:;"> Profile</a>
                         <a class="dropdown-item" href="javascript:;">
-                            <!-- <span class="badge bg-red pull-right">50%</span> -->
+                            <span class="badge bg-red pull-right">50%</span>
                             <span>Settings</span>
                         </a>
                         <a class="dropdown-item" href="javascript:;">Help</a>
-                        <a class="dropdown-item" href="index.php?logout=true" onclick="logout();"><i
-                                class="fa fa-sign-out pull-right"></i> Log Out</a>
-
+                        <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                     </div>
                 </li>
 
@@ -36,17 +34,50 @@
                             <a class="dropdown-item">
                                 <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
                                 <span>
-                                    <span>Mrs Adejoke Oluwale</span>
+                                    <span>John Smith</span>
                                     <span class="time">3 mins ago</span>
                                 </span>
                                 <span class="message">
-                                    Our students has finished registration...
+                                    Film festivals used to be do-or-die moments for movie makers. They were where...
                                 </span>
                             </a>
                         </li>
-
-
-
+                        <li class="nav-item">
+                            <a class="dropdown-item">
+                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                <span>
+                                    <span>John Smith</span>
+                                    <span class="time">3 mins ago</span>
+                                </span>
+                                <span class="message">
+                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item">
+                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                <span>
+                                    <span>John Smith</span>
+                                    <span class="time">3 mins ago</span>
+                                </span>
+                                <span class="message">
+                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item">
+                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                <span>
+                                    <span>John Smith</span>
+                                    <span class="time">3 mins ago</span>
+                                </span>
+                                <span class="message">
+                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                </span>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <div class="text-center">
                                 <a class="dropdown-item">
