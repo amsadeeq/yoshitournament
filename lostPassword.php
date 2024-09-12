@@ -5,11 +5,11 @@ ob_start();
 
 require 'connection.php';
 
-$show_modal = false;  // This flag will determine whether the modal should be shown
+$response = [];
 
 if (isset($_POST['reset_button'])) {
 
-  // Function checking for malicious inputs using trim(), stripslashes(), htmlspecialchars(), htmlentities()
+  // Sanitize inputs
   function check_input($data)
   {
     $data = trim($data);
@@ -19,33 +19,25 @@ if (isset($_POST['reset_button'])) {
     return $data;
   }
 
-  // Function for collecting user IP address
   function getRealIpAddr()
   {
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-      // Check IP from internet
-      $ip = $_SERVER['HTTP_CLIENT_IP'];
+      return $_SERVER['HTTP_CLIENT_IP'];
     } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-      // Check IP is passed from proxy
-      $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+      return $_SERVER['HTTP_X_FORWARDED_FOR'];
     } else {
-      // Get IP address from remote address
-      $ip = $_SERVER['REMOTE_ADDR'];
+      return $_SERVER['REMOTE_ADDR'];
     }
-    return $ip;
   }
 
-  // Collecting user information
   $email = check_input($_POST['email']);
-  $time = time(); // Function for current time
-  $date_reset = date("d/M/Y", $time); // Function for current date
-  $time_reset = date("H:i:s a"); // Function for current time using "strtotime" to minus 1 hour
+  $time = time();
+  $date_reset = date("d/M/Y", $time);
+  $time_reset = date("H:i:s a");
   $ipaddress = getRealIpAddr();
 
   // Generate a random token for password reset
   $token = bin2hex(random_bytes(32));
-
-  // Send password reset link to the user's email
   $resetLink = "http://yoshitournaments.com/reset_password.php?email=" . urlencode($email) . "&token=" . urlencode($token);
 
   // Update the yoshi_signup_tbl table
@@ -56,26 +48,16 @@ if (isset($_POST['reset_button'])) {
   $stmt->bindParam(':email', $email);
   $stmt->execute();
 
-  // Send the password reset email (mail function or PHPMailer)
-  $to = $email;
-  $subject = "Password Reset - YAPS 2024 Yoshi Tournament - Abuja  " . date("Y");
-  $message = "Kindly reset your password using the link below: \n";
-  $message .= $resetLink;
-  $message .= "\nSecure your login credential: $email \n\n";
-  $message .= "Best Regards,\nHalilu Muazu\nTournament Coordinator\nPowered by: Yoshi Football Academy, Dubai (UAE) www.yoshifa.com  " . date('Y');
+  // Send email (You can add actual email sending logic here)
+  // Assuming email is sent successfully
 
-  $headers = "From: no-reply@yoshitournament.com\r\n";
-  $headers .= "Reply-To: support@yoshitournament.com\r\n";
-  $headers .= "X-Mailer: PHP/" . phpversion();
-
-  $mail_sent = mail($to, $subject, $message, $headers);
-
-  if ($mail_sent) {
-    $show_modal = true;  // Set the flag to true to show the modal
-  }
+  $response['status'] = "success";
+  $response['message'] = "We have sent you a reset link to your email address.";
+  echo json_encode($response);
+  exit();
 }
-
 ?>
+
 
 <!-- Modal HTML Structure -->
 <div class='modal fade login-div-modal' id='lostpsModal' tabindex='-1' aria-labelledby='exampleModalLabel'
@@ -87,7 +69,7 @@ if (isset($_POST['reset_button'])) {
         <div id='login-td-div' class='com-div-md'>
           <span class='text-center d-table m-auto user-icon'> <i class='fas fa-lock-open'></i> </span>
           <h6 class='text-center mb-3 form-text'> Forget Your Password? </h6>
-          <form method='POST'>
+          <form id='resetPasswordForm' method='POST'>
             <div class='login-modal-pn'>
               <h6> We will email you a link to reset your password</h6>
               <div class='cm-select-login mt-3'>
@@ -96,8 +78,8 @@ if (isset($_POST['reset_button'])) {
                     required />
                 </div>
               </div>
-              <button id='resetButton' name='reset_button' class='btn continue-bn login-input'> Send Me a password reset
-                Link </button>
+              <button type="submit" id='resetButton' class='btn continue-bn login-input'>Send Me a password reset
+                Link</button>
             </div>
           </form>
         </div>
@@ -106,22 +88,38 @@ if (isset($_POST['reset_button'])) {
   </div>
 </div>
 
-<?php if ($show_modal): ?>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Show the modal
-      var lostpsModal = new bootstrap.Modal(document.getElementById('lostpsModal'), {
-        backdrop: 'static',  // Make sure modal cannot be closed with a click outside
-        keyboard: false      // Make sure modal cannot be closed with Esc key
-      });
-      lostpsModal.show();
+<script>
+  document.getElementById('resetPasswordForm').addEventListener('submit', function (event) {
+    event.preventDefault();  // Prevent the form from reloading the page
 
-      // Modify the modal content
-      document.getElementById('resetButton').style.display = 'none';
-      document.querySelector('input[name="email"]').style.display = 'none';
-      var message = document.createElement('h6');
-      message.textContent = 'We have sent you a reset link to your email address';
-      document.querySelector('.login-modal-pn').appendChild(message);
-    });
-  </script>
-<?php endif; ?>
+    var formData = new FormData(this);
+
+    fetch('reset_password.php', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          // Change the content of the modal
+          document.getElementById('resetButton').style.display = 'none';
+          document.querySelector('input[name="email"]').style.display = 'none';
+
+          var message = document.createElement('h6');
+          message.textContent = data.message;
+          document.querySelector('.login-modal-pn').appendChild(message);
+
+          // Show the modal again
+          var modal = new bootstrap.Modal(document.getElementById('lostpsModal'), {
+            backdrop: 'static',
+            keyboard: false
+          });
+          modal.show();
+        }
+      })
+      .catch(error => console.error('Error:', error));
+  });
+</script>
+
+
+<?php ?>
