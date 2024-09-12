@@ -158,7 +158,7 @@ if (isset($_POST['reset_button'])) {
 
 <script>
   document.getElementById('resetButton').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent page reload
+
     var emailInput = document.querySelector('input[name="email"]');
     var resetButton = document.getElementById('resetButton');
     var message = document.createElement('h6');
