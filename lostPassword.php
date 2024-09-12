@@ -98,11 +98,15 @@ if (isset($_POST['reset_button'])) {
 
 
 
+
+
   // Uncomment the code above and configure it with your email settings to send the password reset link
 
 }
 
 ?>
+
+
 <div class='modal fade login-div-modal' id='lostpsModal' tabindex='-1' aria-labelledby='exampleModalLabel'
   aria-hidden='true'>
   <div class='modal-dialog'>
@@ -140,7 +144,7 @@ if (isset($_POST['reset_button'])) {
 
 
 
-<script>
+<!-- <script>
   document.getElementById('resetButton').addEventListener('click', function () {
     var emailInput = document.querySelector('input[name="email"]');
     var resetButton = document.getElementById('resetButton');
@@ -149,6 +153,23 @@ if (isset($_POST['reset_button'])) {
     resetButton.style.display = 'none';
     emailInput.style.display = 'none';
     resetButton.parentNode.appendChild(message);
+  });
+</script> -->
+
+<script>
+  document.getElementById('resetButton').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent page reload
+    var emailInput = document.querySelector('input[name="email"]');
+    var resetButton = document.getElementById('resetButton');
+    var message = document.createElement('h6');
+    message.textContent = 'We have sent you a reset link to your email address';
+    resetButton.style.display = 'none';
+    emailInput.style.display = 'none';
+    resetButton.parentNode.appendChild(message);
+
+    // Show the modal again
+    var modal = document.getElementById('lostpsModal');
+    modal.style.display = 'block';
   });
 </script>
 <?php ?>
