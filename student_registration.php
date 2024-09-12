@@ -331,12 +331,12 @@ if (isset($_POST['complete_registration'])) {
   </script>
 
 
-  <!-- Javascript for Team Logo display -->
+  <!-- Javascript for student Id Card to display -->
   <script type="text/javascript">
     function onFileSelectedLogo(event) {
       var selectedFileLogo = event.target.files[0];
       var reader_logo = new FileReader();
-      var imgtag_logo = document.getElementById("teamImage");
+      var imgtag_logo = document.getElementById("student_id_upload");
       imgtag_logo.title = selectedFileLogo.name;
       reader_logo.onload = function (event) {
         teamImage.src = event.target.result;
@@ -582,6 +582,22 @@ if (isset($_POST['complete_registration'])) {
                                 echo $id_number;
                               } ?>" required>
                             <div class="wizard-form-error"></div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <fieldset>
+                              <label> Upload Student ID<sup style="color: red !important;">*</sup> </label> </label>
+                              <p style="font-size: 12px;">Note:<sup style="color: red !important;">*</sup> Image size:
+                                300KB, jpg, jpeg, png</p>
+                              <img style="height:50%;width: 50%;" class="my-select passport_frame"
+                                id="student_id_upload">
+                              <input type="file" name="student_id_upload" onchange="onFileSelected(event);"
+                                class="form-control wizard-required file_input" style="border-radius: 10px 10px;"
+                                required>
+                              <div class="wizard-form-error"></div>
+                            </fieldset>
                           </div>
                         </div>
 
