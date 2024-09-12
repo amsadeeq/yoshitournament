@@ -10,13 +10,23 @@ $newPassword = $data['newPassword'] ?? '';
 
 $response = ['success' => false];
 
+
+
 if ($email && $newPassword) {
     // Hash the new password
-    $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+    $hashedPassword = md5($newPassword);
 
-    // Update the password in the database
-    $stmt = $pdo->prepare("UPDATE yoshi_signup_tbl SET user_password = :password WHERE user_email = :email");
+    // Generate time_reset and date_reset
+    $time = time();//function for current time
+    $dateReset = date("d/M/Y", $time);//function for current date
+    $timeReset = date("H:i:s a");//function for current time using "strtotime" to minus 1hour
+
+
+    // Update the password, time_reset, and date_reset in the database
+    $stmt = $pdo->prepare("UPDATE yoshi_signup_tbl SET user_password = :password, time_reset = :timeReset, date_reset = :dateReset WHERE user_email = :email");
     $stmt->bindParam(':password', $hashedPassword);
+    $stmt->bindParam(':timeReset', $timeReset);
+    $stmt->bindParam(':dateReset', $dateReset);
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
