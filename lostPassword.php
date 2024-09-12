@@ -57,9 +57,9 @@ if (isset($_POST['reset_button'])) {
 
   // Update the yoshi_signup_tbl table
   $stmt = $pdo->prepare("UPDATE yoshi_signup_tbl SET time_reset = :time_reset, reset_code = :reset_code, date_reset = :date_reset WHERE user_email = :email");
-  $stmt->bindParam(':time_reset', $time_create);
+  $stmt->bindParam(':time_reset', $date_reset);
   $stmt->bindParam(':reset_code', $token);
-  $stmt->bindParam(':date_reset', $date_create);
+  $stmt->bindParam(':date_reset', $date_reset);
   $stmt->bindParam(':email', $email);
   $stmt->execute();
 
