@@ -127,7 +127,7 @@ if (isset($_POST['complete_registration'])) {
   $img2 = trim($_FILES['student_id_upload']['name']);
   $imgsize2 = $_FILES['student_id_upload']['size'];
   $imgloc2 = $_FILES['student_id_upload']['tmp_name'];
-  $Extention2 = explode(".", $img1);
+  $Extention2 = explode(".", $img2);
   $imgExtention2 = strtolower(end($Extention2));
   $imgname2 = (str_replace("/", "", $TeamRefNumber)) . "." . $imgExtention2;
 
@@ -145,8 +145,8 @@ if (isset($_POST['complete_registration'])) {
   if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
     if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention3 == "jpeg" or $imgExtention3 == "png" or $imgExtention3 == "jpg") {
       if ($imgsize1 <= 3145728 && $imgsize3 <= 3145728) {
-        move_uploaded_file($imgloc1, "schools/student_id/" . $imgname1);
-        move_uploaded_file($imgloc2, "schools/student_id/" . $imgname3);
+        move_uploaded_file($imgloc1, "schools/student_photo/" . $imgname1);
+        move_uploaded_file($imgloc3, "schools/student_id/" . $imgname3);
 
 
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
