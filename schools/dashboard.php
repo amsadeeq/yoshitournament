@@ -434,15 +434,15 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
             <!-- ========== title-wrapper start ========== -->
             <div class="title-wrapper pt-30">
               <div class="row align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-8">
                   <div class="title">
-                    <h2> <img class="mx-auto next_match_logo" src="<?php echo "school_logo/" . $image_logo; ?>"
-                        alt="<?php echo $team_name . "Passport Port"; ?>">&nbsp;&nbsp;<?php echo $team_name; ?></h2>
+                    <h4> <img class="mx-auto next_match_logo" src="<?php echo "school_logo/" . $image_logo; ?>"
+                        alt="<?php echo $team_name . "Passport Port"; ?>">&nbsp;&nbsp;<?php echo $team_name; ?></h4>
 
                   </div>
                 </div>
                 <!-- end col -->
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="breadcrumb-wrapper">
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
@@ -505,14 +505,13 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                 <!-- End Icon Cart -->
               </div>
               <!-- End Col -->
-              <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="col-xl-3 col-lg-4 col-sm-6 justify-content-between">
+                <div class="content">
+                  <h6 class="mb-25">Share Reference Link</h6>
+                  <h6 class="text-wrap mb-10">https://yoshifa...</h6>
+
+                </div>
                 <div class="icon-card mb-30">
-
-                  <div class="content">
-                    <h6 class="mb-25">Share Reference Link</h6>
-                    <h6 class="text-wrap mb-10">https://yoshifa...</h6>
-
-                  </div>
                   <div class="icon orange" onclick="shareLink()">
                     <i class="lni lni-share"></i>
                   </div>
