@@ -19,8 +19,7 @@
                     id='emailInput' required />
                 </div>
               </div>
-              <button type="submit" id='resetButton' class='btn continue-bn login-input'>Send Me a Password Reset
-                Link</button>
+              <button type="submit" id='resetButton' class='btn continue-bn login-input'>Check your email</button>
             </div>
           </form>
         </div>
