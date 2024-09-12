@@ -584,10 +584,10 @@ if (isset($_POST["complete_register"])) {
 
                               <option value="National Identification Number">National Identification Number(NIN)
                               </option>
-                              <option value="Driver's License">Driver's License</option>
+                              <option value="Drivers License">Driver's License</option>
                               <option value="International Passport">International Passport</option>
                               <option value="Office ID">Office ID</option>
-                              <option value="Voter's Card">Voter's Card</option>
+                              <option value="Voters Card">Voter's Card</option>
 
                             </select>
                           </div>

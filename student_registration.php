@@ -124,20 +124,29 @@ if (isset($_POST['complete_registration'])) {
 
 
   //team logo upload manipulations
-  $img2 = trim($_FILES['team_logo']['name']);
-  $imgsize2 = $_FILES['team_logo']['size'];
-  $imgloc2 = $_FILES['team_logo']['tmp_name'];
+  $img2 = trim($_FILES['student_id_upload']['name']);
+  $imgsize2 = $_FILES['student_id_upload']['size'];
+  $imgloc2 = $_FILES['student_id_upload']['tmp_name'];
   $Extention2 = explode(".", $img1);
   $imgExtention2 = strtolower(end($Extention2));
   $imgname2 = (str_replace("/", "", $TeamRefNumber)) . "." . $imgExtention2;
 
 
+  //student id upload manipulations
+  $img3 = trim($_FILES['student_id_upload']['name']);
+  $imgsize3 = $_FILES['student_id_upload']['size'];
+  $imgloc3 = $_FILES['student_id_upload']['tmp_name'];
+  $Extention3 = explode(".", $img3);
+  $imgExtention3 = strtolower(end($Extention3));
+  $imgname3 = (str_replace("/", "", $userRefCode)) . "." . $imgExtention3;
+
+
 
   if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
-    if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention2 == "jpeg" or $imgExtention2 == "png" or $imgExtention2 == "jpg") {
-      if ($imgsize1 <= 3145728 && $imgsize2 <= 3145728) {
-        move_uploaded_file($imgloc1, "schools/student_photo/" . $imgname1);
-        //move_uploaded_file($team_logo_tmp, "team_logos/" . $team_logo_name);
+    if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention3 == "jpeg" or $imgExtention3 == "png" or $imgExtention3 == "jpg") {
+      if ($imgsize1 <= 3145728 && $imgsize3 <= 3145728) {
+        move_uploaded_file($imgloc1, "schools/student_id/" . $imgname1);
+        move_uploaded_file($imgloc2, "schools/student_id/" . $imgname3);
 
 
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -147,7 +156,7 @@ if (isset($_POST['complete_registration'])) {
 
         // Insert data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `means_id`, `id_number`, `address`, `team_name`,`category`, `player_position`, `jersy_number`,`team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `emergency_name`, `emergency_phone`, `emergency_email`, `emergency_address`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email,:means_id,:id_number, :address, :team_name, :category, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo,:emergency_name,:emergency_phone,:emergency_email,:emergency_address, :time_create, :date_create, :ip_address)");
+        $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `means_id`, `id_number`,`student_id_photo`, `address`, `team_name`,`category`, `player_position`, `jersy_number`,`team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `emergency_name`, `emergency_phone`, `emergency_email`, `emergency_address`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email,:means_id,:id_number,:student_id_photo, :address, :team_name, :category, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo,:emergency_name,:emergency_phone,:emergency_email,:emergency_address, :time_create, :date_create, :ip_address)");
 
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
@@ -166,6 +175,7 @@ if (isset($_POST['complete_registration'])) {
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':means_id', $means_id);
         $stmt->bindParam(':id_number', $id_number);
+        $stmt->bindParam(':student_id_photo', $imgname3);
         $stmt->bindParam(':address', $address);
         $stmt->bindParam(':team_name', $team_name);
         $stmt->bindParam(':category', $category);
@@ -331,19 +341,7 @@ if (isset($_POST['complete_registration'])) {
   </script>
 
 
-  <!-- Javascript for Team Logo display -->
-  <script type="text/javascript">
-    function onFileSelectedStudent(event) {
-      var selectedFileID = event.target.files[0];
-      var reader_logo = new FileReader();
-      var imgtag_logo = document.getElementById("student_id_upload");
-      imgtag_logo.title = selectedFileID.name;
-      reader_logo.onload = function (event) {
-        teamImage.src = event.target.result;
-      };
-      reader_logo.readAsDataURL(selectedFileID);
-    }
-  </script>
+
 
   <!-- Javascript for Team Logo display -->
   <script type="text/javascript">
@@ -604,13 +602,15 @@ if (isset($_POST['complete_registration'])) {
                           <div class="form-group">
                             <!-- HTML code -->
                             <fieldset>
-                              <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Team logo
-                                must be white background ] </p>
+                              <label> Upload Student ID<sup style="color: red !important;">*</sup> </label> </label>
+
                               <!-- <legend>Team Logo</legend> -->
                               <img style="height:10%;width: 45%;" class="my-select" id="teamImage">
-                              <input type="file" name="team_logo" onchange="onFileSelectedLogo(event);"
+                              <input type="file" name="student_id_upload" onchange="onFileSelectedLogo(event);"
                                 class="form-control wizard-required" style="border-radius: 10px 10px;"
                                 accept="image/jpeg, image/png" required>
+                              <p style="font-size: 12px;">Note:<sup style="color: red !important;">*</sup> Image size:
+                                300KB, jpg, jpeg, png</p>
                               <div class="wizard-form-error"></div>
                               <progress id="logoProgressBar" value="0" max="100" style="display: none;"></progress>
                             </fieldset>
@@ -618,21 +618,7 @@ if (isset($_POST['complete_registration'])) {
                           </div>
                         </div>
 
-                        <div class="col-lg-6">
-                          <div class="form-group">
-                            <fieldset>
-                              <label> Upload Student ID<sup style="color: red !important;">*</sup> </label> </label>
 
-                              <img style="height:50%;width: 50%;" class="my-select" id="student_id_upload">
-                              <input type="file" name="student_id_upload" onchange="onFileSelectedStudent(event);"
-                                class="form-control wizard-required file_input" style="border-radius: 10px 10px;"
-                                required>
-                              <p style="font-size: 12px;">Note:<sup style="color: red !important;">*</sup> Image size:
-                                300KB, jpg, jpeg, png</p>
-                              <div class="wizard-form-error"></div>
-                            </fieldset>
-                          </div>
-                        </div>
 
                         <div class="col-lg-6">
                           <div class="form-group">
