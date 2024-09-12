@@ -334,14 +334,14 @@ if (isset($_POST['complete_registration'])) {
   <!-- Javascript for Team Logo display -->
   <script type="text/javascript">
     function onFileSelectedStudent(event) {
-      var selectedFileLogo = event.target.files[0];
+      var selectedFileID = event.target.files[0];
       var reader_logo = new FileReader();
       var imgtag_logo = document.getElementById("student_id_upload");
-      imgtag_logo.title = selectedFileLogo.name;
+      imgtag_logo.title = selectedFileID.name;
       reader_logo.onload = function (event) {
         teamImage.src = event.target.result;
       };
-      reader_logo.readAsDataURL(selectedFileLogo);
+      reader_logo.readAsDataURL(selectedFileID);
     }
   </script>
 
@@ -590,8 +590,7 @@ if (isset($_POST['complete_registration'])) {
                             <fieldset>
                               <label> Upload Student ID<sup style="color: red !important;">*</sup> </label> </label>
 
-                              <img style="height:50%;width: 50%;" class="my-select passport_frame"
-                                id="student_id_upload">
+                              <img style="height:50%;width: 50%;" class="my-select" id="student_id_upload">
                               <input type="file" name="student_id_upload" onchange="onFileSelectedStudent(event);"
                                 class="form-control wizard-required file_input" style="border-radius: 10px 10px;"
                                 required>
