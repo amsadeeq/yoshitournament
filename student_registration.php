@@ -868,7 +868,7 @@ if (isset($_POST['complete_registration'])) {
                               <label> Emergency Address<sup style="color: red !important;">*</sup> </label>
                               <textarea rows="4" class="form-control" name="emergency_address" value="<?php if (isset($emergency_address)) {
                                 echo $emergency_address;
-                              } ?>" placeholder="e.g 08167913802" required></textarea>
+                              } ?>" placeholder="Address" required></textarea>
                             </div>
                           </div>
 
