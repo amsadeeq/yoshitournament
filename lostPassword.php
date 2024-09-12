@@ -64,7 +64,9 @@ if (isset($_POST['reset_button'])) {
   aria-hidden='true'>
   <div class='modal-dialog'>
     <div class='modal-content'>
-      <div class='modal-header'></div>
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
       <div class='modal-body'>
         <div id='login-td-div' class='com-div-md'>
           <span class='text-center d-table m-auto user-icon'> <i class='fas fa-lock-open'></i> </span>
