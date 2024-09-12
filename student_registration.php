@@ -336,7 +336,7 @@ if (isset($_POST['complete_registration'])) {
     function onFileSelectedStudent(event) {
       var selectedFileLogo = event.target.files[0];
       var reader_logo = new FileReader();
-      var imgtag_logo = document.getElementById("teamImage");
+      var imgtag_logo = document.getElementById("student_id_upload");
       imgtag_logo.title = selectedFileLogo.name;
       reader_logo.onload = function (event) {
         teamImage.src = event.target.result;
