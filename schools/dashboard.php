@@ -506,12 +506,13 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
               </div>
               <!-- End Col -->
               <div class="col-xl-3 col-lg-4 col-sm-6 justify-content-between">
-                <div class="content">
-                  <h6 class="mb-25">Share Reference Link</h6>
-                  <h6 class="text-wrap mb-10">https://yoshifa...</h6>
-
-                </div>
                 <div class="icon-card mb-30">
+
+                  <div class="content">
+                    <h6 class="mb-25">Share Reference Link</h6>
+                    <h6 class="text-wrap mb-10">https://yoshifa...</h6>
+
+                  </div>
                   <div class="icon orange" onclick="shareLink()">
                     <i class="lni lni-share"></i>
                   </div>
