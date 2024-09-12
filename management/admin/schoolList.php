@@ -133,6 +133,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                   <a href="#" style="color: red !important;"
                                     onclick="deleteSchool('<?php echo $teamRefNumber; ?>')"><i
                                       class="fa fa-trash"></i></a>
+
                                 </td>
                               </tr>
                               <?php
@@ -274,6 +275,29 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
     <!-- /footer content -->
   </div>
   </div>
+
+  <script>
+    function deleteSchool(teamRefNumber) {
+      // Confirm with the user before deleting the record
+      if (confirm("Are you sure you want to delete this school?")) {
+        // Send an AJAX request to delete the record
+        $.ajax({
+          url: 'deleteSchool.php',
+          type: 'POST',
+          data: { teamRefNumber: teamRefNumber },
+          success: function (response) {
+            // Reload the page after successful deletion
+            location.reload();
+          },
+          error: function (xhr, status, error) {
+            // Handle the error if the deletion fails
+            console.log(error);
+          }
+        });
+      }
+    }
+  </script>
+
 
   <!-- jQuery -->
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
