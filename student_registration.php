@@ -580,7 +580,7 @@ if (isset($_POST['complete_registration'])) {
                             <input type="text" class="form-control wizard-required" placeholder="123456789"
                               name="id_number" value="<?php if (isset($id_number)) {
                                 echo $id_number;
-                              } ?>" required>
+                              } ?>">
                             <div class="wizard-form-error"></div>
                           </div>
                         </div>
