@@ -469,7 +469,7 @@ if (isset($_POST["complete_register"])) {
                           <div class="form-group">
                             <!-- HTML code -->
                             <fieldset>
-                              <label>Passport Photo<sup style="color: red !important;">*</sup></label>
+                              <label>Photo<sup style="color: red !important;">*</sup></label>
                               <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Image size:
                                 300KB, jpg, jpeg, png ] </p>
                               <img style="height:50%; width: 50%;" class="my-select" id="image">
