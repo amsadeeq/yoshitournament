@@ -73,7 +73,6 @@ if (isset($_POST['reset_button'])) {
   if ($mail_sent) {
     $show_modal = true;  // Set the flag to true to show the modal
   }
-
 }
 
 ?>
@@ -109,8 +108,15 @@ if (isset($_POST['reset_button'])) {
 
 <?php if ($show_modal): ?>
   <script>
-    $(document).ready(function () {
-      $('#lostpsModal').modal('show');
+    document.addEventListener('DOMContentLoaded', function () {
+      // Show the modal
+      var lostpsModal = new bootstrap.Modal(document.getElementById('lostpsModal'), {
+        backdrop: 'static',  // Make sure modal cannot be closed with a click outside
+        keyboard: false      // Make sure modal cannot be closed with Esc key
+      });
+      lostpsModal.show();
+
+      // Modify the modal content
       document.getElementById('resetButton').style.display = 'none';
       document.querySelector('input[name="email"]').style.display = 'none';
       var message = document.createElement('h6');
