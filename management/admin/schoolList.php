@@ -127,7 +127,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                 <td>
                                   <a href="#" style="color: green !important;"
                                     onclick="viewSchool('<?php echo $teamRefNumber; ?>')"><i class="fa fa-eye"></i></a> |
-                                  <a href="#" style="color: yellow !important;"
+                                  <a href="#" style="color: brown !important;"
                                     onclick="editSchool('<?php echo $teamRefNumber; ?>')"><i class="fa fa-pencil"></i></a>
                                   |
                                   <a href="#" style="color: red !important;"
