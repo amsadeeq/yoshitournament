@@ -1,65 +1,3 @@
-<?php
-
-session_start();
-ob_start();
-
-require 'connection.php';
-
-$response = [];
-
-if (isset($_POST['reset_button'])) {
-
-  // Sanitize inputs
-  function check_input($data)
-  {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    $data = htmlentities($data);
-    return $data;
-  }
-
-  function getRealIpAddr()
-  {
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-      return $_SERVER['HTTP_CLIENT_IP'];
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-      return $_SERVER['HTTP_X_FORWARDED_FOR'];
-    } else {
-      return $_SERVER['REMOTE_ADDR'];
-    }
-  }
-
-  $email = check_input($_POST['email']);
-  $time = time();
-  $date_reset = date("d/M/Y", $time);
-  $time_reset = date("H:i:s a");
-  $ipaddress = getRealIpAddr();
-
-  // Generate a random token for password reset
-  $token = bin2hex(random_bytes(32));
-  $resetLink = "http://yoshitournaments.com/reset_password.php?email=" . urlencode($email) . "&token=" . urlencode($token);
-
-  // Update the yoshi_signup_tbl table
-  $stmt = $pdo->prepare("UPDATE yoshi_signup_tbl SET time_reset = :time_reset, reset_code = :reset_code, date_reset = :date_reset WHERE user_email = :email");
-  $stmt->bindParam(':time_reset', $time_reset);
-  $stmt->bindParam(':reset_code', $token);
-  $stmt->bindParam(':date_reset', $date_reset);
-  $stmt->bindParam(':email', $email);
-  $stmt->execute();
-
-  // Send email (You can add actual email sending logic here)
-  // Assuming email is sent successfully
-
-  $response['status'] = "success";
-  $response['message'] = "We have sent you a reset link to your email address.";
-  echo json_encode($response);
-  exit();
-}
-?>
-
-
-<!-- Modal HTML Structure -->
 <div class='modal fade login-div-modal' id='lostpsModal' tabindex='-1' aria-labelledby='exampleModalLabel'
   aria-hidden='true'>
   <div class='modal-dialog'>
@@ -68,20 +6,42 @@ if (isset($_POST['reset_button'])) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class='modal-body'>
-        <div id='login-td-div' class='com-div-md'>
+        <!-- Initial Email Form -->
+        <div id='emailFormDiv' class='com-div-md'>
           <span class='text-center d-table m-auto user-icon'> <i class='fas fa-lock-open'></i> </span>
-          <h6 class='text-center mb-3 form-text'> Forget Your Password? </h6>
-          <form id='resetPasswordForm' method='POST'>
+          <h6 class='text-center mb-3 form-text'>Forget Your Password?</h6>
+          <form id='resetPasswordForm'>
             <div class='login-modal-pn'>
-              <h6> We will email you a link to reset your password</h6>
+              <h6>We will email you a link to reset your password</h6>
               <div class='cm-select-login mt-3'>
                 <div class='phone-div'>
                   <input type='email' class='form-control login-input' placeholder='Enter Your Email' name='email'
-                    required />
+                    id='emailInput' required />
                 </div>
               </div>
-              <button type="submit" id='resetButton' class='btn continue-bn login-input'>Send Me a password reset
+              <button type="submit" id='resetButton' class='btn continue-bn login-input'>Send Me a Password Reset
                 Link</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Hidden Password Reset Form -->
+        <div id='passwordResetDiv' class='com-div-md' style="display: none;">
+          <span class='text-center d-table m-auto user-icon'> <i class='fas fa-lock'></i> </span>
+          <h6 class='text-center mb-3 form-text'>Reset Your Password</h6>
+          <form id='passwordResetForm'>
+            <div class='login-modal-pn'>
+              <div class='cm-select-login mt-3'>
+                <div class='phone-div'>
+                  <input type='password' class='form-control login-input' placeholder='Enter New Password'
+                    id='newPassword' required />
+                </div>
+                <div class='phone-div mt-3'>
+                  <input type='password' class='form-control login-input' placeholder='Confirm New Password'
+                    id='confirmPassword' required />
+                </div>
+              </div>
+              <button type="submit" id='confirmResetButton' class='btn continue-bn login-input'>Reset Password</button>
             </div>
           </form>
         </div>
@@ -91,37 +51,83 @@ if (isset($_POST['reset_button'])) {
 </div>
 
 <script>
-  document.getElementById('resetPasswordForm').addEventListener('submit', function (event) {
-    event.preventDefault();  // Prevent the form from reloading the page
+  document.addEventListener('DOMContentLoaded', function () {
+    const emailForm = document.getElementById('resetPasswordForm');
+    const passwordResetForm = document.getElementById('passwordResetForm');
+    const emailInput = document.getElementById('emailInput');
+    const emailFormDiv = document.getElementById('emailFormDiv');
+    const passwordResetDiv = document.getElementById('passwordResetDiv');
+    const newPasswordInput = document.getElementById('newPassword');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
 
-    var formData = new FormData(this);
+    // Handle email form submission
+    emailForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const email = emailInput.value;
 
-    fetch('reset_password.php', {
-      method: 'POST',
-      body: formData
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 'success') {
-          // Change the content of the modal
-          document.getElementById('resetButton').style.display = 'none';
-          document.querySelector('input[name="email"]').style.display = 'none';
-
-          var message = document.createElement('h6');
-          message.textContent = data.message;
-          document.querySelector('.login-modal-pn').appendChild(message);
-
-          // Show the modal again
-          var modal = new bootstrap.Modal(document.getElementById('lostpsModal'), {
-            backdrop: 'static',
-            keyboard: false
-          });
-          modal.show();
-        }
+      // Perform an AJAX call to verify the email from the backend
+      fetch('check_email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email })
       })
-      .catch(error => console.error('Error:', error));
+        .then(response => response.json())
+        .then(data => {
+          if (data.exists) {
+            // Email exists, proceed to show the password reset fields
+            emailFormDiv.style.display = 'none';
+            passwordResetDiv.style.display = 'block';
+          } else {
+            alert('Email not found.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+    // Handle password reset form submission
+    passwordResetForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const newPassword = newPasswordInput.value;
+      const confirmPassword = confirmPasswordInput.value;
+
+      if (newPassword !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      if (newPassword.length < 8) {
+        alert('Password must be at least 8 characters long');
+        return;
+      }
+
+      // Perform an AJAX call to reset the password
+      fetch('reset_password.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: emailInput.value,
+          newPassword: newPassword
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Password reset successful!');
+            $('#lostpsModal').modal('hide'); // Close current modal
+            $('#loginModal').modal('show'); // Show login modal
+          } else {
+            alert('Password reset failed. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
   });
 </script>
-
-
-<?php ?>
