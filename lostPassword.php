@@ -172,4 +172,5 @@ if (isset($_POST['reset_button'])) {
     modal.style.display = 'block';
   });
 </script>
+<script>$('#lostpsModal').modal('show');</script>
 <?php ?>
