@@ -65,6 +65,7 @@
       event.preventDefault();
       const email = emailInput.value;
 
+
       // Perform an AJAX call to verify the email from the backend
       fetch('check_email.php', {
         method: 'POST',
@@ -91,8 +92,15 @@
     // Handle password reset form submission
     passwordResetForm.addEventListener('submit', function (event) {
       event.preventDefault();
-      const newPassword = newPasswordInput.value;
-      const confirmPassword = confirmPasswordInput.value;
+
+
+
+      // Trim the values to remove any spaces before or after the input
+      const newPassword = newPasswordInput.value.trim();
+      const confirmPassword = confirmPasswordInput.value.trim();
+
+      // const newPassword = newPasswordInput.value;
+      // const confirmPassword = confirmPasswordInput.value;
 
       if (newPassword !== confirmPassword) {
         alert('Passwords do not match!');
