@@ -509,7 +509,7 @@ $playerMatchHistory = $stmtMatchHistory->fetchAll(PDO::FETCH_ASSOC);
                 <div class="icon-card mb-30">
 
                   <div class="content">
-                    <h6 class="mb-25">Share Reference Link</h6>
+                    <h6 class="mb-25">Share Ref. Link</h6>
                     <h6 class="text-wrap mb-10">https://yoshifa...</h6>
 
                   </div>
