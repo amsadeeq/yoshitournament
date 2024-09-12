@@ -92,6 +92,9 @@ if (isset($_POST['reset_button'])) {
   // Send the email
   $mail_sent = mail($to, $subject, $message, $headers);
 
+  echo "<script>$('#lostpsModal').modal('show');</script>";
+  exit();
+
 
 
 
@@ -134,6 +137,8 @@ if (isset($_POST['reset_button'])) {
     </div>
   </div>
 </div>
+
+
 
 <script>
   document.getElementById('resetButton').addEventListener('click', function () {
