@@ -589,13 +589,14 @@ if (isset($_POST['complete_registration'])) {
                           <div class="form-group">
                             <fieldset>
                               <label> Upload Student ID<sup style="color: red !important;">*</sup> </label> </label>
-                              <p style="font-size: 12px;">Note:<sup style="color: red !important;">*</sup> Image size:
-                                300KB, jpg, jpeg, png</p>
+
                               <img style="height:50%;width: 50%;" class="my-select passport_frame"
                                 id="student_id_upload">
                               <input type="file" name="student_id_upload" onchange="onFileSelected(event);"
                                 class="form-control wizard-required file_input" style="border-radius: 10px 10px;"
                                 required>
+                              <p style="font-size: 12px;">Note:<sup style="color: red !important;">*</sup> Image size:
+                                300KB, jpg, jpeg, png</p>
                               <div class="wizard-form-error"></div>
                             </fieldset>
                           </div>
