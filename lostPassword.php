@@ -102,10 +102,10 @@
       // const newPassword = newPasswordInput.value;
       // const confirmPassword = confirmPasswordInput.value;
 
-      if (newPassword !== confirmPassword) {
-        alert('Passwords do not match!');
-        return;
-      }
+      // if (newPassword !== confirmPassword) {
+      //   alert('Passwords do not match!');
+      //   return;
+      // }
 
       if (newPassword.length < 8) {
         alert('Password must be at least 8 characters long');
