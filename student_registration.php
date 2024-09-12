@@ -345,6 +345,20 @@ if (isset($_POST['complete_registration'])) {
     }
   </script>
 
+  <!-- Javascript for Team Logo display -->
+  <script type="text/javascript">
+    function onFileSelectedLogo(event) {
+      var selectedFileLogo = event.target.files[0];
+      var reader_logo = new FileReader();
+      var imgtag_logo = document.getElementById("teamImage");
+      imgtag_logo.title = selectedFileLogo.name;
+      reader_logo.onload = function (event) {
+        teamImage.src = event.target.result;
+      };
+      reader_logo.readAsDataURL(selectedFileLogo);
+    }
+  </script>
+
 
 
 
@@ -582,6 +596,25 @@ if (isset($_POST['complete_registration'])) {
                                 echo $id_number;
                               } ?>" required>
                             <div class="wizard-form-error"></div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <!-- HTML code -->
+                            <fieldset>
+                              <p style="font-size: 12px;">[ Note:<sup style="color: red !important;">*</sup> Team logo
+                                must be white background ] </p>
+                              <!-- <legend>Team Logo</legend> -->
+                              <img style="height:10%;width: 45%;" class="my-select" id="teamImage">
+                              <input type="file" name="team_logo" onchange="onFileSelectedLogo(event);"
+                                class="form-control wizard-required" style="border-radius: 10px 10px;"
+                                accept="image/jpeg, image/png" required>
+                              <div class="wizard-form-error"></div>
+                              <progress id="logoProgressBar" value="0" max="100" style="display: none;"></progress>
+                            </fieldset>
+
                           </div>
                         </div>
 
