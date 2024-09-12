@@ -97,6 +97,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                               <th>Team Address</th>
                               <th>Phone</th>
                               <th>Email</th>
+                              <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -123,10 +124,19 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $school['team_address']; ?></td>
                                 <td><?php echo $school['phone']; ?></td>
                                 <td><?php echo $school['email']; ?></td>
+                                <td>
+                                  <a href="#" onclick="viewSchool('<?php echo $teamRefNumber; ?>')"><i
+                                      class="fa fa-eye"></i></a>
+                                  <a href="#" onclick="editSchool('<?php echo $teamRefNumber; ?>')"><i
+                                      class="fa fa-pencil"></i></a>
+                                  <a href="#" onclick="deleteSchool('<?php echo $teamRefNumber; ?>')"><i
+                                      class="fa fa-trash"></i></a>
+                                </td>
                               </tr>
                               <?php
                             }
                             ?>
+                          </tbody>
                           </tbody>
                         </table>
                       </div>
