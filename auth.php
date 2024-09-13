@@ -13,7 +13,7 @@ require 'connection.php';
  *
  * This function is likely used to maintain the team reference number for the current player across multiple requests, as it is stored in the session.
  */
-if (isset($_SESSION['teamRefNumber']) && $_SESSION['teamRefNumber']) {
+if (isset($_SESSION['teamRefNumber'])) {
     $player_teamRefNumber = $_SESSION['teamRefNumber'];
 } else {
     $player_teamRefNumber = '';
@@ -104,8 +104,8 @@ if (isset($_POST['login'])) {
             $_SESSION['userRefNo'] = $user['userRefNo'];
             $_SESSION['user_email'] = $user['user_email'];
             $_SESSION['user_position'] = $user['user_position'];
-            $_SESSION['position'] = $user['user_position'];
-            $_SESSION['email'] = $user['user_email'];
+            //$_SESSION['position'] = $user['user_position'];
+            //$_SESSION['email'] = $user['user_email'];
             $_SESSION['teamRefNumber'] = $user['TeamRefNumber'];
             $_SESSION['welcome'] = $welcome_notify;
             // Set login status to 'passed'
@@ -217,14 +217,15 @@ if (isset($_POST['login'])) {
 
                 // User is a Player
                 $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
+
                 if ($user['reg_status'] == 1) {
                     header("Location: schools/studentDashboard.php");
                     $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
                     $_SESSION['userRefCode'] = $player_details['userRefNo'];
-                    exit;
+
                 } else {
                     header("Location: student_registration.php");
-                    exit;
+
                 }
 
                 // switch ($user['reg_status']) {

@@ -5,6 +5,9 @@ require 'connection.php';
 
 // echo $_SESSION['reg_notify'];
 $userRefCode = $_SESSION['userRefCode'];
+if (isset($_SESSION['teamRefNumber'])) {
+  $_SESSION['teamRefNumber'] = $TeamRefNumber;
+}
 
 
 if (isset($_POST["complete_register"])) {
@@ -106,7 +109,7 @@ if (isset($_POST["complete_register"])) {
 
 
   $userRefCode = $_SESSION['userRefCode'];
-  $TeamRefNumber;
+
   $position = check_input($_POST['position']); //check_input is sensitizing the input field
   $email = check_input($_POST['email']); //check_input is sensitizing the input field
   $surname = check_input($_POST['surname']); //check_input is sensitizing the input field
@@ -156,10 +159,11 @@ if (isset($_POST["complete_register"])) {
 
 
   //########## Initiating session #####################
-  $_SESSION['email'] = $email;                    //###
-  $_SESSION['position'] = $position;               //###
+  $_SESSION['user_email'] = $email;                    //###
+  $_SESSION['user_position'] = $position;               //###
   //$_SESSION['userRefCode'] = $userRefCode;
-  $_SESSION['teamRefNumber'] = $TeamRefNumber;         //###
+
+  //###
   //########## Initiating session #####################
 
 
