@@ -317,7 +317,7 @@ $userRefCode = $_SESSION['userRefCode'];
       // Simulate a delay
       setTimeout(function () {
         // Redirect to next page (replace "https://www.example.com" with your desired URL)
-        window.location.href = "index.php";
+        window.location.href = "dashboard.php";
       }, 2000);
     });
   </script>

@@ -548,8 +548,8 @@ if (isset($_POST['register'])) {
         $stmt->execute();
 
         //########## Initiating session #####################
-        $_SESSION['email'] = $email;                    //###
-        $_SESSION['position'] = $position;               //###
+        $_SESSION['user_email'] = $email;                    //###
+        $_SESSION['user_position'] = $position;               //###
         $_SESSION['userRefCode'] = $userRefCode;        //###
         //########## Initiating session #####################
 

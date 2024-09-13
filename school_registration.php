@@ -272,11 +272,11 @@ if (isset($_POST["complete_register"])) {
 
       } else {
         $image_size_error = "Please try uploading image less than 500kb";
-        echo $image_size_error;
+        // echo $image_size_error;
       }
     } else {
       $image_error = "Image supported only .jpg, .jpeg, or .png";
-      echo $image_error;
+      // echo $image_error;
     }
 
 
