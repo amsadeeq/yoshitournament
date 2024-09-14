@@ -4,6 +4,7 @@ session_start();
 ob_start();
 // Connect to the database
 require 'connection.php';
+$TeamRefNumber = $_SESSION['teamRefNumber'];
 require 'auth.php';
 
 ?>

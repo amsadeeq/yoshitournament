@@ -208,7 +208,7 @@ if (isset($_POST['register'])) {
             $_SESSION['user_position'] = $position;           //###
             $_SESSION['userRefCode'] = $userRefCode;        //###
             if (isset($_SESSION['teamRefNumber'])) {
-                $_SESSION['teamRefNumber'] = $teamRefNumber; //###
+                $_SESSION['teamRefNumber']; //###
             }
             //########## Initiating session #####################
 
