@@ -10,7 +10,7 @@ if (isset($_SESSION['last_activity'])) {
     $inactive_time = time() - $_SESSION['last_activity'];
 
     // Check if the inactive time is greater than 10 minutes (600 seconds)
-    if ($inactive_time > 60) {
+    if ($inactive_time > 1200) {
         // Destroy all session data
         session_unset();
         session_destroy();
