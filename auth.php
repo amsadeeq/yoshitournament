@@ -185,6 +185,7 @@ if (isset($_POST['login'])) {
                         //header("Location: school_registration.php");
                         $_SESSION['userRefCode'] = $school_officials['userRefNo'];
                         echo $school_officials['userRefNo'];
+                        echo "Hiiiiiiiii";
 
 
                         break;
