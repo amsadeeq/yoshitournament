@@ -4,282 +4,283 @@ ob_start();
 require 'connection.php';
 
 // Check if the last activity time is set
-if (isset($_SESSION['last_activity'])) {
-  // Calculate the time difference between the current time and the last activity time
-  $inactive_time = time() - $_SESSION['last_activity'];
+try {
+  if (isset($_SESSION['last_activity'])) {
+    // Calculate the time difference between the current time and the last activity time
+    $inactive_time = time() - $_SESSION['last_activity'];
 
-  // Check if the inactive time is greater than 20 minutes (1200 seconds)
-  if ($inactive_time > 1200) {
-    // Destroy all session data
-    session_unset();
-    session_destroy();
+    // Check if the inactive time is greater than 20 minutes (1200 seconds)
+    if ($inactive_time > 1200) {
+      // Destroy all session data
+      session_unset();
+      session_destroy();
 
-    // Redirect to index.php
-    header("Location: index.php");
-    exit();
-  }
-}
-
-// Update the last activity time
-$_SESSION['last_activity'] = time();
-
-
-
-// echo $_SESSION['reg_notify'];
-$userRefCode = $_SESSION['userRefCode'];
-if (isset($_SESSION['teamRefNumber'])) {
-  $_SESSION['teamRefNumber'] = $TeamRefNumber;
-}
-
-
-if (isset($_POST["complete_register"])) {
-
-  // Function to generate a random string of 3 capital letters
-  function generateRandomLetters()
-  {
-    $letters = '';
-    $alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
-    for ($i = 0; $i < 3; $i++) {
-      $letters .= $alphabet[rand(0, strlen($alphabet) - 1)];
+      // Redirect to index.php
+      header("Location: index.php");
+      exit();
     }
-    return $letters;
   }
 
-  // Function to generate a random string of 5 numbers
-  function generateRandomNumbers()
-  {
-    $numbers = '';
-    for ($i = 0; $i < 5; $i++) {
-      $numbers .= rand(0, 9);
-    }
-    return $numbers;
-  }
-
-  // Generate the combination
-  $letters = generateRandomLetters();
-  $numbers = generateRandomNumbers();
-  $combination = $letters . $numbers;
-
-  // Shuffle the combination
-  $combinationArray = str_split($combination);
-  shuffle($combinationArray);
-  $TeamRefNumber = implode('', $combinationArray);
-
-  // Output the result
-  $TeamRefNumber = date("Y") . $TeamRefNumber;
-
-  // Hash the unique number using md5
-  $hashedTeamRefNumber = md5($TeamRefNumber);
-
-  // Save the hashed value in another variable
-  $hashedValue = $hashedTeamRefNumber;
+  // Update the last activity time
+  $_SESSION['last_activity'] = time();
 
 
 
-
-
-
-  //function checking for malicious inputs using trim(),stripslahes(),htmlspecialchars(),htmlentities()
-  function check_input($data)
-  {
-    $data = trim($data);
-    $data = stripcslashes($data);
-    $data = htmlspecialchars($data);
-    $data = htmlentities($data);
-    return $data;
-  }
-
-  // Function to sanitize input data
-  function sanitize_input($data)
-  {
-    return htmlspecialchars(stripslashes(trim($data)));
-  }
-
-
-  //function for collecting user ip address
-  function getRealIpAddr()
-  {
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-      //check IP from internet
-      $ip = $_SERVER['HTTP_CLIENT_IP'];
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-      //check IP is passed from proxy
-      $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    } else {
-      //get IP address from remote address
-      $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
-  }
-
-  // ----------------------------------------------------------------//
-  //Collecting user information//
-
+  // echo $_SESSION['reg_notify'];
   $userRefCode = $_SESSION['userRefCode'];
-
-  $position = check_input($_POST['position']); //check_input is sensitizing the input field
-  $email = check_input($_POST['email']); //check_input is sensitizing the input field
-  $surname = check_input($_POST['surname']); //check_input is sensitizing the input field
-  $firstname = check_input($_POST['firstName']); //check_input is sensitizing the input field
-  $dob = check_input($_POST['dob']); //check_input is sensitizing the input field
-  $gender = check_input($_POST['gender']); //check_input is sensitizing the input field
-  $country = check_input($_POST['country']); //check_input is sensitizing the input field
-  $state = check_input($_POST['state']); //check_input is sensitizing the input field
-  $city = check_input($_POST['city']); //check_input is sensitizing the input field
-  $zipcode = check_input($_POST['zipcode']); //check_input is sensitizing the input field
-  $means_id = check_input($_POST['means_id']); //check_input is sensitizing the input field
-  $id_number = check_input($_POST['id_number']); //check_input is sensitizing the input field
-  $phone = check_input($_POST['phone']); //check_input is sensitizing the input field
-  $address = check_input($_POST['address']); //check_input is sensitizing the input field
-
-  $team_name = check_input($_POST['team_name']); //check_input is sensitizing the input field
-  $team_country = check_input($_POST['team_country']); //check_input is sensitizing the input field
-  $team_state = check_input($_POST['team_state']); //check_input is sensitizing the input field
-  $team_city = check_input($_POST['team_city']); //check_input is sensitizing the input field
-  $number_of_players = check_input($_POST['number_of_players']); //check_input is sensitizing the input field
-  $team_address = check_input($_POST['team_address']); //check_input is sensitizing the input field
-
-  $time = time();//function for current time
-  $date_create = date("d/M/Y", $time);//function for current date
-  $time_create = date("H:i:s a");//function for current time using "strtotime" to minus 1hour
-  $ipaddress = getRealIpAddr();
+  if (isset($_SESSION['teamRefNumber'])) {
+    $_SESSION['teamRefNumber'] = $TeamRefNumber;
+  }
 
 
-  //image upload manipulations
-  $img1 = trim($_FILES['passport']['name']);
-  $imgsize1 = $_FILES['passport']['size'];
-  $imgloc1 = $_FILES['passport']['tmp_name'];
-  $Extention1 = explode(".", $img1);
-  $imgExtention1 = strtolower(end($Extention1));
-  $imgname1 = (str_replace("/", "", $userRefCode)) . "." . $imgExtention1;
+  if (isset($_POST["complete_register"])) {
 
+    // Function to generate a random string of 3 capital letters
+    function generateRandomLetters()
+    {
+      $letters = '';
+      $alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+      for ($i = 0; $i < 3; $i++) {
+        $letters .= $alphabet[rand(0, strlen($alphabet) - 1)];
+      }
+      return $letters;
+    }
 
-  //team logo upload manipulations
-  $img2 = trim($_FILES['team_logo']['name']);
-  $imgsize2 = $_FILES['team_logo']['size'];
-  $imgloc2 = $_FILES['team_logo']['tmp_name'];
-  $Extention2 = explode(".", $img1);
-  $imgExtention2 = strtolower(end($Extention2));
-  $imgname2 = (str_replace("/", "", $TeamRefNumber)) . "." . $imgExtention2;
+    // Function to generate a random string of 5 numbers
+    function generateRandomNumbers()
+    {
+      $numbers = '';
+      for ($i = 0; $i < 5; $i++) {
+        $numbers .= rand(0, 9);
+      }
+      return $numbers;
+    }
 
+    // Generate the combination
+    $letters = generateRandomLetters();
+    $numbers = generateRandomNumbers();
+    $combination = $letters . $numbers;
 
+    // Shuffle the combination
+    $combinationArray = str_split($combination);
+    shuffle($combinationArray);
+    $TeamRefNumber = implode('', $combinationArray);
 
+    // Output the result
+    $TeamRefNumber = date("Y") . $TeamRefNumber;
 
-  //########## Initiating session #####################
-  $_SESSION['user_email'] = $email;                    //###
-  $_SESSION['user_position'] = $position;               //###
-  //$_SESSION['userRefCode'] = $userRefCode;
+    // Hash the unique number using md5
+    $hashedTeamRefNumber = md5($TeamRefNumber);
 
-  //###
-  //########## Initiating session #####################
-
-
-  if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
-    if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention2 == "jpeg" or $imgExtention2 == "png" or $imgExtention2 == "jpg") {
-      if ($imgsize1 <= 9145728 && $imgsize2 <= 9145728) {
-        move_uploaded_file($imgloc1, "schools/school_registrant_photo/" . $imgname1);//moving image to a folder "memberimg"
-        move_uploaded_file($imgloc2, "schools/school_logo/" . $imgname2);//moving image to a folder "memberimg"
+    // Save the hashed value in another variable
+    $hashedValue = $hashedTeamRefNumber;
 
 
 
-        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-        // Generate user reference code
-        $userRefNo = $_SESSION['userRefCode'];
-
-        // Insert data into the database
-        $stmt = $pdo->prepare("UPDATE `yoshi_signup_tbl` SET `TeamRefNumber` = :TeamRefNumber, `reg_status` = 1 WHERE `userRefNo` = :userRefNo");
-        $stmt->execute([':TeamRefNumber' => $TeamRefNumber, ':userRefNo' => $userRefNo]);
-
-
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`,`hsh_teamRefNumber`, `user_position`, `surname`, `firstname`,`dob`,`gender`, `country`, `state`, `city`, `zipcode`, `phone`, `email`,`means_id`,`id_number`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber,:hsh_teamRefNumber, :position, :surname, :firstname,:dob,:gender, :country, :state, :city, :zipcode, :phone, :email,:means_id, :id_number,  :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
-
-        $stmt->bindParam(':userRefNo', $userRefCode);
-        $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
-        $stmt->bindParam(':hsh_teamRefNumber', $hashedValue);
-        $stmt->bindParam(':position', $position);
-        $stmt->bindParam(':surname', $surname);
-        $stmt->bindParam(':firstname', $firstname);
-        $stmt->bindParam(':dob', $dob);
-        $stmt->bindParam(':gender', $gender);
-        $stmt->bindParam(':country', $country);
-        $stmt->bindParam(':state', $state);
-        $stmt->bindParam(':city', $city);
-        $stmt->bindParam(':zipcode', $zipcode);
-        $stmt->bindParam(':phone', $phone);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':means_id', $means_id);
-        $stmt->bindParam(':id_number', $id_number);
-        $stmt->bindParam(':address', $address);
-        $stmt->bindParam(':passport', $imgname1);
-        $stmt->bindParam(':team_name', $team_name);
-        $stmt->bindParam(':team_country', $team_country);
-        $stmt->bindParam(':team_state', $team_state);
-        $stmt->bindParam(':team_city', $team_city);
-        $stmt->bindParam(':number_of_players', $number_of_players);
-        $stmt->bindParam(':team_address', $team_address);
-        $stmt->bindParam(':team_logo', $imgname2);
-        $stmt->bindParam(':time_create', $time_create);
-        $stmt->bindParam(':date_create', $date_create);
-        $stmt->bindParam(':ip_address', $ipaddress);
-        $stmt->execute();
-
-        $_SESSION['teamRefNumber'] = $TeamRefNumber;
-
-        ################################################
-        //sending email including user details "email", "phone", "account" and access "PIN"
-        // $to = $email;
-        //header with html version
-        // $header = 'from: yoshitournament.com <no-reply@yoshitournament.com>\r\n';
-        // $header .= 'Reply-To: no-reply@yoshitournament.com\r\n';
-        // $header .= 'CC: admin@yoshitournament.com\r\n';
-        // $subject = " Team Successfully Registered ";
-        // $body = "Dear " . $firstname . "Thank you for registering" . $team_name . " with Yoshi Tournament " . date("Y") . " Your Team Reference Number is : " . $TeamRefNumber . " Share it with your team players for registration. Failure to do so will automatically disqualify your team from participation";
-        // $body .= '';
-        // $body .= 'Your players are to used the reference link for registration';
-        // $body .= 'visit www.yoshitournaments.com</p>';
-        // $body .= 'Sign: Mr. Sadeeq Admin  - yoshitournaments.com Thank You';
-        // $body .= '';
-        // $body .= 'yoshifa.com | Allright Reserved' . date('Y') . ' - Yoshi Football Academy';
-        //mail fuction
-        // mail($to, $subject, $body, $header);
-
-        ################################################
-        $to = $email;
-        // Set the email subject
-        $subject = "YAPS 2024 School Team Successfully Registered";
-
-        // Set the email message
-        // $message = "Dear $firstname,\n\n";
-        $message = "Dear TEAM,\n\n";
-        $message .= "Thank you for registering" . $team_name . " with Yoshi Tournament (YAPS) " . date("Y") . ".\n\n";
-        $message .= "Your registration for the Yoshi Abuja Private Schools Tournament is successful under (" . $team_name . " - " . $surname . ")!  .\n\n";
-        $message .= "Your Team Reference Number is: $TeamRefNumber \n\n";
-        $message .= "Your position: $position \n\n";
-        $message .= "Share the reference with your team players for registration through dashboard. \n\n";
-        $message .= "We will share the draws, and match schedules with you shortly!\n\n";
-        $message .= "Visit our website for further updates: www.yoshitournaments.com\n\n";
-        $message .= "Best Regards, \n Halilu Muazu \n Tournament Coordinator\n";
-        $message .= "Yoshi Football Academy (UAE)";
-
-        // Set additional headers
-        $headers = "From: no-reply@yoshitournament.com\r\n";
-        $headers .= "Reply-To: support@yoshitournament.com\r\n";
-        // $headers .= "CC: yoshitournaments@gmail.com\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion();
-
-        // Send the email
-        $mail_sent = mail($to, $subject, $message, $headers);
-
-        // Redirect user to the dashboard
-        header("Location: confirmation.php");
 
 
 
+    //function checking for malicious inputs using trim(),stripslahes(),htmlspecialchars(),htmlentities()
+    function check_input($data)
+    {
+      $data = trim($data);
+      $data = stripcslashes($data);
+      $data = htmlspecialchars($data);
+      $data = htmlentities($data);
+      return $data;
+    }
+
+    // Function to sanitize input data
+    function sanitize_input($data)
+    {
+      return htmlspecialchars(stripslashes(trim($data)));
+    }
+
+
+    //function for collecting user ip address
+    function getRealIpAddr()
+    {
+      if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        //check IP from internet
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+      } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        //check IP is passed from proxy
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
       } else {
-        $image_size_error = "Please try uploading image less than 500kb";
+        //get IP address from remote address
+        $ip = $_SERVER['REMOTE_ADDR'];
+      }
+      return $ip;
+    }
 
-        $image_size_notify = "
+    // ----------------------------------------------------------------//
+    //Collecting user information//
+
+    $userRefCode = $_SESSION['userRefCode'];
+
+    $position = check_input($_POST['position']); //check_input is sensitizing the input field
+    $email = check_input($_POST['email']); //check_input is sensitizing the input field
+    $surname = check_input($_POST['surname']); //check_input is sensitizing the input field
+    $firstname = check_input($_POST['firstName']); //check_input is sensitizing the input field
+    $dob = check_input($_POST['dob']); //check_input is sensitizing the input field
+    $gender = check_input($_POST['gender']); //check_input is sensitizing the input field
+    $country = check_input($_POST['country']); //check_input is sensitizing the input field
+    $state = check_input($_POST['state']); //check_input is sensitizing the input field
+    $city = check_input($_POST['city']); //check_input is sensitizing the input field
+    $zipcode = check_input($_POST['zipcode']); //check_input is sensitizing the input field
+    $means_id = check_input($_POST['means_id']); //check_input is sensitizing the input field
+    $id_number = check_input($_POST['id_number']); //check_input is sensitizing the input field
+    $phone = check_input($_POST['phone']); //check_input is sensitizing the input field
+    $address = check_input($_POST['address']); //check_input is sensitizing the input field
+
+    $team_name = check_input($_POST['team_name']); //check_input is sensitizing the input field
+    $team_country = check_input($_POST['team_country']); //check_input is sensitizing the input field
+    $team_state = check_input($_POST['team_state']); //check_input is sensitizing the input field
+    $team_city = check_input($_POST['team_city']); //check_input is sensitizing the input field
+    $number_of_players = check_input($_POST['number_of_players']); //check_input is sensitizing the input field
+    $team_address = check_input($_POST['team_address']); //check_input is sensitizing the input field
+
+    $time = time();//function for current time
+    $date_create = date("d/M/Y", $time);//function for current date
+    $time_create = date("H:i:s a");//function for current time using "strtotime" to minus 1hour
+    $ipaddress = getRealIpAddr();
+
+
+    //image upload manipulations
+    $img1 = trim($_FILES['passport']['name']);
+    $imgsize1 = $_FILES['passport']['size'];
+    $imgloc1 = $_FILES['passport']['tmp_name'];
+    $Extention1 = explode(".", $img1);
+    $imgExtention1 = strtolower(end($Extention1));
+    $imgname1 = (str_replace("/", "", $userRefCode)) . "." . $imgExtention1;
+
+
+    //team logo upload manipulations
+    $img2 = trim($_FILES['team_logo']['name']);
+    $imgsize2 = $_FILES['team_logo']['size'];
+    $imgloc2 = $_FILES['team_logo']['tmp_name'];
+    $Extention2 = explode(".", $img1);
+    $imgExtention2 = strtolower(end($Extention2));
+    $imgname2 = (str_replace("/", "", $TeamRefNumber)) . "." . $imgExtention2;
+
+
+
+
+    //########## Initiating session #####################
+    $_SESSION['user_email'] = $email;                    //###
+    $_SESSION['user_position'] = $position;               //###
+    //$_SESSION['userRefCode'] = $userRefCode;
+
+    //###
+    //########## Initiating session #####################
+
+
+    if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
+      if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention2 == "jpeg" or $imgExtention2 == "png" or $imgExtention2 == "jpg") {
+        if ($imgsize1 <= 9145728 && $imgsize2 <= 9145728) {
+          move_uploaded_file($imgloc1, "schools/school_registrant_photo/" . $imgname1);//moving image to a folder "memberimg"
+          move_uploaded_file($imgloc2, "schools/school_logo/" . $imgname2);//moving image to a folder "memberimg"
+
+
+
+          $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+          // Generate user reference code
+          $userRefNo = $_SESSION['userRefCode'];
+
+          // Insert data into the database
+          $stmt = $pdo->prepare("UPDATE `yoshi_signup_tbl` SET `TeamRefNumber` = :TeamRefNumber, `reg_status` = 1 WHERE `userRefNo` = :userRefNo");
+          $stmt->execute([':TeamRefNumber' => $TeamRefNumber, ':userRefNo' => $userRefNo]);
+
+
+          $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`,`hsh_teamRefNumber`, `user_position`, `surname`, `firstname`,`dob`,`gender`, `country`, `state`, `city`, `zipcode`, `phone`, `email`,`means_id`,`id_number`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber,:hsh_teamRefNumber, :position, :surname, :firstname,:dob,:gender, :country, :state, :city, :zipcode, :phone, :email,:means_id, :id_number,  :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
+
+          $stmt->bindParam(':userRefNo', $userRefCode);
+          $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
+          $stmt->bindParam(':hsh_teamRefNumber', $hashedValue);
+          $stmt->bindParam(':position', $position);
+          $stmt->bindParam(':surname', $surname);
+          $stmt->bindParam(':firstname', $firstname);
+          $stmt->bindParam(':dob', $dob);
+          $stmt->bindParam(':gender', $gender);
+          $stmt->bindParam(':country', $country);
+          $stmt->bindParam(':state', $state);
+          $stmt->bindParam(':city', $city);
+          $stmt->bindParam(':zipcode', $zipcode);
+          $stmt->bindParam(':phone', $phone);
+          $stmt->bindParam(':email', $email);
+          $stmt->bindParam(':means_id', $means_id);
+          $stmt->bindParam(':id_number', $id_number);
+          $stmt->bindParam(':address', $address);
+          $stmt->bindParam(':passport', $imgname1);
+          $stmt->bindParam(':team_name', $team_name);
+          $stmt->bindParam(':team_country', $team_country);
+          $stmt->bindParam(':team_state', $team_state);
+          $stmt->bindParam(':team_city', $team_city);
+          $stmt->bindParam(':number_of_players', $number_of_players);
+          $stmt->bindParam(':team_address', $team_address);
+          $stmt->bindParam(':team_logo', $imgname2);
+          $stmt->bindParam(':time_create', $time_create);
+          $stmt->bindParam(':date_create', $date_create);
+          $stmt->bindParam(':ip_address', $ipaddress);
+          $stmt->execute();
+
+          $_SESSION['teamRefNumber'] = $TeamRefNumber;
+
+          ################################################
+          //sending email including user details "email", "phone", "account" and access "PIN"
+          // $to = $email;
+          //header with html version
+          // $header = 'from: yoshitournament.com <no-reply@yoshitournament.com>\r\n';
+          // $header .= 'Reply-To: no-reply@yoshitournament.com\r\n';
+          // $header .= 'CC: admin@yoshitournament.com\r\n';
+          // $subject = " Team Successfully Registered ";
+          // $body = "Dear " . $firstname . "Thank you for registering" . $team_name . " with Yoshi Tournament " . date("Y") . " Your Team Reference Number is : " . $TeamRefNumber . " Share it with your team players for registration. Failure to do so will automatically disqualify your team from participation";
+          // $body .= '';
+          // $body .= 'Your players are to used the reference link for registration';
+          // $body .= 'visit www.yoshitournaments.com</p>';
+          // $body .= 'Sign: Mr. Sadeeq Admin  - yoshitournaments.com Thank You';
+          // $body .= '';
+          // $body .= 'yoshifa.com | Allright Reserved' . date('Y') . ' - Yoshi Football Academy';
+          //mail fuction
+          // mail($to, $subject, $body, $header);
+
+          ################################################
+          $to = $email;
+          // Set the email subject
+          $subject = "YAPS 2024 School Team Successfully Registered";
+
+          // Set the email message
+          // $message = "Dear $firstname,\n\n";
+          $message = "Dear TEAM,\n\n";
+          $message .= "Thank you for registering" . $team_name . " with Yoshi Tournament (YAPS) " . date("Y") . ".\n\n";
+          $message .= "Your registration for the Yoshi Abuja Private Schools Tournament is successful under (" . $team_name . " - " . $surname . ")!  .\n\n";
+          $message .= "Your Team Reference Number is: $TeamRefNumber \n\n";
+          $message .= "Your position: $position \n\n";
+          $message .= "Share the reference with your team players for registration through dashboard. \n\n";
+          $message .= "We will share the draws, and match schedules with you shortly!\n\n";
+          $message .= "Visit our website for further updates: www.yoshitournaments.com\n\n";
+          $message .= "Best Regards, \n Halilu Muazu \n Tournament Coordinator\n";
+          $message .= "Yoshi Football Academy (UAE)";
+
+          // Set additional headers
+          $headers = "From: no-reply@yoshitournament.com\r\n";
+          $headers .= "Reply-To: support@yoshitournament.com\r\n";
+          // $headers .= "CC: yoshitournaments@gmail.com\r\n";
+          $headers .= "X-Mailer: PHP/" . phpversion();
+
+          // Send the email
+          $mail_sent = mail($to, $subject, $message, $headers);
+
+          // Redirect user to the dashboard
+          header("Location: confirmation.php");
+
+
+
+        } else {
+          $image_size_error = "Please try uploading image less than 500kb";
+
+          $image_size_notify = "
         <script>
             new Noty({
                 theme: 'metroui',
@@ -290,11 +291,11 @@ if (isset($_POST["complete_register"])) {
             }).show();
         </script>
         ";
-        // echo $image_size_error;
-      }
-    } else {
-      $image_error = "Image supported only .jpg, .jpeg, or .png";
-      $image_type_notify = "
+          // echo $image_size_error;
+        }
+      } else {
+        $image_error = "Image supported only .jpg, .jpeg, or .png";
+        $image_type_notify = "
         <script>
             new Noty({
                 theme: 'metroui',
@@ -305,18 +306,21 @@ if (isset($_POST["complete_register"])) {
             }).show();
         </script>
         ";
-      // echo $image_error;
+        // echo $image_error;
+      }
+
+
+
+
+
+
     }
 
-
-
-
-
-
   }
-
+} catch (Exception $e) {
+  // Handle the error
+  echo "Error: " . $e->getMessage(); // This will show the error message
 }
-
 
 
 
