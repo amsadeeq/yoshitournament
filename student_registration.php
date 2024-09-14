@@ -250,7 +250,7 @@ try {
           $stmt->execute([':userRefNo' => $userRefCode]);
 
           // Redirect user to the dashboard
-          header("Location: player_confirmation.php");
+          //header("Location: player_confirmation.php");
           exit();
 
         } else {
