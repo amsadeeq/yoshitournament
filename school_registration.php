@@ -159,7 +159,7 @@ try {
     $img2 = trim($_FILES['team_logo']['name']);
     $imgsize2 = $_FILES['team_logo']['size'];
     $imgloc2 = $_FILES['team_logo']['tmp_name'];
-    $Extention2 = explode(".", $img1);
+    $Extention2 = explode(".", $img2);
     $imgExtention2 = strtolower(end($Extention2));
     $imgname2 = (str_replace("/", "", $TeamRefNumber)) . "." . $imgExtention2;
 
