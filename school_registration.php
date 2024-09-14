@@ -915,6 +915,14 @@ if (isset($_POST["complete_register"])) {
 
   <script>
 
+    // Set the inactivity time limit (in milliseconds)
+    const inactivityLimit = 1 * 60; // 10 minutes = 600000 milliseconds
+
+    // Variable to store the timeout ID
+    let inactivityTimeout;
+
+    // Function to log out user after inactivity
+
     function handleInactivity() {
       // Send a request to the PHP file to destroy the session
       fetch('destroy_session.php', {
