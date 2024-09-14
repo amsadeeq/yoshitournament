@@ -780,6 +780,13 @@ require 'auth.php';
     <!-- Include SweetAlert JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <?php
+    if (isset($email_error_notify)) {
+        echo $email_error_notify;
+
+    }
+    ?>
+
     <script>
         $(document).ready(function () {
             // Add a class to the cards to trigger the animation on load
