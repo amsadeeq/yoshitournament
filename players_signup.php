@@ -291,6 +291,10 @@ require 'auth.php';
 
   echo $error_invalid_notify;
 
+  if (isset($email_error_notify)) {
+    echo $email_error_notify;
+  }
+
   ?>
 
 
