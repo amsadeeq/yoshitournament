@@ -177,6 +177,7 @@ if (isset($_POST['login'])) {
                 $stmt->bindParam(':userRefNo', $user['userRefNo']);
                 $stmt->execute();
                 $school_officials = $stmt->fetch(PDO::FETCH_ASSOC);
+                echo $school_officials;
                 // User is a Player
                 $_SESSION['teamRefNumber'] = $school_officials['TeamRefNumber'];
 
