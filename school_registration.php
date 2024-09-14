@@ -605,7 +605,7 @@ if (isset($_POST["complete_register"])) {
                           <div class="form-group">
                             <label> Email<sup style="color: red !important;">*</sup> </label> </label>
                             <input type="email" class="form-control" name="email"
-                              value="<?php echo $_SESSION['email']; ?>" readonly />
+                              value="<?php echo $_SESSION['user_email']; ?>" readonly />
                           </div>
                         </div>
                       </div>
