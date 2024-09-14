@@ -913,6 +913,33 @@ if (isset($_POST["complete_register"])) {
     });
   </script>
 
+  <script>
+
+    function handleInactivity() {
+      // Send a request to the PHP file to destroy the session
+      fetch('destroy_session.php', {
+        method: 'POST',
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            // If the session is successfully destroyed, redirect to index.php with query parameter
+            window.location.href = 'index.php?showLoginModal=true';
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Reset the inactivity timer when the user interacts with the page
+    window.onload = resetInactivityTimer;          // On page load
+    document.onmousemove = resetInactivityTimer;   // On mouse movement
+    document.onkeypress = resetInactivityTimer;    // On keypress
+    document.onclick = resetInactivityTimer;       // On mouse click
+    document.onscroll = resetInactivityTimer;      // On page scroll
+    document.ontouchstart = resetInactivityTimer;  // On touch (for mobile devices)
+
+  </script>
+
 
   <?php echo $image_size_notify;
   echo $image_type_notify; ?>

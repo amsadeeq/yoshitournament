@@ -6,6 +6,18 @@ ob_start();
 
 require 'auth.php';
 
+session_start();
+if (isset($_SESSION['showLoginModal'])) {
+  echo "<script>
+          $(document).ready(function() {
+            $('#loginModal').modal('show');
+          });
+        </script>";
+  // Unset the session variable after displaying the modal
+  unset($_SESSION['showLoginModal']);
+}
+
+
 
 
 ?>
@@ -614,7 +626,18 @@ require 'auth.php';
   </script>
 
 
+  <?php
 
+  // Check if the 'showLoginModal' query parameter is set
+  if (isset($_GET['showLoginModal']) && $_GET['showLoginModal'] == 'true') {
+    echo "<script>
+          $(document).ready(function() {
+            $('#loginModal').modal('show');
+          });
+        </script>";
+  }
+
+  ?>
 
 
 
