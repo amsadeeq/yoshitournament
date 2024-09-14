@@ -145,7 +145,7 @@ if (isset($_POST['register'])) {
     $count = $stmt->fetchColumn();
 
     if ($count > 0) {
-        $email_error = 'Email is already registered';
+        $email_error = 'Email already registered';
         $email_error_notify = "
         <script>
             new Noty({
