@@ -82,7 +82,7 @@ require 'auth.php';
                 <th>Time</th>
                 <th>League</th>
                 <th> Season </th>
-                <th>Venue</th>
+                <th class="last">Venue</th>
                 <!-- <th class="last">Action</th> -->
               </tr>
             </thead>
