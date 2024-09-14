@@ -1078,7 +1078,7 @@ $students = $stmt_student->fetchAll(PDO::FETCH_ASSOC);
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap"
                           cellspacing="0" width="100%">
                           <thead>
-                          <tr>
+                            <tr>
                               <th>S/No</th>
                               <th>School Logo</th>
                               <th>School Name</th>

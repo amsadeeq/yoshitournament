@@ -198,15 +198,18 @@ $total_student = $result_student['total_student'];
           </div>
 
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <div class="tile-stats">
-              <div class="icon">
-                <i class="fas fa-user-graduate"></i>
+
+            <a href="studentList.php" class=" text-decoration-none">
+              <div class="tile-stats">
+                <div class="icon">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="count"><?php echo $total_student; ?></div>
+
+                <h4 class="stats_text">Students</h4>
+
               </div>
-              <div class="count"><?php echo $total_student; ?></div>
-
-              <h4 class="stats_text">Students</h4>
-
-            </div>
+            </a>
           </div>
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
             <div class="tile-stats" style="background-color: #ffbc42;">
