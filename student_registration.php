@@ -30,7 +30,7 @@ $TeamRefNumber = $_SESSION['teamRefNumber']; //need to remove $ sign
 $TeamRefNumber;
 //########## Initiating session #####################
 $email = $_SESSION['user_email'];                  //###
-$position = $_SESSION['user_position'];               //###
+//$position = $_SESSION['user_position'];               //###
 $userRefCode = $_SESSION['userRefCode'];        //###
 //########## Initiating session #####################
 
@@ -715,7 +715,7 @@ try {
                             <div class="form-group">
                               <label> Category (Section)<sup style="color: red !important;">*</sup> </label> </label>
                               <select class="form-select" name="category" required>
-                                <option selected> Select Section</option>
+
                                 <option value="Primary">Primary Section</option>
                                 <option value="Junior"> Junior Section</option>
                                 <option value="Senior">Senior Section</option>
