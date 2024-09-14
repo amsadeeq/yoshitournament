@@ -72,7 +72,7 @@ if (isset($_POST['login'])) {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    echo $user;
+    echo $user['userRefNo'];
 
     if ($user) {
 
