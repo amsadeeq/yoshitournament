@@ -72,6 +72,8 @@ if (isset($_POST['login'])) {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    echo $user;
+
     if ($user) {
 
         // User is authenticated
