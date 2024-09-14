@@ -231,6 +231,7 @@ if (isset($_POST['login'])) {
                 } else {
                     header("Location: student_registration.php");
                     $_SESSION['userRefCode'] = $player_details['userRefNo'];
+                    $_SESSION['teamRefNumber'] = $player_details['TeamRefNumber'];
 
                 }
 

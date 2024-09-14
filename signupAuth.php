@@ -5,6 +5,12 @@ ob_start();
 
 require 'connection.php';
 
+if (isset($_SESSION['teamRefNumber'])) {
+    $player_teamRefNumber = $_SESSION['teamRefNumber'];
+} else {
+    $player_teamRefNumber = '';
+}
+
 if (isset($_POST['register'])) {
 
 
@@ -201,6 +207,9 @@ if (isset($_POST['register'])) {
             $_SESSION['user_email'] = $email;                   //###
             $_SESSION['user_position'] = $position;           //###
             $_SESSION['userRefCode'] = $userRefCode;        //###
+            if (isset($_SESSION['teamRefNumber'])) {
+                $_SESSION['teamRefNumber'] = $teamRefNumber; //###
+            }
             //########## Initiating session #####################
 
             ################################################
