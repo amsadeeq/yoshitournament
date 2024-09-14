@@ -1,18 +1,10 @@
 <?php
 // Start the session to access session variables
 session_start();
+ob_start();
 // Connect to the database
 require 'connection.php';
 require 'auth.php';
-
-
-
-
-
-
-
-
-
 
 ?>
 
@@ -256,22 +248,10 @@ require 'auth.php';
                 </div>
               </div>
             </div>
-
-
-
-
-
-
           </fieldset>
-
-
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
 

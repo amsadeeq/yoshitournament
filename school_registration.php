@@ -3,6 +3,28 @@ session_start();
 ob_start();
 require 'connection.php';
 
+// Check if the last activity time is set
+if (isset($_SESSION['last_activity'])) {
+  // Calculate the time difference between the current time and the last activity time
+  $inactive_time = time() - $_SESSION['last_activity'];
+
+  // Check if the inactive time is greater than 10 minutes (600 seconds)
+  if ($inactive_time > 60) {
+    // Destroy all session data
+    session_unset();
+    session_destroy();
+
+    // Redirect to index.php
+    header("Location: index.php");
+    exit();
+  }
+}
+
+// Update the last activity time
+$_SESSION['last_activity'] = time();
+
+
+
 // echo $_SESSION['reg_notify'];
 $userRefCode = $_SESSION['userRefCode'];
 if (isset($_SESSION['teamRefNumber'])) {
@@ -11,9 +33,6 @@ if (isset($_SESSION['teamRefNumber'])) {
 
 
 if (isset($_POST["complete_register"])) {
-
-
-
 
   // Function to generate a random string of 3 capital letters
   function generateRandomLetters()
@@ -77,10 +96,6 @@ if (isset($_POST["complete_register"])) {
   }
 
 
-
-
-
-
   //function for collecting user ip address
   function getRealIpAddr()
   {
@@ -97,16 +112,8 @@ if (isset($_POST["complete_register"])) {
     return $ip;
   }
 
-
-
-
-
-
   // ----------------------------------------------------------------//
   //Collecting user information//
-
-
-
 
   $userRefCode = $_SESSION['userRefCode'];
 
@@ -186,8 +193,6 @@ if (isset($_POST["complete_register"])) {
 
 
         $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`,`hsh_teamRefNumber`, `user_position`, `surname`, `firstname`,`dob`,`gender`, `country`, `state`, `city`, `zipcode`, `phone`, `email`,`means_id`,`id_number`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber,:hsh_teamRefNumber, :position, :surname, :firstname,:dob,:gender, :country, :state, :city, :zipcode, :phone, :email,:means_id, :id_number,  :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
-
-
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
         $stmt->bindParam(':hsh_teamRefNumber', $hashedValue);
@@ -253,7 +258,7 @@ if (isset($_POST["complete_register"])) {
         $message .= "Share the reference with your team players for registration through dashboard. \n\n";
         $message .= "We will share the draws, and match schedules with you shortly!\n\n";
         $message .= "Visit our website for further updates: www.yoshitournaments.com\n\n";
-        $message .= "Best Regards, \n Halilu Muazu \n Tournament Coordinator \n";
+        $message .= "Best Regards, \n Halilu Muazu \n Tournament Coordinator\n";
         $message .= "Yoshi Football Academy (UAE)";
 
         // Set additional headers
@@ -272,10 +277,33 @@ if (isset($_POST["complete_register"])) {
 
       } else {
         $image_size_error = "Please try uploading image less than 500kb";
+
+        $image_size_notify = "
+        <script>
+            new Noty({
+                theme: 'metroui',
+                text: '$image_size_error',
+                type: 'error',
+                timeout: 1000
+                
+            }).show();
+        </script>
+        ";
         // echo $image_size_error;
       }
     } else {
       $image_error = "Image supported only .jpg, .jpeg, or .png";
+      $image_type_notify = "
+        <script>
+            new Noty({
+                theme: 'metroui',
+                text: '$image_error',
+                type: 'error',
+                timeout: 1000
+                
+            }).show();
+        </script>
+        ";
       // echo $image_error;
     }
 
@@ -885,7 +913,8 @@ if (isset($_POST["complete_register"])) {
   </script>
 
 
-
+  <?php echo $image_size_notify;
+  echo $image_type_notify; ?>
 
 
 

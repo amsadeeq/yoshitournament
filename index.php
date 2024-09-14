@@ -447,6 +447,8 @@ require 'auth.php';
 
   echo $logout_message;
 
+  echo $email_error_notify;
+
   ?>
 
   <!-- Custom JavaScript -->

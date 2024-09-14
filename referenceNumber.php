@@ -62,7 +62,7 @@ if (isset($_POST['complete_registration'])) {
 
       // Redirect to player_registration.php
       header("Location: players_signup.php");
-      exit;
+      exit();
 
     } else {
 
