@@ -178,12 +178,13 @@ if (isset($_POST['login'])) {
                 $stmt->execute();
                 $school_officials = $stmt->fetch(PDO::FETCH_ASSOC);
                 // User is a Player
-                echo $_SESSION['teamRefNumber'] = $school_officials['TeamRefNumber'];
+                $_SESSION['teamRefNumber'] = $school_officials['TeamRefNumber'];
 
                 switch ($user['reg_status']) {
                     case 0:
                         //header("Location: school_registration.php");
-                        echo $_SESSION['userRefCode'] = $school_officials['userRefNo'];
+                        $_SESSION['userRefCode'] = $school_officials['userRefNo'];
+                        echo $school_officials['userRefNo'];
 
 
                         break;
