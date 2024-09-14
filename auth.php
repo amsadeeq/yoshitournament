@@ -72,7 +72,7 @@ if (isset($_POST['login'])) {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    echo $user['userRefNo'];
+
 
     if ($user) {
 
@@ -179,18 +179,14 @@ if (isset($_POST['login'])) {
                 $stmt->bindParam(':userRefNo', $user['userRefNo']);
                 $stmt->execute();
                 $school_officials = $stmt->fetch(PDO::FETCH_ASSOC);
-                echo $school_officials;
+
                 // User is a Player
-                $_SESSION['teamRefNumber'] = $school_officials['TeamRefNumber'];
+                //$_SESSION['teamRefNumber'] = $school_officials['TeamRefNumber'];
 
                 switch ($user['reg_status']) {
                     case 0:
-                        //header("Location: school_registration.php");
+                        header("Location: school_registration.php");
                         $_SESSION['userRefCode'] = $school_officials['userRefNo'];
-                        echo $school_officials['user_email'];
-                        echo "Hiiiiiiiii";
-
-
                         break;
                     default:
                         header("Location: schools/dashboard.php");
