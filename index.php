@@ -129,10 +129,8 @@ if (isset($_SESSION['showLoginModal'])) {
 <body>
 
 
-  <?php //require 'header.php'; ?>
-  <?php if (isset($_SESSION['userRefCode'])) {
-    echo $_SESSION['userRefCode'];
-  } ?>
+  <?php require 'header.php'; ?>
+
 
   <section class="banner float-start w-100">
     <div class="container">
