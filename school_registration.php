@@ -193,6 +193,7 @@ if (isset($_POST["complete_register"])) {
 
 
         $stmt = $pdo->prepare("INSERT INTO `yoshi_schools_officials_tbl` (`id`, `userRefNo`, `TeamRefNumber`,`hsh_teamRefNumber`, `user_position`, `surname`, `firstname`,`dob`,`gender`, `country`, `state`, `city`, `zipcode`, `phone`, `email`,`means_id`,`id_number`, `address`, `passport`, `team_name`, `team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `team_logo`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber,:hsh_teamRefNumber, :position, :surname, :firstname,:dob,:gender, :country, :state, :city, :zipcode, :phone, :email,:means_id, :id_number,  :address, :passport, :team_name, :team_country, :team_state, :team_city, :number_of_players, :team_address, :team_logo, :time_create, :date_create, :ip_address)");
+
         $stmt->bindParam(':userRefNo', $userRefCode);
         $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
         $stmt->bindParam(':hsh_teamRefNumber', $hashedValue);

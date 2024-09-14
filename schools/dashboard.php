@@ -4,6 +4,26 @@ ob_start();
 
 require '../connection.php';
 
+// Check if the last activity time is set
+if (isset($_SESSION['last_activity'])) {
+  // Calculate the time difference between the current time and the last activity time
+  $inactive_time = time() - $_SESSION['last_activity'];
+
+  // Check if the inactive time is greater than 10 minutes (600 seconds)
+  if ($inactive_time > 60) {
+    // Destroy all session data
+    session_unset();
+    session_destroy();
+
+    // Redirect to index.php
+    header("Location: index.php");
+    exit();
+  }
+}
+
+// Update the last activity time
+$_SESSION['last_activity'] = time();
+
 
 $TeamRefNumber = $_SESSION['teamRefNumber'];
 if ($TeamRefNumber) {
