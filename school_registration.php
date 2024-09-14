@@ -320,7 +320,6 @@ try {
 } catch (Exception $e) {
   // Handle the error
   echo "Error: " . $e->getMessage(); // This will show the error message
-  echo $_SESSION['userRefCode'];
 }
 
 
