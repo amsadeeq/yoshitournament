@@ -12,9 +12,7 @@
           <div id='login-td-div' class='com-div-md'>
             <span class='text-center d-table m-auto user-icon'> <i class='fas fa-user-circle'></i> </span>
             <h5 class='text-center mb-3 form-text'> Login </h5>
-            <?php if (isset($_SESSION['userRefCode'])) {
-              echo $_SESSION['userRefCode'];
-            } ?>
+
             <button type='button' class='close' data-bs-dismiss='modal' aria-label='Close'>
               <span aria-hidden='true'>×</span>
             </button>
