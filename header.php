@@ -24,7 +24,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="matches.php">Matches</a>
+            <a class="nav-link" href="schedule.php">Matches</a>
           </li>
 
           <li class="nav-item">

@@ -94,14 +94,14 @@ require 'auth.php';
                 <td>
 
                   <a href="matches-details.php" class="btn ms-ti">
-                    <img src="images/team_3.png" alt="ft" class="schedule-team-logo" />
+                    <!-- <img src="images/team_3.png" alt="ft" class="schedule-team-logo" /> -->
                     <span>
-                      Abuja FC
+                      International Community School
                     </span>
                     <span>&nbsp;&nbsp; VS &nbsp; &nbsp; </span>
-                    <img src="images/team_5.png" alt="ft" class="schedule-team-logo" />
+                    <!-- <img src="images/team_5.png" alt="ft" class="schedule-team-logo" /> -->
                     <span>
-                      Abuja FC
+                      Creative Kids Elementary and High School
                     </span>
                   </a>
 
