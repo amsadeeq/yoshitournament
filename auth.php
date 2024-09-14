@@ -182,7 +182,7 @@ if (isset($_POST['login'])) {
 
                 switch ($user['reg_status']) {
                     case 0:
-                        header("Location: school_registration.php");
+                        //header("Location: school_registration.php");
                         $_SESSION['userRefCode'] = $school_officials['userRefNo'];
 
                         break;
