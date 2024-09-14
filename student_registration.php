@@ -180,7 +180,7 @@ try {
 
           $stmt = $pdo->prepare("INSERT INTO `yoshi_school_students_tbl` (`id`, `userRefNo`, `TeamRefNumber`, `user_position`, `surname`, `firstname`, `dob`, `gender`, `hieght`, `weight`, `country`, `state`, `city`, `zipcode`, `phone`, `email`, `means_id`, `id_number`,`student_id_photo`, `address`, `team_name`,`category`, `player_position`, `jersy_number`,`team_country`, `team_state`, `team_city`, `number_of_players`, `team_address`, `passport`, `team_logo`, `emergency_name`, `emergency_phone`, `emergency_email`, `emergency_address`, `time_created`, `date_created`, `ip_address`) VALUES (NULL, :userRefNo, :TeamRefNumber, :position, :surname, :firstname, :dob, :gender, :height, :weight, :country, :state, :city, :zipcode, :phone, :email,:means_id,:id_number,:student_id_photo, :address, :team_name, :category, :position, :jerseyNumber, :team_country, :team_state, :team_city, :number_of_players, :team_address, :passport, :team_logo,:emergency_name,:emergency_phone,:emergency_email,:emergency_address, :time_create, :date_create, :ip_address)");
 
-          $stmt->bindParam(':userRefNo', $userRefCode);
+          $stmt->bindParam(':userRefNo', $userRefNo);
           $stmt->bindParam(':TeamRefNumber', $TeamRefNumber);
           $stmt->bindParam(':position', $position);
           $stmt->bindParam(':surname', $surname);
