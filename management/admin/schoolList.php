@@ -404,7 +404,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
               <tr>
                 <td><strong>User Position</strong></td>
-                <td id="userPosition"></td>
+                <td colspan="3" id="userPosition"></td>
               </tr>
 
               <tr>
@@ -437,7 +437,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
               <tr>
                 <td><strong>Address</strong></td>
-                <td id="address"></td>
+                <td colspan="3" id="address"></td>
               </tr>
               <tr>
                 <td><strong>Team Country</strong></td>
@@ -463,7 +463,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
               <tr>
                 <td><strong>IP Address</strong></td>
-                <td id="ipAddress"></td>
+                <td colspan="3" id="ipAddress"></td>
               </tr>
             </tbody>
           </table>
