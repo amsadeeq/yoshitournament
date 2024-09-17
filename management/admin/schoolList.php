@@ -376,8 +376,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               <tr>
                 <td><strong>Team Ref No.</strong></td>
                 <td id="teamRefNumber"></td>
-                <td><strong>Team Address</strong></td>
-                <td id="teamAddress"></td>
+                <!-- <td><strong>Team Address</strong></td> -->
+                <td colspan="2" id="teamAddress"></td>
               </tr>
 
 
