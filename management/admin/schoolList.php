@@ -484,14 +484,14 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           $('#editMeansId').val(school.means_id);
           $('#editIdNumber').val(school.id_number);
           $('#editAddress').val(school.address);
-          $('#editPassport').val(school.passport);
+
           $('#editTeamName').val(school.team_name);
           $('#editTeamCountry').val(school.team_country);
           $('#editTeamState').val(school.team_state);
           $('#editTeamCity').val(school.team_city);
           $('#editNumberOfPlayers').val(school.number_of_players);
           $('#editTeamAddress').val(school.team_address);
-          $('#editTeamLogo').val(school.team_logo);
+
           $('#editTimeCreated').val(school.time_created);
           $('#editDateCreated').val(school.date_created);
           $('#editIpAddress').val(school.ip_address);
@@ -616,10 +616,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="editPassport">Passport</label>
-                <input type="file" class="form-control" id="editPassport" name="editPassport">
-              </div>
+
               <div class="form-group col-md-6">
                 <label for="editTeamName">Team Name</label>
                 <input type="text" class="form-control" id="editTeamName" name="editTeamName">
@@ -650,10 +647,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <label for="editTeamAddress">Team Address</label>
                 <textarea class="form-control" id="editTeamAddress" name="editTeamAddress"></textarea>
               </div>
-              <div class="form-group col-md-6">
-                <label for="editTeamLogo">Team Logo</label>
-                <input type="file" class="form-control" id="editTeamLogo" name="editTeamLogo">
-              </div>
+
+
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -684,7 +679,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-  
+
 
   <!-- jQuery -->
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
