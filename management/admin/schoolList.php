@@ -367,9 +367,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
             <tbody>
               <tr>
                 <td style="width: 100px; vertical-align: top;"><img id="passport"
-                    style="width: 100px; height: 100px;" /></td>
-                <td><strong>School Name</strong></td>
-                <td id="schoolName"></td>
+                    style="width: 100px; height: 100px; border-radius:10px 10px;" /></td>
+                <td colspan="2"><strong>School Name</strong> &nbsp; <span id="schoolName"></span></td>
                 <td style="width: 100px; vertical-align: top;"><img id="teamLogo"
                     style="width: 100px; height: 100px;" /></td>
               </tr>
