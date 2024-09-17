@@ -298,6 +298,81 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
     }
   </script>
 
+  <script>
+    function viewSchool(teamRefNumber) {
+      // Send an AJAX request to fetch the school details
+      $.ajax({
+        url: 'viewSchool.php',
+        type: 'POST',
+        data: { teamRefNumber: teamRefNumber },
+        success: function (response) {
+          // Parse the JSON response
+          var school = JSON.parse(response);
+
+          // Populate the modal with the school details
+          $('#schoolName').text(school.team_name);
+          $('#teamRefNumber').text(school.TeamRefNumber);
+          $('#teamAddress').text(school.team_address);
+          $('#phone').text(school.phone);
+          $('#email').text(school.email);
+
+          // Show the modal
+          $('#viewSchoolModal').modal('show');
+        },
+        error: function (xhr, status, error) {
+          // Handle the error if the request fails
+          console.log(error);
+        }
+      });
+    }
+  </script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="viewSchoolModal" tabindex="-1" role="dialog" aria-labelledby="viewSchoolModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="viewSchoolModalLabel">View School Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th>School Name</th>
+                <td id="schoolName"></td>
+              </tr>
+              <tr>
+                <th>Team Ref No.</th>
+                <td id="teamRefNumber"></td>
+              </tr>
+              <tr>
+                <th>Team Address</th>
+                <td id="teamAddress"></td>
+              </tr>
+              <tr>
+                <th>Phone</th>
+                <td id="phone"></td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td id="email"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
 
   <!-- jQuery -->
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
