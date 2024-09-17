@@ -383,7 +383,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
               <tr>
                 <td><strong>User Ref No.</strong></td>
-                <td id="userRefNo"></td>
+                <td colspan="3" id="userRefNo"></td>
               </tr>
 
               <tr>
@@ -449,11 +449,10 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               <tr>
                 <td><strong>Team City</strong></td>
                 <td id="teamCity"></td>
-              </tr>
-              <tr>
                 <td><strong>Number of Players</strong></td>
                 <td id="numberOfPlayers"></td>
               </tr>
+
 
               <tr>
                 <td><strong>Time Created</strong></td>
