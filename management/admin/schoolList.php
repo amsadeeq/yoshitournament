@@ -381,66 +381,61 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <td><strong>Team Address</strong></td>
                 <td id="teamAddress"></td>
               </tr>
-              <tr>
-                <td><strong>Phone</strong></td>
-                <td id="phone"></td>
-              </tr>
-              <tr>
-                <td><strong>Email</strong></td>
-                <td id="email"></td>
-              </tr>
+
               <tr>
                 <td><strong>User Ref No.</strong></td>
                 <td id="userRefNo"></td>
               </tr>
+
               <tr>
-                <td><strong>Team Ref No.</strong></td>
-                <td id="hshTeamRefNumber"></td>
+                <td><strong>Surname</strong></td>
+                <td id="surname"></td>
+                <td><strong>First Name</strong></td>
+                <td id="firstname"></td>
               </tr>
+
+              <tr>
+                <td><strong>Phone</strong></td>
+                <td id="phone"></td>
+                <td><strong>Email</strong></td>
+                <td id="email"></td>
+              </tr>
+
+
+
               <tr>
                 <td><strong>User Position</strong></td>
                 <td id="userPosition"></td>
               </tr>
-              <tr>
-                <td><strong>Surname</strong></td>
-                <td id="surname"></td>
-              </tr>
-              <tr>
-                <td><strong>First Name</strong></td>
-                <td id="firstname"></td>
-              </tr>
+
               <tr>
                 <td><strong>Date of Birth</strong></td>
                 <td id="dob"></td>
-              </tr>
-              <tr>
                 <td><strong>Gender</strong></td>
                 <td id="gender"></td>
               </tr>
+
               <tr>
                 <td><strong>Country</strong></td>
                 <td id="country"></td>
-              </tr>
-              <tr>
                 <td><strong>State</strong></td>
                 <td id="state"></td>
               </tr>
+
               <tr>
                 <td><strong>City</strong></td>
                 <td id="city"></td>
-              </tr>
-              <tr>
                 <td><strong>Zip Code</strong></td>
                 <td id="zipcode"></td>
               </tr>
+
               <tr>
                 <td><strong>Means ID</strong></td>
                 <td id="meansId"></td>
-              </tr>
-              <tr>
                 <td><strong>ID Number</strong></td>
                 <td id="idNumber"></td>
               </tr>
+
               <tr>
                 <td><strong>Address</strong></td>
                 <td id="address"></td>
@@ -448,11 +443,10 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               <tr>
                 <td><strong>Team Country</strong></td>
                 <td id="teamCountry"></td>
-              </tr>
-              <tr>
                 <td><strong>Team State</strong></td>
                 <td id="teamState"></td>
               </tr>
+
               <tr>
                 <td><strong>Team City</strong></td>
                 <td id="teamCity"></td>
@@ -465,11 +459,10 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               <tr>
                 <td><strong>Time Created</strong></td>
                 <td id="timeCreated"></td>
-              </tr>
-              <tr>
                 <td><strong>Date Created</strong></td>
                 <td id="dateCreated"></td>
               </tr>
+
               <tr>
                 <td><strong>IP Address</strong></td>
                 <td id="ipAddress"></td>
