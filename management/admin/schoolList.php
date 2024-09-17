@@ -366,119 +366,113 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <th>School Name</th>
+                <td rowspan="20" style="width: 100px; vertical-align: top;"><img id="passport" style="width: 100px; height: 100px;" /></td>
+                <td><strong>School Name</strong></td>
                 <td id="schoolName"></td>
+                <td rowspan="20" style="width: 100px; vertical-align: top;"><img id="teamLogo" style="width: 100px; height: 100px;" /></td>
               </tr>
               <tr>
-                <th>Team Ref No.</th>
+                <td><strong>Team Ref No.</strong></td>
                 <td id="teamRefNumber"></td>
               </tr>
               <tr>
-                <th>Team Address</th>
+                <td><strong>Team Address</strong></td>
                 <td id="teamAddress"></td>
               </tr>
               <tr>
-                <th>Phone</th>
+                <td><strong>Phone</strong></td>
                 <td id="phone"></td>
               </tr>
               <tr>
-                <th>Email</th>
+                <td><strong>Email</strong></td>
                 <td id="email"></td>
               </tr>
               <tr>
-                <th>User Ref No.</th>
+                <td><strong>User Ref No.</strong></td>
                 <td id="userRefNo"></td>
               </tr>
               <tr>
-                <th>Team Ref No.</th>
+                <td><strong>Team Ref No.</strong></td>
                 <td id="hshTeamRefNumber"></td>
               </tr>
               <tr>
-                <th>User Position</th>
+                <td><strong>User Position</strong></td>
                 <td id="userPosition"></td>
               </tr>
               <tr>
-                <th>Surname</th>
+                <td><strong>Surname</strong></td>
                 <td id="surname"></td>
               </tr>
               <tr>
-                <th>First Name</th>
+                <td><strong>First Name</strong></td>
                 <td id="firstname"></td>
               </tr>
               <tr>
-                <th>Date of Birth</th>
+                <td><strong>Date of Birth</strong></td>
                 <td id="dob"></td>
               </tr>
               <tr>
-                <th>Gender</th>
+                <td><strong>Gender</strong></td>
                 <td id="gender"></td>
               </tr>
               <tr>
-                <th>Country</th>
+                <td><strong>Country</strong></td>
                 <td id="country"></td>
               </tr>
               <tr>
-                <th>State</th>
+                <td><strong>State</strong></td>
                 <td id="state"></td>
               </tr>
               <tr>
-                <th>City</th>
+                <td><strong>City</strong></td>
                 <td id="city"></td>
               </tr>
               <tr>
-                <th>Zip Code</th>
+                <td><strong>Zip Code</strong></td>
                 <td id="zipcode"></td>
               </tr>
               <tr>
-                <th>Means ID</th>
+                <td><strong>Means ID</strong></td>
                 <td id="meansId"></td>
               </tr>
               <tr>
-                <th>ID Number</th>
+                <td><strong>ID Number</strong></td>
                 <td id="idNumber"></td>
               </tr>
               <tr>
-                <th>Address</th>
+                <td><strong>Address</strong></td>
                 <td id="address"></td>
               </tr>
               <tr>
-                <th>Passport</th>
-                <td><img id="passport" style="width: 40px; height:40px;" /></td>
-              </tr>
-              <tr>
-                <th>Team Country</th>
+                <td><strong>Team Country</strong></td>
                 <td id="teamCountry"></td>
               </tr>
               <tr>
-                <th>Team State</th>
+                <td><strong>Team State</strong></td>
                 <td id="teamState"></td>
               </tr>
               <tr>
-                <th>Team City</th>
+                <td><strong>Team City</strong></td>
                 <td id="teamCity"></td>
               </tr>
               <tr>
-                <th>Number of Players</th>
+                <td><strong>Number of Players</strong></td>
                 <td id="numberOfPlayers"></td>
               </tr>
               <tr>
-                <th>Team Address</th>
+                <td><strong>Team Address</strong></td>
                 <td id="teamAddress"></td>
               </tr>
               <tr>
-                <th>Team Logo</th>
-                <td><img id="teamLogo" style="width: 40px; height:40px;" /></td>
-              </tr>
-              <tr>
-                <th>Time Created</th>
+                <td><strong>Time Created</strong></td>
                 <td id="timeCreated"></td>
               </tr>
               <tr>
-                <th>Date Created</th>
+                <td><strong>Date Created</strong></td>
                 <td id="dateCreated"></td>
               </tr>
               <tr>
-                <th>IP Address</th>
+                <td><strong>IP Address</strong></td>
                 <td id="ipAddress"></td>
               </tr>
             </tbody>
