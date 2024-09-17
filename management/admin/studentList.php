@@ -9,6 +9,10 @@ $stmt_students = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` ORDER 
 $stmt_students->execute();
 $students_array = $stmt_students->fetchAll(PDO::FETCH_ASSOC);
 
+$stmt_school = $pdo->prepare("SELECT * FROM `yoshi_schools_officials_tbl` ORDER BY id DESC ");
+$stmt_school->execute();
+$school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 <!DOCTYPE html>
