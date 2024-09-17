@@ -124,7 +124,7 @@ $students_array = $stmt_students->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $student['team_name']; ?></td>
                                 <td><?php echo $student['TeamRefNumber']; ?></td>
                                 <td>
-                                  <img src="<?php echo "../../schools/school_photo/" . $student['passport']; ?>"
+                                  <img src="<?php echo "../../schools/student_photo/" . $student['passport']; ?>"
                                     style="width: 40px; height:40px;" />
                                 </td>
                                 <td><?php echo $student['surname'] . " " . $student['firstname']; ?></td>
