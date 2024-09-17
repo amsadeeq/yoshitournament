@@ -387,10 +387,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               </tr>
 
               <tr>
-                <td><strong>Surname</strong></td>
-                <td id="surname"></td>
-                <td><strong>First Name</strong></td>
-                <td id="firstname"></td>
+                <td><strong>Surname </strong> &nbsp; <span id="surname"></span></td>
+                <td><strong>First Name </strong> &nbsp; <span id="firstname"></span></td>
               </tr>
 
               <tr>
