@@ -458,6 +458,229 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
   </div>
 
 
+  <script>
+    function editSchool(teamRefNumber) {
+      // Send an AJAX request to fetch the school details
+      $.ajax({
+        url: 'editSchool.php',
+        type: 'POST',
+        data: { teamRefNumber: teamRefNumber },
+        success: function (response) {
+          // Parse the JSON response
+          var school = JSON.parse(response);
+
+          // Populate the form fields with the school details
+          $('#editUserPosition').val(school.user_position);
+          $('#editSurname').val(school.surname);
+          $('#editFirstname').val(school.firstname);
+          $('#editDob').val(school.dob);
+          $('#editGender').val(school.gender);
+          $('#editCountry').val(school.country);
+          $('#editState').val(school.state);
+          $('#editCity').val(school.city);
+          $('#editZipcode').val(school.zipcode);
+          $('#editPhone').val(school.phone);
+          $('#editEmail').val(school.email);
+          $('#editMeansId').val(school.means_id);
+          $('#editIdNumber').val(school.id_number);
+          $('#editAddress').val(school.address);
+          $('#editPassport').val(school.passport);
+          $('#editTeamName').val(school.team_name);
+          $('#editTeamCountry').val(school.team_country);
+          $('#editTeamState').val(school.team_state);
+          $('#editTeamCity').val(school.team_city);
+          $('#editNumberOfPlayers').val(school.number_of_players);
+          $('#editTeamAddress').val(school.team_address);
+          $('#editTeamLogo').val(school.team_logo);
+          $('#editTimeCreated').val(school.time_created);
+          $('#editDateCreated').val(school.date_created);
+          $('#editIpAddress').val(school.ip_address);
+
+          // Show the edit modal
+          $('#editSchoolModal').modal('show');
+        },
+        error: function (xhr, status, error) {
+          // Handle the error if the request fails
+          console.log(error);
+        }
+      });
+    }
+
+    function updateSchool() {
+      // Get the form data
+      var formData = new FormData($('#editSchoolForm')[0]);
+
+      // Send an AJAX request to update the school details
+      $.ajax({
+        url: 'updateSchool.php',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+          // Reload the page after successful update
+          location.reload();
+        },
+        error: function (xhr, status, error) {
+          // Handle the error if the update fails
+          console.log(error);
+        }
+      });
+    }
+  </script>
+
+  <!-- Edit Modal -->
+  <div class="modal fade" id="editSchoolModal" tabindex="-1" role="dialog" aria-labelledby="editSchoolModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editSchoolModalLabel">Edit School Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="editSchoolForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editUserPosition">User Position</label>
+                <input type="text" class="form-control" id="editUserPosition" name="editUserPosition">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editSurname">Surname</label>
+                <input type="text" class="form-control" id="editSurname" name="editSurname">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editFirstname">First Name</label>
+                <input type="text" class="form-control" id="editFirstname" name="editFirstname">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editDob">Date of Birth</label>
+                <input type="date" class="form-control" id="editDob" name="editDob">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editGender">Gender</label>
+                <select class="form-control" id="editGender" name="editGender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editCountry">Country</label>
+                <input type="text" class="form-control" id="editCountry" name="editCountry">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editState">State</label>
+                <input type="text" class="form-control" id="editState" name="editState">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editCity">City</label>
+                <input type="text" class="form-control" id="editCity" name="editCity">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editZipcode">Zip Code</label>
+                <input type="text" class="form-control" id="editZipcode" name="editZipcode">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editPhone">Phone</label>
+                <input type="text" class="form-control" id="editPhone" name="editPhone">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editEmail">Email</label>
+                <input type="email" class="form-control" id="editEmail" name="editEmail">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editMeansId">Means ID</label>
+                <input type="text" class="form-control" id="editMeansId" name="editMeansId">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editIdNumber">ID Number</label>
+                <input type="text" class="form-control" id="editIdNumber" name="editIdNumber">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editAddress">Address</label>
+                <textarea class="form-control" id="editAddress" name="editAddress"></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editPassport">Passport</label>
+                <input type="file" class="form-control" id="editPassport" name="editPassport">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editTeamName">Team Name</label>
+                <input type="text" class="form-control" id="editTeamName" name="editTeamName">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editTeamCountry">Team Country</label>
+                <input type="text" class="form-control" id="editTeamCountry" name="editTeamCountry">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editTeamState">Team State</label>
+                <input type="text" class="form-control" id="editTeamState" name="editTeamState">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editTeamCity">Team City</label>
+                <input type="text" class="form-control" id="editTeamCity" name="editTeamCity">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editNumberOfPlayers">Number of Players</label>
+                <input type="number" class="form-control" id="editNumberOfPlayers" name="editNumberOfPlayers">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editTeamAddress">Team Address</label>
+                <textarea class="form-control" id="editTeamAddress" name="editTeamAddress"></textarea>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editTeamLogo">Team Logo</label>
+                <input type="file" class="form-control" id="editTeamLogo" name="editTeamLogo">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editTimeCreated">Time Created</label>
+                <input type="text" class="form-control" id="editTimeCreated" name="editTimeCreated" readonly>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editDateCreated">Date Created</label>
+                <input type="text" class="form-control" id="editDateCreated" name="editDateCreated" readonly>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editIpAddress">IP Address</label>
+                <input type="text" class="form-control" id="editIpAddress" name="editIpAddress" readonly>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="updateSchool()">Save Changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
   <!-- jQuery -->
