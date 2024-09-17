@@ -8,6 +8,7 @@ require '../../connection.php';
 $stmt_students = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` ORDER BY id DESC ");
 $stmt_students->execute();
 $students_array = $stmt_students->fetchAll(PDO::FETCH_ASSOC);
+echo $students_array;
 
 ?>
 <!DOCTYPE html>
