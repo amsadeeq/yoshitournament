@@ -354,7 +354,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
   <!-- Modal -->
   <div class="modal fade" id="viewSchoolModal" tabindex="-1" role="dialog" aria-labelledby="viewSchoolModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="viewSchoolModalLabel">View School Details</h5>
@@ -366,10 +366,12 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <td rowspan="20" style="width: 100px; vertical-align: top;"><img id="passport" style="width: 100px; height: 100px;" /></td>
+                <td rowspan="20" style="width: 100px; vertical-align: top;"><img id="passport"
+                    style="width: 100px; height: 100px;" /></td>
                 <td><strong>School Name</strong></td>
                 <td id="schoolName"></td>
-                <td rowspan="20" style="width: 100px; vertical-align: top;"><img id="teamLogo" style="width: 100px; height: 100px;" /></td>
+                <td rowspan="20" style="width: 100px; vertical-align: top;"><img id="teamLogo"
+                    style="width: 100px; height: 100px;" /></td>
               </tr>
               <tr>
                 <td><strong>Team Ref No.</strong></td>
