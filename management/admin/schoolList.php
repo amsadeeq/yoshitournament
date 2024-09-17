@@ -369,19 +369,17 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <td style="width: 100px; vertical-align: top;"><img id="passport"
                     style="width: 100px; height: 100px; border-radius:10px 10px;" /></td>
                 <td colspan="2">
-                  <strong>School Name</strong> &nbsp; <span id="schoolName"></span>
+                  <strong>School Name</strong> &nbsp; <span id="schoolName"></span><br />
                   <strong>School Address</strong> &nbsp; <span id="teamAddress"></span>
                 </td>
                 <td style="width: 100px; vertical-align: top;"><img id="teamLogo"
                     style="width: 100px; height: 100px;" /></td>
               </tr>
               <tr>
-                <td><strong>Team Ref No.</strong></td>
-                <td id="teamRefNumber"></td>
-                <!-- <td><strong>Team Address</strong></td> -->
-                <!-- <td colspan="2" id="teamAddress"></td> -->
                 <td><strong>User Ref No.</strong></td>
                 <td colspan="3" id="userRefNo"></td>
+                <td><strong>Team Ref No.</strong></td>
+                <td id="teamRefNumber"></td>
               </tr>
 
               <tr>
