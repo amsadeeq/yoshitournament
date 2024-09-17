@@ -8,7 +8,7 @@ require '../../connection.php';
 $stmt_students = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` ORDER BY id DESC ");
 $stmt_students->execute();
 $students_array = $stmt_students->fetchAll(PDO::FETCH_ASSOC);
-echo $students_array;
+
 
 ?>
 <!DOCTYPE html>
@@ -95,8 +95,9 @@ echo $students_array;
                               <th>School Logo</th>
                               <th>School Name</th>
                               <th>Team Ref No.</th>
-                              <th>Team Address</th>
-                              <th>Phone</th>
+                              <th>Student Photo</th>
+                              <th>Student Name</th>
+                              <th>Category</th>
                               <th>Email</th>
                               <th>Action</th>
                             </tr>
@@ -117,23 +118,27 @@ echo $students_array;
                               <tr>
                                 <td><?php echo $sn; ?></td>
                                 <td>
-                                  <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>"
+                                  <img src="<?php echo "../../schools/school_logo/" . $student['team_logo']; ?>"
                                     style="width: 40px; height:40px;" />
                                 </td>
-                                <td><?php echo $school['team_name']; ?></td>
-                                <td><?php echo $school['TeamRefNumber']; ?></td>
-                                <td><?php echo $school['team_address']; ?></td>
-                                <td><?php echo $school['phone']; ?></td>
-                                <td><?php echo $school['email']; ?></td>
+                                <td><?php echo $student['team_name']; ?></td>
+                                <td><?php echo $student['TeamRefNumber']; ?></td>
+                                <td>
+                                  <img src="<?php echo "../../schools/school_photo/" . $student['passport']; ?>"
+                                    style="width: 40px; height:40px;" />
+                                </td>
+                                <td><?php echo $student['surname'] . " " . $student['firstname']; ?></td>
+                                <td><?php echo $student['category']; ?></td>
+                                <td><?php echo $student['team_address']; ?></td>
+                                <td><?php echo $student['email']; ?></td>
                                 <td>
                                   <a href="#" style="color: green !important;"
-                                    onclick="viewSchool('<?php echo $teamRefNumber; ?>')"><i class="fa fa-eye"></i></a> |
+                                    onclick="viewSchool('<?php echo $userRefNo; ?>')"><i class="fa fa-eye"></i></a> |
                                   <a href="#" style="color: brown !important;"
-                                    onclick="editSchool('<?php echo $teamRefNumber; ?>')"><i class="fa fa-pencil"></i></a>
+                                    onclick="editSchool('<?php echo $userRefNo; ?>')"><i class="fa fa-pencil"></i></a>
                                   |
                                   <a href="#" style="color: red !important;"
-                                    onclick="deleteSchool('<?php echo $teamRefNumber; ?>')"><i
-                                      class="fa fa-trash"></i></a>
+                                    onclick="deleteSchool('<?php echo $userRefNo; ?>')"><i class="fa fa-trash"></i></a>
 
                                 </td>
                               </tr>
