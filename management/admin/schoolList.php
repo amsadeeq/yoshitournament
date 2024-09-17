@@ -315,6 +315,30 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           $('#teamAddress').text(school.team_address);
           $('#phone').text(school.phone);
           $('#email').text(school.email);
+          $('#userRefNo').text(school.userRefNo);
+          $('#hshTeamRefNumber').text(school.hsh_teamRefNumber);
+          $('#userPosition').text(school.user_position);
+          $('#surname').text(school.surname);
+          $('#firstname').text(school.firstname);
+          $('#dob').text(school.dob);
+          $('#gender').text(school.gender);
+          $('#country').text(school.country);
+          $('#state').text(school.state);
+          $('#city').text(school.city);
+          $('#zipcode').text(school.zipcode);
+          $('#meansId').text(school.means_id);
+          $('#idNumber').text(school.id_number);
+          $('#address').text(school.address);
+          $('#passport').attr('src', "../../schools/school_registrant_photo/" + school.passport);
+          $('#teamCountry').text(school.team_country);
+          $('#teamState').text(school.team_state);
+          $('#teamCity').text(school.team_city);
+          $('#numberOfPlayers').text(school.number_of_players);
+          $('#teamAddress').text(school.team_address);
+          $('#teamLogo').attr('src', "../../schools/school_logo/" + school.team_logo);
+          $('#timeCreated').text(school.time_created);
+          $('#dateCreated').text(school.date_created);
+          $('#ipAddress').text(school.ip_address);
 
           // Show the modal
           $('#viewSchoolModal').modal('show');
@@ -361,6 +385,102 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <th>Email</th>
                 <td id="email"></td>
               </tr>
+              <tr>
+                <th>User Ref No.</th>
+                <td id="userRefNo"></td>
+              </tr>
+              <tr>
+                <th>Team Ref No.</th>
+                <td id="hshTeamRefNumber"></td>
+              </tr>
+              <tr>
+                <th>User Position</th>
+                <td id="userPosition"></td>
+              </tr>
+              <tr>
+                <th>Surname</th>
+                <td id="surname"></td>
+              </tr>
+              <tr>
+                <th>First Name</th>
+                <td id="firstname"></td>
+              </tr>
+              <tr>
+                <th>Date of Birth</th>
+                <td id="dob"></td>
+              </tr>
+              <tr>
+                <th>Gender</th>
+                <td id="gender"></td>
+              </tr>
+              <tr>
+                <th>Country</th>
+                <td id="country"></td>
+              </tr>
+              <tr>
+                <th>State</th>
+                <td id="state"></td>
+              </tr>
+              <tr>
+                <th>City</th>
+                <td id="city"></td>
+              </tr>
+              <tr>
+                <th>Zip Code</th>
+                <td id="zipcode"></td>
+              </tr>
+              <tr>
+                <th>Means ID</th>
+                <td id="meansId"></td>
+              </tr>
+              <tr>
+                <th>ID Number</th>
+                <td id="idNumber"></td>
+              </tr>
+              <tr>
+                <th>Address</th>
+                <td id="address"></td>
+              </tr>
+              <tr>
+                <th>Passport</th>
+                <td><img id="passport" style="width: 40px; height:40px;" /></td>
+              </tr>
+              <tr>
+                <th>Team Country</th>
+                <td id="teamCountry"></td>
+              </tr>
+              <tr>
+                <th>Team State</th>
+                <td id="teamState"></td>
+              </tr>
+              <tr>
+                <th>Team City</th>
+                <td id="teamCity"></td>
+              </tr>
+              <tr>
+                <th>Number of Players</th>
+                <td id="numberOfPlayers"></td>
+              </tr>
+              <tr>
+                <th>Team Address</th>
+                <td id="teamAddress"></td>
+              </tr>
+              <tr>
+                <th>Team Logo</th>
+                <td><img id="teamLogo" style="width: 40px; height:40px;" /></td>
+              </tr>
+              <tr>
+                <th>Time Created</th>
+                <td id="timeCreated"></td>
+              </tr>
+              <tr>
+                <th>Date Created</th>
+                <td id="dateCreated"></td>
+              </tr>
+              <tr>
+                <th>IP Address</th>
+                <td id="ipAddress"></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -371,7 +491,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
 
-  
+
 
 
   <!-- jQuery -->
@@ -407,3 +527,4 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 </body>
 
 </html>
+</tr>
