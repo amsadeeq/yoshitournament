@@ -368,114 +368,85 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               <tr>
                 <td rowspan="20" style="width: 100px; vertical-align: top;"><img id="passport"
                     style="width: 100px; height: 100px;" /></td>
-                <td><strong>School Name</strong></td>
-                <td id="schoolName"></td>
+                <td colspan="2"><strong>School Name</strong></td>
                 <td rowspan="20" style="width: 100px; vertical-align: top;"><img id="teamLogo"
                     style="width: 100px; height: 100px;" /></td>
               </tr>
               <tr>
-                <td><strong>Team Ref No.</strong></td>
-                <td id="teamRefNumber"></td>
+                <td colspan="2"><strong>Team Ref No.</strong></td>
               </tr>
               <tr>
-                <td><strong>Team Address</strong></td>
-                <td id="teamAddress"></td>
+                <td colspan="2"><strong>Team Address</strong></td>
               </tr>
               <tr>
-                <td><strong>Phone</strong></td>
-                <td id="phone"></td>
+                <td colspan="2"><strong>Phone</strong></td>
               </tr>
               <tr>
-                <td><strong>Email</strong></td>
-                <td id="email"></td>
+                <td colspan="2"><strong>Email</strong></td>
               </tr>
               <tr>
-                <td><strong>User Ref No.</strong></td>
-                <td id="userRefNo"></td>
+                <td colspan="2"><strong>User Ref No.</strong></td>
               </tr>
               <tr>
-                <td><strong>Team Ref No.</strong></td>
-                <td id="hshTeamRefNumber"></td>
+                <td colspan="2"><strong>Team Ref No.</strong></td>
               </tr>
               <tr>
-                <td><strong>User Position</strong></td>
-                <td id="userPosition"></td>
+                <td colspan="2"><strong>User Position</strong></td>
               </tr>
               <tr>
-                <td><strong>Surname</strong></td>
-                <td id="surname"></td>
+                <td colspan="2"><strong>Surname</strong></td>
               </tr>
               <tr>
-                <td><strong>First Name</strong></td>
-                <td id="firstname"></td>
+                <td colspan="2"><strong>First Name</strong></td>
               </tr>
               <tr>
-                <td><strong>Date of Birth</strong></td>
-                <td id="dob"></td>
+                <td colspan="2"><strong>Date of Birth</strong></td>
               </tr>
               <tr>
-                <td><strong>Gender</strong></td>
-                <td id="gender"></td>
+                <td colspan="2"><strong>Gender</strong></td>
               </tr>
               <tr>
-                <td><strong>Country</strong></td>
-                <td id="country"></td>
+                <td colspan="2"><strong>Country</strong></td>
               </tr>
               <tr>
-                <td><strong>State</strong></td>
-                <td id="state"></td>
+                <td colspan="2"><strong>State</strong></td>
               </tr>
               <tr>
-                <td><strong>City</strong></td>
-                <td id="city"></td>
+                <td colspan="2"><strong>City</strong></td>
               </tr>
               <tr>
-                <td><strong>Zip Code</strong></td>
-                <td id="zipcode"></td>
+                <td colspan="2"><strong>Zip Code</strong></td>
               </tr>
               <tr>
-                <td><strong>Means ID</strong></td>
-                <td id="meansId"></td>
+                <td colspan="2"><strong>Means ID</strong></td>
               </tr>
               <tr>
-                <td><strong>ID Number</strong></td>
-                <td id="idNumber"></td>
+                <td colspan="2"><strong>ID Number</strong></td>
               </tr>
               <tr>
-                <td><strong>Address</strong></td>
-                <td id="address"></td>
+                <td colspan="2"><strong>Address</strong></td>
               </tr>
               <tr>
-                <td><strong>Team Country</strong></td>
-                <td id="teamCountry"></td>
+                <td colspan="2"><strong>Team Country</strong></td>
               </tr>
               <tr>
-                <td><strong>Team State</strong></td>
-                <td id="teamState"></td>
+                <td colspan="2"><strong>Team State</strong></td>
               </tr>
               <tr>
-                <td><strong>Team City</strong></td>
-                <td id="teamCity"></td>
+                <td colspan="2"><strong>Team City</strong></td>
               </tr>
               <tr>
-                <td><strong>Number of Players</strong></td>
-                <td id="numberOfPlayers"></td>
+                <td colspan="2"><strong>Number of Players</strong></td>
+              </tr>
+
+              <tr>
+                <td colspan="2"><strong>Time Created</strong></td>
               </tr>
               <tr>
-                <td><strong>Team Address</strong></td>
-                <td id="teamAddress"></td>
+                <td colspan="2"><strong>Date Created</strong></td>
               </tr>
               <tr>
-                <td><strong>Time Created</strong></td>
-                <td id="timeCreated"></td>
-              </tr>
-              <tr>
-                <td><strong>Date Created</strong></td>
-                <td id="dateCreated"></td>
-              </tr>
-              <tr>
-                <td><strong>IP Address</strong></td>
-                <td id="ipAddress"></td>
+                <td colspan="2"><strong>IP Address</strong></td>
               </tr>
             </tbody>
           </table>
