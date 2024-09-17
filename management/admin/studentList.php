@@ -129,7 +129,7 @@ $students_array = $stmt_students->fetchAll(PDO::FETCH_ASSOC);
                                 </td>
                                 <td><?php echo $student['surname'] . " " . $student['firstname']; ?></td>
                                 <td><?php echo $student['category']; ?></td>
-                                <td><?php echo $student['team_address']; ?></td>
+
                                 <td><?php echo $student['email']; ?></td>
                                 <td>
                                   <a href="#" style="color: green !important;"
