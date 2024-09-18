@@ -79,7 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ]);
 
     // Return success response (you can customize this based on your needs)
-    echo json_encode(['status' => 'success', 'message' => 'School details updated successfully, excluding logo and passport.']);
+    // echo json_encode(['status' => 'success', 'message' => 'School details updated successfully, excluding logo and passport.']);
+    echo json_encode('success');
 }
 
 ?>
