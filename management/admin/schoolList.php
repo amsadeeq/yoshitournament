@@ -542,7 +542,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           </button>
         </div>
         <div class="modal-body">
-          <form id="editSchoolForm">
+          <form method="POST" id="editSchoolForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editUserPosition">User Position</label>
