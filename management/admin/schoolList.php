@@ -558,7 +558,12 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="modal-body">
           <form method="POST" id="editSchoolForm">
-            <input type="text" name="editTeamRefNumber" id="editTeamRefNumber">
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" class="form-control" name="editTeamRefNumber" id="editTeamRefNumber">
+              </div>
+            </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editUserPosition">User Position</label>
