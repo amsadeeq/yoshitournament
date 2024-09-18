@@ -510,6 +510,11 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       // Get the form data
       var formData = new FormData($('#editSchoolForm')[0]);
 
+      // Log the form data to check
+      for (var pair of formData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+      }
+
       // Send an AJAX request to update the school details
       $.ajax({
         url: 'updateSchool.php',
@@ -518,16 +523,21 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         processData: false,
         contentType: false,
         success: function (response) {
+          // Log the server response
+          console.log(response);
+
           // Reload the page after successful update
           location.reload();
         },
         error: function (xhr, status, error) {
           // Handle the error if the update fails
-          //console.log(error);
-          alert(error);
+          console.log(xhr.responseText);
+          console.log(status);
+          console.log(error);
         }
       });
     }
+
   </script>
 
   <!-- Edit Modal -->
