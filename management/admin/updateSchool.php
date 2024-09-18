@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Check if the teamRefNumber exists
         $stmt = $pdo->prepare("SELECT * FROM `yoshi_schools_officials_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
-        $stmt->execute(['teamRefNumber' => $_POST['teamRefNumber']]);
+        $stmt->execute(['teamRefNumber' => $_POST['editTeamRefNumber']]);
         $school = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$school) {
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 `team_city` = :team_city, 
                 `number_of_players` = :number_of_players, 
                 `team_address` = :team_address
-            WHERE `TeamRefNumber` = :teamRefNumber");
+            WHERE `TeamRefNumber` = :editTeamRefNumber");
 
         // Bind parameters
         $stmt->bindParam(':user_position', $_POST['editUserPosition']);
