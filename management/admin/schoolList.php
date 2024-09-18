@@ -546,7 +546,12 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editUserPosition">User Position</label>
-                <input type="text" class="form-control" id="editUserPosition" name="editUserPosition">
+                <!-- <input type="text" class="form-control" id="editUserPosition" name="editUserPosition"> -->
+                <select class="form-select form-control" id="editUserPosition" name="editUserPosition" required>
+                  <option value="Coach">Coach</option>
+                  <option value="Sport Director"> Sport Director</option>
+                  <option value="Game Master"> Game Master</option>
+                </select>
               </div>
               <div class="form-group col-md-6">
                 <label for="editSurname">Surname</label>
@@ -574,6 +579,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               <div class="form-group col-md-6">
                 <label for="editCountry">Country</label>
                 <input type="text" class="form-control" id="editCountry" name="editCountry">
+
               </div>
             </div>
             <div class="form-row">
@@ -603,7 +609,15 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               </div>
               <div class="form-group col-md-6">
                 <label for="editMeansId">Means ID</label>
-                <input type="text" class="form-control" id="editMeansId" name="editMeansId">
+                <!-- <input type="text" class="form-control" id="editMeansId" name="editMeansId"> -->
+                <select class="form-select form-control" id="editMeansId" name="editMeansId" name="means_id">
+                  <option value="National Identification Number">National Identification Number(NIN)
+                  </option>
+                  <option value="Drivers License">Driver's License</option>
+                  <option value="International Passport">International Passport</option>
+                  <option value="Office ID">Office ID</option>
+                  <option value="Voters Card">Voter's Card</option>
+                </select>
               </div>
             </div>
             <div class="form-row">
