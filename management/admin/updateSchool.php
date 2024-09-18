@@ -1,8 +1,21 @@
 <?php
 require '../../connection.php';
 
+print_r($_POST);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
+
+        // Check if the teamRefNumber exists
+        $stmt = $pdo->prepare("SELECT * FROM `yoshi_schools_officials_tbl` WHERE `TeamRefNumber` = :teamRefNumber");
+        $stmt->execute(['teamRefNumber' => $_POST['teamRefNumber']]);
+        $school = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$school) {
+            echo json_encode(['status' => 'error', 'message' => 'No record found for this teamRefNumber.']);
+            exit;
+        }
+
         // Prepare the update statement
         $stmt = $pdo->prepare("UPDATE `yoshi_schools_officials_tbl` 
             SET `user_position` = :user_position, 
@@ -48,14 +61,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':team_city', $_POST['editTeamCity']);
         $stmt->bindParam(':number_of_players', $_POST['editNumberOfPlayers']);
         $stmt->bindParam(':team_address', $_POST['editTeamAddress']);
-        $stmt->bindParam(':teamRefNumber', $_POST['teamRefNumber']);
+        $stmt->bindParam(':TeamRefNumber', $_POST['teamRefNumber']);
 
         // Execute the update query
         if ($stmt->execute()) {
-            echo json_encode(['status' => 'success']);
+            if ($stmt->rowCount() > 0) {
+                echo json_encode(['status' => 'success', 'message' => 'Record updated successfully.']);
+            } else {
+                echo json_encode(['status' => 'error', 'message' => 'No rows updated.']);
+            }
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.']);
         }
+
     } catch (PDOException $e) {
         echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
     }

@@ -523,12 +523,16 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         processData: false,
         contentType: false,
         success: function (response) {
-          // Log the server response
-          console.log(response);
-
-          // Reload the page after successful update
-          //location.reload();
+          console.log(response);  // Log the server response to see what's coming back
+          var jsonResponse = JSON.parse(response);
+          if (jsonResponse.status === 'success') {
+            alert('Record updated successfully');
+            //location.reload();
+          } else {
+            alert('Update failed: ' + jsonResponse.message);
+          }
         },
+
         error: function (xhr, status, error) {
           // Handle the error if the update fails
           console.log(xhr.responseText);
