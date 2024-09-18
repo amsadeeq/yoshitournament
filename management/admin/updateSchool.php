@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         // Prepare the update statement
         $stmt = $pdo->prepare("UPDATE `yoshi_schools_officials_tbl` 
-            SET `user_position` = :userPosition, 
+            SET `user_position` = :user_position, 
                 `surname` = :surname, 
                 `firstname` = :firstname, 
                 `dob` = :dob, 
@@ -16,15 +16,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 `zipcode` = :zipcode, 
                 `phone` = :phone, 
                 `email` = :email, 
-                `means_id` = :meansId, 
-                `id_number` = :idNumber, 
+                `means_id` = :means_id, 
+                `id_number` = :id_number, 
                 `address` = :address, 
-                `team_name` = :teamName, 
-                `team_country` = :teamCountry, 
-                `team_state` = :teamState, 
-                `team_city` = :teamCity, 
-                `number_of_players` = :numberOfPlayers, 
-                `team_address` = :teamAddress
+                `team_name` = :team_name, 
+                `team_country` = :team_country, 
+                `team_state` = :team_state, 
+                `team_city` = :team_city, 
+                `number_of_players` = :number_of_players, 
+                `team_address` = :team_address
             WHERE `TeamRefNumber` = :teamRefNumber");
 
         // Bind parameters
