@@ -527,7 +527,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           console.log(response);
 
           // Reload the page after successful update
-          location.reload();
+          //location.reload();
         },
         error: function (xhr, status, error) {
           // Handle the error if the update fails
