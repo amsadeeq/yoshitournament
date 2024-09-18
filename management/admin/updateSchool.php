@@ -37,8 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 `team_state` = :team_state, 
                 `team_city` = :team_city, 
                 `number_of_players` = :number_of_players, 
-                `team_address` = :team_address
-            WHERE `TeamRefNumber` = :editTeamRefNumber");
+                `team_address` = :team_address, 
+                `TeamRefNumber` = :TeamRefNumber
+            WHERE `TeamRefNumber` = :TeamRefNumber");
 
         // Bind parameters
         $stmt->bindParam(':user_position', $_POST['editUserPosition']);
@@ -61,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':team_city', $_POST['editTeamCity']);
         $stmt->bindParam(':number_of_players', $_POST['editNumberOfPlayers']);
         $stmt->bindParam(':team_address', $_POST['editTeamAddress']);
-        // $stmt->bindParam(':TeamRefNumber', $_POST['editTeamRefNumber']);
+        $stmt->bindParam(':TeamRefNumber', $_POST['editTeamRefNumber']);
 
         // Execute the update query
         if ($stmt->execute()) {
