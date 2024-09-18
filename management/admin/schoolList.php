@@ -502,7 +502,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         },
         error: function (xhr, status, error) {
           // Handle the error if the request fails
-          console.log(error);
+          //console.log(error);
         }
       });
     }
@@ -512,9 +512,9 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       var formData = new FormData($('#editSchoolForm')[0]);
 
       // Log the form data to check
-      for (var pair of formData.entries()) {
-        console.log(pair[0] + ', ' + pair[1]);
-      }
+      // for (var pair of formData.entries()) {
+      //   console.log(pair[0] + ', ' + pair[1]);
+      // }
 
       // Send an AJAX request to update the school details
       $.ajax({
@@ -524,21 +524,22 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         processData: false,
         contentType: false,
         success: function (response) {
-          console.log(response);  // Log the server response to see what's coming back
+          //console.log(response);  // Log the server response to see what's coming back
           var jsonResponse = JSON.parse(response);
           if (jsonResponse.status === 'success') {
             alert('Record updated successfully');
-            //location.reload();
+            location.reload();
           } else {
-            alert('Update failed: ' + jsonResponse.message);
+            // alert('Update failed: ' + jsonResponse.message);
+            alert('Update failed, Try some time');
           }
         },
 
         error: function (xhr, status, error) {
           // Handle the error if the update fails
-          console.log(xhr.responseText);
-          console.log(status);
-          console.log(error);
+          //console.log(xhr.responseText);
+          //console.log(status);
+          //console.log(error);
         }
       });
     }
@@ -560,7 +561,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           <form method="POST" id="editSchoolForm">
             <div class="row">
               <div class="col-md-6">
-                <input type="text" class="form-control" name="editTeamRefNumber" id="editTeamRefNumber">
+                <input type="text" class="form-control" name="editTeamRefNumber" id="editTeamRefNumber" readonly>
               </div>
             </div>
 
