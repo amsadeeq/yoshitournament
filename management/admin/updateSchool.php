@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':team_city', $_POST['editTeamCity']);
         $stmt->bindParam(':number_of_players', $_POST['editNumberOfPlayers']);
         $stmt->bindParam(':team_address', $_POST['editTeamAddress']);
-        $stmt->bindParam(':TeamRefNumber', $_POST['editTeamRefNumber']);
+        // $stmt->bindParam(':TeamRefNumber', $_POST['editTeamRefNumber']);
 
         // Execute the update query
         if ($stmt->execute()) {
