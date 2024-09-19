@@ -271,7 +271,7 @@ $total_student = $result_student['total_student'];
             <a href="studentCategory.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon">
-                  <i class="fas fa-user-graduate"></i>
+                  <i class="fa fa-list-alt"></i>
                 </div>
                 <div class="count"><?php echo $total_student; ?></div>
 
