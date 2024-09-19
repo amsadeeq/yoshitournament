@@ -249,7 +249,7 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
     </script>
 
     <!-- Modal -->
-    <div class="modal fade" id="viewUserModal" tabindex="-1" role="dialog" aria-labelledby="viewSchoolModalLabel"
+    <div class="modal fade" id="viewUserModal" tabindex="-1" role="dialog" aria-labelledby="viewUserModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
