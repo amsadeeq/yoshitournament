@@ -209,7 +209,7 @@ try {
           $stmt->bindParam(':number_of_players', $number_of_players);
           $stmt->bindParam(':team_address', $team_address);
           $stmt->bindParam(':passport', $imgname1);
-          $stmt->bindParam(':team_logo', $imgname2);
+          $stmt->bindParam(':team_logo', $studentDetails['team_logo']);
           $stmt->bindParam(':emergency_name', $emergency_name);
           $stmt->bindParam(':emergency_phone', $emergency_phone);
           $stmt->bindParam(':emergency_email', $emergency_email);
@@ -939,7 +939,7 @@ try {
                       <div class="col-lg-12">
                         <div class="form-group text-center">
                           <fieldset>
-                            <img src="schools/school_logo/<?php echo $studentDetails['team_logo'] ?>"
+                            <img src="schools/school_logo/<?php echo $studentDetails['team_logo']; ?>"
                               class="team_logo" />
                             <input type="file" name="team_logo" class="form-control" accept="image/*" hidden />
                           </fieldset>
