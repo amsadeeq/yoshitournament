@@ -211,6 +211,102 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
             }
         }
     </script>
+    <script>
+        function viewSchool(userRefNo) {
+            // Send an AJAX request to fetch the school details
+            $.ajax({
+                url: 'viewUser.php',
+                type: 'POST',
+                data: { userRefNo: userRefNo },
+                success: function (response) {
+                    // Parse the JSON response
+                    var school = JSON.parse(response);
+
+                    // Populate the modal with the user details
+
+                    $('#userRefNo').text(user.userRefNo);
+                    $('#user_email').text(user.user_email);
+                    $('#user_position').text(user.user_position);
+                    $('#TeamRefNumber').text(user.TeamRefNumber);
+                    $('#reg_status').text(user.reg_status);
+                    $('#userPassword').text(user.user_password);
+                    $('#termsCondition').text(user.termsCondition);
+                    $('#time_created').text(user.time_created);
+                    $('#date_created').text(user.date_created);
+                    $('#timeReset').text(user.time_reset);
+                    $('#dateReset').text(user.date_reset);
+                    $('#ipAddress').text(user.ip_address);
+
+                    // Show the modal
+                    $('#viewUserModal').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    // Handle the error if the request fails
+                    console.log(error);
+                }
+            });
+        }
+    </script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="viewUserModal" tabindex="-1" role="dialog" aria-labelledby="viewSchoolModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewSchoolModalLabel">View User Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td><strong>User ID</strong></td>
+                                <td id="userRefNo"></td>
+                                <td><strong>Email</strong></td>
+                                <td id="user_email"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Position</strong></td>
+                                <td id="user_position"></td>
+                                <td><strong>Team Reference</strong></td>
+                                <td id="TeamRefNumber"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reg Status</strong></td>
+                                <td id="reg_status"></td>
+                                <td><strong>Password</strong></td>
+                                <td id="userPassword"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Terms & Condition</strong></td>
+                                <td id="termsCondition"></td>
+                                <td><strong>Time Created</strong></td>
+                                <td id="time_created"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Date Created</strong></td>
+                                <td id="date_created"></td>
+                                <td><strong>Time Reset</strong></td>
+                                <td id="timeReset"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Date Reset</strong></td>
+                                <td id="dateReset"></td>
+                                <td><strong>IP Address</strong></td>
+                                <td id="ipAddress"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
