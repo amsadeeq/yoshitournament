@@ -538,7 +538,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       $.ajax({
         url: 'editStudent.php',
         type: 'POST',
-        data: { editUserRefNo: editUserRefNo },
+        data: { userRefNo: userRefNo },
         success: function (response) {
           // Parse the JSON response
           var student = JSON.parse(response);
