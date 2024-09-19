@@ -185,7 +185,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                           <tbody>
 
                             <tr class="panel-title">
-                              <td><?php echo $school['id']; ?></td>
+                              <td><?php echo $sn; ?></td>
                               <td>
                                 <img src="<?php echo "../../schools/school_logo/" . $school['team_logo']; ?>"
                                   style="width: 40px; height:40px;" />
