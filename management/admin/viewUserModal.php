@@ -12,6 +12,8 @@
                 </button>
             </div>
             <div class="modal-body">
+                <p>For Registration status: 0 means Pending (Not register) while 1 means (Successfully registered)</p>
+                <p>For Terms & Condition: 0 means Not accepted while 1 means Accepted</p>
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
