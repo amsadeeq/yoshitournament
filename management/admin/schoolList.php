@@ -131,9 +131,9 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                     <a class="btn btn-warning btn-sm" href="#" style="color: #fff !important;"
                                       onclick="editSchool('<?php echo $teamRefNumber; ?>')"><i
                                         class="fa fa-pencil"></i></a>
-                                    <a class="btn btn-danger btn-sm" href="#" style="color: #fff !important;"
+                                    <!-- <a class="btn btn-danger btn-sm" href="#" style="color: #fff !important;"
                                       onclick="deleteSchool('<?php echo $teamRefNumber; ?>')"><i
-                                        class="fa fa-trash"></i></a>
+                                        class="fa fa-trash"></i></a> -->
                                   </div>
 
                                 </td>
