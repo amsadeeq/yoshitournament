@@ -360,13 +360,16 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           $('#teamAddress').text(student.team_address);
           $('#passport').attr('src', "../../schools/student_photo/" + student.passport);
           $('#teamLogo').attr('src', "../../schools/school_logo/" + student.team_logo);
+
           $('#emergencyName').text(student.emergency_name); // New field for emergency contact name
           $('#emergencyPhone').text(student.emergency_phone); // New field for emergency contact phone
           $('#emergencyEmail').text(student.emergency_email); // New field for emergency contact email
           $('#emergencyAddress').text(student.emergency_address); // New field for emergency contact address
+
           $('#timeCreated').text(student.time_created);
           $('#dateCreated').text(student.date_created);
           $('#ipAddress').text(student.ip_address);
+
           $('#attendance').text(student.attendance); // New field for attendance
           $('#attendanceTime').text(student.attendance_time); // New field for attendance time
           $('#attendanceDate').text(student.attendance_date); // New field for attendance date
@@ -467,6 +470,34 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               <tr>
                 <td colspan="2"><strong>Team City</strong> &nbsp; <span id="teamCity"></span></td>
                 <td colspan="2"><strong>Number of Players</strong> &nbsp; <span id="numberOfPlayers"></span></td>
+              </tr>
+
+              <tr>
+                <td colspan="4">
+                  <h4>Emergency Details</h4>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="2"><strong>Emergency Name</strong> &nbsp; <span id="emergencyName"></span></td>
+                <td colspan="2"><strong>Emergency Phone</strong> &nbsp; <span id="emergencyPhone"></span></td>
+              </tr>
+
+              <tr>
+                <td colspan="2"><strong>Emergency Email</strong> &nbsp; <span id="emergencyEmail"></span></td>
+                <td colspan="2"><strong>Emergency Address</strong> &nbsp; <span id="emergencyAddress"></span></td>
+              </tr>
+
+              <tr>
+                <td colspan="4">
+                  <h4>Attendance</h4>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="2"><strong>Attendance</strong> &nbsp; <span id="attendance"></span></td>
+                <td colspan="2"><strong>Attendance Time</strong> &nbsp; <span id="attendanceTime"></span></td>
+                <td colspan="2"><strong>Attendance Date</strong> &nbsp; <span id="attendanceDate"></span></td>
               </tr>
 
 
