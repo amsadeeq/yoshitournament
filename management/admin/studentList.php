@@ -545,7 +545,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
           // Populate the form fields with the student details
           $('#editUserPosition').val(student.user_position);
-          $('#editUserRef').val(student.userRefNo);
+          $('#editUserRefNo').val(student.userRefNo);
           $('#editTeamRefNumber').val(student.TeamRefNumber);
           $('#editSurname').val(student.surname);
           $('#editFirstname').val(student.firstname);
@@ -590,7 +590,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         },
         error: function (xhr, status, error) {
           // Handle the error if the request fails
-          //console.log(error);
+          console.log(error);
         }
       });
     }
@@ -600,9 +600,9 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       var formData = new FormData($('#editStudentForm')[0]);
 
       // Log the form data to check
-      // for (var pair of formData.entries()) {
-      //   console.log(pair[0] + ', ' + pair[1]);
-      // }
+      for (var pair of formData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+      }
 
       // Send an AJAX request to update the school details
       $.ajax({
@@ -618,16 +618,16 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
             alert('Record updated successfully');
             location.reload();
           } else {
-            // alert('Update failed: ' + jsonResponse.message);
+            alert('Update failed: ' + jsonResponse.message);
             alert('Update failed, Try some time');
           }
         },
 
         error: function (xhr, status, error) {
           // Handle the error if the update fails
-          //console.log(xhr.responseText);
-          //console.log(status);
-          //console.log(error);
+          console.log(xhr.responseText);
+          console.log(status);
+          console.log(error);
         }
       });
     }
@@ -652,7 +652,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <input type="text" class="form-control" name="editTeamRefNumber" id="editTeamRefNumber" readonly>
               </div>
               <div class="col-md-6">
-                <input type="text" class="form-control" name="editUserRef" id="editUserRef" readonly>
+                <input type="text" class="form-control" name="editUserRefNo" id="editUserRefNo" readonly>
               </div>
             </div>
 

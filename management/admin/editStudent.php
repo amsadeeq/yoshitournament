@@ -4,13 +4,13 @@ require '../../connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get the team reference number from the request
-    $userRefNo = $_POST['editUserRef'];
+    $userRefNo = $_POST['editUserRefNo'];
 
     // Prepare the SQL query to fetch student details
-    $stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :editUserRef");
+    $stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :editUserRefNo");
 
     // Execute the query with the provided team reference number
-    $stmt->execute(['editUserRef' => $userRefNo]);
+    $stmt->execute(['editUserRefNo' => $userRefNo]);
 
     // Fetch the result as an associative array
     $student = $stmt->fetch(PDO::FETCH_ASSOC);
