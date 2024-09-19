@@ -100,9 +100,9 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                               <th>Email</th>
                               <th>Position</th>
                               <th>Team Reference</th>
-                              <th>Time Created</th>
-                              <th>Date</th>
+                              <th>Time / Date</th>
                               <th>Reg Status</th>
+                              <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -131,6 +131,16 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                                     echo '<span class="badge badge-warning">Pending</span>';
                                     break;
                                 } ?></td>
+                                <td>
+                                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <a class="btn btn-success btn-sm" href="#" style="color: #fff !important;"
+                                      onclick="viewUser('<?php echo $userRefNo; ?>')"><i class="fa fa-eye"></i></a>
+                                    <!-- <a class="btn btn-warning btn-sm" href="#" style="color: #fff !important;"
+                                      onclick="editUser('<?php echo $userRefNo; ?>')"><i class="fa fa-pencil"></i></a> -->
+                                    <a class="btn btn-danger btn-sm" href="#" style="color: #fff !important;"
+                                      onclick="deleteUser('<?php echo $userRefNo; ?>')"><i class="fa fa-trash"></i></a>
+                                  </div>
+                                </td>
                               </tr>
                               <?php
                             }
@@ -160,6 +170,70 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
       <!-- /footer content -->
     </div>
   </div>
+
+
+  <script>
+    function deleteUser(userRefNo) {
+      // Confirm with the user before deleting the record
+      if (confirm("Are you sure you want to delete this account?")) {
+        // Send an AJAX request to delete the record
+        $.ajax({
+          url: 'deleteUser.php',
+          type: 'POST',
+          data: { userRefNo: userRefNo },
+          success: function (response) {
+            // Reload the page after successful deletion
+            alert("User Account successfully Deleted !");
+            location.reload();
+          },
+          error: function (xhr, status, error) {
+            // Handle the error if the deletion fails
+            console.log(error);
+          }
+        });
+      }
+    }
+  </script>
+  <script>
+    function viewUser(userRefNo) {
+      // Send an AJAX request to fetch the school details
+      $.ajax({
+        url: 'viewUser.php',
+        type: 'POST',
+        data: { userRefNo: userRefNo },
+        success: function (response) {
+          // Parse the JSON response
+          var user = JSON.parse(response);
+
+          // Populate the modal with the user details
+
+          $('#userRefNo').text(user.userRefNo);
+          $('#user_email').text(user.user_email);
+          $('#user_position').text(user.user_position);
+          $('#TeamRefNumber').text(user.TeamRefNumber);
+          $('#reg_status').text(user.reg_status);
+          $('#userPassword').text(user.user_password);
+          $('#termsCondition').text(user.termsCondition);
+          $('#time_created').text(user.time_created);
+          $('#date_created').text(user.date_created);
+          $('#timeReset').text(user.time_reset);
+          $('#dateReset').text(user.date_reset);
+          $('#ipAddress').text(user.ip_address);
+
+          // Show the modal
+          $('#viewUserModal').modal('show');
+        },
+        error: function (xhr, status, error) {
+          // Handle the error if the request fails
+          //console.log(error);
+        }
+      });
+    }
+  </script>
+
+  <!-- Modal -->
+  <?php require 'viewUserModal.php'; ?>
+
 
   <!-- jQuery -->
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
