@@ -123,7 +123,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $school['TeamRefNumber']; ?></td>
                                 <td><?php echo $school['team_address']; ?></td>
                                 <td><?php echo $school['phone']; ?></td>
-                                <td><?php echo $school['email']; ?></td>
+                                <td style="text-wrap: wrap ;"><?php echo $school['email']; ?></td>
                                 <td>
                                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <a class="btn btn-success btn-sm" href="#" style="color: #fff !important;"
