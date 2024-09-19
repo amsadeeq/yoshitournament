@@ -594,7 +594,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       });
     }
 
-    function updateSchool() {
+    function updateStudent() {
       // Get the form data
       var formData = new FormData($('#editStudentForm')[0]);
 
@@ -655,11 +655,33 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editUserPosition">User Position</label>
-                <!-- <input type="text" class="form-control" id="editUserPosition" name="editUserPosition"> -->
                 <select class="form-select form-control" id="editUserPosition" name="editUserPosition" required>
-                  <option value="Coach">Coach</option>
-                  <option value="Sport Director"> Sport Director</option>
-                  <option value="Game Master"> Game Master</option>
+                  <option value="null" selected> Select Position </option>
+                  <option value="Goalkeeper">Goalkeeper</option>
+                  <option value="Sweeper keeper">Sweeper keeper</option>
+                  <option value="Defender"> Defender</option>
+                  <option value="Defender (Centre-back)">Defender (Centre-back)</option>
+                  <option value="Defender (Full-back)">Defender (Full-back)</option>
+                  <option value="Defender (central-defender)"> Defender (central-defender)</option>
+                  <option value="Defender (Sweeper)"> Defender (Sweeper)</option>
+                  <option value="Defender (Wing-back)"> Defender (Wing-back)</option>
+                  <option value="Defender (Right Wing-back)"> Defender (Right Wing-back)</option>
+                  <option value="Wing Back">Wing Back</option>
+                  <option value="Midfielder"> Midfielder</option>
+                  <option value="Midfielder (Central Midfielder)"> Midfielder (Central Midfielder)
+                  </option>
+                  <option value="Midfielder (Defensive Midfielder)"> Midfielder (Defensive Midfielder)
+                  </option>
+                  <option value="Midfielder (Attacking Midfielder)"> Midfielder (Attacking Midfielder)
+                  </option>
+                  <option value="Midfielder (Wide Midfielder)"> Midfielder (Wide Midfielder)</option>
+                  <option value="Forward"> Forward</option>
+                  <option value="Forward (Second striker)"> Forward (Second striker)</option>
+                  <option value="Forward (Centre forward)"> Forward (Centre forward)</option>
+                  <option value="Forward (Winger)"> Forward (Winger)</option>
+                  <option value="Forward (Left Winger)"> Forward (Left Winger)</option>
+                  <option value="Forward (Right Winger)"> Forward (Right Winger)</option>
+                  <option value="Striker"> Striker</option>
                 </select>
               </div>
               <div class="form-group col-md-6">
@@ -667,6 +689,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <input type="text" class="form-control" id="editSurname" name="editSurname">
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editFirstname">First Name</label>
@@ -677,6 +700,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <input type="date" class="form-control" id="editDob" name="editDob">
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editGender">Gender</label>
@@ -688,9 +712,9 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               <div class="form-group col-md-6">
                 <label for="editCountry">Country</label>
                 <input type="text" class="form-control" id="editCountry" name="editCountry">
-
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editState">State</label>
@@ -701,6 +725,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <input type="text" class="form-control" id="editCity" name="editCity">
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editZipcode">Zip Code</label>
@@ -711,6 +736,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <input type="text" class="form-control" id="editPhone" name="editPhone">
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editEmail">Email</label>
@@ -718,10 +744,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               </div>
               <div class="form-group col-md-6">
                 <label for="editMeansId">Means ID</label>
-                <!-- <input type="text" class="form-control" id="editMeansId" name="editMeansId"> -->
-                <select class="form-select form-control" id="editMeansId" name="editMeansId" name="means_id">
-                  <option value="National Identification Number">National Identification Number(NIN)
-                  </option>
+                <select class="form-select form-control" id="editMeansId" name="editMeansId">
+                  <option value="National Identification Number">National Identification Number (NIN)</option>
                   <option value="Drivers License">Driver's License</option>
                   <option value="International Passport">International Passport</option>
                   <option value="Office ID">Office ID</option>
@@ -729,6 +753,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 </select>
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editIdNumber">ID Number</label>
@@ -739,41 +764,84 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <textarea class="form-control" id="editAddress" name="editAddress"></textarea>
               </div>
             </div>
-            <div class="form-row">
 
-              <div class="form-group col-md-6">
-                <label for="editTeamName">Team Name</label>
-                <input type="text" class="form-control" id="editTeamName" name="editTeamName">
-              </div>
-            </div>
+            <!-- New fields for Player Details -->
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="editTeamCountry">Team Country</label>
-                <input type="text" class="form-control" id="editTeamCountry" name="editTeamCountry">
+                <label for="editCategory">Category</label>
+                <input type="text" class="form-control" id="editCategory" name="editCategory">
               </div>
               <div class="form-group col-md-6">
-                <label for="editTeamState">Team State</label>
-                <input type="text" class="form-control" id="editTeamState" name="editTeamState">
+                <label for="editPlayerPosition">Player Position</label>
+                <input type="text" class="form-control" id="editPlayerPosition" name="editPlayerPosition">
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="editTeamCity">Team City</label>
-                <input type="text" class="form-control" id="editTeamCity" name="editTeamCity">
+                <label for="editJersyNumber">Jersey Number</label>
+                <input type="text" class="form-control" id="editJersyNumber" name="editJersyNumber">
               </div>
               <div class="form-group col-md-6">
                 <label for="editNumberOfPlayers">Number of Players</label>
                 <input type="number" class="form-control" id="editNumberOfPlayers" name="editNumberOfPlayers">
               </div>
             </div>
+
+            <!-- Team Information -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editTeamName">Team Name</label>
+                <input type="text" class="form-control" id="editTeamName" name="editTeamName">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editTeamCountry">Team Country</label>
+                <input type="text" class="form-control" id="editTeamCountry" name="editTeamCountry">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editTeamState">Team State</label>
+                <input type="text" class="form-control" id="editTeamState" name="editTeamState">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editTeamCity">Team City</label>
+                <input type="text" class="form-control" id="editTeamCity" name="editTeamCity">
+              </div>
+            </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editTeamAddress">Team Address</label>
                 <textarea class="form-control" id="editTeamAddress" name="editTeamAddress"></textarea>
               </div>
-
-
             </div>
+
+            <!-- Emergency Contact Information -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editEmergencyName">Emergency Contact Name</label>
+                <input type="text" class="form-control" id="editEmergencyName" name="editEmergencyName">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editEmergencyPhone">Emergency Contact Phone</label>
+                <input type="text" class="form-control" id="editEmergencyPhone" name="editEmergencyPhone">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="editEmergencyEmail">Emergency Contact Email</label>
+                <input type="email" class="form-control" id="editEmergencyEmail" name="editEmergencyEmail">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="editEmergencyAddress">Emergency Contact Address</label>
+                <textarea class="form-control" id="editEmergencyAddress" name="editEmergencyAddress"></textarea>
+              </div>
+            </div>
+
+            <!-- Time and IP Information -->
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editTimeCreated">Time Created</label>
@@ -784,6 +852,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                 <input type="text" class="form-control" id="editDateCreated" name="editDateCreated" readonly>
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="editIpAddress">IP Address</label>
@@ -793,12 +862,13 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" onclick="updateSchool()">Save Changes</button>
+          <button type="button" class="btn btn-primary" onclick="updateStudent()">Save Changes</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
+
 
 
   <!-- jQuery -->
