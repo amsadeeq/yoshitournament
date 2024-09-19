@@ -184,7 +184,7 @@ $total_student = $result_student['total_student'];
             <a href="signupList.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon" style="font-size:30px;">
-                  <i class="fas fa-users"></i>
+                  <i class="fa fa-users"></i>
                 </div>
                 <div class="count"><?php echo $total_users; ?></div>
                 <h4 class="stats_text">Sign up</h4>
@@ -198,7 +198,7 @@ $total_student = $result_student['total_student'];
             <a href="schoolList.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon">
-                  <i class="fas fa-school"></i>
+                  <i class="fa fa-building-o"></i>
                 </div>
                 <div class="count"><?php echo $total_school_officials; ?></div>
                 <h4 class="stats_text">Schools</h4>
@@ -211,7 +211,7 @@ $total_student = $result_student['total_student'];
             <a href="studentList.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon">
-                  <i class="fas fa-user-graduate"></i>
+                  <i class="fa  fa-group (alias)"></i>
                 </div>
                 <div class="count"><?php echo $total_student; ?></div>
 
@@ -224,7 +224,7 @@ $total_student = $result_student['total_student'];
             <a href="pendingUsers.php" class=" text-decoration-none">
               <div class="tile-stats" style="background-color: #ffbc42;">
                 <div class="icon">
-                  <i class="fas fa-user-clock"></i>
+                  <i class="fa  fa-history"></i>
                 </div>
                 <div class="count"><?php if (!empty($total_users_pending)) {
                   echo $total_users_pending;
