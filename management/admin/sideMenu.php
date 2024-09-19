@@ -51,7 +51,7 @@
             <li><a><i class="fa fa-user"></i>Accounts <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="signupList.php">Accounts</a></li>
-                    <li><a href="pending.php">Account Pending</a></li>
+                    <li><a href="pendingUsers.php">Account Pending</a></li>
                 </ul>
             </li>
         </ul>
