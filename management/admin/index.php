@@ -15,7 +15,7 @@ if (isset($_POST['access'])) {
     $_SESSION['a_email'] = $email;
     exit;
   } else {
-    header('Location: index.php');
+    header('Location: mainDashboard.php');
   }
 }
 
