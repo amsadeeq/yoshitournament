@@ -401,14 +401,14 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <td style="width: 100px; vertical-align: top;"><img id="passport"
-                    style="width: 100px; height: 100px; border-radius:10px 10px;" /></td>
+                <td style="width: 150px; vertical-align: top;"><img id="passport"
+                    style="width: 150px; height: 150px; border-radius:10px 10px;" /></td>
                 <td colspan="2">
                   <strong>School Name</strong> &nbsp; <span id="schoolName"></span><br />
                   <strong>School Address</strong> &nbsp; <span id="teamAddress"></span>
                 </td>
-                <td style="width: 100px; vertical-align: top;"><img id="teamLogo"
-                    style="width: 100px; height: 100px;" /></td>
+                <td style="width: 150px; vertical-align: top;"><img id="teamLogo"
+                    style="width: 150px; height: 150px;" /></td>
               </tr>
               <tr>
 
@@ -479,8 +479,8 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               </tr>
 
               <tr>
-                <td style="width: 400px; vertical-align: top;"><img id="studentIdPhoto"
-                    style="width: 400px; height: 400px; border-radius:10px 10px;" /></td>
+                <td style="width: 100px; vertical-align: top;"><img id="studentIdPhoto"
+                    style="width: 100px; height: 100px; border-radius:10px 10px;" /></td>
               </tr>
 
               <tr>
