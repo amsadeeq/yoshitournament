@@ -212,7 +212,7 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
         }
     </script>
     <script>
-        function viewSchool(userRefNo) {
+        function viewUser(userRefNo) {
             // Send an AJAX request to fetch the school details
             $.ajax({
                 url: 'viewUser.php',
