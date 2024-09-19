@@ -101,9 +101,9 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                                                             <th>Email</th>
                                                             <th>Position</th>
                                                             <th>Team Reference</th>
-                                                            <th>Time Created</th>
-                                                            <th>Date</th>
+                                                            <th>Time / Date</th>
                                                             <th>Reg Status</th>
+                                                            <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -118,20 +118,45 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                                                             $regStatus = $user['reg_status'];
                                                             ?>
                                                             <tr>
-                                                                <td><?php echo $userRefNo; ?></td>
+                                                                <td><?php echo $userRefNo; ?>
+                                                                </td>
                                                                 <td><?php echo $userEmail; ?></td>
                                                                 <td><?php echo $userPosition; ?></td>
                                                                 <td><?php echo $teamRefNumber; ?></td>
-                                                                <td><?php echo $timeCreated; ?></td>
-                                                                <td><?php echo $dateCreated; ?></td>
-                                                                <td><?php switch ($regStatus) {
-                                                                    case 1:
-                                                                        echo '<span class="badge badge-success">Complete</span>';
-                                                                        break;
-                                                                    default:
-                                                                        echo '<span class="badge badge-warning">Pending</span>';
-                                                                        break;
-                                                                } ?></td>
+                                                                <td>
+                                                                    <p>
+                                                                        <?php echo $timeCreated; ?>
+                                                                    </p>
+                                                                    <p><?php echo $dateCreated; ?></p>
+                                                                </td>
+
+                                                                <td>
+                                                                    <?php switch ($regStatus) {
+                                                                        case 1:
+                                                                            echo '<span class="badge badge-success">Complete</span>';
+                                                                            break;
+                                                                        default:
+                                                                            echo '<span class="badge badge-warning">Pending</span>';
+                                                                            break;
+                                                                    } ?>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="btn-group btn-group-toggle"
+                                                                        data-toggle="buttons">
+                                                                        <a class="btn btn-success btn-sm" href="#"
+                                                                            style="color: #fff !important;"
+                                                                            onclick="viewSchool('<?php echo $userRefNo; ?>')"><i
+                                                                                class="fa fa-eye"></i></a>
+                                                                        <a class="btn btn-warning btn-sm" href="#"
+                                                                            style="color: #fff !important;"
+                                                                            onclick="editSchool('<?php echo $userRefNo; ?>')"><i
+                                                                                class="fa fa-pencil"></i></a>
+                                                                        <a class="btn btn-danger btn-sm" href="#"
+                                                                            style="color: #fff !important;"
+                                                                            onclick="deleteSchool('<?php echo $userRefNo; ?>')"><i
+                                                                                class="fa fa-trash"></i></a>
+                                                                    </div>
+                                                                </td>
                                                             </tr>
                                                             <?php
                                                         }
