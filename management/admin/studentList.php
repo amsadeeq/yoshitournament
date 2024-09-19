@@ -495,9 +495,9 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
               </tr>
 
               <tr>
-                <td colspan="2"><strong>Attendance</strong> &nbsp; <span id="attendance"></span></td>
-                <td colspan="2"><strong>Attendance Time</strong> &nbsp; <span id="attendanceTime"></span></td>
-                <td colspan="2"><strong>Attendance Date</strong> &nbsp; <span id="attendanceDate"></span></td>
+                <td><strong>Attendance</strong> &nbsp; <span id="attendance"></span></td>
+                <td><strong>Attendance Time</strong> &nbsp; <span id="attendanceTime"></span></td>
+                <td><strong>Attendance Date</strong> &nbsp; <span id="attendanceDate"></span></td>
               </tr>
 
 
