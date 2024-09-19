@@ -20,7 +20,7 @@
 
                 </ul>
             </li>
-            <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+            <!-- <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="general_elements.html">General Elements</a></li>
                     <li><a href="media_gallery.html">Media Gallery</a></li>
@@ -32,7 +32,7 @@
                     <li><a href="inbox.html">Inbox</a></li>
                     <li><a href="calendar.html">Calendar</a></li>
                 </ul>
-            </li>
+            </li> -->
             <li><a><i class="fa fa-table"></i> Schools / Students <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="schoolList.php">Schools</a></li>
@@ -40,7 +40,7 @@
                     <li><a href="studentCategory.php">Student Category</a></li>
                 </ul>
             </li>
-            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+            <!-- <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="chartjs.html">Chart JS</a></li>
                     <li><a href="chartjs2.html">Chart JS2</a></li>
@@ -48,7 +48,7 @@
                     <li><a href="echarts.html">ECharts</a></li>
                     <li><a href="other_charts.html">Other Charts</a></li>
                 </ul>
-            </li>
+            </li> -->
             <li><a><i class="fa fa-user"></i>Accounts <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="signupList.php">Accounts</a></li>

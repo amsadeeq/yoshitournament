@@ -584,8 +584,6 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           $('#editAttendanceDate').val(student.attendance_date); // New field for attendance date
 
 
-
-
           // Show the edit modal
           $('#editStudentModal').modal('show');
         },
