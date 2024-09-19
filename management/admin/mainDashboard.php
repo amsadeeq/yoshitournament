@@ -212,19 +212,21 @@ $total_student = $result_student['total_student'];
             </a>
           </div>
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <div class="tile-stats" style="background-color: #ffbc42;">
-              <div class="icon">
-                <i class="fas fa-user-clock"></i>
+            <a href="pendingUsers.php" class=" text-decoration-none">
+              <div class="tile-stats" style="background-color: #ffbc42;">
+                <div class="icon">
+                  <i class="fas fa-user-clock"></i>
+                </div>
+                <div class="count"><?php if (!empty($total_users_pending)) {
+                  echo $total_users_pending;
+                } else {
+                  echo "0";
+                } ?></div>
+
+                <h4 class="stats_text">Pending</h4>
+
               </div>
-              <div class="count"><?php if (!empty($total_users_pending)) {
-                echo $total_users_pending;
-              } else {
-                echo "0";
-              } ?></div>
-
-              <h4 class="stats_text">Pending</h4>
-
-            </div>
+            </a>
           </div>
         </div>
 
