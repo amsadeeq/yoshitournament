@@ -125,12 +125,12 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $school['phone']; ?></td>
                                 <td><?php echo $school['email']; ?></td>
                                 <td>
-                                  <a href="#" style="color: green !important;"
+                                  <a class="btn btn-success btn-sm" href="#" style="color: green !important;"
                                     onclick="viewSchool('<?php echo $teamRefNumber; ?>')"><i class="fa fa-eye"></i></a> |
-                                  <a href="#" style="color: brown !important;"
+                                  <a class="btn btn-info btn-sm" href="#" style="color: brown !important;"
                                     onclick="editSchool('<?php echo $teamRefNumber; ?>')"><i class="fa fa-pencil"></i></a>
                                   |
-                                  <a href="#" style="color: red !important;"
+                                  <a class="btn btn-danger btn-sm" href="#" style="color: red !important;"
                                     onclick="deleteSchool('<?php echo $teamRefNumber; ?>')"><i
                                       class="fa fa-trash"></i></a>
 
