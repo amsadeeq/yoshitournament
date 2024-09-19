@@ -634,7 +634,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
   </script>
 
   <!-- Edit Modal -->
-  <div class="modal fade" id="editSchoolModal" tabindex="-1" role="dialog" aria-labelledby="editSchoolModalLabel"
+  <div class="modal fade" id="editStudentModal" tabindex="-1" role="dialog" aria-labelledby="editSchoolModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
