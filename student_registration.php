@@ -166,7 +166,7 @@ try {
 
     if (!empty($position) && !empty($surname) && !empty($firstname) && !empty($phone) && !empty($address) && !empty($team_name) && !empty($team_country) && !empty($team_state) && !empty($team_city) && !empty($number_of_players) && !empty($team_address)) {
       if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg" && $imgExtention3 == "jpeg" or $imgExtention3 == "png" or $imgExtention3 == "jpg") {
-        if ($imgsize1 <= 3145728 && $imgsize3 <= 3145728) {
+        if ($imgsize1 <= 9145728 && $imgsize3 <= 9145728) {
           move_uploaded_file($imgloc1, "schools/student_photo/" . $imgname1);
           move_uploaded_file($imgloc3, "schools/student_id/" . $imgname3);
 
