@@ -279,19 +279,21 @@ $total_student = $result_student['total_student'];
             </div>
           </div>
           <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <div class="tile-stats">
-              <div class="icon">
-                <i class="fas fa-user-clock"></i>
+            <a href="completeUser.php" class=" text-decoration-none">
+              <div class="tile-stats">
+                <div class="icon">
+                  <i class="fas fa-user-clock"></i>
+                </div>
+                <div class="count"><?php if (!empty($total_users_completed)) {
+                  echo $total_users_completed;
+                } else {
+                  echo "0";
+                } ?></div>
+
+                <h4 class="stats_text">Completed</h4>
+
               </div>
-              <div class="count"><?php if (!empty($total_users_completed)) {
-                echo $total_users_completed;
-              } else {
-                echo "0";
-              } ?></div>
-
-              <h4 class="stats_text">Completed</h4>
-
-            </div>
+            </a>
           </div>
         </div>
 
