@@ -136,13 +136,16 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
                                 <td><?php echo $student['email']; ?></td>
                                 <td>
-                                  <a href="#" style="color: green !important;"
-                                    onclick="viewSchool('<?php echo $userRefNo; ?>')"><i class="fa fa-eye"></i></a> |
-                                  <a href="#" style="color: brown !important;"
-                                    onclick="editSchool('<?php echo $userRefNo; ?>')"><i class="fa fa-pencil"></i></a>
-                                  |
-                                  <a href="#" style="color: red !important;"
-                                    onclick="deleteSchool('<?php echo $userRefNo; ?>')"><i class="fa fa-trash"></i></a>
+                                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <a class="btn btn-success btn-sm" href="#" style="color: #fff !important;"
+                                      onclick="viewStudent('<?php echo $userRefNo; ?>')"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-warning btn-sm" href="#" style="color: #fff !important;"
+                                      onclick="viewStudent('<?php echo $userRefNo; ?>')"><i class="fa fa-pencil"></i></a>
+                                    <!-- <a class="btn btn-danger btn-sm" href="#" style="color: #fff !important;"
+                                      onclick="viewStudent('<?php echo $userRefNo; ?>')"><i
+                                        class="fa fa-trash"></i></a> -->
+                                  </div>
+
 
                                 </td>
                               </tr>
