@@ -119,9 +119,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                                             $timeCreated = $student['time_created'];
                                                             $dateCreated = $student['date_created'];
                                                             $regStatus = $student['reg_status'];
-                                                            $category = $student['category'];
                                                             ?>
-
                                                             <tr>
                                                                 <td><?php echo $sn; ?></td>
                                                                 <td>
@@ -220,7 +218,6 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                                 class="panel-collapse collapse in" role="tabpanel"
                                                 aria-labelledby="headingOne">
                                                 <div class="panel-body">
-                                                    <h4>Primary Section</h4>
                                                     <table class="table table-bordered">
                                                         <thead>
                                                             <tr>
@@ -236,7 +233,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                                         </thead>
                                                         <tbody>
                                                             <?php
-                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber, `category` = 'Primary' ORDER BY id DESC ");
+                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY id DESC ");
                                                             $stmt_player->execute(['teamRefNumber' => $school['TeamRefNumber']]);
                                                             $players_record = $stmt_player->fetchAll(PDO::FETCH_ASSOC);
 
@@ -272,7 +269,6 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                                             <?php } ?>
                                                         </tbody>
                                                     </table>
-                                                    <h4>Junior Section</h4>
                                                     <table class="table table-bordered">
                                                         <thead>
                                                             <tr>
@@ -288,59 +284,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                                         </thead>
                                                         <tbody>
                                                             <?php
-                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber, `category` = 'Junior' ORDER BY id DESC ");
-                                                            $stmt_player->execute(['teamRefNumber' => $school['TeamRefNumber']]);
-                                                            $players_record = $stmt_player->fetchAll(PDO::FETCH_ASSOC);
-
-                                                            $sn = 0;
-                                                            foreach ($players_record as $player) {
-                                                                $sn = $sn + 1;
-
-                                                                ?>
-                                                                <tr>
-                                                                    <th><?php echo $sn; ?></th>
-                                                                    <td><?php echo $player['userRefNo']; ?></td>
-                                                                    <td>
-                                                                        <img src="<?php echo "../../schools/student_photo/" . $player['passport']; ?>"
-                                                                            style="width: 40px; height:40px;" />
-                                                                    </td>
-                                                                    <td><?php echo $player['surname'] . " " . $player['firstname']; ?>
-                                                                    </td>
-                                                                    <td><?php echo $player['phone']; ?></td>
-                                                                    <td><?php echo $player['email']; ?></td>
-                                                                    <td>
-                                                                        <h6><a
-                                                                                href="tel:<?php echo $player['emergency_phone']; ?>"><?php echo $player['emergency_phone']; ?></a>
-                                                                        </h6>
-                                                                        <h6>
-                                                                            <a
-                                                                                href="mailto:<?php echo $player['emergency_email']; ?>"><?php echo $player['emergency_email']; ?></a>
-                                                                        </h6>
-                                                                        <h6><?php echo $player['emergency_name']; ?></h6>
-                                                                        <h6><?php echo $player['emergency_address']; ?></h6>
-
-                                                                    </td>
-                                                                </tr>
-                                                            <?php } ?>
-                                                        </tbody>
-                                                    </table>
-                                                    <h4>Senior Section</h4>
-                                                    <table class="table table-bordered">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>#</th>
-                                                                <th>Photo</th>
-                                                                <th>User Ref No</th>
-                                                                <th>Full Name</th>
-                                                                <th>Phone</th>
-                                                                <th>Email</th>
-                                                                <th>Emergency</th>
-
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <?php
-                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber, `category` = 'Senior' ORDER BY id DESC ");
+                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY id DESC ");
                                                             $stmt_player->execute(['teamRefNumber' => $school['TeamRefNumber']]);
                                                             $players_record = $stmt_player->fetchAll(PDO::FETCH_ASSOC);
 
