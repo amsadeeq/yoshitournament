@@ -284,7 +284,7 @@ $total_student = $result_student['total_student'];
             <a href="completeUser.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon">
-                  <i class="fas fa-user-clock"></i>
+                  <i class="fa  fa-thumbs-o-up"></i>
                 </div>
                 <div class="count"><?php if (!empty($total_users_completed)) {
                   echo $total_users_completed;
