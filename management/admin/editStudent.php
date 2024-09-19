@@ -5,6 +5,7 @@ require '../../connection.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get the team reference number from the request
     $userRefNo = $_POST['editUserRefNo'];
+    echo $userRefNo;
 
     // Prepare the SQL query to fetch student details
     $stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :editUserRefNo");
