@@ -294,7 +294,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           },
           error: function (xhr, status, error) {
             // Handle the error if the deletion fails
-            console.log(error);
+            //console.log(error);
           }
         });
       }

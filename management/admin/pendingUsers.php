@@ -146,15 +146,15 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                                                                         data-toggle="buttons">
                                                                         <a class="btn btn-success btn-sm" href="#"
                                                                             style="color: #fff !important;"
-                                                                            onclick="viewSchool('<?php echo $userRefNo; ?>')"><i
+                                                                            onclick="viewUser('<?php echo $userRefNo; ?>')"><i
                                                                                 class="fa fa-eye"></i></a>
                                                                         <a class="btn btn-warning btn-sm" href="#"
                                                                             style="color: #fff !important;"
-                                                                            onclick="editSchool('<?php echo $userRefNo; ?>')"><i
+                                                                            onclick="editUser('<?php echo $userRefNo; ?>')"><i
                                                                                 class="fa fa-pencil"></i></a>
                                                                         <a class="btn btn-danger btn-sm" href="#"
                                                                             style="color: #fff !important;"
-                                                                            onclick="deleteSchool('<?php echo $userRefNo; ?>')"><i
+                                                                            onclick="deleteUser('<?php echo $userRefNo; ?>')"><i
                                                                                 class="fa fa-trash"></i></a>
                                                                     </div>
                                                                 </td>
@@ -187,6 +187,30 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
             <!-- /footer content -->
         </div>
     </div>
+
+
+    <script>
+        function deleteUser(userRefNo) {
+            // Confirm with the user before deleting the record
+            if (confirm("Are you sure you want to delete this account?")) {
+                // Send an AJAX request to delete the record
+                $.ajax({
+                    url: 'deleteUser.php',
+                    type: 'POST',
+                    data: { userRefNo: userRefNo },
+                    success: function (response) {
+                        // Reload the page after successful deletion
+                        alert("User Account successfully Deleted !");
+                        location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle the error if the deletion fails
+                        console.log(error);
+                    }
+                });
+            }
+        }
+    </script>
 
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
