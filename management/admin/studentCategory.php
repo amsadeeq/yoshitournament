@@ -234,7 +234,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                                         </thead>
                                                         <tbody>
                                                             <?php
-                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY id DESC ");
+                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber AND `category` = 'Primary' ORDER BY id DESC ");
                                                             $stmt_player->execute(['teamRefNumber' => $school['TeamRefNumber']]);
                                                             $players_record = $stmt_player->fetchAll(PDO::FETCH_ASSOC);
 
@@ -286,7 +286,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                                         </thead>
                                                         <tbody>
                                                             <?php
-                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY id DESC ");
+                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber AND `category` = 'Junior' ORDER BY id DESC ");
                                                             $stmt_player->execute(['teamRefNumber' => $school['TeamRefNumber']]);
                                                             $players_record = $stmt_player->fetchAll(PDO::FETCH_ASSOC);
 
@@ -338,7 +338,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                                                         </thead>
                                                         <tbody>
                                                             <?php
-                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber ORDER BY id DESC ");
+                                                            $stmt_player = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `TeamRefNumber` = :teamRefNumber AND `category` = 'Senior' ORDER BY id DESC ");
                                                             $stmt_player->execute(['teamRefNumber' => $school['TeamRefNumber']]);
                                                             $players_record = $stmt_player->fetchAll(PDO::FETCH_ASSOC);
 
