@@ -37,6 +37,7 @@
                 <ul class="nav child_menu">
                     <li><a href="schoolList.php">Schools</a></li>
                     <li><a href="studentList.php">Students</a></li>
+                    <li><a href="studentCategory.php">Student Category</a></li>
                 </ul>
             </li>
             <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
