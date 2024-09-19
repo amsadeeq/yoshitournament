@@ -148,10 +148,10 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                                                                             style="color: #fff !important;"
                                                                             onclick="viewUser('<?php echo $userRefNo; ?>')"><i
                                                                                 class="fa fa-eye"></i></a>
-                                                                        <a class="btn btn-warning btn-sm" href="#"
+                                                                        <!-- <a class="btn btn-warning btn-sm" href="#"
                                                                             style="color: #fff !important;"
                                                                             onclick="editUser('<?php echo $userRefNo; ?>')"><i
-                                                                                class="fa fa-pencil"></i></a>
+                                                                                class="fa fa-pencil"></i></a> -->
                                                                         <a class="btn btn-danger btn-sm" href="#"
                                                                             style="color: #fff !important;"
                                                                             onclick="deleteUser('<?php echo $userRefNo; ?>')"><i
