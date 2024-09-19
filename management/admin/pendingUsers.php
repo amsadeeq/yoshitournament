@@ -93,7 +93,8 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="card-box table-responsive">
-                                                <table id="datatable-buttons" class="table table-striped table-bordered"
+                                                <table id="datatable-buttons"
+                                                    class="table table-striped table-bordered table-condensed "
                                                     style="width:100%">
                                                     <thead>
                                                         <tr>
