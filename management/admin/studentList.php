@@ -474,6 +474,17 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
               <tr>
                 <td colspan="4">
+                  <h4>Student ID</h4>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="width: 400px; vertical-align: top;"><img id="studentIdPhoto"
+                    style="width: 400px; height: 400px; border-radius:10px 10px;" /></td>
+              </tr>
+
+              <tr>
+                <td colspan="4">
                   <h4>Emergency Details</h4>
                 </td>
               </tr>
