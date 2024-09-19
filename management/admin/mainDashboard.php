@@ -21,6 +21,15 @@ $result_pending = $stmt_pending->fetch(PDO::FETCH_ASSOC);
 $total_users_pending = $result_pending['total_users'];
 
 
+
+// Prepare SQL statement to fetch user from yoshi_signup_tbl
+// Perform authentication against yoshi_signup_tbl
+$stmt_completed = $pdo->prepare("SELECT COUNT(*) as total_users FROM yoshi_signup_tbl WHERE reg_status = 1");
+$stmt_completed->execute();
+$result_completed = $stmt_completed->fetch(PDO::FETCH_ASSOC);
+$total_users_completed = $result_completed['total_users'];
+
+
 // Perform authentication against yoshi_signup_tbl
 $stmt_attendance = $pdo->prepare("SELECT COUNT(*) as total_attendance FROM yoshi_school_students_tbl WHERE attendance = 1");
 $stmt_attendance->execute();
@@ -265,7 +274,7 @@ $total_student = $result_student['total_student'];
               </div>
               <div class="count"><?php echo $total_student; ?></div>
 
-              <h4 class="stats_text">Students</h4>
+              <h4 class="stats_text">Students Categories </h4>
 
             </div>
           </div>
@@ -274,13 +283,13 @@ $total_student = $result_student['total_student'];
               <div class="icon">
                 <i class="fas fa-user-clock"></i>
               </div>
-              <div class="count"><?php if (!empty($total_users_pending)) {
-                echo $total_users_pending;
+              <div class="count"><?php if (!empty($total_users_completed)) {
+                echo $total_users_completed;
               } else {
                 echo "0";
               } ?></div>
 
-              <h4 class="stats_text">Pending</h4>
+              <h4 class="stats_text">Completed</h4>
 
             </div>
           </div>
