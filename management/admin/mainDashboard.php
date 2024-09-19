@@ -245,7 +245,7 @@ $total_student = $result_student['total_student'];
             <a href="attendance.php" class=" text-decoration-none">
               <div class="tile-stats" style="background-color:#83c5be;">
                 <div class="icon" style="font-size:30px;">
-                  <i class="fas fa-user-plus"></i>
+                  <i class="fa  fa-check-square-o"></i>
                 </div>
                 <div class="count"><?php echo $total_attendance; ?></div>
                 <h4 class="stats_text">Attendance</h4>
@@ -259,7 +259,7 @@ $total_student = $result_student['total_student'];
             <a href="addadmin.php" class=" text-decoration-none">
               <div class="tile-stats">
                 <div class="icon">
-                  <i class="fas fa-user-tie"></i>
+                  <i class="fa fa-user"></i>
                 </div>
                 <div class="count"><?php echo $total__admin; ?></div>
                 <h4 class="stats_text">Add Admin</h4>
