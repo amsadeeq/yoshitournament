@@ -220,7 +220,7 @@ $users = $stmt_signup->fetchAll(PDO::FETCH_ASSOC);
                 data: { userRefNo: userRefNo },
                 success: function (response) {
                     // Parse the JSON response
-                    var school = JSON.parse(response);
+                    var user = JSON.parse(response);
 
                     // Populate the modal with the user details
 
