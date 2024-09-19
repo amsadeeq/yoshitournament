@@ -545,6 +545,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
           // Populate the form fields with the student details
           $('#editUserPosition').val(student.user_position);
+          $('#editUserRef').val(student.userRefNo);
           $('#editTeamRefNumber').val(student.TeamRefNumber);
           $('#editSurname').val(student.surname);
           $('#editFirstname').val(student.firstname);
@@ -649,6 +650,9 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
             <div class="row">
               <div class="col-md-6">
                 <input type="text" class="form-control" name="editTeamRefNumber" id="editTeamRefNumber" readonly>
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" name="editUserRef" id="editUserRef" readonly>
               </div>
             </div>
 
