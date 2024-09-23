@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Check if the userRefNo exists
         $stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :userRefNo");
-        $stmt->execute(['userRefNo' => $_POST['edituserRefNo']]);
+        $stmt->execute(['userRefNo' => $_POST['editUserRefNo']]);
         $school = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$school) {
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Prepare the update statement
         $stmt = $pdo->prepare("UPDATE `yoshi_school_students_tbl` 
-            SET 
+            SET `userRefNo` = :userRefNo, 
                 `user_position` = :user_position, 
                 `surname` = :surname, 
                 `firstname` = :firstname, 
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':team_address', $_POST['editTeamAddress']);
         $stmt->bindParam(':TeamRefNumber', $_POST['editTeamRefNumber']);
 
-        echo $stmt;
+
 
         // Execute the update query
         if ($stmt->execute()) {
@@ -75,9 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'No rows updated.']);
-
-
-
 
             }
         } else {

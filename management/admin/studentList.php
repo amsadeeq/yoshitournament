@@ -617,10 +617,11 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           if (jsonResponse.status === 'success') {
             //alert('Record updated successfully');
             //location.reload();
-            console.log(response);
+
           } else {
             alert('Update failed: ' + jsonResponse.message);
             alert('Update failed, Try some time');
+
           }
         },
 
