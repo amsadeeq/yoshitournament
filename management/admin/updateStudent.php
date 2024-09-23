@@ -40,10 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 `number_of_players` = :number_of_players, 
                 `team_address` = :team_address, 
                 `TeamRefNumber` = :TeamRefNumber
-            WHERE `userRefNo` = :userRefNo");
+            WHERE `userRefNo` = :originalUserRefNo");
 
         // Bind parameters
         $stmt->bindParam(':userRefNo', $_POST['editUserRefNo']);
+        $stmt->bindParam(':originalUserRefNo', $_POST['editUserRefNo']);
         $stmt->bindParam(':user_position', $_POST['editUserPosition']);
         $stmt->bindParam(':surname', $_POST['editSurname']);
         $stmt->bindParam(':firstname', $_POST['editFirstname']);
@@ -66,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':team_address', $_POST['editTeamAddress']);
         $stmt->bindParam(':TeamRefNumber', $_POST['editTeamRefNumber']);
 
-
+        $stmt->execute();
 
         // Execute the update query
         if ($stmt->execute()) {
@@ -83,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     } catch (PDOException $e) {
         echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+
 
     }
 }
