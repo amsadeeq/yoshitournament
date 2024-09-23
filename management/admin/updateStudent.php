@@ -69,17 +69,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
 
         // Execute the update query
-        if ($stmt->execute()) {
-            if ($stmt->rowCount() > 0) {
-                echo json_encode(['status' => 'success', 'message' => 'Record updated successfully.']);
+        // if ($stmt->execute()) {
+        //     if ($stmt->rowCount() > 0) {
+        //         echo json_encode(['status' => 'success', 'message' => 'Record updated successfully.']);
 
-            } else {
-                echo json_encode(['status' => 'error', 'message' => 'No rows updated.']);
+        //     } else {
+        //         echo json_encode(['status' => 'error', 'message' => 'No rows updated.']);
 
-            }
-        } else {
-            echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.']);
-        }
+        //     }
+        // } else {
+        //     echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.']);
+        // }
 
     } catch (PDOException $e) {
         //echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
