@@ -55,12 +55,12 @@
                     <li><a href="pendingUsers.php">Account Pending</a></li>
                 </ul>
             </li>
-            <li><a><i class="fa fa-user"></i>Media <span class="fa fa-picture-o"></span></a>
+            <li><a><i class="fa fa-picture-o"></i>Media <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="uploadMedia.php">Upload Media</a></li>
                 </ul>
             </li>
-            <li><a><i class="fa fa-user"></i>News <span class="fa fa-newspaper-o"></span></a>
+            <li><a><i class="fa fa-newspaper-o"></i>News <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="mainNews.php">Main News</a></li>
                     <li><a href="featuresNews.php">Features News</a></li>
