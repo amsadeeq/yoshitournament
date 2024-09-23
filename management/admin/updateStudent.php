@@ -1,10 +1,15 @@
 <?php
 require '../../connection.php';
 
+
+// Enable error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
-        // Log the incoming POST data for debugging (optional)
-        print_r($_POST, true);
+
 
         // Check if the userRefNo exists
         $stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :userRefNo");
