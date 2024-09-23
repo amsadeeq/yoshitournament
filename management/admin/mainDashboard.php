@@ -231,7 +231,7 @@ $total_student = $result_student['total_student'];
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-blue">102</span>
-              <i class="fa fa-heart-o"></i> Matches
+              <i class="fa fa-list"></i> Matches
             </a>
           </div>
         </div>
