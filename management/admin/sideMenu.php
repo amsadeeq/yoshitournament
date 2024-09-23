@@ -55,6 +55,11 @@
                     <li><a href="pendingUsers.php">Account Pending</a></li>
                 </ul>
             </li>
+            <li><a><i class="fa fa-user"></i>Media <span class="fa fa-picture-o"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="uploadMedia.php">Upload Media</a></li>
+                </ul>
+            </li>
             <li><a><i class="fa fa-user"></i>News <span class="fa fa-newspaper-o"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="mainNews.php">Main News</a></li>
