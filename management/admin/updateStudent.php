@@ -1,10 +1,10 @@
 <?php
 require '../../connection.php';
 
-
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
+        // Log the incoming POST data for debugging (optional)
+        print_r($_POST, true);
 
         // Check if the userRefNo exists
         $stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :userRefNo");
@@ -16,10 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
 
-        // Prepare the update statement
+        // Prepare the update statement (bind WHERE clause separately)
         $stmt = $pdo->prepare("UPDATE `yoshi_school_students_tbl` 
-            SET `userRefNo` = :userRefNo, 
-                `user_position` = :user_position, 
+            SET `user_position` = :user_position, 
                 `surname` = :surname, 
                 `firstname` = :firstname, 
                 `dob` = :dob, 
@@ -40,10 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 `number_of_players` = :number_of_players, 
                 `team_address` = :team_address, 
                 `TeamRefNumber` = :TeamRefNumber
-            WHERE `userRefNo` = :userRefNo");
+            WHERE `userRefNo` = :whereUserRefNo"); // Use a different placeholder for the WHERE clause
 
         // Bind parameters
-        $stmt->bindParam(':userRefNo', $_POST['editUserRefNo']);
         $stmt->bindParam(':user_position', $_POST['editUserPosition']);
         $stmt->bindParam(':surname', $_POST['editSurname']);
         $stmt->bindParam(':firstname', $_POST['editFirstname']);
@@ -66,25 +64,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':team_address', $_POST['editTeamAddress']);
         $stmt->bindParam(':TeamRefNumber', $_POST['editTeamRefNumber']);
 
-        $stmt->execute();
+        // Bind WHERE clause separately
+        $stmt->bindParam(':whereUserRefNo', $_POST['editUserRefNo']);
 
         // Execute the update query
-        // if ($stmt->execute()) {
-        //     if ($stmt->rowCount() > 0) {
-        //         echo json_encode(['status' => 'success', 'message' => 'Record updated successfully.']);
-
-        //     } else {
-        //         echo json_encode(['status' => 'error', 'message' => 'No rows updated.']);
-
-        //     }
-        // } else {
-        //     echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.']);
-        // }
+        if ($stmt->execute()) {
+            if ($stmt->rowCount() > 0) {
+                echo json_encode(['status' => 'success', 'message' => 'Record updated successfully.']);
+            } else {
+                echo json_encode(['status' => 'error', 'message' => 'No rows updated.']);
+            }
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.']);
+        }
 
     } catch (PDOException $e) {
-        //echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
-        error_log($e->getMessage());
-
+        echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
     }
 }
-?>
