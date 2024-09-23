@@ -308,7 +308,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           },
           error: function (xhr, status, error) {
             // Handle the error if the deletion fails
-            console.log(error);
+            //console.log(error);
           }
         });
       }
@@ -380,7 +380,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         },
         error: function (xhr, status, error) {
           // Handle the error if the request fails
-          console.log(error);
+          //console.log(error);
         }
       });
     }
@@ -590,7 +590,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         },
         error: function (xhr, status, error) {
           // Handle the error if the request fails
-          console.log(error);
+          //console.log(error);
         }
       });
     }
@@ -600,9 +600,9 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       var formData = new FormData($('#editStudentForm')[0]);
 
       // Log the form data to check
-      for (var pair of formData.entries()) {
-        console.log(pair[0] + ', ' + pair[1]);
-      }
+      // for (var pair of formData.entries()) {
+      //   console.log(pair[0] + ', ' + pair[1]);
+      // }
 
       // Send an AJAX request to update the school details
       $.ajax({
@@ -617,7 +617,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
           if (jsonResponse.status === 'success') {
             alert('Record updated successfully');
-            //location.reload();
+            location.reload();
 
           } else {
 
@@ -629,9 +629,9 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
         error: function (xhr, status, error) {
           // Handle the error if the update fails
-          console.log(xhr.responseText);
-          console.log(status);
-          console.log(error);
+          // console.log(xhr.responseText);
+          // console.log(status);
+          // console.log(error);
         }
       });
     }
