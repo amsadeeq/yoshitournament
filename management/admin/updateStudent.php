@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Prepare the update statement
         $stmt = $pdo->prepare("UPDATE `yoshi_school_students_tbl` 
-            SET `userRefNo` = :userRefNo,
+            SET 
                 `user_position` = :user_position, 
                 `surname` = :surname, 
                 `firstname` = :firstname, 
