@@ -193,14 +193,14 @@ $total_student = $result_student['total_student'];
               <i class="fa fa-play"></i> Admins
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-qrcode"></i> Attendance
+              <i class="fa fa-pause"></i> Attendance
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa  fa-building-o"></i> Schools
+              <i class="fa fa-save"></i> Schools
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-red">6</span>
-              <i class="fa fa-mortar-board (alias)"></i> Students
+              <i class="fa fa-bullhorn"></i> Students
             </a>
             <a href="#" class="btn btn-app">
               <i class="fa fa-repeat"></i> Pending
@@ -224,213 +224,198 @@ $total_student = $result_student['total_student'];
               <i class="fa fa-newspaper-o"></i> F News
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-file-image-o"></i> Upload Media
+              <i class="fa fa-file-image-o"></i> Media
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-soccer-ball-o (alias)"></i> Match Result
+              <i class="fa fa-edit"></i> Match Result
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-blue">102</span>
               <i class="fa fa-list"></i> Matches
             </a>
           </div>
-        </div>
 
 
-        <!-- top tiles -->
-        <div class="row">
+          <!-- top tiles -->
+          <div class="row">
 
-          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <a href="signupList.php" class=" text-decoration-none">
-              <div class="tile-stats">
-                <div class="icon" style="font-size:30px;">
-                  <i class="fa fa-users"></i>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+              <a href="signupList.php" class=" text-decoration-none">
+                <div class="tile-stats">
+                  <div class="icon" style="font-size:30px;">
+                    <i class="fa fa-users"></i>
+                  </div>
+                  <div class="count"><?php echo $total_users; ?></div>
+                  <h4 class="stats_text">Sign up</h4>
                 </div>
-                <div class="count">
-                  <?php echo $total_users; ?>
+              </a>
+            </div>
+
+
+
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+              <a href="schoolList.php" class=" text-decoration-none">
+                <div class="tile-stats">
+                  <div class="icon">
+                    <i class="fa fa-building-o"></i>
+                  </div>
+                  <div class="count"><?php echo $total_school_officials; ?></div>
+                  <h4 class="stats_text">Schools</h4>
                 </div>
-                <h4 class="stats_text">Sign up</h4>
-              </div>
-            </a>
-          </div>
+              </a>
+            </div>
 
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
 
+              <a href="studentList.php" class=" text-decoration-none">
+                <div class="tile-stats">
+                  <div class="icon">
+                    <i class="fa  fa-group (alias)"></i>
+                  </div>
+                  <div class="count"><?php echo $total_student; ?></div>
 
-          <div class=" animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <a href="schoolList.php" class=" text-decoration-none">
-              <div class="tile-stats">
-                <div class="icon">
-                  <i class="fa fa-building-o"></i>
+                  <h4 class="stats_text">Students</h4>
+
                 </div>
-                <div class="count">
-                  <?php echo $total_school_officials; ?>
-                </div>
-                <h4 class="stats_text">Schools</h4>
-              </div>
-            </a>
-          </div>
-
-          <div class=" animated flipInY col-lg-3 col-md-3 col-sm-6">
-
-            <a href="studentList.php" class=" text-decoration-none">
-              <div class="tile-stats">
-                <div class="icon">
-                  <i class="fa  fa-group (alias)"></i>
-                </div>
-                <div class="count">
-                  <?php echo $total_student; ?>
-                </div>
-
-                <h4 class="stats_text">Students</h4>
-
-              </div>
-            </a>
-          </div>
-          <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <a href="pendingUsers.php" class=" text-decoration-none">
-              <div class="tile-stats" style="background-color: #ffbc42;">
-                <div class="icon">
-                  <i class="fa  fa-history"></i>
-                </div>
-                <div class="count">
-                  <?php if (!empty($total_users_pending)) {
+              </a>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+              <a href="pendingUsers.php" class=" text-decoration-none">
+                <div class="tile-stats" style="background-color: #ffbc42;">
+                  <div class="icon">
+                    <i class="fa  fa-history"></i>
+                  </div>
+                  <div class="count"><?php if (!empty($total_users_pending)) {
                     echo $total_users_pending;
                   } else {
                     echo "0";
-                  } ?>
+                  } ?></div>
+
+                  <h4 class="stats_text">Pending</h4>
+
                 </div>
-
-                <h4 class="stats_text">Pending</h4>
-
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="row">
-
-          <div class="animated flipInY  col-lg-3 col-md-3 col-sm-6">
-            <a href="attendance.php" class=" text-decoration-none">
-              <div class="tile-stats" style="background-color:#83c5be;">
-                <div class="icon" style="font-size:30px;">
-                  <i class="fa  fa-check-square-o"></i>
-                </div>
-
-                <div class="count"><?php echo $total_attendance; ?></div>
-                <h4 class="stats_text">Attendance</h4>
-              </div>
-            </a>
-          </div>
-
-
-
-          <d iv class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-            <a href="addadmin.php" class=" text-decoration-none">
-              <d iv class="tile-stats">
-                <d iv class="icon">
-                  <i class="fa fa-user"></i>
-        </div>
-
-
-        <div class="count"><?php echo $total__admin; ?></div>
-        <h4 class="stats_text">Add Admin</h4>
-      </div>
-      </a>
-    </div>
-
-    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-      <a href="studentCategory.php" class=" text-decoration-none">
-        <div class="tile-stats">
-          <div class="icon">
-            <i class="fa fa-list-alt"></i>
-          </div>
-
-
-          <div class="count"><?php echo $total_student; ?></div>
-
-          <h4 class="stats_text">Students Categories </h4>
-
-        </div>
-      </a>
-    </div>
-    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-      <a href="completeUser.php" class=" text-decoration-none">
-        <div class="tile-stats">
-          <div class="icon">
-            <i class="fa  fa-thumbs-o-up"></i>
-          </div>
-
-          <div class="count"><?php if (!empty($total_users_completed)) {
-            echo $total_users_completed;
-          } else {
-            echo "0";
-          } ?></div>
-
-          <h4 class="stats_text">Completed</h4>
-
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <!-- /top tiles -->
-
-  <div class="row">
-    <div class="col-md-12 col-sm-12 ">
-      <div class="dashboard_graph">
-
-        <div class="row x_title">
-          <div class="col-md-6">
-            <h3>Registration <small>Staff & Students</small></h3>
-          </div>
-          <div class="col-md-6">
-            <div id="reportrange" class="pull-right"
-              style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-              <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-              <span>December 30, 2023 - August 28, 2024</span> <b class="caret"></b>
+              </a>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-9 col-sm-9 ">
-          <div id="chart_plot_01" class="demo-placeholder"></div>
-        </div>
-        <div class="col-md-3 col-sm-3  bg-white">
-          <div class="x_title">
-            <h2>Based on Gender</h2>
-            <div class="clearfix"></div>
+          <div class="row">
+
+            <div class="animated flipInY  col-lg-3 col-md-3 col-sm-6">
+              <a href="attendance.php" class=" text-decoration-none">
+                <div class="tile-stats" style="background-color:#83c5be;">
+                  <div class="icon" style="font-size:30px;">
+                    <i class="fa  fa-check-square-o"></i>
+                  </div>
+                  <div class="count"><?php echo $total_attendance; ?></div>
+                  <h4 class="stats_text">Attendance</h4>
+                </div>
+              </a>
+            </div>
+
+
+
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+              <a href="addadmin.php" class=" text-decoration-none">
+                <div class="tile-stats">
+                  <div class="icon">
+                    <i class="fa fa-user"></i>
+                  </div>
+                  <div class="count"><?php echo $total__admin; ?></div>
+                  <h4 class="stats_text">Add Admin</h4>
+                </div>
+              </a>
+            </div>
+
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+              <a href="studentCategory.php" class=" text-decoration-none">
+                <div class="tile-stats">
+                  <div class="icon">
+                    <i class="fa fa-list-alt"></i>
+                  </div>
+                  <div class="count"><?php echo $total_student; ?></div>
+
+                  <h4 class="stats_text">Students Categories </h4>
+
+                </div>
+              </a>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+              <a href="completeUser.php" class=" text-decoration-none">
+                <div class="tile-stats">
+                  <div class="icon">
+                    <i class="fa  fa-thumbs-o-up"></i>
+                  </div>
+                  <div class="count"><?php if (!empty($total_users_completed)) {
+                    echo $total_users_completed;
+                  } else {
+                    echo "0";
+                  } ?></div>
+
+                  <h4 class="stats_text">Completed</h4>
+
+                </div>
+              </a>
+            </div>
           </div>
 
-          <div class="col-md-12 col-sm-12 ">
-            <div>
-              <p>Male</p>
-              <div class="">
-                <div class="progress progress_sm" style="width: 76%;">
-                  <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
+          <!-- /top tiles -->
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+              <div class="dashboard_graph">
+
+                <div class="row x_title">
+                  <div class="col-md-6">
+                    <h3>Registration <small>Staff & Students</small></h3>
+                  </div>
+                  <div class="col-md-6">
+                    <div id="reportrange" class="pull-right"
+                      style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                      <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                      <span>December 30, 2023 - August 28, 2024</span> <b class="caret"></b>
+                    </div>
+                  </div>
                 </div>
+
+                <div class="col-md-9 col-sm-9 ">
+                  <div id="chart_plot_01" class="demo-placeholder"></div>
+                </div>
+                <div class="col-md-3 col-sm-3  bg-white">
+                  <div class="x_title">
+                    <h2>Based on Gender</h2>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="col-md-12 col-sm-12 ">
+                    <div>
+                      <p>Male</p>
+                      <div class="">
+                        <div class="progress progress_sm" style="width: 76%;">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p>Female</p>
+                      <div class="">
+                        <div class="progress progress_sm" style="width: 76%;">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="clearfix"></div>
               </div>
             </div>
-            <div>
-              <p>Female</p>
-              <div class="">
-                <div class="progress progress_sm" style="width: 76%;">
-                  <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
-                </div>
-              </div>
-            </div>
+
           </div>
-        </div>
-
-        <div class="clearfix"></div>
-      </div>
-    </div>
-
-  </div>
-  <br />
+          <br />
 
 
 
-  <!-- <div class="row">
+          <!-- <div class="row">
 
 
           <div class="col-md-4 col-sm-4 ">
@@ -681,7 +666,7 @@ $total_student = $result_student['total_student'];
         </div> -->
 
 
-  <!-- <div class="row">
+          <!-- <div class="row">
           <div class="col-md-4 col-sm-4 ">
             <div class="x_panel">
               <div class="x_title">
@@ -1029,55 +1014,55 @@ $total_student = $result_student['total_student'];
       </div>
     </div>
   </div> -->
-  </div>
-  <!-- /page content -->
+        </div>
+        <!-- /page content -->
 
-  <!-- footer content -->
-  <?php require 'mainFooter.php'; ?>
-  <!-- /footer content -->
-  </div>
-  </div>
+        <!-- footer content -->
+        <?php require 'mainFooter.php'; ?>
+        <!-- /footer content -->
+      </div>
+    </div>
 
-  <!-- jQuery -->
-  <script src="../vendors/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- FastClick -->
-  <script src="../vendors/fastclick/lib/fastclick.js"></script>
-  <!-- NProgress -->
-  <script src="../vendors/nprogress/nprogress.js"></script>
-  <!-- Chart.js -->
-  <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
-  <!-- gauge.js -->
-  <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
-  <!-- bootstrap-progressbar -->
-  <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-  <!-- iCheck -->
-  <script src="../vendors/iCheck/icheck.min.js"></script>
-  <!-- Skycons -->
-  <script src="../vendors/skycons/skycons.js"></script>
-  <!-- Flot -->
-  <script src="../vendors/Flot/jquery.flot.js"></script>
-  <script src="../vendors/Flot/jquery.flot.pie.js"></script>
-  <script src="../vendors/Flot/jquery.flot.time.js"></script>
-  <script src="../vendors/Flot/jquery.flot.stack.js"></script>
-  <script src="../vendors/Flot/jquery.flot.resize.js"></script>
-  <!-- Flot plugins -->
-  <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-  <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-  <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
-  <!-- DateJS -->
-  <script src="../vendors/DateJS/build/date.js"></script>
-  <!-- JQVMap -->
-  <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
-  <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-  <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-  <!-- bootstrap-daterangepicker -->
-  <script src="../vendors/moment/min/moment.min.js"></script>
-  <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="../vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../vendors/Flot/jquery.flot.js"></script>
+    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-  <!-- Custom Theme Scripts -->
-  <script src="../build/js/custom.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
 </body>
 
 </html>
