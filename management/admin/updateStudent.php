@@ -4,7 +4,7 @@ require '../../connection.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         // Log the incoming POST data for debugging (optional)
-        print_r($_POST, true);
+        file_put_contents('debug_log.txt', print_r($_POST, true));
 
         // Check if the userRefNo exists
         $stmt = $pdo->prepare("SELECT * FROM `yoshi_school_students_tbl` WHERE `userRefNo` = :userRefNo");
