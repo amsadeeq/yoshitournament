@@ -74,13 +74,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'No rows updated.']);
 
+
+
             }
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.']);
         }
 
     } catch (PDOException $e) {
-        echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+        //echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+        error_log($e->getMessage());
     }
 }
 ?>
