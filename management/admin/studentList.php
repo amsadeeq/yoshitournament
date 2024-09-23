@@ -541,48 +541,48 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         data: { userRefNo: userRefNo },
         success: function (response) {
           // Parse the JSON response
-          var student = JSON.parse(response);
+          var editStudent = JSON.parse(response);
 
           // Populate the form fields with the student details
-          $('#editUserPosition').val(student.user_position);
-          $('#editUserRefNo').val(student.userRefNo);
-          $('#editTeamRefNumber').val(student.TeamRefNumber);
-          $('#editSurname').val(student.surname);
-          $('#editFirstname').val(student.firstname);
-          $('#editDob').val(student.dob);
-          $('#editGender').val(student.gender);
-          $('#editCountry').val(student.country);
-          $('#editState').val(student.state);
-          $('#editCity').val(student.city);
-          $('#editZipcode').val(student.zipcode);
-          $('#editPhone').val(student.phone);
-          $('#editEmail').val(student.email);
-          $('#editMeansId').val(student.means_id);
-          $('#editIdNumber').val(student.id_number);
-          $('#editAddress').val(student.address);
+          $('#editUserPosition').val(editStudent.user_position);
+          $('#editUserRefNo').val(editStudent.userRefNo);
+          $('#editTeamRefNumber').val(editStudent.TeamRefNumber);
+          $('#editSurname').val(editStudent.surname);
+          $('#editFirstname').val(editStudent.firstname);
+          $('#editDob').val(editStudent.dob);
+          $('#editGender').val(editStudent.gender);
+          $('#editCountry').val(editStudent.country);
+          $('#editState').val(editStudent.state);
+          $('#editCity').val(editStudent.city);
+          $('#editZipcode').val(editStudent.zipcode);
+          $('#editPhone').val(editStudent.phone);
+          $('#editEmail').val(editStudent.email);
+          $('#editMeansId').val(editStudent.means_id);
+          $('#editIdNumber').val(editStudent.id_number);
+          $('#editAddress').val(editStudent.address);
 
-          $('#editTeamName').val(student.team_name);
-          $('#editCategory').val(student.category); // New field for category
-          $('#editPlayerPosition').val(student.player_position); // New field for player position
-          $('#editJersyNumber').val(student.jersy_number); // New field for jersey number
-          $('#editTeamCountry').val(student.team_country);
-          $('#editTeamState').val(student.team_state);
-          $('#editTeamCity').val(student.team_city);
-          $('#editNumberOfPlayers').val(student.number_of_players);
-          $('#editTeamAddress').val(student.team_address);
+          $('#editTeamName').val(editStudent.team_name);
+          $('#editCategory').val(editStudent.category); // New field for category
+          $('#editPlayerPosition').val(editStudent.player_position); // New field for player position
+          $('#editJersyNumber').val(editStudent.jersy_number); // New field for jersey number
+          $('#editTeamCountry').val(editStudent.team_country);
+          $('#editTeamState').val(editStudent.team_state);
+          $('#editTeamCity').val(editStudent.team_city);
+          $('#editNumberOfPlayers').val(editStudent.number_of_players);
+          $('#editTeamAddress').val(editStudent.team_address);
 
-          $('#editEmergencyName').val(student.emergency_name); // New field for emergency contact name
-          $('#editEmergencyPhone').val(student.emergency_phone); // New field for emergency contact phone
-          $('#editEmergencyEmail').val(student.emergency_email); // New field for emergency contact email
-          $('#editEmergencyAddress').val(student.emergency_address); // New field for emergency contact address
+          $('#editEmergencyName').val(editStudent.emergency_name); // New field for emergency contact name
+          $('#editEmergencyPhone').val(editStudent.emergency_phone); // New field for emergency contact phone
+          $('#editEmergencyEmail').val(editStudent.emergency_email); // New field for emergency contact email
+          $('#editEmergencyAddress').val(editStudent.emergency_address); // New field for emergency contact address
 
-          $('#editTimeCreated').val(student.time_created);
-          $('#editDateCreated').val(student.date_created);
-          $('#editIpAddress').val(student.ip_address);
+          $('#editTimeCreated').val(editStudent.time_created);
+          $('#editDateCreated').val(editStudent.date_created);
+          $('#editIpAddress').val(editStudent.ip_address);
 
-          $('#editAttendance').val(student.attendance); // New field for attendance
-          $('#editAttendanceTime').val(student.attendance_time); // New field for attendance time
-          $('#editAttendanceDate').val(student.attendance_date); // New field for attendance date
+          $('#editAttendance').val(editStudent.attendance); // New field for attendance
+          $('#editAttendanceTime').val(editStudent.attendance_time); // New field for attendance time
+          $('#editAttendanceDate').val(editStudent.attendance_date); // New field for attendance date
 
 
           // Show the edit modal
