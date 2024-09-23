@@ -190,20 +190,20 @@ $total_student = $result_student['total_student'];
               <i class="fa fa-edit"></i> Edit
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-play"></i> Admins
+              <i class="fa fa-user"></i> Admins
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-pause"></i> Attendance
+              <i class="fa fa-qrcode"></i> Attendance
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-save"></i> Schools
+              <i class="fa fa-building-o"></i> Schools
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-red">6</span>
-              <i class="fa fa-bullhorn"></i> Students
+              <i class="fa fa-mortar-board (alias)"></i> Students
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-repeat"></i> Pending
+              <i class="fa fa-spinner"></i> Pending
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-green">211</span>
@@ -215,7 +215,7 @@ $total_student = $result_student['total_student'];
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-orange">12</span>
-              <i class="fa fa-envelope"></i> Categories
+              <i class="fa fa-sitemap"></i> Categories
             </a>
             <a href="#" class="btn btn-app">
               <i class="fa fa-newspaper-o"></i> M News
@@ -231,7 +231,7 @@ $total_student = $result_student['total_student'];
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-blue">102</span>
-              <i class="fa fa-list"></i> Matches
+              <i class="fa fa-trophy"></i> Matches
             </a>
           </div>
 
