@@ -203,7 +203,11 @@ $total_student = $result_student['total_student'];
               <i class="fa fa-mortar-board (alias)"></i> Students
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-spinner"></i> Pending
+              <span class="badge bg-orange">12</span>
+              <i class="fa fa-sitemap"></i> Student Categories
+            </a>
+            <a href="#" class="btn btn-app">
+              <i class="fa fa-spinner"></i> Pending Signup
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-green">211</span>
@@ -211,12 +215,9 @@ $total_student = $result_student['total_student'];
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-orange">32</span>
-              <i class="fa fa-inbox"></i> Completed
+              <i class="fa fa-inbox"></i> Completed Signup
             </a>
-            <a href="#" class="btn btn-app">
-              <span class="badge bg-orange">12</span>
-              <i class="fa fa-sitemap"></i> Categories
-            </a>
+
             <a href="#" class="btn btn-app">
               <i class="fa fa-newspaper-o"></i> Main News
             </a>
