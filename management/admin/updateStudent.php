@@ -69,6 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Bind WHERE clause separately
         $stmt->bindParam(':whereUserRefNo', $_POST['editUserRefNo']);
 
+        // Log the SQL query and parameters
+        $sqlToExecute = $stmt;
+        foreach ($_POST as $key => $value) {
+            $sqlToExecute = str_replace(':' . $key, "'$value'", $sqlToExecute);
+        }
+        error_log("SQL Query: " . $sqlToExecute);
+
         // Execute the update query
         if ($stmt->execute()) {
             $rowCount = $stmt->rowCount();
