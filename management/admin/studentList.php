@@ -754,6 +754,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
                   <option value="International Passport">International Passport</option>
                   <option value="Office ID">Office ID</option>
                   <option value="Voters Card">Voter's Card</option>
+                  <option value="Student ID">Student ID</option>
                 </select>
               </div>
             </div>

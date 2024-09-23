@@ -70,8 +70,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($stmt->execute()) {
             if ($stmt->rowCount() > 0) {
                 echo json_encode(['status' => 'success', 'message' => 'Record updated successfully.']);
+
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'No rows updated.']);
+
             }
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.']);
