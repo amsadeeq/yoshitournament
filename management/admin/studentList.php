@@ -606,7 +606,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
 
       // Send an AJAX request to update the school details
       $.ajax({
-        url: 'updateSchool.php',
+        url: 'updateStudent.php',
         type: 'POST',
         data: formData,
         processData: false,
