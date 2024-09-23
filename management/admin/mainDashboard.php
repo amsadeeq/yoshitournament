@@ -218,10 +218,10 @@ $total_student = $result_student['total_student'];
               <i class="fa fa-sitemap"></i> Categories
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-newspaper-o"></i> M News
+              <i class="fa fa-newspaper-o"></i> Main News
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-newspaper-o"></i> F News
+              <i class="fa fa-newspaper-o"></i> Feature News
             </a>
             <a href="#" class="btn btn-app">
               <i class="fa fa-file-image-o"></i> Media
