@@ -614,16 +614,15 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
         success: function (response) {
           //console.log(response);  // Log the server response to see what's coming back
           var jsonResponse = JSON.parse(response);
-          if (response.status === 'error') {
-            $('#error-message').text(response.message); // Display the error in a specific div
-          }
+
           if (jsonResponse.status === 'success') {
             //alert('Record updated successfully');
             //location.reload();
 
           } else {
-            alert('Update failed: ' + jsonResponse.message);
-            alert('Update failed, Try some time');
+            console.log(response.message);
+            //alert('Update failed: ' + jsonResponse.message);
+            //alert('Update failed, Try some time');
 
           }
         },
@@ -645,7 +644,6 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <div id="error-message" style="color: red;"></div>
           <h5 class="modal-title" id="editSchoolModalLabel">Edit School Details</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
