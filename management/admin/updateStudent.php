@@ -40,11 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 `number_of_players` = :number_of_players, 
                 `team_address` = :team_address, 
                 `TeamRefNumber` = :TeamRefNumber
-            WHERE `userRefNo` = :originalUserRefNo");
+            WHERE `userRefNo` = :userRefNo");
 
         // Bind parameters
         $stmt->bindParam(':userRefNo', $_POST['editUserRefNo']);
-        $stmt->bindParam(':originalUserRefNo', $_POST['editUserRefNo']);
         $stmt->bindParam(':user_position', $_POST['editUserPosition']);
         $stmt->bindParam(':surname', $_POST['editSurname']);
         $stmt->bindParam(':firstname', $_POST['editFirstname']);
@@ -83,8 +82,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     } catch (PDOException $e) {
-        echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
-
+        //echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+        error_log($e->getMessage());
 
     }
 }
