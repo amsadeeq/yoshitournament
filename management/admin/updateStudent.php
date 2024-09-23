@@ -5,6 +5,7 @@ require '../../connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo $_POST['editUserRefNo'];
+    echo $_POST['editTeamRefNumber'];
     try {
 
         // Check if the userRefNo exists
