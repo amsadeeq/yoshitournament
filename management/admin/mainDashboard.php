@@ -186,38 +186,38 @@ $total_student = $result_student['total_student'];
           </div>
           <div class="x_content">
             <!-- <p>Add the class <code>.btn .btn-app</code> tag</p> -->
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <i class="fa fa-edit"></i> Edit
             </a>
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <i class="fa fa-play"></i> Play
             </a>
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <i class="fa fa-pause"></i> Pause
             </a>
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <i class="fa fa-save"></i> Save
             </a>
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <span class="badge bg-red">6</span>
               <i class="fa fa-bullhorn"></i> Notifications
             </a>
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <i class="fa fa-repeat"></i> Repeat
             </a>
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <span class="badge bg-green">211</span>
               <i class="fa fa-users"></i> Users
             </a>
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <span class="badge bg-orange">32</span>
               <i class="fa fa-inbox"></i> Orders
             </a>
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <span class="badge bg-orange">12</span>
               <i class="fa fa-envelope"></i> Inbox
             </a>
-            <a class="btn btn-app">
+            <a href="#" class="btn btn-app">
               <span class="badge bg-blue">102</span>
               <i class="fa fa-heart-o"></i> Likes
             </a>
