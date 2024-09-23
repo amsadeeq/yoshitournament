@@ -64,7 +64,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
           <br />
 
           <!-- sidebar menu -->
-          <?php require 'sideMenu.php'; ?>
+          <?php //require 'sideMenu.php'; ?>
           <!-- /sidebar menu -->
 
           <!-- /menu footer buttons -->
