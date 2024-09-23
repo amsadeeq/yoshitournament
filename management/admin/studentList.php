@@ -53,18 +53,18 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
     <div class="main_container">
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
-          <?php //require 'smallNavbar.php'; ?>
+          <?php require 'smallNavbar.php'; ?>
 
           <div class="clearfix"></div>
 
           <!-- menu profile quick info -->
-          <?php //require 'profileQuickInfo.php'; ?>
+          <?php require 'profileQuickInfo.php'; ?>
           <!-- /menu profile quick info -->
 
           <br />
 
           <!-- sidebar menu -->
-          <?php //require 'sideMenu.php'; ?>
+          <?php require 'sideMenu.php'; ?>
           <!-- /sidebar menu -->
 
           <!-- /menu footer buttons -->
@@ -74,7 +74,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
       </div>
 
       <!-- top navigation -->
-      <?php //require 'topNavbar.php'; ?>
+      <?php require 'topNavbar.php'; ?>
       <!-- /top navigation -->
 
       <!-- page content -->
