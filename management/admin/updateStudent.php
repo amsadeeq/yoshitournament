@@ -71,14 +71,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Execute the update query
         if ($stmt->execute()) {
-            if ($stmt->rowCount() > 0) {
+            $rowCount = $stmt->rowCount();
+
+            // If no rows were updated, print out the bound parameters
+            if ($rowCount > 0) {
                 echo json_encode(['status' => 'success', 'message' => 'Record updated successfully.']);
             } else {
-                echo json_encode(['status' => 'error', 'message' => 'No rows updated.']);
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'No rows updated. Check if the data is the same as existing data.',
+                    'userRefNo' => $_POST['editUserRefNo'],
+                    'parameters' => $_POST // Output all submitted data for debugging
+                ]);
             }
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.']);
+            // Log error info for failed query execution
+            $errorInfo = $stmt->errorInfo();
+            echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.', 'errorInfo' => $errorInfo]);
         }
+
 
     } catch (PDOException $e) {
         echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);

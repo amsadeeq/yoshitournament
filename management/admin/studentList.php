@@ -620,7 +620,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
             //location.reload();
 
           } else {
-            console.log(response.message);
+
             //alert('Update failed: ' + jsonResponse.message);
             //alert('Update failed, Try some time');
 
