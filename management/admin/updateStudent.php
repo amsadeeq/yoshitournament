@@ -66,6 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':team_address', $_POST['editTeamAddress']);
         $stmt->bindParam(':TeamRefNumber', $_POST['editTeamRefNumber']);
 
+        echo $stmt;
+
         // Execute the update query
         if ($stmt->execute()) {
             if ($stmt->rowCount() > 0) {
@@ -76,14 +78,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
+
             }
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Failed to update the record.']);
         }
 
     } catch (PDOException $e) {
-        //echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
-        error_log($e->getMessage());
+        echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+
     }
 }
 ?>
