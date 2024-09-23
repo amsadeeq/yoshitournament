@@ -53,7 +53,7 @@ $school_official = $stmt_school->fetchAll(PDO::FETCH_ASSOC);
     <div class="main_container">
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
-          <?php require 'smallNavbar.php'; ?>
+          <?php //require 'smallNavbar.php'; ?>
 
           <div class="clearfix"></div>
 
