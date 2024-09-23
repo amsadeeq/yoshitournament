@@ -190,20 +190,20 @@ $total_student = $result_student['total_student'];
               <i class="fa fa-edit"></i> Edit
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-play"></i> Play
+              <i class="fa fa-play"></i> Admins
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-pause"></i> Pause
+              <i class="fa fa-pause"></i> Attendance
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-save"></i> Save
+              <i class="fa fa-save"></i> Schools
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-red">6</span>
-              <i class="fa fa-bullhorn"></i> Notifications
+              <i class="fa fa-bullhorn"></i> Students
             </a>
             <a href="#" class="btn btn-app">
-              <i class="fa fa-repeat"></i> Repeat
+              <i class="fa fa-repeat"></i> Pending
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-green">211</span>
@@ -211,15 +211,27 @@ $total_student = $result_student['total_student'];
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-orange">32</span>
-              <i class="fa fa-inbox"></i> Orders
+              <i class="fa fa-inbox"></i> Completed
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-orange">12</span>
-              <i class="fa fa-envelope"></i> Inbox
+              <i class="fa fa-envelope"></i> Categories
+            </a>
+            <a href="#" class="btn btn-app">
+              <i class="fa fa-edit"></i> M News
+            </a>
+            <a href="#" class="btn btn-app">
+              <i class="fa fa-edit"></i> F News
+            </a>
+            <a href="#" class="btn btn-app">
+              <i class="fa fa-edit"></i> Media
+            </a>
+            <a href="#" class="btn btn-app">
+              <i class="fa fa-edit"></i> Match Result
             </a>
             <a href="#" class="btn btn-app">
               <span class="badge bg-blue">102</span>
-              <i class="fa fa-heart-o"></i> Likes
+              <i class="fa fa-heart-o"></i> Matches
             </a>
           </div>
         </div>
