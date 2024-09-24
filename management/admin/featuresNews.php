@@ -259,65 +259,41 @@ try {
 
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align"
-                                                for="first-name">Full Name <span class="required">*</span>
+                                                for="first-name">Cover Picture <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" name="full_name" id="first-name" required="required"
+                                                <input type="text" name="coverPhoto" id="first-name" required="required"
                                                     class="form-control ">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align"
-                                                for="last-name">Email <span class="required">*</span>
+                                                for="last-name">Title <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="email" id="last-name" name="email" required="required"
+                                                <input type="email" id="last-name" name="newsTitle" required="required"
                                                     class="form-control">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label for="middle-name"
-                                                class="col-form-label col-md-3 col-sm-3 label-align">Phone
-                                                Number</label>
+                                                class="col-form-label col-md-3 col-sm-3 label-align">Short
+                                                Highlight</label>
                                             <div class="col-md-6 col-sm-6 ">
                                                 <input id="middle-name" id="last-name" class="form-control" type="text"
-                                                    name="phone">
-                                            </div>
-                                        </div>
-                                        <!-- <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <select class="form-control" name="gender">
-                                                    <option value="null">Choose Gender</option>
-                                                    <option value="Male">Male</option>
-                                                    <option value="Female">Female</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-                                        <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Admin
-                                                Role</label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <select class="form-control" name="role" required="required">
-                                                    <option value="null">Choose Role</option>
-                                                    <option value="View Role">View Role</option>
-                                                    <option value="Patial Role">Patial Role</option>
-                                                    <option value="Sub Admin">Sub Admin</option>
-                                                    <option value="Admin">Admin</option>
-                                                </select>
+                                                    name="shortHighlight" required>
                                             </div>
                                         </div>
 
                                         <div class="item form-group">
                                             <label for="middle-name"
-                                                class="col-form-label col-md-3 col-sm-3 label-align">Temporary
-                                                Password</label>
+                                                class="col-form-label col-md-3 col-sm-3 label-align">Short
+                                                News URL</label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input id="middle-name" id="last-name" class="form-control" type="text"
-                                                    name="temp_password" placeholder="simple password"
-                                                    required="required">
+                                                <input class="form-control" type="url" name="newsURL" required>
                                             </div>
                                         </div>
+
 
                                         <div class="ln_solid"></div>
                                         <div class="item form-group">
@@ -337,7 +313,7 @@ try {
                         <div class="col-md-12 col-sm-12 ">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Admin Lists </h2>
+                                    <h2>Published </h2>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
@@ -351,10 +327,10 @@ try {
                                                             <tr>
 
 
-                                                                <th>Name</th>
-                                                                <th>Email</th>
-                                                                <th>Phone</th>
-                                                                <th>Role</th>
+                                                                <th>Cover Photo</th>
+                                                                <th>Title</th>
+                                                                <th>Short Highlight</th>
+                                                                <th>News URL</th>
                                                                 <th>Status</th>
                                                                 <th>Action</th>
                                                             </tr>
