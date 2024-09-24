@@ -262,7 +262,7 @@ try {
                                                 for="first-name">Cover Picture <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" name="coverPhoto" id="first-name" required="required"
+                                                <input type="file" name="coverPhoto" id="first-name" required="required"
                                                     class="form-control ">
                                             </div>
                                         </div>
