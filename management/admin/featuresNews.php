@@ -280,8 +280,8 @@ try {
                                                 class="col-form-label col-md-3 col-sm-3 label-align">Short
                                                 Highlight</label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input id="middle-name" id="last-name" class="form-control" type="text"
-                                                    name="shortHighlight" required>
+                                                <textarea rows="6" name="shortHighlight" class="form-control" id=""
+                                                    required="required"></textarea>
                                             </div>
                                         </div>
 
