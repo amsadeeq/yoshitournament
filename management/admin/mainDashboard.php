@@ -226,7 +226,12 @@ $total_student = $result_student['total_student'];
               <i class="fa fa-users"></i> Users
             </a>
             <a href="#" class="btn btn-app">
-              <span class="badge bg-orange">32</span>
+              <span class="badge bg-orange">
+                <?php if (!empty($total_users_completed)) {
+                  echo $total_users_completed;
+                } else {
+                  echo "0";
+                } ?></span>
               <i class="fa fa-inbox"></i> Completed Signup
             </a>
 
