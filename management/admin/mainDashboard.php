@@ -186,9 +186,7 @@ $total_student = $result_student['total_student'];
           </div>
           <div class="x_content">
             <!-- <p>Add the class <code>.btn .btn-app</code> tag</p> -->
-            <a href="#" class="btn btn-app">
-              <i class="fa fa-edit"></i> Edit
-            </a>
+
             <a href="addadmin.php" class="btn btn-app">
               <span class="badge bg-green count"><?php echo $total__admin; ?></span>
               <i class="fa fa-user"></i> Admins
@@ -250,6 +248,9 @@ $total_student = $result_student['total_student'];
             <a href="#" class="btn btn-app">
               <span class="badge bg-blue">102</span>
               <i class="fa fa-trophy"></i> Matches
+            </a>
+            <a href="#" class="btn btn-app">
+              <i class="fa fa-edit"></i> Edit
             </a>
           </div>
 
