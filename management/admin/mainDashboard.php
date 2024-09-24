@@ -189,11 +189,11 @@ $total_student = $result_student['total_student'];
             <a href="#" class="btn btn-app">
               <i class="fa fa-edit"></i> Edit
             </a>
-            <a href="#" class="btn btn-app">
+            <a href="addadmin.php" class="btn btn-app">
               <span class="badge bg-green count"><?php echo $total__admin; ?></span>
               <i class="fa fa-user"></i> Admins
             </a>
-            <a href="#" class="btn btn-app">
+            <a href="attendance.php" class="btn btn-app">
               <span class="badge bg-green count"><?php echo $total_attendance; ?></span>
               <i class="fa fa-qrcode"></i> Attendance
             </a>
@@ -207,7 +207,7 @@ $total_student = $result_student['total_student'];
               <span class="badge bg-red"><?php echo $total_student; ?></span>
               <i class="fa fa-mortar-board (alias)"></i> Students
             </a>
-            <a href="#" class="btn btn-app">
+            <a href="studentCategory.php" class="btn btn-app">
               <span class="badge bg-orange"><?php echo $total_student; ?></span>
               <i class="fa fa-sitemap"></i> Student Categories
             </a>
