@@ -248,11 +248,10 @@ try {
                     <div class="row">
                         <div class="col-md-12 col-sm-12 ">
                             <div class="x_panel">
-                                <div class="x_title">
-                                    <h4>News update by external Medias or Blogs </h4>
+                                <!-- <div class="x_title">
 
                                     <div class="clearfix"></div>
-                                </div>
+                                </div> -->
                                 <div class="x_content">
                                     <br />
                                     <form id="demo-form2 adminForm" method="POST" data-parsley-validate
