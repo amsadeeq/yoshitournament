@@ -233,19 +233,19 @@ $total_student = $result_student['total_student'];
               <i class="fa fa-inbox"></i> Completed Signup
             </a>
 
-            <a href="#" class="btn btn-app">
+            <a href="mainNews.php" class="btn btn-app">
               <i class="fa fa-newspaper-o"></i> Main News
             </a>
-            <a href="#" class="btn btn-app">
+            <a href="featuresNews.php" class="btn btn-app">
               <i class="fa fa-newspaper-o"></i> Feature News
             </a>
-            <a href="#" class="btn btn-app">
+            <a href="uploadMedia.php" class="btn btn-app">
               <i class="fa fa-file-image-o"></i> Media
             </a>
-            <a href="#" class="btn btn-app">
+            <a href="addMatchResult.php" class="btn btn-app">
               <i class="fa fa-edit"></i> Match Result
             </a>
-            <a href="#" class="btn btn-app">
+            <a href="Matches.php" class="btn btn-app">
               <span class="badge bg-blue">102</span>
               <i class="fa fa-trophy"></i> Matches
             </a>
