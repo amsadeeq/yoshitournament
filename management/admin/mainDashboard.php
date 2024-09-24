@@ -190,25 +190,37 @@ $total_student = $result_student['total_student'];
               <i class="fa fa-edit"></i> Edit
             </a>
             <a href="#" class="btn btn-app">
+              <span class="badge bg-green count"><?php echo $total__admin; ?></span>
               <i class="fa fa-user"></i> Admins
             </a>
             <a href="#" class="btn btn-app">
+              <span class="badge bg-green count"><?php echo $total_attendance; ?></span>
               <i class="fa fa-qrcode"></i> Attendance
             </a>
+
             <a href="#" class="btn btn-app">
+              <span class="badge bg-orange"> <?php echo $total_school_officials; ?></span>
               <i class="fa fa-building-o"></i> Schools
             </a>
+
             <a href="#" class="btn btn-app">
-              <span class="badge bg-red">6</span>
+              <span class="badge bg-red"><?php echo $total_student; ?></span>
               <i class="fa fa-mortar-board (alias)"></i> Students
             </a>
             <a href="#" class="btn btn-app">
-              <span class="badge bg-orange">12</span>
+              <span class="badge bg-orange"><?php echo $total_student; ?></span>
               <i class="fa fa-sitemap"></i> Student Categories
             </a>
             <a href="#" class="btn btn-app">
+              <span class="badge bg-orange">
+                <?php if (!empty($total_users_pending)) {
+                  echo $total_users_pending;
+                } else {
+                  echo "0";
+                } ?></span>
               <i class="fa fa-spinner"></i> Pending Signup
             </a>
+
             <a href="signupList.php" class="btn btn-app">
               <span class="badge bg-green count"><?php echo $total_users; ?></span>
               <i class="fa fa-users"></i> Users
