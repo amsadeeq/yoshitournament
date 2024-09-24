@@ -209,7 +209,7 @@ $total_student = $result_student['total_student'];
             <a href="#" class="btn btn-app">
               <i class="fa fa-spinner"></i> Pending Signup
             </a>
-            <a href="#" class="btn btn-app">
+            <a href="signupList.php" class="btn btn-app">
               <span class="badge bg-green count"><?php echo $total_users; ?></span>
               <i class="fa fa-users"></i> Users
             </a>
