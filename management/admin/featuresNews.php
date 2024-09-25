@@ -436,7 +436,7 @@ try {
                     <tr>
                     
                         <td>${news.newsRefCode}</td>
-                        <td><img src='featured_news_photo/${news.cover_picture_name}'></td>
+                        <td><img src='featured_news_photo/${news.cover_picture_name}' style='width:120px;height:120px;'></td>
                         <td>${news.title}</td>
                         <td>${news.short_higlight}</td>
                         <td>${news.news_url}</td>
