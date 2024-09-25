@@ -246,69 +246,74 @@ try {
                     </div>
                     <div class="clearfix"></div>
                     <div class="row">
-                        <div class="col-md-8 col-sm-12 col-lg-8 ">
+                        <div class="col-md-12 col-sm-12 col-lg-12 ">
                             <div class="x_panel">
                                 <!-- <div class="x_title">
 
                                     <div class="clearfix"></div>
                                 </div> -->
                                 <div class="x_content">
-                                    <br />
-                                    <form id="demo-form2 adminForm" method="POST" data-parsley-validate
-                                        class="form-horizontal form-label-left">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-md-8 col-sm-12">
+                                            <br />
+                                            <form id="demo-form2 adminForm" method="POST" data-parsley-validate
+                                                class="form-horizontal form-label-left">
 
-                                        <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align"
-                                                for="first-name">Cover Picture <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <input type="file" name="coverPhoto" id="first-name" required="required"
-                                                    class="form-control ">
-                                            </div>
-                                        </div>
-                                        <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align"
-                                                for="last-name">Title <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <input type="email" id="last-name" name="newsTitle" required="required"
-                                                    class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="item form-group">
-                                            <label for="middle-name"
-                                                class="col-form-label col-md-3 col-sm-3 label-align">Short
-                                                Highlight</label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <textarea rows="6" name="shortHighlight" class="form-control" id=""
-                                                    required="required"></textarea>
-                                            </div>
+                                                <div class="item form-group">
+                                                    <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                                        for="first-name">Cover Picture <span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-md-6 col-sm-6 ">
+                                                        <input type="file" name="coverPhoto" id="first-name"
+                                                            required="required" class="form-control ">
+                                                    </div>
+                                                </div>
+                                                <div class="item form-group">
+                                                    <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                                        for="last-name">Title <span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-md-6 col-sm-6 ">
+                                                        <input type="email" id="last-name" name="newsTitle"
+                                                            required="required" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="item form-group">
+                                                    <label for="middle-name"
+                                                        class="col-form-label col-md-3 col-sm-3 label-align">Short
+                                                        Highlight</label>
+                                                    <div class="col-md-6 col-sm-6 ">
+                                                        <textarea rows="6" name="shortHighlight" class="form-control"
+                                                            id="" required="required"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="item form-group">
+                                                    <label for="middle-name"
+                                                        class="col-form-label col-md-3 col-sm-3 label-align">Short
+                                                        News URL</label>
+                                                    <div class="col-md-6 col-sm-6 ">
+                                                        <input class="form-control" type="url" name="newsURL" required>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="ln_solid"></div>
+                                                <div class="item form-group">
+                                                    <div class="col-md-6 col-sm-6 offset-md-3">
+                                                        <button class="btn btn-warning" type="reset">Cancel</button>
+                                                        <button type="submit" name="addadmin"
+                                                            class="btn btn-success">Publish</button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
 
-                                        <div class="item form-group">
-                                            <label for="middle-name"
-                                                class="col-form-label col-md-3 col-sm-3 label-align">Short
-                                                News URL</label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <input class="form-control" type="url" name="newsURL" required>
-                                            </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <h5>Hi</h5>
                                         </div>
-
-
-                                        <div class="ln_solid"></div>
-                                        <div class="item form-group">
-                                            <div class="col-md-6 col-sm-6 offset-md-3">
-                                                <button class="btn btn-warning" type="reset">Cancel</button>
-                                                <button type="submit" name="addadmin"
-                                                    class="btn btn-success">Publish</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <h5>Hi</h5>
                         </div>
                     </div>
 
