@@ -246,7 +246,7 @@ try {
                     </div>
                     <div class="clearfix"></div>
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 ">
+                        <div class="col-md-8 col-sm-12 col-lg-8 ">
                             <div class="x_panel">
                                 <!-- <div class="x_title">
 
@@ -306,6 +306,9 @@ try {
                                     </form>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <h5>Hi</h5>
                         </div>
                     </div>
 
