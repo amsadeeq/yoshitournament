@@ -58,7 +58,7 @@ try {
             $data = trim($data);
             $data = stripcslashes($data);
             $data = htmlspecialchars($data);
-            $data = htmlentities($data);
+            // $data = htmlentities($data);
             return $data;
         }
 
