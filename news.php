@@ -147,10 +147,22 @@ try {
                       <i class="far fa-user"></i> <?php echo $news['author']; ?>
                     </li>
                     <li>
-                      <i class="far fa-comment"></i> 125
+                      <i class="far fa-comment"></i> 0
                     </li>
                     <li>
-                      <i class="far fa-clock"></i> 1 Day ago
+                      <i class="far fa-clock"></i>
+                      <?php
+                      $datePublished = DateTime::createFromFormat('d/M/Y', $news['date_published']);
+                      $now = new DateTime();
+                      $interval = $now->diff($datePublished);
+                      if ($interval->days == 0) {
+                        echo 'Today';
+                      } elseif ($interval->days == 1) {
+                        echo '1 Day ago';
+                      } else {
+                        echo $interval->days . ' Days ago';
+                      }
+                      ?>
                     </li>
                   </ul>
 
