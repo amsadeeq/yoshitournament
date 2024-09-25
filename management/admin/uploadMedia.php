@@ -166,6 +166,8 @@ try {
     <link href="../vendors/starrr/dist/starrr.css" rel="stylesheet">
     <!-- bootstrap-daterangepicker -->
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Dropzone.js -->
+    <link href="../vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" />
     <!-- Include SweetAlert CSS -->
@@ -222,6 +224,44 @@ try {
             <!-- top navigation -->
             <?php require 'topNavbar.php'; ?>
             <!-- /top navigation -->
+
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Media Upload </h3>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12  ">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>multiple file uploader</h2>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <p>Drag multiple files to the box below for multi upload or click to select files.
+                                    </p>
+                                    <form enctype="multipart/form-data" action="form_upload.html" class="dropzone">
+                                    </form>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+
 
             <!-- page content -->
             <div class="right_col" role="main">
@@ -401,6 +441,8 @@ try {
     <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
     <!-- starrr -->
     <script src="../vendors/starrr/dist/starrr.js"></script>
+    <!-- Dropzone.js -->
+    <script src="../vendors/dropzone/dist/min/dropzone.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
 
