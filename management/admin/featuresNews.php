@@ -245,8 +245,8 @@ try {
                                     <div class="row">
                                         <div class="col-lg-8 col-md-8 col-sm-12">
                                             <br />
-                                            <form id="demo-form2 adminForm" method="POST" data-parsley-validate
-                                                class="form-horizontal form-label-left">
+                                            <form enctype="multipart/form-data" id="demo-form2 adminForm" method="POST"
+                                                data-parsley-validate class="form-horizontal form-label-left">
 
                                                 <div class="item form-group">
                                                     <label class="col-form-label col-md-3 col-sm-3 label-align"
