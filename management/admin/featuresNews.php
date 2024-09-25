@@ -413,7 +413,7 @@ try {
 
 
     <script>
-        function fetchAdmins() {
+        function fetchNews() {
             $.ajax({
                 url: 'get_featured_news.php',
                 method: 'GET',
@@ -548,11 +548,11 @@ try {
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Are you sure you want to delete this admin?</p>
+                        <p>Are you sure you want to delete this news?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger" onclick="deleteAdmin(${news.newsRefCode})">Delete</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteNews(${news.newsRefCode})">Delete</button>
                     </div>
                 </div>
             </div>
@@ -569,7 +569,7 @@ try {
                 success: function (response) {
                     if (response === 'success') {
                         // Reload the admin data dynamically
-                        fetchAdmins();
+                        fetchNews();
                     } else {
                         alert('Failed to suspend admin. Please try again.');
                     }
@@ -581,17 +581,17 @@ try {
         }
 
         // Delete admin function
-        function deleteAdmin(adminId) {
+        function deleteNews(newsId) {
             $.ajax({
-                url: 'delete_admin.php',
+                url: 'delete_featured_news.php',
                 method: 'POST',
-                data: { adminId: adminId },
+                data: { newsId: newsId },
                 success: function (response) {
                     if (response === 'success') {
                         // Reload the admin data dynamically
-                        fetchAdmins();
+                        fetchNews();
                     } else {
-                        alert('Failed to delete admin. Please try again.');
+                        alert('Failed to delete news. Please try again.');
                     }
                 },
                 error: function () {
@@ -601,11 +601,11 @@ try {
         }
 
         // Refresh the table every 5 seconds
-        setInterval(fetchAdmins, 50000);
+        setInterval(fetchNews, 50000);
 
         // Fetch the admins when the page loads
         $(document).ready(function () {
-            fetchAdmins();
+            fetchNews();
         });
 
 
