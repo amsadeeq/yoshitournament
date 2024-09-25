@@ -249,10 +249,7 @@ try {
                                     </p>
                                     <form enctype="multipart/form-data" action="form_upload.html" class="dropzone">
                                     </form>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
+
                                 </div>
                             </div>
                         </div>
