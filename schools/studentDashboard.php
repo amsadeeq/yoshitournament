@@ -81,7 +81,19 @@ foreach ($players_record as $player_record) {
     <!-- Include QR Code Generation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
+    <style>
+        @media print {
+            #attendance .content img {
+                width: 50%;
+                height: auto;
+            }
 
+            #attendance .text-center {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    </style>
 
 </head>
 
@@ -858,6 +870,7 @@ foreach ($players_record as $player_record) {
                                         document.body.innerHTML = originalContents;
                                     }
                                 </script>
+
                             </div>
                             <!-- End Icon Cart -->
                         </div>
