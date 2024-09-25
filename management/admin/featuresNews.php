@@ -264,7 +264,7 @@ try {
                                                     </label>
                                                     <div class="col-md-8 col-sm-8 ">
                                                         <input type="text" id="last-name" name="newsTitle"
-                                                            required="required" class="form-control">
+                                                            required="required" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="item form-group">
@@ -279,8 +279,8 @@ try {
 
                                                 <div class="item form-group">
                                                     <label for="middle-name"
-                                                        class="col-form-label col-md-3 col-sm-3 label-align">Short
-                                                        News URL</label>
+                                                        class="col-form-label col-md-3 col-sm-3 label-align">
+                                                        News Blog URL</label>
                                                     <div class="col-md-8 col-sm-8 ">
                                                         <input class="form-control" type="url" name="newsURL" required>
                                                     </div>
