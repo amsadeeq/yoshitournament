@@ -4,6 +4,17 @@
 //####### Importing database connections and EngineFile
 
 require 'auth.php';
+require 'connection.php';
+
+try {
+  $stmt = $pdo->query("SELECT * FROM `yoshi_featured_news_tbl` ORDER BY id DESC, time_published DESC");
+  $featured_news = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  // Return data in JSON format
+  // echo json_encode($featured_news);
+} catch (PDOException $e) {
+  echo json_encode(['error' => $e->getMessage()]);
+}
 
 
 
@@ -105,6 +116,12 @@ require 'auth.php';
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-md-5 gy-lg-0 gx-lg-5 mt-0">
+          <?php
+          foreach ($featured_news as $news) {
+            $newsTitle = $news['title'];
+            echo $newsTitle;
+          }
+          ?>
           <div class="col">
             <a href="https://www.khaleejtimes.com/kt-network/turning-dreams-into-reality-ahmad-mustapha-geidams-soccer-triumph-with-yoshi-academy"
               class="comon-blogs1">
