@@ -96,6 +96,338 @@ require 'auth.php';
         <div class="container">
 
           <div class="d-sm-flex align-items-center justify-content-between">
+            <h2 class="comon-heading"> YAPS Tournament 2024 </h2>
+            <div class="d-lg-flex align-items-center">
+              <p class="me-3"> Showing 1-4 of 13 results </p>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Sort by Latest
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">A-Z</a></li>
+                  <li><a class="dropdown-item" href="#">Z-A</a></li>
+                  <li><a class="dropdown-item" href="#">Newest</a></li>
+                  <li><a class="dropdown-item" href="#">Oldest</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-0 mt-lg-0 g-4 g-lg-4">
+
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (44).jpg" class="gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (44).jpg" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (159).JPG" class="gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (159).JPG" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (46).jpg" class="gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (46).jpg" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/Yoshi_banner_2.jpg" class="gallery-div">
+                  <figure>
+                    <img src="images/Yoshi_banner_2.jpg" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (58).jpg" class="gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (58).jpg" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (56).jpg" class=" gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (56).jpg" alt=" gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (20).jpg" class="gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (20).jpg" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/Yoshi_9.jpg" class="gallery-div">
+                  <figure>
+                    <img src="images/Yoshi_9.jpg" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (91).jpg" class="gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (91).jpg" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>21s Cup Best Kick 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (76).jpg" class="gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (76).jpg" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (37).jpg" class="gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (37).jpg" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="comongallery">
+                <a data-fancybox="gallery" href="images/abuja_ (178).JPG" class="gallery-div">
+                  <figure>
+                    <img src="images/abuja_ (178).JPG" alt="gallery1" />
+                    <figcaption>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                      </svg>
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- <div class="photo-details">
+                  <h5>Gombe United Fc Win 2024 </h5>
+                  <h6> <i class="far fa-clock"></i> 1years Ago</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+
+
+
+
+          </div>
+
+
+          <div class="next-buuton-div d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="left-page-number order-3 order-lg-1 d-flex align-items-center">
+              Pictures per page
+
+
+              <select class="form-select" aria-label="Default select example">
+                <option selected="">23</option>
+                <option value="1">22</option>
+                <option value="2">20</option>
+                <option value="3">10</option>
+              </select>
+            </div>
+
+            <button type="text" class="btn new-btn order-1  order-lg-2"> Next page &nbsp;&nbsp;<i
+                class="fas fa-angle-right"></i> </button>
+            <div class="right-arrow-btn d-flex align-items-center order-2 my-4 my-lg-0 order-lg-3">
+
+              <input type="text" class="form-control num-box" placeholder="23">
+              <div class="arrow-buuton-div">
+                <span class="me-2">of 1,761 </span>
+                <button type="button" class="btn cm-arrow-2">
+                  <i class="fas fa-angle-left"></i>
+                </button>
+                <button type="button" class="btn ms-2 cm-arrow-2">
+                  <i class="fas fa-angle-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="media-div-main my-5">
+      <div class="mn-next-part">
+        <div class="container">
+
+          <div class="d-sm-flex align-items-center justify-content-between">
             <h2 class="comon-heading"> Tournament Media Cover Photo </h2>
             <div class="d-lg-flex align-items-center">
               <p class="me-3"> Showing 1-4 of 13 results </p>

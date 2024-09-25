@@ -160,7 +160,7 @@ try {
                       } elseif ($interval->days == 1) {
                         echo '1 Day ago';
                       } elseif ($interval->days > 30) {
-                        echo 'a Month ago';
+                        echo 'Months ago';
                       } elseif ($interval->days > 365) {
                         echo 'a Year ago';
                       } else {
