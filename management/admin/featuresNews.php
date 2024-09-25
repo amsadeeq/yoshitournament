@@ -590,6 +590,8 @@ try {
                     if (response === 'success') {
                         // Reload the admin data dynamically
                         fetchNews();
+                        location.reload();
+
                     } else {
                         alert('Failed to delete news. Please try again.');
                     }
