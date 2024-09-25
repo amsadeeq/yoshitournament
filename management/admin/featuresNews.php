@@ -323,6 +323,7 @@ try {
                                         </div>
 
                                         <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <br />
                                             <img style="height:50%;width: 50%;" class="my-select passport_frame"
                                                 id="image">
                                         </div>
