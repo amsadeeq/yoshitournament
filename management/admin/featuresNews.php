@@ -203,6 +203,19 @@ try {
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <!-- Javascript for Passport display -->
+    <script type="text/javascript">
+        function onFileSelected(event) {
+            var selectedFile = event.target.files[0];
+            var reader = new FileReader();
+            var imgtag = document.getElementById("image");
+            imgtag.title = selectedFile.name;
+            reader.onload = function (event) {
+                image.src = event.target.result;
+            };
+            reader.readAsDataURL(selectedFile);
+        }
+    </script>
 </head>
 
 <body class="nav-md">
@@ -264,8 +277,9 @@ try {
                                                         for="first-name">Cover Picture <span class="required">*</span>
                                                     </label>
                                                     <div class="col-md-6 col-sm-6 ">
-                                                        <input type="file" name="coverPhoto" id="first-name"
-                                                            required="required" class="form-control ">
+                                                        <input type="file" onchange="onFileSelected(event);"
+                                                            name="coverPhoto" id="first-name" required="required"
+                                                            class="form-control ">
                                                     </div>
                                                 </div>
                                                 <div class="item form-group">
@@ -309,7 +323,8 @@ try {
                                         </div>
 
                                         <div class="col-lg-4 col-md-4 col-sm-12">
-                                            <h5>Hi</h5>
+                                            <img style="height:50%;width: 50%;" class="my-select passport_frame"
+                                                id="image">
                                         </div>
                                     </div>
                                 </div>
