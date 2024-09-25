@@ -127,7 +127,12 @@ try {
                 <figure>
                   <img src="management/admin/featured_news_photo/<?php echo $news['cover_picture_name']; ?>" alt="bn" />
                   <figcaption>
-                    <b class="d-block">21</b>
+                    <b class="d-block">
+                      <?php
+                      $date = DateTime::createFromFormat('d/M/Y', $news['date_published']);
+                      echo $date->format('d');
+                      ?>
+                    </b>
 
                     <?php
                     $date = DateTime::createFromFormat('d/M/Y', $news['date_published']);
