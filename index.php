@@ -446,7 +446,7 @@ if (isset($_SESSION['showLoginModal'])) {
   <!-- Custom JavaScript -->
   <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("September 21, 2024 00:00:00").getTime();
+    var countDownDate = new Date("September 28, 2024 00:00:00").getTime();
 
     // Update the countdown every second
     var x = setInterval(function () {

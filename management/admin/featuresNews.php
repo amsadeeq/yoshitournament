@@ -315,7 +315,7 @@ try {
                                                 <div class="item form-group">
                                                     <div class="col-md-6 col-sm-6 offset-md-3">
                                                         <button class="btn btn-warning" type="reset">Cancel</button>
-                                                        <button type="submit" name="addadmin"
+                                                        <button type="submit" name="publish"
                                                             class="btn btn-success">Publish</button>
                                                     </div>
                                                 </div>
