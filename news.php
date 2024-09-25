@@ -159,6 +159,10 @@ try {
                         echo 'Today';
                       } elseif ($interval->days == 1) {
                         echo '1 Day ago';
+                      } elseif ($interval->days > 30) {
+                        echo 'a Month ago';
+                      } elseif ($interval->days > 365) {
+                        echo 'a Year ago';
                       } else {
                         echo $interval->days . ' Days ago';
                       }
@@ -605,7 +609,7 @@ try {
 
   <?php include 'footer.php'; ?>
 
-  
+
   <!-- login Modal -->
   <?php include 'loginModal.php'; ?>
 
@@ -620,7 +624,7 @@ try {
   <!--right silde-bar-->
   <?php include 'sidebar.php'; ?>
 
-  
+
 
 
   <script src="js/bootstrap.bundle.min.js"></script>
