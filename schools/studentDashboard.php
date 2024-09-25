@@ -837,6 +837,19 @@ foreach ($players_record as $player_record) {
                                     ?>
 
                                 </div>
+                                <h3 class="text-center">Yoshi Abuja Private Schools Tournament 2024</h3>
+                                <button onclick="printQRCode()">Print QR Code</button>
+
+                                <script>
+                                    function printQRCode() {
+                                        var printContents = document.querySelector('#attendance .content').innerHTML;
+                                        var originalContents = document.body.innerHTML;
+
+                                        document.body.innerHTML = printContents;
+                                        window.print();
+                                        document.body.innerHTML = originalContents;
+                                    }
+                                </script>
                             </div>
                             <!-- End Icon Cart -->
                         </div>
