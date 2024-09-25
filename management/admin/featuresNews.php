@@ -263,7 +263,7 @@ try {
                                                         for="last-name">Title <span class="required">*</span>
                                                     </label>
                                                     <div class="col-md-8 col-sm-8 ">
-                                                        <input type="email" id="last-name" name="newsTitle"
+                                                        <input type="text" id="last-name" name="newsTitle"
                                                             required="required" class="form-control">
                                                     </div>
                                                 </div>
