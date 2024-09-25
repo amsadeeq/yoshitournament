@@ -248,6 +248,15 @@ try {
                                     <p>Drag multiple files to the box below for multi upload or click to select files.
                                     </p>
                                     <form enctype="multipart/form-data" action="form_upload.html" class="dropzone">
+
+                                        <div class="ln_solid"></div>
+                                        <div class="item form-group">
+                                            <div class="col-md-6 col-sm-6 offset-md-3">
+                                                <button class="btn btn-warning" type="reset">Cancel</button>
+                                                <button type="submit" name="publish"
+                                                    class="btn btn-success">Publish</button>
+                                            </div>
+                                        </div>
                                     </form>
 
                                 </div>
