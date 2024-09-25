@@ -515,12 +515,12 @@ try {
         </div>
 
         <!-- Suspend Modal -->
-        <div class="modal fade" id="suspendModal${admin.admin_userID}" tabindex="-1" role="dialog"
-            aria-labelledby="suspendModalLabel${admin.admin_userID}" aria-hidden="true">
+        <div class="modal fade" id="suspendModal${news.newsRefCode}" tabindex="-1" role="dialog"
+            aria-labelledby="suspendModalLabel${news.newsRefCode}" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="suspendModalLabel${admin.admin_userID}">Suspend Admin</h5>
+                        <h5 class="modal-title" id="suspendModalLabel${news.newsRefCode}">Suspend Admin</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -530,19 +530,19 @@ try {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-warning" onclick="suspendAdmin(${admin.admin_userID})">Suspend</button>
+                        <button type="button" class="btn btn-warning" onclick="suspendAdmin(${news.newsRefCode})">Suspend</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Delete Modal -->
-        <div class="modal fade" id="deleteModal${admin.admin_userID}" tabindex="-1" role="dialog"
-            aria-labelledby="deleteModalLabel${admin.admin_userID}" aria-hidden="true">
+        <div class="modal fade" id="deleteModal${news.newsRefCode}" tabindex="-1" role="dialog"
+            aria-labelledby="deleteModalLabel${news.newsRefCode}" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel${admin.admin_userID}">Delete Admin</h5>
+                        <h5 class="modal-title" id="deleteModalLabel${news.newsRefCode}">Delete Admin</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -552,7 +552,7 @@ try {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger" onclick="deleteAdmin(${admin.admin_userID})">Delete</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteAdmin(${news.newsRefCode})">Delete</button>
                     </div>
                 </div>
             </div>
