@@ -811,6 +811,7 @@ foreach ($players_record as $player_record) {
                         <div class="col-xl-3 col-lg-4 col-sm-6" id="attendance">
                             <div class="icon-card mb-30">
                                 <div class="content">
+                                    <span class="text-center">Yoshi Abuja Private Schools Tournament 2024</span>
                                     <!-- Display the QR code image -->
                                     <?php
                                     // Include the main library file
@@ -837,8 +838,8 @@ foreach ($players_record as $player_record) {
                                     ?>
 
                                 </div>
-                                <h3 class="text-center">Yoshi Abuja Private Schools Tournament 2024</h3>
-                                <button onclick="printQRCode()">Print QR Code</button>
+
+                                <button class="btn btn-sm btn-success" onclick="printQRCode()">Print QR Code</button>
 
                                 <script>
                                     function printQRCode() {
