@@ -809,37 +809,44 @@ foreach ($players_record as $player_record) {
 
                     <div class="row">
                         <div class="col-xl-3 col-lg-4 col-sm-6" id="attendance">
+                            <span class="text-center">Yoshi Abuja Private Schools Tournament 2024</span>
                             <div class="icon-card mb-30">
-                                <div class="content">
-                                    <span class="text-center">Yoshi Abuja Private Schools Tournament 2024</span>
-                                    <!-- Display the QR code image -->
-                                    <?php
-                                    // Include the main library file
-                                    include 'phpqrcode/qrlib.php';
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="content">
+
+                                            <!-- Display the QR code image -->
+                                            <?php
+                                            // Include the main library file
+                                            include 'phpqrcode/qrlib.php';
 
 
 
-                                    // Define the content for the QR code using the $userRefCode variable
-                                
+                                            // Define the content for the QR code using the $userRefCode variable
+                                        
 
-                                    // Define the path where you want to save the QR code image
-                                    $filePath = 'qrcodes/attendance_qr_' . $userRefCode . '.png';
+                                            // Define the path where you want to save the QR code image
+                                            $filePath = 'qrcodes/attendance_qr_' . $userRefCode . '.png';
 
-                                    // Check if the directory exists, if not create it
-                                    if (!file_exists('qrcodes')) {
-                                        mkdir('qrcodes', 0777, true);
-                                    }
+                                            // Check if the directory exists, if not create it
+                                            if (!file_exists('qrcodes')) {
+                                                mkdir('qrcodes', 0777, true);
+                                            }
 
-                                    // Generate the QR code and save it to the specified file
-                                    QRcode::png($userRefCode, $filePath, QR_ECLEVEL_L, 10, 2);
+                                            // Generate the QR code and save it to the specified file
+                                            QRcode::png($userRefCode, $filePath, QR_ECLEVEL_L, 10, 2);
 
-                                    // Display the QR code image
-                                    echo '<img src="' . $filePath . '" alt="QR Code for Attendance" style="width:100%;height:100%;">';
-                                    ?>
+                                            // Display the QR code image
+                                            echo '<img src="' . $filePath . '" alt="QR Code for Attendance" style="width:100%;height:100%;">';
+                                            ?>
 
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <button class="btn btn-sm btn-success" onclick="printQRCode()">Print QR
+                                            Code</button>
+                                    </div>
                                 </div>
-
-                                <button class="btn btn-sm btn-success" onclick="printQRCode()">Print QR Code</button>
 
                                 <script>
                                     function printQRCode() {
