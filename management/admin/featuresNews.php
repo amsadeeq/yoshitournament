@@ -325,6 +325,7 @@ try {
                                                     <table id="adminTable" class="table table-hover">
                                                         <thead>
                                                             <tr>
+                                                                <th>News ID</th>
                                                                 <th>Cover Photo</th>
                                                                 <th>Title</th>
                                                                 <th>Short Highlight</th>
