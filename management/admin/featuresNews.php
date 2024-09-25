@@ -6,11 +6,11 @@ ob_start();
 require_once '../../connection.php';
 $email = $_SESSION['a_email'];
 
-$stmt = $pdo->query("SELECT * FROM `yoshi_admins_tbl` ORDER BY id DESC, time_updated DESC");
+$stmt = $pdo->query("SELECT * FROM `yoshi_featured_news_tbl` ORDER BY id DESC, time_published DESC");
 $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 try {
-    if (isset($_POST['addadmin'])) {
+    if (isset($_POST['publish'])) {
 
         //**** function reference number to each registered coach/manager of the team ***//
         function productCode($length = 8)
@@ -50,7 +50,7 @@ try {
             return $userRefCode;
         }
 
-        $userRefCode = productCode(8); //function that generate 8 unique characters for reference number
+        $newsRefCode = productCode(8); //function that generate 8 unique characters for reference number
 
         //function checking for malicious inputs using trim(),stripslahes(),htmlspecialchars(),htmlentities()
         function check_input($data)
@@ -68,93 +68,65 @@ try {
             return htmlspecialchars(stripslashes(trim($data)));
         }
 
-        //function for collecting user ip address
-        // function getRealIpAddr()
-        // {
-        // 	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-        // 		//check IP from internet
-        // 		$ip = $_SERVER['HTTP_CLIENT_IP'];
-        // 	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        // 		//check IP is passed from proxy
-        // 		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        // 	} else {
-        // 		//get IP address from remote address
-        // 		$ip = $_SERVER['REMOTE_ADDR'];
-        // 	}
-        // 	return $ip;
-        // }
 
-        // ----------------------------------------------------------------//
         //Collecting user information//
-
-        $full_name = check_input($_POST['full_name']); //check_input is sensitising the input field
-        $phone = check_input($_POST['phone']); //check_input is sensitising the input field
-        $email = check_input($_POST['email']); //check_input is sensitising the input field
-        $role = check_input($_POST['role']); //check_input is sensitising the input field
-        $gender = check_input($_POST['gender']); //check_input is sensitising the input field
-        $temp_password = check_input($_POST['temp_password']); //check_input is sensitising the input field
-
-        $status = "pending";
+        $coverPhoto = check_input($_POST['coverPhoto']); //check_input is sensitising the input field
+        $newsTitle = check_input($_POST['newsTitle']); //check_input is sensitising the input field
+        $shortHighlight = check_input($_POST['shortHighlight']); //check_input is sensitising the input field
+        $newsURL = check_input($_POST['newsURL']); //check_input is sensitising the input field
+        $author = 'Admin';
         $time = time(); //function for current time
-        $date_create = date("d/M/Y", $time); //function for current date
-        $time_create = date("H:i:s a"); //function for current time using "strtotime" to minus 1hour
-        // $ipaddress = getRealIpAddr();
+        $date_published = date("d/M/Y", $time); //function for current date
+        $time_published = date("H:i:s a"); //function for current time using "strtotime" to minus 1hour
 
 
-        // Collecting user information
-        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-        // Hash the password
-        $hashed_password = md5($temp_password);
-        // Insert data into the database
-        $stmt = $pdo->prepare("INSERT INTO `yoshi_admins_tbl` (`id`, `admin_userID`, `full_name`, `admin_email`, `admin_phone`, `admin_role`, `temp_password`,`time_created`, `date_created`, `acct_status`) VALUES (NULL, :admin_userID, :full_name, :email, :phone, :role, :hashed_password, :time_create, :date_create, :status)");
-        $stmt->bindParam(':admin_userID', $userRefCode);
-        $stmt->bindParam(':full_name', $full_name);
-        $stmt->bindParam(':email', $email); // Changed from 'admin_email' to 'email'
-        $stmt->bindParam(':phone', $phone); // Changed from 'admin_phone' to 'phone'
-        $stmt->bindParam(':role', $role);
-        $stmt->bindParam(':hashed_password', $hashed_password);
-        $stmt->bindParam(':time_create', $time_create); // Changed from 'time_created' to 'time_create'
-        $stmt->bindParam(':date_create', $date_create); // Changed from 'date_created' to 'date_create'
-        $stmt->bindParam(':status', $status);
-        $stmt->execute();
+        //image upload manipulations
+        $img1 = trim($_FILES['coverPhoto']['name']);
+        $imgsize1 = $_FILES['coverPhoto']['size'];
+        $imgloc1 = $_FILES['coverPhoto']['tmp_name'];
+        $Extention1 = explode(".", $img1);
+        $imgExtention1 = strtolower(end($Extention1));
+        $imgname1 = (str_replace("/", "", $newsRefCode)) . "." . $imgExtention1;
 
-        ################################################
-        $to = $email;
-        // Set the email subject
-        $subject = "Admin Account Created - Yoshi Tournaments";
 
-        $message = "Dear Admin,\n\n";
-        $message .= "An admin account has been created for you on Yoshi Tournaments.\n";
-        $message .= "Please visit the following link to activate your account and create a new password:\n";
-        $message .= "https://www.yoshitournaments.com/management/admin/index.php\n\n";
-        $message .= "Your temporary password is: $temp_password\n\n";
-        $message .= "Once you have activated your account and created a new password, you will be able to access the admin panel and manage the tournament.\n\n";
-        $message .= "If you have any questions or need further assistance, please feel free to contact us at account@yoshitournaments.com or +2348167913802.\n\n";
-        $message .= "Best Regards,\n";
-        $message .= "Yoshi Tournament Team";
+        if (!empty($imgname1) && !empty($newsTitle) && !empty($shortHighlight) && !empty($newsURL) && !empty($author)) {
+            if ($imgExtention1 == "jpeg" or $imgExtention1 == "png" or $imgExtention1 == "jpg") {
+                if ($imgsize1 <= 9145728) {
+                    move_uploaded_file($imgloc1, "featured_news_photo/" . $imgname1);
 
-        // Set additional headers
-        $headers = "From: no-reply@yoshitournament.com\r\n";
-        $headers .= "Reply-To: support@yoshitournament.com\r\n";
-        // $headers .= "CC: yoshitournaments@gmail.com\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion();
-        // Send the email
-        $mail_sent = mail($to, $subject, $message, $headers);
-        $register_message = "Account Successfully created !";
-        //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
-        // Define the notification message
-        // Generate the JavaScript code to trigger the notification
-        $welcome_notify = "
-			<script>
-				new Noty({
-					theme: 'metroui',
-					text: '$register_message',
-					type: 'success',
-					timeout: 1000
-					
-				}).show();
-			</script>
-			";
+
+                    // Insert data into the database
+                    $stmt = $pdo->prepare("INSERT INTO `yoshi_featured_news_tbl` (`id`, `newsRefCode`, `cover_picture_name`, `title`, `short_higlight`, `news_url`, `time_published`, `date_published`, `author`) VALUES (NULL, :newsRefCode, :cover_picture_name, :title, :short_higlight, :news_url, :time_published, :date_published, :author)");
+                    $stmt->bindParam(':newsRefCode', $newsRefCode);
+                    $stmt->bindParam(':cover_picture_name', $imgname1);
+                    $stmt->bindParam(':title', $newsTitle); // Changed from 'admin_email' to 'email'
+                    $stmt->bindParam(':short_higlight', $shortHighlight); // Changed from 'admin_phone' to 'phone'
+                    $stmt->bindParam(':news_url', $newsURL);
+                    $stmt->bindParam(':time_published', $time_published);
+                    $stmt->bindParam(':date_published', $date_published); // Changed from 'date_created' to 'date_create'
+                    $stmt->bindParam(':author', $author); // Changed from 'date_created' to 'date_create'
+                    $stmt->execute();
+
+
+                    $register_message = "Featured News Publish!";
+                    //echo "<script>swal('Error!', 'Invalid email or password.', 'error');</script>";
+                    // Define the notification message
+                    // Generate the JavaScript code to trigger the notification
+                    $welcome_notify = "
+                                <script>
+                                    new Noty({
+                                        theme: 'metroui',
+                                        text: '$register_message',
+                                        type: 'success',
+                                        timeout: 1000
+                                        
+                                    }).show();
+                                </script>
+                                ";
+
+                }
+            }
+        }
     }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
@@ -203,6 +175,8 @@ try {
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+
+
     <!-- Javascript for Passport display -->
     <script type="text/javascript">
         function onFileSelected(event) {
@@ -216,6 +190,8 @@ try {
             reader.readAsDataURL(selectedFile);
         }
     </script>
+
+
 </head>
 
 <body class="nav-md">
@@ -349,8 +325,6 @@ try {
                                                     <table id="adminTable" class="table table-hover">
                                                         <thead>
                                                             <tr>
-
-
                                                                 <th>Cover Photo</th>
                                                                 <th>Title</th>
                                                                 <th>Short Highlight</th>
@@ -359,29 +333,17 @@ try {
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
-
                                                         <tbody>
-
-
-
                                                             <!-- Container for dynamically generated modals -->
                                                             <div id="dynamicModals"></div>
-
-
-
                                                         </tbody>
-                                                    </table>
                                                     </table>
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -450,51 +412,54 @@ try {
     <script>
         function fetchAdmins() {
             $.ajax({
-                url: 'get_admins.php',
+                url: 'get_featured_news.php',
                 method: 'GET',
                 dataType: 'json',
-                success: function (admins) {
+                success: function (featured_news) {
                     // Clear the current table body
                     $('#adminTable tbody').empty();
 
                     // Clear any existing modals to avoid duplicates
                     $('#dynamicModals').empty();
 
-                    if (admins.error) {
-                        alert('Error fetching data: ' + admins.error);
+                    if (featured_news.error) {
+                        alert('Error fetching data: ' + featured_news.error);
                         return;
                     }
 
                     // Populate the table with new data
-                    admins.forEach(function (admin) {
-                        let adminRow = `
+                    featured_news.forEach(function (news) {
+                        let newsRow = `
                     <tr>
-                        
-                        <td>${admin.full_name}</td>
-                        <td>${admin.admin_email}</td>
-                        <td>${admin.admin_phone}</td>
-                        <td>${admin.admin_role}</td>
+                    
+                        <td>${news.newsRefCode}</td>
+                        <td>${news.cover_picture_name}</td>
+                        <td>${news.title}</td>
+                        <td>${news.short_higlight}</td>
+                        <td>${news.news_url}</td>
+                        <td>${news.time_published}</td>
+                        <td>${news.date_published}</td>
                         <td>
-                            ${getStatusBadge(admin.acct_status)}
+                            ${getStatusBadge(news.author)}
                         </td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-sm btn-secondary"
-                                    data-toggle="modal" data-target="#viewModal${admin.admin_userID}" data-id="${admin.admin_userID}">View</button>
+                                    data-toggle="modal" data-target="#viewModal${news.newsRefCode}" data-id="${news.newsRefCode}">View</button>
                                 <button type="button" class="btn btn-sm btn-warning"
-                                    data-toggle="modal" data-target="#suspendModal${admin.admin_userID}" data-id="${admin.admin_userID}">Suspend</button>
+                                    data-toggle="modal" data-target="#suspendModal${news.newsRefCode}" data-id="${news.newsRefCode}">Edit</button>
                                 <button type="button" class="btn btn-sm btn-danger"
-                                    data-toggle="modal" data-target="#deleteModal${admin.admin_userID}" data-id="${admin.admin_userID}">Delete</button>
+                                    data-toggle="modal" data-target="#deleteModal${news.newsRefCode}" data-id="${news.newsRefCode}">Delete</button>
                             </div>
                         </td>
                     </tr>
                 `;
 
                         // Append row to the table body
-                        $('#adminTable tbody').append(adminRow);
+                        $('#adminTable tbody').append(newsRow);
 
                         // Generate and append modals for the current admin
-                        let modals = generateModals(admin);
+                        let modals = generateModals(news);
                         $('#dynamicModals').append(modals);
                     });
                 },
@@ -506,7 +471,7 @@ try {
 
         // Helper function to generate status badge
         function getStatusBadge(status) {
-            if (status === 'Updated') {
+            if (status === 'Admin') {
                 return `<span class="badge badge-success">${status}</span>`;
             } else if (status === 'suspend') {
                 return `<span class="badge badge-danger">${status}</span>`;
@@ -518,26 +483,26 @@ try {
         }
 
         // Helper function to generate modals dynamically
-        function generateModals(admin) {
+        function generateModals(news) {
             return `
         <!-- View Modal -->
-        <div class="modal fade" id="viewModal${admin.admin_userID}" tabindex="-1" role="dialog"
-            aria-labelledby="viewModalLabel${admin.admin_userID}" aria-hidden="true">
+        <div class="modal fade" id="viewModal${news.newsRefCode}" tabindex="-1" role="dialog"
+            aria-labelledby="viewModalLabel${news.newsRefCode}" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="viewModalLabel${admin.admin_userID}">View Admin</h5>
+                        <h5 class="modal-title" id="viewModalLabel${news.newsRefCode}">View Admin</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>ID: ${admin.admin_userID}</p>
-                        <p>Name: ${admin.full_name}</p>
-                        <p>Email: ${admin.admin_email}</p>
-                        <p>Phone: ${admin.admin_phone}</p>
-                        <p>Role: ${admin.admin_role}</p>
-                        <p>Status: ${admin.acct_status}</p>
+                        <p>ID: ${news.newsRefCode}</p>
+                        <p>Title: ${news.title}</p>
+                        <p>Short Highlight: ${news.short_higlight}</p>
+                        <p>News URL: ${news.news_url}</p>
+                        <p>TIme: ${news.time_published}</p>
+                        <p>Date: ${news.date_published}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

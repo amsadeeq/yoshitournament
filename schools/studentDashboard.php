@@ -821,7 +821,6 @@ foreach ($players_record as $player_record) {
 
                     <div class="row">
                         <div class="col-xl-3 col-lg-4 col-sm-6" id="attendance">
-                            <span class="text-center">Yoshi Abuja Private Schools Tournament 2024</span>
                             <div class="icon-card mb-30">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12">
