@@ -22,7 +22,10 @@ if (isset($_POST['newsId'])) {
 
     // Delete the image file from the folder
     if ($imageFileName) {
-        $filePath = '/featured_news_photo/' . $imageFileName;
+        $filePath = 'featured_news_photo/' . $imageFileName;
+        $dir = 'featured_news_photo/';
+        $result = chmod($dir, 0755); // Change to 0755
+
         if (file_exists($filePath)) {
             unlink($filePath);
         }
