@@ -330,6 +330,8 @@ try {
                                                                 <th>Title</th>
                                                                 <th>Short Highlight</th>
                                                                 <th>News URL</th>
+                                                                <th>Time Pub</th>
+                                                                <th>Date Pub</th>
                                                                 <th>Status</th>
                                                                 <th>Action</th>
                                                             </tr>
