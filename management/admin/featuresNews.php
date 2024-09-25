@@ -276,7 +276,7 @@ try {
                                                     <label class="col-form-label col-md-3 col-sm-3 label-align"
                                                         for="first-name">Cover Picture <span class="required">*</span>
                                                     </label>
-                                                    <div class="col-md-6 col-sm-6 ">
+                                                    <div class="col-md-8 col-sm-8 ">
                                                         <input type="file" onchange="onFileSelected(event);"
                                                             name="coverPhoto" id="first-name" required="required"
                                                             class="form-control ">
@@ -286,7 +286,7 @@ try {
                                                     <label class="col-form-label col-md-3 col-sm-3 label-align"
                                                         for="last-name">Title <span class="required">*</span>
                                                     </label>
-                                                    <div class="col-md-6 col-sm-6 ">
+                                                    <div class="col-md-8 col-sm-8 ">
                                                         <input type="email" id="last-name" name="newsTitle"
                                                             required="required" class="form-control">
                                                     </div>
@@ -295,7 +295,7 @@ try {
                                                     <label for="middle-name"
                                                         class="col-form-label col-md-3 col-sm-3 label-align">Short
                                                         Highlight</label>
-                                                    <div class="col-md-6 col-sm-6 ">
+                                                    <div class="col-md-8 col-sm-8 ">
                                                         <textarea rows="6" name="shortHighlight" class="form-control"
                                                             id="" required="required"></textarea>
                                                     </div>
@@ -305,7 +305,7 @@ try {
                                                     <label for="middle-name"
                                                         class="col-form-label col-md-3 col-sm-3 label-align">Short
                                                         News URL</label>
-                                                    <div class="col-md-6 col-sm-6 ">
+                                                    <div class="col-md-8 col-sm-8 ">
                                                         <input class="form-control" type="url" name="newsURL" required>
                                                     </div>
                                                 </div>
