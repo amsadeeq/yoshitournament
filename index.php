@@ -393,7 +393,7 @@ if (isset($_SESSION['showLoginModal'])) {
   <!-- Onload Popup Modal -->
   <!---- YAPS 2024 Modal -->
 
-  <?php require 'yaps2024_modal.php' ?>
+  <?php //require 'yaps2024_modal.php' ?>
 
   <!-- login Modal -->
   <?php include 'loginModal.php'; ?>
