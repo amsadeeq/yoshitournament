@@ -145,8 +145,9 @@ require 'auth.php';
             <div class="row g-4 align-items-center">
                 <!-- Repeat the card for the remaining 2 columns -->
                 <div class="col-sm-6 col-xs-6">
-                    <div class="card rounded-5 shadow-lg animate-onload" data-bs-toggle="modal"
-                        data-bs-target="#registerModal" style="cursor:pointer; border-radius:10px 10px;">
+                    <!-- data-bs-target="#registerModal" -->
+                    <div class="card rounded-5 shadow-lg animate-onload" data-bs-toggle="modal" data-bs-target="#"
+                        style="cursor:pointer; border-radius:10px 10px;">
                         <div class="row g-0 align-items-center">
                             <div class="col-xs-6 col-sm-6">
                                 <img src="images/yoshiStud.jpg" class="card-img-top d-none d-sm-block" alt="Gift Poster"
@@ -161,9 +162,9 @@ require 'auth.php';
                                         <br />
                                         <!-- <p class="my-3 text-secondary">Yoshi Abuja Private Schools Tournaments 2024</p> -->
                                         <!-- <p class="mt-3 mb-4 text-success">Football Tournament</p> -->
-                                        <a data-bs-toggle="modal" data-bs-target="#registerModal"
+                                        <!-- <a data-bs-toggle="modal" data-bs-target="#registerModal"
                                             class="btn mt-8 w-100 join-btn shadow-sm"
-                                            style="border-radius: 15px 15px;">Register</a>
+                                            style="border-radius: 15px 15px;">Register</a> -->
                                     </div>
 
                                 </div>
